@@ -89,7 +89,7 @@ exclude:
 # SEO-tag
 twitter:
   username: peipeipe
-  card: ummary_large_image
+  card: summary_large_image
 
 seo_paginator_message: "%<current>s / %<total>s | "
 
