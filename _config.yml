@@ -85,3 +85,7 @@ exclude:
   - LICENSE
   - README.md
   - CNAME
+
+twitter:
+  username: peipeipe
+  card: summary
