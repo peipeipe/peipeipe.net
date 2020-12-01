@@ -86,6 +86,10 @@ exclude:
   - README.md
   - CNAME
 
+# SEO-tag
 twitter:
   username: peipeipe
-  card: summary
+  card: ummary_large_image
+
+seo_paginator_message: "%<current>s / %<total>s | "
+
