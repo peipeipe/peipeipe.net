@@ -6,6 +6,7 @@ categories: Blog
 image: 
 ---
 このサイトのドメインをpeipeipe.github.ioから peipeipe.netに変更した。    
+
 Amazon Route53を使用して一年間で＄11。  
 昔、peipeipe.comを持っていたのだけれど、手放してしまったら取られてしまったのでちょっと後悔している。  
 peipeipe.netは保持し続けようと思う。  
