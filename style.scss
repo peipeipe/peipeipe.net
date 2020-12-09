@@ -23,6 +23,12 @@ body {
   color: $darkGray;
 }
 
+img + em {
+  text-align: center;
+  font-size: 13px;
+  color: $gray;
+ }
+
 .container {
   margin: 0 auto;
   max-width: 740px;
@@ -288,8 +294,3 @@ footer {
 @import "highlights";
 @import "svg-icons";
 
-img + em {
-  text-align: center;
-  font-size: 11px;
-  color: $gray;
- }
