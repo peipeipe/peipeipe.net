@@ -111,6 +111,12 @@ img {
   max-width: 100%;
 }
 
+img + em {
+  text-align: center;
+  font-size: 13px;
+  color: $gray;
+}
+
 // Fixes images in popup boxes from Google Translate
 .gmnoprint img {
   max-width: none;
@@ -180,11 +186,7 @@ img {
     border-radius: 5px;
   }
 
-  img + em {
-    text-align: center;
-    font-size: 13px;
-    color: $gray;
-  }
+
 }
 
 .site-info {
