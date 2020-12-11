@@ -23,11 +23,6 @@ body {
   color: $darkGray;
 }
 
-img + em {
-  text-align: center;
-  font-size: 13px;
-  color: $gray;
- }
 
 .container {
   margin: 0 auto;
@@ -184,6 +179,12 @@ img {
   img {
     border-radius: 5px;
   }
+
+  img + em {
+    text-align: center;
+    font-size: 13px;
+    color: $gray;
+  }
 }
 
 .site-info {
@@ -263,8 +264,7 @@ nav {
     border-left: 2px solid $gray;
     padding: 0.1em 1em;
     color: $gray;
-    font-size: 22px;
-    font-style: italic;
+    font-size: 13px;
   }
 
   .comments {
