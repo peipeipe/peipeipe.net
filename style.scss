@@ -69,6 +69,12 @@ p {
   margin: 15px 0;
 }
 
+img + em {
+  text-align: center;
+  font-size: 13px;
+  color: $gray;
+}
+
 a {
   color: $blue;
   text-decoration: none;
@@ -111,11 +117,7 @@ img {
   max-width: 100%;
 }
 
-img + em {
-  text-align: center;
-  font-size: 13px;
-  color: $gray;
-}
+
 
 // Fixes images in popup boxes from Google Translate
 .gmnoprint img {

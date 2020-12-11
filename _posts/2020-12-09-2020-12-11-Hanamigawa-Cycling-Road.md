@@ -27,7 +27,7 @@ image: https://i.gyazo.com/79b5da6fcea41b2ce5ff015d5f12db83.jpg
 
 ブログで紹介されていた[大島屋](https://goo.gl/maps/QPZn8Ro5eCaw2Phx9)というところのとんかつを食べて引き返した。  
 美味しかった。
-![カツ丼](https://gyazo.com/306b18397f16c375d9c0881b73554031)
+![カツ丼](https://i.gyazo.com/306b18397f16c375d9c0881b73554031.jpg)
 *分厚いカツ丼*<br />
 
 
