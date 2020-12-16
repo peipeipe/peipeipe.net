@@ -16,12 +16,14 @@ YouTubeがある世界に生まれてきてよかった。(マジで)
 
 
 ぼーっと見ているだけで楽しめる。  
-窓の外の景色を見ているとアメリカはとにかくでかい国で、HUNTER×HUNTERのここはデカすぎるを思い出す。 
+窓の外の景色を見ているとアメリカはとにかくでかい国で、
+  
+HUNTER×HUNTERのここはデカすぎるを思い出す。 
 
 ![ここはデカすぎる](https://animemiru.jp/wp-content/uploads/2020/09/HUNTER%C3%97HUNTER-ankokutairiku.jpg)
 
 
-
+<br>
 ### エドのサバイバルチャンネル
 <iframe width="560" height="315" src="https://www.youtube.com/embed/qzBgoB6xMt0" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 <br>
