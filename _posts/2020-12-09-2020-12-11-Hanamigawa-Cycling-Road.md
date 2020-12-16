@@ -9,7 +9,9 @@ image: https://i.gyazo.com/79b5da6fcea41b2ce5ff015d5f12db83.jpg
 
 
 距離はかなり短めで、地図を確認しながらだったので行き帰りの車の運転のほうが疲れたくらい。  
+<div class="iframe-wrap">
 <iframe src='https://connect.garmin.com/modern/activity/embed/5940596906' title='花見川サイクリングロードから大島屋' width='465' height='500' frameborder='0'></iframe>
+</div>
 
 
 千葉の田舎道を楽しめた。  
