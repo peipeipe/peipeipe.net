@@ -10,9 +10,13 @@ YouTubeがある世界に生まれてきてよかった。(マジで)
 
 最近よく見ているYouTubeチャンネル
 ### アメリカントラックのチャンネル
-<iframe width="560" height="315" src="https://www.youtube.com/embed/3vv1l5fmJOE" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<div class="iframe-wrap">
+<iframe src="https://www.youtube.com/embed/3vv1l5fmJOE" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
 <br>
-<iframe width="560" height="315" src="https://www.youtube.com/embed/E1djY_Ib3YM" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<div class="iframe-wrap">
+<iframe src="https://www.youtube.com/embed/E1djY_Ib3YM" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
 
 
 ぼーっと見ているだけで楽しめる。  
@@ -25,10 +29,11 @@ HUNTER×HUNTERのここはデカすぎるを思い出す。
 
 <br>
 ### エドのサバイバルチャンネル
-<iframe width="560" height="315" src="https://www.youtube.com/embed/qzBgoB6xMt0" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<div class="iframe-wrap">
+<iframe src="https://www.youtube.com/embed/qzBgoB6xMt0" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 <br>
-<iframe width="560" height="315" src="https://www.youtube.com/embed/NSwOF_A0LfM" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-
+<iframe src="https://www.youtube.com/embed/NSwOF_A0LfM" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
 
 ディスカバリーチャンネルのマジなやつ。  
 こちらもずっと見ていられる。
@@ -36,9 +41,11 @@ HUNTER×HUNTERのここはデカすぎるを思い出す。
 
 <br>
 ### 住宅FP関根さん
-<iframe width="560" height="315" src="https://www.youtube.com/embed/XTZlJrwfmDI" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<div class="iframe-wrap">
+<iframe src="https://www.youtube.com/embed/XTZlJrwfmDI" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 <br>
-<iframe width="560" height="315" src="https://www.youtube.com/embed/YEG17H8g1ZI" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe src="https://www.youtube.com/embed/YEG17H8g1ZI" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
 
 
 家を買うことなんてまったく考えていないんだけれど、これが将来を考えるってことなんだなと思う。  
