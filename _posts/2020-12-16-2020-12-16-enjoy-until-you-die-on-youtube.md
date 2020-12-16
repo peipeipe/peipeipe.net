@@ -32,3 +32,14 @@ HUNTER×HUNTERのここはデカすぎるを思い出す。
 
 ディスカバリーチャンネルのマジなやつ。  
 こちらもずっと見ていられる。
+
+
+<br>
+### 住宅FP関根さん
+<iframe width="560" height="315" src="https://www.youtube.com/embed/XTZlJrwfmDI" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<br>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/YEG17H8g1ZI" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+
+家を買うことなんてまったく考えていないんだけれど、これが将来を考えるってことなんだなと思う。  
+将来を考えて自由を増やすこと、めっちゃ面白い。
