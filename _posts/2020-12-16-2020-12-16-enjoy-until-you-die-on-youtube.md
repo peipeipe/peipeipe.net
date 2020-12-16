@@ -31,7 +31,9 @@ HUNTER×HUNTERのここはデカすぎるを思い出す。
 ### エドのサバイバルチャンネル
 <div class="iframe-wrap">
 <iframe src="https://www.youtube.com/embed/qzBgoB6xMt0" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
 <br>
+<div class="iframe-wrap">
 <iframe src="https://www.youtube.com/embed/NSwOF_A0LfM" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 </div>
 
@@ -43,7 +45,9 @@ HUNTER×HUNTERのここはデカすぎるを思い出す。
 ### 住宅FP関根さん
 <div class="iframe-wrap">
 <iframe src="https://www.youtube.com/embed/XTZlJrwfmDI" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
 <br>
+<div class="iframe-wrap">
 <iframe src="https://www.youtube.com/embed/YEG17H8g1ZI" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 </div>
 
