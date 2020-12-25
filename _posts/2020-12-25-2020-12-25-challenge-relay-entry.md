@@ -10,7 +10,7 @@ image:
 
 [http://challenge-relay.com/](http://challenge-relay.com/)<br />
 [RUNNET](https://runnet.jp/entry/runtes/user/pc/competitionDetailAction.do?raceId=263753&div=1)<br />
-<blockquote>前回の第7回大会は残念ながら中止とさせていただきましたが、題8回大会は新型コロナウイルス感染症対策を行った上で、2021年2月20日(土)に開催することとなりました。</blockquote>
+<blockquote>前回の第7回大会は残念ながら中止とさせていただきましたが、第8回大会は新型コロナウイルス感染症対策を行った上で、2021年2月20日(土)に開催することとなりました。</blockquote>
 <br />
 
 * 第10回 足立フレンドリーマラソン　(ハーフ)台風19号で中止
