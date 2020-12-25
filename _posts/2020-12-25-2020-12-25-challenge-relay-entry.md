@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "第8回 チャレンジリレーマラソンinこどもの国にエントリ"
+title:  "第8回 チャレンジリレーマラソンinこどもの国"
 date:   2020-12-24 23:47 +0900
 categories: running
 image: 
