@@ -11,10 +11,10 @@ image:
 <div class="krb-amzlt-box" style="margin-bottom:0px;"><div class="krb-amzlt-image" style="float:left;margin:0px 12px 1px 0px;"><a href="https://www.amazon.co.jp/dp/B08JG7BQHK?&linkCode=li2&tag=peipeipe-22&linkId=4d8b4a8e38c084aa1fa3372e58ac4ed7&language=ja_JP&ref_=as_li_ss_il" target="_blank" rel="nofollow" rel="nofollow"><img border="0" src="//ws-fe.amazon-adsystem.com/widgets/q?_encoding=UTF8&ASIN=B08JG7BQHK&Format= _SL250_&ID=AsinImage&MarketPlace=JP&ServiceVersion=20070822&WS=1&tag=peipeipe-22&language=ja_JP" ></a><img src="https://ir-jp.amazon-adsystem.com/e/ir?t=peipeipe-22&language=ja_JP&l=li2&o=9&a=B08JG7BQHK" width="1" height="1" border="0" alt="" style="border:none !important; margin:0px !important;" /></div><div class="krb-amzlt-info" style="line-height:120%; margin-bottom: 10px"><div class="krb-amzlt-name" style="margin-bottom:10px;line-height:120%"><a href="https://www.amazon.co.jp/dp/B08JG7BQHK?&linkCode=li2&tag=peipeipe-22&linkId=4d8b4a8e38c084aa1fa3372e58ac4ed7&language=ja_JP&ref_=as_li_ss_il" name="amazletlink" target="_blank" rel="nofollow" rel="nofollow">緊急提言　パンデミック　寄稿とインタビュー Kindle版</a><div class="krb-amzlt-powered-date" style="font-size:80%;margin-top:5px;line-height:120%">posted with <a href="https://kaereba.com/wind/" title="amazlet" target="_blank" rel="nofollow" rel="nofollow">カエレバ</a></div></div><div class="krb-amzlt-detail"></div><div class="krb-amzlt-sub-info" style="float: left;"><div class="krb-amzlt-link" style="margin-top: 5px"><a href="https://www.amazon.co.jp/dp/B08JG7BQHK?&linkCode=li2&tag=peipeipe-22&linkId=4d8b4a8e38c084aa1fa3372e58ac4ed7&language=ja_JP&ref_=as_li_ss_il" name="amazletlink" target="_blank" rel="nofollow" rel="nofollow">Amazon.co.jpで詳細を見る</a></div></div></div><div class="krb-amzlt-footer" style="clear: left"></div></div><br>
 <blockquote>
 私たちが直面している最大の危機はウイルスではなく、人類がうちに抱えた魔物たち、すなわち、増悪と強欲と無知だ。私たちは今回の危機に臨んで、憎しみを燃え上がらせることもできる。
-</blockquote><br>
+</blockquote>
 <blockquote>
 プライバシーと健康のぢちらを選ぶかを問うことが、じつは問題の根源になっている。なぜなら、選択の設定を誤っているからだ。私たちは、プライバシーと健康の両方を享受できるし、また、享受できてしかるべきなのだ。
-</blockquote><br>
+</blockquote>
 <blockquote>
 一方、民主主義では、政府は間違いを犯したときに、自らを修正できます。そこが肝心です。
 </blockquote><br>
