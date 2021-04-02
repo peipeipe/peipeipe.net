@@ -4,4 +4,6 @@ title: About
 permalink: /about/
 ---
 
-peipeipe
+[@peipeipe](https://twitter.com/peipeipe)<br/>
+WWWでつかまえてというラジオをやっている。<br/>
+[WWWでつかまえて](https://www-de-tsukamaete.github.io/)
