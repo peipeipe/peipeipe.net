@@ -19,7 +19,7 @@ image:
 これまで何人もの遭難者に話を聞いてきたが、道に迷って山中を彷徨う状況に追い込まれると、ほとんどの人は不安や焦りから冷静な判断ができなくなって、自ら墓穴を掘ってしまう。
 </blockquote>
 
-ほかにも同著者の『[ドキュメント雪崩遭難](https://www.amazon.co.jp/dp/4635048276)』『[ドキュメント滑落遭難](https://amzn.to/3olc95r)』『[ドキュメント滑落遭難](https://amzn.to/3olc95r)』『[人を襲うクマ](https://amzn.to/3uqJ3Ta)』を読んだ。
+ほかにも同著者の『[ドキュメント雪崩遭難](https://www.amazon.co.jp/dp/4635048276)』『[ドキュメント道迷い遭難](https://amzn.to/3zY3Aj0)』『[ドキュメント滑落遭難](https://amzn.to/3olc95r)』『[人を襲うクマ](https://amzn.to/3uqJ3Ta)』を読んだ。
 
 
 <br/><br/>
