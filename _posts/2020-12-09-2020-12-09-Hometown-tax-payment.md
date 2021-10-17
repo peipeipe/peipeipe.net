@@ -9,7 +9,6 @@ image: https://i.imgur.com/aghhMCR.jpeg
 
 3自治体に納税したが、北海道の千歳市に納税した返礼品のビールが一番最初に届いた。
 ![ビール](https://i.imgur.com/aghhMCR.jpeg "ビール24本")
-*ビール24本*
 
 あまり飲まないので1年分これで足りそう。
 
