@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "今月読んだ本"
-date:   2021-12-31 20:54:00 +0900
+date:   2022-01-31 21:34:00 +0900
 categories: Book
 image: https://images-fe.ssl-images-amazon.com/images/I/41ZqiTwFQtL._SY291_BO1,204,203,200_QL40_ML2_.jpg
 ---
