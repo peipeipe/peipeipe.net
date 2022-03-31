@@ -3,7 +3,7 @@ layout: post
 title:  "今月読んだ本"
 date:   2022-03-31 22:10:00 +0900
 categories: Book
-image: https://ws-fe.amazon-adsystem.com/widgets/q?_encoding=UTF8&ASIN=4152100621&Format=%20_SL250_&ID=AsinImage&MarketPlace=JP&ServiceVersion=20070822&WS=1&tag=peipeipe-22&language=ja_JP
+image: https://m.media-amazon.com/images/I/51+RdF574TL._SY346_.jpg
 ---
 今月(2022-03)読んだ本は6冊。<br>
 
