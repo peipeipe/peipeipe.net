@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "今月読んだ本"
-date:   2022-05-31 2022-05-31:00 +0900
+date:   2022-05-31 2022-05-31 21:46:00 +0900
 categories: Book
 image: https://m.media-amazon.com/images/I/41Orxp+5WaL._SY346_.jpg
 ---
