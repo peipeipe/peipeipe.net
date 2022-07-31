@@ -12,7 +12,7 @@ image: https://m.media-amazon.com/images/I/41LaNi+McrL.jpg
 <p><a href="https://www.amazon.co.jp/dp/B0922GS8SL?&linkCode=li2&tag=peipeipe-22&linkId=7804566ad4cebfb5d273cc492d430cb8&language=ja_JP&ref_=as_li_ss_il" target="_blank" rel="nofollow"><img border="0" src="//ws-fe.amazon-adsystem.com/widgets/q?_encoding=UTF8&ASIN=B0922GS8SL&Format= _SL250_&ID=AsinImage&MarketPlace=JP&ServiceVersion=20070822&WS=1&tag=peipeipe-22&language=ja_JP" ></a><img src="https://ir-jp.amazon-adsystem.com/e/ir?t=peipeipe-22&language=ja_JP&l=li2&o=9&a=B0922GS8SL" width="1" height="1" border="0" alt="" style="border:none !important; margin:0px !important;" /></p> <p><a href="https://www.amazon.co.jp/dp/B0922GS8SL?&linkCode=li2&tag=peipeipe-22&linkId=7804566ad4cebfb5d273cc492d430cb8&language=ja_JP&ref_=as_li_ss_il" target="_blank" rel="nofollow">実力も運のうち　能力主義は正義か？ Kindle版</a></p>
 
 <blockquote>
-両極化が深刻になっている現代、大勢の働く人びとが無視され、過小評価されていると感じ、 社会的な結束と連帯の源が何より必要とされている。だとすれば、労働の尊厳についてのこうし た確固たる概念が政治的議論の中心に据えられてもよさそうなものだ。しかし、そうはなっていない。なぜだろうか? なぜ、こんにちの支配的な政治方針は正義の貢献的側面にも、その土台 をなす生産者中心の倫理にも抵抗を示すのだろうか?<br/>
+両極化が深刻になっている現代、大勢の働く人びとが無視され、過小評価されていると感じ、社会的な結束と連帯の源が何より必要とされている。だとすれば、労働の尊厳についてのこうし た確固たる概念が政治的議論の中心に据えられてもよさそうなものだ。しかし、そうはなっていない。なぜだろうか? なぜ、今日の支配的な政治方針は正義の貢献的側面にも、その土台 をなす生産者中心の倫理にも抵抗を示すのだろうか?<br/>
 それはわれわれが消費を好むうえ、経済成長が財をもたらしてくれると信じているからだ、という単純な答えが思い浮かぶかもしれない。だが、問題はもっと根深い。経済成長を公共政策の 最優先の目的とするのは、それが物資的恩恵を約束するだけでなく、現代のように対立に満ちた 多元的社会にとってとりわけ魅力的だからだ。経済が成長していれば、道徳的に賛否両論ある問題について議論を戦わせる必要がなさそうに見えるからである。
 </blockquote>
 
