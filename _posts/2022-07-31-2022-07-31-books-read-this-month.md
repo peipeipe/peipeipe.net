@@ -5,7 +5,7 @@ date:   2022-07-31 21:46:00 +0900
 categories: Book
 image: https://m.media-amazon.com/images/I/41LaNi+McrL.jpg
 ---
-今月(2022-06)読んだ本は6冊。<br>
+今月(2022-07)読んだ本は6冊。<br>
 
 
 
