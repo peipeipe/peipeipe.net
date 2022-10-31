@@ -3,9 +3,9 @@ layout: post
 title:  "今月読んだ本"
 date:   2022-10-31 22:16:00 +0900
 categories: Book
-image: https://m.media-amazon.com/images/I/41l0NwfJDDL._SY346_.jpg
+image: https://m.media-amazon.com/images/I/41TlfwOjhvL._SY346_.jpg
 ---
-今月(2022-09)読んだ本は5冊。<br>
+今月(2022-10)読んだ本は5冊。<br>
 
 
 
