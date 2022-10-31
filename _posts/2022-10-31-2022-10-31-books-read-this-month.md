@@ -38,7 +38,7 @@ image: https://m.media-amazon.com/images/I/41TlfwOjhvL._SY346_.jpg
 </blockquote>
 
 
-押井守監督が[Fラン大学就職チャンネル](https://www.youtube.com/channel/UCqRV_ZIQhVKfxG1_WkNiRbg)が好きなエピソード何回聞いても良い。<br/>
+押井守監督が[Fラン大学就職チャンネル](https://www.youtube.com/channel/UCqRV_ZIQhVKfxG1_WkNiRbg)を好きなエピソード何回聞いても良い。<br/>
 <blockquote>
 いまは人が分断されて生きている時代じゃない？若者の多くは、遊び仲間はいるけど悩みや人生をソンダンする人はいないんです。そういう友人がいないのもかかわらず、ちょっとした問題に突き当たった場合、ちゃんと調べもしないからね。ネットをいつも見ているくせに、そういうところを調べようとはしないんだよ。<br/>
 なぜかといえば、自分の人生に当事者意識がないから。関係ないと思っているから、めんどくさいから、どうせダメだと諦めているから。それこそYou Tubeを眺めていたほうがいいから。<br/>
