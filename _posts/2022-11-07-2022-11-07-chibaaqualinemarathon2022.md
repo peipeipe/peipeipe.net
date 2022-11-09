@@ -1,9 +1,9 @@
 ---
 layout: post
 title:  "ちばアクアラインマラソン 2022を走った：4時間21分36"
-date:   2022-03-09 20:27:00 +0900
+date:   2022-11-09 22:02:00 +0900
 categories: Book
-image: https://i.gyazo.com/cb20ce7a26d720690a6603dfff702b55.jpg
+image: https://i.imgur.com/ZpPuiZ5.jpg
 ---
 普段高速でヒト状態では入れないアクアラインを走れて非常に楽しかった。走ってインターチェンジを通るのも新鮮。
 
