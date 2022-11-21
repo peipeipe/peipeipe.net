@@ -2,7 +2,7 @@
 layout: post
 title:  "今月読んだ本"
 date:   2022-10-31 22:16:00 +0900
-permalink:   /:year/:month/:day/:title.html
+permalink:   /:year/:month/:day/:title/
 categories: Book
 image: https://m.media-amazon.com/images/I/41TlfwOjhvL._SY346_.jpg
 ---
