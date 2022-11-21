@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "ちばアクアラインマラソン 2022を走った：4時間21分36"
-date:   2022-11-09 22:02:00 +0900
+date:   2022-11-07 22:02:00 +0900
 permalink:   /:year/:month/:day/:title/
 categories: Running
 image: https://i.imgur.com/ZpPuiZ5.jpg
