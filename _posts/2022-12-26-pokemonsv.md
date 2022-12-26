@@ -5,13 +5,14 @@ date:   2022-12-26 22:41:00 +0900
 categories: ゲーム
 image: https://i.imgur.com/3M1Wqf0.jpeg
 ---
-[『ポケットモンスターバイオレット』]https://www.pokemon.co.jp/ex/sv/ja/)をプレイした。ポケモン図鑑も　400匹埋めて完成させた。
+[『ポケットモンスターバイオレット』](https://www.pokemon.co.jp/ex/sv/ja/)をプレイした。ポケモン図鑑も　400匹埋めて完成させた。
 
 
 ポケモン図鑑を揃えた初のポケモンとなった。難しいがランクバトルにも挑戦している。(ハイボ級にあがれない)
 
 
-ストーリーの感想は今年良かったコンテンツランキング第三位としてPodcastで話した。[55. 買ってよかったものランキング2022 | WWWでつかまえて](https://www-de-tsukamaete.github.io/episode/55)
+ストーリーの感想は今年良かったコンテンツランキング第三位としてPodcastで話した。<br>
+[55. 買ってよかったものランキング2022  WWWでつかまえて](https://www-de-tsukamaete.github.io/episode/55)
 
 
 ![](https://i.imgur.com/Se2ec2I.jpeg)
