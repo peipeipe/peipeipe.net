@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "二酸化炭素濃度計(ZGm27)を一週間使ってわかったこと"
-date:   2023-01-31 21:30:00 +0900
+date:   2023-02-09 22:01:00 +0900
 permalink:   /:year-:month-:day-:title/
 categories: gadget
 image: https://pbs.twimg.com/media/FoXbferacAAut_3?format=jpg&name=large
