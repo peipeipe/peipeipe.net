@@ -18,6 +18,9 @@ image: https://pbs.twimg.com/media/FoXbferacAAut_3?format=jpg&name=large
 
 実際、[MH-Z19](https://amzn.to/3jNBGVa)というセンサーを買い、M5Stackで計測してみたがまともな数値はでなかったので安物買いの銭失いになってしまった。今回、1万円以上というお金をはたいて正確な値が図れるようになったのでわかったことを書く。
 
+
+![](https://i.imgur.com/wqISq5Q.jpg)
+
 - 6.5畳の部屋だと締め切った状態で生活すると20分くらいで1400ppmを超える(1000ppmを超えると換気推奨らしい)
 - そのまま一時間くらい換気せずに作業すると2000ppmを超える
 - 2000ppmを超えても数字を見なければ特に息苦しいなどは感じない。感覚で換気したほうが良いなと感じるのは3000ppmあたりのように思う。
@@ -58,9 +61,6 @@ image: https://pbs.twimg.com/media/FoXbferacAAut_3?format=jpg&name=large
 
 
 <blockquote class="twitter-tweet"><p lang="ja" dir="ltr">買った！（すでに値が高い） <a href="https://t.co/zsLhnku6dH">pic.twitter.com/zsLhnku6dH</a></p>&mdash; ぺいぺいぺ (@peipeipe) <a href="https://twitter.com/peipeipe/status/1620709204020588544?ref_src=twsrc%5Etfw">February 1, 2023</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
-
-
-<blockquote class="twitter-tweet"><p lang="ja" dir="ltr">二酸化炭素濃度よりも部屋が温かいほうが重要だわ。 <a href="https://t.co/NYlirZtd8q">pic.twitter.com/NYlirZtd8q</a></p>&mdash; ぺいぺいぺ (@peipeipe) <a href="https://twitter.com/peipeipe/status/1622944581208899584?ref_src=twsrc%5Etfw">February 7, 2023</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 
 
 このブログは二酸化炭素濃度を1200ppmから1722ppmに上げることで書くことができた。
