@@ -94,4 +94,4 @@ twitter:
   card: summary_large_image
 
 seo_paginator_message: "%<current>s / %<total>s | "
-
+include: [".well-known"]
