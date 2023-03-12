@@ -18,7 +18,9 @@ image: https://i.imgur.com/ZpPuiZ5.jpg
 
 
 Garminでの記録
+<div class="iframe-wrap">
 <iframe src='https://connect.garmin.com/modern/activity/embed/9925316612' title='ちばアクアラインマラソン 2022' width='465' height='500' frameborder='0'></iframe>
+</div>
 
 
 ## 服装
