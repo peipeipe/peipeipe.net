@@ -19,7 +19,7 @@ image: https://i.imgur.com/lvrWno6.jpg
 Garminでの記録  
 
 <div class="iframe-wrap">
-<iframe src='https://connect.garmin.com/modern/activity/embed/10585195632' title='大阪マラソン 2023' width='465' height='500' frameborder='0'></iframe></div>
+<iframe src='https://connect.garmin.com/modern/activity/embed/10585195632' title='大阪マラソン 2023' frameborder='0'></iframe></div>
 
 ## 服装
 
