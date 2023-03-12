@@ -4,7 +4,7 @@ title:  "大阪マラソン2023を走った：03:53:49"
 date:   2023-03-12 18:17:00 +0900
 permalink:   /:year-:month-:day-:title/
 categories: running
-image: 
+image: https://i.imgur.com/lvrWno6.jpg
 ---
 初めての首都圏外の大会だったが思い通りに走れてとても楽しかった。  
 
