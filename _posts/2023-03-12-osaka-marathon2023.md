@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "大阪マラソン2023を走った：03:53:49"
+title:  "大阪マラソン2023を走った 03:53:49"
 date:   2023-03-12 18:17:00 +0900
 permalink:   /:year-:month-:day-:title/
 categories: running
@@ -57,6 +57,11 @@ Garminでの記録
 2日目がマラソン当日、走って温泉に入り昼寝して飯を食べた。  
 3日目を観光にあて20時まで大阪で過ごしたが、前日の足の疲れもあるしこんなに要らなかったかも。  
 次はもうちょっと早く帰る。
+
+## 過去のマラソンログ
+
+- [ちばアクアラインマラソン 2022を走った：4時間21分36](https://www.peipeipe.net/2022-11-07-chibaaqualinemarathon2022/)
+- [東京マラソン2021を走った：4時間6分04](https://www.peipeipe.net/2022-03-09-tokyomarathon2021/)
 
 ## 写真
 
