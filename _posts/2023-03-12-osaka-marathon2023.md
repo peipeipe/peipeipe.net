@@ -10,6 +10,7 @@ image: https://i.imgur.com/lvrWno6.jpg
 
 タイムはサブ4を目標にしていたので満足している。フルマラソン6回目だが今までで一番楽に走れた。  
 後半ペース上げを取り入れたいと思い35kmまでは調子が良くてもキロ5分20秒は超えないように走り、35km地点からキロ5分10秒以上のペースを維持できた。  
+
 楽に走れた要因としては11月から続けた月走行距離200kmがかなり大きいと思う。自分の中でサブ3.5以上は無理かもしれないという感覚があったがそれを覆すことができた大会になったので、今後も頑張りたいと思う。  
 
 ## 結果
@@ -23,6 +24,9 @@ Garminでの記録
 
 スタート時の気温5.4度と結構寒め。ポンチョを着ていても腕部分が寒かった。次はカッパを用意しようと思った。  
 スタートしてからはランパン＆半袖＆薄めアームカバーで貼るカイロを途中で捨てながら走った。アームカバーをつけた状態がちょうどよかったと思う。  
+
+靴は前から大会に使おうと思っていたonのCloudmonster。使用距離300kmあたり。
+<p><a href="https://www.amazon.co.jp/dp/B098NY17D6?&linkCode=li2&tag=peipeipe-22&linkId=e9cc5cc4b03ad4221636fa59a26824f0&language=ja_JP&ref_=as_li_ss_il" target="_blank" rel="nofollow"><img border="0" src="//ws-fe.amazon-adsystem.com/widgets/q?_encoding=UTF8&ASIN=B098NY17D6&Format= _SL250_&ID=AsinImage&MarketPlace=JP&ServiceVersion=20070822&WS=1&tag=peipeipe-22&language=ja_JP" ></a><img src="https://ir-jp.amazon-adsystem.com/e/ir?t=peipeipe-22&language=ja_JP&l=li2&o=9&a=B098NY17D6" width="1" height="1" border="0" alt="" style="border:none !important; margin:0px !important;" /></p> <p><a href="https://www.amazon.co.jp/dp/B098NY17D6?&linkCode=li2&tag=peipeipe-22&linkId=e9cc5cc4b03ad4221636fa59a26824f0&language=ja_JP&ref_=as_li_ss_il" target="_blank" rel="nofollow">[オン] ランニングシューズ Cloudmonster メンズ</a></p>
 
 ## 補給
 
