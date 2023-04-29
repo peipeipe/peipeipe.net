@@ -3,7 +3,7 @@ layout: post
 title:  "DEATH STRANDING DIRECTOR'S CUTをプレイした"
 date:   2022-02-23 20:30:00 +0900
 permalink:   /:year-:month-:day-:title/
-categories: Book
+categories: ゲーム
 image: https://i.imgur.com/NUkwV3g.jpg
 ---
 ディレクターズカットの前にもやったが改めてPS5でプレイし直した。  
