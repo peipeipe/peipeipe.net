@@ -1,10 +1,10 @@
 ---
 layout: post
-title:  "ホグワーツ・レガシー"
+title:  "ホグワーツ・レガシーをプレイした"
 date:   2023-04-29 14:57:00 +0900
 permalink:   /:year-:month-:day-:title/
 categories: ゲーム
-image: https://i.imgur.com/eFsJEUp.jpg
+image: https://i.imgur.com/i901Lfa.jpeg
 ---
 ホグワーツ・レガシーをプレイした。レビューで言われている通り最初と最後が楽しいゲームではある。  
 
