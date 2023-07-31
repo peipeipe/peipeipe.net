@@ -1,10 +1,10 @@
 ---
 layout: post
 title:  "今月読んだ本"
-date:   2023-06-30 23:02:00 +0900
+date:   2023-07-31 22:18:00 +0900
 permalink:   /:year-:month-:day-:title/
 categories: Book
-image: https://m.media-amazon.com/images/I/41H0US8XBGL._SY346_.jpg
+image: https://m.media-amazon.com/images/I/51ZmOGPee5L._SY346_.jpg
 ---
 今月(2023-07)読んだ本は9冊。  
 
