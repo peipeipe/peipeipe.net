@@ -25,8 +25,11 @@ Garminでの記録
 靴はまた悩んだ。  
 2週間前に赤羽ハーフに出たときはヴェイパーフライ3を使って1:32:43という結果だった。感触は良かったもののここまで走れると思っていなかったのでそこまで助力も不要かもという思い(あともったいない精神)がでて、使わなかった。  
 マジックスピード2も選択肢にあったがロングでは全く使ったことがなかったので不安でやめた。他のシューズに比べ若干着地ダメージ残るというのもある。(個人的にはズームフライ4、ヴェイパーより残る)  
+
 結果的にonのCloudsurferで走る。最終盤助力が欲しくはなったが無事にサブ3.5できたのでヨシ。これでこれからは自信を持ってカーボン入りスーパーシューズを使える。マジックスピード2もロングに使っていき慣れさせていきたい。  
   
+<p><a href="https://www.amazon.co.jp/%E3%82%AA%E3%83%B3-%E3%83%A9%E3%83%B3%E3%83%8B%E3%83%B3%E3%82%B0%E3%82%B7%E3%83%A5%E3%83%BC%E3%82%BA-Cloudsurfer-Black-26-0/dp/B0BXLBBMN4?crid=1IQ48448W3JHX&keywords=on%2Bcloud%2Bsurfer&qid=1698753691&sprefix=on%2Bcloud%2Bsu%2Caps%2C174&sr=8-5&th=1&linkCode=li2&tag=peipeipe-22&linkId=53f0492f5bc012a0f1d194aae38e576e&language=ja_JP&ref_=as_li_ss_il" target="_blank" rel="nofollow"><img border="0" src="//ws-fe.amazon-adsystem.com/widgets/q?_encoding=UTF8&ASIN=B0BXLBBMN4&Format= _SL250_&ID=AsinImage&MarketPlace=JP&ServiceVersion=20070822&WS=1&tag=peipeipe-22&language=ja_JP" ></a><img src="https://ir-jp.amazon-adsystem.com/e/ir?t=peipeipe-22&language=ja_JP&l=li2&o=9&a=B0BXLBBMN4" width="1" height="1" border="0" alt="" style="border:none !important; margin:0px !important;" /></p> <p><a href="https://www.amazon.co.jp/%E3%82%AA%E3%83%B3-%E3%83%A9%E3%83%B3%E3%83%8B%E3%83%B3%E3%82%B0%E3%82%B7%E3%83%A5%E3%83%BC%E3%82%BA-Cloudsurfer-Black-26-0/dp/B0BXLBBMN4?crid=1IQ48448W3JHX&keywords=on%2Bcloud%2Bsurfer&qid=1698753691&sprefix=on%2Bcloud%2Bsu%2Caps%2C174&sr=8-5&th=1&linkCode=li2&tag=peipeipe-22&linkId=53f0492f5bc012a0f1d194aae38e576e&language=ja_JP&ref_=as_li_ss_il" target="_blank" rel="nofollow">[オン] ランニングシューズ Cloudsurfer メンズ</a></p>
+
 ナイキのズームフライ以上ヴェイパーフライ以下のレース向けシューズがほしいのだが出ない。ヴェイパーフライ3が2と比べ若干エントリー向けになったらしいのでヴェイパーを使えというマーケティングなのだろうか……。
 
 
