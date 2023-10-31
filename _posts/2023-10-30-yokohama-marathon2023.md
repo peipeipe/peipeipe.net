@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "横浜マラソン2023を走った 3:24:00"
-date:   2023-08-31 21:35:00 +0900
+date:   2023-10-30 21:35:00 +0900
 permalink:   /:year-:month-:day-:title/
 categories: running
 image: https://thespace.jp/cms_20180707/wp-content/uploads/2022/05/yokohamamarathon.png
