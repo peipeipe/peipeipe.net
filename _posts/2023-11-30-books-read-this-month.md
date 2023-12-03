@@ -4,7 +4,7 @@ title:  "今月読んだ本"
 date:   2023-11-30 21:00:00 +0900
 permalink:   /:year-:month-:day-:title/
 categories: Book
-image: https://m.media-amazon.com/images/I/71hdS7Pj7XL._SL1500_.jpg
+image: https://m.media-amazon.com/images/I/71bn6jp75AL._SL1500_.jpg
 ---
 今月(2023-11)読んだ本は4冊。  
 
