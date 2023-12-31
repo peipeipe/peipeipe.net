@@ -6,7 +6,7 @@ permalink:   /:year-:month-:day-:title/
 categories: Book
 image: https://m.media-amazon.com/images/I/71WXSEGSFTL._SL1500_.jpg
 ---
-今月(2023-11)読んだ本は3冊。  
+今月(2023-12)読んだ本は3冊。  
 
 <p><a href="https://www.amazon.co.jp/dp/4583115334?th=1&psc=1&linkCode=li2&tag=peipeipe-22&linkId=948e3c0d8a1f9a6bed24a843e4613a40&language=ja_JP&ref_=as_li_ss_il" target="_blank" rel="nofollow"><img border="0" src="//ws-fe.amazon-adsystem.com/widgets/q?_encoding=UTF8&ASIN=4583115334&Format= _SL250_&ID=AsinImage&MarketPlace=JP&ServiceVersion=20070822&WS=1&tag=peipeipe-22&language=ja_JP" ></a><img src="https://ir-jp.amazon-adsystem.com/e/ir?t=peipeipe-22&language=ja_JP&l=li2&o=9&a=4583115334" width="1" height="1" border="0" alt="" style="border:none !important; margin:0px !important;" /></p> <p><a href="https://www.amazon.co.jp/dp/4583115334?th=1&psc=1&linkCode=li2&tag=peipeipe-22&linkId=948e3c0d8a1f9a6bed24a843e4613a40&language=ja_JP&ref_=as_li_ss_il" target="_blank" rel="nofollow">野口みずきの練習日誌: 金メダリストのマラソントレーニング 単行本 – 2022/9/22</a></p>
 
