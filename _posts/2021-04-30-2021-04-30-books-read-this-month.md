@@ -8,7 +8,7 @@ image:
 今月(2021-04)読んだ本は6冊でした。<br>
 
 
-<p><a href="https://www.amazon.co.jp/dp/B08MQ1TN8D?&linkCode=li2&tag=peipeipe-22&linkId=520e8c1295fcf15ca730265b33f59db4&language=ja_JP&ref_=as_li_ss_il" target="_blank" rel="nofollow"><img border="0" src="//ws-fe.amazon-adsystem.com/widgets/q?_encoding=UTF8&ASIN=B08MQ1TN8D&Format= _SL250_&ID=AsinImage&MarketPlace=JP&ServiceVersion=20070822&WS=1&tag=peipeipe-22&language=ja_JP" ></a><img src="https://ir-jp.amazon-adsystem.com/e/ir?t=peipeipe-22&language=ja_JP&l=li2&o=9&a=B08MQ1TN8D" width="1" height="1" border="0" alt="" style="border:none !important; margin:0px !important;" /></p> <p><a href="https://www.amazon.co.jp/dp/B08MQ1TN8D?&linkCode=li2&tag=peipeipe-22&linkId=520e8c1295fcf15ca730265b33f59db4&language=ja_JP&ref_=as_li_ss_il" target="_blank" rel="nofollow">ノマド　漂流する高齢労働者たち Kindle版</a></p>
+<p><a href="https://www.amazon.co.jp/dp/B08MQ1TN8D?&linkCode=li2&tag=peipeipe-22&linkId=520e8c1295fcf15ca730265b33f59db4&language=ja_JP&ref_=as_li_ss_il" target="_blank" rel="nofollow"><img border="0" src="https://m.media-amazon.com/images/I/519U0Qgc2rL._SL160_.jpg" ></a><img src="https://ir-jp.amazon-adsystem.com/e/ir?t=peipeipe-22&language=ja_JP&l=li2&o=9&a=B08MQ1TN8D" width="1" height="1" border="0" alt="" style="border:none !important; margin:0px !important;" /></p> <p><a href="https://www.amazon.co.jp/dp/B08MQ1TN8D?&linkCode=li2&tag=peipeipe-22&linkId=520e8c1295fcf15ca730265b33f59db4&language=ja_JP&ref_=as_li_ss_il" target="_blank" rel="nofollow">ノマド　漂流する高齢労働者たち Kindle版</a></p>
 <br/>
 <blockquote>
 人間であるということは、たんなる生存を超えた何かを追い求めるということだ。食べるものや住む家と同じくらい、私たちには希望が必要なのだ。
@@ -22,7 +22,7 @@ image:
 
 <br/>
 <br/>
-<p><a href="https://www.amazon.co.jp/dp/B08BQZNXTK?&linkCode=li2&tag=peipeipe-22&linkId=fb12b6199e5f353da32d16e1f81cd518&language=ja_JP&ref_=as_li_ss_il" target="_blank" rel="nofollow"><img border="0" src="//ws-fe.amazon-adsystem.com/widgets/q?_encoding=UTF8&ASIN=B08BQZNXTK&Format= _SL250_&ID=AsinImage&MarketPlace=JP&ServiceVersion=20070822&WS=1&tag=peipeipe-22&language=ja_JP" ></a><img src="https://ir-jp.amazon-adsystem.com/e/ir?t=peipeipe-22&language=ja_JP&l=li2&o=9&a=B08BQZNXTK" width="1" height="1" border="0" alt="" style="border:none !important; margin:0px !important;" /></p> <p><a href="https://www.amazon.co.jp/dp/B08BQZNXTK?&linkCode=li2&tag=peipeipe-22&linkId=fb12b6199e5f353da32d16e1f81cd518&language=ja_JP&ref_=as_li_ss_il" target="_blank" rel="nofollow">あのこは貴族 (集英社文庫) Kindle版</a></p>
+<p><a href="https://www.amazon.co.jp/dp/B08BQZNXTK?&linkCode=li2&tag=peipeipe-22&linkId=fb12b6199e5f353da32d16e1f81cd518&language=ja_JP&ref_=as_li_ss_il" target="_blank" rel="nofollow"><img border="0" src="https://m.media-amazon.com/images/I/41c3RXKMO9L._SL160_.jpg" ></a><img src="https://ir-jp.amazon-adsystem.com/e/ir?t=peipeipe-22&language=ja_JP&l=li2&o=9&a=B08BQZNXTK" width="1" height="1" border="0" alt="" style="border:none !important; margin:0px !important;" /></p> <p><a href="https://www.amazon.co.jp/dp/B08BQZNXTK?&linkCode=li2&tag=peipeipe-22&linkId=fb12b6199e5f353da32d16e1f81cd518&language=ja_JP&ref_=as_li_ss_il" target="_blank" rel="nofollow">あのこは貴族 (集英社文庫) Kindle版</a></p>
 <br/>
 映画をやっているので読んだ。本が良いので映画も見に行った。どちらも良い。映画で付け足されたパートもよかった。
 <br/>

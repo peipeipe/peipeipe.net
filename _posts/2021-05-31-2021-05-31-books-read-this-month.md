@@ -37,7 +37,7 @@ image:
 
 <br/>
 <br/>
-<p><a href="https://www.amazon.co.jp/dp/4150314810?&linkCode=li2&tag=peipeipe-22&linkId=dc2f4ba2a66bb7f774dcd6a09b136f1a&language=ja_JP&ref_=as_li_ss_il" target="_blank" rel="nofollow"><img border="0" src="//ws-fe.amazon-adsystem.com/widgets/q?_encoding=UTF8&ASIN=4150314810&Format= _SL250_&ID=AsinImage&MarketPlace=JP&ServiceVersion=20070822&WS=1&tag=peipeipe-22&language=ja_JP" ></a><img src="https://ir-jp.amazon-adsystem.com/e/ir?t=peipeipe-22&language=ja_JP&l=li2&o=9&a=4150314810" width="1" height="1" border="0" alt="" style="border:none !important; margin:0px !important;" /></p> <p><a href="https://www.amazon.co.jp/dp/4150314810?&linkCode=li2&tag=peipeipe-22&linkId=dc2f4ba2a66bb7f774dcd6a09b136f1a&language=ja_JP&ref_=as_li_ss_il" target="_blank" rel="nofollow">ポストコロナのSF (ハヤカワ文庫 JA ニ 3-6) 文庫 – 2021/4/14</a></p>
+<p><a href="https://www.amazon.co.jp/dp/4150314810?&linkCode=li2&tag=peipeipe-22&linkId=dc2f4ba2a66bb7f774dcd6a09b136f1a&language=ja_JP&ref_=as_li_ss_il" target="_blank" rel="nofollow"><img border="0" src="https://m.media-amazon.com/images/I/41qyrFbo5yL._SL160_.jpg" ></a><img src="https://ir-jp.amazon-adsystem.com/e/ir?t=peipeipe-22&language=ja_JP&l=li2&o=9&a=4150314810" width="1" height="1" border="0" alt="" style="border:none !important; margin:0px !important;" /></p> <p><a href="https://www.amazon.co.jp/dp/4150314810?&linkCode=li2&tag=peipeipe-22&linkId=dc2f4ba2a66bb7f774dcd6a09b136f1a&language=ja_JP&ref_=as_li_ss_il" target="_blank" rel="nofollow">ポストコロナのSF (ハヤカワ文庫 JA ニ 3-6) 文庫 – 2021/4/14</a></p>
 <br/>
 『熱夏にもわたしたちは』　若木未来<br/>
 がおもしろかった

@@ -36,7 +36,7 @@ Garminでの記録
 を食べた。エネルギージェルは初めてカフェイン入りのものを飲んだが、うーん。効果はそこまで感じなかった。(帰り道の運転で集中できた)
 
 
-<p><a href="https://www.amazon.co.jp/dp/B095W73D8R?&linkCode=li2&tag=peipeipe-22&linkId=6faf8fd33199d0d9cc2cfb41d9e2d2ff&language=ja_JP&ref_=as_li_ss_il" target="_blank" rel="nofollow"><img border="0" src="//ws-fe.amazon-adsystem.com/widgets/q?_encoding=UTF8&ASIN=B095W73D8R&Format= _SL250_&ID=AsinImage&MarketPlace=JP&ServiceVersion=20070822&WS=1&tag=peipeipe-22&language=ja_JP" ></a><img src="https://ir-jp.amazon-adsystem.com/e/ir?t=peipeipe-22&language=ja_JP&l=li2&o=9&a=B095W73D8R" width="1" height="1" border="0" alt="" style="border:none !important; margin:0px !important;" /></p> <p><a href="https://www.amazon.co.jp/dp/B095W73D8R?&linkCode=li2&tag=peipeipe-22&linkId=6faf8fd33199d0d9cc2cfb41d9e2d2ff&language=ja_JP&ref_=as_li_ss_il" target="_blank" rel="nofollow">AMINO SAURUS GEL(アミノサウルス ジェル) アルギニン2000mg シトルリン1000mg クエン酸2000mg マグネシウム50mg カフェイン75mg レモン味 マンゴー味 2種各2合計4個入り 国産</a></p>
+<p><a href="https://www.amazon.co.jp/dp/B095W73D8R?&linkCode=li2&tag=peipeipe-22&linkId=6faf8fd33199d0d9cc2cfb41d9e2d2ff&language=ja_JP&ref_=as_li_ss_il" target="_blank" rel="nofollow"><img border="0" src="https://m.media-amazon.com/images/I/41BGjWhbpTL._SL160_.jpg" ></a><img src="https://ir-jp.amazon-adsystem.com/e/ir?t=peipeipe-22&language=ja_JP&l=li2&o=9&a=B095W73D8R" width="1" height="1" border="0" alt="" style="border:none !important; margin:0px !important;" /></p> <p><a href="https://www.amazon.co.jp/dp/B095W73D8R?&linkCode=li2&tag=peipeipe-22&linkId=6faf8fd33199d0d9cc2cfb41d9e2d2ff&language=ja_JP&ref_=as_li_ss_il" target="_blank" rel="nofollow">AMINO SAURUS GEL(アミノサウルス ジェル) アルギニン2000mg シトルリン1000mg クエン酸2000mg マグネシウム50mg カフェイン75mg レモン味 マンゴー味 2種各2合計4個入り 国産</a></p>
 
 
 ## 大会のようす

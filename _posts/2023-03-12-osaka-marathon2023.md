@@ -27,7 +27,7 @@ Garminでの記録
 スタートしてからはランパン＆半袖＆薄めアームカバーで貼るカイロを途中で捨てながら走った。アームカバーをつけた状態がちょうどよかったと思う。  
 
 靴は前から大会に使おうと思っていたonのCloudmonster。使用距離300kmあたり。
-<p><a href="https://www.amazon.co.jp/dp/B098NY17D6?&linkCode=li2&tag=peipeipe-22&linkId=e9cc5cc4b03ad4221636fa59a26824f0&language=ja_JP&ref_=as_li_ss_il" target="_blank" rel="nofollow"><img border="0" src="//ws-fe.amazon-adsystem.com/widgets/q?_encoding=UTF8&ASIN=B098NY17D6&Format= _SL250_&ID=AsinImage&MarketPlace=JP&ServiceVersion=20070822&WS=1&tag=peipeipe-22&language=ja_JP" ></a><img src="https://ir-jp.amazon-adsystem.com/e/ir?t=peipeipe-22&language=ja_JP&l=li2&o=9&a=B098NY17D6" width="1" height="1" border="0" alt="" style="border:none !important; margin:0px !important;" /></p> <p><a href="https://www.amazon.co.jp/dp/B098NY17D6?&linkCode=li2&tag=peipeipe-22&linkId=e9cc5cc4b03ad4221636fa59a26824f0&language=ja_JP&ref_=as_li_ss_il" target="_blank" rel="nofollow">[オン] ランニングシューズ Cloudmonster メンズ</a></p>
+<p><a href="https://www.amazon.co.jp/dp/B098NY17D6?&linkCode=li2&tag=peipeipe-22&linkId=e9cc5cc4b03ad4221636fa59a26824f0&language=ja_JP&ref_=as_li_ss_il" target="_blank" rel="nofollow"><img border="0" src="https://m.media-amazon.com/images/I/414g4oZvAQL._SL160_.jpg" ></a><img src="https://ir-jp.amazon-adsystem.com/e/ir?t=peipeipe-22&language=ja_JP&l=li2&o=9&a=B098NY17D6" width="1" height="1" border="0" alt="" style="border:none !important; margin:0px !important;" /></p> <p><a href="https://www.amazon.co.jp/dp/B098NY17D6?&linkCode=li2&tag=peipeipe-22&linkId=e9cc5cc4b03ad4221636fa59a26824f0&language=ja_JP&ref_=as_li_ss_il" target="_blank" rel="nofollow">[オン] ランニングシューズ Cloudmonster メンズ</a></p>
 
 ## 補給
 
@@ -36,7 +36,7 @@ Garminでの記録
 
 を食べた。今回もちばアクアラインマラソンに引き続き後半にカフェイン入りのものを接種した。ちばアクアラインマラソンと違い今回は効果を実感したが1本しか食べていないので効果的と言われている体重1㎏あたり2～5mgの要件は満たしていない(50mgのみ)
 
-<p><a href="https://www.amazon.co.jp/dp/B07HHP736V?th=1&linkCode=li2&tag=peipeipe-22&linkId=65fedf3a6ac8253ab9499d83d4caa552&language=ja_JP&ref_=as_li_ss_il" target="_blank" rel="nofollow"><img border="0" src="//ws-fe.amazon-adsystem.com/widgets/q?_encoding=UTF8&ASIN=B07HHP736V&Format= _SL250_&ID=AsinImage&MarketPlace=JP&ServiceVersion=20070822&WS=1&tag=peipeipe-22&language=ja_JP" ></a><img src="https://ir-jp.amazon-adsystem.com/e/ir?t=peipeipe-22&language=ja_JP&l=li2&o=9&a=B07HHP736V" width="1" height="1" border="0" alt="" style="border:none !important; margin:0px !important;" /></p> <p><a href="https://www.amazon.co.jp/dp/B07HHP736V?th=1&linkCode=li2&tag=peipeipe-22&linkId=65fedf3a6ac8253ab9499d83d4caa552&language=ja_JP&ref_=as_li_ss_il" target="_blank" rel="nofollow">日本新薬 WINZONE（ウィンゾーン）エナジージェル 3袋 パイナップル マスカット オレンジ風味 各1袋 ENERGY GEL 国内製造 ヒドロキシクエン酸 マグネシウム エネルギー補給…</a></p>
+<p><a href="https://www.amazon.co.jp/dp/B07HHP736V?th=1&linkCode=li2&tag=peipeipe-22&linkId=65fedf3a6ac8253ab9499d83d4caa552&language=ja_JP&ref_=as_li_ss_il" target="_blank" rel="nofollow"><img border="0" src="https://m.media-amazon.com/images/I/517vFnRhjyL._SL160_.jpg" ></a><img src="https://ir-jp.amazon-adsystem.com/e/ir?t=peipeipe-22&language=ja_JP&l=li2&o=9&a=B07HHP736V" width="1" height="1" border="0" alt="" style="border:none !important; margin:0px !important;" /></p> <p><a href="https://www.amazon.co.jp/dp/B07HHP736V?th=1&linkCode=li2&tag=peipeipe-22&linkId=65fedf3a6ac8253ab9499d83d4caa552&language=ja_JP&ref_=as_li_ss_il" target="_blank" rel="nofollow">日本新薬 WINZONE（ウィンゾーン）エナジージェル 3袋 パイナップル マスカット オレンジ風味 各1袋 ENERGY GEL 国内製造 ヒドロキシクエン酸 マグネシウム エネルギー補給…</a></p>
 
 ## 大会のようす
 
