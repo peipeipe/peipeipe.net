@@ -9,7 +9,7 @@ image: https://m.media-amazon.com/images/I/41l0NwfJDDL._SY346_.jpg
 
 
 
-<p><a href="https://www.amazon.co.jp/dp/B09Y8GYP6Y?&linkCode=li2&tag=peipeipe-22&linkId=a51688553580ade67b87bf60df8937f0&language=ja_JP&ref_=as_li_ss_il" target="_blank" rel="nofollow"><img border="0" src="//ws-fe.amazon-adsystem.com/widgets/q?_encoding=UTF8&ASIN=B09Y8GYP6Y&Format= _SL250_&ID=AsinImage&MarketPlace=JP&ServiceVersion=20070822&WS=1&tag=peipeipe-22&language=ja_JP" ></a><img src="https://ir-jp.amazon-adsystem.com/e/ir?t=peipeipe-22&language=ja_JP&l=li2&o=9&a=B09Y8GYP6Y" width="1" height="1" border="0" alt="" style="border:none !important; margin:0px !important;" /></p> <p><a href="https://www.amazon.co.jp/dp/B09Y8GYP6Y?&linkCode=li2&tag=peipeipe-22&linkId=a51688553580ade67b87bf60df8937f0&language=ja_JP&ref_=as_li_ss_il" target="_blank" rel="nofollow">絶滅へようこそ Kindle版</a></p>
+<p><a href="https://www.amazon.co.jp/dp/B09Y8GYP6Y?&linkCode=li2&tag=peipeipe-22&linkId=a51688553580ade67b87bf60df8937f0&language=ja_JP&ref_=as_li_ss_il" target="_blank" rel="nofollow"><img border="0" src="https://m.media-amazon.com/images/I/51znGIjbYyL._SL300_.jpg" ></a><img src="https://ir-jp.amazon-adsystem.com/e/ir?t=peipeipe-22&language=ja_JP&l=li2&o=9&a=B09Y8GYP6Y" width="1" height="1" border="0" alt="" style="border:none !important; margin:0px !important;" /></p> <p><a href="https://www.amazon.co.jp/dp/B09Y8GYP6Y?&linkCode=li2&tag=peipeipe-22&linkId=a51688553580ade67b87bf60df8937f0&language=ja_JP&ref_=as_li_ss_il" target="_blank" rel="nofollow">絶滅へようこそ Kindle版</a></p>
 
 
 

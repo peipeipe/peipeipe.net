@@ -10,7 +10,7 @@ image: https://m.media-amazon.com/images/I/51TNNE+ew8L.jpg
 
 第二部のほうが楽しく読めた。
 
-<p><a href="https://www.amazon.co.jp/dp/B0BYDDZ738?&linkCode=li2&tag=peipeipe-22&linkId=274b8a9f4f2980deddcf78f176720382&language=ja_JP&ref_=as_li_ss_il" target="_blank" rel="nofollow"><img border="0" src="//ws-fe.amazon-adsystem.com/widgets/q?_encoding=UTF8&ASIN=B0BYDDZ738&Format= _SL250_&ID=AsinImage&MarketPlace=JP&ServiceVersion=20070822&WS=1&tag=peipeipe-22&language=ja_JP" ></a><img src="https://ir-jp.amazon-adsystem.com/e/ir?t=peipeipe-22&language=ja_JP&l=li2&o=9&a=B0BYDDZ738" width="1" height="1" border="0" alt="" style="border:none !important; margin:0px !important;" /></p> <p><a href="https://www.amazon.co.jp/dp/B0BYDDZ738?&linkCode=li2&tag=peipeipe-22&linkId=274b8a9f4f2980deddcf78f176720382&language=ja_JP&ref_=as_li_ss_il" target="_blank" rel="nofollow">目的への抵抗―シリーズ哲学講話―（新潮新書） Kindle版</a></p>
+<p><a href="https://www.amazon.co.jp/dp/B0BYDDZ738?&linkCode=li2&tag=peipeipe-22&linkId=274b8a9f4f2980deddcf78f176720382&language=ja_JP&ref_=as_li_ss_il" target="_blank" rel="nofollow"><img border="0" src="https://m.media-amazon.com/images/I/51TNNE+ew8L._SL300_.jpg" ></a><img src="https://ir-jp.amazon-adsystem.com/e/ir?t=peipeipe-22&language=ja_JP&l=li2&o=9&a=B0BYDDZ738" width="1" height="1" border="0" alt="" style="border:none !important; margin:0px !important;" /></p> <p><a href="https://www.amazon.co.jp/dp/B0BYDDZ738?&linkCode=li2&tag=peipeipe-22&linkId=274b8a9f4f2980deddcf78f176720382&language=ja_JP&ref_=as_li_ss_il" target="_blank" rel="nofollow">目的への抵抗―シリーズ哲学講話―（新潮新書） Kindle版</a></p>
   
 第一部の質疑応答より
 

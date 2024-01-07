@@ -10,7 +10,7 @@ image: https://m.media-amazon.com/images/I/41TlfwOjhvL._SY346_.jpg
 
 
 
-<p><a href="https://www.amazon.co.jp/dp/4041126797?&linkCode=li2&tag=peipeipe-22&linkId=75e772b71238e3c3ddf21f96f35d1730&language=ja_JP&ref_=as_li_ss_il" target="_blank" rel="nofollow"><img border="0" src="//ws-fe.amazon-adsystem.com/widgets/q?_encoding=UTF8&ASIN=4041126797&Format= _SL250_&ID=AsinImage&MarketPlace=JP&ServiceVersion=20070822&WS=1&tag=peipeipe-22&language=ja_JP" ></a><img src="https://ir-jp.amazon-adsystem.com/e/ir?t=peipeipe-22&language=ja_JP&l=li2&o=9&a=4041126797" width="1" height="1" border="0" alt="" style="border:none !important; margin:0px !important;" /></p> <p><a href="https://www.amazon.co.jp/dp/4041126797?&linkCode=li2&tag=peipeipe-22&linkId=75e772b71238e3c3ddf21f96f35d1730&language=ja_JP&ref_=as_li_ss_il" target="_blank" rel="nofollow">小説 すずめの戸締まり (角川文庫) 文庫 – 2022/8/24</a></p>
+<p><a href="https://www.amazon.co.jp/dp/4041126797?&linkCode=li2&tag=peipeipe-22&linkId=75e772b71238e3c3ddf21f96f35d1730&language=ja_JP&ref_=as_li_ss_il" target="_blank" rel="nofollow"><img border="0" src="https://m.media-amazon.com/images/I/41yILa0D6mL._SL300_.jpg" ></a><img src="https://ir-jp.amazon-adsystem.com/e/ir?t=peipeipe-22&language=ja_JP&l=li2&o=9&a=4041126797" width="1" height="1" border="0" alt="" style="border:none !important; margin:0px !important;" /></p> <p><a href="https://www.amazon.co.jp/dp/4041126797?&linkCode=li2&tag=peipeipe-22&linkId=75e772b71238e3c3ddf21f96f35d1730&language=ja_JP&ref_=as_li_ss_il" target="_blank" rel="nofollow">小説 すずめの戸締まり (角川文庫) 文庫 – 2022/8/24</a></p>
 
 
 
@@ -26,7 +26,7 @@ image: https://m.media-amazon.com/images/I/41TlfwOjhvL._SY346_.jpg
 
 
 
-<p><a href="https://www.amazon.co.jp/dp/406527947X?&linkCode=li2&tag=peipeipe-22&linkId=99ff502a2eb7d7f0c68092b94b6b1e21&language=ja_JP&ref_=as_li_ss_il" target="_blank" rel="nofollow"><img border="0" src="//ws-fe.amazon-adsystem.com/widgets/q?_encoding=UTF8&ASIN=406527947X&Format= _SL250_&ID=AsinImage&MarketPlace=JP&ServiceVersion=20070822&WS=1&tag=peipeipe-22&language=ja_JP" ></a><img src="https://ir-jp.amazon-adsystem.com/e/ir?t=peipeipe-22&language=ja_JP&l=li2&o=9&a=406527947X" width="1" height="1" border="0" alt="" style="border:none !important; margin:0px !important;" /></p> <p><a href="https://www.amazon.co.jp/dp/406527947X?&linkCode=li2&tag=peipeipe-22&linkId=99ff502a2eb7d7f0c68092b94b6b1e21&language=ja_JP&ref_=as_li_ss_il" target="_blank" rel="nofollow">押井守のサブぃカルチャー70年 (Bros.books) 単行本（ソフトカバー） – 2022/5/2</a></p>
+<p><a href="https://www.amazon.co.jp/dp/406527947X?&linkCode=li2&tag=peipeipe-22&linkId=99ff502a2eb7d7f0c68092b94b6b1e21&language=ja_JP&ref_=as_li_ss_il" target="_blank" rel="nofollow"><img border="0" src="https://m.media-amazon.com/images/I/51qMdS1VP2L._SL300_.jpg" ></a><img src="https://ir-jp.amazon-adsystem.com/e/ir?t=peipeipe-22&language=ja_JP&l=li2&o=9&a=406527947X" width="1" height="1" border="0" alt="" style="border:none !important; margin:0px !important;" /></p> <p><a href="https://www.amazon.co.jp/dp/406527947X?&linkCode=li2&tag=peipeipe-22&linkId=99ff502a2eb7d7f0c68092b94b6b1e21&language=ja_JP&ref_=as_li_ss_il" target="_blank" rel="nofollow">押井守のサブぃカルチャー70年 (Bros.books) 単行本（ソフトカバー） – 2022/5/2</a></p>
 
 
 <blockquote>
@@ -49,7 +49,7 @@ image: https://m.media-amazon.com/images/I/41TlfwOjhvL._SY346_.jpg
 
 
 
-<p><a href="https://www.amazon.co.jp/dp/B08L2XMQKX?&linkCode=li2&tag=peipeipe-22&linkId=8d8476b3efc6071860c79a59ce3d41ab&language=ja_JP&ref_=as_li_ss_il" target="_blank" rel="nofollow"><img border="0" src="//ws-fe.amazon-adsystem.com/widgets/q?_encoding=UTF8&ASIN=B08L2XMQKX&Format= _SL250_&ID=AsinImage&MarketPlace=JP&ServiceVersion=20070822&WS=1&tag=peipeipe-22&language=ja_JP" ></a><img src="https://ir-jp.amazon-adsystem.com/e/ir?t=peipeipe-22&language=ja_JP&l=li2&o=9&a=B08L2XMQKX" width="1" height="1" border="0" alt="" style="border:none !important; margin:0px !important;" /></p> <p><a href="https://www.amazon.co.jp/dp/B08L2XMQKX?&linkCode=li2&tag=peipeipe-22&linkId=8d8476b3efc6071860c79a59ce3d41ab&language=ja_JP&ref_=as_li_ss_il" target="_blank" rel="nofollow">人新世の「資本論」 (集英社新書) Kindle版</a></p>
+<p><a href="https://www.amazon.co.jp/dp/B08L2XMQKX?&linkCode=li2&tag=peipeipe-22&linkId=8d8476b3efc6071860c79a59ce3d41ab&language=ja_JP&ref_=as_li_ss_il" target="_blank" rel="nofollow"><img border="0" src="https://m.media-amazon.com/images/I/511g5z1ZhrL._SL300_.jpg" ></a><img src="https://ir-jp.amazon-adsystem.com/e/ir?t=peipeipe-22&language=ja_JP&l=li2&o=9&a=B08L2XMQKX" width="1" height="1" border="0" alt="" style="border:none !important; margin:0px !important;" /></p> <p><a href="https://www.amazon.co.jp/dp/B08L2XMQKX?&linkCode=li2&tag=peipeipe-22&linkId=8d8476b3efc6071860c79a59ce3d41ab&language=ja_JP&ref_=as_li_ss_il" target="_blank" rel="nofollow">人新世の「資本論」 (集英社新書) Kindle版</a></p>
 
 はじめにの【SDGsは「大衆のアヘン」である】がとてもよかった
 <blockquote>

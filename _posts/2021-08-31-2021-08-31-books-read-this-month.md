@@ -8,7 +8,7 @@ image:
 今月(2021-08)読んだ本は5冊。<br>
 
 
-<p><a href="https://www.amazon.co.jp/dp/4142231219?&linkCode=li2&tag=peipeipe-22&linkId=d7aa2fc129ee81cd8e3ee72a2d27f4ed&language=ja_JP&ref_=as_li_ss_il" target="_blank" rel="nofollow"><img border="0" src="//ws-fe.amazon-adsystem.com/widgets/q?_encoding=UTF8&ASIN=4142231219&Format= _SL250_&ID=AsinImage&MarketPlace=JP&ServiceVersion=20070822&WS=1&tag=peipeipe-22&language=ja_JP" ></a><img src="https://ir-jp.amazon-adsystem.com/e/ir?t=peipeipe-22&language=ja_JP&l=li2&o=9&a=4142231219" width="1" height="1" border="0" alt="" style="border:none !important; margin:0px !important;" /></p> <p><a href="https://www.amazon.co.jp/dp/4142231219?&linkCode=li2&tag=peipeipe-22&linkId=d7aa2fc129ee81cd8e3ee72a2d27f4ed&language=ja_JP&ref_=as_li_ss_il" target="_blank" rel="nofollow">NHK 100分 de 名著 カール・マルクス『資本論』 2021年1月 (NHK100分de名著) ムック – 2020/12/25</a></p>
+<p><a href="https://www.amazon.co.jp/dp/4142231219?&linkCode=li2&tag=peipeipe-22&linkId=d7aa2fc129ee81cd8e3ee72a2d27f4ed&language=ja_JP&ref_=as_li_ss_il" target="_blank" rel="nofollow"><img border="0" src="https://m.media-amazon.com/images/I/51NKmX2oMAL._SL300_.jpg" ></a><img src="https://ir-jp.amazon-adsystem.com/e/ir?t=peipeipe-22&language=ja_JP&l=li2&o=9&a=4142231219" width="1" height="1" border="0" alt="" style="border:none !important; margin:0px !important;" /></p> <p><a href="https://www.amazon.co.jp/dp/4142231219?&linkCode=li2&tag=peipeipe-22&linkId=d7aa2fc129ee81cd8e3ee72a2d27f4ed&language=ja_JP&ref_=as_li_ss_il" target="_blank" rel="nofollow">NHK 100分 de 名著 カール・マルクス『資本論』 2021年1月 (NHK100分de名著) ムック – 2020/12/25</a></p>
 <br/>
 <blockquote>
 どのように働くかを決めるのも、その労働が生み出す価値を手にするのも資本家。労働の現場には、自由で平等な関係は存在しないのです。<br/>

@@ -10,7 +10,7 @@ image: https://m.media-amazon.com/images/P/B09R7FWYL5.01._SCLZZZZZZZ_SX500_.jpg
 
 
 
-<p><a href="https://www.amazon.co.jp/dp/B09R7FWYL5?&linkCode=li2&tag=peipeipe-22&linkId=90d88931fe3dbaa68b11065ec804e6b2&language=ja_JP&ref_=as_li_ss_il" target="_blank" rel="nofollow"><img border="0" src="//ws-fe.amazon-adsystem.com/widgets/q?_encoding=UTF8&ASIN=B09R7FWYL5&Format= _SL250_&ID=AsinImage&MarketPlace=JP&ServiceVersion=20070822&WS=1&tag=peipeipe-22&language=ja_JP" ></a><img src="https://ir-jp.amazon-adsystem.com/e/ir?t=peipeipe-22&language=ja_JP&l=li2&o=9&a=B09R7FWYL5" width="1" height="1" border="0" alt="" style="border:none !important; margin:0px !important;" /></p> <p><a href="https://www.amazon.co.jp/dp/B09R7FWYL5?&linkCode=li2&tag=peipeipe-22&linkId=90d88931fe3dbaa68b11065ec804e6b2&language=ja_JP&ref_=as_li_ss_il" target="_blank" rel="nofollow">異常【アノマリー】 Kindle版</a></p>
+<p><a href="https://www.amazon.co.jp/dp/B09R7FWYL5?&linkCode=li2&tag=peipeipe-22&linkId=90d88931fe3dbaa68b11065ec804e6b2&language=ja_JP&ref_=as_li_ss_il" target="_blank" rel="nofollow"><img border="0" src="https://m.media-amazon.com/images/I/41bhIiFLKeL._SL300_.jpg" ></a><img src="https://ir-jp.amazon-adsystem.com/e/ir?t=peipeipe-22&language=ja_JP&l=li2&o=9&a=B09R7FWYL5" width="1" height="1" border="0" alt="" style="border:none !important; margin:0px !important;" /></p> <p><a href="https://www.amazon.co.jp/dp/B09R7FWYL5?&linkCode=li2&tag=peipeipe-22&linkId=90d88931fe3dbaa68b11065ec804e6b2&language=ja_JP&ref_=as_li_ss_il" target="_blank" rel="nofollow">異常【アノマリー】 Kindle版</a></p>
 
 
 
@@ -24,7 +24,7 @@ image: https://m.media-amazon.com/images/P/B09R7FWYL5.01._SCLZZZZZZZ_SX500_.jpg
 「不可能な要求は控えてください」将軍は顔をしかめる。
 </blockquote>
 
-<p><a href="https://www.amazon.co.jp/dp/B0B87HP27M?&linkCode=li2&tag=peipeipe-22&linkId=d1710c3d30d971f91bf4ed4fd8fd3be4&language=ja_JP&ref_=as_li_ss_il" target="_blank" rel="nofollow"><img border="0" src="//ws-fe.amazon-adsystem.com/widgets/q?_encoding=UTF8&ASIN=B0B87HP27M&Format= _SL250_&ID=AsinImage&MarketPlace=JP&ServiceVersion=20070822&WS=1&tag=peipeipe-22&language=ja_JP" ></a><img src="https://ir-jp.amazon-adsystem.com/e/ir?t=peipeipe-22&language=ja_JP&l=li2&o=9&a=B0B87HP27M" width="1" height="1" border="0" alt="" style="border:none !important; margin:0px !important;" /></p> <p><a href="https://www.amazon.co.jp/dp/B0B87HP27M?&linkCode=li2&tag=peipeipe-22&linkId=d1710c3d30d971f91bf4ed4fd8fd3be4&language=ja_JP&ref_=as_li_ss_il" target="_blank" rel="nofollow">そして誰もゆとらなくなった (文春e-book) Kindle版</a></p>
+<p><a href="https://www.amazon.co.jp/dp/B0B87HP27M?&linkCode=li2&tag=peipeipe-22&linkId=d1710c3d30d971f91bf4ed4fd8fd3be4&language=ja_JP&ref_=as_li_ss_il" target="_blank" rel="nofollow"><img border="0" src="https://m.media-amazon.com/images/I/51fqmqUtoEL._SL300_.jpg" ></a><img src="https://ir-jp.amazon-adsystem.com/e/ir?t=peipeipe-22&language=ja_JP&l=li2&o=9&a=B0B87HP27M" width="1" height="1" border="0" alt="" style="border:none !important; margin:0px !important;" /></p> <p><a href="https://www.amazon.co.jp/dp/B0B87HP27M?&linkCode=li2&tag=peipeipe-22&linkId=d1710c3d30d971f91bf4ed4fd8fd3be4&language=ja_JP&ref_=as_li_ss_il" target="_blank" rel="nofollow">そして誰もゆとらなくなった (文春e-book) Kindle版</a></p>
 
 
 朝井リョウエッセイ。やっぱり最強におもしろい！
@@ -41,7 +41,7 @@ image: https://m.media-amazon.com/images/P/B09R7FWYL5.01._SCLZZZZZZZ_SX500_.jpg
 
 
 
-<p><a href="https://www.amazon.co.jp/dp/415210161X?&linkCode=li2&tag=peipeipe-22&linkId=4f1fbd3ec02a1f2ae6a69245e58b092c&language=ja_JP&ref_=as_li_ss_il" target="_blank" rel="nofollow"><img border="0" src="//ws-fe.amazon-adsystem.com/widgets/q?_encoding=UTF8&ASIN=415210161X&Format= _SL250_&ID=AsinImage&MarketPlace=JP&ServiceVersion=20070822&WS=1&tag=peipeipe-22&language=ja_JP" ></a><img src="https://ir-jp.amazon-adsystem.com/e/ir?t=peipeipe-22&language=ja_JP&l=li2&o=9&a=415210161X" width="1" height="1" border="0" alt="" style="border:none !important; margin:0px !important;" /></p> <p><a href="https://www.amazon.co.jp/dp/415210161X?&linkCode=li2&tag=peipeipe-22&linkId=4f1fbd3ec02a1f2ae6a69245e58b092c&language=ja_JP&ref_=as_li_ss_il" target="_blank" rel="nofollow">透明な膜を隔てながら 単行本 – 2022/8/17</a></p>
+<p><a href="https://www.amazon.co.jp/dp/415210161X?&linkCode=li2&tag=peipeipe-22&linkId=4f1fbd3ec02a1f2ae6a69245e58b092c&language=ja_JP&ref_=as_li_ss_il" target="_blank" rel="nofollow"><img border="0" src="https://m.media-amazon.com/images/I/41gtRSnc0mL._SL300_.jpg" ></a><img src="https://ir-jp.amazon-adsystem.com/e/ir?t=peipeipe-22&language=ja_JP&l=li2&o=9&a=415210161X" width="1" height="1" border="0" alt="" style="border:none !important; margin:0px !important;" /></p> <p><a href="https://www.amazon.co.jp/dp/415210161X?&linkCode=li2&tag=peipeipe-22&linkId=4f1fbd3ec02a1f2ae6a69245e58b092c&language=ja_JP&ref_=as_li_ss_il" target="_blank" rel="nofollow">透明な膜を隔てながら 単行本 – 2022/8/17</a></p>
 
 
 彼岸花が咲く島の作者が書くエッセイ
@@ -51,7 +51,7 @@ image: https://m.media-amazon.com/images/P/B09R7FWYL5.01._SCLZZZZZZZ_SX500_.jpg
 </blockquote>
 
 
-<p><a href="https://www.amazon.co.jp/dp/B08VWBX3G7?&linkCode=li2&tag=peipeipe-22&linkId=8515e10124de1036bd96d06c9a02b576&language=ja_JP&ref_=as_li_ss_il" target="_blank" rel="nofollow"><img border="0" src="//ws-fe.amazon-adsystem.com/widgets/q?_encoding=UTF8&ASIN=B08VWBX3G7&Format= _SL250_&ID=AsinImage&MarketPlace=JP&ServiceVersion=20070822&WS=1&tag=peipeipe-22&language=ja_JP" ></a><img src="https://ir-jp.amazon-adsystem.com/e/ir?t=peipeipe-22&language=ja_JP&l=li2&o=9&a=B08VWBX3G7" width="1" height="1" border="0" alt="" style="border:none !important; margin:0px !important;" /></p> <p><a href="https://www.amazon.co.jp/dp/B08VWBX3G7?&linkCode=li2&tag=peipeipe-22&linkId=8515e10124de1036bd96d06c9a02b576&language=ja_JP&ref_=as_li_ss_il" target="_blank" rel="nofollow">テスカトリポカ (角川書店単行本) Kindle版</a></p>
+<p><a href="https://www.amazon.co.jp/dp/B08VWBX3G7?&linkCode=li2&tag=peipeipe-22&linkId=8515e10124de1036bd96d06c9a02b576&language=ja_JP&ref_=as_li_ss_il" target="_blank" rel="nofollow"><img border="0" src="https://m.media-amazon.com/images/I/617eJAAZe1L._SL300_.jpg" ></a><img src="https://ir-jp.amazon-adsystem.com/e/ir?t=peipeipe-22&language=ja_JP&l=li2&o=9&a=B08VWBX3G7" width="1" height="1" border="0" alt="" style="border:none !important; margin:0px !important;" /></p> <p><a href="https://www.amazon.co.jp/dp/B08VWBX3G7?&linkCode=li2&tag=peipeipe-22&linkId=8515e10124de1036bd96d06c9a02b576&language=ja_JP&ref_=as_li_ss_il" target="_blank" rel="nofollow">テスカトリポカ (角川書店単行本) Kindle版</a></p>
 
 
 

@@ -9,7 +9,7 @@ image: https://m.media-amazon.com/images/I/41LaNi+McrL.jpg
 
 
 
-<p><a href="https://www.amazon.co.jp/dp/B0922GS8SL?&linkCode=li2&tag=peipeipe-22&linkId=7804566ad4cebfb5d273cc492d430cb8&language=ja_JP&ref_=as_li_ss_il" target="_blank" rel="nofollow"><img border="0" src="//ws-fe.amazon-adsystem.com/widgets/q?_encoding=UTF8&ASIN=B0922GS8SL&Format= _SL250_&ID=AsinImage&MarketPlace=JP&ServiceVersion=20070822&WS=1&tag=peipeipe-22&language=ja_JP" ></a><img src="https://ir-jp.amazon-adsystem.com/e/ir?t=peipeipe-22&language=ja_JP&l=li2&o=9&a=B0922GS8SL" width="1" height="1" border="0" alt="" style="border:none !important; margin:0px !important;" /></p> <p><a href="https://www.amazon.co.jp/dp/B0922GS8SL?&linkCode=li2&tag=peipeipe-22&linkId=7804566ad4cebfb5d273cc492d430cb8&language=ja_JP&ref_=as_li_ss_il" target="_blank" rel="nofollow">実力も運のうち　能力主義は正義か？ Kindle版</a></p>
+<p><a href="https://www.amazon.co.jp/dp/B0922GS8SL?&linkCode=li2&tag=peipeipe-22&linkId=7804566ad4cebfb5d273cc492d430cb8&language=ja_JP&ref_=as_li_ss_il" target="_blank" rel="nofollow"><img border="0" src="https://m.media-amazon.com/images/I/41GZrZSY8ZS._SL300_.jpg" ></a><img src="https://ir-jp.amazon-adsystem.com/e/ir?t=peipeipe-22&language=ja_JP&l=li2&o=9&a=B0922GS8SL" width="1" height="1" border="0" alt="" style="border:none !important; margin:0px !important;" /></p> <p><a href="https://www.amazon.co.jp/dp/B0922GS8SL?&linkCode=li2&tag=peipeipe-22&linkId=7804566ad4cebfb5d273cc492d430cb8&language=ja_JP&ref_=as_li_ss_il" target="_blank" rel="nofollow">実力も運のうち　能力主義は正義か？ Kindle版</a></p>
 
 <blockquote>
 両極化が深刻になっている現代、大勢の働く人びとが無視され、過小評価されていると感じ、社会的な結束と連帯の源が何より必要とされている。だとすれば、労働の尊厳についてのこうし た確固たる概念が政治的議論の中心に据えられてもよさそうなものだ。しかし、そうはなっていない。なぜだろうか? なぜ、今日の支配的な政治方針は正義の貢献的側面にも、その土台 をなす生産者中心の倫理にも抵抗を示すのだろうか?<br/>
@@ -18,7 +18,7 @@ image: https://m.media-amazon.com/images/I/41LaNi+McrL.jpg
 
 
 <br/><br/>
-<p><a href="https://www.amazon.co.jp/dp/4791773977?&linkCode=li2&tag=peipeipe-22&linkId=1d2c0cb2af37038e4690e8691bfec47d&language=ja_JP&ref_=as_li_ss_il" target="_blank" rel="nofollow"><img border="0" src="//ws-fe.amazon-adsystem.com/widgets/q?_encoding=UTF8&ASIN=4791773977&Format= _SL250_&ID=AsinImage&MarketPlace=JP&ServiceVersion=20070822&WS=1&tag=peipeipe-22&language=ja_JP" ></a><img src="https://ir-jp.amazon-adsystem.com/e/ir?t=peipeipe-22&language=ja_JP&l=li2&o=9&a=4791773977" width="1" height="1" border="0" alt="" style="border:none !important; margin:0px !important;" /></p> <p><a href="https://www.amazon.co.jp/dp/4791773977?&linkCode=li2&tag=peipeipe-22&linkId=1d2c0cb2af37038e4690e8691bfec47d&language=ja_JP&ref_=as_li_ss_il" target="_blank" rel="nofollow">ランニング王国を生きる 文化人類学者がエチオピアで走りながら考えたこと 単行本 – 2021/7/27</a></p>
+<p><a href="https://www.amazon.co.jp/dp/4791773977?&linkCode=li2&tag=peipeipe-22&linkId=1d2c0cb2af37038e4690e8691bfec47d&language=ja_JP&ref_=as_li_ss_il" target="_blank" rel="nofollow"><img border="0" src="https://m.media-amazon.com/images/I/41Mw0GW5epS._SL300_.jpg" ></a><img src="https://ir-jp.amazon-adsystem.com/e/ir?t=peipeipe-22&language=ja_JP&l=li2&o=9&a=4791773977" width="1" height="1" border="0" alt="" style="border:none !important; margin:0px !important;" /></p> <p><a href="https://www.amazon.co.jp/dp/4791773977?&linkCode=li2&tag=peipeipe-22&linkId=1d2c0cb2af37038e4690e8691bfec47d&language=ja_JP&ref_=as_li_ss_il" target="_blank" rel="nofollow">ランニング王国を生きる 文化人類学者がエチオピアで走りながら考えたこと 単行本 – 2021/7/27</a></p>
 
 <blockquote>
 「陸上競技は誰かと一緒に練習するものだよ」とティラフンは繰り返し、「環境も利用しなきゃいけない。起伏のある場所を走らなければならないんだ」
@@ -30,7 +30,7 @@ image: https://m.media-amazon.com/images/I/41LaNi+McrL.jpg
 「走らないで疲れるより、走って疲れるほうがいいよ」ハイリエはバスの窓の外に目をやった。丘の頂上に向かってランナーたちが走ってる。「走ることは生きることだ」
 </blockquote>
 <br/><br/>
-<p><a href="https://www.amazon.co.jp/dp/B0B38WZZ19?&linkCode=li2&tag=peipeipe-22&linkId=fe06c5b1b905ed2a4c596b7bdcd13ceb&language=ja_JP&ref_=as_li_ss_il" target="_blank" rel="nofollow"><img border="0" src="//ws-fe.amazon-adsystem.com/widgets/q?_encoding=UTF8&ASIN=B0B38WZZ19&Format= _SL250_&ID=AsinImage&MarketPlace=JP&ServiceVersion=20070822&WS=1&tag=peipeipe-22&language=ja_JP" ></a><img src="https://ir-jp.amazon-adsystem.com/e/ir?t=peipeipe-22&language=ja_JP&l=li2&o=9&a=B0B38WZZ19" width="1" height="1" border="0" alt="" style="border:none !important; margin:0px !important;" /></p> <p><a href="https://www.amazon.co.jp/dp/B0B38WZZ19?&linkCode=li2&tag=peipeipe-22&linkId=fe06c5b1b905ed2a4c596b7bdcd13ceb&language=ja_JP&ref_=as_li_ss_il" target="_blank" rel="nofollow">水曜日は働かない (ホーム社) Kindle版</a></p>
+<p><a href="https://www.amazon.co.jp/dp/B0B38WZZ19?&linkCode=li2&tag=peipeipe-22&linkId=fe06c5b1b905ed2a4c596b7bdcd13ceb&language=ja_JP&ref_=as_li_ss_il" target="_blank" rel="nofollow"><img border="0" src="https://m.media-amazon.com/images/I/41LaNi+McrL._SL300_.jpg" ></a><img src="https://ir-jp.amazon-adsystem.com/e/ir?t=peipeipe-22&language=ja_JP&l=li2&o=9&a=B0B38WZZ19" width="1" height="1" border="0" alt="" style="border:none !important; margin:0px !important;" /></p> <p><a href="https://www.amazon.co.jp/dp/B0B38WZZ19?&linkCode=li2&tag=peipeipe-22&linkId=fe06c5b1b905ed2a4c596b7bdcd13ceb&language=ja_JP&ref_=as_li_ss_il" target="_blank" rel="nofollow">水曜日は働かない (ホーム社) Kindle版</a></p>
 
 ### クリストファー・ノーラン監督作品について
 <blockquote>
