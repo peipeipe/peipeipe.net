@@ -6,7 +6,7 @@ permalink:   /:year-:month-:day-:title/
 categories: Book
 image: https://m.media-amazon.com/images/I/71-ZWFVlI-L._SL1500_.jpg
 ---
-今月(2024-02)読んだ本は5冊。  
+今月(2024-03)読んだ本は5冊。  
 
 <p><a href="https://amzn.to/3U0objW"><img width="250px" src="https://images-na.ssl-images-amazon.com/images/P/B0CN2XHTNB.09.LZZZZZZZ"></a></p> <p><a href="https://amzn.to/3U0objW" target="_blank" rel="nofollow">チーム・オルタナティブの冒険 (ホーム社) Kindle版 </a></p>
 途中まで説教臭ユニコーンガンダム。最後はssssグリッドマンになった。  
