@@ -12,7 +12,7 @@ image: https://m.media-amazon.com/images/I/818gAWinG+L._SL1500_.jpg
 転職が決まったこともあり超勉強中。  
 でも小説もけっこう読んだ。
 技術書をブクログにまとめてしまうとかなり見ずらいのでnotionにまとめ始めたが書影がないデメリットを感じる。(自分でつけてギャラリービューにすればできるっちゃできる)  
-![](https://i.gyazo.com/b6a27c6105f26c501a9e78894a9d033f.jpg)
+![](https://i.gyazo.com/06cdb610e6cd9fd80a8f1ca988d41ed0.jpg)
 かなりモチベーション高く読めている。
 
 
