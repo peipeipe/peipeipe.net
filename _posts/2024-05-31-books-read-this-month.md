@@ -6,7 +6,7 @@ permalink:   /:year-:month-:day-:title/
 categories: Book
 image: https://f.media-amazon.com/images/I/71Tmc9h63LL._SL1500_.jpg
 ---
-今月(2024-04)読んだ本は15冊。  
+今月(2024-05)読んだ本は15冊。  
 
 
 超勉強中引き続き。  
