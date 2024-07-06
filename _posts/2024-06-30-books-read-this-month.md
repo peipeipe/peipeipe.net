@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "今月読んだ本"
-date:   2024-05-31 12:00:00 +0900
+date:   2024-06-30 12:00:00 +0900
 permalink:   /:year-:month-:day-:title/
 categories: Book
 image: https://f.media-amazon.com/images/I/71Tmc9h63LL._SL1500_.jpg
