@@ -4,10 +4,14 @@ title:  "今月読んだ本"
 date:   2025-01-31 17:00:00 +0900
 permalink:   /:year-:month-:day-:title/
 categories: Book
-image: https://m.media-amazon.com/images/I/91at-PFgPEL._SL1500_.jpg
+image: https://m.media-amazon.com/images/I/7147t2MZiaL._SL1500_.jpg
 ---
-今月(2025-01)読んだ本は4冊。  
+今月(2025-01)読んだ本は4冊。
+
+
 福島に旅行に行き、その移動時間で読書が捗った。ノルウェイの森を読み返したりもした。
+
+
 
 <div class="krb-amzlt-box" style="margin-bottom:0px;"><div class="krb-amzlt-image" style="float:left;margin:0px 12px 1px 0px;"><a href="https://amzn.to/4gkitBG"><img width="160px" src="https://images-na.ssl-images-amazon.com/images/P/B0CPXQD9R6.09.LZZZZZZZ"></a></div><div class="krb-amzlt-info" style="line-height:120%; margin-bottom: 10px"><div class="krb-amzlt-name" style="margin-bottom:10px;line-height:120%"><a href="https://amzn.to/4gkitBG" name="amazletlink" target="_blank" rel="nofollow" rel="nofollow">疲労とはなにか　すべてはウイルスが知っていた (ブルーバックス)</a><div class="krb-amzlt-powered-date" style="font-size:80%;margin-top:5px;line-height:120%">posted with <a href="https://kaereba.com/wind/" title="amazlet" target="_blank" rel="nofollow" rel="nofollow">カエレバ</a></div></div><div class="krb-amzlt-detail"></div><div class="krb-amzlt-sub-info" style="float: left;"><div class="krb-amzlt-link" style="margin-top: 5px"><a href="https://amzn.to/4gkitBG" name="amazletlink" target="_blank" rel="nofollow" rel="nofollow">Amazon.co.jpで詳細を見る</a></div></div></div><div class="krb-amzlt-footer" style="clear: left"></div></div>
 
