@@ -28,7 +28,7 @@ footer-links:
   pinterest:
   rss: # just type anything here for a working RSS icon
   twitter: peipeipe
-  podcast: https://podcasters.spotify.com/pod/show/itsurvival
+  podcast: https://podcasters.spotify.com/pod/show/itsurvival/
   stackoverflow: # your stackoverflow profile, e.g. "users/50476/bart-kiers"
   youtube: @peipeipe1627
   googleplus: # anything in your profile username that comes after plus.google.com/
@@ -91,7 +91,7 @@ exclude:
 # SEO-tag
 twitter:
   username: peipeipe
-  card: summary_large_image
+  card: summary
 
 seo_paginator_message: "%<current>s / %<total>s | "
 include: [".well-known"]
