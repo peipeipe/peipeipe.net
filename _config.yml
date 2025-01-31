@@ -22,7 +22,7 @@ footer-links:
   facebook:
   flickr:
   github:
-  mastodon: peipeipe@mstdn.jp
+  # mastodon: peipeipe@mstdn.jp
   instagram:
   linkedin:
   pinterest:
@@ -30,7 +30,7 @@ footer-links:
   twitter: peipeipe
   podcast: https://podcasters.spotify.com/pod/show/itsurvival
   stackoverflow: # your stackoverflow profile, e.g. "users/50476/bart-kiers"
-  youtube: # channel/<your_long_string> or user/<user-name>
+  youtube: peipeipe1627
   googleplus: # anything in your profile username that comes after plus.google.com/
 
 
