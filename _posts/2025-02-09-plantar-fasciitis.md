@@ -9,6 +9,8 @@ image: peipeipe/peipeipe.net/images/20250209_sokutei.jpeg
 2025年1月の初めに足底筋膜炎になった。休めば治ると思っていたが、そうでもなかった。
 
 
+![筋膜](peipeipe/peipeipe.net/images/20250209_sokutei.jpeg)
+
 この筋膜炎で思ったことを残しておく。素人考えなので間違っているかもしれないし、あとで違うと修正するかもしれない。  
 
 
