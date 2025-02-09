@@ -4,12 +4,12 @@ title:  "足底筋膜炎の記録"
 date:   2025-02-09 16:00:00 +0900
 permalink:   /:year-:month-:day-:title/
 categories: Book
-image: peipeipe/peipeipe.net/images/20250209_sokutei.jpeg
+image: https://i.gyazo.com/7931af9e23a4e31310240ecbb7956b58.jpg
 ---
 2025年1月の初めに足底筋膜炎になった。休めば治ると思っていたが、そうでもなかった。
 
 
-![筋膜](peipeipe/peipeipe.net/images/20250209_sokutei.jpeg)
+![筋膜](https://i.gyazo.com/7931af9e23a4e31310240ecbb7956b58.jpg)
 
 この筋膜炎で思ったことを残しておく。素人考えなので間違っているかもしれないし、あとで違うと修正するかもしれない。  
 
