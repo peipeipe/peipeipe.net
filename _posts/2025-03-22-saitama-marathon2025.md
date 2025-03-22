@@ -4,9 +4,9 @@ title:  "さいたまマラソン2025を走った 3:16:50"
 date:   2025-03-20 21:35:00 +0900
 permalink:   /:year-:month-:day-:title/
 categories: running
-image: https://thespace.jp/cms_20180707/wp-content/uploads/2022/05/yokohamamarathon.png
+image: https://www.peipeipe.net/images/IMG_1837.jpg
 ---
-めちゃ雨、寒め大会。暑いよりは寒いほうが好きだが……。ペースは完全にネガティブスプリットが決まって良い感じ。PBを1分縮めた。
+めちゃ雨、風が吹いて寒むい大会だった。暑いよりは寒いほうが好きだが……。ペースは完全にネガティブスプリットが決まって良い感じ。PBを1分縮めた。
 
 ## 感想
 前回の熊本ではオーバーペースでいまいちだったので今回は前半では絶対にキロ4:30を越さないようにした。  
@@ -14,7 +14,12 @@ image: https://thespace.jp/cms_20180707/wp-content/uploads/2022/05/yokohamamarat
 靴はノヴァブラスト5。神シューズ。マジでレースでも使えた。力不足を感じたこともなく、重さもそこまで気にならない。やはりサブ3目指さない人はカーボンなんていらないんだな。  
 ハーフとか10kmで履くのは必要かもだけど。  
 1カ月後の長野マラソンではヴェイパーを履くがどれくらいの差がでるか、そこまででないと思っている。  
+  
+今までもフルマラソン中に雨が降ることはあったが、ずっとは降っていなかった。今回はずっと雨。10km地点で暑さを感じてカッパを脱いだが、着ていればよかった。カイロも捨てなければよかった。  
 
+
+
+<div class="krb-amzlt-box" style="margin-bottom:0px;"><div class="krb-amzlt-image" style="float:left;margin:0px 12px 1px 0px;"><a href="https://amzn.to/4kNktFT"><img width="160px" src="https://images-na.ssl-images-amazon.com/images/P/B0D5GZS5VR.09.LZZZZZZZ"></a></div><div class="krb-amzlt-info" style="line-height:120%; margin-bottom: 10px"><div class="krb-amzlt-name" style="margin-bottom:10px;line-height:120%"><a href="https://amzn.to/4kNktFT" name="amazletlink" target="_blank" rel="nofollow" rel="nofollow">[アシックス] ランニングシューズ NOVABLAST 5 メンズ</a><div class="krb-amzlt-powered-date" style="font-size:80%;margin-top:5px;line-height:120%">posted with <a href="https://kaereba.com/wind/" title="amazlet" target="_blank" rel="nofollow" rel="nofollow">カエレバ</a></div></div><div class="krb-amzlt-detail"></div><div class="krb-amzlt-sub-info" style="float: left;"><div class="krb-amzlt-link" style="margin-top: 5px"><a href="https://amzn.to/4kNktFT" name="amazletlink" target="_blank" rel="nofollow" rel="nofollow">Amazon.co.jpで詳細を見る</a></div></div></div><div class="krb-amzlt-footer" style="clear: left"></div></div>
 
 ## 結果
 
@@ -22,9 +27,7 @@ image: https://thespace.jp/cms_20180707/wp-content/uploads/2022/05/yokohamamarat
 Garminでの記録  
 
 <div class="iframe-wrap">
-<iframe src='https://connect.garmin.com/modern/activity/embed/18543836349' width='465' height=548 title='アクティビティの埋め込み' frameborder="0" /></div>
-
-
+<iframe src='https://connect.garmin.com/modern/activity/embed/18543836349' width='465' height=548 title='アクティビティの埋め込み' frameborder="0"></iframe></div>
 
 
 ## 過去のマラソンログ
