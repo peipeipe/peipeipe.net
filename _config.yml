@@ -79,6 +79,9 @@ gems:
   - jekyll-feed # Create an Atom feed using the official Jekyll feed gem
   - jekyll-seo-tag
 
+plugins:
+  - jekyll-seo-tag
+
 # Exclude these files from your production _site
 exclude:
   - Gemfile
@@ -94,3 +97,6 @@ twitter:
 
 seo_paginator_message: "%<current>s / %<total>s | "
 include: [".well-known"]
+
+# サイトのデフォルト言語を日本語に設定
+lang: ja
