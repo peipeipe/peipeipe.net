@@ -49,6 +49,28 @@ layout: default
   line-height: 1.6;
 }
 
+/* 新しいMarkdown形式用のスタイル */
+.diary-content h2 {
+  background: #f8f9fa;
+  border-left: 4px solid #007bff;
+  padding: 10px 15px 5px 15px;
+  margin: 20px 0 0 0;
+  border-radius: 4px 4px 0 0;
+  font-size: 0.9em;
+  color: #666;
+  font-weight: bold;
+}
+
+.diary-content h2 + p {
+  background: #f8f9fa;
+  padding: 5px 15px 15px 15px;
+  margin: 0 0 20px 0;
+  border-radius: 0 0 4px 4px;
+  color: #333;
+  border-left: 4px solid #007bff;
+}
+
+/* 古いdiv形式のスタイル（後方互換性） */
 .diary-message {
   background: #f8f9fa;
   border-left: 4px solid #007bff;

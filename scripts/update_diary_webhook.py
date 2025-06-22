@@ -56,14 +56,10 @@ def update_diary_entry():
     
     file_path = diary_dir / f"{date_str}.md"
     
-    # コンテンツをエスケープ
-    escaped_content = escape_html(content.strip())
-    
-    # 新しいメッセージ
-    new_message = f'''<div class="diary-message">
-  <div class="diary-message-time">{time_str}</div>
-  <div class="diary-message-content">{escaped_content}</div>
-</div>'''
+    # 新しいメッセージ（Markdown形式）
+    new_message = f'''
+## {time_str}
+{content.strip()}'''
     
     if file_path.exists():
         # 既存ファイルを更新
