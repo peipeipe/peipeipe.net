@@ -59,9 +59,10 @@ jobs:
         if git diff --staged --quiet; then
           echo "変更がありません"
         else
-          COMMIT_MSG="� 日記更新: $(date '+%Y-%m-%d %H:%M')"
+          COMMIT_MSG="📱 日記更新: $(date '+%Y-%m-%d %H:%M')"
           if [ ! -z "${{ github.event.client_payload.date }}" ]; then
-            COMMIT_MSG="� iOS日記: ${{ github.event.client_payload.date }} ${{ github.event.client_payload.time }}"
+            COMMIT_MSG="📱 iOS日記: ${{ github.event.client_payload.date }} ${{ github.event.client_payload.time }}"
           fi
           git commit -m "$COMMIT_MSG"
           git push
+        fi
