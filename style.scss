@@ -310,3 +310,71 @@ footer {
 @import "highlights";
 @import "svg-icons";
 
+/**************/
+/* DIARY STYLES */
+/**************/
+
+.diary-section, .blog-section {
+  margin-bottom: 30px;
+}
+
+.diary-section h2, .blog-section h2 {
+  font-size: 24px;
+  margin-bottom: 10px;
+  color: $darkerGray;
+}
+
+.diary-section p {
+  color: $gray;
+  margin-bottom: 15px;
+  line-height: 1.6;
+}
+
+.diary-link {
+  display: inline-block;
+  background: #007bff;
+  color: white !important;
+  padding: 8px 16px;
+  border-radius: 4px;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+  
+  &:hover {
+    background: #0056b3;
+    text-decoration: none;
+  }
+}
+
+.recent-diary {
+  margin-top: 20px;
+  
+  h3 {
+    font-size: 18px;
+    margin-bottom: 10px;
+    color: $darkerGray;
+  }
+}
+
+.diary-preview {
+  background: #f8f9fa;
+  border-left: 4px solid #007bff;
+  padding: 12px 16px;
+  border-radius: 4px;
+  
+  a {
+    color: $darkerGray;
+    text-decoration: none;
+    
+    &:hover {
+      color: #007bff;
+    }
+  }
+  
+  strong {
+    color: #007bff;
+  }
+}
+
+
