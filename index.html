@@ -2,31 +2,7 @@
 layout: default
 ---
 
-<!-- 日記セクション -->
-<div class="diary-section">
-  <h2>📱 日記</h2>
-  <p>日々の記録をiPhoneから手軽に投稿。思いついた瞬間を残しています。</p>
-  <a href="{{ site.baseurl }}/diary.html" class="diary-link">日記を見る →</a>
-  
-  {% if site.diary.size > 0 %}
-    <div class="recent-diary">
-      <h3>最近の記録</h3>
-      {% assign recent_diary = site.diary | sort: 'date' | reverse | first %}
-      <div class="diary-preview">
-        <a href="{{ recent_diary.url | prepend: site.baseurl }}">
-          <strong>{{ recent_diary.date | date: "%m月%d日" }}</strong> - {{ recent_diary.title }}
-        </a>
-      </div>
-    </div>
-  {% endif %}
-</div>
-
-<hr style="margin: 40px 0; border: 1px solid #f0f0f0;">
-
-<!-- ブログセクション -->
-<div class="blog-section">
-  <h2>📝 ブログ</h2>
-  <div class="posts">
+<div class="posts">
   {% for post in site.posts %}
     <article class="post">
 
@@ -39,5 +15,4 @@ layout: default
       <a href="{{ site.baseurl }}{{ post.url }}" class="read-more">Read More</a>
     </article>
   {% endfor %}
-  </div>
 </div>
