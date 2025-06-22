@@ -47,6 +47,9 @@ jobs:
         DIARY_DATE: ${{ github.event.client_payload.date }}
         DIARY_TIME: ${{ github.event.client_payload.time }}
         DIARY_TIMESTAMP: ${{ github.event.client_payload.timestamp }}
+        # 画像データ（新機能）
+        DIARY_IMAGE_DATA: ${{ github.event.client_payload.image }}
+        DIARY_IMAGE_FILENAME: ${{ github.event.client_payload.image_filename }}
         # workflow_dispatch用（手動テスト）
         MANUAL_CONTENT: ${{ github.event.inputs.content }}
         MANUAL_USERNAME: ${{ github.event.inputs.username }}
@@ -55,7 +58,7 @@ jobs:
       run: |
         git config --local user.email "action@github.com"
         git config --local user.name "GitHub Action (iOS Diary)"
-        git add _diary/
+        git add _diary/ images/
         if git diff --staged --quiet; then
           echo "変更がありません"
         else

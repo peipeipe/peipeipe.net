@@ -7,6 +7,7 @@ GitHub Actionsから呼ばれてMarkdownファイルを更新する
 import os
 import yaml
 import re
+import base64
 from datetime import datetime, timezone, timedelta
 from pathlib import Path
 
@@ -24,6 +25,43 @@ def get_jst_now():
     jst = timezone(timedelta(hours=9))
     return datetime.now(jst)
 
+def save_image(image_data, image_filename, date_str, time_str):
+    """Base64画像データを保存"""
+    if not image_data or not image_filename:
+        return None
+    
+    try:
+        # Base64データから画像形式を判定
+        if image_data.startswith('data:image/'):
+            # data:image/jpeg;base64,... の形式
+            header, data = image_data.split(',', 1)
+            file_ext = header.split('/')[1].split(';')[0]
+        else:
+            # 拡張子から判定
+            file_ext = image_filename.split('.')[-1].lower()
+            data = image_data
+        
+        # 画像ディレクトリを作成
+        image_dir = Path('images/diary')
+        image_dir.mkdir(parents=True, exist_ok=True)
+        
+        # ファイル名を生成（重複回避）
+        timestamp = time_str.replace(':', '')
+        filename = f"{date_str}-{timestamp}.{file_ext}"
+        image_path = image_dir / filename
+        
+        # Base64データをデコードして保存
+        image_bytes = base64.b64decode(data)
+        with open(image_path, 'wb') as f:
+            f.write(image_bytes)
+        
+        print(f"画像を保存しました: {image_path}")
+        return f"/images/diary/{filename}"
+        
+    except Exception as e:
+        print(f"画像保存エラー: {e}")
+        return None
+
 def update_diary_entry():
     """日記エントリを更新する"""
     
@@ -33,6 +71,10 @@ def update_diary_entry():
     time_str = os.getenv('DIARY_TIME', '')
     timestamp = os.getenv('DIARY_TIMESTAMP', '')
     username = os.getenv('MANUAL_USERNAME', '')
+    
+    # 画像データ（新機能）
+    image_data = os.getenv('DIARY_IMAGE_DATA', '')
+    image_filename = os.getenv('DIARY_IMAGE_FILENAME', '')
     
     if not content.strip():
         print("エラー: メッセージ内容が空です")
@@ -56,10 +98,23 @@ def update_diary_entry():
     
     file_path = diary_dir / f"{date_str}.md"
     
+    # 画像を保存（もしあれば）
+    image_url = None
+    if image_data:
+        image_url = save_image(image_data, image_filename, date_str, time_str)
+    
     # 新しいメッセージ（Markdown形式）
-    new_message = f'''
-## {time_str}
-{content.strip()}'''
+    message_parts = [f'## {time_str}']
+    
+    if content.strip():
+        message_parts.append(content.strip())
+    
+    if image_url:
+        # 画像を追加
+        alt_text = image_filename if image_filename else "投稿画像"
+        message_parts.append(f'![{alt_text}]({image_url})')
+    
+    new_message = '\n'.join(message_parts)
     
     if file_path.exists():
         # 既存ファイルを更新
