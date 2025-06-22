@@ -8,8 +8,9 @@ title: "日記一覧"
   <p>Discordで記録した日々の記録</p>
 
   <div class="diary-list">
-    {% assign diary_posts = site.diary | sort: 'date' | reverse %}
-    {% for post in diary_posts %}
+    {% if site.diary and site.diary.size > 0 %}
+      {% assign diary_posts = site.diary | sort: 'date' | reverse %}
+      {% for post in diary_posts %}
       <article class="diary-item">
         <a href="{{ post.url | prepend: site.baseurl }}" class="diary-link">
           <h3 class="diary-item-date">{{ post.date | date: "%Y年%m月%d日(%A)" }}</h3>
@@ -25,6 +26,9 @@ title: "日記一覧"
         </a>
       </article>
     {% endfor %}
+    {% else %}
+      <p class="no-diary">まだ日記がありません。</p>
+    {% endif %}
   </div>
 </div>
 

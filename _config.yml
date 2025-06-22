@@ -74,12 +74,9 @@ sass:
   style: :expanded # You might prefer to minify using :compressed
 
 # Use the following plug-ins
-gems:
+plugins:
   - jekyll-sitemap # Create a sitemap using the official Jekyll sitemap gem
   - jekyll-feed # Create an Atom feed using the official Jekyll feed gem
-  - jekyll-seo-tag
-
-plugins:
   - jekyll-seo-tag
 
 # Exclude these files from your production _site
@@ -100,3 +97,9 @@ include: [".well-known"]
 
 # サイトのデフォルト言語を日本語に設定
 lang: ja
+
+# Collections設定
+collections:
+  diary:
+    output: true
+    permalink: /diary/:name/
