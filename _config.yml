@@ -86,6 +86,9 @@ exclude:
   - LICENSE
   - README.md
   - CNAME
+  - vendor/
+  - node_modules/
+  - scripts/
 
 # SEO-tag
 twitter:
