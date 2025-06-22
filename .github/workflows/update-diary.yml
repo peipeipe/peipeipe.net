@@ -1,0 +1,52 @@
+name: Update Diary
+
+on:
+  repository_dispatch:
+    types: [diary_entry]
+
+jobs:
+  update-diary:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v4
+      with:
+        token: ${{ secrets.GITHUB_TOKEN }}
+    
+    - name: Setup Ruby
+      uses: ruby/setup-ruby@v1
+      with:
+        ruby-version: '3.1'
+        bundler-cache: true
+    
+    - name: Setup Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.9'
+    
+    - name: Install Python dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install pyyaml
+    
+    - name: Update diary entry
+      run: |
+        python scripts/update_diary.py
+      env:
+        DIARY_CONTENT: ${{ github.event.client_payload.content }}
+        DIARY_DATE: ${{ github.event.client_payload.date }}
+        DIARY_TIME: ${{ github.event.client_payload.time }}
+        DIARY_TIMESTAMP: ${{ github.event.client_payload.timestamp }}
+    
+    - name: Commit and push changes
+      run: |
+        git config --local user.email "action@github.com"
+        git config --local user.name "GitHub Action"
+        git add _diary/
+        if git diff --staged --quiet; then
+          echo "変更がありません"
+        else
+          git commit -m "📝 日記更新: ${{ github.event.client_payload.date }} ${{ github.event.client_payload.time }}"
+          git push
+        fi

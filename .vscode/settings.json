@@ -1,0 +1,10 @@
+{
+    "terminal.integrated.env.osx": {
+        "DISCORD_TOKEN": "${env:DISCORD_TOKEN}",
+        "DISCORD_CHANNEL_ID": "${env:DISCORD_CHANNEL_ID}",
+        "GITHUB_TOKEN": "${env:GITHUB_TOKEN}",
+        "GITHUB_REPO": "panasodayo/peipeipe.net"
+    },
+    "python.defaultInterpreterPath": "python3",
+    "python.terminal.activateEnvironment": true
+}

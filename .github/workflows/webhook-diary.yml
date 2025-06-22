@@ -1,0 +1,67 @@
+name: iOS Shortcut to Diary
+
+on:
+  # iOS ショートカットから呼ばれる
+  repository_dispatch:
+    types: [diary_entry, ios_diary]
+  
+  # 手動実行用（テスト用）
+  workflow_dispatch:
+    inputs:
+      content:
+        description: 'メッセージ内容'
+        required: true
+        type: string
+      username:
+        description: 'ユーザー名'
+        required: false
+        type: string
+        default: 'iOS'
+
+jobs:
+  update-diary:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v4
+      with:
+        token: ${{ secrets.GITHUB_TOKEN }}
+    
+    - name: Setup Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.9'
+    
+    - name: Install Python dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install pyyaml pytz
+    
+    - name: Update diary entry
+      run: |
+        python scripts/update_diary_webhook.py
+      env:
+        # repository_dispatch用（iOSショートカット）
+        DIARY_CONTENT: ${{ github.event.client_payload.content || github.event.inputs.content }}
+        DIARY_DATE: ${{ github.event.client_payload.date }}
+        DIARY_TIME: ${{ github.event.client_payload.time }}
+        DIARY_TIMESTAMP: ${{ github.event.client_payload.timestamp }}
+        # workflow_dispatch用（手動テスト）
+        MANUAL_CONTENT: ${{ github.event.inputs.content }}
+        MANUAL_USERNAME: ${{ github.event.inputs.username }}
+    
+    - name: Commit and push changes
+      run: |
+        git config --local user.email "action@github.com"
+        git config --local user.name "GitHub Action (iOS Diary)"
+        git add _diary/
+        if git diff --staged --quiet; then
+          echo "変更がありません"
+        else
+          COMMIT_MSG="� 日記更新: $(date '+%Y-%m-%d %H:%M')"
+          if [ ! -z "${{ github.event.client_payload.date }}" ]; then
+            COMMIT_MSG="� iOS日記: ${{ github.event.client_payload.date }} ${{ github.event.client_payload.time }}"
+          fi
+          git commit -m "$COMMIT_MSG"
+          git push

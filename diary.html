@@ -1,0 +1,91 @@
+---
+layout: default
+title: "日記一覧"
+---
+
+<div class="diary-index">
+  <h1>📖 日記一覧</h1>
+  <p>Discordで記録した日々の記録</p>
+
+  <div class="diary-list">
+    {% assign diary_posts = site.diary | sort: 'date' | reverse %}
+    {% for post in diary_posts %}
+      <article class="diary-item">
+        <a href="{{ post.url | prepend: site.baseurl }}" class="diary-link">
+          <h3 class="diary-item-date">{{ post.date | date: "%Y年%m月%d日(%A)" }}</h3>
+          <p class="diary-item-title">{{ post.title }}</p>
+          <p class="diary-item-excerpt">
+            {% assign first_message = post.content | split: 'diary-message-content">' | first %}
+            {% if first_message != post.content %}
+              {% assign content_start = post.content | split: 'diary-message-content">' | slice: 1 %}
+              {% assign first_content = content_start | first | split: '</div>' | first %}
+              {{ first_content | strip_html | truncate: 100 }}
+            {% endif %}
+          </p>
+        </a>
+      </article>
+    {% endfor %}
+  </div>
+</div>
+
+<style>
+.diary-index {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.diary-index h1 {
+  font-size: 2.5em;
+  text-align: center;
+  margin-bottom: 10px;
+  color: #333;
+}
+
+.diary-index > p {
+  text-align: center;
+  color: #666;
+  margin-bottom: 40px;
+}
+
+.diary-list {
+  display: grid;
+  gap: 20px;
+}
+
+.diary-item {
+  border: 1px solid #e1e5e9;
+  border-radius: 8px;
+  overflow: hidden;
+  transition: box-shadow 0.2s ease;
+}
+
+.diary-item:hover {
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.diary-link {
+  display: block;
+  padding: 20px;
+  text-decoration: none;
+  color: inherit;
+}
+
+.diary-item-date {
+  font-size: 1.3em;
+  color: #007bff;
+  margin: 0 0 8px 0;
+}
+
+.diary-item-title {
+  font-size: 1.1em;
+  color: #333;
+  margin: 0 0 10px 0;
+}
+
+.diary-item-excerpt {
+  color: #666;
+  line-height: 1.5;
+  margin: 0;
+}
+</style>

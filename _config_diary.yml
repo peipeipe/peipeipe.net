@@ -1,0 +1,35 @@
+# 日記サイト用の設定
+name: peipeipe diary
+description: 日々の記録
+avatar: /images/jekyll-logo.png
+
+# 日記サイト用のURL
+url: https://diary.peipeipe.net
+baseurl: ""
+
+# 日記用のコレクション
+collections:
+  diary:
+    output: true
+    permalink: /:year/:month/:day/
+
+# デフォルトの設定
+defaults:
+  - scope:
+      path: "_diary"
+      type: "diary"
+    values:
+      layout: "diary"
+
+# その他の設定は親の_config.ymlから継承
+kramdown:
+  input: GFM
+  syntax_highlighter: rouge
+  syntax_highlighter_opts:
+    css_class: 'highlight'
+
+plugins:
+  - jekyll-seo-tag
+  - jekyll-feed
+
+lang: ja

@@ -1,0 +1,83 @@
+---
+layout: default
+---
+
+<article class="diary-entry">
+  <header class="diary-header">
+    <h1 class="diary-date">{{ page.date | date: "%Y年%m月%d日(%A)" }}</h1>
+    <p class="diary-subtitle">{{ page.title }}</p>
+  </header>
+
+  <div class="diary-content">
+    {{ content }}
+  </div>
+
+  <footer class="diary-footer">
+    <p class="diary-meta">
+      作成日時: {{ page.date | date: "%Y-%m-%d %H:%M" }}
+    </p>
+  </footer>
+</article>
+
+<style>
+.diary-entry {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+.diary-header {
+  border-bottom: 2px solid #f0f0f0;
+  padding-bottom: 20px;
+  margin-bottom: 30px;
+}
+
+.diary-date {
+  font-size: 2em;
+  color: #333;
+  margin: 0 0 10px 0;
+}
+
+.diary-subtitle {
+  color: #666;
+  font-size: 1.1em;
+  margin: 0;
+}
+
+.diary-content {
+  line-height: 1.6;
+}
+
+.diary-message {
+  background: #f8f9fa;
+  border-left: 4px solid #007bff;
+  padding: 15px 20px;
+  margin: 20px 0;
+  border-radius: 4px;
+}
+
+.diary-message-time {
+  font-size: 0.9em;
+  color: #666;
+  margin-bottom: 8px;
+  font-weight: bold;
+}
+
+.diary-message-content {
+  color: #333;
+}
+
+.diary-footer {
+  border-top: 1px solid #f0f0f0;
+  padding-top: 20px;
+  margin-top: 40px;
+}
+
+.diary-meta {
+  color: #666;
+  font-size: 0.9em;
+  text-align: center;
+  margin: 0;
+}
+</style>
