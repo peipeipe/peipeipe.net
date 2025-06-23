@@ -27,7 +27,7 @@ def get_jst_now():
 
 def save_image(image_data, image_filename, date_str, time_str):
     """Base64画像データを保存"""
-    if not image_data or not image_filename:
+    if not image_data:
         return None
     
     try:
@@ -36,9 +36,13 @@ def save_image(image_data, image_filename, date_str, time_str):
             # data:image/jpeg;base64,... の形式
             header, data = image_data.split(',', 1)
             file_ext = header.split('/')[1].split(';')[0]
-        else:
-            # 拡張子から判定
+        elif image_filename and '.' in image_filename:
+            # ファイル名から拡張子を判定
             file_ext = image_filename.split('.')[-1].lower()
+            data = image_data
+        else:
+            # デフォルトでJPEG
+            file_ext = 'jpg'
             data = image_data
         
         # 画像ディレクトリを作成
@@ -111,7 +115,7 @@ def update_diary_entry():
     
     if image_url:
         # 画像を追加
-        alt_text = image_filename if image_filename else "投稿画像"
+        alt_text = image_filename if image_filename and image_filename.strip() else "投稿画像"
         message_parts.append(f'![{alt_text}]({image_url})')
     
     new_message = '\n'.join(message_parts)
@@ -156,7 +160,7 @@ def update_diary_entry():
         
         front_matter = {
             'layout': 'diary',
-            'title': f'{formatted_date}の記録',
+            'title': f'{formatted_date}',
             'date': f'{date_str} 00:00:00 +0900'
         }
         
