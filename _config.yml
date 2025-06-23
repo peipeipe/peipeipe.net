@@ -103,3 +103,9 @@ lang: ja
 
 # タイムゾーンを日本時間に設定
 timezone: Asia/Tokyo
+
+# コレクション設定
+collections:
+  diary:
+    output: true
+    permalink: /diary/:year-:month-:day/
