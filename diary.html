@@ -14,8 +14,7 @@ permalink: /diary/
       {% for post in diary_posts %}
       <article class="diary-item">
         <a href="{{ post.url | prepend: site.baseurl }}" class="diary-link">
-          <h3 class="diary-item-date">{{ post.date | date: "%Y年%m月%d日(%A)" }}</h3>
-          <p class="diary-item-title">{{ post.title }}</p>
+          <h3 class="diary-item-date">{{ post.title }}</h3>
           <p class="diary-item-excerpt">
             {% assign first_message = post.content | split: 'diary-message-content">' | first %}
             {% if first_message != post.content %}

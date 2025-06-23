@@ -101,8 +101,5 @@ include: [".well-known"]
 # サイトのデフォルト言語を日本語に設定
 lang: ja
 
-# Collections設定
-collections:
-  diary:
-    output: true
-    permalink: /diary/:name/
+# タイムゾーンを日本時間に設定
+timezone: Asia/Tokyo
