@@ -26,7 +26,7 @@ jobs:
     - name: Install Python dependencies
       run: |
         python -m pip install --upgrade pip
-        pip install pyyaml pytz requests pillow Pillow
+        pip install pyyaml pytz requests pillow
     
     - name: Create diary entry from issue
       run: |
@@ -38,13 +38,12 @@ jobs:
         ISSUE_URL: ${{ github.event.issue.html_url }}
         ISSUE_USER: ${{ github.event.issue.user.login }}
     
-    - name: Close issue
+    - name: Delete issue (完全削除)
       run: |
-        curl -X PATCH \
+        curl -X DELETE \
           -H "Authorization: token ${{ secrets.GITHUB_TOKEN }}" \
           -H "Accept: application/vnd.github.v3+json" \
-          https://api.github.com/repos/${{ github.repository }}/issues/${{ github.event.issue.number }} \
-          -d '{"state":"closed"}'
+          https://api.github.com/repos/${{ github.repository }}/issues/${{ github.event.issue.number }}
     
     - name: Commit and push changes
       run: |

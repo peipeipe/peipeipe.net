@@ -30,11 +30,37 @@ def get_jst_now():
     return datetime.now(jst)
 
 def convert_to_webp(image_data, quality=85, max_width=1200):
-    """画像データをWebPに変換（リサイズ機能付き）"""
+    """画像データをWebPに変換（リサイズ・Exif削除機能付き）"""
     try:
         # バイナリデータからPIL Imageオブジェクトを作成
         image = Image.open(io.BytesIO(image_data))
         original_size = image.size
+        
+        # Exifデータを確認・削除
+        exif_info = []
+        if hasattr(image, '_getexif') and image._getexif() is not None:
+            exif_dict = image._getexif()
+            
+            # よく含まれるExif情報をチェック
+            dangerous_tags = {
+                34853: 'GPS情報',  # GPSInfo
+                306: '撮影日時',    # DateTime
+                271: 'カメラメーカー',  # Make
+                272: 'カメラモデル',   # Model
+                37500: 'メーカーノート'  # MakerNote
+            }
+            
+            for tag_id, description in dangerous_tags.items():
+                if tag_id in exif_dict:
+                    exif_info.append(description)
+            
+            if exif_info:
+                print(f"⚠️  検出されたExifデータ: {', '.join(exif_info)}")
+                print("🔒 これらの情報は完全に削除されます")
+            else:
+                print("✅ 危険なExifデータなし")
+        else:
+            print("✅ Exifデータなし")
         
         # 画像をリサイズ（幅が最大幅を超える場合）
         if image.width > max_width:
@@ -44,14 +70,14 @@ def convert_to_webp(image_data, quality=85, max_width=1200):
             image = image.resize((max_width, new_height), Image.Resampling.LANCZOS)
             print(f"画像リサイズ: {original_size[0]}x{original_size[1]} -> {image.width}x{image.height}")
         
-        # RGBAモードの場合はRGBに変換（WebPのAlpha対応）
+        # RGBAモードの処理（透明度対応）
         if image.mode in ('RGBA', 'LA', 'P'):
             # 透明度がある場合はそのまま保持
             pass
         elif image.mode != 'RGB':
             image = image.convert('RGB')
         
-        # WebP形式でバイナリデータに変換
+        # WebP形式でバイナリデータに変換（Exifデータは自動的に削除される）
         webp_buffer = io.BytesIO()
         image.save(webp_buffer, format='WEBP', quality=quality, optimize=True)
         webp_data = webp_buffer.getvalue()
@@ -62,6 +88,7 @@ def convert_to_webp(image_data, quality=85, max_width=1200):
         compression_ratio = (1 - webp_file_size / original_file_size) * 100
         
         print(f"WebP変換: {original_file_size:,} bytes -> {webp_file_size:,} bytes (-{compression_ratio:.1f}%)")
+        print("🔒 プライバシー保護: Exif/GPSデータは完全に削除されました")
         
         return webp_data
         

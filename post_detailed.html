@@ -1,0 +1,209 @@
+---
+layout: default
+title: "日記投稿"
+permalink: /post/
+---
+
+<div class="post-form-container">
+  <h1>📝 日記投稿</h1>
+  <p>今日の出来事や思いを記録しましょう</p>
+  
+  <div class="setup-notice">
+    <h3>📝 使い方</h3>
+    <p>この日記投稿の使用方法：</p>
+    <ol>
+      <li><strong>下のボタンをクリック</strong>してGitHub Issuesページを開く</li>
+      <li><strong>タイトル</strong>に「日記投稿」と入力</li>
+      <li><strong>内容</strong>に日記の内容を書く</li>
+      <li><strong>Submit new issue</strong>をクリック</li>
+      <li>数分後に自動で日記ページに反映されます</li>
+    </ol>
+    <p><strong>GitHubアカウントでログインが必要です</strong></p>
+    
+    <div class="image-guide">
+      <h4>📸 画像投稿について</h4>
+      <p>画像も簡単に投稿できます：</p>
+      <ul>
+        <li>Issue作成画面で画像をドラッグ&amp;ドロップするか、📎アイコンをクリック</li>
+        <li>大きな画像（幅1200px超）は自動でリサイズされます</li>
+        <li>JPG/PNG/GIF形式の画像を高効率なWebP形式に自動変換</li>
+        <li>🔒 <strong>GPS情報・Exifデータを自動削除</strong>してプライバシーを保護</li>
+        <li>投稿後、画像は自動で <code>/images/YYYY-MM-DD/</code> フォルダに保存されます</li>
+        <li>日記では適切なサイズ（最大500px高）で表示されます</li>
+        <li>ファイルサイズを大幅削減し、読み込み速度が向上します</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="diary-form">
+    <div class="quick-post-section">
+      <h3>📝 日記を投稿する</h3>
+      <p>下のボタンをクリックしてGitHub Issuesで日記を投稿できます</p>
+      
+      <a href="https://github.com/peipeipe/peipeipe.net/issues/new?title=日記投稿&body=" 
+         target="_blank" 
+         class="submit-btn">
+         📝 日記を投稿する（GitHub Issues）
+      </a>
+      
+      <div class="info-box">
+        <p><strong>💡 ヒント:</strong></p>
+        <ul>
+          <li>GitHubアカウントが必要です</li>
+          <li>タイトルは「日記投稿」のままでOKです</li>
+          <li>Markdown記法が使えます</li>
+          <li>画像はドラッグ&amp;ドロップで簡単投稿</li>
+          <li>投稿後、自動でIssueは閉じられます</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+<style>
+.post-form-container {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.post-form-container h1 {
+  text-align: center;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.post-form-container > p {
+  text-align: center;
+  color: #666;
+  margin-bottom: 30px;
+}
+
+.setup-notice {
+  background: #e8f4fd;
+  border: 1px solid #bee5eb;
+  border-radius: 8px;
+  padding: 20px;
+  margin-bottom: 30px;
+}
+
+.setup-notice h3 {
+  color: #0c5460;
+  margin-top: 0;
+  margin-bottom: 15px;
+}
+
+.setup-notice p {
+  color: #0c5460;
+  margin-bottom: 10px;
+}
+
+.setup-notice ol {
+  color: #0c5460;
+  margin-left: 20px;
+}
+
+.setup-notice code {
+  background: #d1ecf1;
+  padding: 2px 5px;
+  border-radius: 3px;
+  font-family: monospace;
+}
+
+.image-guide {
+  margin-top: 20px;
+  padding-top: 15px;
+  border-top: 1px solid #bee5eb;
+}
+
+.image-guide h4 {
+  color: #0c5460;
+  margin-bottom: 10px;
+}
+
+.image-guide ul {
+  color: #0c5460;
+  margin-left: 20px;
+}
+
+.image-guide li {
+  margin-bottom: 5px;
+}
+
+.diary-form {
+  background: #f8f9fa;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.quick-post-section {
+  text-align: center;
+}
+
+.quick-post-section h3 {
+  color: #333;
+  margin-bottom: 15px;
+}
+
+.quick-post-section p {
+  color: #666;
+  margin-bottom: 25px;
+}
+
+.submit-btn {
+  display: inline-block;
+  padding: 15px 30px;
+  background: linear-gradient(135deg, #28a745, #20c997);
+  color: white;
+  text-decoration: none;
+  border-radius: 8px;
+  font-size: 18px;
+  font-weight: bold;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  margin-bottom: 25px;
+}
+
+.submit-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(40,167,69,0.3);
+  text-decoration: none;
+  color: white;
+}
+
+.info-box {
+  background: #e9ecef;
+  border-radius: 8px;
+  padding: 20px;
+  text-align: left;
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+.info-box p {
+  margin-bottom: 10px;
+  font-weight: bold;
+  color: #495057;
+}
+
+.info-box ul {
+  margin: 0;
+  padding-left: 20px;
+  color: #6c757d;
+}
+
+.info-box li {
+  margin-bottom: 5px;
+}
+
+@media (max-width: 768px) {
+  .post-form-container {
+    padding: 10px;
+  }
+  
+  .diary-form {
+    padding: 20px;
+  }
+}
+</style>
+
