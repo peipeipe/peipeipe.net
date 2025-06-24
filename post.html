@@ -1,6 +1,26 @@
 ---
 layout: default
-ti  <form id="diary-form" class="diary-form">
+title: "日記投稿"
+permalink: /post/
+---
+
+<div class="post-form-container">
+  <h1>📝 日記投稿</h1>
+  <p>今日の出来事や思いを記録しましょう</p>
+  
+  <div class="setup-notice">
+    <h3>📝 使い方</h3>
+    <p>この投稿フォームの使用方法：</p>
+    <ol>
+      <li>日記の内容を入力して「投稿する」をクリック</li>
+      <li>JSONファイルが自動でダウンロードされます</li>
+      <li>そのファイルをGitHubの <code>_queue/</code> フォルダにアップロード</li>
+      <li>数分後に自動で日記ページに反映されます</li>
+    </ol>
+    <p><strong>トークンや複雑な設定は不要です！</strong></p>
+  </div>
+
+  <form id="diary-form" class="diary-form">
     <div class="form-group">
       <label for="content">メッセージ</label>
       <textarea name="content" id="content" placeholder="今日はどんな一日でしたか？" required></textarea>
@@ -13,42 +33,6 @@ ti  <form id="diary-form" class="diary-form">
 
     <button type="submit" class="submit-btn">
       📤 投稿する
-    </button>
-  </form>ink: /post/
----
-
-<div class="post-form-container">
-  <h1>📝 日記投稿</h1>
-  <p>今日の出来事や思いを記録しましょう</p>
-  
-  <div class="setup-notice">
-    <h3>� 使い方</h3>
-    <p>この投稿フォームの使用方法：</p>
-    <ol>
-      <li>日記の内容を入力して「投稿する」をクリック</li>
-      <li>JSONファイルが自動でダウンロードされます</li>
-      <li>そのファイルをGitHubの <code>_queue/</code> フォルダにアップロード</li>
-      <li>数分後に自動で日記ページに反映されます</li>
-    </ol>
-    <p><strong>トークンや複雑な設定は不要です！</strong></p>
-  </div>
-
-  <form action="https://formspree.io/f/YOUR_FORMSPREE_ID" method="POST" class="diary-form">
-    <div class="form-group">
-      <label for="content">メッセージ</label>
-      <textarea name="content" id="content" placeholder="今日はどんな一日でしたか？" required></textarea>
-    </div>
-    
-    <div class="form-group">
-      <label for="username">投稿者（省略可）</label>
-      <input type="text" name="username" id="username" placeholder="あなたの名前">
-    </div>
-    
-    <input type="hidden" name="_subject" value="新しい日記投稿">
-    <input type="hidden" name="_next" value="https://peipeipe.github.io/peipeipe.net/post/?success=true">
-
-    <button type="submit" class="submit-btn">
-      � 投稿する
     </button>
   </form>
 
@@ -72,6 +56,37 @@ ti  <form id="diary-form" class="diary-form">
   text-align: center;
   color: #666;
   margin-bottom: 30px;
+}
+
+.setup-notice {
+  background: #e8f4fd;
+  border: 1px solid #bee5eb;
+  border-radius: 8px;
+  padding: 20px;
+  margin-bottom: 30px;
+}
+
+.setup-notice h3 {
+  color: #0c5460;
+  margin-top: 0;
+  margin-bottom: 15px;
+}
+
+.setup-notice p {
+  color: #0c5460;
+  margin-bottom: 10px;
+}
+
+.setup-notice ol {
+  color: #0c5460;
+  margin-left: 20px;
+}
+
+.setup-notice code {
+  background: #d1ecf1;
+  padding: 2px 5px;
+  border-radius: 3px;
+  font-family: monospace;
 }
 
 .diary-form {
@@ -138,10 +153,6 @@ ti  <form id="diary-form" class="diary-form">
   cursor: not-allowed;
   transform: none;
   box-shadow: none;
-}
-
-.loading {
-  font-size: 16px;
 }
 
 .result {

@@ -78,12 +78,11 @@ def process_diary_queue():
             # コンテンツをエスケープ
             escaped_content = escape_html(content.strip())
             
-            # 新しいメッセージ
-            new_message = f'''<div class="diary-message">
-  <div class="diary-message-time">{time_str}</div>
-  <div class="diary-message-content">{escaped_content}</div>
-  <div class="diary-message-meta">🌐 {username}から投稿</div>
-</div>'''
+            # 新しいメッセージ（Markdown形式）
+            new_message = f'''## {time_str}
+{escaped_content}
+
+*{username}から投稿*'''
             
             if file_path.exists():
                 # 既存ファイルを更新
