@@ -102,4 +102,22 @@ layout: default
   text-align: center;
   margin: 0;
 }
+
+/* 日記内の画像サイズ制限 */
+.diary-content img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  margin: 10px 0;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* 画像が大きすぎる場合の最大サイズ */
+.diary-content img {
+  max-height: 500px;
+  object-fit: contain;
+}
 </style>

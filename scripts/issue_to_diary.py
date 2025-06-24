@@ -8,9 +8,12 @@ import yaml
 import re
 import requests
 import base64
+import io
 from datetime import datetime, timezone, timedelta
 from pathlib import Path
 from urllib.parse import urlparse
+from PIL import Image
+import io
 
 def escape_html(text):
     """HTMLエスケープ"""
@@ -26,6 +29,46 @@ def get_jst_now():
     jst = timezone(timedelta(hours=9))
     return datetime.now(jst)
 
+def convert_to_webp(image_data, quality=85, max_width=1200):
+    """画像データをWebPに変換（リサイズ機能付き）"""
+    try:
+        # バイナリデータからPIL Imageオブジェクトを作成
+        image = Image.open(io.BytesIO(image_data))
+        original_size = image.size
+        
+        # 画像をリサイズ（幅が最大幅を超える場合）
+        if image.width > max_width:
+            # アスペクト比を保持してリサイズ
+            ratio = max_width / image.width
+            new_height = int(image.height * ratio)
+            image = image.resize((max_width, new_height), Image.Resampling.LANCZOS)
+            print(f"画像リサイズ: {original_size[0]}x{original_size[1]} -> {image.width}x{image.height}")
+        
+        # RGBAモードの場合はRGBに変換（WebPのAlpha対応）
+        if image.mode in ('RGBA', 'LA', 'P'):
+            # 透明度がある場合はそのまま保持
+            pass
+        elif image.mode != 'RGB':
+            image = image.convert('RGB')
+        
+        # WebP形式でバイナリデータに変換
+        webp_buffer = io.BytesIO()
+        image.save(webp_buffer, format='WEBP', quality=quality, optimize=True)
+        webp_data = webp_buffer.getvalue()
+        
+        # 元のサイズと変換後のサイズを表示
+        original_file_size = len(image_data)
+        webp_file_size = len(webp_data)
+        compression_ratio = (1 - webp_file_size / original_file_size) * 100
+        
+        print(f"WebP変換: {original_file_size:,} bytes -> {webp_file_size:,} bytes (-{compression_ratio:.1f}%)")
+        
+        return webp_data
+        
+    except Exception as e:
+        print(f"WebP変換エラー: {e}")
+        return image_data  # 変換に失敗した場合は元のデータを返す
+
 def download_and_save_image(image_url, date_str, time_str):
     """GitHub画像URLから画像をダウンロードして保存"""
     try:
@@ -35,32 +78,31 @@ def download_and_save_image(image_url, date_str, time_str):
         response = requests.get(image_url, timeout=30)
         response.raise_for_status()
         
-        # ファイル拡張子を取得
+        # 元の拡張子を取得（ログ用）
         parsed_url = urlparse(image_url)
         path_parts = parsed_url.path.split('.')
+        original_ext = 'unknown'
         if len(path_parts) > 1:
-            file_ext = path_parts[-1].lower()
-            # よくある画像形式のみ許可
-            if file_ext not in ['jpg', 'jpeg', 'png', 'gif', 'webp']:
-                file_ext = 'jpg'
-        else:
-            file_ext = 'jpg'
+            original_ext = path_parts[-1].lower()
         
-        # 保存ディレクトリを作成
-        image_dir = Path('images/diary')
+        # WebPに変換
+        webp_data = convert_to_webp(response.content)
+        
+        # 保存ディレクトリを作成（日付別フォルダ）
+        image_dir = Path(f'images/{date_str}')
         image_dir.mkdir(parents=True, exist_ok=True)
         
-        # ファイル名を生成（重複回避）
+        # ファイル名を生成（WebP形式で保存）
         timestamp = time_str.replace(':', '')
-        filename = f"{date_str}-{timestamp}.{file_ext}"
+        filename = f"{timestamp}.webp"
         image_path = image_dir / filename
         
         # 画像を保存
         with open(image_path, 'wb') as f:
-            f.write(response.content)
+            f.write(webp_data)
         
-        print(f"画像を保存しました: {image_path}")
-        return f"/images/diary/{filename}"
+        print(f"画像を保存しました ({original_ext} -> webp): {image_path}")
+        return f"/images/{date_str}/{filename}"
         
     except Exception as e:
         print(f"画像保存エラー ({image_url}): {e}")
