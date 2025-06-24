@@ -10,33 +10,39 @@ permalink: /post/
   
   <div class="setup-notice">
     <h3>📝 使い方</h3>
-    <p>この投稿フォームの使用方法：</p>
+    <p>この日記投稿の使用方法：</p>
     <ol>
-      <li>日記の内容を入力して「投稿する」をクリック</li>
-      <li>JSONファイルが自動でダウンロードされます</li>
-      <li>そのファイルをGitHubの <code>_queue/</code> フォルダにアップロード</li>
+      <li><strong>下のボタンをクリック</strong>してGitHub Issuesページを開く</li>
+      <li><strong>タイトル</strong>に「日記投稿」と入力</li>
+      <li><strong>内容</strong>に日記の内容を書く</li>
+      <li><strong>Submit new issue</strong>をクリック</li>
       <li>数分後に自動で日記ページに反映されます</li>
     </ol>
-    <p><strong>トークンや複雑な設定は不要です！</strong></p>
+    <p><strong>GitHubアカウントでログインが必要です</strong></p>
   </div>
 
-  <form id="diary-form" class="diary-form">
-    <div class="form-group">
-      <label for="content">メッセージ</label>
-      <textarea name="content" id="content" placeholder="今日はどんな一日でしたか？" required></textarea>
+  <div class="diary-form">
+    <div class="quick-post-section">
+      <h3>📝 日記を投稿する</h3>
+      <p>下のボタンをクリックしてGitHub Issuesで日記を投稿できます</p>
+      
+      <a href="https://github.com/peipeipe/peipeipe.net/issues/new?title=日記投稿&body=今日の出来事を書いてください..." 
+         target="_blank" 
+         class="submit-btn">
+        📝 日記を投稿する（GitHub Issues）
+      </a>
+      
+      <div class="info-box">
+        <p><strong>💡 ヒント:</strong></p>
+        <ul>
+          <li>GitHubアカウントが必要です</li>
+          <li>タイトルは「日記投稿」のままでOKです</li>
+          <li>Markdown記法が使えます</li>
+          <li>投稿後、自動でIssueは閉じられます</li>
+        </ul>
+      </div>
     </div>
-    
-    <div class="form-group">
-      <label for="username">投稿者（省略可）</label>
-      <input type="text" name="username" id="username" placeholder="あなたの名前">
-    </div>
-
-    <button type="submit" class="submit-btn">
-      📤 投稿する
-    </button>
-  </form>
-
-  <div id="result" class="result"></div>
+  </div>
 </div>
 
 <style>
@@ -96,83 +102,63 @@ permalink: /post/
   box-shadow: 0 2px 10px rgba(0,0,0,0.1);
 }
 
-.form-group {
-  margin-bottom: 20px;
+.quick-post-section {
+  text-align: center;
 }
 
-.form-group label {
-  display: block;
-  margin-bottom: 8px;
-  font-weight: bold;
+.quick-post-section h3 {
   color: #333;
+  margin-bottom: 15px;
 }
 
-.form-group textarea,
-.form-group input {
-  width: 100%;
-  padding: 12px;
-  border: 2px solid #e1e5e9;
-  border-radius: 8px;
-  font-size: 16px;
-  font-family: inherit;
-  transition: border-color 0.2s ease;
-}
-
-.form-group textarea {
-  min-height: 120px;
-  resize: vertical;
-}
-
-.form-group input:focus,
-.form-group textarea:focus {
-  outline: none;
-  border-color: #007bff;
-  box-shadow: 0 0 0 3px rgba(0,123,255,0.1);
+.quick-post-section p {
+  color: #666;
+  margin-bottom: 25px;
 }
 
 .submit-btn {
-  width: 100%;
-  padding: 15px;
-  background: linear-gradient(135deg, #007bff, #0056b3);
+  display: inline-block;
+  padding: 15px 30px;
+  background: linear-gradient(135deg, #28a745, #20c997);
   color: white;
-  border: none;
+  text-decoration: none;
   border-radius: 8px;
   font-size: 18px;
   font-weight: bold;
-  cursor: pointer;
   transition: transform 0.2s ease, box-shadow 0.2s ease;
+  margin-bottom: 25px;
 }
 
 .submit-btn:hover {
   transform: translateY(-2px);
-  box-shadow: 0 4px 15px rgba(0,123,255,0.3);
+  box-shadow: 0 4px 15px rgba(40,167,69,0.3);
+  text-decoration: none;
+  color: white;
 }
 
-.submit-btn:disabled {
-  background: #6c757d;
-  cursor: not-allowed;
-  transform: none;
-  box-shadow: none;
-}
-
-.result {
-  margin-top: 20px;
-  padding: 15px;
+.info-box {
+  background: #e9ecef;
   border-radius: 8px;
-  text-align: center;
+  padding: 20px;
+  text-align: left;
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+.info-box p {
+  margin-bottom: 10px;
   font-weight: bold;
+  color: #495057;
 }
 
-.result.success {
-  background: #d4edda;
-  color: #155724;
-  border: 1px solid #c3e6cb;
+.info-box ul {
+  margin: 0;
+  padding-left: 20px;
+  color: #6c757d;
 }
 
-.result.error {
-  background: #f8d7da;
-  color: #721c24;
-  border: 1px solid #f5c6cb;
+.info-box li {
+  margin-bottom: 5px;
 }
 
 @media (max-width: 768px) {
@@ -186,49 +172,3 @@ permalink: /post/
 }
 </style>
 
-<script>
-document.getElementById('diary-form').addEventListener('submit', function(e) {
-  e.preventDefault();
-  
-  const content = document.getElementById('content').value;
-  const username = document.getElementById('username').value || 'Web投稿';
-  const result = document.getElementById('result');
-  
-  if (!content.trim()) {
-    result.innerHTML = '❌ 投稿内容を入力してください。';
-    result.className = 'result error';
-    return;
-  }
-  
-  // 投稿データを準備
-  const postData = {
-    content: content.trim(),
-    username: username,
-    timestamp: new Date().toISOString()
-  };
-  
-  // ファイル名（タイムスタンプベース）
-  const timestamp = new Date().toISOString().replace(/[:.]/g, '-');
-  const filename = `post-${timestamp}.json`;
-  
-  // JSONファイルをダウンロード
-  const blob = new Blob([JSON.stringify(postData, null, 2)], { type: 'application/json' });
-  const url = URL.createObjectURL(blob);
-  const a = document.createElement('a');
-  a.href = url;
-  a.download = filename;
-  a.click();
-  URL.revokeObjectURL(url);
-  
-  result.innerHTML = `✅ 投稿ファイルをダウンロードしました！<br>
-    <strong>次の手順:</strong><br>
-    1. ダウンロードした <code>${filename}</code> を<br>
-    2. GitHubの <code>_queue/</code> フォルダにアップロード<br>
-    3. 数分後に自動で日記に反映されます`;
-  result.className = 'result success';
-  
-  // フォームをクリア
-  document.getElementById('content').value = '';
-  document.getElementById('username').value = '';
-});
-</script>
