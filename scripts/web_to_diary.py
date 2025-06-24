@@ -1,11 +1,10 @@
 #!/usr/bin/env python3
 """
-GitHub Issues を日記エントリに変換するスクリプト
+Web フォームからの日記エントリを作成するスクリプト
 """
 
 import os
 import yaml
-import re
 from datetime import datetime, timezone, timedelta
 from pathlib import Path
 
@@ -23,17 +22,15 @@ def get_jst_now():
     jst = timezone(timedelta(hours=9))
     return datetime.now(jst)
 
-def create_diary_from_issue():
-    """Issueから日記エントリを作成"""
+def create_diary_from_web():
+    """Webフォームから日記エントリを作成"""
     
     # 環境変数から情報を取得
-    issue_title = os.getenv('ISSUE_TITLE', '')
-    issue_body = os.getenv('ISSUE_BODY', '')
-    issue_number = os.getenv('ISSUE_NUMBER', '')
-    issue_url = os.getenv('ISSUE_URL', '')
+    content = os.getenv('DIARY_CONTENT', '')
+    username = os.getenv('DIARY_USERNAME', 'Web投稿')
     
-    if not issue_body.strip():
-        print("エラー: Issue内容が空です")
+    if not content.strip():
+        print("エラー: 投稿内容が空です")
         return
     
     # 現在の日本時間を取得
@@ -41,9 +38,9 @@ def create_diary_from_issue():
     date_str = jst_now.strftime('%Y-%m-%d')
     time_str = jst_now.strftime('%H:%M')
     
-    print(f"Issue から日記作成: {date_str} {time_str}")
-    print(f"タイトル: {issue_title}")
-    print(f"内容: {issue_body[:100]}...")
+    print(f"Web投稿から日記作成: {date_str} {time_str}")
+    print(f"投稿者: {username}")
+    print(f"内容: {content[:100]}...")
     
     # ファイルパス
     diary_dir = Path('_diary')
@@ -52,13 +49,13 @@ def create_diary_from_issue():
     file_path = diary_dir / f"{date_str}.md"
     
     # コンテンツをエスケープ
-    escaped_content = escape_html(issue_body.strip())
+    escaped_content = escape_html(content.strip())
     
     # 新しいメッセージ
     new_message = f'''<div class="diary-message">
   <div class="diary-message-time">{time_str}</div>
   <div class="diary-message-content">{escaped_content}</div>
-  <div class="diary-message-meta">📱 iPhoneから投稿 | <a href="{issue_url}">Issue #{issue_number}</a></div>
+  <div class="diary-message-meta">🌐 {username}から投稿</div>
 </div>'''
     
     if file_path.exists():
@@ -115,4 +112,4 @@ def create_diary_from_issue():
         print(f"新しい日記ファイルを作成しました: {file_path}")
 
 if __name__ == '__main__':
-    create_diary_from_issue()
+    create_diary_from_web()

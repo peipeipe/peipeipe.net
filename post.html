@@ -167,12 +167,12 @@ document.getElementById('diary-form').addEventListener('submit', async function(
   const content = document.getElementById('content').value;
   const username = document.getElementById('username').value;    try {
     // GitHub Actions workflow_dispatch APIを使用
-    const response = await fetch('https://api.github.com/repos/peipeipe/peipeipe.net/actions/workflows/update-diary.yml/dispatches', {
+    const response = await fetch('https://api.github.com/repos/peipeipe/peipeipe.net/actions/workflows/web-diary.yml/dispatches', {
       method: 'POST',
       headers: {
         'Accept': 'application/vnd.github.v3+json',
         'Content-Type': 'application/json',
-        'Authorization': 'Bearer ghp_REPLACE_WITH_YOUR_TOKEN'
+        'Authorization': 'Bearer ' + prompt('GitHubトークンを入力してください:')
       },
       body: JSON.stringify({
         ref: 'master',
@@ -189,11 +189,13 @@ document.getElementById('diary-form').addEventListener('submit', async function(
       document.getElementById('content').value = '';
       document.getElementById('username').value = '';
     } else {
-      throw new Error('投稿に失敗しました');
+      const errorText = await response.text();
+      throw new Error(`投稿に失敗しました: ${response.status}`);
     }
     
   } catch (error) {
-    result.innerHTML = '❌ 投稿に失敗しました。<br>しばらく時間をおいて再試行してください。';
+    console.error('投稿エラー:', error);
+    result.innerHTML = '❌ 投稿に失敗しました。<br>GitHubトークンを確認してください。';
     result.className = 'result error';
   }
   

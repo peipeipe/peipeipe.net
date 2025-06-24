@@ -1,0 +1,53 @@
+name: Web Diary Post
+
+on:
+  workflow_dispatch:
+    inputs:
+      content:
+        description: '日記の内容'
+        required: true
+        type: string
+      username:
+        description: '投稿者名'
+        required: false
+        type: string
+        default: 'Web投稿'
+
+jobs:
+  create-diary:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v4
+      with:
+        token: ${{ secrets.GITHUB_TOKEN }}
+    
+    - name: Setup Python
+      uses: actions/setup-python@v5
+      with:
+        python-version: '3.9'
+    
+    - name: Install Python dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install pyyaml pytz
+    
+    - name: Create diary entry from web
+      run: |
+        python scripts/web_to_diary.py
+      env:
+        DIARY_CONTENT: ${{ inputs.content }}
+        DIARY_USERNAME: ${{ inputs.username }}
+    
+    - name: Commit and push changes
+      run: |
+        git config --local user.email "action@github.com"
+        git config --local user.name "GitHub Action (Web Diary)"
+        git add _diary/
+        if git diff --staged --quiet; then
+          echo "変更がありません"
+        else
+          git commit -m "📝 Web日記: ${{ inputs.username }} - $(date '+%Y-%m-%d %H:%M')"
+          git push
+        fi
