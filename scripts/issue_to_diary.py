@@ -111,10 +111,17 @@ def download_and_save_image(image_url, date_str, time_str):
 def process_images_in_content(content, date_str, time_str):
     """GitHubの画像URLを見つけて、ローカルに保存し、パスを更新"""
     print("画像URLの検索と処理を開始...")
+    print(f"検索対象の内容: {content[:500]}...")  # デバッグ用
     
     # GitHub画像URLのパターン（user-attachments、camo、raw.githubusercontent.com など）
     github_image_patterns = [
-        r'https://github\.com/[^/]+/[^/]+/assets/[^/]+/[^)\s]+',
+        r'!\[[^\]]*\]\(https://github\.com/user-attachments/assets/[^)]+\)',
+        r'!\[[^\]]*\]\(https://user-images\.githubusercontent\.com/[^)]+\)',
+        r'!\[[^\]]*\]\(https://camo\.githubusercontent\.com/[^)]+\)',
+        r'!\[[^\]]*\]\(https://raw\.githubusercontent\.com/[^)]+\.(png|jpg|jpeg|gif|webp)\)',
+        r'!\[[^\]]*\]\(https://github-production-user-asset-[^)]+\.s3\.amazonaws\.com/[^)]+\)',
+        r'!\[[^\]]*\]\(https://private-user-images\.githubusercontent\.com/[^)]+\)',
+        r'https://github\.com/user-attachments/assets/[^)\s]+',
         r'https://user-images\.githubusercontent\.com/[^)\s]+',
         r'https://camo\.githubusercontent\.com/[^)\s]+',
         r'https://raw\.githubusercontent\.com/[^)\s]+\.(png|jpg|jpeg|gif|webp)',
@@ -125,25 +132,36 @@ def process_images_in_content(content, date_str, time_str):
     image_counter = 1
     
     for pattern in github_image_patterns:
+        print(f"パターン検索中: {pattern}")  # デバッグ用
         matches = re.finditer(pattern, updated_content, re.IGNORECASE)
         for match in matches:
             image_url = match.group(0)
             print(f"GitHub画像URL発見: {image_url}")
             
+            # Markdownリンクの場合はURLを抽出
+            if image_url.startswith('!['):
+                # ![...](URL) からURLを抽出
+                url_match = re.search(r'\(([^)]+)\)', image_url)
+                if url_match:
+                    actual_url = url_match.group(1)
+                    print(f"Markdownから抽出したURL: {actual_url}")
+                else:
+                    continue
+            else:
+                actual_url = image_url
+            
             # クエリパラメータを除去
-            clean_url = image_url.split('?')[0].split('#')[0]
+            clean_url = actual_url.split('?')[0].split('#')[0]
             
             # 画像をダウンロードして保存
             local_path = download_and_save_image(clean_url, date_str, f"{time_str}-{image_counter:02d}")
             
             if local_path:
-                # Markdownリンクの場合はalt属性を設定
-                if f"![]({image_url})" in updated_content:
-                    updated_content = updated_content.replace(f"![]({image_url})", f"![画像 {image_counter}]({local_path})")
-                    print(f"Markdownリンク（空のalt）を置換: ![画像 {image_counter}]({local_path})")
-                elif f"![image]({image_url})" in updated_content:
-                    updated_content = updated_content.replace(f"![image]({image_url})", f"![画像 {image_counter}]({local_path})")
-                    print(f"Markdownリンク（image alt）を置換: ![画像 {image_counter}]({local_path})")
+                # 元のマッチした文字列を置換
+                if image_url.startswith('!['):
+                    # Markdownリンクの場合
+                    updated_content = updated_content.replace(image_url, f"![画像 {image_counter}]({local_path})")
+                    print(f"Markdownリンク置換: {image_url} -> ![画像 {image_counter}]({local_path})")
                 else:
                     # 単純なURL置換
                     updated_content = updated_content.replace(image_url, local_path)
