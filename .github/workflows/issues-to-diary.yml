@@ -38,12 +38,21 @@ jobs:
         ISSUE_URL: ${{ github.event.issue.html_url }}
         ISSUE_USER: ${{ github.event.issue.user.login }}
     
-    - name: Delete issue (完全削除)
+    - name: Label and close issue
       run: |
-        curl -X DELETE \
+        # まず処理完了ラベルを追加
+        curl -X POST \
           -H "Authorization: token ${{ secrets.GITHUB_TOKEN }}" \
           -H "Accept: application/vnd.github.v3+json" \
-          https://api.github.com/repos/${{ github.repository }}/issues/${{ github.event.issue.number }}
+          https://api.github.com/repos/${{ github.repository }}/issues/${{ github.event.issue.number }}/labels \
+          -d '["diary-processed"]'
+        
+        # その後クローズ
+        curl -X PATCH \
+          -H "Authorization: token ${{ secrets.GITHUB_TOKEN }}" \
+          -H "Accept: application/vnd.github.v3+json" \
+          https://api.github.com/repos/${{ github.repository }}/issues/${{ github.event.issue.number }} \
+          -d '{"state":"closed","state_reason":"completed"}'
     
     - name: Commit and push changes
       run: |
