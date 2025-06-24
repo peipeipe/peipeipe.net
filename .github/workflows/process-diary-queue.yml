@@ -1,21 +1,16 @@
-name: Web Diary Post
+name: Process Diary Queue
 
 on:
+  push:
+    paths:
+      - '_queue/*.json'
   workflow_dispatch:
-    inputs:
-      content:
-        description: '日記の内容'
-        required: true
-        type: string
-      username:
-        description: '投稿者名'
-        required: false
-        type: string
-        default: 'Web投稿'
 
 jobs:
-  create-diary:
+  process-diary:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
     
     steps:
     - name: Checkout repository
@@ -33,21 +28,18 @@ jobs:
         python -m pip install --upgrade pip
         pip install pyyaml pytz
     
-    - name: Create diary entry from web
+    - name: Process diary queue
       run: |
-        python scripts/web_to_diary.py
-      env:
-        DIARY_CONTENT: ${{ inputs.content }}
-        DIARY_USERNAME: ${{ inputs.username }}
+        python scripts/process_diary_queue.py
     
     - name: Commit and push changes
       run: |
         git config --local user.email "action@github.com"
-        git config --local user.name "GitHub Action (Web Diary)"
-        git add _diary/
+        git config --local user.name "GitHub Action (Diary Queue)"
+        git add .
         if git diff --staged --quiet; then
           echo "変更がありません"
         else
-          git commit -m "📝 Web日記: ${{ inputs.username }} - $(date '+%Y-%m-%d %H:%M')"
+          git commit -m "📝 日記キューを処理: $(date '+%Y-%m-%d %H:%M')"
           git push
         fi

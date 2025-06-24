@@ -1,27 +1,54 @@
 ---
 layout: default
-title: "日記投稿"
-permalink: /post/
+ti  <form id="diary-form" class="diary-form">
+    <div class="form-group">
+      <label for="content">メッセージ</label>
+      <textarea name="content" id="content" placeholder="今日はどんな一日でしたか？" required></textarea>
+    </div>
+    
+    <div class="form-group">
+      <label for="username">投稿者（省略可）</label>
+      <input type="text" name="username" id="username" placeholder="あなたの名前">
+    </div>
+
+    <button type="submit" class="submit-btn">
+      📤 投稿する
+    </button>
+  </form>ink: /post/
 ---
 
 <div class="post-form-container">
   <h1>📝 日記投稿</h1>
   <p>今日の出来事や思いを記録しましょう</p>
+  
+  <div class="setup-notice">
+    <h3>� 使い方</h3>
+    <p>この投稿フォームの使用方法：</p>
+    <ol>
+      <li>日記の内容を入力して「投稿する」をクリック</li>
+      <li>JSONファイルが自動でダウンロードされます</li>
+      <li>そのファイルをGitHubの <code>_queue/</code> フォルダにアップロード</li>
+      <li>数分後に自動で日記ページに反映されます</li>
+    </ol>
+    <p><strong>トークンや複雑な設定は不要です！</strong></p>
+  </div>
 
-  <form id="diary-form" class="diary-form">
+  <form action="https://formspree.io/f/YOUR_FORMSPREE_ID" method="POST" class="diary-form">
     <div class="form-group">
       <label for="content">メッセージ</label>
-      <textarea id="content" name="content" placeholder="今日はどんな一日でしたか？" required></textarea>
+      <textarea name="content" id="content" placeholder="今日はどんな一日でしたか？" required></textarea>
     </div>
     
     <div class="form-group">
       <label for="username">投稿者（省略可）</label>
-      <input type="text" id="username" name="username" placeholder="あなたの名前">
+      <input type="text" name="username" id="username" placeholder="あなたの名前">
     </div>
+    
+    <input type="hidden" name="_subject" value="新しい日記投稿">
+    <input type="hidden" name="_next" value="https://peipeipe.github.io/peipeipe.net/post/?success=true">
 
-    <button type="submit" id="submit-btn" class="submit-btn">
-      <span id="btn-text">📤 投稿する</span>
-      <span id="btn-loading" class="loading" style="display: none;">送信中...</span>
+    <button type="submit" class="submit-btn">
+      � 投稿する
     </button>
   </form>
 
@@ -149,59 +176,48 @@ permalink: /post/
 </style>
 
 <script>
-document.getElementById('diary-form').addEventListener('submit', async function(e) {
+document.getElementById('diary-form').addEventListener('submit', function(e) {
   e.preventDefault();
   
-  const submitBtn = document.getElementById('submit-btn');
-  const btnText = document.getElementById('btn-text');
-  const btnLoading = document.getElementById('btn-loading');
+  const content = document.getElementById('content').value;
+  const username = document.getElementById('username').value || 'Web投稿';
   const result = document.getElementById('result');
   
-  // ボタンを無効化
-  submitBtn.disabled = true;
-  btnText.style.display = 'none';
-  btnLoading.style.display = 'inline';
-  result.innerHTML = '';
-  result.className = 'result';
-  
-  const content = document.getElementById('content').value;
-  const username = document.getElementById('username').value;    try {
-    // GitHub Actions workflow_dispatch APIを使用
-    const response = await fetch('https://api.github.com/repos/peipeipe/peipeipe.net/actions/workflows/web-diary.yml/dispatches', {
-      method: 'POST',
-      headers: {
-        'Accept': 'application/vnd.github.v3+json',
-        'Content-Type': 'application/json',
-        'Authorization': 'Bearer ' + prompt('GitHubトークンを入力してください:')
-      },
-      body: JSON.stringify({
-        ref: 'master',
-        inputs: {
-          content: content,
-          username: username || 'Web投稿'
-        }
-      })
-    });
-    
-    if (response.ok) {
-      result.innerHTML = '✅ 投稿が送信されました！<br>数分後に日記に反映されます。';
-      result.className = 'result success';
-      document.getElementById('content').value = '';
-      document.getElementById('username').value = '';
-    } else {
-      const errorText = await response.text();
-      throw new Error(`投稿に失敗しました: ${response.status}`);
-    }
-    
-  } catch (error) {
-    console.error('投稿エラー:', error);
-    result.innerHTML = '❌ 投稿に失敗しました。<br>GitHubトークンを確認してください。';
+  if (!content.trim()) {
+    result.innerHTML = '❌ 投稿内容を入力してください。';
     result.className = 'result error';
+    return;
   }
   
-  // ボタンを有効化
-  submitBtn.disabled = false;
-  btnText.style.display = 'inline';
-  btnLoading.style.display = 'none';
+  // 投稿データを準備
+  const postData = {
+    content: content.trim(),
+    username: username,
+    timestamp: new Date().toISOString()
+  };
+  
+  // ファイル名（タイムスタンプベース）
+  const timestamp = new Date().toISOString().replace(/[:.]/g, '-');
+  const filename = `post-${timestamp}.json`;
+  
+  // JSONファイルをダウンロード
+  const blob = new Blob([JSON.stringify(postData, null, 2)], { type: 'application/json' });
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement('a');
+  a.href = url;
+  a.download = filename;
+  a.click();
+  URL.revokeObjectURL(url);
+  
+  result.innerHTML = `✅ 投稿ファイルをダウンロードしました！<br>
+    <strong>次の手順:</strong><br>
+    1. ダウンロードした <code>${filename}</code> を<br>
+    2. GitHubの <code>_queue/</code> フォルダにアップロード<br>
+    3. 数分後に自動で日記に反映されます`;
+  result.className = 'result success';
+  
+  // フォームをクリア
+  document.getElementById('content').value = '';
+  document.getElementById('username').value = '';
 });
 </script>
