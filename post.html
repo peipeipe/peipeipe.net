@@ -19,6 +19,16 @@ permalink: /post/
       <li>数分後に自動で日記ページに反映されます</li>
     </ol>
     <p><strong>GitHubアカウントでログインが必要です</strong></p>
+    
+    <div class="image-guide">
+      <h4>📸 画像投稿について</h4>
+      <p>画像も簡単に投稿できます：</p>
+      <ul>
+        <li>Issue作成画面で画像をドラッグ&amp;ドロップするか、📎アイコンをクリック</li>
+        <li>自動でMarkdown形式のリンクが生成されます</li>
+        <li>投稿後、画像は自動でローカルに保存され、日記に表示されます</li>
+      </ul>
+    </div>
   </div>
 
   <div class="diary-form">
@@ -26,10 +36,10 @@ permalink: /post/
       <h3>📝 日記を投稿する</h3>
       <p>下のボタンをクリックしてGitHub Issuesで日記を投稿できます</p>
       
-      <a href="https://github.com/peipeipe/peipeipe.net/issues/new?title=日記投稿&body=今日の出来事を書いてください..." 
+      <a href="https://github.com/peipeipe/peipeipe.net/issues/new?title=日記投稿&body=" 
          target="_blank" 
          class="submit-btn">
-        📝 日記を投稿する（GitHub Issues）
+         📝 日記を投稿する（GitHub Issues）
       </a>
       
       <div class="info-box">
@@ -38,6 +48,7 @@ permalink: /post/
           <li>GitHubアカウントが必要です</li>
           <li>タイトルは「日記投稿」のままでOKです</li>
           <li>Markdown記法が使えます</li>
+          <li>画像はドラッグ&amp;ドロップで簡単投稿</li>
           <li>投稿後、自動でIssueは閉じられます</li>
         </ul>
       </div>
@@ -93,6 +104,26 @@ permalink: /post/
   padding: 2px 5px;
   border-radius: 3px;
   font-family: monospace;
+}
+
+.image-guide {
+  margin-top: 20px;
+  padding-top: 15px;
+  border-top: 1px solid #bee5eb;
+}
+
+.image-guide h4 {
+  color: #0c5460;
+  margin-bottom: 10px;
+}
+
+.image-guide ul {
+  color: #0c5460;
+  margin-left: 20px;
+}
+
+.image-guide li {
+  margin-bottom: 5px;
 }
 
 .diary-form {

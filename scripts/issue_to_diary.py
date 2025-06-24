@@ -6,8 +6,11 @@ GitHub Issues を日記エントリに変換するスクリプト
 import os
 import yaml
 import re
+import requests
+import base64
 from datetime import datetime, timezone, timedelta
 from pathlib import Path
+from urllib.parse import urlparse
 
 def escape_html(text):
     """HTMLエスケープ"""
@@ -22,6 +25,95 @@ def get_jst_now():
     """日本時間の現在時刻を取得"""
     jst = timezone(timedelta(hours=9))
     return datetime.now(jst)
+
+def download_and_save_image(image_url, date_str, time_str):
+    """GitHub画像URLから画像をダウンロードして保存"""
+    try:
+        print(f"画像ダウンロード開始: {image_url}")
+        
+        # 画像をダウンロード
+        response = requests.get(image_url, timeout=30)
+        response.raise_for_status()
+        
+        # ファイル拡張子を取得
+        parsed_url = urlparse(image_url)
+        path_parts = parsed_url.path.split('.')
+        if len(path_parts) > 1:
+            file_ext = path_parts[-1].lower()
+            # よくある画像形式のみ許可
+            if file_ext not in ['jpg', 'jpeg', 'png', 'gif', 'webp']:
+                file_ext = 'jpg'
+        else:
+            file_ext = 'jpg'
+        
+        # 保存ディレクトリを作成
+        image_dir = Path('images/diary')
+        image_dir.mkdir(parents=True, exist_ok=True)
+        
+        # ファイル名を生成（重複回避）
+        timestamp = time_str.replace(':', '')
+        filename = f"{date_str}-{timestamp}.{file_ext}"
+        image_path = image_dir / filename
+        
+        # 画像を保存
+        with open(image_path, 'wb') as f:
+            f.write(response.content)
+        
+        print(f"画像を保存しました: {image_path}")
+        return f"/images/diary/{filename}"
+        
+    except Exception as e:
+        print(f"画像保存エラー ({image_url}): {e}")
+        return None
+
+def process_images_in_content(content, date_str, time_str):
+    """GitHubの画像URLを見つけて、ローカルに保存し、パスを更新"""
+    print("画像URLの検索と処理を開始...")
+    
+    # GitHub画像URLのパターン（user-attachments、camo、raw.githubusercontent.com など）
+    github_image_patterns = [
+        r'https://github\.com/[^/]+/[^/]+/assets/[^/]+/[^)\s]+',
+        r'https://user-images\.githubusercontent\.com/[^)\s]+',
+        r'https://camo\.githubusercontent\.com/[^)\s]+',
+        r'https://raw\.githubusercontent\.com/[^)\s]+\.(png|jpg|jpeg|gif|webp)',
+        r'https://github-production-user-asset-[^)\s]+\.s3\.amazonaws\.com/[^)\s]+'
+    ]
+    
+    updated_content = content
+    image_counter = 1
+    
+    for pattern in github_image_patterns:
+        matches = re.finditer(pattern, updated_content, re.IGNORECASE)
+        for match in matches:
+            image_url = match.group(0)
+            print(f"GitHub画像URL発見: {image_url}")
+            
+            # クエリパラメータを除去
+            clean_url = image_url.split('?')[0].split('#')[0]
+            
+            # 画像をダウンロードして保存
+            local_path = download_and_save_image(clean_url, date_str, f"{time_str}-{image_counter:02d}")
+            
+            if local_path:
+                # Markdownリンクの場合はalt属性を設定
+                if f"![]({image_url})" in updated_content:
+                    updated_content = updated_content.replace(f"![]({image_url})", f"![画像 {image_counter}]({local_path})")
+                    print(f"Markdownリンク（空のalt）を置換: ![画像 {image_counter}]({local_path})")
+                elif f"![image]({image_url})" in updated_content:
+                    updated_content = updated_content.replace(f"![image]({image_url})", f"![画像 {image_counter}]({local_path})")
+                    print(f"Markdownリンク（image alt）を置換: ![画像 {image_counter}]({local_path})")
+                else:
+                    # 単純なURL置換
+                    updated_content = updated_content.replace(image_url, local_path)
+                    print(f"画像URL置換: {image_url} -> {local_path}")
+                image_counter += 1
+    
+    if image_counter == 1:
+        print("画像URLは見つかりませんでした")
+    else:
+        print(f"合計 {image_counter - 1} 個の画像を処理しました")
+    
+    return updated_content
 
 def create_diary_from_issue():
     """Issueから日記エントリを作成"""
@@ -52,11 +144,12 @@ def create_diary_from_issue():
     
     file_path = diary_dir / f"{date_str}.md"
     
+    # 画像処理：GitHub画像URLをローカルに保存
+    processed_content = process_images_in_content(issue_body.strip(), date_str, time_str)
+    
     # 新しいメッセージ（Markdown形式）
     new_message = f'''## {time_str}
-{issue_body.strip()}
-
-*{issue_user}から投稿 | [Issue #{issue_number}]({issue_url})*'''
+{processed_content}'''
     
     if file_path.exists():
         # 既存ファイルを更新
