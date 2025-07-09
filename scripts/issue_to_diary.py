@@ -276,7 +276,7 @@ def create_diary_from_issue():
         
         front_matter = {
             'layout': 'diary',
-            'title': f'{formatted_date}の記録',
+            'title': f'{formatted_date}',
             'date': f'{date_str} 00:00:00 +0900'
         }
         
