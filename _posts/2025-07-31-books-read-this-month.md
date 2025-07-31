@@ -4,7 +4,7 @@ title:  "今月読んだ本"
 date:   2025-06-30 22:00:00 +0900
 permalink:   /:year-:month-:day-:title/
 categories: Book
-image: https://m.media-amazon.com/images/W/MEDIAX_1215821-T1/images/I/71teacYlKvL._SL1500_.jpg
+image: https://m.media-amazon.com/images/I/71aed5pVRiL._SL1200_.jpg
 ---
 今月(2025-07)読んだ本は6冊。
 
