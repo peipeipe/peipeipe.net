@@ -37,6 +37,8 @@ image: https://m.media-amazon.com/images/I/71aed5pVRiL._SL1200_.jpg
 絶賛されているが[テスカトリポカ](https://amzn.to/44WpSET)みがありテスカトリポカのほうが好き。
 
 
+
+
 <div class="krb-amzlt-box" style="margin-bottom:0px;"><div class="krb-amzlt-image" style="float:left;margin:0px 12px 1px 0px;"><a href="https://amzn.to/4597OGg"><img width="160px" src="https://images-na.ssl-images-amazon.com/images/P/B00K1A75N4.09.LZZZZZZZ"></a></div><div class="krb-amzlt-info" style="line-height:120%; margin-bottom: 10px"><div class="krb-amzlt-name" style="margin-bottom:10px;line-height:120%"><a href="https://amzn.to/4597OGg" name="amazletlink" target="_blank" rel="nofollow" rel="nofollow">予想どおりに不合理 (ハヤカワ・ノンフィクション文庫)</a><div class="krb-amzlt-powered-date" style="font-size:80%;margin-top:5px;line-height:120%">posted with <a href="https://kaereba.com/wind/" title="amazlet" target="_blank" rel="nofollow" rel="nofollow">カエレバ</a></div></div><div class="krb-amzlt-detail"></div><div class="krb-amzlt-sub-info" style="float: left;"><div class="krb-amzlt-link" style="margin-top: 5px"><a href="https://amzn.to/4597OGg" name="amazletlink" target="_blank" rel="nofollow" rel="nofollow">Amazon.co.jpで詳細を見る</a></div></div></div><div class="krb-amzlt-footer" style="clear: left"></div></div>
 
 > ボクスターの生活を送りたいとは思いません。だって、ボクスターを手に入れたら、つぎは911に乗りたくなりますからね。その911を持っている人たちが何に乗りたがっていると思います？フェラーリですよ。
