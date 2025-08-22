@@ -70,6 +70,39 @@ layout: default
   border-left: 4px solid #007bff;
 }
 
+/* JSで <div class="diary-block"> にまとめる新方式 */
+.diary-block {
+  background: #f8f9fa;
+  border-left: 4px solid #007bff;
+  padding: 10px 15px 15px 15px;
+  margin: 20px 0;
+  border-radius: 4px;
+}
+.diary-block h2 {
+  background: none;
+  border: none;
+  padding: 0;
+  margin: 0 0 8px 0;
+  font-size: 0.9em;
+  color: #666;
+}
+
+/* JS有効時は旧h2単体スタイル無効化 */
+body.js-diary .diary-content h2 {
+  background: none;
+  border: none;
+  padding: 0;
+  margin: 20px 0 0 0; /* 上の余白だけ維持 */
+  border-radius: 0;
+}
+body.js-diary .diary-content h2 + p {
+  background: none;
+  padding: 0;
+  margin: 0;
+  border: none;
+  border-radius: 0;
+}
+
 /* 古いdiv形式のスタイル（後方互換性） */
 .diary-message {
   background: #f8f9fa;
@@ -121,3 +154,28 @@ layout: default
   object-fit: contain;
 }
 </style>
+
+<script>
+// 時刻見出し(##)ごとのブロックを自動ラップし、blockquote等もまとめてカード化
+(function() {
+  var content = document.querySelector('.diary-content');
+  if(!content) return;
+  document.body.classList.add('js-diary');
+  var children = Array.from(content.children);
+  var currentBlock = null;
+  children.forEach(function(el){
+    if(el.tagName === 'H2') {
+      currentBlock = document.createElement('div');
+      currentBlock.className = 'diary-block';
+      content.insertBefore(currentBlock, el);
+      currentBlock.appendChild(el);
+    } else if(currentBlock) {
+      if(el.tagName === 'H2') {
+        // 理論上ここには来ない（処理順で捕捉済み）
+      } else {
+        currentBlock.appendChild(el);
+      }
+    }
+  });
+})();
+</script>
