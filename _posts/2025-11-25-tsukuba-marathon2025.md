@@ -4,7 +4,7 @@ title:  "つくばマラソン2025を走った 3:29:28"
 date:   2025-11-25 21:35:00 +0900
 permalink:   /:year-:month-:day-:title/
 categories: running
-image: https://www.peipeipe.net/images/IMG_1837.jpg
+image: https://www.peipeipe.net/images/2025-11-25-tsukuba-marathon2025/IMG_E4427.JPG
 ---
 長い風邪をひいた一週間後に出場。マジきつかった。
 
