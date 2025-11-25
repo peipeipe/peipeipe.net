@@ -31,4 +31,3 @@ Garminでの記録
 - [横浜マラソン2023を走った 3:24:00 ](https://www.peipeipe.net/2023-10-30-yokohama-marathon2023/)
 - [熊本城マラソン2024を走った 3:17:50 ](https://www.peipeipe.net/2023-10-30-kumamotojyo-marathon2024/)
 - [さいたまマラソン2025を走った 3:16:50 ](https://www.peipeipe.net/2025-03-20-saitama-marathon2025/)
-- [長野マラソン2025を走った 3:16:33 ](https://www.peipeipe.net/2025-04-25-nagano-marathon2025/)
