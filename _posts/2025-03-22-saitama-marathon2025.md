@@ -4,7 +4,7 @@ title:  "さいたまマラソン2025を走った 3:16:50"
 date:   2025-03-20 21:35:00 +0900
 permalink:   /:year-:month-:day-:title/
 categories: running
-image: https://www.peipeipe.net/images/IMG_1837.jpg
+image: https://www.peipeipe.net/images/IMG_1837.webp
 ---
 めちゃ雨、風が吹いて寒むい大会だった。暑いよりは寒いほうが好きだが……。ペースは完全にネガティブスプリットが決まって良い感じ。PBを1分縮めた。
 
@@ -23,7 +23,7 @@ image: https://www.peipeipe.net/images/IMG_1837.jpg
 
 ## 結果
 
-![](https://www.peipeipe.net/images/2025saitama_page-0001.jpg)
+![](https://www.peipeipe.net/images/2025saitama_page-0001.webp)
 Garminでの記録  
 
 <div class="iframe-wrap">

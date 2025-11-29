@@ -4,7 +4,7 @@ title:  "長野マラソン2025を走った 3:16:33"
 date:   2025-04-25 21:35:00 +0900
 permalink:   /:year-:month-:day-:title/
 categories: running
-image: https://www.peipeipe.net/images/2025-04-25-nagano-marathon2025/IMG_1980.jpg
+image: https://www.peipeipe.net/images/2025-04-25-nagano-marathon2025/IMG_1980.webp
 ---
 さいたまマラソンの2か月後に走る。PBを30秒くらい更新。
 
@@ -18,7 +18,7 @@ image: https://www.peipeipe.net/images/2025-04-25-nagano-marathon2025/IMG_1980.j
 
 ## 結果
 
-![](https://www.peipeipe.net/images/2025-04-25-nagano-marathon2025/IMG_1980.jpg)
+![](https://www.peipeipe.net/images/2025-04-25-nagano-marathon2025/IMG_1980.webp)
 Garminでの記録  
 [Garmin Connect](https://connect.garmin.com/modern/activity/18878400854)
 

@@ -1,0 +1,48 @@
+name: Convert JPEG Images to WebP
+
+on:
+  push:
+    paths:
+      - 'images/**/*.jpg'
+      - 'images/**/*.jpeg'
+      - 'images/**/*.JPG'
+      - 'images/**/*.JPEG'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  convert-images:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+          
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install Pillow requests PyYAML
+          
+      - name: Convert JPEG images to WebP
+        run: python scripts/convert_blog_images.py
+        
+      - name: Commit and push changes
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git add -A
+          if git diff --cached --exit-code; then
+            echo "No changes to commit"
+          else
+            git commit -m "Convert JPEG images to WebP and update markdown references"
+            git push
+          fi
