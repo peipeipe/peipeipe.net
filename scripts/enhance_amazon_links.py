@@ -8,6 +8,7 @@ import os
 import re
 import sys
 import requests
+import html
 from pathlib import Path
 from typing import Optional, Dict, List, Tuple
 from amazon.paapi import AmazonAPI
@@ -24,6 +25,9 @@ AMAZON_URL_PATTERNS = [
     r'https?://amzn\.to/[a-zA-Z0-9]+',  # Short links - need to resolve
     r'https?://(?:www\.)?amazon\.co\.jp/[^/]+/dp/([A-Z0-9]{10})',
 ]
+
+# Context window size for checking if anchor is part of complex widget
+WIDGET_CONTEXT_CHECK_SIZE = 200  # Characters to check before anchor tag
 
 # Pattern to match existing rich Amazon content (to avoid double processing)
 EXISTING_RICH_PATTERN = r'(<div class="amazon-product-card".*?</div>\s*</div>|<div class="krb-amzlt-box".*?</div>)'
@@ -116,26 +120,31 @@ def get_product_info(asin: str, api: AmazonAPI) -> Optional[Dict]:
 
 def create_rich_html(product: Dict) -> str:
     """Create rich HTML for Amazon product."""
-    html = f'''<div class="amazon-product-card" style="border: 1px solid #ddd; border-radius: 8px; padding: 16px; margin: 16px 0; display: flex; gap: 16px; align-items: flex-start;">
+    # Escape HTML to prevent XSS
+    title = html.escape(product['title'])
+    image_url = html.escape(product['image_url']) if product.get('image_url') else ''
+    url = html.escape(product['url'])
+    
+    html_content = f'''<div class="amazon-product-card" style="border: 1px solid #ddd; border-radius: 8px; padding: 16px; margin: 16px 0; display: flex; gap: 16px; align-items: flex-start;">
   <div class="amazon-product-image" style="flex-shrink: 0;">
-    <a href="{product['url']}" target="_blank" rel="nofollow noopener">
-      <img src="{product['image_url']}" alt="{product['title']}" style="width: 160px; height: auto; border-radius: 4px;" loading="lazy">
+    <a href="{url}" target="_blank" rel="nofollow noopener">
+      <img src="{image_url}" alt="{title}" style="width: 160px; height: auto; border-radius: 4px;" loading="lazy">
     </a>
   </div>
   <div class="amazon-product-info" style="flex-grow: 1;">
     <h3 style="margin: 0 0 12px 0; font-size: 1.1em;">
-      <a href="{product['url']}" target="_blank" rel="nofollow noopener" style="text-decoration: none; color: #0066c0;">
-        {product['title']}
+      <a href="{url}" target="_blank" rel="nofollow noopener" style="text-decoration: none; color: #0066c0;">
+        {title}
       </a>
     </h3>
     <div class="amazon-product-link">
-      <a href="{product['url']}" target="_blank" rel="nofollow noopener" style="display: inline-block; background-color: #ff9900; color: white; padding: 8px 16px; border-radius: 4px; text-decoration: none; font-weight: bold;">
+      <a href="{url}" target="_blank" rel="nofollow noopener" style="display: inline-block; background-color: #ff9900; color: white; padding: 8px 16px; border-radius: 4px; text-decoration: none; font-weight: bold;">
         Amazon.co.jpで詳細を見る
       </a>
     </div>
   </div>
 </div>'''
-    return html
+    return html_content
 
 
 def find_amazon_links_in_markdown(content: str) -> List[Tuple[str, str]]:
@@ -150,7 +159,8 @@ def find_amazon_links_in_markdown(content: str) -> List[Tuple[str, str]]:
         return links  # Don't process files with existing complex widgets
     
     # Pattern 1: Markdown link format [text](url) - most common and safest
-    md_link_pattern = r'\[([^\]]+)\]\((https?://(?:www\.)?(?:amazon\.co\.jp|amzn\.to)[^\)]+)\)'
+    # Use negative lookahead to handle URLs with parentheses
+    md_link_pattern = r'\[([^\]]+)\]\((https?://(?:www\.)?(?:amazon\.co\.jp|amzn\.to)[^\s\)]+)\)'
     for match in re.finditer(md_link_pattern, content):
         links.append((match.group(0), match.group(2)))
     
@@ -159,7 +169,7 @@ def find_amazon_links_in_markdown(content: str) -> List[Tuple[str, str]]:
     html_link_pattern = r'<a[^>]+href="(https?://(?:www\.)?(?:amazon\.co\.jp|amzn\.to)[^"]+)"[^>]*>[^<]+</a>'
     for match in re.finditer(html_link_pattern, content):
         # Check if this anchor is not part of a complex structure
-        start = max(0, match.start() - 200)
+        start = max(0, match.start() - WIDGET_CONTEXT_CHECK_SIZE)
         context = content[start:match.start()]
         if '<div class="krb-amzlt' not in context and '<div class="amazon-product' not in context:
             links.append((match.group(0), match.group(1)))
