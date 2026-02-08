@@ -19,3 +19,4 @@ test.py
 diary_bot_env/
 venv/
 env/
+.venv/

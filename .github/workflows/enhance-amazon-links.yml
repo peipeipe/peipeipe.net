@@ -31,9 +31,10 @@ jobs:
           
       - name: Enhance Amazon links
         env:
-          AMAZON_ACCESS_KEY: ${{ secrets.AMAZON_ACCESS_KEY }}
-          AMAZON_SECRET_KEY: ${{ secrets.AMAZON_SECRET_KEY }}
+          AMAZON_CREDENTIAL_ID: ${{ secrets.AMAZON_CREDENTIAL_ID }}
+          AMAZON_CREDENTIAL_SECRET: ${{ secrets.AMAZON_CREDENTIAL_SECRET }}
           AMAZON_PARTNER_TAG: ${{ secrets.AMAZON_PARTNER_TAG }}
+          AMAZON_API_VERSION: ${{ secrets.AMAZON_API_VERSION }}
         run: python scripts/enhance_amazon_links.py
         
       - name: Commit and push changes
@@ -44,6 +45,6 @@ jobs:
           if git diff --cached --exit-code; then
             echo "No changes to commit"
           else
-            git commit -m "Enhance Amazon affiliate links with PA-API"
+            git commit -m "Enhance Amazon affiliate links with Creators API"
             git push
           fi
