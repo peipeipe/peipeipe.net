@@ -106,7 +106,7 @@ Already enhanced (should be skipped):
     
     # Test 3: Skip already enhanced content
     print("\nTest 3: Skip already enhanced content")
-    skip_pattern = r'(<div class="amazon-product-card".*?</div>\s*</div>|<div class="krb-amzlt-box".*?</div>)'
+    skip_pattern = r'(<div class="amazon-product-card".*?</div>\s*</div>\s*</div>|<div class="krb-amzlt-box".*?</div>)'
     if re.search(skip_pattern, test_content, re.DOTALL):
         print("✓ PASS: Correctly detected existing rich content")
     else:
