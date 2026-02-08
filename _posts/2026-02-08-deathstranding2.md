@@ -4,7 +4,7 @@ title:  "DEATH STRANDING 2: ON THE BEACHをプレイした"
 date:   2026-02-08 19:30:00 +0900
 permalink:   /:year-:month-:day-:title/
 categories: ゲーム
-image: https://www.peipeipe.net/images/2024-09-28-xenoblade2/54.webp
+image: https://www.peipeipe.net/images/2026-02-08-deathstranding2/DEATH%20STRANDING%202_023.webp
 ---
 トロフィーコンプ1歩手前までやりこんだDEATH STRANDINGの続編が出たので遅くなったがプレイした。
 
