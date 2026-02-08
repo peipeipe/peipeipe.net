@@ -30,7 +30,7 @@ AMAZON_URL_PATTERNS = [
 WIDGET_CONTEXT_CHECK_SIZE = 200  # Characters to check before anchor tag
 
 # Pattern to match existing rich Amazon content (to avoid double processing)
-EXISTING_RICH_PATTERN = r'(<div class="amazon-product-card".*?</div>\s*</div>|<div class="krb-amzlt-box".*?</div>)'
+EXISTING_RICH_PATTERN = r'(<div class="amazon-product-card".*?</div>\s*</div>\s*</div>|<div class="krb-amzlt-box".*?</div>)'
 
 
 def extract_asin_from_url(url: str) -> Optional[str]:
@@ -175,7 +175,7 @@ def find_amazon_links_in_markdown(content: str) -> List[Tuple[str, str]]:
             links.append((match.group(0), match.group(1)))
     
     # Pattern 3: Bare URLs (uncommon but possible)
-    bare_url_pattern = r'(?<!["\(\[])(https?://(?:www\.)?(?:amazon\.co\.jp|amzn\.to)/[^\s\)<>]+)'
+    bare_url_pattern = r'(?<!["\([])( https?://(?:www\.)?(?:amazon\.co\.jp|amzn\.to)/[^\s\)<>]+)'
     for match in re.finditer(bare_url_pattern, content):
         links.append((match.group(0), match.group(1)))
     
