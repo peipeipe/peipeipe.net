@@ -6,7 +6,7 @@ permalink:   /:year-:month-:day-:title/
 categories: ゲーム
 image: https://www.peipeipe.net/images/2024-09-28-xenoblade2/54.webp
 ---
-トロフィーコンプ1っぽ手前までやりこんだDEATH STRANDING。2が出たので遅くなったがプレイした。
+トロフィーコンプ1歩手前までやりこんだDEATH STRANDINGの続編が出たので遅くなったがプレイした。
 
 
 良いですね、サイボーグ忍者。歩荷。山歩き。  
