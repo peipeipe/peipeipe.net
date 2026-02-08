@@ -26,7 +26,7 @@ AMAZON_URL_PATTERNS = [
 ]
 
 # Pattern to match existing rich Amazon content (to avoid double processing)
-EXISTING_RICH_PATTERN = r'<div class="amazon-product-card".*?</div>\s*</div>'
+EXISTING_RICH_PATTERN = r'(<div class="amazon-product-card".*?</div>\s*</div>|<div class="krb-amzlt-box".*?</div>)'
 
 
 def extract_asin_from_url(url: str) -> Optional[str]:
@@ -40,15 +40,22 @@ def extract_asin_from_url(url: str) -> Optional[str]:
     # For short URLs (amzn.to), follow redirects to get the full URL
     if 'amzn.to' in url:
         try:
-            response = requests.head(url, allow_redirects=True, timeout=10)
+            headers = {
+                'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36'
+            }
+            response = requests.get(url, allow_redirects=True, timeout=10, headers=headers)
             full_url = response.url
             # Try extracting ASIN from the full URL
             for pattern in AMAZON_URL_PATTERNS:
                 match = re.search(pattern, full_url)
                 if match and len(match.groups()) > 0:
                     return match.group(1)
+            # Try /dp/ anywhere in the resolved URL
+            asin_match = re.search(r'/(?:dp|gp/product)/([A-Z0-9]{10})', full_url)
+            if asin_match:
+                return asin_match.group(1)
         except Exception as e:
-            print(f"  Error resolving short URL {url}: {e}", file=sys.stderr)
+            print(f"  Warning: Could not resolve short URL {url}: {e}", file=sys.stderr)
     
     # Try to extract ASIN from query parameters
     asin_match = re.search(r'[?&]a=([A-Z0-9]{10})', url)
@@ -134,20 +141,30 @@ def create_rich_html(product: Dict) -> str:
 def find_amazon_links_in_markdown(content: str) -> List[Tuple[str, str]]:
     """Find Amazon links in markdown content.
     Returns list of (match_text, url) tuples.
+    Only returns simple links, not complex HTML structures.
     """
     links = []
     
-    # Pattern 1: Markdown link format [text](url)
+    # Skip content that has complex Amazon widgets
+    if re.search(r'<div class="krb-amzlt-box"', content):
+        return links  # Don't process files with existing complex widgets
+    
+    # Pattern 1: Markdown link format [text](url) - most common and safest
     md_link_pattern = r'\[([^\]]+)\]\((https?://(?:www\.)?(?:amazon\.co\.jp|amzn\.to)[^\)]+)\)'
     for match in re.finditer(md_link_pattern, content):
         links.append((match.group(0), match.group(2)))
     
-    # Pattern 2: HTML anchor tags
-    html_link_pattern = r'<a[^>]+href="(https?://(?:www\.)?(?:amazon\.co\.jp|amzn\.to)[^"]+)"[^>]*>.*?</a>'
+    # Pattern 2: Simple HTML anchor tags (not part of complex divs)
+    # Only match single-line anchors
+    html_link_pattern = r'<a[^>]+href="(https?://(?:www\.)?(?:amazon\.co\.jp|amzn\.to)[^"]+)"[^>]*>[^<]+</a>'
     for match in re.finditer(html_link_pattern, content):
-        links.append((match.group(0), match.group(1)))
+        # Check if this anchor is not part of a complex structure
+        start = max(0, match.start() - 200)
+        context = content[start:match.start()]
+        if '<div class="krb-amzlt' not in context and '<div class="amazon-product' not in context:
+            links.append((match.group(0), match.group(1)))
     
-    # Pattern 3: Bare URLs
+    # Pattern 3: Bare URLs (uncommon but possible)
     bare_url_pattern = r'(?<!["\(\[])(https?://(?:www\.)?(?:amazon\.co\.jp|amzn\.to)/[^\s\)<>]+)'
     for match in re.finditer(bare_url_pattern, content):
         links.append((match.group(0), match.group(1)))
