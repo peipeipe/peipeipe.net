@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-Script to enhance Amazon affiliate links in markdown files using Amazon PA-API.
+Script to enhance Amazon affiliate links in markdown files using Amazon Creators API.
 Replaces simple Amazon links with rich product information (image, title, affiliate link).
 """
 
@@ -11,13 +11,13 @@ import requests
 import html
 from pathlib import Path
 from typing import Optional, Dict, List, Tuple
-from amazon.paapi import AmazonAPI
+from amazon_creatorsapi import AmazonCreatorsApi, Country
 
-# Amazon PA-API credentials (from environment variables)
-ACCESS_KEY = os.environ.get('AMAZON_ACCESS_KEY', '')
-SECRET_KEY = os.environ.get('AMAZON_SECRET_KEY', '')
+# Amazon Creators API credentials (from environment variables)
+CREDENTIAL_ID = os.environ.get('AMAZON_CREDENTIAL_ID', '')
+CREDENTIAL_SECRET = os.environ.get('AMAZON_CREDENTIAL_SECRET', '')
 PARTNER_TAG = os.environ.get('AMAZON_PARTNER_TAG', 'peipeipe-22')
-COUNTRY = 'JP'
+API_VERSION = os.environ.get('AMAZON_API_VERSION', '2.3')
 
 # Regex patterns to find Amazon links
 AMAZON_URL_PATTERNS = [
@@ -74,35 +74,30 @@ def extract_asin_from_url(url: str) -> Optional[str]:
     return None
 
 
-def get_product_info(asin: str, api: AmazonAPI) -> Optional[Dict]:
-    """Fetch product information from Amazon PA-API."""
+def get_product_info(asin: str, api: AmazonCreatorsApi) -> Optional[Dict]:
+    """Fetch product information from Amazon Creators API."""
     try:
         # Use GetItems operation to fetch product details
-        items = api.get_items(
-            item_ids=[asin],
-            resources=[
-                'Images.Primary.Large',
-                'Images.Primary.Medium',
-                'ItemInfo.Title',
-                'ItemInfo.Features',
-                'Offers.Listings.Price',
-            ]
-        )
+        items = api.get_items(items=[asin])
         
         if items and len(items) > 0:
             item = items[0]
             
             # Extract product information
-            title = item.item_info.title.display_value if item.item_info and item.item_info.title else None
+            title = None
+            if hasattr(item, 'item_info') and item.item_info:
+                if hasattr(item.item_info, 'title') and item.item_info.title:
+                    title = item.item_info.title.display_value
+            
             image_url = None
+            if hasattr(item, 'images') and item.images:
+                if hasattr(item.images, 'primary') and item.images.primary:
+                    if hasattr(item.images.primary, 'large') and item.images.primary.large:
+                        image_url = item.images.primary.large.url
+                    elif hasattr(item.images.primary, 'medium') and item.images.primary.medium:
+                        image_url = item.images.primary.medium.url
             
-            if item.images and item.images.primary:
-                if item.images.primary.large:
-                    image_url = item.images.primary.large.url
-                elif item.images.primary.medium:
-                    image_url = item.images.primary.medium.url
-            
-            detail_page_url = item.detail_page_url if item.detail_page_url else None
+            detail_page_url = item.detail_page_url if hasattr(item, 'detail_page_url') else None
             
             if title and detail_page_url:
                 return {
@@ -182,7 +177,7 @@ def find_amazon_links_in_markdown(content: str) -> List[Tuple[str, str]]:
     return links
 
 
-def process_markdown_file(file_path: Path, api: AmazonAPI, dry_run: bool = False) -> bool:
+def process_markdown_file(file_path: Path, api: AmazonCreatorsApi, dry_run: bool = False) -> bool:
     """Process a single markdown file to enhance Amazon links.
     Returns True if file was modified.
     """
@@ -254,15 +249,21 @@ def process_markdown_file(file_path: Path, api: AmazonAPI, dry_run: bool = False
 def main():
     """Main function."""
     # Check for required credentials
-    if not ACCESS_KEY or not SECRET_KEY:
-        print("Error: AMAZON_ACCESS_KEY and AMAZON_SECRET_KEY environment variables must be set", file=sys.stderr)
+    if not CREDENTIAL_ID or not CREDENTIAL_SECRET:
+        print("Error: AMAZON_CREDENTIAL_ID and AMAZON_CREDENTIAL_SECRET environment variables must be set", file=sys.stderr)
         sys.exit(1)
     
-    # Initialize Amazon API
+    # Initialize Amazon Creators API
     try:
-        api = AmazonAPI(ACCESS_KEY, SECRET_KEY, PARTNER_TAG, COUNTRY)
+        api = AmazonCreatorsApi(
+            credential_id=CREDENTIAL_ID,
+            credential_secret=CREDENTIAL_SECRET,
+            version=API_VERSION,
+            tag=PARTNER_TAG,
+            country=Country.JP
+        )
     except Exception as e:
-        print(f"Error initializing Amazon PA-API: {e}", file=sys.stderr)
+        print(f"Error initializing Amazon Creators API: {e}", file=sys.stderr)
         sys.exit(1)
     
     # Get repository root
