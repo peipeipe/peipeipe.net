@@ -12,11 +12,10 @@ import shutil
 from PIL import Image
 import io
 
-def convert_to_webp(image_path, quality=85, max_width=1200):
-    """JPEG画像をWebPに変換（リサイズ・Exif削除機能付き）"""
+def convert_to_webp(image_path, quality=85):
+    """JPEG画像をWebPに変換（Exif削除機能付き）"""
     try:
         with Image.open(image_path) as image:
-            original_size = image.size
             original_file_size = os.path.getsize(image_path)
             
             # Exifデータを確認・削除
@@ -43,13 +42,6 @@ def convert_to_webp(image_path, quality=85, max_width=1200):
                     print("✅ 危険なExifデータなし")
             else:
                 print("✅ Exifデータなし")
-            
-            # 画像をリサイズ（幅が最大幅を超える場合）
-            if image.width > max_width:
-                ratio = max_width / image.width
-                new_height = int(image.height * ratio)
-                image = image.resize((max_width, new_height), Image.Resampling.LANCZOS)
-                print(f"画像リサイズ: {original_size[0]}x{original_size[1]} -> {image.width}x{image.height}")
             
             # RGBAモードの処理
             if image.mode in ('RGBA', 'LA', 'P'):
