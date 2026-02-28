@@ -4,3 +4,4 @@ PyYAML>=6.0
 requests>=2.28.0
 pytz>=2023.3
 Pillow>=10.0.0
+python-amazon-paapi>=6.0.0
