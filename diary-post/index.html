@@ -1272,7 +1272,96 @@ permalink: /diary-post/
   }
 
   /* ════════════════════════════════════════════
-     Submit
+     GitHub Contents API
+  ════════════════════════════════════════════ */
+  const API = 'https://api.github.com';
+
+  function ghHeaders() {
+    return {
+      'Authorization': `Bearer ${state.token}`,
+      'Accept':        'application/vnd.github.v3+json',
+      'Content-Type':  'application/json',
+    };
+  }
+
+  /** ファイルの現在の内容とSHAを取得（なければ null） */
+  async function getFileInfo(path) {
+    const res = await fetch(`${API}/repos/${state.owner}/${state.repo}/contents/${path}`, {
+      headers: ghHeaders(),
+    });
+    if (res.status === 404) return null;
+    if (!res.ok) throw new Error(`ファイル取得失敗 (${res.status}): ${path}`);
+    const data = await res.json();
+    return {
+      sha:     data.sha,
+      content: atob(data.content.replace(/\n/g, '')), // base64 decode
+    };
+  }
+
+  /** ファイルを作成または更新 */
+  async function putFile(path, content, message, sha = null) {
+    const body = {
+      message,
+      content: btoa(unescape(encodeURIComponent(content))), // UTF-8 → base64
+    };
+    if (sha) body.sha = sha;
+
+    const res = await fetch(`${API}/repos/${state.owner}/${state.repo}/contents/${path}`, {
+      method:  'PUT',
+      headers: ghHeaders(),
+      body:    JSON.stringify(body),
+    });
+    if (!res.ok) {
+      const err = await res.json().catch(() => ({}));
+      throw new Error(`書き込み失敗 (${res.status}): ${err.message || path}`);
+    }
+    return res.json();
+  }
+
+  /** 画像をバイナリとしてアップロード（base64 → GitHub Contents API） */
+  async function uploadImage(b64, filename) {
+    const res = await fetch(`${API}/repos/${state.owner}/${state.repo}/contents/${filename}`, {
+      method:  'PUT',
+      headers: ghHeaders(),
+      body: JSON.stringify({
+        message: `📸 diary image: ${filename}`,
+        content: b64, // GitHubはbase64をそのまま受け付ける
+      }),
+    });
+    if (!res.ok) {
+      const err = await res.json().catch(() => ({}));
+      throw new Error(`画像アップロード失敗 (${res.status}): ${err.message || ''}`);
+    }
+    return res.json();
+  }
+
+  /** 日記ファイルのMarkdownを生成・更新 */
+  function buildDiaryContent(existingContent, date, time, text, imagePath) {
+    const WEEKDAYS = ['日','月','火','水','木','金','土'];
+    function formatTitle(d) {
+      const [y,m,day] = d.split('-').map(Number);
+      const wd = WEEKDAYS[new Date(y,m-1,day).getDay()];
+      return `${y}年${String(m).padStart(2,'0')}月${String(day).padStart(2,'0')}日(${wd})`;
+    }
+
+    // 新しいセクションを組み立て
+    let newSection = `\n## ${time}\n`;
+    if (imagePath) newSection += `![投稿画像](/${imagePath})\n`;
+    if (text)      newSection += `${text}\n`;
+
+    if (existingContent) {
+      // 既存ファイルに追記
+      return existingContent.trimEnd() + '\n' + newSection;
+    } else {
+      // 新規ファイル
+      const title = formatTitle(date);
+      const frontMatter = `---\ndate: ${date} 00:00:00 +0900\nlayout: diary\ntitle: ${title}\n---\n`;
+      return frontMatter + newSection;
+    }
+  }
+
+  /* ════════════════════════════════════════════
+     Submit（Contents API直接書き込み方式）
   ════════════════════════════════════════════ */
   btnSubmit.addEventListener('click', doSubmit);
 
@@ -1283,7 +1372,7 @@ permalink: /diary-post/
     const date    = inputDate.value;
     const time    = inputTime.value;
 
-    if (!content) { showToast('error', '本文が空です', 'テキストを入力してください'); return; }
+    if (!content && !state.imageB64) { showToast('error', '本文が空です', 'テキストまたは画像を入力してください'); return; }
     if (!date || !time) { showToast('error', '日時エラー', '日付と時刻を入力してください'); return; }
     if (!state.token || !state.owner || !state.repo) {
       showToast('error', '設定エラー', 'GitHub Tokenとリポジトリを設定してください');
@@ -1291,68 +1380,69 @@ permalink: /diary-post/
       return;
     }
 
-    setLoading(true);
-
-    const payload = {
-      event_type: 'diary_post',
-      client_payload: {
-        content: content,
-        date:    date,
-        time:    time,
-      }
-    };
-
-    if (state.imageB64) {
-      payload.client_payload.image          = state.imageB64;
-      payload.client_payload.image_filename = state.imageName;
-    }
+    setLoading(true, '📤 アップロード中...');
 
     try {
-      const url = `https://api.github.com/repos/${state.owner}/${state.repo}/dispatches`;
-      const res = await fetch(url, {
-        method:  'POST',
-        headers: {
-          'Authorization': `Bearer ${state.token}`,
-          'Accept':        'application/vnd.github.v3+json',
-          'Content-Type':  'application/json',
-        },
-        body: JSON.stringify(payload),
-      });
+      let imagePath = null;
 
-      if (res.status === 204) {
-        showToast('success', '投稿しました 🎉', `${date} ${time} の日記をGitHubに送信しました。ビルド完了まで数分かかります。`);
-        resetAfterSubmit();
-      } else if (res.status === 401) {
-        const err = await res.json().catch(() => ({}));
-        showToast('error', '認証エラー (401)', 'GitHub Tokenが無効または権限が不足しています。');
-        toggleSettings();
-      } else if (res.status === 404) {
-        showToast('error', 'リポジトリが見つかりません (404)', `${state.owner}/${state.repo} を確認してください。`);
-        toggleSettings();
-      } else if (res.status === 422) {
-        showToast('error', 'イベントタイプエラー (422)', 'ワークフローの event_type 設定を確認してください。');
-      } else {
-        const body = await res.text();
-        showToast('error', `送信失敗 (${res.status})`, body.slice(0, 120));
+      // ── Step 1: 画像アップロード ──
+      if (state.imageB64) {
+        const timeStamp = time.replace(':', '');
+        const ext = state.imageName.match(/\.(jpg|jpeg|png|gif|webp)/i)?.[1]?.toLowerCase() || 'jpg';
+        imagePath = `images/diary/${date}-${timeStamp}.${ext}`;
+
+        setLoading(true, '🖼 画像をアップロード中...');
+        await uploadImage(state.imageB64, imagePath);
       }
+
+      // ── Step 2: 日記ファイルを読み込み ──
+      setLoading(true, '📖 日記ファイルを確認中...');
+      const diaryPath = `_diary/${date}.md`;
+      const existing  = await getFileInfo(diaryPath);
+
+      // ── Step 3: Markdownを生成して書き込み ──
+      setLoading(true, '✍️ 日記を保存中...');
+      const newContent = buildDiaryContent(
+        existing?.content ?? null,
+        date, time, content, imagePath
+      );
+      const commitMsg = `📝 日記: ${date} ${time}`;
+      await putFile(diaryPath, newContent, commitMsg, existing?.sha ?? null);
+
+      showToast('success', '投稿完了 🎉',
+        `${date} ${time} の日記を保存しました。GitHub Pagesのビルド後（〜1分）に反映されます。`,
+        7000
+      );
+      resetAfterSubmit();
+
     } catch (err) {
-      showToast('error', 'ネットワークエラー', err.message);
+      console.error(err);
+      if (err.message.includes('401') || err.message.includes('Bad credentials')) {
+        showToast('error', '認証エラー', 'GitHub Tokenを確認してください（Contents: Read and write 権限が必要です）');
+        toggleSettings();
+      } else if (err.message.includes('404')) {
+        showToast('error', 'リポジトリが見つかりません', `${state.owner}/${state.repo} を確認してください`);
+        toggleSettings();
+      } else {
+        showToast('error', '投稿失敗', err.message);
+      }
     } finally {
       setLoading(false);
     }
   }
 
-  function setLoading(on) {
+  function setLoading(on, label = '🚀 投稿する') {
     state.processing = on;
-    submitLabel.textContent = on ? '送信中...' : '🚀 投稿する';
+    submitLabel.textContent = on ? label : '🚀 投稿する';
     btnSubmit.disabled = on;
-    if (on) {
+    const existing = $('submit-spinner');
+    if (on && !existing) {
       const spinner = document.createElement('div');
       spinner.className = 'spinner';
       spinner.id = 'submit-spinner';
       submitLabel.before(spinner);
-    } else {
-      $('submit-spinner')?.remove();
+    } else if (!on) {
+      existing?.remove();
       validateForm();
     }
   }
@@ -1363,6 +1453,7 @@ permalink: /diary-post/
     resetImage();
     setNow();
   }
+
 
   /* ════════════════════════════════════════════
      Toast
