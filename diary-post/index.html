@@ -1294,15 +1294,30 @@ permalink: /diary-post/
     const data = await res.json();
     return {
       sha:     data.sha,
-      content: atob(data.content.replace(/\n/g, '')), // base64 decode
+      content: base64ToUtf8(data.content), // UTF-8 decode
     };
+  }
+
+  /** UTF-8文字列をbase64に変換（TextEncoder使用） */
+  function utf8ToBase64(str) {
+    const bytes = new TextEncoder().encode(str);
+    let binary = '';
+    bytes.forEach(b => binary += String.fromCharCode(b));
+    return btoa(binary);
+  }
+
+  /** base64をUTF-8文字列に変換（TextDecoder使用） */
+  function base64ToUtf8(b64) {
+    const binary = atob(b64.replace(/\n/g, ''));
+    const bytes = new Uint8Array([...binary].map(c => c.charCodeAt(0)));
+    return new TextDecoder().decode(bytes);
   }
 
   /** ファイルを作成または更新 */
   async function putFile(path, content, message, sha = null) {
     const body = {
       message,
-      content: btoa(unescape(encodeURIComponent(content))), // UTF-8 → base64
+      content: utf8ToBase64(content), // UTF-8 → base64（TextEncoder使用）
     };
     if (sha) body.sha = sha;
 
