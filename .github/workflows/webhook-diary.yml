@@ -3,7 +3,7 @@ name: iOS Shortcut to Diary
 on:
   # iOS ショートカットから呼ばれる
   repository_dispatch:
-    types: [diary_entry, ios_diary]
+    types: [diary_entry, ios_diary, diary_post]
   
   # 手動実行用（テスト用）
   workflow_dispatch:
