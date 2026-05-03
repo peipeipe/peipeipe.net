@@ -1,7 +1,17 @@
 #!/usr/bin/env python3
 """
-Script to enhance Amazon affiliate links in markdown files using Amazon Creators API.
-Replaces simple Amazon links with rich product information (image, title, affiliate link).
+Script to enhance Amazon affiliate links in markdown files.
+Replaces simple [text](amazon_url) markdown links with rich krb-amzlt-box cards.
+No PA-API credentials required.
+
+Usage in blog post - just write a standard markdown link:
+  [商品名](https://amzn.to/xxx)
+  or
+  [商品名](https://www.amazon.co.jp/dp/XXXXXXXXXX)
+
+The link text becomes the product title.
+Image URL is constructed from the ASIN.
+affiliate tag is appended if not already present.
 """
 
 import os
@@ -10,280 +20,165 @@ import sys
 import requests
 import html
 from pathlib import Path
-from typing import Optional, Dict, List, Tuple
-from amazon_creatorsapi import AmazonCreatorsApi, Country
+from typing import Optional, List, Tuple
 
-# Amazon Creators API credentials (from environment variables)
-CREDENTIAL_ID = os.environ.get('AMAZON_CREDENTIAL_ID', '')
-CREDENTIAL_SECRET = os.environ.get('AMAZON_CREDENTIAL_SECRET', '')
 PARTNER_TAG = os.environ.get('AMAZON_PARTNER_TAG', 'peipeipe-22')
-API_VERSION = os.environ.get('AMAZON_API_VERSION', '2.3')
 
-# Regex patterns to find Amazon links
-AMAZON_URL_PATTERNS = [
+# Regex patterns to extract ASIN from full Amazon URLs
+AMAZON_ASIN_PATTERNS = [
     r'https?://(?:www\.)?amazon\.co\.jp/(?:exec/obidos/ASIN/|dp/|gp/product/)([A-Z0-9]{10})',
-    r'https?://amzn\.to/[a-zA-Z0-9]+',  # Short links - need to resolve
-    r'https?://(?:www\.)?amazon\.co\.jp/[^/]+/dp/([A-Z0-9]{10})',
+    r'https?://(?:www\.)?amazon\.co\.jp/[^/\s]+/dp/([A-Z0-9]{10})',
+    r'/(?:dp|gp/product)/([A-Z0-9]{10})',
 ]
 
-# Context window size for checking if anchor is part of complex widget
-WIDGET_CONTEXT_CHECK_SIZE = 200  # Characters to check before anchor tag
 
-# Pattern to match existing rich Amazon content (to avoid double processing)
-EXISTING_RICH_PATTERN = r'(<div class="amazon-product-card".*?</div>\s*</div>\s*</div>|<div class="krb-amzlt-box".*?</div>)'
-
-
-def extract_asin_from_url(url: str) -> Optional[str]:
-    """Extract ASIN from Amazon URL."""
-    # First, try direct ASIN extraction
-    for pattern in AMAZON_URL_PATTERNS:
-        match = re.search(pattern, url)
-        if match and len(match.groups()) > 0:
-            return match.group(1)
-    
-    # For short URLs (amzn.to), follow redirects to get the full URL
-    if 'amzn.to' in url:
-        try:
-            headers = {
-                'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36'
-            }
-            response = requests.get(url, allow_redirects=True, timeout=10, headers=headers)
-            full_url = response.url
-            # Try extracting ASIN from the full URL
-            for pattern in AMAZON_URL_PATTERNS:
-                match = re.search(pattern, full_url)
-                if match and len(match.groups()) > 0:
-                    return match.group(1)
-            # Try /dp/ anywhere in the resolved URL
-            asin_match = re.search(r'/(?:dp|gp/product)/([A-Z0-9]{10})', full_url)
-            if asin_match:
-                return asin_match.group(1)
-        except Exception as e:
-            print(f"  Warning: Could not resolve short URL {url}: {e}", file=sys.stderr)
-    
-    # Try to extract ASIN from query parameters
-    asin_match = re.search(r'[?&]a=([A-Z0-9]{10})', url)
-    if asin_match:
-        return asin_match.group(1)
-    
-    # Try to extract from /dp/ or /gp/product/ anywhere in URL
-    asin_match = re.search(r'/(?:dp|gp/product)/([A-Z0-9]{10})', url)
-    if asin_match:
-        return asin_match.group(1)
-    
-    return None
-
-
-def get_product_info(asin: str, api: AmazonCreatorsApi) -> Optional[Dict]:
-    """Fetch product information from Amazon Creators API."""
+def resolve_short_url(url: str) -> Optional[str]:
+    """Follow redirects to resolve amzn.to short URLs to full Amazon URL."""
     try:
-        # Use GetItems operation to fetch product details
-        items = api.get_items(items=[asin])
-        
-        if items and len(items) > 0:
-            item = items[0]
-            
-            # Extract product information
-            title = None
-            if hasattr(item, 'item_info') and item.item_info:
-                if hasattr(item.item_info, 'title') and item.item_info.title:
-                    title = item.item_info.title.display_value
-            
-            image_url = None
-            if hasattr(item, 'images') and item.images:
-                if hasattr(item.images, 'primary') and item.images.primary:
-                    if hasattr(item.images.primary, 'large') and item.images.primary.large:
-                        image_url = item.images.primary.large.url
-                    elif hasattr(item.images.primary, 'medium') and item.images.primary.medium:
-                        image_url = item.images.primary.medium.url
-            
-            detail_page_url = item.detail_page_url if hasattr(item, 'detail_page_url') else None
-            
-            if title and detail_page_url:
-                return {
-                    'asin': asin,
-                    'title': title,
-                    'image_url': image_url,
-                    'url': detail_page_url,
-                }
-        
+        headers = {'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36'}
+        response = requests.get(url, allow_redirects=True, timeout=10, headers=headers)
+        return response.url
     except Exception as e:
-        print(f"Error fetching product info for ASIN {asin}: {e}", file=sys.stderr)
-    
+        print(f"  Warning: Could not resolve short URL {url}: {e}", file=sys.stderr)
+        return None
+
+
+def extract_asin(url: str) -> Optional[str]:
+    """Extract ASIN from an Amazon URL (full or amzn.to short)."""
+    # Resolve short URLs first
+    target_url = url
+    if 'amzn.to' in url:
+        resolved = resolve_short_url(url)
+        if resolved:
+            target_url = resolved
+
+    for pattern in AMAZON_ASIN_PATTERNS:
+        match = re.search(pattern, target_url)
+        if match:
+            return match.group(1)
+
     return None
 
 
-def create_rich_html(product: Dict) -> str:
-    """Create rich HTML for Amazon product."""
-    # Escape HTML to prevent XSS
-    title = html.escape(product['title'])
-    image_url = html.escape(product['image_url']) if product.get('image_url') else ''
-    url = html.escape(product['url'])
-    
-    html_content = f'''<div class="amazon-product-card" style="border: 1px solid #ddd; border-radius: 8px; padding: 16px; margin: 16px 0; display: flex; gap: 16px; align-items: flex-start;">
-  <div class="amazon-product-image" style="flex-shrink: 0;">
-    <a href="{url}" target="_blank" rel="nofollow noopener">
-      <img src="{image_url}" alt="{title}" style="width: 160px; height: auto; border-radius: 4px;" loading="lazy">
-    </a>
-  </div>
-  <div class="amazon-product-info" style="flex-grow: 1;">
-    <h3 style="margin: 0 0 12px 0; font-size: 1.1em;">
-      <a href="{url}" target="_blank" rel="nofollow noopener" style="text-decoration: none; color: #0066c0;">
-        {title}
-      </a>
-    </h3>
-    <div class="amazon-product-link">
-      <a href="{url}" target="_blank" rel="nofollow noopener" style="display: inline-block; background-color: #ff9900; color: white; padding: 8px 16px; border-radius: 4px; text-decoration: none; font-weight: bold;">
-        Amazon.co.jpで詳細を見る
-      </a>
-    </div>
-  </div>
-</div>'''
-    return html_content
+def build_affiliate_url(original_url: str, asin: str) -> str:
+    """Return affiliate URL. Keep amzn.to as-is; add tag to amazon.co.jp URLs."""
+    if 'amzn.to' in original_url:
+        return original_url
+    # Strip existing tag parameter and add ours
+    base = re.sub(r'[?&]tag=[^&]+', '', f"https://www.amazon.co.jp/dp/{asin}")
+    return f"{base}?tag={PARTNER_TAG}"
 
 
-def find_amazon_links_in_markdown(content: str) -> List[Tuple[str, str]]:
-    """Find Amazon links in markdown content.
-    Returns list of (match_text, url) tuples.
-    Only returns simple links, not complex HTML structures.
+def create_krb_html(title: str, asin: str, affiliate_url: str) -> str:
+    """Create a krb-amzlt-box card matching the existing post format."""
+    safe_title = html.escape(title)
+    safe_url = html.escape(affiliate_url)
+    image_url = f"https://images-na.ssl-images-amazon.com/images/P/{asin}.09.LZZZZZZZ"
+
+    return (
+        f'<div class="krb-amzlt-box" style="margin-bottom:0px;">'
+        f'<div class="krb-amzlt-image" style="float:left;margin:0px 12px 1px 0px;">'
+        f'<a href="{safe_url}"><img width="160px" src="{image_url}"></a>'
+        f'</div>'
+        f'<div class="krb-amzlt-info" style="line-height:120%; margin-bottom: 10px">'
+        f'<div class="krb-amzlt-name" style="margin-bottom:10px;line-height:120%">'
+        f'<a href="{safe_url}" name="amazletlink" target="_blank" rel="nofollow" rel="nofollow">'
+        f'{safe_title}'
+        f'</a>'
+        f'</div>'
+        f'<div class="krb-amzlt-detail"></div>'
+        f'<div class="krb-amzlt-sub-info" style="float: left;">'
+        f'<div class="krb-amzlt-link" style="margin-top: 5px">'
+        f'<a href="{safe_url}" name="amazletlink" target="_blank" rel="nofollow" rel="nofollow">'
+        f'Amazon.co.jpで詳細を見る'
+        f'</a>'
+        f'</div></div></div>'
+        f'<div class="krb-amzlt-footer" style="clear: left"></div></div>'
+    )
+
+
+def find_simple_amazon_links(content: str) -> List[Tuple[str, str, str]]:
+    """Find markdown links [text](amazon_url) that are NOT already inside a widget.
+
+    Returns list of (full_match, link_text, url) tuples.
     """
     links = []
-    
-    # Skip content that has complex Amazon widgets
-    if re.search(r'<div class="krb-amzlt-box"', content):
-        return links  # Don't process files with existing complex widgets
-    
-    # Pattern 1: Markdown link format [text](url) - most common and safest
-    # Use negative lookahead to handle URLs with parentheses
-    md_link_pattern = r'\[([^\]]+)\]\((https?://(?:www\.)?(?:amazon\.co\.jp|amzn\.to)[^\s\)]+)\)'
-    for match in re.finditer(md_link_pattern, content):
-        links.append((match.group(0), match.group(2)))
-    
-    # Pattern 2: Simple HTML anchor tags (not part of complex divs)
-    # Only match single-line anchors
-    html_link_pattern = r'<a[^>]+href="(https?://(?:www\.)?(?:amazon\.co\.jp|amzn\.to)[^"]+)"[^>]*>[^<]+</a>'
-    for match in re.finditer(html_link_pattern, content):
-        # Check if this anchor is not part of a complex structure
-        start = max(0, match.start() - WIDGET_CONTEXT_CHECK_SIZE)
+    pattern = re.compile(
+        r'\[([^\]]+)\]\((https?://(?:www\.)?(?:amazon\.co\.jp|amzn\.to)[^\s\)]*)\)'
+    )
+    for match in pattern.finditer(content):
+        # Check the 300 chars before this match for an open widget div
+        start = max(0, match.start() - 300)
         context = content[start:match.start()]
-        if '<div class="krb-amzlt' not in context and '<div class="amazon-product' not in context:
-            links.append((match.group(0), match.group(1)))
-    
-    # Pattern 3: Bare URLs (uncommon but possible)
-    bare_url_pattern = r'(?<!["\([])( https?://(?:www\.)?(?:amazon\.co\.jp|amzn\.to)/[^\s\)<>]+)'
-    for match in re.finditer(bare_url_pattern, content):
-        links.append((match.group(0), match.group(1)))
-    
+        if 'krb-amzlt-box' in context or 'amazon-product-card' in context:
+            continue
+        links.append((match.group(0), match.group(1), match.group(2)))
+
     return links
 
 
-def process_markdown_file(file_path: Path, api: AmazonCreatorsApi, dry_run: bool = False) -> bool:
-    """Process a single markdown file to enhance Amazon links.
-    Returns True if file was modified.
+def process_file(file_path: Path) -> bool:
+    """Process a markdown file and replace simple Amazon links with rich cards.
+
+    Returns True if the file was modified.
     """
     try:
-        with open(file_path, 'r', encoding='utf-8') as f:
-            content = f.read()
-        
-        # Skip if already has rich Amazon content
-        if re.search(EXISTING_RICH_PATTERN, content):
-            print(f"Skipping {file_path} - already has rich Amazon content")
-            return False
-        
-        # Find all Amazon links
-        links = find_amazon_links_in_markdown(content)
-        
-        if not links:
-            return False
-        
-        print(f"Processing {file_path} - found {len(links)} Amazon links")
-        
-        modified = False
-        new_content = content
-        processed_asins = set()
-        
-        for match_text, url in links:
-            # Extract ASIN
-            asin = extract_asin_from_url(url)
-            
-            if not asin:
-                print(f"  Could not extract ASIN from: {url}")
-                continue
-            
-            # Skip if already processed this ASIN in this file
-            if asin in processed_asins:
-                continue
-            
-            processed_asins.add(asin)
-            
-            # Get product info
-            product = get_product_info(asin, api)
-            
-            if not product:
-                print(f"  Could not fetch product info for ASIN: {asin}")
-                continue
-            
-            # Create rich HTML
-            rich_html = create_rich_html(product)
-            
-            # Replace only the first occurrence of this link
-            # This avoids replacing multiple references to the same product
-            new_content = new_content.replace(match_text, rich_html, 1)
-            modified = True
-            
-            print(f"  Enhanced: {product['title'][:50]}...")
-        
-        # Write back to file if modified and not dry run
-        if modified and not dry_run:
-            with open(file_path, 'w', encoding='utf-8') as f:
-                f.write(new_content)
-            print(f"✓ Updated {file_path}")
-        
-        return modified
-        
+        content = file_path.read_text(encoding='utf-8')
     except Exception as e:
-        print(f"Error processing {file_path}: {e}", file=sys.stderr)
+        print(f"Error reading {file_path}: {e}", file=sys.stderr)
         return False
 
+    links = find_simple_amazon_links(content)
+    if not links:
+        return False
 
-def main():
-    """Main function."""
-    # Check for required credentials
-    if not CREDENTIAL_ID or not CREDENTIAL_SECRET:
-        print("Error: AMAZON_CREDENTIAL_ID and AMAZON_CREDENTIAL_SECRET environment variables must be set", file=sys.stderr)
-        sys.exit(1)
-    
-    # Initialize Amazon Creators API
-    try:
-        api = AmazonCreatorsApi(
-            credential_id=CREDENTIAL_ID,
-            credential_secret=CREDENTIAL_SECRET,
-            version=API_VERSION,
-            tag=PARTNER_TAG,
-            country=Country.JP
-        )
-    except Exception as e:
-        print(f"Error initializing Amazon Creators API: {e}", file=sys.stderr)
-        sys.exit(1)
-    
-    # Get repository root
+    print(f"Processing {file_path.name} — {len(links)} link(s) found")
+
+    new_content = content
+    processed_asins: set = set()
+    modified = False
+
+    for full_match, link_text, url in links:
+        asin = extract_asin(url)
+        if not asin:
+            print(f"  Skipped (no ASIN): {url}")
+            continue
+        if asin in processed_asins:
+            print(f"  Skipped duplicate ASIN {asin}")
+            continue
+
+        processed_asins.add(asin)
+        affiliate_url = build_affiliate_url(url, asin)
+        rich_html = create_krb_html(link_text, asin, affiliate_url)
+
+        new_content = new_content.replace(full_match, rich_html, 1)
+        modified = True
+        print(f"  ✓ {link_text[:60]}")
+
+    if modified:
+        try:
+            file_path.write_text(new_content, encoding='utf-8')
+            print(f"  Saved {file_path.name}")
+        except Exception as e:
+            print(f"Error writing {file_path}: {e}", file=sys.stderr)
+            return False
+
+    return modified
+
+
+def main() -> None:
     repo_root = Path(__file__).parent.parent
     posts_dir = repo_root / '_posts'
-    
+
     if not posts_dir.exists():
-        print(f"Error: Posts directory not found: {posts_dir}", file=sys.stderr)
+        print(f"Error: _posts directory not found at {posts_dir}", file=sys.stderr)
         sys.exit(1)
-    
-    # Process all markdown files
-    markdown_files = list(posts_dir.glob('*.md'))
-    print(f"Found {len(markdown_files)} markdown files")
-    
-    modified_count = 0
-    for md_file in markdown_files:
-        if process_markdown_file(md_file, api):
-            modified_count += 1
-    
-    print(f"\n✓ Processing complete. Modified {modified_count} files.")
+
+    md_files = sorted(posts_dir.glob('*.md'))
+    print(f"Scanning {len(md_files)} post files…")
+
+    modified_count = sum(1 for f in md_files if process_file(f))
+    print(f"\nDone. {modified_count} file(s) updated.")
 
 
 if __name__ == '__main__':

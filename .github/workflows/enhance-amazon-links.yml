@@ -31,10 +31,7 @@ jobs:
           
       - name: Enhance Amazon links
         env:
-          AMAZON_CREDENTIAL_ID: ${{ secrets.AMAZON_CREDENTIAL_ID }}
-          AMAZON_CREDENTIAL_SECRET: ${{ secrets.AMAZON_CREDENTIAL_SECRET }}
           AMAZON_PARTNER_TAG: ${{ secrets.AMAZON_PARTNER_TAG }}
-          AMAZON_API_VERSION: ${{ secrets.AMAZON_API_VERSION }}
         run: python scripts/enhance_amazon_links.py
         
       - name: Commit and push changes
