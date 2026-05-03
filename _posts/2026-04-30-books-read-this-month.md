@@ -8,7 +8,7 @@ image: https://m.media-amazon.com/images/I/71SGGTnpD1L._SL1500_.jpg
 ---
 今月(2026-04)読んだ本は3冊。  
 
-[測りすぎ――なぜパフォーマンス評価は失敗するのか? : ジェリー・Z・ミュラー](https://amzn.to/4cS2QBu)
+<div class="krb-amzlt-box" style="margin-bottom:0px;"><div class="krb-amzlt-image" style="float:left;margin:0px 12px 1px 0px;"><a href="https://amzn.to/4cS2QBu"><img width="160px" src="https://images-na.ssl-images-amazon.com/images/P/4622087936.09.LZZZZZZZ"></a></div><div class="krb-amzlt-info" style="line-height:120%; margin-bottom: 10px"><div class="krb-amzlt-name" style="margin-bottom:10px;line-height:120%"><a href="https://amzn.to/4cS2QBu" name="amazletlink" target="_blank" rel="nofollow" rel="nofollow">測りすぎ――なぜパフォーマンス評価は失敗するのか? : ジェリー・Z・ミュラー</a></div><div class="krb-amzlt-detail"></div><div class="krb-amzlt-sub-info" style="float: left;"><div class="krb-amzlt-link" style="margin-top: 5px"><a href="https://amzn.to/4cS2QBu" name="amazletlink" target="_blank" rel="nofollow" rel="nofollow">Amazon.co.jpで詳細を見る</a></div></div></div><div class="krb-amzlt-footer" style="clear: left"></div></div>
 
 
 > 詩人で歴史家の故ロバート・コンクエストの名言を思い出してほしい。「誰しも、自分が一番良く知っていることについては保守的になる」。
@@ -20,7 +20,7 @@ image: https://m.media-amazon.com/images/I/71SGGTnpD1L._SL1500_.jpg
 
 
 
-[言語化するための小説思考](https://amzn.to/4tH3lWm)
+<div class="krb-amzlt-box" style="margin-bottom:0px;"><div class="krb-amzlt-image" style="float:left;margin:0px 12px 1px 0px;"><a href="https://amzn.to/4tH3lWm"><img width="160px" src="https://images-na.ssl-images-amazon.com/images/P/4065410436.09.LZZZZZZZ"></a></div><div class="krb-amzlt-info" style="line-height:120%; margin-bottom: 10px"><div class="krb-amzlt-name" style="margin-bottom:10px;line-height:120%"><a href="https://amzn.to/4tH3lWm" name="amazletlink" target="_blank" rel="nofollow" rel="nofollow">言語化するための小説思考</a></div><div class="krb-amzlt-detail"></div><div class="krb-amzlt-sub-info" style="float: left;"><div class="krb-amzlt-link" style="margin-top: 5px"><a href="https://amzn.to/4tH3lWm" name="amazletlink" target="_blank" rel="nofollow" rel="nofollow">Amazon.co.jpで詳細を見る</a></div></div></div><div class="krb-amzlt-footer" style="clear: left"></div></div>
 
 > 人間が芸術に感動するのは、圧縮された作品を解凍して、根本に存在したはずの「ある人の認知」を受容するからだと思っている（もちろん例外もあるだろう）。僕がAIによる表現活動に対してそこまで悲観していないのは、AIには解凍した先の「ある人の認知」、加えてさらにその先に広がっている「世界」が存在していないからだ。出力された作品の質でAIが人間と肩を並べ、あるいは先行していく未来は遠くない将来に生じると感じているが、作品から世界に接続していく過程には、現実世界を生きてきた人間の持つ強さが残っている。ゴッホの絵を飾りたい人はいても、AIが描いたゴッホ風の絵を飾りたい人はあまりいないだろう。
 
@@ -28,7 +28,7 @@ image: https://m.media-amazon.com/images/I/71SGGTnpD1L._SL1500_.jpg
 > 小説というジャンルにおいて「AI」が人間に（現段階で）勝っていないのは、将棋やポーカーと違って、小説の「勝利条件」がまだ誰にもわかっていないからだと思う。言い換えるなら、「面白い小説とは何か」という問いの答えがわかっていないのだ。僕は誰よりも先に、その問いの答えに辿りつきたい。無数の作者と無数の読者がいて、無数のコミュニケーションが発生している状況の中で、どれが成功していてどれが失敗しているのか、その原因はなんなのかをすべて知りたい。
 
 
-[平和と愚かさ](https://amzn.to/4utw9BR)
+<div class="krb-amzlt-box" style="margin-bottom:0px;"><div class="krb-amzlt-image" style="float:left;margin:0px 12px 1px 0px;"><a href="https://amzn.to/4utw9BR"><img width="160px" src="https://images-na.ssl-images-amazon.com/images/P/4907188676.09.LZZZZZZZ"></a></div><div class="krb-amzlt-info" style="line-height:120%; margin-bottom: 10px"><div class="krb-amzlt-name" style="margin-bottom:10px;line-height:120%"><a href="https://amzn.to/4utw9BR" name="amazletlink" target="_blank" rel="nofollow" rel="nofollow">平和と愚かさ</a></div><div class="krb-amzlt-detail"></div><div class="krb-amzlt-sub-info" style="float: left;"><div class="krb-amzlt-link" style="margin-top: 5px"><a href="https://amzn.to/4utw9BR" name="amazletlink" target="_blank" rel="nofollow" rel="nofollow">Amazon.co.jpで詳細を見る</a></div></div></div><div class="krb-amzlt-footer" style="clear: left"></div></div>
 
 > 社会全体が、もっと調べろ、もっと考えろ、もっと聞くなれ、と人々を急き立てている。SNSとAIがその流れを加速している。
 むろん考えることは重要である。愚かさは罪の源でもある。けれども現実には人間の能力には限界がある。あらゆる問題について合理的な判断を下し、道徳的な正しさを引き受けることができる人間など存在しない。ひとは弱い。だから賢さへの強迫が過剰だと、不安を感じ逃走してしまう。平和を感じることができなくなる。そしてより深い愚かさに突入する。二〇二五年のいま、世界で起きているのはそういうことだと思う。

@@ -10,7 +10,7 @@ image: https://www.peipeipe.net/images/IMG_1837.webp
 
 ## 感想
 前回の熊本ではオーバーペースでいまいちだったので今回は前半では絶対にキロ4:30を越さないようにした。  
-そして28km地点でカフェインが100mgも入っている[スーパーメダリスト](https://www.amazon.co.jp/dp/B01F6D85W0?ref=ppx_yo2ov_dt_b_fed_asin_title)で覚醒、というプラン。よいプランであった。  
+そして28km地点でカフェインが100mgも入っている<div class="krb-amzlt-box" style="margin-bottom:0px;"><div class="krb-amzlt-image" style="float:left;margin:0px 12px 1px 0px;"><a href="https://www.amazon.co.jp/dp/B01F6D85W0?tag=peipeipe-22"><img width="160px" src="https://images-na.ssl-images-amazon.com/images/P/B01F6D85W0.09.LZZZZZZZ"></a></div><div class="krb-amzlt-info" style="line-height:120%; margin-bottom: 10px"><div class="krb-amzlt-name" style="margin-bottom:10px;line-height:120%"><a href="https://www.amazon.co.jp/dp/B01F6D85W0?tag=peipeipe-22" name="amazletlink" target="_blank" rel="nofollow" rel="nofollow">スーパーメダリスト</a></div><div class="krb-amzlt-detail"></div><div class="krb-amzlt-sub-info" style="float: left;"><div class="krb-amzlt-link" style="margin-top: 5px"><a href="https://www.amazon.co.jp/dp/B01F6D85W0?tag=peipeipe-22" name="amazletlink" target="_blank" rel="nofollow" rel="nofollow">Amazon.co.jpで詳細を見る</a></div></div></div><div class="krb-amzlt-footer" style="clear: left"></div></div>で覚醒、というプラン。よいプランであった。  
 靴はノヴァブラスト5。神シューズ。マジでレースでも使えた。力不足を感じたこともなく、重さもそこまで気にならない。やはりサブ3目指さない人はカーボンなんていらないんだな。  
 ハーフとか10kmで履くのは必要かもだけど。  
 1カ月後の長野マラソンではヴェイパーを履くがどれくらいの差がでるか、そこまででないと思っている。  

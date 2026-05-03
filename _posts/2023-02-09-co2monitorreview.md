@@ -16,7 +16,7 @@ image: https://i.imgur.com/wqISq5Q.jpg
 二酸化炭素濃度計は安いのから高いのまであるが、安いやつは精度が悪く実用性がないらしい。
 
 
-実際、[MH-Z19](https://amzn.to/3jNBGVa)というセンサーを買い、M5Stackで計測してみたがまともな数値はでなかったので安物買いの銭失いになってしまった。今回、1万円以上というお金をはたいて正確な値が図れるようになったのでわかったことを書く。
+実際、<div class="krb-amzlt-box" style="margin-bottom:0px;"><div class="krb-amzlt-image" style="float:left;margin:0px 12px 1px 0px;"><a href="https://amzn.to/3jNBGVa"><img width="160px" src="https://images-na.ssl-images-amazon.com/images/P/B07JF4YTTB.09.LZZZZZZZ"></a></div><div class="krb-amzlt-info" style="line-height:120%; margin-bottom: 10px"><div class="krb-amzlt-name" style="margin-bottom:10px;line-height:120%"><a href="https://amzn.to/3jNBGVa" name="amazletlink" target="_blank" rel="nofollow" rel="nofollow">MH-Z19</a></div><div class="krb-amzlt-detail"></div><div class="krb-amzlt-sub-info" style="float: left;"><div class="krb-amzlt-link" style="margin-top: 5px"><a href="https://amzn.to/3jNBGVa" name="amazletlink" target="_blank" rel="nofollow" rel="nofollow">Amazon.co.jpで詳細を見る</a></div></div></div><div class="krb-amzlt-footer" style="clear: left"></div></div>というセンサーを買い、M5Stackで計測してみたがまともな数値はでなかったので安物買いの銭失いになってしまった。今回、1万円以上というお金をはたいて正確な値が図れるようになったのでわかったことを書く。
 
 
 ![](https://i.imgur.com/wqISq5Q.jpg)
