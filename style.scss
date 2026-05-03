@@ -305,6 +305,32 @@ footer {
     display:block;
 }
 
+/**************/
+/* AMAZON BOX */
+/**************/
+
+.krb-amzlt-box {
+  border-top: 1px solid #e0e0e0;
+  padding-top: 16px;
+  margin-top: 16px;
+  overflow: hidden;
+}
+
+.krb-amzlt-link a {
+  display: inline-block;
+  background-color: #FF9900;
+  color: white !important;
+  padding: 6px 14px;
+  border-radius: 4px;
+  font-size: 14px;
+  text-decoration: none !important;
+  margin-top: 8px;
+}
+
+.krb-amzlt-link a:hover {
+  background-color: #e47911;
+}
+
 // Settled on moving the import of syntax highlighting to the bottom of the CSS
 // ... Otherwise it really bloats up the top of the CSS file and makes it difficult to find the start
 @import "highlights";
