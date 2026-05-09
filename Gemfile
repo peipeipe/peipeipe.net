@@ -1,6 +1,7 @@
 source "https://rubygems.org"
 
 gem "csv"
+gem "bigdecimal"
 
 # GitHub Pages用のJekyll設定
 gem "github-pages", group: :jekyll_plugins
