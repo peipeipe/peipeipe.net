@@ -1,5 +1,7 @@
 source "https://rubygems.org"
 
+gem "csv"
+
 # GitHub Pages用のJekyll設定
 gem "github-pages", group: :jekyll_plugins
 
