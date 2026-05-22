@@ -2,5 +2,12 @@
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
   "extends": [
     "config:recommended"
+  ],
+  "packageRules": [
+    {
+      "description": "Ruby バージョンの自動更新を無効化（Jekyll/Liquid との互換性のため手動管理）",
+      "matchDepNames": ["ruby"],
+      "enabled": false
+    }
   ]
 }
