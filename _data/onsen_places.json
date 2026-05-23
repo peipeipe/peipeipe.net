@@ -11,14 +11,14 @@
       "https://fastly.4sqi.net/img/general/500x300/41463109_AZeQRzq-KOk14oRWsPjpYiD514HZVRnfgjym_TKIfJI.jpg"
     ],
     "categories": [
-      "スパ"
+      "Spa"
     ],
     "data_source": "foursquare_checkin",
     "fsq_id": "4bd40d9e77b29c7450159282",
     "checkin_count": 30,
     "first_checkin_at": "2023-03-21T11:00:00+00:00",
     "last_checkin_at": "2026-05-23T09:03:38+00:00",
-    "updated_at": "2026-05-23T14:43:35.934261+00:00"
+    "updated_at": "2026-05-23T16:12:25.193571+00:00"
   },
   {
     "name": "室賀温泉ささらの湯",
@@ -33,14 +33,14 @@
       "https://fastly.4sqi.net/img/general/500x300/41463109_nBG-RlfAoknCphLg1w9SqE07bPNMpvEiimJLZhHlmBU.jpg"
     ],
     "categories": [
-      "温泉"
+      "Hot Spring"
     ],
     "data_source": "foursquare_checkin",
     "fsq_id": "4b67b29ff964a520335b2be3",
     "checkin_count": 7,
     "first_checkin_at": "2024-09-28T08:36:15+00:00",
     "last_checkin_at": "2026-05-16T21:02:28+00:00",
-    "updated_at": "2026-05-23T14:43:35.934524+00:00"
+    "updated_at": "2026-05-23T16:12:25.193863+00:00"
   },
   {
     "name": "Uu Ueda",
@@ -54,14 +54,14 @@
       "https://fastly.4sqi.net/img/general/500x300/41463109_YQEcYYVIpy5Qao4U5Wbxvad60pjRJtorzhh1S3TbioM.jpg"
     ],
     "categories": [
-      "サウナ"
+      "Sauna"
     ],
     "data_source": "foursquare_checkin",
     "fsq_id": "6908a2a5852b2f2861a0f47c",
     "checkin_count": 1,
     "first_checkin_at": "2026-05-10T03:22:11+00:00",
     "last_checkin_at": "2026-05-10T03:22:11+00:00",
-    "updated_at": "2026-05-23T14:43:35.934552+00:00"
+    "updated_at": "2026-05-23T16:12:25.193890+00:00"
   },
   {
     "name": "天然超音波温泉発祥地碑",
@@ -73,14 +73,14 @@
     "foursquare_url": "https://foursquare.com/v/59be2c51ee628b65b3b4dc03",
     "photos": [],
     "categories": [
-      "モニュメント"
+      "Monument"
     ],
     "data_source": "foursquare_checkin",
     "fsq_id": "59be2c51ee628b65b3b4dc03",
     "checkin_count": 1,
     "first_checkin_at": "2026-05-07T12:06:06+00:00",
     "last_checkin_at": "2026-05-07T12:06:06+00:00",
-    "updated_at": "2026-05-23T14:43:35.934583+00:00"
+    "updated_at": "2026-05-23T16:12:25.193919+00:00"
   },
   {
     "name": "扉温泉 桧の湯",
@@ -94,14 +94,14 @@
       "https://fastly.4sqi.net/img/general/500x300/41463109_4kozC08uLgOjQwRypGeNWEBlJBI1eDj26-eZsgUw_uY.jpg"
     ],
     "categories": [
-      "温泉"
+      "Hot Spring"
     ],
     "data_source": "foursquare_checkin",
     "fsq_id": "4d954d3e577cba7a3afb7779",
     "checkin_count": 1,
     "first_checkin_at": "2026-05-04T07:02:05+00:00",
     "last_checkin_at": "2026-05-04T07:02:05+00:00",
-    "updated_at": "2026-05-23T14:43:35.934622+00:00"
+    "updated_at": "2026-05-23T16:12:25.193960+00:00"
   },
   {
     "name": "むれ温泉 天狗の館",
@@ -115,14 +115,14 @@
       "https://fastly.4sqi.net/img/general/500x300/41463109_JHMWbQ21aKLLDq9uRSbKc87QzaTyqsaUnY54w4XxD_A.jpg"
     ],
     "categories": [
-      "温泉"
+      "Hot Spring"
     ],
     "data_source": "foursquare_checkin",
     "fsq_id": "4d4d0a2eb887a1cdee7fb7a0",
     "checkin_count": 1,
     "first_checkin_at": "2026-05-02T08:12:45+00:00",
     "last_checkin_at": "2026-05-02T08:12:45+00:00",
-    "updated_at": "2026-05-23T14:43:35.934647+00:00"
+    "updated_at": "2026-05-23T16:12:25.193984+00:00"
   },
   {
     "name": "六番湯 目洗の湯",
@@ -136,14 +136,14 @@
       "https://fastly.4sqi.net/img/general/500x300/41463109_PafyUbdHmpbjOgRl-KPpvLiqMkzionJS4FM8AUqDMYg.jpg"
     ],
     "categories": [
-      "温泉"
+      "Hot Spring"
     ],
     "data_source": "foursquare_checkin",
     "fsq_id": "4d0dab7d873e6a313a335bd6",
     "checkin_count": 1,
     "first_checkin_at": "2026-04-26T11:24:30+00:00",
     "last_checkin_at": "2026-04-26T11:24:30+00:00",
-    "updated_at": "2026-05-23T14:43:35.934683+00:00"
+    "updated_at": "2026-05-23T16:12:25.194015+00:00"
   },
   {
     "name": "九番湯 渋大湯",
@@ -157,14 +157,14 @@
       "https://fastly.4sqi.net/img/general/500x300/41463109_-DxTDRXMwmbbHDhI8pG0tgS8jKnQhFx7wjNSNwIeEt4.jpg"
     ],
     "categories": [
-      "温泉"
+      "Hot Spring"
     ],
     "data_source": "foursquare_checkin",
     "fsq_id": "4d0dac1d873e6a31de335bd6",
     "checkin_count": 1,
     "first_checkin_at": "2026-04-26T11:24:24+00:00",
     "last_checkin_at": "2026-04-26T11:24:24+00:00",
-    "updated_at": "2026-05-23T14:43:35.934696+00:00"
+    "updated_at": "2026-05-23T16:12:25.194027+00:00"
   },
   {
     "name": "おぶせ温泉穴観音の湯",
@@ -178,14 +178,14 @@
       "https://fastly.4sqi.net/img/general/500x300/41463109_WRGd8l8iFaaIDcyF-sqDcpHnXwQyW-crqJ1DJ9rdV3c.jpg"
     ],
     "categories": [
-      "温泉"
+      "Hot Spring"
     ],
     "data_source": "foursquare_checkin",
     "fsq_id": "4b67b25ff964a520295b2be3",
     "checkin_count": 1,
     "first_checkin_at": "2026-04-25T06:19:17+00:00",
     "last_checkin_at": "2026-04-25T06:19:17+00:00",
-    "updated_at": "2026-05-23T14:43:35.934716+00:00"
+    "updated_at": "2026-05-23T16:12:25.194045+00:00"
   },
   {
     "name": "びんぐし湯さん館",
@@ -203,14 +203,14 @@
       "https://fastly.4sqi.net/img/general/500x300/41463109_rcpetPMmMXlqa6B1Nd5XEpglyR7jyLq7X8UdtiahHtU.jpg"
     ],
     "categories": [
-      "スパ"
+      "Spa"
     ],
     "data_source": "foursquare_checkin",
     "fsq_id": "4c6f79c29c6d6dcbfed4cf7a",
     "checkin_count": 10,
     "first_checkin_at": "2024-10-13T06:18:22+00:00",
     "last_checkin_at": "2026-04-20T02:25:33+00:00",
-    "updated_at": "2026-05-23T14:43:35.934740+00:00"
+    "updated_at": "2026-05-23T16:12:25.194069+00:00"
   },
   {
     "name": "ホットプラザ浅間 足湯",
@@ -222,14 +222,14 @@
     "foursquare_url": "https://foursquare.com/v/5d4d8d0223367000080506cf",
     "photos": [],
     "categories": [
-      "スパ"
+      "Spa"
     ],
     "data_source": "foursquare_checkin",
     "fsq_id": "5d4d8d0223367000080506cf",
     "checkin_count": 2,
     "first_checkin_at": "2026-03-14T12:59:34+00:00",
     "last_checkin_at": "2026-04-12T12:26:38+00:00",
-    "updated_at": "2026-05-23T14:43:35.934757+00:00"
+    "updated_at": "2026-05-23T16:12:25.194092+00:00"
   },
   {
     "name": "万葉超音波温泉",
@@ -243,14 +243,14 @@
       "https://fastly.4sqi.net/img/general/500x300/41463109_mc4pqveJa7iDe7-MELyxqz67X3zE67HPUAFkY3bW4FU.jpg"
     ],
     "categories": [
-      "温泉"
+      "Hot Spring"
     ],
     "data_source": "foursquare_checkin",
     "fsq_id": "4b679f6ef964a52045582be3",
     "checkin_count": 2,
     "first_checkin_at": "2026-03-19T13:10:05+00:00",
     "last_checkin_at": "2026-04-09T12:02:45+00:00",
-    "updated_at": "2026-05-23T14:43:35.934776+00:00"
+    "updated_at": "2026-05-23T16:12:25.194108+00:00"
   },
   {
     "name": "川中島温泉 テルメDOME",
@@ -262,17 +262,17 @@
     "foursquare_url": "https://foursquare.com/v/58d73357ecb67e3da564f1a0",
     "photos": [],
     "categories": [
-      "温泉"
+      "Hot Spring"
     ],
     "data_source": "foursquare_checkin",
     "fsq_id": "58d73357ecb67e3da564f1a0",
     "checkin_count": 1,
     "first_checkin_at": "2026-04-05T04:11:29+00:00",
     "last_checkin_at": "2026-04-05T04:11:29+00:00",
-    "updated_at": "2026-05-23T14:43:35.934808+00:00"
+    "updated_at": "2026-05-23T16:12:25.194141+00:00"
   },
   {
-    "name": "ホットプラザ浅間",
+    "name": "Hot Plaza Asama (ホットプラザ浅間)",
     "user_comment": "",
     "date": "2026-03-14",
     "lat": 36.26284539322397,
@@ -281,17 +281,17 @@
     "foursquare_url": "https://foursquare.com/v/4bdd2df8b0f5c92842ee4be3",
     "photos": [],
     "categories": [
-      "温泉"
+      "Hot Spring"
     ],
     "data_source": "foursquare_checkin",
     "fsq_id": "4bdd2df8b0f5c92842ee4be3",
     "checkin_count": 1,
     "first_checkin_at": "2026-03-14T12:59:41+00:00",
     "last_checkin_at": "2026-03-14T12:59:41+00:00",
-    "updated_at": "2026-05-23T14:43:35.934925+00:00"
+    "updated_at": "2026-05-23T16:12:25.194252+00:00"
   },
   {
-    "name": "天然温泉 久松湯",
+    "name": "Hisamatsuyu (天然温泉 久松湯)",
     "user_comment": "",
     "date": "2026-02-28",
     "lat": 35.74143139484988,
@@ -302,17 +302,17 @@
       "https://fastly.4sqi.net/img/general/500x300/41463109_rynjBRpP38PaTWmjbqhb0pAHsG6DyPdUeSOd04CHSwE.jpg"
     ],
     "categories": [
-      "温泉"
+      "Hot Spring"
     ],
     "data_source": "foursquare_checkin",
     "fsq_id": "4e3cf020d4c058f9dbfebf98",
     "checkin_count": 2,
     "first_checkin_at": "2025-11-24T03:38:44+00:00",
     "last_checkin_at": "2026-02-28T02:58:52+00:00",
-    "updated_at": "2026-05-23T14:43:35.935000+00:00"
+    "updated_at": "2026-05-23T16:12:25.194329+00:00"
   },
   {
-    "name": "野沢温泉スキー場",
+    "name": "Nozawa Onsen ski resort (野沢温泉スキー場)",
     "user_comment": "2回目スキー",
     "date": "2026-02-03",
     "lat": 36.920262894677826,
@@ -323,14 +323,14 @@
       "https://fastly.4sqi.net/img/general/500x300/41463109_gj3gcwONQa_XJ-ZlzAzuU1Atmok1OdEdmeVWoaSZpn0.jpg"
     ],
     "categories": [
-      "スキー場"
+      "Ski Resort and Area"
     ],
     "data_source": "foursquare_checkin",
     "fsq_id": "4b5a6f05f964a520dcc428e3",
     "checkin_count": 2,
     "first_checkin_at": "2025-08-01T22:39:12+00:00",
     "last_checkin_at": "2026-02-03T01:35:10+00:00",
-    "updated_at": "2026-05-23T14:43:35.935108+00:00"
+    "updated_at": "2026-05-23T16:12:25.194439+00:00"
   },
   {
     "name": "千人風呂",
@@ -344,14 +344,14 @@
       "https://fastly.4sqi.net/img/general/500x300/41463109_MNcXgEiDygDXpMKcfXK4hPmQzsaKI7hmQa64547XflE.jpg"
     ],
     "categories": [
-      "温泉"
+      "Hot Spring"
     ],
     "data_source": "foursquare_checkin",
     "fsq_id": "57021142498e9aea0876118f",
     "checkin_count": 1,
     "first_checkin_at": "2026-02-01T04:40:01+00:00",
     "last_checkin_at": "2026-02-01T04:40:01+00:00",
-    "updated_at": "2026-05-23T14:43:35.935123+00:00"
+    "updated_at": "2026-05-23T16:12:25.194452+00:00"
   },
   {
     "name": "地蔵温泉 十福の湯",
@@ -367,14 +367,14 @@
       "https://fastly.4sqi.net/img/general/500x300/41463109_lFGBtFGk0_V3g75yV5tKZM28EFM4ghe93L9En1mynmg.jpg"
     ],
     "categories": [
-      "温泉"
+      "Hot Spring"
     ],
     "data_source": "foursquare_checkin",
     "fsq_id": "4b5a8a0cf964a52067ca28e3",
     "checkin_count": 3,
     "first_checkin_at": "2025-06-07T09:33:33+00:00",
     "last_checkin_at": "2026-01-25T10:57:50+00:00",
-    "updated_at": "2026-05-23T14:43:35.935153+00:00"
+    "updated_at": "2026-05-23T16:12:25.194483+00:00"
   },
   {
     "name": "林檎の湯屋 おぶ〜",
@@ -390,14 +390,14 @@
       "https://fastly.4sqi.net/img/general/500x300/41463109_6c1Gw-USWizTqekYF75GKL6l_kk2zolQoqxnPAaoP4A.jpg"
     ],
     "categories": [
-      "温泉"
+      "Hot Spring"
     ],
     "data_source": "foursquare_checkin",
     "fsq_id": "4b9ae7eff964a520a9e135e3",
     "checkin_count": 3,
     "first_checkin_at": "2024-12-22T03:40:26+00:00",
     "last_checkin_at": "2026-01-18T05:01:30+00:00",
-    "updated_at": "2026-05-23T14:43:35.935218+00:00"
+    "updated_at": "2026-05-23T16:12:25.194555+00:00"
   },
   {
     "name": "別所温泉 あいそめの湯",
@@ -409,14 +409,14 @@
     "foursquare_url": "https://foursquare.com/v/4b83b4caf964a520a30d31e3",
     "photos": [],
     "categories": [
-      "温泉"
+      "Hot Spring"
     ],
     "data_source": "foursquare_checkin",
     "fsq_id": "4b83b4caf964a520a30d31e3",
     "checkin_count": 10,
     "first_checkin_at": "2024-07-21T08:39:38+00:00",
     "last_checkin_at": "2026-01-16T11:50:45+00:00",
-    "updated_at": "2026-05-23T14:43:35.935242+00:00"
+    "updated_at": "2026-05-23T16:12:25.194581+00:00"
   },
   {
     "name": "間山温泉公園 ぽんぽこの湯",
@@ -428,14 +428,14 @@
     "foursquare_url": "https://foursquare.com/v/4b6e6b7bf964a520c6bc2ce3",
     "photos": [],
     "categories": [
-      "温泉"
+      "Hot Spring"
     ],
     "data_source": "foursquare_checkin",
     "fsq_id": "4b6e6b7bf964a520c6bc2ce3",
     "checkin_count": 1,
     "first_checkin_at": "2026-01-10T08:37:03+00:00",
     "last_checkin_at": "2026-01-10T08:37:03+00:00",
-    "updated_at": "2026-05-23T14:43:35.935282+00:00"
+    "updated_at": "2026-05-23T16:12:25.194623+00:00"
   },
   {
     "name": "あぐりの湯 こもろ",
@@ -451,14 +451,14 @@
       "https://fastly.4sqi.net/img/general/500x300/41463109_Bp3rutIVEMF9u5GHaKRZza5q0lYJMQRncSLkyM7noXw.jpg"
     ],
     "categories": [
-      "温泉"
+      "Hot Spring"
     ],
     "data_source": "foursquare_checkin",
     "fsq_id": "4ba715a8f964a520fb7f39e3",
     "checkin_count": 1,
     "first_checkin_at": "2025-12-30T01:32:52+00:00",
     "last_checkin_at": "2025-12-30T01:32:52+00:00",
-    "updated_at": "2026-05-23T14:43:35.935325+00:00"
+    "updated_at": "2026-05-23T16:12:25.194668+00:00"
   },
   {
     "name": "白馬八方温泉 八方の湯",
@@ -470,14 +470,14 @@
     "foursquare_url": "https://foursquare.com/v/548d261f498e0c4238f61048",
     "photos": [],
     "categories": [
-      "温泉"
+      "Hot Spring"
     ],
     "data_source": "foursquare_checkin",
     "fsq_id": "548d261f498e0c4238f61048",
     "checkin_count": 1,
     "first_checkin_at": "2025-12-29T05:51:40+00:00",
     "last_checkin_at": "2025-12-29T05:51:40+00:00",
-    "updated_at": "2026-05-23T14:43:35.935344+00:00"
+    "updated_at": "2026-05-23T16:12:25.194688+00:00"
   },
   {
     "name": "布施温泉",
@@ -491,14 +491,14 @@
       "https://fastly.4sqi.net/img/general/500x300/41463109_8io_i2oTaY-Jl-z_f6qMFHnkhnDAb4c61j_308-0oyA.jpg"
     ],
     "categories": [
-      "温泉"
+      "Hot Spring"
     ],
     "data_source": "foursquare_checkin",
     "fsq_id": "4d3a9ad1979ea143176a92fc",
     "checkin_count": 1,
     "first_checkin_at": "2025-10-19T05:41:29+00:00",
     "last_checkin_at": "2025-10-19T05:41:29+00:00",
-    "updated_at": "2026-05-23T14:43:35.935710+00:00"
+    "updated_at": "2026-05-23T16:12:25.195134+00:00"
   },
   {
     "name": "立科温泉 権現の湯",
@@ -510,14 +510,14 @@
     "foursquare_url": "https://foursquare.com/v/4c5fa46f3986e21e16a9924f",
     "photos": [],
     "categories": [
-      "温泉"
+      "Hot Spring"
     ],
     "data_source": "foursquare_checkin",
     "fsq_id": "4c5fa46f3986e21e16a9924f",
     "checkin_count": 1,
     "first_checkin_at": "2025-10-18T07:34:51+00:00",
     "last_checkin_at": "2025-10-18T07:34:51+00:00",
-    "updated_at": "2026-05-23T14:43:35.935722+00:00"
+    "updated_at": "2026-05-23T16:12:25.195145+00:00"
   },
   {
     "name": "湯楽里館",
@@ -533,14 +533,14 @@
       "https://fastly.4sqi.net/img/general/500x300/41463109_VWczFtKQ37dfaQRmlCkE813fGWeHGX-b5em1N-XktCE.jpg"
     ],
     "categories": [
-      "温泉"
+      "Hot Spring"
     ],
     "data_source": "foursquare_checkin",
     "fsq_id": "4b7786f5f964a520ef9f2ee3",
     "checkin_count": 5,
     "first_checkin_at": "2024-08-16T11:05:27+00:00",
     "last_checkin_at": "2025-10-03T12:51:43+00:00",
-    "updated_at": "2026-05-23T14:43:35.935766+00:00"
+    "updated_at": "2026-05-23T16:12:25.195193+00:00"
   },
   {
     "name": "安曇野 しゃくなげの湯",
@@ -552,14 +552,14 @@
     "foursquare_url": "https://foursquare.com/v/57f1f65d498e28af9a8c09ce",
     "photos": [],
     "categories": [
-      "温泉"
+      "Hot Spring"
     ],
     "data_source": "foursquare_checkin",
     "fsq_id": "57f1f65d498e28af9a8c09ce",
     "checkin_count": 1,
     "first_checkin_at": "2025-09-28T04:42:43+00:00",
     "last_checkin_at": "2025-09-28T04:42:43+00:00",
-    "updated_at": "2026-05-23T14:43:35.935786+00:00"
+    "updated_at": "2026-05-23T16:12:25.195208+00:00"
   },
   {
     "name": "コトリの湯",
@@ -573,14 +573,14 @@
       "https://fastly.4sqi.net/img/general/500x300/41463109_5pXbgwUC6Vz9doKCawbUgRUYOZFZmydvmO8e_1w9eAY.jpg"
     ],
     "categories": [
-      "温泉"
+      "Hot Spring"
     ],
     "data_source": "foursquare_checkin",
     "fsq_id": "5a169ef4a9e402247b524f90",
     "checkin_count": 1,
     "first_checkin_at": "2025-09-23T09:18:49+00:00",
     "last_checkin_at": "2025-09-23T09:18:49+00:00",
-    "updated_at": "2026-05-23T14:43:35.935849+00:00"
+    "updated_at": "2026-05-23T16:12:25.195272+00:00"
   },
   {
     "name": "湖天の湯",
@@ -596,17 +596,17 @@
       "https://fastly.4sqi.net/img/general/500x300/41463109_1n52IdN-jIQXQaEHnf6Ra2kd0nhHbf-8U500zAnhulw.jpg"
     ],
     "categories": [
-      "温泉"
+      "Hot Spring"
     ],
     "data_source": "foursquare_checkin",
     "fsq_id": "6586a7e4aa3d9747a443dcbc",
     "checkin_count": 3,
     "first_checkin_at": "2024-10-27T07:04:09+00:00",
     "last_checkin_at": "2025-09-21T08:42:03+00:00",
-    "updated_at": "2026-05-23T14:43:35.935885+00:00"
+    "updated_at": "2026-05-23T16:12:25.195303+00:00"
   },
   {
-    "name": "こまくさの湯",
+    "name": "Komakusa no Yu (こまくさの湯)",
     "user_comment": "",
     "date": "2025-08-15",
     "lat": 35.74368990572018,
@@ -617,17 +617,17 @@
       "https://fastly.4sqi.net/img/general/500x300/41463109_d_zTsW7IAqE69E0qo3dVoD6BIekSUMmqfG2k-x80tVI.jpg"
     ],
     "categories": [
-      "温泉"
+      "Hot Spring"
     ],
     "data_source": "foursquare_checkin",
     "fsq_id": "4bc9613c68f976b0d6535d83",
     "checkin_count": 1,
     "first_checkin_at": "2025-08-15T09:29:29+00:00",
     "last_checkin_at": "2025-08-15T09:29:29+00:00",
-    "updated_at": "2026-05-23T14:43:35.936111+00:00"
+    "updated_at": "2026-05-23T16:12:25.195523+00:00"
   },
   {
-    "name": "みはらしの湯",
+    "name": "Miharashi no Yu (みはらしの湯)",
     "user_comment": "",
     "date": "2025-08-14",
     "lat": 35.88264760768254,
@@ -636,17 +636,17 @@
     "foursquare_url": "https://foursquare.com/v/4bee4c2d2c082d7fec4e3042",
     "photos": [],
     "categories": [
-      "温泉"
+      "Hot Spring"
     ],
     "data_source": "foursquare_checkin",
     "fsq_id": "4bee4c2d2c082d7fec4e3042",
     "checkin_count": 1,
     "first_checkin_at": "2025-08-14T10:42:01+00:00",
     "last_checkin_at": "2025-08-14T10:42:01+00:00",
-    "updated_at": "2026-05-23T14:43:35.936132+00:00"
+    "updated_at": "2026-05-23T16:12:25.195545+00:00"
   },
   {
-    "name": "岡谷健康福祉施設 ロマネット",
+    "name": "Romanetto (岡谷健康福祉施設 ロマネット)",
     "user_comment": "",
     "date": "2025-08-10",
     "lat": 36.06207124091374,
@@ -655,14 +655,14 @@
     "foursquare_url": "https://foursquare.com/v/4c41ae84cc410f471381ab61",
     "photos": [],
     "categories": [
-      "スパ"
+      "Spa"
     ],
     "data_source": "foursquare_checkin",
     "fsq_id": "4c41ae84cc410f471381ab61",
     "checkin_count": 1,
     "first_checkin_at": "2025-08-10T07:26:57+00:00",
     "last_checkin_at": "2025-08-10T07:26:57+00:00",
-    "updated_at": "2026-05-23T14:43:35.936178+00:00"
+    "updated_at": "2026-05-23T16:12:25.195590+00:00"
   },
   {
     "name": "いいやま湯滝温泉",
@@ -674,14 +674,14 @@
     "foursquare_url": "https://foursquare.com/v/4bdbcbd02a3a0f47e6cfb0b6",
     "photos": [],
     "categories": [
-      "温泉"
+      "Hot Spring"
     ],
     "data_source": "foursquare_checkin",
     "fsq_id": "4bdbcbd02a3a0f47e6cfb0b6",
     "checkin_count": 1,
     "first_checkin_at": "2025-08-02T07:37:52+00:00",
     "last_checkin_at": "2025-08-02T07:37:52+00:00",
-    "updated_at": "2026-05-23T14:43:35.936230+00:00"
+    "updated_at": "2026-05-23T16:12:25.195639+00:00"
   },
   {
     "name": "真田温泉 ふれあいさなだ館",
@@ -702,7 +702,7 @@
     "checkin_count": 3,
     "first_checkin_at": "2024-09-15T03:35:44+00:00",
     "last_checkin_at": "2025-07-27T04:52:20+00:00",
-    "updated_at": "2026-05-23T14:43:35.936286+00:00"
+    "updated_at": "2026-05-23T16:12:25.195689+00:00"
   },
   {
     "name": "和田宿温泉 ふれあいの湯",
@@ -723,7 +723,7 @@
     "checkin_count": 1,
     "first_checkin_at": "2025-07-06T05:01:26+00:00",
     "last_checkin_at": "2025-07-06T05:01:26+00:00",
-    "updated_at": "2026-05-23T14:43:35.936410+00:00"
+    "updated_at": "2026-05-23T16:12:25.195812+00:00"
   },
   {
     "name": "原村八ヶ岳温泉ふれあいセンター もみの湯",
@@ -744,7 +744,7 @@
     "checkin_count": 1,
     "first_checkin_at": "2025-06-29T05:32:54+00:00",
     "last_checkin_at": "2025-06-29T05:32:54+00:00",
-    "updated_at": "2026-05-23T14:43:35.936488+00:00"
+    "updated_at": "2026-05-23T16:12:25.195894+00:00"
   },
   {
     "name": "Manten no Yu (満天の湯)",
@@ -763,7 +763,7 @@
     "checkin_count": 1,
     "first_checkin_at": "2025-06-14T12:55:09+00:00",
     "last_checkin_at": "2025-06-14T12:55:09+00:00",
-    "updated_at": "2026-05-23T14:43:35.936604+00:00"
+    "updated_at": "2026-05-23T16:12:25.196006+00:00"
   },
   {
     "name": "八峯苑 鹿の湯",
@@ -782,7 +782,7 @@
     "checkin_count": 1,
     "first_checkin_at": "2025-06-01T04:21:41+00:00",
     "last_checkin_at": "2025-06-01T04:21:41+00:00",
-    "updated_at": "2026-05-23T14:43:35.936704+00:00"
+    "updated_at": "2026-05-23T16:12:25.196103+00:00"
   },
   {
     "name": "天照石温熱浴 みゆき野癒",
@@ -801,7 +801,7 @@
     "checkin_count": 1,
     "first_checkin_at": "2025-05-25T04:22:26+00:00",
     "last_checkin_at": "2025-05-25T04:22:26+00:00",
-    "updated_at": "2026-05-23T14:43:35.936747+00:00"
+    "updated_at": "2026-05-23T16:12:25.196146+00:00"
   },
   {
     "name": "まめじま湯ったり苑",
@@ -820,7 +820,7 @@
     "checkin_count": 1,
     "first_checkin_at": "2025-04-20T07:01:00+00:00",
     "last_checkin_at": "2025-04-20T07:01:00+00:00",
-    "updated_at": "2026-05-23T14:43:35.937011+00:00"
+    "updated_at": "2026-05-23T16:12:25.196357+00:00"
   },
   {
     "name": "平尾温泉 みはらしの湯",
@@ -841,7 +841,7 @@
     "checkin_count": 1,
     "first_checkin_at": "2025-04-05T05:58:44+00:00",
     "last_checkin_at": "2025-04-05T05:58:44+00:00",
-    "updated_at": "2026-05-23T14:43:35.937072+00:00"
+    "updated_at": "2026-05-23T16:12:25.196413+00:00"
   },
   {
     "name": "カラコロの足湯",
@@ -863,7 +863,7 @@
     "checkin_count": 2,
     "first_checkin_at": "2024-10-06T04:42:36+00:00",
     "last_checkin_at": "2025-03-30T04:39:31+00:00",
-    "updated_at": "2026-05-23T14:43:35.937095+00:00"
+    "updated_at": "2026-05-23T16:12:25.196436+00:00"
   },
   {
     "name": "RAKU SPA 1010",
@@ -884,7 +884,7 @@
     "checkin_count": 1,
     "first_checkin_at": "2025-03-16T09:06:39+00:00",
     "last_checkin_at": "2025-03-16T09:06:39+00:00",
-    "updated_at": "2026-05-23T14:43:35.937183+00:00"
+    "updated_at": "2026-05-23T16:12:25.196521+00:00"
   },
   {
     "name": "Zuisho (湯の華銭湯 瑞祥 松本館)",
@@ -903,7 +903,7 @@
     "checkin_count": 1,
     "first_checkin_at": "2025-02-16T07:42:38+00:00",
     "last_checkin_at": "2025-02-16T07:42:38+00:00",
-    "updated_at": "2026-05-23T14:43:35.937395+00:00"
+    "updated_at": "2026-05-23T16:12:25.196726+00:00"
   },
   {
     "name": "Oshiba no Yu (大芝の湯)",
@@ -924,7 +924,7 @@
     "checkin_count": 1,
     "first_checkin_at": "2025-01-26T06:23:01+00:00",
     "last_checkin_at": "2025-01-26T06:23:01+00:00",
-    "updated_at": "2026-05-23T14:43:35.937512+00:00"
+    "updated_at": "2026-05-23T16:12:25.196863+00:00"
   },
   {
     "name": "御とめ湯り",
@@ -943,7 +943,7 @@
     "checkin_count": 2,
     "first_checkin_at": "2025-01-04T08:02:38+00:00",
     "last_checkin_at": "2025-01-05T08:57:49+00:00",
-    "updated_at": "2026-05-23T14:43:35.937689+00:00"
+    "updated_at": "2026-05-23T16:12:25.197043+00:00"
   },
   {
     "name": "渋谷SAUNAS (サウナス)",
@@ -962,7 +962,7 @@
     "checkin_count": 1,
     "first_checkin_at": "2024-12-26T14:02:57+00:00",
     "last_checkin_at": "2024-12-26T14:02:57+00:00",
-    "updated_at": "2026-05-23T14:43:35.937845+00:00"
+    "updated_at": "2026-05-23T16:12:25.197193+00:00"
   },
   {
     "name": "まだらおの湯",
@@ -981,7 +981,7 @@
     "checkin_count": 1,
     "first_checkin_at": "2024-12-25T07:07:11+00:00",
     "last_checkin_at": "2024-12-25T07:07:11+00:00",
-    "updated_at": "2026-05-23T14:43:35.937872+00:00"
+    "updated_at": "2026-05-23T16:12:25.197218+00:00"
   },
   {
     "name": "湯の華銭湯瑞祥 上山田本館",
@@ -1002,7 +1002,7 @@
     "checkin_count": 2,
     "first_checkin_at": "2024-10-06T03:39:40+00:00",
     "last_checkin_at": "2024-11-24T03:14:36+00:00",
-    "updated_at": "2026-05-23T14:43:35.938151+00:00"
+    "updated_at": "2026-05-23T16:12:25.197435+00:00"
   },
   {
     "name": "大師湯",
@@ -1021,7 +1021,7 @@
     "checkin_count": 1,
     "first_checkin_at": "2024-11-22T12:11:13+00:00",
     "last_checkin_at": "2024-11-22T12:11:13+00:00",
-    "updated_at": "2026-05-23T14:43:35.938205+00:00"
+    "updated_at": "2026-05-23T16:12:25.197489+00:00"
   },
   {
     "name": "石湯",
@@ -1042,7 +1042,7 @@
     "checkin_count": 2,
     "first_checkin_at": "2024-10-04T12:21:32+00:00",
     "last_checkin_at": "2024-11-06T11:40:40+00:00",
-    "updated_at": "2026-05-23T14:43:35.938297+00:00"
+    "updated_at": "2026-05-23T16:12:25.197581+00:00"
   },
   {
     "name": "すわっこランド",
@@ -1063,7 +1063,7 @@
     "checkin_count": 1,
     "first_checkin_at": "2024-11-04T05:30:24+00:00",
     "last_checkin_at": "2024-11-04T05:30:24+00:00",
-    "updated_at": "2026-05-23T14:43:35.938326+00:00"
+    "updated_at": "2026-05-23T16:12:25.197607+00:00"
   },
   {
     "name": "千古温泉",
@@ -1084,7 +1084,7 @@
     "checkin_count": 1,
     "first_checkin_at": "2024-10-20T04:06:09+00:00",
     "last_checkin_at": "2024-10-20T04:06:09+00:00",
-    "updated_at": "2026-05-23T14:43:35.938466+00:00"
+    "updated_at": "2026-05-23T16:12:25.197746+00:00"
   },
   {
     "name": "Oyu (大湯)",
@@ -1105,7 +1105,7 @@
     "checkin_count": 1,
     "first_checkin_at": "2024-08-31T09:00:37+00:00",
     "last_checkin_at": "2024-08-31T09:00:37+00:00",
-    "updated_at": "2026-05-23T14:43:35.938888+00:00"
+    "updated_at": "2026-05-23T16:12:25.198181+00:00"
   },
   {
     "name": "ザ・センチュリオンサウナ レスト＆ステイ札幌",
@@ -1124,7 +1124,7 @@
     "checkin_count": 1,
     "first_checkin_at": "2024-08-25T09:22:54+00:00",
     "last_checkin_at": "2024-08-25T09:22:54+00:00",
-    "updated_at": "2026-05-23T14:43:35.938983+00:00"
+    "updated_at": "2026-05-23T16:12:25.198250+00:00"
   },
   {
     "name": "Ryūsenji-no-Yu (竜泉寺の湯 草加谷塚店)",
@@ -1143,7 +1143,7 @@
     "checkin_count": 4,
     "first_checkin_at": "2018-11-17T14:56:20+00:00",
     "last_checkin_at": "2024-08-10T09:33:21+00:00",
-    "updated_at": "2026-05-23T14:43:35.939119+00:00"
+    "updated_at": "2026-05-23T16:12:25.198378+00:00"
   },
   {
     "name": "Bessho-Onsen Station (別所温泉駅)",
@@ -1164,7 +1164,7 @@
     "checkin_count": 1,
     "first_checkin_at": "2024-07-21T07:39:52+00:00",
     "last_checkin_at": "2024-07-21T07:39:52+00:00",
-    "updated_at": "2026-05-23T14:43:35.939230+00:00"
+    "updated_at": "2026-05-23T16:12:25.198485+00:00"
   },
   {
     "name": "かすかべ湯元温泉",
@@ -1185,7 +1185,7 @@
     "checkin_count": 1,
     "first_checkin_at": "2024-07-15T06:44:29+00:00",
     "last_checkin_at": "2024-07-15T06:44:29+00:00",
-    "updated_at": "2026-05-23T14:43:35.939312+00:00"
+    "updated_at": "2026-05-23T16:12:25.198567+00:00"
   },
   {
     "name": "コタン温泉 (コタン温泉 露天風呂)",
@@ -1207,7 +1207,7 @@
     "checkin_count": 1,
     "first_checkin_at": "2024-07-02T00:34:04+00:00",
     "last_checkin_at": "2024-07-02T00:34:04+00:00",
-    "updated_at": "2026-05-23T14:43:35.939402+00:00"
+    "updated_at": "2026-05-23T16:12:25.198652+00:00"
   },
   {
     "name": "道の駅 かみゆうべつ温泉チューリップの湯",
@@ -1228,7 +1228,7 @@
     "checkin_count": 1,
     "first_checkin_at": "2024-07-01T08:50:44+00:00",
     "last_checkin_at": "2024-07-01T08:50:44+00:00",
-    "updated_at": "2026-05-23T14:43:35.939438+00:00"
+    "updated_at": "2026-05-23T16:12:25.198682+00:00"
   },
   {
     "name": "ひまわり温泉(女満別農業構造改善センター内)",
@@ -1247,7 +1247,7 @@
     "checkin_count": 1,
     "first_checkin_at": "2024-06-30T10:15:28+00:00",
     "last_checkin_at": "2024-06-30T10:15:28+00:00",
-    "updated_at": "2026-05-23T14:43:35.939482+00:00"
+    "updated_at": "2026-05-23T16:12:25.198730+00:00"
   },
   {
     "name": "堀田湯",
@@ -1268,7 +1268,7 @@
     "checkin_count": 5,
     "first_checkin_at": "2023-04-20T07:35:30+00:00",
     "last_checkin_at": "2024-06-22T06:39:38+00:00",
-    "updated_at": "2026-05-23T14:43:35.939548+00:00"
+    "updated_at": "2026-05-23T16:12:25.198799+00:00"
   },
   {
     "name": "野天湯元 湯快爽快 湯けむり横丁 おおみや店",
@@ -1289,7 +1289,7 @@
     "checkin_count": 1,
     "first_checkin_at": "2024-06-16T04:03:46+00:00",
     "last_checkin_at": "2024-06-16T04:03:46+00:00",
-    "updated_at": "2026-05-23T14:43:35.939582+00:00"
+    "updated_at": "2026-05-23T16:12:25.198830+00:00"
   },
   {
     "name": "Nomekoi no Yu (丹波山温泉 のめこい湯)",
@@ -1310,7 +1310,7 @@
     "checkin_count": 1,
     "first_checkin_at": "2024-05-25T07:20:15+00:00",
     "last_checkin_at": "2024-05-25T07:20:15+00:00",
-    "updated_at": "2026-05-23T14:43:35.939703+00:00"
+    "updated_at": "2026-05-23T16:12:25.198961+00:00"
   },
   {
     "name": "Moegi no Yu (もえぎの湯)",
@@ -1331,7 +1331,7 @@
     "checkin_count": 1,
     "first_checkin_at": "2024-05-18T07:46:01+00:00",
     "last_checkin_at": "2024-05-18T07:46:01+00:00",
-    "updated_at": "2026-05-23T14:43:35.939771+00:00"
+    "updated_at": "2026-05-23T16:12:25.199028+00:00"
   },
   {
     "name": "横濱スパヒルズ 竜泉寺の湯",
@@ -1352,7 +1352,7 @@
     "checkin_count": 1,
     "first_checkin_at": "2024-04-29T09:12:36+00:00",
     "last_checkin_at": "2024-04-29T09:12:36+00:00",
-    "updated_at": "2026-05-23T14:43:35.940036+00:00"
+    "updated_at": "2026-05-23T16:12:25.199277+00:00"
   },
   {
     "name": "Gokurakuyu (極楽湯 和光店)",
@@ -1371,7 +1371,7 @@
     "checkin_count": 2,
     "first_checkin_at": "2018-02-16T15:42:46+00:00",
     "last_checkin_at": "2024-03-20T04:26:59+00:00",
-    "updated_at": "2026-05-23T14:43:35.940211+00:00"
+    "updated_at": "2026-05-23T16:12:25.199443+00:00"
   },
   {
     "name": "湯らっくす",
@@ -1392,7 +1392,7 @@
     "checkin_count": 1,
     "first_checkin_at": "2024-02-19T03:58:29+00:00",
     "last_checkin_at": "2024-02-19T03:58:29+00:00",
-    "updated_at": "2026-05-23T14:43:35.940445+00:00"
+    "updated_at": "2026-05-23T16:12:25.199709+00:00"
   },
   {
     "name": "Karin no Yu (かりんの湯)",
@@ -1414,7 +1414,7 @@
     "checkin_count": 1,
     "first_checkin_at": "2024-02-04T07:11:06+00:00",
     "last_checkin_at": "2024-02-04T07:11:06+00:00",
-    "updated_at": "2026-05-23T14:43:35.940574+00:00"
+    "updated_at": "2026-05-23T16:12:25.199856+00:00"
   },
   {
     "name": "ゆーらんど",
@@ -1433,7 +1433,7 @@
     "checkin_count": 1,
     "first_checkin_at": "2023-12-28T06:56:50+00:00",
     "last_checkin_at": "2023-12-28T06:56:50+00:00",
-    "updated_at": "2026-05-23T14:43:35.940796+00:00"
+    "updated_at": "2026-05-23T16:12:25.200074+00:00"
   },
   {
     "name": "岡田湯",
@@ -1454,7 +1454,7 @@
     "checkin_count": 2,
     "first_checkin_at": "2023-09-07T10:55:11+00:00",
     "last_checkin_at": "2023-12-24T08:54:38+00:00",
-    "updated_at": "2026-05-23T14:43:35.940824+00:00"
+    "updated_at": "2026-05-23T16:12:25.200101+00:00"
   },
   {
     "name": "THE SPA 成城",
@@ -1473,7 +1473,7 @@
     "checkin_count": 1,
     "first_checkin_at": "2023-12-20T05:42:14+00:00",
     "last_checkin_at": "2023-12-20T05:42:14+00:00",
-    "updated_at": "2026-05-23T14:43:35.940847+00:00"
+    "updated_at": "2026-05-23T16:12:25.200125+00:00"
   },
   {
     "name": "Exhibition Hall D (池袋サンシャインシティ 展示ホールD)",
@@ -1494,7 +1494,7 @@
     "checkin_count": 1,
     "first_checkin_at": "2023-11-12T01:51:36+00:00",
     "last_checkin_at": "2023-11-12T01:51:36+00:00",
-    "updated_at": "2026-05-23T14:43:35.941038+00:00"
+    "updated_at": "2026-05-23T16:12:25.200295+00:00"
   },
   {
     "name": "反町浴場",
@@ -1513,7 +1513,7 @@
     "checkin_count": 1,
     "first_checkin_at": "2023-10-29T06:08:34+00:00",
     "last_checkin_at": "2023-10-29T06:08:34+00:00",
-    "updated_at": "2026-05-23T14:43:35.941209+00:00"
+    "updated_at": "2026-05-23T16:12:25.200469+00:00"
   },
   {
     "name": "天然温泉 七福の湯 戸田店",
@@ -1535,7 +1535,7 @@
     "checkin_count": 2,
     "first_checkin_at": "2020-11-07T02:56:26+00:00",
     "last_checkin_at": "2023-10-14T04:59:34+00:00",
-    "updated_at": "2026-05-23T14:43:35.941292+00:00"
+    "updated_at": "2026-05-23T16:12:25.200551+00:00"
   },
   {
     "name": "Saya no Yudokoro (前野原温泉 さやの湯処)",
@@ -1554,7 +1554,7 @@
     "checkin_count": 1,
     "first_checkin_at": "2023-10-06T09:18:55+00:00",
     "last_checkin_at": "2023-10-06T09:18:55+00:00",
-    "updated_at": "2026-05-23T14:43:35.941333+00:00"
+    "updated_at": "2026-05-23T16:12:25.200588+00:00"
   },
   {
     "name": "大浴場",
@@ -1573,7 +1573,7 @@
     "checkin_count": 2,
     "first_checkin_at": "2023-08-26T08:26:28+00:00",
     "last_checkin_at": "2023-08-27T05:47:32+00:00",
-    "updated_at": "2026-05-23T14:43:35.941619+00:00"
+    "updated_at": "2026-05-23T16:12:25.200873+00:00"
   },
   {
     "name": "アルペンブリックスパ 日帰り温泉",
@@ -1592,7 +1592,7 @@
     "checkin_count": 1,
     "first_checkin_at": "2023-07-29T09:47:18+00:00",
     "last_checkin_at": "2023-07-29T09:47:18+00:00",
-    "updated_at": "2026-05-23T14:43:35.941781+00:00"
+    "updated_at": "2026-05-23T16:12:25.201043+00:00"
   },
   {
     "name": "Naena no Yu (杉野沢温泉 苗名の湯)",
@@ -1613,7 +1613,7 @@
     "checkin_count": 1,
     "first_checkin_at": "2023-07-29T04:15:24+00:00",
     "last_checkin_at": "2023-07-29T04:15:24+00:00",
-    "updated_at": "2026-05-23T14:43:35.941816+00:00"
+    "updated_at": "2026-05-23T16:12:25.201072+00:00"
   },
   {
     "name": "Haginoyu (ひだまりの泉 萩の湯)",
@@ -1632,7 +1632,7 @@
     "checkin_count": 1,
     "first_checkin_at": "2023-07-05T09:50:56+00:00",
     "last_checkin_at": "2023-07-05T09:50:56+00:00",
-    "updated_at": "2026-05-23T14:43:35.941913+00:00"
+    "updated_at": "2026-05-23T16:12:25.201150+00:00"
   },
   {
     "name": "Keio Takaosan Onsen Gokurakuyu (京王高尾山温泉 極楽湯)",
@@ -1651,7 +1651,7 @@
     "checkin_count": 3,
     "first_checkin_at": "2022-05-07T06:38:41+00:00",
     "last_checkin_at": "2023-07-01T03:33:22+00:00",
-    "updated_at": "2026-05-23T14:43:35.941978+00:00"
+    "updated_at": "2026-05-23T16:12:25.201187+00:00"
   },
   {
     "name": "稲荷湯",
@@ -1670,7 +1670,7 @@
     "checkin_count": 1,
     "first_checkin_at": "2023-06-03T09:43:29+00:00",
     "last_checkin_at": "2023-06-03T09:43:29+00:00",
-    "updated_at": "2026-05-23T14:43:35.942087+00:00"
+    "updated_at": "2026-05-23T16:12:25.201284+00:00"
   },
   {
     "name": "SPA HERBS 美楽温泉",
@@ -1689,7 +1689,7 @@
     "checkin_count": 2,
     "first_checkin_at": "2022-09-21T07:45:18+00:00",
     "last_checkin_at": "2023-05-20T06:13:27+00:00",
-    "updated_at": "2026-05-23T14:43:35.942184+00:00"
+    "updated_at": "2026-05-23T16:12:25.201377+00:00"
   },
   {
     "name": "サウナ ニュー大塚",
@@ -1710,7 +1710,7 @@
     "checkin_count": 1,
     "first_checkin_at": "2023-05-13T10:28:35+00:00",
     "last_checkin_at": "2023-05-13T10:28:35+00:00",
-    "updated_at": "2026-05-23T14:43:35.942218+00:00"
+    "updated_at": "2026-05-23T16:12:25.201408+00:00"
   },
   {
     "name": "南総城山温泉 里見の湯",
@@ -1729,7 +1729,7 @@
     "checkin_count": 1,
     "first_checkin_at": "2023-05-03T09:48:19+00:00",
     "last_checkin_at": "2023-05-03T09:48:19+00:00",
-    "updated_at": "2026-05-23T14:43:35.942296+00:00"
+    "updated_at": "2026-05-23T16:12:25.201485+00:00"
   },
   {
     "name": "大谷田温泉明神の湯",
@@ -1750,7 +1750,7 @@
     "checkin_count": 1,
     "first_checkin_at": "2023-05-01T04:55:48+00:00",
     "last_checkin_at": "2023-05-01T04:55:48+00:00",
-    "updated_at": "2026-05-23T14:43:35.942368+00:00"
+    "updated_at": "2026-05-23T16:12:25.201560+00:00"
   },
   {
     "name": "湯田中駅前温泉 楓の湯",
@@ -1771,7 +1771,7 @@
     "checkin_count": 1,
     "first_checkin_at": "2023-03-19T07:57:43+00:00",
     "last_checkin_at": "2023-03-19T07:57:43+00:00",
-    "updated_at": "2026-05-23T14:43:35.942619+00:00"
+    "updated_at": "2026-05-23T16:12:25.201799+00:00"
   },
   {
     "name": "Karuizawa Sengataki Onsen (軽井沢千ヶ滝温泉)",
@@ -1792,7 +1792,7 @@
     "checkin_count": 1,
     "first_checkin_at": "2023-02-19T09:54:45+00:00",
     "last_checkin_at": "2023-02-19T09:54:45+00:00",
-    "updated_at": "2026-05-23T14:43:35.942982+00:00"
+    "updated_at": "2026-05-23T16:12:25.202179+00:00"
   },
   {
     "name": "天然戸田温泉 彩香の湯",
@@ -1813,7 +1813,7 @@
     "checkin_count": 1,
     "first_checkin_at": "2023-02-04T03:19:19+00:00",
     "last_checkin_at": "2023-02-04T03:19:19+00:00",
-    "updated_at": "2026-05-23T14:43:35.943091+00:00"
+    "updated_at": "2026-05-23T16:12:25.202284+00:00"
   },
   {
     "name": "Akakura Onsen Ski Resort (赤倉温泉スキー場)",
@@ -1835,7 +1835,7 @@
     "checkin_count": 2,
     "first_checkin_at": "2023-01-06T23:41:29+00:00",
     "last_checkin_at": "2023-01-07T23:54:47+00:00",
-    "updated_at": "2026-05-23T14:43:35.943221+00:00"
+    "updated_at": "2026-05-23T16:12:25.202432+00:00"
   },
   {
     "name": "永泉湯",
@@ -1854,7 +1854,7 @@
     "checkin_count": 1,
     "first_checkin_at": "2022-11-27T07:54:48+00:00",
     "last_checkin_at": "2022-11-27T07:54:48+00:00",
-    "updated_at": "2026-05-23T14:43:35.943348+00:00"
+    "updated_at": "2026-05-23T16:12:25.202593+00:00"
   },
   {
     "name": "君津の湯",
@@ -1873,7 +1873,7 @@
     "checkin_count": 1,
     "first_checkin_at": "2022-11-06T07:41:31+00:00",
     "last_checkin_at": "2022-11-06T07:41:31+00:00",
-    "updated_at": "2026-05-23T14:43:35.943412+00:00"
+    "updated_at": "2026-05-23T16:12:25.202658+00:00"
   },
   {
     "name": "スーパー銭湯湯処葛西",
@@ -1892,7 +1892,7 @@
     "checkin_count": 1,
     "first_checkin_at": "2022-10-08T06:58:22+00:00",
     "last_checkin_at": "2022-10-08T06:58:22+00:00",
-    "updated_at": "2026-05-23T14:43:35.943499+00:00"
+    "updated_at": "2026-05-23T16:12:25.202746+00:00"
   },
   {
     "name": "ヘルシーパーク裾野",
@@ -1911,7 +1911,7 @@
     "checkin_count": 1,
     "first_checkin_at": "2022-09-11T07:39:27+00:00",
     "last_checkin_at": "2022-09-11T07:39:27+00:00",
-    "updated_at": "2026-05-23T14:43:35.943609+00:00"
+    "updated_at": "2026-05-23T16:12:25.202873+00:00"
   },
   {
     "name": "朝日湯源泉ゆいる",
@@ -1930,7 +1930,7 @@
     "checkin_count": 1,
     "first_checkin_at": "2022-08-06T11:28:12+00:00",
     "last_checkin_at": "2022-08-06T11:28:12+00:00",
-    "updated_at": "2026-05-23T14:43:35.943758+00:00"
+    "updated_at": "2026-05-23T16:12:25.203028+00:00"
   },
   {
     "name": "Oasis Sauna Astil (オアシスサウナ アスティル)",
@@ -1949,7 +1949,7 @@
     "checkin_count": 1,
     "first_checkin_at": "2022-05-29T05:44:07+00:00",
     "last_checkin_at": "2022-05-29T05:44:07+00:00",
-    "updated_at": "2026-05-23T14:43:35.943980+00:00"
+    "updated_at": "2026-05-23T16:12:25.203238+00:00"
   },
   {
     "name": "百観音温泉",
@@ -1970,7 +1970,7 @@
     "checkin_count": 1,
     "first_checkin_at": "2022-02-23T06:02:42+00:00",
     "last_checkin_at": "2022-02-23T06:02:42+00:00",
-    "updated_at": "2026-05-23T14:43:35.944678+00:00"
+    "updated_at": "2026-05-23T16:12:25.203931+00:00"
   },
   {
     "name": "ふじやま温泉",
@@ -1989,7 +1989,7 @@
     "checkin_count": 1,
     "first_checkin_at": "2021-11-07T08:26:22+00:00",
     "last_checkin_at": "2021-11-07T08:26:22+00:00",
-    "updated_at": "2026-05-23T14:43:35.945029+00:00"
+    "updated_at": "2026-05-23T16:12:25.204274+00:00"
   },
   {
     "name": "Sensui (富士山溶岩の湯 泉水)",
@@ -2010,7 +2010,7 @@
     "checkin_count": 1,
     "first_checkin_at": "2021-11-06T11:46:22+00:00",
     "last_checkin_at": "2021-11-06T11:46:22+00:00",
-    "updated_at": "2026-05-23T14:43:35.945058+00:00"
+    "updated_at": "2026-05-23T16:12:25.204300+00:00"
   },
   {
     "name": "尾道U2コインシャワー",
@@ -2029,7 +2029,7 @@
     "checkin_count": 1,
     "first_checkin_at": "2021-09-12T06:38:23+00:00",
     "last_checkin_at": "2021-09-12T06:38:23+00:00",
-    "updated_at": "2026-05-23T14:43:35.945272+00:00"
+    "updated_at": "2026-05-23T16:12:25.204530+00:00"
   },
   {
     "name": "天然温泉 梓の湯 ドーミーイン松本",
@@ -2048,7 +2048,7 @@
     "checkin_count": 1,
     "first_checkin_at": "2021-08-24T10:29:40+00:00",
     "last_checkin_at": "2021-08-24T10:29:40+00:00",
-    "updated_at": "2026-05-23T14:43:35.945590+00:00"
+    "updated_at": "2026-05-23T16:12:25.204813+00:00"
   },
   {
     "name": "TRC 東京流通センター 第一展示場",
@@ -2069,7 +2069,7 @@
     "checkin_count": 2,
     "first_checkin_at": "2019-05-06T02:06:31+00:00",
     "last_checkin_at": "2021-05-23T00:21:36+00:00",
-    "updated_at": "2026-05-23T14:43:35.945770+00:00"
+    "updated_at": "2026-05-23T16:12:25.205000+00:00"
   },
   {
     "name": "北志賀よませ温泉スキー場",
@@ -2088,7 +2088,7 @@
     "checkin_count": 2,
     "first_checkin_at": "2020-02-29T05:31:06+00:00",
     "last_checkin_at": "2020-03-01T07:20:48+00:00",
-    "updated_at": "2026-05-23T14:43:35.946478+00:00"
+    "updated_at": "2026-05-23T16:12:25.205623+00:00"
   },
   {
     "name": "遠見乃湯",
@@ -2107,7 +2107,7 @@
     "checkin_count": 2,
     "first_checkin_at": "2020-02-29T10:42:40+00:00",
     "last_checkin_at": "2020-03-01T06:57:18+00:00",
-    "updated_at": "2026-05-23T14:43:35.946492+00:00"
+    "updated_at": "2026-05-23T16:12:25.205634+00:00"
   },
   {
     "name": "霞浦の湯",
@@ -2128,7 +2128,7 @@
     "checkin_count": 1,
     "first_checkin_at": "2019-11-04T05:57:35+00:00",
     "last_checkin_at": "2019-11-04T05:57:35+00:00",
-    "updated_at": "2026-05-23T14:43:35.947211+00:00"
+    "updated_at": "2026-05-23T16:12:25.206362+00:00"
   },
   {
     "name": "滝見苑けんこう村 ごりやくの湯",
@@ -2147,7 +2147,7 @@
     "checkin_count": 1,
     "first_checkin_at": "2019-09-23T02:30:41+00:00",
     "last_checkin_at": "2019-09-23T02:30:41+00:00",
-    "updated_at": "2026-05-23T14:43:35.947354+00:00"
+    "updated_at": "2026-05-23T16:12:25.206501+00:00"
   },
   {
     "name": "Red Bull Gaming Sphere Tokyo",
@@ -2166,7 +2166,7 @@
     "checkin_count": 1,
     "first_checkin_at": "2019-07-06T03:21:46+00:00",
     "last_checkin_at": "2019-07-06T03:21:46+00:00",
-    "updated_at": "2026-05-23T14:43:35.948023+00:00"
+    "updated_at": "2026-05-23T16:12:25.207148+00:00"
   },
   {
     "name": "あそう温泉 白帆の湯",
@@ -2187,7 +2187,7 @@
     "checkin_count": 1,
     "first_checkin_at": "2019-06-01T08:24:27+00:00",
     "last_checkin_at": "2019-06-01T08:24:27+00:00",
-    "updated_at": "2026-05-23T14:43:35.948264+00:00"
+    "updated_at": "2026-05-23T16:12:25.207376+00:00"
   },
   {
     "name": "赤湯元湯",
@@ -2206,7 +2206,7 @@
     "checkin_count": 1,
     "first_checkin_at": "2018-06-05T10:11:21+00:00",
     "last_checkin_at": "2018-06-05T10:11:21+00:00",
-    "updated_at": "2026-05-23T14:43:35.949914+00:00"
+    "updated_at": "2026-05-23T16:12:25.209051+00:00"
   },
   {
     "name": "満天の湯",
@@ -2225,7 +2225,7 @@
     "checkin_count": 1,
     "first_checkin_at": "2017-10-31T05:52:48+00:00",
     "last_checkin_at": "2017-10-31T05:52:48+00:00",
-    "updated_at": "2026-05-23T14:43:35.950675+00:00"
+    "updated_at": "2026-05-23T16:12:25.209811+00:00"
   },
   {
     "name": "半次郎",
@@ -2244,7 +2244,7 @@
     "checkin_count": 4,
     "first_checkin_at": "2017-07-16T06:05:08+00:00",
     "last_checkin_at": "2017-08-09T11:27:29+00:00",
-    "updated_at": "2026-05-23T14:43:35.951042+00:00"
+    "updated_at": "2026-05-23T16:12:25.210182+00:00"
   },
   {
     "name": "梅の湯",
@@ -2263,7 +2263,7 @@
     "checkin_count": 1,
     "first_checkin_at": "2017-03-13T09:14:47+00:00",
     "last_checkin_at": "2017-03-13T09:14:47+00:00",
-    "updated_at": "2026-05-23T14:43:35.951657+00:00"
+    "updated_at": "2026-05-23T16:12:25.210813+00:00"
   },
   {
     "name": "ふくの湯",
@@ -2282,7 +2282,7 @@
     "checkin_count": 1,
     "first_checkin_at": "2016-09-22T14:51:34+00:00",
     "last_checkin_at": "2016-09-22T14:51:34+00:00",
-    "updated_at": "2026-05-23T14:43:35.952394+00:00"
+    "updated_at": "2026-05-23T16:12:25.211554+00:00"
   },
   {
     "name": "Bloom Hall",
@@ -2301,7 +2301,7 @@
     "checkin_count": 1,
     "first_checkin_at": "2015-03-14T10:32:20+00:00",
     "last_checkin_at": "2015-03-14T10:32:20+00:00",
-    "updated_at": "2026-05-23T14:43:35.954574+00:00"
+    "updated_at": "2026-05-23T16:12:25.213771+00:00"
   },
   {
     "name": "Narimasu ACT Hall (成増アクトホール)",
@@ -2320,6 +2320,6 @@
     "checkin_count": 1,
     "first_checkin_at": "2013-07-17T22:53:19+00:00",
     "last_checkin_at": "2013-07-17T22:53:19+00:00",
-    "updated_at": "2026-05-23T14:43:35.958416+00:00"
+    "updated_at": "2026-05-23T16:12:25.217658+00:00"
   }
 ]
