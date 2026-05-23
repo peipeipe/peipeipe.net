@@ -31,7 +31,7 @@ jobs:
       - name: Fetch Foursquare checkins
         env:
           FOURSQUARE_OAUTH_TOKEN: ${{ secrets.FOURSQUARE_OAUTH_TOKEN }}
-          FOURSQUARE_CHECKIN_CATEGORY_IDS: ${{ vars.FOURSQUARE_CHECKIN_CATEGORY_IDS || '4bf58dd8d48988d160941735' }}
+          FOURSQUARE_CHECKIN_CATEGORY_IDS: ${{ vars.FOURSQUARE_CHECKIN_CATEGORY_IDS || '4bf58dd8d48988d160941735,52e81612bcbc57f1066b7a27,4bf58dd8d48988d1ed941735,58daa1558bbb0b01f18ec1ae' }}
           FOURSQUARE_CHECKIN_LIMIT: '250'
           FOURSQUARE_CHECKIN_MAX_PAGES: '20'
         run: python scripts/fetch_foursquare_checkins.py
