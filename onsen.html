@@ -88,9 +88,9 @@ permalink: /onsen/
           {% endif %}
           
           <div class="card-footer">
-            {% if place.foursquare_url != "" %}
-              <a href="{{ place.foursquare_url }}" target="_blank" class="fsq-link" rel="noopener noreferrer">
-                <span class="fsq-icon">F</span> Foursquareで見る
+            {% if place.lat and place.lng %}
+              <a href="https://www.google.com/maps/search/?api=1&query={{ place.lat }},{{ place.lng }}" target="_blank" class="gmap-link" rel="noopener noreferrer">
+                <span class="gmap-icon">🗺️</span> Google Mapsで見る
               </a>
             {% endif %}
             <button class="show-map-btn" onclick="focusOnMap('{{ place.lat }}', '{{ place.lng }}', '{{ card_index }}')" {% unless place.lat and place.lng %}disabled{% endunless %}>
