@@ -73,7 +73,7 @@ permalink: /onsen/
         <div class="onsen-card-content">
           <h3 class="place-name">{{ place.name }}</h3>
           <p class="place-address">📍 {{ place.address }}</p>
-          {% if place.user_comment != blank %}
+          {% if place.user_comment and place.user_comment != "" %}
             <div class="user-comment-box">
               <p class="user-comment">{{ place.user_comment }}</p>
             </div>
