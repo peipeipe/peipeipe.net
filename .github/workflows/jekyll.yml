@@ -27,8 +27,13 @@ jobs:
         uses: ruby/setup-ruby@v1
         with:
           ruby-version: '3.3'
-          bundler: latest
-          bundler-cache: true
+          bundler-cache: false
+      
+      - name: Install dependencies
+        run: |
+          gem install bundler
+          bundle update --bundler
+          bundle install
       
       - name: Setup Pages
         id: pages
@@ -38,7 +43,6 @@ jobs:
         run: bundle exec jekyll build --baseurl "${{ steps.pages.outputs.base_path }}"
         env:
           JEKYLL_ENV: production
-          BUNDLE_PATH: ~/.bundle
       
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v5
