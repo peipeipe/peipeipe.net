@@ -1,0 +1,49 @@
+name: Update Onsen Checkins
+
+on:
+  schedule:
+    - cron: '17 * * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  update-onsen-checkins:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v6
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Set up Python
+        uses: actions/setup-python@v6
+        with:
+          python-version: '3.14'
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+
+      - name: Fetch Foursquare checkins
+        env:
+          FOURSQUARE_OAUTH_TOKEN: ${{ secrets.FOURSQUARE_OAUTH_TOKEN }}
+          FOURSQUARE_CHECKIN_CATEGORY_IDS: ${{ vars.FOURSQUARE_CHECKIN_CATEGORY_IDS || '4bf58dd8d48988d160941735' }}
+          FOURSQUARE_CHECKIN_LIMIT: '250'
+          FOURSQUARE_CHECKIN_MAX_PAGES: '20'
+        run: python scripts/fetch_foursquare_checkins.py
+
+      - name: Commit and push changes
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git add _data/onsen_places.json
+          if git diff --cached --exit-code; then
+            echo "No new onsen checkins"
+          else
+            git commit -m "Update onsen checkins"
+            git push
+          fi

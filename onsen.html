@@ -1,0 +1,320 @@
+---
+layout: default
+title: 温泉リストマップ
+permalink: /onsen/
+---
+
+<!-- Leaflet.js CDN -->
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+
+<div class="onsen-page-container">
+  <div class="onsen-header">
+    <h1 class="onsen-title">♨️ チェックイン温泉マップ</h1>
+    <p class="onsen-subtitle">Foursquare / Swarm のチェックイン履歴から、温泉カテゴリの場所を自動でまとめた地図です。</p>
+  </div>
+
+  <!-- マップエリア -->
+  <div class="map-wrapper">
+    <div id="onsen-map"></div>
+  </div>
+
+  <!-- 温泉カードリスト -->
+  <div class="onsen-section-title">
+    <h2>温泉一覧 ({{ site.data.onsen_places.size }}箇所)</h2>
+  </div>
+
+  <div class="onsen-grid" id="onsen-grid">
+    {% for place in site.data.onsen_places %}
+      {% assign card_index = forloop.index0 %}
+      <div class="onsen-card" 
+           id="onsen-card-{{ card_index }}" 
+           data-index="{{ card_index }}" 
+           data-lat="{{ place.lat }}" 
+           data-lng="{{ place.lng }}" 
+           data-name="{{ place.name | escape }}">
+        
+        <!-- 写真カルーセル -->
+        <div class="onsen-card-media">
+          {% if place.photos and place.photos.size > 0 %}
+            <div class="carousel-container" id="carousel-{{ card_index }}">
+              <div class="carousel-slides">
+                {% for photo in place.photos %}
+                  <div class="carousel-slide {% if forloop.first %}active{% endif %}">
+                    <img src="{{ photo }}" alt="{{ place.name | escape }}の写真" loading="lazy" />
+                  </div>
+                {% endfor %}
+              </div>
+              
+              {% if place.photos.size > 1 %}
+                <button class="carousel-control prev" onclick="moveCarousel('{{ card_index }}', -1, event)" aria-label="前の写真">&#10094;</button>
+                <button class="carousel-control next" onclick="moveCarousel('{{ card_index }}', 1, event)" aria-label="次の写真">&#10095;</button>
+                <div class="carousel-indicators">
+                  {% for photo in place.photos %}
+                    <span class="indicator {% if forloop.first %}active{% endif %}" onclick="setCarousel('{{ card_index }}', '{{ forloop.index0 }}', event)"></span>
+                  {% endfor %}
+                </div>
+              {% endif %}
+            </div>
+          {% else %}
+            <!-- 写真がない場合のプレースホルダー -->
+            <div class="no-image-placeholder">
+              <span class="placeholder-icon">♨️</span>
+            </div>
+          {% endif %}
+          {% if place.date %}
+            <div class="visit-date">📅 {{ place.date }} 訪問</div>
+          {% elsif place.data_source contains "foursquare" %}
+            <div class="visit-date">Foursquare</div>
+          {% endif %}
+        </div>
+
+        <!-- カードコンテンツ -->
+        <div class="onsen-card-content">
+          <h3 class="place-name">{{ place.name }}</h3>
+          <p class="place-address">📍 {{ place.address }}</p>
+          {% if place.user_comment %}
+            <div class="user-comment-box">
+              <p class="user-comment">{{ place.user_comment }}</p>
+            </div>
+          {% elsif place.categories and place.categories.size > 0 %}
+            <div class="category-list">
+              {% for category in place.categories limit: 3 %}
+                <span>{{ category }}</span>
+              {% endfor %}
+            </div>
+          {% endif %}
+          
+          <div class="card-footer">
+            {% if place.foursquare_url != "" %}
+              <a href="{{ place.foursquare_url }}" target="_blank" class="fsq-link" rel="noopener noreferrer">
+                <span class="fsq-icon">F</span> Foursquareで見る
+              </a>
+            {% endif %}
+            <button class="show-map-btn" onclick="focusOnMap('{{ place.lat }}', '{{ place.lng }}', '{{ card_index }}')" {% unless place.lat and place.lng %}disabled{% endunless %}>
+              地図で見る 🗺️
+            </button>
+          </div>
+        </div>
+      </div>
+    {% endfor %}
+  </div>
+</div>
+
+<script>
+  // グローバル変数
+  let map;
+  let markers = [];
+  const onsenData = [];
+
+  // JekyllからデータをJSオブジェクトとして展開
+  {% for place in site.data.onsen_places %}
+    onsenData.push({
+      name: {{ place.name | jsonify }},
+      lat: {% if place.lat %}{{ place.lat }}{% else %}null{% endif %},
+      lng: {% if place.lng %}{{ place.lng }}{% else %}null{% endif %},
+      address: {{ place.address | jsonify }},
+      user_comment: {{ place.user_comment | jsonify }},
+      date: {{ place.date | jsonify }},
+      photo: {% if place.photos and place.photos.size > 0 %}{{ place.photos | first | jsonify }}{% else %}null{% endif %},
+      foursquare_url: {{ place.foursquare_url | jsonify }}
+    });
+  {% endfor %}
+
+  // 地図の初期化
+  document.addEventListener('DOMContentLoaded', function() {
+    initMap();
+  });
+
+  function initMap() {
+    // デフォルトで日本全体（データが空のときのフォールバック）
+    let centerLat = 36.2048;
+    let centerLng = 138.2529;
+    let zoomLevel = 5;
+
+    // データがある場合は、その平均値を中心にする
+    const placesWithLocation = onsenData.filter(item => Number.isFinite(item.lat) && Number.isFinite(item.lng));
+
+    if (placesWithLocation.length > 0) {
+      let sumLat = 0;
+      let sumLng = 0;
+      placesWithLocation.forEach(item => {
+        sumLat += item.lat;
+        sumLng += item.lng;
+      });
+      centerLat = sumLat / placesWithLocation.length;
+      centerLng = sumLng / placesWithLocation.length;
+      zoomLevel = placesWithLocation.length === 1 ? 14 : 7;
+    }
+
+    // 地図の作成
+    map = L.map('onsen-map', {
+      scrollWheelZoom: false // スクロールでのズームは無効化（スクロール操作の邪魔をしないため）
+    }).setView([centerLat, centerLng], zoomLevel);
+
+    // ダブルクリックでのズームや、スクロール制御の有効化スイッチ（地図クリックで有効にするなど）
+    map.on('focus', function() { map.scrollWheelZoom.enable(); });
+    map.on('blur', function() { map.scrollWheelZoom.disable(); });
+
+    // OpenStreetMapのタイルレイヤーを追加
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+      maxZoom: 19,
+      attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+    }).addTo(map);
+
+    // ピン（マーカー）の配置
+    const bounds = [];
+    onsenData.forEach((place, index) => {
+      if (!Number.isFinite(place.lat) || !Number.isFinite(place.lng)) {
+        return;
+      }
+
+      const safeName = escapeHtml(place.name || '');
+      const safeAddress = escapeHtml(place.address || '');
+      const safeComment = escapeHtml(place.user_comment || '');
+      const safeDate = escapeHtml(place.date || '');
+      const safePhoto = place.photo ? escapeHtml(place.photo) : '';
+
+      // ポップアップのHTMLをプレミアムにスタイリング
+      let popupHtml = `
+        <div class="map-popup-content">
+          \${safePhoto ? `<div class="popup-image"><img src="\${safePhoto}" alt="\${safeName}"></div>` : ''}
+          <h4 class="popup-title">♨️ \${safeName}</h4>
+          <p class="popup-address">📍 \${safeAddress}</p>
+          \${safeComment ? `<div class="popup-comment">"\${safeComment}"</div>` : ''}
+          \${safeDate ? `<div class="popup-date">📅 \${safeDate} 訪問</div>` : ''}
+        </div>
+      `;
+
+      const marker = L.marker([place.lat, place.lng]).addTo(map);
+      marker.bindPopup(popupHtml, {
+        maxWidth: 260,
+        className: 'custom-leaflet-popup'
+      });
+      
+      // ピンをクリックした際のインタラクション
+      marker.on('click', function() {
+        highlightCard(index);
+      });
+
+      markers.push(marker);
+      bounds.push([place.lat, place.lng]);
+    });
+
+    // 複数箇所ある場合は、すべてのピンが収まるように自動調整
+    if (bounds.length > 1) {
+      map.fitBounds(bounds, { padding: [50, 50] });
+    }
+  }
+
+  function escapeHtml(value) {
+    return String(value).replace(/[&<>"']/g, function(character) {
+      return {
+        '&': '&amp;',
+        '<': '&lt;',
+        '>': '&gt;',
+        '"': '&quot;',
+        "'": '&#39;'
+      }[character];
+    });
+  }
+
+  // カードを選択し、地図のピンと同期する
+  function highlightCard(index) {
+    // 全カードのアクティブ状態をクリア
+    const cards = document.querySelectorAll('.onsen-card');
+    cards.forEach(card => card.classList.remove('active'));
+
+    // 対象のカードにアクティブクラスを適用
+    const targetCard = document.getElementById(`onsen-card-\${index}`);
+    if (targetCard) {
+      targetCard.classList.add('active');
+      
+      // カードの位置までスムーズスクロール
+      targetCard.scrollIntoView({
+        behavior: 'smooth',
+        block: 'nearest',
+        inline: 'center'
+      });
+    }
+  }
+
+  // カードをクリックして、地図をその場所にフォーカスする
+  function focusOnMap(lat, lng, index) {
+    const parsedLat = parseFloat(lat);
+    const parsedLng = parseFloat(lng);
+    if (!Number.isFinite(parsedLat) || !Number.isFinite(parsedLng)) {
+      highlightCard(index);
+      return;
+    }
+
+    if (map) {
+      map.setView([parsedLat, parsedLng], 14, {
+        animate: true,
+        duration: 1.0
+      });
+      
+      // 対応するマーカーのポップアップを開く
+      if (markers[index]) {
+        setTimeout(() => {
+          markers[index].openPopup();
+        }, 300); // 移動が少し進んでからポップアップを開く
+      }
+      
+      highlightCard(index);
+    }
+  }
+
+  // --- カルーセル制御ロジック ---
+  const carouselStates = {};
+
+  function moveCarousel(cardIndex, direction, event) {
+    if (event) event.stopPropagation(); // カードクリックの地図フォーカスイベント発火を防ぐ
+    
+    const container = document.getElementById(`carousel-\${cardIndex}`);
+    if (!container) return;
+
+    const slides = container.querySelectorAll('.carousel-slide');
+    const indicators = container.querySelectorAll('.indicator');
+    
+    // カレントインデックスの取得（なければ0）
+    if (!(cardIndex in carouselStates)) {
+      carouselStates[cardIndex] = 0;
+    }
+
+    let currentIndex = carouselStates[cardIndex];
+    slides[currentIndex].classList.remove('active');
+    if (indicators[currentIndex]) indicators[currentIndex].classList.remove('active');
+
+    // 次のインデックスを計算
+    currentIndex = (currentIndex + direction + slides.length) % slides.length;
+    carouselStates[cardIndex] = currentIndex;
+
+    slides[currentIndex].classList.add('active');
+    if (indicators[currentIndex]) indicators[currentIndex].classList.add('active');
+  }
+
+  function setCarousel(cardIndex, slideIndex, event) {
+    if (event) event.stopPropagation();
+    
+    const container = document.getElementById(`carousel-\${cardIndex}`);
+    if (!container) return;
+
+    const slides = container.querySelectorAll('.carousel-slide');
+    const indicators = container.querySelectorAll('.indicator');
+
+    if (!(cardIndex in carouselStates)) {
+      carouselStates[cardIndex] = 0;
+    }
+
+    let currentIndex = carouselStates[cardIndex];
+    slides[currentIndex].classList.remove('active');
+    if (indicators[currentIndex]) indicators[currentIndex].classList.remove('active');
+
+    currentIndex = parseInt(slideIndex);
+    carouselStates[cardIndex] = currentIndex;
+
+    slides[currentIndex].classList.add('active');
+    if (indicators[currentIndex]) indicators[currentIndex].classList.add('active');
+  }
+</script>
