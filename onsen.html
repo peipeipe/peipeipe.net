@@ -63,7 +63,9 @@ permalink: /onsen/
             </div>
           {% endif %}
           {% if place.date %}
-            <div class="visit-date">📅 {{ place.date }} 訪問</div>
+            <div class="visit-date">
+              📅 最終訪問: {{ place.date }}{% if place.checkin_count and place.checkin_count > 1 %}&nbsp;·&nbsp;♨️ {{ place.checkin_count }}回{% endif %}
+            </div>
           {% elsif place.data_source contains "foursquare" %}
             <div class="visit-date">Foursquare</div>
           {% endif %}
