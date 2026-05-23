@@ -3,6 +3,8 @@ name: Deploy Jekyll with GitHub Pages dependencies preinstalled
 on:
   push:
     branches: [ "main", "master" ]
+  pull_request:
+    branches: [ "main", "master" ]
   workflow_dispatch:
 
 permissions:
@@ -25,7 +27,13 @@ jobs:
         uses: ruby/setup-ruby@v1
         with:
           ruby-version: '3.3'
-          bundler-cache: true
+          bundler-cache: false
+      
+      - name: Install dependencies
+        run: |
+          gem install bundler
+          rm -f Gemfile.lock
+          bundle install
       
       - name: Setup Pages
         id: pages
@@ -35,12 +43,12 @@ jobs:
         run: bundle exec jekyll build --baseurl "${{ steps.pages.outputs.base_path }}"
         env:
           JEKYLL_ENV: production
-          BUNDLE_PATH: ~/.bundle
       
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v5
 
   deploy:
+    if: github.event_name != 'pull_request'
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
