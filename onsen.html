@@ -243,13 +243,6 @@ permalink: /onsen/
     const targetCard = document.getElementById('onsen-card-' + index);
     if (targetCard) {
       targetCard.classList.add('active');
-      
-      // カードの位置までスムーズスクロール
-      targetCard.scrollIntoView({
-        behavior: 'smooth',
-        block: 'nearest',
-        inline: 'center'
-      });
     }
   }
 
