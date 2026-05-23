@@ -211,6 +211,22 @@ def extract_checkin_photos(checkin):
     return normalize_checkin_photos(checkin.get('photos'))
 
 
+def extract_checkin_shout(checkin):
+    """Swarm チェックイン時のコメント（API では shout）"""
+    shout = checkin.get('shout')
+    if not isinstance(shout, str):
+        return ""
+    return shout.strip()
+
+
+def update_user_comment(place, shout, is_latest):
+    """最新の shout を優先し、なければ過去チェックインから補完する"""
+    if not shout:
+        return
+    if is_latest or not place.get('user_comment'):
+        place['user_comment'] = shout
+
+
 def merge_photo_urls(existing, new_urls, limit, prepend=False):
     """URL の重複を除き、施設ごとの上限枚数までまとめる"""
     ordered = (new_urls + existing) if prepend else (existing + new_urls)
@@ -248,6 +264,7 @@ def build_places_from_checkins(checkins, category_ids):
         visited_iso = visited_at.isoformat() if visited_at else ""
         visited_date = visited_at.astimezone().date().isoformat() if visited_at else ""
         checkin_photos = extract_checkin_photos(checkin)
+        checkin_shout = extract_checkin_shout(checkin)
 
         existing = places.get(venue_id)
         if existing:
@@ -269,13 +286,14 @@ def build_places_from_checkins(checkins, category_ids):
                     photo_limit,
                     prepend=False,
                 )
+            update_user_comment(existing, checkin_shout, is_latest)
             if visited_iso and visited_iso < existing.get('first_checkin_at', visited_iso):
                 existing['first_checkin_at'] = visited_iso
             continue
 
         places[venue_id] = {
             "name": venue.get('name', ''),
-            "user_comment": "",
+            "user_comment": checkin_shout,
             "date": visited_date,
             "lat": lat,
             "lng": lng,
@@ -323,10 +341,12 @@ def main():
         f.write('\n')
 
     with_photos = sum(1 for place in places if place.get('photos'))
+    with_comments = sum(1 for place in places if place.get('user_comment'))
 
     print(f"取得チェックイン: {len(checkins)}件")
     print(f"温泉カテゴリ一致: {len(places)}件")
     print(f"写真あり: {with_photos}件")
+    print(f"コメントあり: {with_comments}件")
     print(f"書き出し先: {OUTPUT_JSON}")
 
 
