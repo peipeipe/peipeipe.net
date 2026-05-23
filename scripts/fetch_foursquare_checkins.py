@@ -25,6 +25,7 @@ DEFAULT_ONSEN_CATEGORY_IDS = ",".join([
     SAUNA_CATEGORY_ID,
 ])
 
+
 # カテゴリ未設定・誤分類の施設向け（チェックイン履歴内のみ）
 ONSEN_VENUE_NAME_PATTERN = re.compile(
     r"(温泉|銭湯|岩盤浴|スーパー銭湯|日帰り温泉|温泉郷|の湯|湯屋|湯処|湯楽|湯快|"
@@ -34,6 +35,21 @@ ONSEN_VENUE_NAME_PATTERN = re.compile(
     r"|\bSAUNA\b",
     re.IGNORECASE,
 )
+
+# 明らかに温泉でないスポットのfsq_idブラックリスト
+NOT_ONSEN_FSQ_IDS = set([
+    # スパニッシュダイニング Rico
+    "563b327fcd109c48c629be02",
+    # Bar de España EL CERO UNO
+    "4dd4f99c7d8b194450ce02ed",
+    # belle salle (ベルサール新宿セントラルパーク)
+    "4b8db0d2f964a520ce0833e3",
+    # Belle Salle Shibuya. (ベルサール渋谷ガーデン)
+    "4fcaa46ee4b0f59887a4a641",
+    # その他 Event Space 系
+    "5192018a2fc6103965c32393",
+    # 必要に応じて追加
+])
 
 ONSEN_CATEGORY_NAME_HINTS = (
     "温泉", "銭湯", "サウナ", "Spa", "Bath", "Hot Spring", "Sauna", "Steam",
@@ -248,12 +264,17 @@ def build_places_from_checkins(checkins, category_ids):
     places = {}
     photo_limit = photos_per_place_limit()
 
+
     for checkin in checkins:
         venue = checkin.get('venue') or {}
         venue_id = venue.get('id')
         location = venue.get('location') or {}
         lat = location.get('lat')
         lng = location.get('lng')
+
+        # ブラックリスト除外
+        if venue_id in NOT_ONSEN_FSQ_IDS:
+            continue
 
         if not venue_id or lat is None or lng is None:
             continue
