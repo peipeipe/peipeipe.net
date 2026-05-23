@@ -175,16 +175,23 @@ permalink: /onsen/
       const safeDate = escapeHtml(place.date || '');
       const safePhoto = place.photo ? escapeHtml(place.photo) : '';
 
-      // ポップアップのHTMLをプレミアムにスタイリング
-      let popupHtml = `
-        <div class="map-popup-content">
-          \${safePhoto ? `<div class="popup-image"><img src="\${safePhoto}" alt="\${safeName}"></div>` : ''}
-          <h4 class="popup-title">♨️ \${safeName}</h4>
-          <p class="popup-address">📍 \${safeAddress}</p>
-          \${safeComment ? `<div class="popup-comment">"\${safeComment}"</div>` : ''}
-          \${safeDate ? `<div class="popup-date">📅 \${safeDate} 訪問</div>` : ''}
-        </div>
-      `;
+      const photoBlock = safePhoto
+        ? '<div class="popup-image"><img src="' + safePhoto + '" alt="' + safeName + '"></div>'
+        : '';
+      const commentBlock = safeComment
+        ? '<div class="popup-comment">"' + safeComment + '"</div>'
+        : '';
+      const dateBlock = safeDate
+        ? '<div class="popup-date">📅 ' + safeDate + ' 訪問</div>'
+        : '';
+      const popupHtml =
+        '<div class="map-popup-content">' +
+        photoBlock +
+        '<h4 class="popup-title">♨️ ' + safeName + '</h4>' +
+        '<p class="popup-address">📍 ' + safeAddress + '</p>' +
+        commentBlock +
+        dateBlock +
+        '</div>';
 
       const marker = L.marker([place.lat, place.lng]).addTo(map);
       marker.bindPopup(popupHtml, {
@@ -205,6 +212,11 @@ permalink: /onsen/
     if (bounds.length > 1) {
       map.fitBounds(bounds, { padding: [50, 50] });
     }
+
+    // レイアウト確定後にタイルサイズを再計算（真っ白になるのを防ぐ）
+    requestAnimationFrame(function() {
+      map.invalidateSize();
+    });
   }
 
   function escapeHtml(value) {
@@ -226,7 +238,7 @@ permalink: /onsen/
     cards.forEach(card => card.classList.remove('active'));
 
     // 対象のカードにアクティブクラスを適用
-    const targetCard = document.getElementById(`onsen-card-\${index}`);
+    const targetCard = document.getElementById('onsen-card-' + index);
     if (targetCard) {
       targetCard.classList.add('active');
       
@@ -271,7 +283,7 @@ permalink: /onsen/
   function moveCarousel(cardIndex, direction, event) {
     if (event) event.stopPropagation(); // カードクリックの地図フォーカスイベント発火を防ぐ
     
-    const container = document.getElementById(`carousel-\${cardIndex}`);
+    const container = document.getElementById('carousel-' + cardIndex);
     if (!container) return;
 
     const slides = container.querySelectorAll('.carousel-slide');
@@ -297,7 +309,7 @@ permalink: /onsen/
   function setCarousel(cardIndex, slideIndex, event) {
     if (event) event.stopPropagation();
     
-    const container = document.getElementById(`carousel-\${cardIndex}`);
+    const container = document.getElementById('carousel-' + cardIndex);
     if (!container) return;
 
     const slides = container.querySelectorAll('.carousel-slide');
