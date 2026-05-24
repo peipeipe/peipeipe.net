@@ -2,7 +2,7 @@ name: Update Onsen Checkins
 
 on:
   schedule:
-    - cron: '17 * * * *'
+    - cron: '0 16 * * *'
   workflow_dispatch:
 
 permissions:
