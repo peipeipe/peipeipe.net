@@ -35,11 +35,14 @@ jobs:
           STRAVA_REFRESH_TOKEN: ${{ secrets.STRAVA_REFRESH_TOKEN }}
         run: python scripts/fetch_strava_activities.py
 
+      - name: Generate visited mountains
+        run: python scripts/generate_visited_mountains.py
+
       - name: Commit and push changes
         run: |
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
-          git add _data/strava_activities.json
+          git add _data/strava_activities.json _data/visited_mountains.json
           if git diff --cached --exit-code; then
             echo "No new activities"
           else
