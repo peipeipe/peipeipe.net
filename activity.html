@@ -194,10 +194,15 @@ permalink: /activity/
   var currentFilter = 'all';
 
   document.addEventListener('DOMContentLoaded', function() {
-    initMap();
+    // フィルターは地図と独立して設定（JS エラーで止まらないよう分離）
+    setupFilters();
+    try {
+      initMap();
+    } catch(e) {
+      console.error('Map init error:', e);
+    }
     updateStats(activityData);
     updateActivityCountBadge(activityData.length);
-    setupFilters();
   });
 
   function initMap() {
@@ -209,8 +214,8 @@ permalink: /activity/
     map.on('focus', function() { map.scrollWheelZoom.enable(); });
     map.on('blur', function() { map.scrollWheelZoom.disable(); });
 
-    // ダークマップタイル（CartoDB Dark Matter）
-    L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png', {
+    // ライトマップタイル（CartoDB Voyager）
+    L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png', {
       attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> &copy; <a href="https://carto.com/attributions">CARTO</a>',
       subdomains: 'abcd',
       maxZoom: 19
@@ -254,14 +259,15 @@ permalink: /activity/
       }
     }).addTo(map);
 
-    // 全軌跡が収まるようにズーム調整
+    // 全軌跡が収まるようにズーム調整（大量データでも安全なループ計算）
     if (points.length > 0) {
-      var lats = points.map(function(p) { return p[0]; });
-      var lngs = points.map(function(p) { return p[1]; });
-      var minLat = Math.min.apply(null, lats);
-      var maxLat = Math.max.apply(null, lats);
-      var minLng = Math.min.apply(null, lngs);
-      var maxLng = Math.max.apply(null, lngs);
+      var minLat = Infinity, maxLat = -Infinity, minLng = Infinity, maxLng = -Infinity;
+      for (var j = 0; j < points.length; j++) {
+        if (points[j][0] < minLat) minLat = points[j][0];
+        if (points[j][0] > maxLat) maxLat = points[j][0];
+        if (points[j][1] < minLng) minLng = points[j][1];
+        if (points[j][1] > maxLng) maxLng = points[j][1];
+      }
       map.fitBounds([[minLat, minLng], [maxLat, maxLng]], { padding: [40, 40] });
     }
   }
