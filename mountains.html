@@ -20,28 +20,6 @@ permalink: /mountains/
       <span class="stat-value">{{ site.data.visited_mountains | size }}</span>
       <span class="stat-label">訪問済み山</span>
     </div>
-    <div class="stat-item">
-      <span class="stat-value">{% assign hyaku = site.data.visited_mountains | where_exp: "m", "m.tags contains '百名山'" %}{{ hyaku | size }}</span>
-      <span class="stat-label">百名山</span>
-    </div>
-    <div class="stat-item">
-      <span class="stat-value">{% assign shinshu = site.data.visited_mountains | where_exp: "m", "m.tags contains '信州百名山'" %}{{ shinshu | size }}</span>
-      <span class="stat-label">信州百名山</span>
-    </div>
-    <div class="stat-item">
-      <span class="stat-value">{% assign sanbyaku = site.data.visited_mountains | where_exp: "m", "m.tags contains '三百名山'" %}{{ sanbyaku | size }}</span>
-      <span class="stat-label">三百名山</span>
-    </div>
-  </div>
-
-  <!-- タグフィルター -->
-  <div class="mountains-filters">
-    <button class="filter-btn active" data-tag="all">すべて</button>
-    <button class="filter-btn" data-tag="百名山">🗻 百名山</button>
-    <button class="filter-btn" data-tag="二百名山">二百名山</button>
-    <button class="filter-btn" data-tag="三百名山">三百名山</button>
-    <button class="filter-btn" data-tag="信州百名山">⛰️ 信州百名山</button>
-    <button class="filter-btn" data-tag="長野ローカル">🥾 長野ローカル</button>
   </div>
 
   <!-- マップ -->
@@ -57,31 +35,12 @@ permalink: /mountains/
   <div class="mountains-grid" id="mountains-grid">
     {% assign sorted_mountains = site.data.visited_mountains | sort: "elevation" | reverse %}
     {% for mountain in sorted_mountains %}
-      {% assign tag_classes = "" %}
-      {% for tag in mountain.tags %}
-        {% assign tag_classes = tag_classes | append: tag | append: " " %}
-      {% endfor %}
-
-      <div class="mountain-card" data-tags="{{ tag_classes | strip }}">
+      <div class="mountain-card">
         <div class="mountain-card-header">
           <span class="mountain-name">{{ mountain.name }}</span>
           <span class="mountain-elevation">{{ mountain.elevation }}m</span>
         </div>
-        <div class="mountain-tags">
-          {% for tag in mountain.tags %}
-            {% if tag == "百名山" %}
-              <span class="mountain-tag tag-hyaku">百名山</span>
-            {% elsif tag == "二百名山" %}
-              <span class="mountain-tag tag-nihyaku">二百名山</span>
-            {% elsif tag == "三百名山" %}
-              <span class="mountain-tag tag-sanbyaku">三百名山</span>
-            {% elsif tag == "信州百名山" %}
-              <span class="mountain-tag tag-shinshu">信州百名山</span>
-            {% elsif tag == "長野ローカル" %}
-              <span class="mountain-tag tag-local">長野</span>
-            {% endif %}
-          {% endfor %}
-        </div>
+
         <div class="mountain-meta">
           <span class="mountain-visits">{{ mountain.visit_count }}回訪問</span>
           <span class="mountain-first-visit">初回: {{ mountain.first_visit }}</span>
@@ -119,25 +78,12 @@ permalink: /mountains/
     {% endfor %}
   ];
 
-  // タグ色
-  const TAG_COLOR = {
-    "百名山":     "#e74c3c",
-    "二百名山":   "#e67e22",
-    "三百名山":   "#f39c12",
-    "信州百名山": "#27ae60",
-    "長野ローカル": "#3498db",
-  };
-
-  function getPrimaryTag(tags) {
-    const priority = ["百名山","二百名山","三百名山","信州百名山","長野ローカル"];
-    for (const p of priority) {
-      if (tags.includes(p)) return p;
-    }
-    return tags[0] || "その他";
-  }
-
-  function getColor(tags) {
-    return TAG_COLOR[getPrimaryTag(tags)] || "#7f8c8d";
+  // マーカー色（山高で変化）
+  function getColor(elevation) {
+    if (elevation >= 3000) return "#e74c3c";
+    if (elevation >= 2000) return "#e67e22";
+    if (elevation >= 1500) return "#f1c40f";
+    return "#27ae60";
   }
 
   // マップ初期化
@@ -170,7 +116,7 @@ permalink: /mountains/
     markerLayer = L.layerGroup().addTo(map);
 
     data.forEach(function(m) {
-      const color = getColor(m.tags);
+      const color = getColor(m.elevation);
       const marker = L.circleMarker([m.lat, m.lng], {
         radius: 10,
         fillColor: color,
@@ -180,9 +126,7 @@ permalink: /mountains/
         fillOpacity: 0.85,
       }).addTo(markerLayer);
 
-      const tagsHtml = m.tags.map(t =>
-        `<span style="background:${TAG_COLOR[t]||'#7f8c8d'};color:#fff;padding:1px 6px;border-radius:8px;font-size:11px;margin-right:3px">${t}</span>`
-      ).join("");
+      const tagsHtml = "";
 
       marker.bindPopup(
         `<b style="font-size:15px">${m.name}</b><br>` +
@@ -207,36 +151,9 @@ permalink: /mountains/
     }
   }
 
-  // フィルター
+  // フィルター（タグなしのため使用不可）
   let currentTag = "all";
-  function setupFilters() {
-    document.querySelectorAll(".filter-btn").forEach(function(btn) {
-      btn.addEventListener("click", function() {
-        document.querySelectorAll(".filter-btn").forEach(b => b.classList.remove("active"));
-        btn.classList.add("active");
-        currentTag = btn.getAttribute("data-tag");
-
-        const filtered = currentTag === "all"
-          ? mountainData
-          : mountainData.filter(m => m.tags.includes(currentTag));
-
-        renderMarkers(filtered);
-        filterCards(currentTag);
-        updateCountBadge(filtered.length);
-      });
-    });
-  }
-
-  function filterCards(tag) {
-    document.querySelectorAll(".mountain-card").forEach(function(card) {
-      const tags = card.getAttribute("data-tags") || "";
-      if (tag === "all" || tags.includes(tag)) {
-        card.style.display = "";
-      } else {
-        card.style.display = "none";
-      }
-    });
-  }
+  function setupFilters() {}
 
   function updateCountBadge(count) {
     const badge = document.getElementById("mountains-count-badge");
