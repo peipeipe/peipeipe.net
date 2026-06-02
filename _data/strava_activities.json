@@ -1,5 +1,22 @@
 [
   {
+    "id": 18750487843,
+    "name": "ランチタイム ランニング",
+    "sport_type": "Run",
+    "distance": 10128.0,
+    "moving_time": 3205,
+    "elapsed_time": 3280,
+    "total_elevation_gain": 46.0,
+    "start_date": "2026-06-02T02:34:39Z",
+    "start_latlng": [
+      36.391538,
+      138.24333
+    ],
+    "average_speed": 3.16,
+    "max_speed": 4.2,
+    "summary_polyline": "s`c}EwjwjY]h@_@t@Y^UPEGGUSqBYgAKUuA{Ag@e@GAIHQHEFyAhCqAvBSh@Ml@Un@cFrLuBlG}@|ByCxGeCfFCXDRbAlALV?DmBt@eAj@m@^kAbA_DbEg@z@_A`AgA|Ac@t@{AdDo@nBWnA[`COjBOfGCpJKjE?fAQfEI|@U~AMn@a@nA{@lAgAdAc@b@a@r@m@|AUhBGx@?VDj@BJR`@XCZYHA@BAJg@p@s@tAgDxHq@xBI@}@o@aJgG_FwDgByAAYPaBDq@?_@IaABk@c@{FA_@FIVC`@Nb@Hd@?D?VQ|@oCTi@`AwEr@}DzCeNrAkHReBXeDLeBF_CBK`Ag@bCeAlAu@jA}@fAiAjA{AvAaCt@iAlBiCvGuItCsEtH}MhAgCbEoKzCaHnCsFvAeCxBcF`CgGp@uBt@gC|@mClBwE\\u@vAwCjCsEdGeJvAiCz@kBRKvAhAhEhC|@j@`@b@h@VdAt@z@f@bCbBd@Rr@TJNDd@G`@[Rw@Rc@Pg@Zk@TgAXa@Tg@`@uArAuAfBe@p@_@^_AjAENN\\Z`@b@^h@v@BJC^_AtBk@|@a@|@w@xBc@|As@xAa@bA"
+  },
+  {
     "id": 18723742135,
     "name": "奥信濃　ケヤキの森ループ",
     "sport_type": "TrailRun",
