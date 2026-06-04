@@ -1,0 +1,29 @@
+{
+  "name": "peipeipe-net-astro",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "pages:dev": "wrangler pages dev dist",
+    "pages:create": "wrangler pages project create peipeipe-net-astro --production-branch astro-migration",
+    "pages:deploy": "npm run build && wrangler pages deploy dist --project-name peipeipe-net-astro",
+    "manifest": "node scripts/build-url-manifest.mjs",
+    "check:legacy-slugs": "node scripts/check-legacy-slugs.mjs"
+  },
+  "dependencies": {
+    "@astrojs/sitemap": "^3.6.0",
+    "astro": "^6.4.4",
+    "fast-glob": "^3.3.3",
+    "gray-matter": "^4.0.3",
+    "marked": "^18.0.4"
+  },
+  "devDependencies": {
+    "@types/node": "^24.10.1"
+  },
+  "engines": {
+    "node": ">=22.12.0"
+  }
+}
