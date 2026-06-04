@@ -2,6 +2,7 @@ source "https://rubygems.org"
 
 gem "csv"
 gem "bigdecimal"
+gem "google-protobuf", ">= 3.25.5"
 
 # Jekyll 4.x (github-pages gemはJekyll 3.9.0に固定されており、Ruby 4.x非対応のため置き換え)
 gem "jekyll", "~> 4.3"

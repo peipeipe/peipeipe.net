@@ -13,7 +13,7 @@ GEM
     eventmachine (1.2.7)
     ffi (1.17.4)
     forwardable-extended (2.6.0)
-    google-protobuf (3.23.4)
+    google-protobuf (3.25.5)
     http_parser.rb (0.8.1)
     i18n (1.14.8)
       concurrent-ruby (~> 1.0)
@@ -78,6 +78,7 @@ PLATFORMS
 DEPENDENCIES
   bigdecimal
   csv
+  google-protobuf (>= 3.25.5)
   jekyll (~> 4.3)
   jekyll-feed
   jekyll-seo-tag
