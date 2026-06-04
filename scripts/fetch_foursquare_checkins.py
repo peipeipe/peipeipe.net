@@ -446,6 +446,24 @@ def build_places_from_checkins(checkins, category_ids, onsen_only=False):
     )
 
 
+def public_place(place):
+    return {
+        "name": place.get("name", ""),
+        "lat": place.get("lat"),
+        "lng": place.get("lng"),
+        "address": place.get("address", ""),
+        "user_comment": place.get("user_comment", ""),
+        "date": place.get("date", ""),
+        "photos": (place.get("photos") or [])[:1],
+        "categories": place.get("categories") or [],
+        "category_group": place.get("category_group", "other"),
+        "category_label": place.get("category_label", "その他"),
+        "category_emoji": place.get("category_emoji", "📍"),
+        "category_color": place.get("category_color", "#607d8b"),
+        "checkin_count": place.get("checkin_count", 1),
+    }
+
+
 def main():
     load_env_file(os.path.join(BASE_DIR, '.env'))
     oauth_token = os.environ.get('FOURSQUARE_OAUTH_TOKEN')
@@ -468,7 +486,7 @@ def main():
         f.write('\n')
 
     with open(OUTPUT_PUBLIC_PLACES_JSON, 'w', encoding='utf-8') as f:
-        json.dump(places, f, ensure_ascii=False, separators=(',', ':'))
+        json.dump([public_place(place) for place in places], f, ensure_ascii=False, separators=(',', ':'))
         f.write('\n')
 
     with open(OUTPUT_ONSEN_JSON, 'w', encoding='utf-8') as f:

@@ -41,7 +41,7 @@ jobs:
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
           git add _data/onsen_places.json _data/places.json places.json
-          if git diff --cached --exit-code; then
+          if git diff --cached --quiet; then
             echo "No new checkins"
           else
             git commit -m "Update Foursquare checkins"
