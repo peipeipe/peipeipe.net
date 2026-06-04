@@ -10,7 +10,8 @@ from datetime import datetime, timezone
 import requests
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-OUTPUT_JSON = os.path.join(BASE_DIR, '_data', 'onsen_places.json')
+OUTPUT_ONSEN_JSON = os.path.join(BASE_DIR, '_data', 'onsen_places.json')
+OUTPUT_PLACES_JSON = os.path.join(BASE_DIR, '_data', 'places.json')
 
 # Foursquare v2 category IDs (see https://developer.foursquare.com/docs/categories)
 HOT_SPRING_CATEGORY_ID = "4bf58dd8d48988d160941735"  # Hot Spring / 温泉
@@ -56,6 +57,80 @@ ONSEN_CATEGORY_NAME_HINTS = (
 )
 
 API_URL = "https://api.foursquare.com/v2/users/self/checkins"
+
+PLACE_GROUPS = [
+    {
+        "key": "onsen",
+        "label": "温泉・サウナ",
+        "emoji": "♨️",
+        "color": "#ff7a59",
+        "patterns": (
+            "温泉", "銭湯", "サウナ", "スパ", "Spa", "Bath", "Hot Spring",
+            "Sauna", "Steam", "岩盤浴",
+        ),
+    },
+    {
+        "key": "food",
+        "label": "食事",
+        "emoji": "🍜",
+        "color": "#e67e22",
+        "patterns": (
+            "Restaurant", "Food", "Ramen", "Sushi", "Izakaya", "Diner",
+            "Noodle", "Curry", "Pizza", "Burger", "Bistro", "食堂", "レストラン",
+            "ラーメン", "そば", "うどん", "寿司", "居酒屋", "焼肉", "カレー",
+            "中華", "イタリアン", "フレンチ", "定食", "料理",
+        ),
+    },
+    {
+        "key": "cafe",
+        "label": "カフェ",
+        "emoji": "☕",
+        "color": "#8d6e63",
+        "patterns": ("Cafe", "Coffee", "Tea", "Dessert", "Bakery", "カフェ", "喫茶", "コーヒー", "パン", "ベーカリー"),
+    },
+    {
+        "key": "bar",
+        "label": "酒場",
+        "emoji": "🍺",
+        "color": "#7e57c2",
+        "patterns": ("Bar", "Pub", "Beer", "Wine", "Sake", "Brewery", "バー", "ビール", "酒場", "立ち飲み"),
+    },
+    {
+        "key": "travel",
+        "label": "旅行・宿",
+        "emoji": "🏨",
+        "color": "#26a69a",
+        "patterns": ("Hotel", "Hostel", "Ryokan", "Inn", "Resort", "Lodging", "ホテル", "旅館", "宿", "民宿"),
+    },
+    {
+        "key": "outdoors",
+        "label": "自然・公園",
+        "emoji": "🌿",
+        "color": "#2e7d32",
+        "patterns": ("Park", "Mountain", "Trail", "Beach", "River", "Lake", "Scenic", "Garden", "公園", "山", "登山", "海岸", "湖", "川", "庭園"),
+    },
+    {
+        "key": "culture",
+        "label": "文化・娯楽",
+        "emoji": "🎭",
+        "color": "#5c6bc0",
+        "patterns": ("Museum", "Art", "Theater", "Cinema", "Movie", "Music", "Temple", "Shrine", "Bookstore", "博物館", "美術館", "映画", "劇場", "神社", "寺", "書店", "本屋"),
+    },
+    {
+        "key": "shop",
+        "label": "買い物",
+        "emoji": "🛍️",
+        "color": "#ec407a",
+        "patterns": ("Shop", "Store", "Mall", "Market", "Supermarket", "Convenience", "商店", "ショップ", "ストア", "市場", "スーパー", "コンビニ"),
+    },
+    {
+        "key": "transport",
+        "label": "交通",
+        "emoji": "🚉",
+        "color": "#546e7a",
+        "patterns": ("Station", "Airport", "Bus", "Train", "Subway", "駅", "空港", "バス", "鉄道", "地下鉄"),
+    },
+]
 
 
 def load_env_file(filepath):
@@ -103,6 +178,31 @@ def venue_is_onsen(venue, category_ids):
         if category_label_matches_onsen(category):
             return True
     return False
+
+
+def category_labels(venue):
+    return [
+        category.get('name')
+        for category in venue.get('categories', [])
+        if category.get('name')
+    ]
+
+
+def place_group_for_venue(venue, category_ids, is_onsen=False):
+    if is_onsen:
+        return PLACE_GROUPS[0]
+
+    label_text = " ".join(category_labels(venue) + [venue.get('name', '')])
+    for group in PLACE_GROUPS[1:]:
+        if any(pattern.lower() in label_text.lower() for pattern in group["patterns"]):
+            return group
+
+    return {
+        "key": "other",
+        "label": "その他",
+        "emoji": "📍",
+        "color": "#607d8b",
+    }
 
 
 def fetch_checkins(oauth_token, limit=250, max_pages=20):
@@ -260,7 +360,7 @@ def merge_photo_urls(existing, new_urls, limit, prepend=False):
     return merged
 
 
-def build_places_from_checkins(checkins, category_ids):
+def build_places_from_checkins(checkins, category_ids, onsen_only=False):
     places = {}
     photo_limit = photos_per_place_limit()
 
@@ -272,14 +372,14 @@ def build_places_from_checkins(checkins, category_ids):
         lat = location.get('lat')
         lng = location.get('lng')
 
-        # ブラックリスト除外
-        if venue_id in NOT_ONSEN_FSQ_IDS:
-            continue
-
         if not venue_id or lat is None or lng is None:
             continue
-        if not venue_is_onsen(venue, category_ids):
+
+        is_onsen = venue_id not in NOT_ONSEN_FSQ_IDS and venue_is_onsen(venue, category_ids)
+        if onsen_only and not is_onsen:
             continue
+
+        place_group = place_group_for_venue(venue, category_ids, is_onsen=is_onsen)
 
         visited_at = checkin_time(checkin)
         visited_iso = visited_at.isoformat() if visited_at else ""
@@ -326,6 +426,10 @@ def build_places_from_checkins(checkins, category_ids):
                 for category in venue.get('categories', [])
                 if category.get('name')
             ],
+            "category_group": place_group["key"],
+            "category_label": place_group["label"],
+            "category_emoji": place_group["emoji"],
+            "category_color": place_group["color"],
             "data_source": "foursquare_checkin",
             "fsq_id": venue_id,
             "checkin_count": 1,
@@ -354,21 +458,28 @@ def main():
 
     print("=== Foursquareチェックインから温泉リストを更新 ===")
     checkins = fetch_checkins(oauth_token, limit=limit, max_pages=max_pages)
-    places = build_places_from_checkins(checkins, category_ids)
+    places = build_places_from_checkins(checkins, category_ids, onsen_only=False)
+    onsen_places = build_places_from_checkins(checkins, category_ids, onsen_only=True)
 
-    os.makedirs(os.path.dirname(OUTPUT_JSON), exist_ok=True)
-    with open(OUTPUT_JSON, 'w', encoding='utf-8') as f:
+    os.makedirs(os.path.dirname(OUTPUT_PLACES_JSON), exist_ok=True)
+    with open(OUTPUT_PLACES_JSON, 'w', encoding='utf-8') as f:
         json.dump(places, f, ensure_ascii=False, indent=2)
         f.write('\n')
 
-    with_photos = sum(1 for place in places if place.get('photos'))
-    with_comments = sum(1 for place in places if place.get('user_comment'))
+    with open(OUTPUT_ONSEN_JSON, 'w', encoding='utf-8') as f:
+        json.dump(onsen_places, f, ensure_ascii=False, indent=2)
+        f.write('\n')
+
+    with_photos = sum(1 for place in onsen_places if place.get('photos'))
+    with_comments = sum(1 for place in onsen_places if place.get('user_comment'))
 
     print(f"取得チェックイン: {len(checkins)}件")
-    print(f"温泉カテゴリ一致: {len(places)}件")
-    print(f"写真あり: {with_photos}件")
-    print(f"コメントあり: {with_comments}件")
-    print(f"書き出し先: {OUTPUT_JSON}")
+    print(f"全スポット: {len(places)}件")
+    print(f"温泉カテゴリ一致: {len(onsen_places)}件")
+    print(f"温泉写真あり: {with_photos}件")
+    print(f"温泉コメントあり: {with_comments}件")
+    print(f"書き出し先: {OUTPUT_PLACES_JSON}")
+    print(f"書き出し先: {OUTPUT_ONSEN_JSON}")
 
 
 if __name__ == "__main__":

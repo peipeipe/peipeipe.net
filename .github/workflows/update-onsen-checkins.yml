@@ -40,10 +40,10 @@ jobs:
         run: |
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
-          git add _data/onsen_places.json
+          git add _data/onsen_places.json _data/places.json
           if git diff --cached --exit-code; then
-            echo "No new onsen checkins"
+            echo "No new checkins"
           else
-            git commit -m "Update onsen checkins"
+            git commit -m "Update Foursquare checkins"
             git push
           fi
