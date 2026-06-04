@@ -1,0 +1,19 @@
+---
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import { getDiaryEntries } from "@/lib/content";
+
+const entries = await getDiaryEntries();
+---
+
+<BaseLayout title="日記一覧">
+  <h1>日記一覧</h1>
+  <p>AIに食わせるために日記を書く</p>
+  <div class="post-list">
+    {entries.map((entry) => (
+      <article>
+        <h2><a href={entry.url}>{entry.title}</a></h2>
+        <p>{entry.excerpt}</p>
+      </article>
+    ))}
+  </div>
+</BaseLayout>

@@ -1,0 +1,62 @@
+name: Deploy Astro Preview to Cloudflare Pages
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - astro-migration
+    paths:
+      - "astro/**"
+      - "_posts/**"
+      - "_diary/**"
+      - "_data/**"
+      - "images/**"
+
+permissions:
+  contents: read
+
+concurrency:
+  group: cloudflare-pages-astro-preview-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  deploy-preview:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: astro
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v6
+
+      - name: Setup Node
+        uses: actions/setup-node@v6
+        with:
+          node-version-file: astro/.node-version
+          cache: npm
+          cache-dependency-path: astro/package-lock.json
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build Astro
+        run: npm run build
+
+      - name: Create Cloudflare Pages project if needed
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+        run: |
+          npx wrangler pages project create peipeipe-net-astro --production-branch astro-migration || true
+
+      - name: Deploy to Cloudflare Pages
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+        run: |
+          npx wrangler pages deploy dist \
+            --project-name peipeipe-net-astro \
+            --branch "${GITHUB_HEAD_REF:-${GITHUB_REF_NAME}}" \
+            --commit-hash "${GITHUB_SHA}" \
+            --commit-message "Astro preview ${GITHUB_SHA}"

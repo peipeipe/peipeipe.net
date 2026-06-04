@@ -1,0 +1,33 @@
+---
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import { getPosts } from "@/lib/content";
+
+export async function getStaticPaths() {
+  const posts = await getPosts();
+  const routeParamFromUrl = (url) => {
+    const value = url.replace(/^\/|\/$/g, "");
+    try {
+      return decodeURI(value);
+    } catch {
+      return value.replace(/%/g, "%2525");
+    }
+  };
+
+  return posts.map((post) => ({
+    params: { slug: routeParamFromUrl(post.url) },
+    props: { post },
+  }));
+}
+
+const { post } = Astro.props;
+---
+
+<BaseLayout title={post.title}>
+  <article class="post">
+    <h1>{post.title}</h1>
+    <div set:html={post.html} />
+    <div class="date">
+      Written on {post.date.toLocaleDateString("en-US", { year: "numeric", month: "long", day: "numeric" })}
+    </div>
+  </article>
+</BaseLayout>

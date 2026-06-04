@@ -1,0 +1,21 @@
+---
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import { getDiaryEntries } from "@/lib/content";
+
+export async function getStaticPaths() {
+  const entries = await getDiaryEntries();
+  return entries.map((entry) => ({
+    params: { date: entry.url.replace(/^\/diary\/|\/$/g, "") },
+    props: { entry },
+  }));
+}
+
+const { entry } = Astro.props;
+---
+
+<BaseLayout title={entry.title}>
+  <article class="post">
+    <h1>{entry.title}</h1>
+    <div set:html={entry.html} />
+  </article>
+</BaseLayout>

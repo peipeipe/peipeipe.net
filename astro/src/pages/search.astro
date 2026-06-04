@@ -1,0 +1,10 @@
+---
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import { readRootPage } from "@/lib/pages";
+
+const page = await readRootPage("search.md");
+---
+
+<BaseLayout title={page.title || "Search"}>
+  <article class="post" set:html={page.html} />
+</BaseLayout>
