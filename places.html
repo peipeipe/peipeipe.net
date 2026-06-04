@@ -15,7 +15,7 @@ permalink: /places/
 
   <div class="places-stats" id="places-stats">
     <div class="stat-item">
-      <span class="stat-value" id="stat-total-places">{{ site.data.places | size }}</span>
+      <span class="stat-value" id="stat-total-places">-</span>
       <span class="stat-label">スポット</span>
     </div>
     <div class="stat-item">
@@ -29,7 +29,7 @@ permalink: /places/
   </div>
 
   <div class="places-controls">
-    <input id="places-search" type="search" placeholder="場所名・住所・カテゴリで検索" aria-label="場所検索">
+    <input id="places-search" type="search" placeholder="場所名・住所・カテゴリで検索" aria-label="場所検索" disabled>
     <div class="places-filters" id="places-filters"></div>
   </div>
 
@@ -41,7 +41,9 @@ permalink: /places/
     <h2>場所一覧 <span id="places-count-badge"></span></h2>
   </div>
 
-  <div class="places-list" id="places-list"></div>
+  <div class="places-list" id="places-list">
+    <p class="places-list-note">読み込み中...</p>
+  </div>
 
   <div class="places-empty" id="places-empty" hidden>
     <p>表示できるチェックイン場所がありません。</p>
@@ -49,47 +51,81 @@ permalink: /places/
 </div>
 
 <script>
-  const placesData = [];
+  const MAX_LIST_ITEMS = 60;
 
-  {% for place in site.data.places %}
-    placesData.push({
-      name: {{ place.name | jsonify }},
-      lat: {% if place.lat %}{{ place.lat }}{% else %}null{% endif %},
-      lng: {% if place.lng %}{{ place.lng }}{% else %}null{% endif %},
-      address: {{ place.address | jsonify }},
-      user_comment: {{ place.user_comment | jsonify }},
-      date: {{ place.date | jsonify }},
-      photos: {% if place.photos %}{{ place.photos | jsonify }}{% else %}[]{% endif %},
-      categories: {% if place.categories %}{{ place.categories | jsonify }}{% else %}[]{% endif %},
-      category_group: {{ place.category_group | default: "onsen" | jsonify }},
-      category_label: {{ place.category_label | default: "温泉・サウナ" | jsonify }},
-      category_emoji: {{ place.category_emoji | default: "♨️" | jsonify }},
-      category_color: {{ place.category_color | default: "#ff7a59" | jsonify }},
-      checkin_count: {{ place.checkin_count | default: 1 }},
-      foursquare_url: {{ place.foursquare_url | jsonify }}
-    });
-  {% endfor %}
-
+  let placesData = [];
   let map;
   let markerLayer;
+  let canvasRenderer;
   let markersByIndex = {};
   let currentGroup = "all";
   let currentSearch = "";
+  let searchTimer = null;
 
   document.addEventListener("DOMContentLoaded", function() {
-    initControls();
     initMap();
-    render();
+    loadPlaces();
   });
+
+  function initMap() {
+    canvasRenderer = L.canvas({ padding: 0.5 });
+    map = L.map("places-map", {
+      preferCanvas: true,
+      scrollWheelZoom: false,
+      renderer: canvasRenderer
+    }).setView([36.2048, 138.2529], 5);
+
+    map.on("focus", function() { map.scrollWheelZoom.enable(); });
+    map.on("blur", function() { map.scrollWheelZoom.disable(); });
+
+    L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
+      maxZoom: 19,
+      attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+    }).addTo(map);
+
+    markerLayer = L.layerGroup().addTo(map);
+    requestAnimationFrame(function() { map.invalidateSize(); });
+  }
+
+  function loadPlaces() {
+    fetch("{{ site.baseurl }}/places.json?v={{ site.time | date: '%s' }}")
+      .then(function(response) {
+        if (!response.ok) throw new Error("places.json load failed");
+        return response.json();
+      })
+      .then(function(data) {
+        placesData = Array.isArray(data) ? data : [];
+        placesData.forEach(function(place, index) {
+          place._index = index;
+          place._searchText = [
+            place.name,
+            place.address,
+            place.user_comment,
+            place.category_label,
+            (place.categories || []).join(" ")
+          ].join(" ").toLowerCase();
+        });
+
+        initControls();
+        renderFilterButtons();
+        render();
+      })
+      .catch(function(error) {
+        console.error(error);
+        document.getElementById("places-list").innerHTML = '<p class="places-list-note">場所データの読み込みに失敗しました。</p>';
+      });
+  }
 
   function initControls() {
     const search = document.getElementById("places-search");
+    search.disabled = false;
     search.addEventListener("input", function(event) {
-      currentSearch = event.target.value.trim().toLowerCase();
-      render();
+      window.clearTimeout(searchTimer);
+      searchTimer = window.setTimeout(function() {
+        currentSearch = event.target.value.trim().toLowerCase();
+        render();
+      }, 180);
     });
-
-    renderFilterButtons();
   }
 
   function renderFilterButtons() {
@@ -114,7 +150,8 @@ permalink: /places/
     const buttons = [{ key: "all", label: "すべて", emoji: "🗺️", count: placesData.length }].concat(sortedGroups);
 
     filters.innerHTML = buttons.map(function(group) {
-      return '<button class="places-filter-btn" data-group="' + escapeHtml(group.key) + '">' +
+      const active = group.key === currentGroup ? " active" : "";
+      return '<button class="places-filter-btn' + active + '" data-group="' + escapeHtml(group.key) + '">' +
         '<span>' + escapeHtml(group.emoji) + '</span>' +
         escapeHtml(group.label) +
         '<small>' + group.count + '</small>' +
@@ -127,24 +164,7 @@ permalink: /places/
         renderFilterButtons();
         render();
       });
-      if (button.dataset.group === currentGroup) {
-        button.classList.add("active");
-      }
     });
-  }
-
-  function initMap() {
-    map = L.map("places-map", { scrollWheelZoom: false }).setView([36.2048, 138.2529], 5);
-    map.on("focus", function() { map.scrollWheelZoom.enable(); });
-    map.on("blur", function() { map.scrollWheelZoom.disable(); });
-
-    L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
-      maxZoom: 19,
-      attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-    }).addTo(map);
-
-    markerLayer = L.layerGroup().addTo(map);
-    requestAnimationFrame(function() { map.invalidateSize(); });
   }
 
   function filteredPlaces() {
@@ -152,15 +172,7 @@ permalink: /places/
       if (!Number.isFinite(place.lat) || !Number.isFinite(place.lng)) return false;
       if (currentGroup !== "all" && place.category_group !== currentGroup) return false;
       if (!currentSearch) return true;
-
-      const haystack = [
-        place.name,
-        place.address,
-        place.user_comment,
-        place.category_label,
-        (place.categories || []).join(" ")
-      ].join(" ").toLowerCase();
-      return haystack.indexOf(currentSearch) >= 0;
+      return place._searchText.indexOf(currentSearch) >= 0;
     });
   }
 
@@ -169,15 +181,14 @@ permalink: /places/
     updateStats(filtered);
     renderMarkers(filtered);
     renderList(filtered);
-
-    const empty = document.getElementById("places-empty");
-    empty.hidden = filtered.length > 0;
+    document.getElementById("places-empty").hidden = filtered.length > 0;
   }
 
   function updateStats(filtered) {
     const totalCheckins = placesData.reduce(function(sum, place) {
       return sum + (Number(place.checkin_count) || 0);
     }, 0);
+    document.getElementById("stat-total-places").textContent = placesData.length;
     document.getElementById("stat-total-checkins").textContent = totalCheckins;
     document.getElementById("stat-visible-places").textContent = filtered.length;
     document.getElementById("places-count-badge").textContent = filtered.length + "箇所";
@@ -189,14 +200,21 @@ permalink: /places/
     const bounds = [];
 
     filtered.forEach(function(place) {
-      const originalIndex = placesData.indexOf(place);
-      const marker = L.marker([place.lat, place.lng], {
-        icon: categoryIcon(place)
+      const marker = L.circleMarker([place.lat, place.lng], {
+        renderer: canvasRenderer,
+        radius: markerRadius(place),
+        fillColor: place.category_color || "#607d8b",
+        fillOpacity: 0.72,
+        color: "#ffffff",
+        weight: 1,
+        opacity: 0.9
       }).addTo(markerLayer);
 
-      marker.bindPopup(popupHtml(place), { maxWidth: 260, className: "custom-leaflet-popup" });
-      marker.on("click", function() { highlightPlace(originalIndex); });
-      markersByIndex[originalIndex] = marker;
+      marker.bindPopup(function() {
+        return popupHtml(place);
+      }, { maxWidth: 260, className: "custom-leaflet-popup" });
+      marker.on("click", function() { highlightPlace(place._index); });
+      markersByIndex[place._index] = marker;
       bounds.push([place.lat, place.lng]);
     });
 
@@ -207,16 +225,9 @@ permalink: /places/
     }
   }
 
-  function categoryIcon(place) {
-    const color = place.category_color || "#607d8b";
-    const emoji = place.category_emoji || "📍";
-    return L.divIcon({
-      className: "places-marker",
-      html: '<span style="background:' + escapeHtml(color) + '">' + escapeHtml(emoji) + '</span>',
-      iconSize: [34, 34],
-      iconAnchor: [17, 17],
-      popupAnchor: [0, -16]
-    });
+  function markerRadius(place) {
+    const count = Number(place.checkin_count) || 1;
+    return Math.min(9, 4 + Math.log2(count + 1));
   }
 
   function popupHtml(place) {
@@ -242,9 +253,8 @@ permalink: /places/
 
   function renderList(filtered) {
     const list = document.getElementById("places-list");
-    const visible = filtered.slice(0, 120);
+    const visible = filtered.slice(0, MAX_LIST_ITEMS);
     list.innerHTML = visible.map(function(place) {
-      const originalIndex = placesData.indexOf(place);
       const categories = (place.categories || []).slice(0, 3).map(function(category) {
         return '<span>' + escapeHtml(category) + '</span>';
       }).join("");
@@ -255,8 +265,8 @@ permalink: /places/
         ? '<img src="' + escapeHtml(place.photos[0]) + '" alt="' + escapeHtml(place.name || "") + 'の写真" loading="lazy">'
         : '<div class="places-item-placeholder">' + escapeHtml(place.category_emoji || "📍") + '</div>';
 
-      return '<article class="places-item" id="place-item-' + originalIndex + '">' +
-        '<button class="places-item-focus" onclick="focusPlace(' + originalIndex + ')">' +
+      return '<article class="places-item" id="place-item-' + place._index + '">' +
+        '<button class="places-item-focus" onclick="focusPlace(' + place._index + ')">' +
           '<div class="places-item-photo">' + photo + '</div>' +
           '<div class="places-item-body">' +
             '<div class="places-item-heading">' +

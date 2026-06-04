@@ -523,20 +523,6 @@ footer {
   }
 }
 
-.places-marker {
-  span {
-    width: 34px;
-    height: 34px;
-    display: grid;
-    place-items: center;
-    border-radius: 50%;
-    color: #fff;
-    font-size: 16px;
-    border: 2px solid #fff;
-    box-shadow: 0 3px 10px rgba(0,0,0,0.24);
-  }
-}
-
 .places-section-title {
   border-bottom: 2px solid #eaeaea;
   padding-bottom: 10px;
@@ -1510,4 +1496,3 @@ footer {
   color: #aaa;
   font-size: 15px;
 }
-

@@ -12,6 +12,7 @@ import requests
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 OUTPUT_ONSEN_JSON = os.path.join(BASE_DIR, '_data', 'onsen_places.json')
 OUTPUT_PLACES_JSON = os.path.join(BASE_DIR, '_data', 'places.json')
+OUTPUT_PUBLIC_PLACES_JSON = os.path.join(BASE_DIR, 'places.json')
 
 # Foursquare v2 category IDs (see https://developer.foursquare.com/docs/categories)
 HOT_SPRING_CATEGORY_ID = "4bf58dd8d48988d160941735"  # Hot Spring / 温泉
@@ -466,6 +467,10 @@ def main():
         json.dump(places, f, ensure_ascii=False, indent=2)
         f.write('\n')
 
+    with open(OUTPUT_PUBLIC_PLACES_JSON, 'w', encoding='utf-8') as f:
+        json.dump(places, f, ensure_ascii=False, separators=(',', ':'))
+        f.write('\n')
+
     with open(OUTPUT_ONSEN_JSON, 'w', encoding='utf-8') as f:
         json.dump(onsen_places, f, ensure_ascii=False, indent=2)
         f.write('\n')
@@ -479,6 +484,7 @@ def main():
     print(f"温泉写真あり: {with_photos}件")
     print(f"温泉コメントあり: {with_comments}件")
     print(f"書き出し先: {OUTPUT_PLACES_JSON}")
+    print(f"書き出し先: {OUTPUT_PUBLIC_PLACES_JSON}")
     print(f"書き出し先: {OUTPUT_ONSEN_JSON}")
 
 

@@ -40,7 +40,7 @@ jobs:
         run: |
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
-          git add _data/onsen_places.json _data/places.json
+          git add _data/onsen_places.json _data/places.json places.json
           if git diff --cached --exit-code; then
             echo "No new checkins"
           else
