@@ -2,6 +2,26 @@
 
 This directory is a side-by-side Astro prototype. The current Jekyll site remains intact at the repository root.
 
+## Current Status
+
+- Branch: `astro-migration`
+- Cloudflare Pages project: `peipeipe-net-astro`
+- Preview URL: `https://peipeipe-net-astro.pages.dev/`
+- Preview check page: `https://peipeipe-net-astro.pages.dev/cloudflare-preview/`
+- Latest successful GitHub Actions run: `26958949223`
+- Production `https://www.peipeipe.net` is still served by the existing GitHub Pages/Jekyll workflow.
+
+The Cloudflare Pages preview deploy is working. The first deploy attempt failed because root `.gitignore` ignored `astro/package.json`; that was fixed by explicitly tracking the Astro package manifest.
+
+Last verified locally:
+
+```text
+Astro build: success
+Generated pages: 400
+Workflow YAML parse: ok
+Cloudflare preview HTTP status: 200
+```
+
 ## Local Node
 
 Astro 6 requires Node 22.12 or newer. This workspace was tested with Node 22.22.3 installed at:
@@ -21,7 +41,17 @@ PATH=/home/peipeipe/.local/nodejs/current/bin:$PATH npm run build
 - Reads existing `../_posts/*.md` files without moving them.
 - Reads existing `../_diary/*.md` files without moving them.
 - Builds the blog index, post detail pages, diary index, diary detail pages, `about`, `search`, RSS, and sitemap.
+- Builds a preview-only `/cloudflare-preview/` page.
+- Deploys the Astro prototype to Cloudflare Pages via `.github/workflows/cloudflare-pages-astro-preview.yml`.
 - Keeps the current Jekyll site deploy workflow untouched.
+
+Current content counts from `migration/astro-url-manifest.json`:
+
+```text
+posts: 355
+diary entries: 40
+tracked content URLs: 397
+```
 
 ## Verification
 
@@ -38,9 +68,9 @@ Generated verification files:
 
 ## Cloudflare Pages Preview
 
-This prototype can be published to Cloudflare Pages without touching the current GitHub Pages production deployment.
+This prototype is published to Cloudflare Pages without touching the current GitHub Pages production deployment.
 
-Local Wrangler is available through npm, but this machine is not authenticated yet:
+Local Wrangler is available through npm. This machine is not authenticated unless `wrangler login` has been run or `CLOUDFLARE_API_TOKEN` is set:
 
 ```sh
 PATH=/home/peipeipe/.local/nodejs/current/bin:$PATH npx wrangler whoami
@@ -91,9 +121,23 @@ Preview URL: https://peipeipe-net-astro.pages.dev/
 Check page: https://peipeipe-net-astro.pages.dev/cloudflare-preview/
 ```
 
+To trigger a new preview deployment:
+
+```sh
+git push origin astro-migration
+```
+
+or run the workflow manually from GitHub Actions.
+
 ## Known URL Issue
 
 Some older post filenames contain incomplete percent-encoded Japanese slugs. Astro cannot emit invalid percent escapes, so those URLs are escaped to safe `%25...` paths for now.
+
+Current count:
+
+```text
+legacy invalid percent slugs: 32
+```
 
 Before production cutover, compare these with the current Jekyll output and decide whether to:
 
@@ -101,9 +145,45 @@ Before production cutover, compare these with the current Jekyll output and deci
 - preserve them via a custom post-build copy step;
 - or accept the normalized safe URL for those old entries.
 
+## Next Work
+
+1. Compare current Jekyll output with Astro output.
+   - Generate or capture a Jekyll URL manifest from the production site or from CI.
+   - Compare it with `migration/astro-url-manifest.json`.
+   - Resolve the 32 legacy malformed percent slugs.
+
+2. Improve visual parity for the blog and diary pages.
+   - Port the current header/footer styling more closely.
+   - Bring over metadata, GTM/analytics, avatar, footer links, and SEO tags.
+   - Check image layout on representative long posts.
+
+3. Migrate static root pages and special pages.
+   - `404`
+   - `robots.txt`
+   - `CNAME` handling is not needed for preview, but matters during final cutover.
+
+4. Migrate data/map pages in this order.
+   - `/activity/`
+   - `/mountains/`
+   - `/places/`
+   - `/onsen/`
+
+5. Keep existing automation compatible.
+   - `update-strava-activities.yml`
+   - `update-onsen-checkins.yml`
+   - `webhook-diary.yml`
+   - `enhance-amazon-links.yml`
+   - `convert-images-to-webp.yml`
+
+6. Add production cutover checklist.
+   - Tag the last Jekyll production state.
+   - Confirm Cloudflare Pages custom domain setup.
+   - Disable or replace the GitHub Pages deploy workflow only after preview checks pass.
+   - Verify `https://www.peipeipe.net`, RSS, sitemap, canonical URLs, and key old post URLs.
+
 ## Rollback
 
-Until the deploy workflow is changed, rollback is simply deleting or ignoring this `astro/` directory. The production Jekyll site is not affected.
+Until the production deploy workflow and custom domain are changed, rollback is simply deleting or ignoring this `astro/` directory and Cloudflare preview project. The production Jekyll site is not affected.
 
 Before any production cutover, create a tag from the last Jekyll deployment commit:
 
