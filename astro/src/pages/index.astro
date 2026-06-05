@@ -6,12 +6,14 @@ const posts = await getPosts();
 ---
 
 <BaseLayout>
-  <div class="post-list">
+  <div class="posts">
     {posts.map((post) => (
-      <article>
-        <h2><a href={post.url}>{post.title}</a></h2>
-        <p>{post.excerpt}</p>
-        <a href={post.url}>Read More</a>
+      <article class="post">
+        <h1><a href={post.url}>{post.title}</a></h1>
+        <div class="entry">
+          <p>{post.excerpt}</p>
+        </div>
+        <a href={post.url} class="read-more">Read More</a>
       </article>
     ))}
   </div>

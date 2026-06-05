@@ -11,11 +11,44 @@ export async function getStaticPaths() {
 }
 
 const { entry } = Astro.props;
+const diaryDate = entry.title;
+const createdAt = [
+  entry.date.getFullYear(),
+  String(entry.date.getMonth() + 1).padStart(2, "0"),
+  String(entry.date.getDate()).padStart(2, "0"),
+].join("-") + ` ${String(entry.date.getHours()).padStart(2, "0")}:${String(entry.date.getMinutes()).padStart(2, "0")}`;
 ---
 
 <BaseLayout title={entry.title}>
-  <article class="post">
-    <h1>{entry.title}</h1>
-    <div set:html={entry.html} />
+  <article class="diary-entry">
+    <header class="diary-header">
+      <h1 class="diary-date">{diaryDate}</h1>
+    </header>
+
+    <div class="diary-content" set:html={entry.html} />
+
+    <footer class="diary-footer">
+      <p class="diary-meta">作成日時: {createdAt}</p>
+    </footer>
   </article>
+
+  <script is:inline>
+    (function() {
+      var content = document.querySelector(".diary-content");
+      if (!content) return;
+      document.body.classList.add("js-diary");
+      Array.from(content.children).forEach(function(el) {
+        if (el.tagName === "H2") {
+          var currentBlock = document.createElement("div");
+          currentBlock.className = "diary-block";
+          content.insertBefore(currentBlock, el);
+          currentBlock.appendChild(el);
+          return;
+        }
+        var blocks = content.querySelectorAll(".diary-block");
+        var latestBlock = blocks[blocks.length - 1];
+        if (latestBlock) latestBlock.appendChild(el);
+      });
+    })();
+  </script>
 </BaseLayout>

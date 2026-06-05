@@ -48,7 +48,8 @@ async function readEntry(file: string, kind: "post" | "diary"): Promise<Entry> {
   const fileDate = dateFromFilename(filename);
   const date = parseDate(parsed.data.date) || fileDate || new Date(0);
   const title = String(parsed.data.title || titleFromFilename(filename) || filename);
-  const html = await marked.parse(parsed.content, { async: true, gfm: true });
+  const content = normalizeMarkdownImageUrls(parsed.content);
+  const html = await marked.parse(content, { async: true, gfm: true });
   const excerpt = makeExcerpt(html);
   const url = kind === "diary"
     ? diaryUrl(date)
@@ -115,11 +116,21 @@ function parseDate(value: unknown): Date | undefined {
 }
 
 function makeExcerpt(html: string): string {
-  return html
+  const text = html
     .replace(/<[^>]+>/g, "")
     .replace(/\s+/g, " ")
-    .trim()
-    .slice(0, 220);
+    .trim();
+
+  const firstSentence = text.match(/^.+?[。！？.!?](?:[」』）)]*)/)?.[0];
+  return (firstSentence || text.slice(0, 120)).trim();
+}
+
+function normalizeMarkdownImageUrls(content: string): string {
+  return content.replace(/!\[([^\]]*)\]\(([^)\n]+)\)/g, (match, alt: string, destination: string) => {
+    const trimmed = destination.trim();
+    if (!/\s/.test(trimmed) || !/^(https?:\/\/|\/)/.test(trimmed)) return match;
+    return `![${alt}](${trimmed.replace(/\s+/g, "%20")})`;
+  });
 }
 
 function pad2(value: number): string {

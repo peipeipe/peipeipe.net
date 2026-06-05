@@ -29,6 +29,13 @@ Workflow YAML parse: ok
 Cloudflare preview HTTP status: 200 before the local master merge
 ```
 
+Recent UI/content work on `astro-migration`:
+
+- Ported the Jekyll-like masthead, footer links, RSS link, avatar, and metadata into Astro.
+- Tightened blog and diary page spacing and typography to match the current site more closely.
+- Changed list excerpts to show only the first sentence instead of a long multi-sentence snippet.
+- Normalized Markdown image URLs with spaces so posts that were rendering cleanly in Jekyll also render correctly in Astro.
+
 ## Local Node
 
 Astro 6 requires Node 22.12 or newer. This workspace was tested with Node 22.22.3 installed at:
@@ -148,24 +155,13 @@ legacy invalid percent slugs: 0
 
 The old Japanese/percent-encoded filenames were normalized to English slugs on `master`, and the old post frontmatter now has dated permalinks to preserve the intended public URLs.
 
-One follow-up URL issue remains: `_posts/2015-05-19-sightseeing-in-ashikaga-during-driving-school-camp.md` currently has a malformed multiline `permalink` value, and Astro generated:
-
-```text
-/2015-05-19-sightseeing-in-ashikaga-during-driving-school-camp/ 2015-05-19-/
-```
-
-Fix that frontmatter before production URL comparison.
-
 ## Next Work
 
 1. Compare current Jekyll output with Astro output.
    - Generate or capture a Jekyll URL manifest from the production site or from CI.
    - Compare it with `migration/astro-url-manifest.json`.
-   - Fix and verify the malformed `2015-05-19` permalink.
 
 2. Improve visual parity for the blog and diary pages.
-   - Port the current header/footer styling more closely.
-   - Bring over metadata, GTM/analytics, avatar, footer links, and SEO tags.
    - Check image layout on representative long posts.
 
 3. Migrate static root pages and special pages.
