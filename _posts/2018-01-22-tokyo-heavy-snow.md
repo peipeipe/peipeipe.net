@@ -2,6 +2,7 @@
 
 title: 2018-01-22東京大雪
 slug: "tokyo-heavy-snow"
+permalink: /2018-01-22-tokyo-heavy-snow/
 id: 94
 date: '2018-01-22 08:22:42'
 layout: post

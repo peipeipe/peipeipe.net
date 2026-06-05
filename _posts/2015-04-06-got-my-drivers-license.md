@@ -2,6 +2,7 @@
 
 title: 車の免許をとった
 slug: "got-my-drivers-license"
+permalink: /2015-04-06-got-my-drivers-license/
 id: 265
 date: '2015-04-06 13:11:04'
 layout: post

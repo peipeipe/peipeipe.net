@@ -2,6 +2,7 @@
 
 title: オートキャンプに行ってきた
 slug: "went-auto-camping"
+permalink: /2018-07-15-went-auto-camping/
 id: 81
 date: '2018-07-15 05:26:22'
 layout: post

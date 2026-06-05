@@ -2,6 +2,7 @@
 
 title: Amazon Studentお試し中
 slug: "trying-amazon-student"
+permalink: /2015-05-07-trying-amazon-student/
 id: 254
 date: '2015-05-07 14:28:05'
 layout: post

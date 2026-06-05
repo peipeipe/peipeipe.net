@@ -2,6 +2,7 @@
 
 title: 吊り橋理論と警報アラーム
 slug: "suspension-bridge-effect-and-alert-alarms"
+permalink: /2015-05-25-suspension-bridge-effect-and-alert-alarms/
 id: 251
 date: '2015-05-25 05:55:07'
 layout: post

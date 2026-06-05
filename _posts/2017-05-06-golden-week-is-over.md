@@ -2,6 +2,7 @@
 
 title: GWも終わり
 slug: "golden-week-is-over"
+permalink: /2017-05-06-golden-week-is-over/
 id: 133
 date: '2017-05-06 11:00:48'
 layout: post

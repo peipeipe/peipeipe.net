@@ -2,6 +2,7 @@
 
 title: 工場夜景を見にドライブに行くもあまり見えず
 slug: "drove-to-see-factory-night-views-but-could-not-see-much"
+permalink: /2017-02-25-drove-to-see-factory-night-views-but-could-not-see-much/
 id: 145
 date: '2017-02-25 08:31:45'
 layout: post

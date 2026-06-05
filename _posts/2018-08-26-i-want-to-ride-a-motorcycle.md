@@ -2,6 +2,7 @@
 
 title: バイクに乗りたい
 slug: "i-want-to-ride-a-motorcycle"
+permalink: /2018-08-26-i-want-to-ride-a-motorcycle/
 id: 80
 date: '2018-08-26 01:07:16'
 layout: post

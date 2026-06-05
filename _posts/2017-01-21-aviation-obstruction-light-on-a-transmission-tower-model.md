@@ -2,6 +2,7 @@
 
 title: 模型鉄塔に航空障害灯
 slug: "aviation-obstruction-light-on-a-transmission-tower-model"
+permalink: /2017-01-21-aviation-obstruction-light-on-a-transmission-tower-model/
 id: 149
 date: '2017-01-21 12:52:39'
 layout: post

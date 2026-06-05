@@ -2,6 +2,7 @@
 
 title: とりあえずフル完走と感想
 slug: "finished-a-full-marathon-and-thoughts"
+permalink: /2018-03-20-finished-a-full-marathon-and-thoughts/
 id: 85
 date: '2018-03-20 13:48:47'
 layout: post

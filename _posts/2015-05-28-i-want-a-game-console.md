@@ -2,6 +2,7 @@
 
 title: ゲーム機がほしい
 slug: "i-want-a-game-console"
+permalink: /2015-05-28-i-want-a-game-console/
 id: 250
 date: '2015-05-28 12:26:45'
 layout: post

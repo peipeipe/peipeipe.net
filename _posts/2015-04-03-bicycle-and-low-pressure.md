@@ -2,6 +2,7 @@
 
 title: 自転車と低気圧
 slug: "bicycle-and-low-pressure"
+permalink: /2015-04-03-bicycle-and-low-pressure/
 id: 266
 date: '2015-04-03 13:41:52'
 layout: post

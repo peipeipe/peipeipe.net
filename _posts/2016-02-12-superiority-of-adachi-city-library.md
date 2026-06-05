@@ -2,6 +2,7 @@
 
 title: 足立区立図書館の優越
 slug: "superiority-of-adachi-city-library"
+permalink: /2016-02-12-superiority-of-adachi-city-library/
 id: 200
 date: '2016-02-12 13:30:26'
 layout: post

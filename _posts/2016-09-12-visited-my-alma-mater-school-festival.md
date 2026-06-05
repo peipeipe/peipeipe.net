@@ -2,6 +2,7 @@
 
 title: 母校の文化祭に行ってきた
 slug: "visited-my-alma-mater-school-festival"
+permalink: /2016-09-12-visited-my-alma-mater-school-festival/
 id: 166
 date: '2016-09-12 14:11:36'
 layout: post

@@ -2,6 +2,7 @@
 
 title: アニメを見始めた
 slug: "started-watching-anime"
+permalink: /2015-10-07-started-watching-anime/
 id: 227
 date: '2015-10-07 15:13:32'
 layout: post

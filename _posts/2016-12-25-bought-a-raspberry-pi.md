@@ -2,6 +2,7 @@
 
 title: Raspberry Piを買った
 slug: "bought-a-raspberry-pi"
+permalink: /2016-12-25-bought-a-raspberry-pi/
 id: 157
 date: '2016-12-25 08:35:05'
 layout: post

@@ -2,6 +2,7 @@
 
 title: 事細かにログを書いてみる
 slug: "trying-to-write-detailed-logs"
+permalink: /2017-06-23-trying-to-write-detailed-logs/
 id: 126
 date: '2017-06-23 14:30:53'
 layout: post

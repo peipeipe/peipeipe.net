@@ -2,6 +2,7 @@
 
 title: 24時間テレビとバリバラ
 slug: "24-hour-tv-and-baribara"
+permalink: /2016-08-28-24-hour-tv-and-baribara/
 id: 169
 date: '2016-08-28 14:51:44'
 layout: post

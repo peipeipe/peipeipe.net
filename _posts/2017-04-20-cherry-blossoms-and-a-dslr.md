@@ -2,6 +2,7 @@
 
 title: 桜と一眼レフ
 slug: "cherry-blossoms-and-a-dslr"
+permalink: /2017-04-20-cherry-blossoms-and-a-dslr/
 id: 136
 date: '2017-04-20 11:19:03'
 layout: post

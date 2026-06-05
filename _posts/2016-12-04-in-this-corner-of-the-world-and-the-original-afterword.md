@@ -2,6 +2,7 @@
 
 title: 「この世界の片隅に」と原作あとがき
 slug: "in-this-corner-of-the-world-and-the-original-afterword"
+permalink: /2016-12-04-in-this-corner-of-the-world-and-the-original-afterword/
 id: 160
 date: '2016-12-04 09:48:21'
 layout: post

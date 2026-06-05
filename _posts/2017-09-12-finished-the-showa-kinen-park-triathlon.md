@@ -2,6 +2,7 @@
 
 title: 昭和記念公園トライアスロン完走
 slug: "finished-the-showa-kinen-park-triathlon"
+permalink: /2017-09-12-finished-the-showa-kinen-park-triathlon/
 id: 112
 date: '2017-09-12 10:51:58'
 layout: post

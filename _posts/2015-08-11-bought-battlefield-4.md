@@ -2,6 +2,7 @@
 
 title: バトルフィールド4を買った
 slug: "bought-battlefield-4"
+permalink: /2015-08-11-bought-battlefield-4/
 id: 235
 date: '2015-08-11 09:30:18'
 layout: post

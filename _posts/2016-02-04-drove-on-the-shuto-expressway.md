@@ -2,6 +2,7 @@
 
 title: 首都高速に乗った
 slug: "drove-on-the-shuto-expressway"
+permalink: /2016-02-04-drove-on-the-shuto-expressway/
 id: 203
 date: '2016-02-04 08:00:05'
 layout: post

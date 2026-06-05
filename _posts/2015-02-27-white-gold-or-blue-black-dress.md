@@ -2,6 +2,7 @@
 
 title: 白と金に見えるか青と黒に見えるかの画像
 slug: "white-gold-or-blue-black-dress"
+permalink: /2015-02-27-white-gold-or-blue-black-dress/
 id: 275
 date: '2015-02-27 13:26:47'
 layout: post

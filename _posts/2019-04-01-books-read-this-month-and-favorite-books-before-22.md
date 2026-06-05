@@ -2,6 +2,7 @@
 
 title: 今月読んだ本と22歳までのおもしろかった本リスト
 slug: "books-read-this-month-and-favorite-books-before-22"
+permalink: /2019-04-01-books-read-this-month-and-favorite-books-before-22/
 id: 74
 date: '2019-04-01 12:27:36'
 layout: post

@@ -2,6 +2,7 @@
 
 title: >-
 slug: "sightseeing-in-ashikaga-during-driving-school-camp"
+permalink: /2015-05-19-sightseeing-in-ashikaga-during-driving-school-camp/
   2015-05-19-
 id: 253
 date: '2015-05-19 14:36:56'

@@ -2,6 +2,7 @@
 
 title: メタルギアソリッドⅤを買った
 slug: "bought-metal-gear-solid-v"
+permalink: /2015-09-08-bought-metal-gear-solid-v/
 id: 232
 date: '2015-09-08 15:45:04'
 layout: post

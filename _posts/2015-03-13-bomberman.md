@@ -2,6 +2,7 @@
 
 title: ボンバーマン
 slug: "bomberman"
+permalink: /2015-03-13-bomberman/
 id: 269
 date: '2015-03-13 16:10:46'
 layout: post

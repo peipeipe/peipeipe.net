@@ -2,6 +2,7 @@
 
 title: はたして僕等は感嘆符をつけなければいけない関係だったのだろうか
 slug: "did-our-relationship-really-need-exclamation-marks"
+permalink: /2016-05-07-did-our-relationship-really-need-exclamation-marks/
 id: 183
 date: '2016-05-07 14:19:45'
 layout: post

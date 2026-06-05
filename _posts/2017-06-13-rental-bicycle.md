@@ -2,6 +2,7 @@
 
 title: レンタサイクル
 slug: "rental-bicycle"
+permalink: /2017-06-13-rental-bicycle/
 id: 128
 date: '2017-06-13 13:43:25'
 layout: post

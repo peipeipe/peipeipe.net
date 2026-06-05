@@ -2,6 +2,7 @@
 
 title: ヤマト運輸　クール宅急便車が届いた
 slug: "yamato-cool-delivery-truck-arrived"
+permalink: /2015-11-25-yamato-cool-delivery-truck-arrived/
 id: 218
 date: '2015-11-25 13:11:02'
 layout: post

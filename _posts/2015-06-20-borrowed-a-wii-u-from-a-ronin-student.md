@@ -2,6 +2,7 @@
 
 title: WiiUを浪人生から借りた
 slug: "borrowed-a-wii-u-from-a-ronin-student"
+permalink: /2015-06-20-borrowed-a-wii-u-from-a-ronin-student/
 id: 241
 date: '2015-06-20 01:01:01'
 layout: post

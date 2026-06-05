@@ -2,6 +2,7 @@
 
 title: 鉄塔の模型
 slug: "transmission-tower-model"
+permalink: /2017-01-18-transmission-tower-model/
 id: 150
 date: '2017-01-18 08:16:34'
 layout: post

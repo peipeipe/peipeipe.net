@@ -2,6 +2,7 @@
 
 title: Hulu登録した
 slug: "signed-up-for-hulu"
+permalink: /2015-09-02-signed-up-for-hulu/
 id: 233
 date: '2015-09-02 14:57:05'
 layout: post

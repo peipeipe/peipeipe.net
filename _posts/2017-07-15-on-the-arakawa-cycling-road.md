@@ -2,6 +2,7 @@
 
 title: 荒川サイクリングロード上
 slug: "on-the-arakawa-cycling-road"
+permalink: /2017-07-15-on-the-arakawa-cycling-road/
 id: 121
 date: '2017-07-15 03:27:35'
 layout: post

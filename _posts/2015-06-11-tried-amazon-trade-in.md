@@ -2,6 +2,7 @@
 
 title: amazon買取サービス使ってみた
 slug: "tried-amazon-trade-in"
+permalink: /2015-06-11-tried-amazon-trade-in/
 id: 244
 date: '2015-06-11 15:01:10'
 layout: post

@@ -2,6 +2,7 @@
 
 title: モニターアーム買ったよ
 slug: "bought-a-monitor-arm"
+permalink: /2015-05-25-bought-a-monitor-arm/
 id: 252
 date: '2015-05-25 05:34:48'
 layout: post

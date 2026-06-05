@@ -2,6 +2,7 @@
 
 title: LINEモバイルにした
 slug: "switched-to-line-mobile"
+permalink: /2017-04-15-switched-to-line-mobile/
 id: 137
 date: '2017-04-15 06:25:14'
 layout: post

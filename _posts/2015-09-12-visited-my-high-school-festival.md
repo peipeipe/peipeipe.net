@@ -2,6 +2,7 @@
 
 title: 母校(高校)の文化祭に行ってきた
 slug: "visited-my-high-school-festival"
+permalink: /2015-09-12-visited-my-high-school-festival/
 id: 230
 date: '2015-09-12 15:08:59'
 layout: post

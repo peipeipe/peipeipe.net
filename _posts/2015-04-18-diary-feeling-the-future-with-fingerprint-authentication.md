@@ -2,6 +2,7 @@
 
 title: 【日記】指紋認証で未来を感じる
 slug: "diary-feeling-the-future-with-fingerprint-authentication"
+permalink: /2015-04-18-diary-feeling-the-future-with-fingerprint-authentication/
 id: 259
 date: '2015-04-18 15:35:06'
 layout: post

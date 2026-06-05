@@ -2,6 +2,7 @@
 
 title: ガンダム展(東京)に行ってきた
 slug: "visited-the-gundam-exhibition-in-tokyo"
+permalink: /2015-09-18-visited-the-gundam-exhibition-in-tokyo/
 id: 229
 date: '2015-09-18 05:31:57'
 layout: post

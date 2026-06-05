@@ -2,6 +2,7 @@
 
 title: 新潮2018年3月号『創る人52人日記リレー』
 slug: "shincho-2018-03-52-creators-diary-relay"
+permalink: /2018-03-11-shincho-2018-03-52-creators-diary-relay/
 id: 86
 date: '2018-03-11 10:53:42'
 layout: post

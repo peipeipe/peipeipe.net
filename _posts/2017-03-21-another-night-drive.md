@@ -2,6 +2,7 @@
 
 title: また夜ドライブ
 slug: "another-night-drive"
+permalink: /2017-03-21-another-night-drive/
 id: 141
 date: '2017-03-21 05:29:18'
 layout: post

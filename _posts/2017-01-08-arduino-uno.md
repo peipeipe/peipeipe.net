@@ -2,6 +2,7 @@
 
 title: Arduino UNO!
 slug: "arduino-uno"
+permalink: /2017-01-08-arduino-uno/
 id: 152
 date: '2017-01-08 13:39:14'
 layout: post

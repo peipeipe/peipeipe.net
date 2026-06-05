@@ -2,6 +2,7 @@
 
 title: 火の用心
 slug: "fire-safety"
+permalink: /2015-03-07-fire-safety/
 id: 273
 date: '2015-03-07 09:09:29'
 layout: post

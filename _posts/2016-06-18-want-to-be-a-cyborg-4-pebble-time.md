@@ -2,6 +2,7 @@
 
 title: サイボーグになりたい#4 -pebble time
 slug: "want-to-be-a-cyborg-4-pebble-time"
+permalink: /2016-06-18-want-to-be-a-cyborg-4-pebble-time/
 id: 178
 date: '2016-06-18 14:26:11'
 layout: post

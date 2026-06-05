@@ -2,6 +2,7 @@
 
 title: iOS8.3にアップデート
 slug: "updated-to-ios-8-3"
+permalink: /2015-04-13-updated-to-ios-8-3/
 id: 263
 date: '2015-04-13 15:02:00'
 layout: post

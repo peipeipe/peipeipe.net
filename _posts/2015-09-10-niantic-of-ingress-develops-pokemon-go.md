@@ -2,6 +2,7 @@
 
 title: IngressのNIANTEC。ポケモンGoを開発
 slug: "niantic-of-ingress-develops-pokemon-go"
+permalink: /2015-09-10-niantic-of-ingress-develops-pokemon-go/
 id: 231
 date: '2015-09-10 16:44:49'
 layout: post

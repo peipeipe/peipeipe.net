@@ -2,6 +2,7 @@
 
 title: 6年付き合ってきたWILLCOMとさよなら
 slug: "goodbye-to-willcom-after-six-years"
+permalink: /2017-09-01-goodbye-to-willcom-after-six-years/
 id: 113
 date: '2017-09-01 07:25:16'
 layout: post

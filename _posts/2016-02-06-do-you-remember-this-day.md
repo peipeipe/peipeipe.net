@@ -2,6 +2,7 @@
 
 title: この日のことを覚えていますか？
 slug: "do-you-remember-this-day"
+permalink: /2016-02-06-do-you-remember-this-day/
 id: 202
 date: '2016-02-06 06:25:54'
 layout: post

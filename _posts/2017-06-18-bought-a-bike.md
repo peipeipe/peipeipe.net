@@ -2,6 +2,7 @@
 
 title: チャリ買いました
 slug: "bought-a-bike"
+permalink: /2017-06-18-bought-a-bike/
 id: 127
 date: '2017-06-18 11:03:04'
 layout: post

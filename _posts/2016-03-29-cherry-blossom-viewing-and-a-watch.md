@@ -2,6 +2,7 @@
 
 title: お花見と時計
 slug: "cherry-blossom-viewing-and-a-watch"
+permalink: /2016-03-29-cherry-blossom-viewing-and-a-watch/
 id: 193
 date: '2016-03-29 15:58:18'
 layout: post

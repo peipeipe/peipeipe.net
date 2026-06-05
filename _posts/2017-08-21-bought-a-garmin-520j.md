@@ -2,6 +2,7 @@
 
 title: Garmin 520jを買った。
 slug: "bought-a-garmin-520j"
+permalink: /2017-08-21-bought-a-garmin-520j/
 id: 117
 date: '2017-08-21 12:03:44'
 layout: post

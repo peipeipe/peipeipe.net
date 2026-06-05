@@ -2,6 +2,7 @@
 
 title: パトレイバーがめちゃ面白かった
 slug: "patlabor-was-really-fun"
+permalink: /2015-11-30-patlabor-was-really-fun/
 id: 216
 date: '2015-11-30 09:30:22'
 layout: post

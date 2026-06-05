@@ -2,6 +2,7 @@
 
 title: 沈黙交易とは
 slug: "what-is-silent-trade"
+permalink: /2015-04-20-what-is-silent-trade/
 id: 258
 date: '2015-04-20 12:47:29'
 layout: post

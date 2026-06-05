@@ -2,6 +2,7 @@
 
 title: Kindle paperwhiteを買った
 slug: "bought-a-kindle-paperwhite"
+permalink: /2016-02-18-bought-a-kindle-paperwhite/
 id: 199
 date: '2016-02-18 13:38:29'
 layout: post

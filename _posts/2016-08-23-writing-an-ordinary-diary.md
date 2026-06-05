@@ -2,6 +2,7 @@
 
 title: ふつうの日記を書く
 slug: "writing-an-ordinary-diary"
+permalink: /2016-08-23-writing-an-ordinary-diary/
 id: 170
 date: '2016-08-23 12:20:55'
 layout: post

@@ -2,6 +2,7 @@
 
 title: 東京に円を描くDraw a circle in Tokyo.
 slug: "draw-a-circle-in-tokyo"
+permalink: /2017-12-28-draw-a-circle-in-tokyo/
 id: 98
 date: '2017-12-28 15:59:03'
 layout: post

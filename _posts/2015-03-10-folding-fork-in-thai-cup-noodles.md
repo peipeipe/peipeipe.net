@@ -2,6 +2,7 @@
 
 title: タイのカップヌードルには折りたたみフォークが入っていた
 slug: "folding-fork-in-thai-cup-noodles"
+permalink: /2015-03-10-folding-fork-in-thai-cup-noodles/
 id: 270
 date: '2015-03-10 15:26:20'
 layout: post

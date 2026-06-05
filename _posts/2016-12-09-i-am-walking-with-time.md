@@ -2,6 +2,7 @@
 
 title: 時間と共に歩いている　I am walking with time.
 slug: "i-am-walking-with-time"
+permalink: /2016-12-09-i-am-walking-with-time/
 id: 159
 date: '2016-12-09 14:34:50'
 layout: post

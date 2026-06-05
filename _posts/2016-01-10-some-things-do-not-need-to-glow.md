@@ -2,6 +2,7 @@
 
 title: 光らなくてよいものもある
 slug: "some-things-do-not-need-to-glow"
+permalink: /2016-01-10-some-things-do-not-need-to-glow/
 id: 208
 date: '2016-01-10 07:58:59'
 layout: post

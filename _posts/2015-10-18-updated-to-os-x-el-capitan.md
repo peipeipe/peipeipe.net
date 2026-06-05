@@ -2,6 +2,7 @@
 
 title: OS X El Capitanにアップデートしました。
 slug: "updated-to-os-x-el-capitan"
+permalink: /2015-10-18-updated-to-os-x-el-capitan/
 id: 225
 date: '2015-10-18 14:35:33'
 layout: post

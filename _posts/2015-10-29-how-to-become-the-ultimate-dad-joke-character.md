@@ -2,6 +2,7 @@
 
 title: 最強おやじギャグキャラ()になる方法
 slug: "how-to-become-the-ultimate-dad-joke-character"
+permalink: /2015-10-29-how-to-become-the-ultimate-dad-joke-character/
 id: 222
 date: '2015-10-29 17:49:22'
 layout: post

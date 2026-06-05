@@ -2,6 +2,7 @@
 
 title: 池袋ウエストゲートパークを愛しながら
 slug: "loving-ikebukuro-west-gate-park"
+permalink: /2018-01-16-loving-ikebukuro-west-gate-park/
 id: 96
 date: '2018-01-16 08:41:18'
 layout: post

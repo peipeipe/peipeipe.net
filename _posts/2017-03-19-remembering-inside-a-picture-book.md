@@ -2,6 +2,7 @@
 
 title: 絵本のなかで思い出すこと。
 slug: "remembering-inside-a-picture-book"
+permalink: /2017-03-19-remembering-inside-a-picture-book/
 id: 142
 date: '2017-03-19 13:55:47'
 layout: post

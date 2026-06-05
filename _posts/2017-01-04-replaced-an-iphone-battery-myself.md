@@ -2,6 +2,7 @@
 
 title: iPhoneのバッテリを自分で交換
 slug: "replaced-an-iphone-battery-myself"
+permalink: /2017-01-04-replaced-an-iphone-battery-myself/
 id: 153
 date: '2017-01-04 09:50:32'
 layout: post

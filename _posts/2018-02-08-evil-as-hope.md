@@ -2,6 +2,7 @@
 
 title: 悪という希望
 slug: "evil-as-hope"
+permalink: /2018-02-08-evil-as-hope/
 id: 91
 date: '2018-02-08 13:36:46'
 layout: post

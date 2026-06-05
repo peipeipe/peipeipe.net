@@ -2,6 +2,7 @@
 
 title: 餅つき大会と拡張現実
 slug: "mochi-pounding-and-augmented-reality"
+permalink: /2016-07-14-mochi-pounding-and-augmented-reality/
 id: 175
 date: '2016-07-14 13:59:02'
 layout: post

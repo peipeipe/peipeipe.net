@@ -2,6 +2,7 @@
 
 title: 機動戦士ガンダムオールナイト上映に行ってきた
 slug: "went-to-an-all-night-mobile-suit-gundam-screening"
+permalink: /2015-11-11-went-to-an-all-night-mobile-suit-gundam-screening/
 id: 220
 date: '2015-11-11 13:19:45'
 layout: post

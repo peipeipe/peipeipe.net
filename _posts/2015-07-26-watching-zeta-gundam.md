@@ -2,6 +2,7 @@
 
 title: Zガンダム見てる
 slug: "watching-zeta-gundam"
+permalink: /2015-07-26-watching-zeta-gundam/
 id: 238
 date: '2015-07-26 15:27:23'
 layout: post

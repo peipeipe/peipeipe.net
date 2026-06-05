@@ -2,6 +2,7 @@
 
 title: 新型山手線E235に乗った
 slug: "rode-the-new-yamanote-line-e235"
+permalink: /2016-04-03-rode-the-new-yamanote-line-e235/
 id: 190
 date: '2016-04-03 05:59:35'
 layout: post

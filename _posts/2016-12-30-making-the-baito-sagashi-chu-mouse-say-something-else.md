@@ -2,6 +2,7 @@
 
 title: バイトサガシチューのねずみに全く別のことをしゃべらせる。
 slug: "making-the-baito-sagashi-chu-mouse-say-something-else"
+permalink: /2016-12-30-making-the-baito-sagashi-chu-mouse-say-something-else/
 id: 155
 date: '2016-12-30 17:19:01'
 layout: post

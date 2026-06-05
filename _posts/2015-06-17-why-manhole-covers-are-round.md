@@ -2,6 +2,7 @@
 
 title: マンホールが丸いわけ
 slug: "why-manhole-covers-are-round"
+permalink: /2015-06-17-why-manhole-covers-are-round/
 id: 242
 date: '2015-06-17 14:23:52'
 layout: post

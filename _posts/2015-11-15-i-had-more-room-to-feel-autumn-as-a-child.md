@@ -2,6 +2,7 @@
 
 title: 子供の頃は秋を感じる余裕があった気がする
 slug: "i-had-more-room-to-feel-autumn-as-a-child"
+permalink: /2015-11-15-i-had-more-room-to-feel-autumn-as-a-child/
 id: 219
 date: '2015-11-15 16:22:28'
 layout: post

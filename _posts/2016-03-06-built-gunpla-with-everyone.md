@@ -2,6 +2,7 @@
 
 title: みんなでガンプラを作った
 slug: "built-gunpla-with-everyone"
+permalink: /2016-03-06-built-gunpla-with-everyone/
 id: 195
 date: '2016-03-06 16:57:42'
 layout: post

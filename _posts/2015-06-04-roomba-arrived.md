@@ -2,6 +2,7 @@
 
 title: ルンバがきた！
 slug: "roomba-arrived"
+permalink: /2015-06-04-roomba-arrived/
 id: 247
 date: '2015-06-04 04:39:53'
 layout: post

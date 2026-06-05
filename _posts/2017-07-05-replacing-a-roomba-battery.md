@@ -2,6 +2,7 @@
 
 title: ルンバのバッテリィ替え
 slug: "replacing-a-roomba-battery"
+permalink: /2017-07-05-replacing-a-roomba-battery/
 id: 123
 date: '2017-07-05 10:50:43'
 layout: post

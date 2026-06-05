@@ -2,6 +2,7 @@
 
 title: MacBook Airを1周間使った
 slug: "using-macbook-air-for-a-week"
+permalink: /2015-04-15-using-macbook-air-for-a-week/
 id: 260
 date: '2015-04-15 14:14:26'
 layout: post

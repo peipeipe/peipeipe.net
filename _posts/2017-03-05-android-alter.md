@@ -2,6 +2,7 @@
 
 title: 機械人間オルタ
 slug: "android-alter"
+permalink: /2017-03-05-android-alter/
 id: 143
 date: '2017-03-05 03:22:23'
 layout: post

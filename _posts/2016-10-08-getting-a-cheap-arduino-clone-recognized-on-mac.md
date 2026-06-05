@@ -2,6 +2,7 @@
 
 title: 320円で買った安すぎるArduino互換機をMacに認識させる
 slug: "getting-a-cheap-arduino-clone-recognized-on-mac"
+permalink: /2016-10-08-getting-a-cheap-arduino-clone-recognized-on-mac/
 id: 164
 date: '2016-10-08 06:00:07'
 layout: post

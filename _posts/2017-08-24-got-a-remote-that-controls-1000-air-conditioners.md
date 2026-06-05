@@ -2,6 +2,7 @@
 
 title: 1000種類のエアコンを操作できるリモコンを手に入れた。
 slug: "got-a-remote-that-controls-1000-air-conditioners"
+permalink: /2017-08-24-got-a-remote-that-controls-1000-air-conditioners/
 id: 116
 date: '2017-08-24 13:38:16'
 layout: post

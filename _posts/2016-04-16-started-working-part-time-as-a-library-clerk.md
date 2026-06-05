@@ -2,6 +2,7 @@
 
 title: 図書館司書アルバイトを始めた
 slug: "started-working-part-time-as-a-library-clerk"
+permalink: /2016-04-16-started-working-part-time-as-a-library-clerk/
 id: 187
 date: '2016-04-16 15:33:19'
 layout: post

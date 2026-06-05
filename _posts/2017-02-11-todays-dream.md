@@ -2,6 +2,7 @@
 
 title: 今日の夢
 slug: "todays-dream"
+permalink: /2017-02-11-todays-dream/
 id: 146
 date: '2017-02-11 13:11:24'
 layout: post

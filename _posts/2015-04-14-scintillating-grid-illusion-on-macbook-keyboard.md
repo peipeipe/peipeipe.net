@@ -2,6 +2,7 @@
 
 title: MacBookのキーボードできらめき格子錯覚
 slug: "scintillating-grid-illusion-on-macbook-keyboard"
+permalink: /2015-04-14-scintillating-grid-illusion-on-macbook-keyboard/
 id: 262
 date: '2015-04-14 09:39:55'
 layout: post

@@ -2,6 +2,7 @@
 
 title: iPhoneはゼンマイ式
 slug: "iphone-is-clockwork"
+permalink: /2016-05-22-iphone-is-clockwork/
 id: 182
 date: '2016-05-22 13:36:46'
 layout: post

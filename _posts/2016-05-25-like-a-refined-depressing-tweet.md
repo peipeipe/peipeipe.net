@@ -2,6 +2,7 @@
 
 title: 洗練された超鬱ツイートのような
 slug: "like-a-refined-depressing-tweet"
+permalink: /2016-05-25-like-a-refined-depressing-tweet/
 id: 181
 date: '2016-05-25 14:20:29'
 layout: post

@@ -2,6 +2,7 @@
 
 title: 松伏総合公園っで釣り
 slug: "fishing-at-matsubushi-general-park"
+permalink: /2015-04-27-fishing-at-matsubushi-general-park/
 id: 256
 date: '2015-04-27 13:24:24'
 layout: post

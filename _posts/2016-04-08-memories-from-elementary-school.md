@@ -2,6 +2,7 @@
 
 title: 小学校の時の記憶
 slug: "memories-from-elementary-school"
+permalink: /2016-04-08-memories-from-elementary-school/
 id: 189
 date: '2016-04-08 16:04:04'
 layout: post

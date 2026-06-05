@@ -2,6 +2,7 @@
 
 title: 'サイボーグになりたい #5'
 slug: "want-to-be-a-cyborg-5"
+permalink: /2016-08-04-want-to-be-a-cyborg-5/
 id: 173
 date: '2016-08-04 13:41:21'
 layout: post

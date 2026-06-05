@@ -2,6 +2,7 @@
 
 title: 最近行ったドライブなど
 slug: "recent-drives"
+permalink: /2017-04-26-recent-drives/
 id: 135
 date: '2017-04-26 13:39:05'
 layout: post

@@ -2,6 +2,7 @@
 
 title: Mac版Minecraftマルチプレイのやり方(Hamachi)
 slug: "minecraft-multiplayer-on-mac-with-hamachi"
+permalink: /2015-03-10-minecraft-multiplayer-on-mac-with-hamachi/
 id: 271
 date: '2015-03-10 03:04:24'
 layout: post

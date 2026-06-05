@@ -2,6 +2,7 @@
 
 title: 地下鉄道
 slug: "the-underground-railroad"
+permalink: /2018-02-22-the-underground-railroad/
 id: 90
 date: '2018-02-22 13:57:24'
 layout: post

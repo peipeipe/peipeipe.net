@@ -2,6 +2,7 @@
 
 title: 六義園に行ってきた
 slug: "visited-rikugien"
+permalink: /2016-12-15-visited-rikugien/
 id: 158
 date: '2016-12-15 15:44:42'
 layout: post

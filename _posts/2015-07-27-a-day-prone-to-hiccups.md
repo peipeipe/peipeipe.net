@@ -2,6 +2,7 @@
 
 title: しゃっくりが出やすい日
 slug: "a-day-prone-to-hiccups"
+permalink: /2015-07-27-a-day-prone-to-hiccups/
 id: 237
 date: '2015-07-27 13:42:31'
 layout: post

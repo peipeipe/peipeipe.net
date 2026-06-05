@@ -2,6 +2,7 @@
 
 title: Gif画像
 slug: "gif-images"
+permalink: /2015-06-06-gif-images/
 id: 246
 date: '2015-06-06 07:30:11'
 layout: post

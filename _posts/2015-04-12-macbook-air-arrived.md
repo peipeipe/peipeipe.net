@@ -2,6 +2,7 @@
 
 title: MacBook Airが届いたよ
 slug: "macbook-air-arrived"
+permalink: /2015-04-12-macbook-air-arrived/
 id: 264
 date: '2015-04-12 12:23:26'
 layout: post

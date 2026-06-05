@@ -2,6 +2,7 @@
 
 title: 夏合宿の思い出2017
 slug: "memories-of-summer-camp-2017"
+permalink: /2017-08-16-memories-of-summer-camp-2017/
 id: 118
 date: '2017-08-16 06:10:08'
 layout: post

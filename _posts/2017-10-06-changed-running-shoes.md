@@ -2,6 +2,7 @@
 
 title: ランニングシューズ変え
 slug: "changed-running-shoes"
+permalink: /2017-10-06-changed-running-shoes/
 id: 108
 date: '2017-10-06 13:08:56'
 layout: post

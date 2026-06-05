@@ -2,6 +2,7 @@
 
 title: "Kindle\_Unlimitedの体験が終了した"
 slug: "kindle-unlimited-trial-ended"
+permalink: /2016-09-07-kindle-unlimited-trial-ended/
 id: 167
 date: '2016-09-07 14:54:17'
 layout: post

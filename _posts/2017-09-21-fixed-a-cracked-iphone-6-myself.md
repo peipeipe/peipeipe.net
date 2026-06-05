@@ -2,6 +2,7 @@
 
 title: iPhone6が割れたので自分で修理
 slug: "fixed-a-cracked-iphone-6-myself"
+permalink: /2017-09-21-fixed-a-cracked-iphone-6-myself/
 id: 111
 date: '2017-09-21 11:50:31'
 layout: post

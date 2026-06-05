@@ -2,6 +2,7 @@
 
 title: サークル冬合宿に行ってきました
 slug: "went-to-a-club-winter-camp"
+permalink: /2016-02-12-went-to-a-club-winter-camp/
 id: 201
 date: '2016-02-12 09:39:47'
 layout: post

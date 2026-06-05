@@ -2,6 +2,7 @@
 
 title: 日焼け止めっていくらのを使えばいいのかしらん
 slug: "how-expensive-should-sunscreen-be"
+permalink: /2017-06-09-how-expensive-should-sunscreen-be/
 id: 129
 date: '2017-06-09 23:55:57'
 layout: post

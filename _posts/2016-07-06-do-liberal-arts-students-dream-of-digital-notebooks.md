@@ -2,6 +2,7 @@
 
 title: 文系大学生は電子ノートの夢を見るか
 slug: "do-liberal-arts-students-dream-of-digital-notebooks"
+permalink: /2016-07-06-do-liberal-arts-students-dream-of-digital-notebooks/
 id: 176
 date: '2016-07-06 14:08:58'
 layout: post

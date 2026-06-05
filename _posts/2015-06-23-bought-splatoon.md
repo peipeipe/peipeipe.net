@@ -2,6 +2,7 @@
 
 title: スプラトゥーンを買った
 slug: "bought-splatoon"
+permalink: /2015-06-23-bought-splatoon/
 id: 240
 date: '2015-06-23 16:30:41'
 layout: post

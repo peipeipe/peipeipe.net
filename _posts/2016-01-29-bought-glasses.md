@@ -2,6 +2,7 @@
 
 title: メガネを買った
 slug: "bought-glasses"
+permalink: /2016-01-29-bought-glasses/
 id: 205
 date: '2016-01-29 14:44:22'
 layout: post

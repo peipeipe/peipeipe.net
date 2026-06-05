@@ -2,6 +2,7 @@
 
 title: Mac版Minecraftサーバーアップデート方法
 slug: "how-to-update-a-minecraft-server-on-mac"
+permalink: /2016-04-09-how-to-update-a-minecraft-server-on-mac/
 id: 188
 date: '2016-04-09 05:49:28'
 layout: post

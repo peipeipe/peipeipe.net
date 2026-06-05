@@ -2,6 +2,7 @@
 
 title: 今年の目標
 slug: "goals-for-this-year"
+permalink: /2016-01-11-goals-for-this-year/
 id: 207
 date: '2016-01-11 16:13:51'
 layout: post

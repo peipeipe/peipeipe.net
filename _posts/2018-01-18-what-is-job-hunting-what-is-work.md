@@ -2,6 +2,7 @@
 
 title: 就活とは。仕事とは。
 slug: "what-is-job-hunting-what-is-work"
+permalink: /2018-01-18-what-is-job-hunting-what-is-work/
 id: 95
 date: '2018-01-18 04:39:13'
 layout: post

@@ -2,6 +2,7 @@
 
 title: 冷蔵庫の中に100%オレンジを
 slug: "put-100-percent-orange-in-the-fridge"
+permalink: /2018-02-25-put-100-percent-orange-in-the-fridge/
 id: 89
 date: '2018-02-25 14:10:21'
 layout: post

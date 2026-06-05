@@ -2,6 +2,7 @@
 
 title: ガンダムスタンプラリーの東京駅タムラのヤバさ
 slug: "tamura-at-tokyo-station-in-the-gundam-stamp-rally"
+permalink: /2018-02-04-tamura-at-tokyo-station-in-the-gundam-stamp-rally/
 id: 92
 date: '2018-02-04 14:22:10'
 layout: post

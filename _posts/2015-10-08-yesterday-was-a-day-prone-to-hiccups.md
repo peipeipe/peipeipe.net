@@ -2,6 +2,7 @@
 
 title: 昨日はしゃっくりの出やすい日でした
 slug: "yesterday-was-a-day-prone-to-hiccups"
+permalink: /2015-10-08-yesterday-was-a-day-prone-to-hiccups/
 id: 226
 date: '2015-10-08 15:56:51'
 layout: post

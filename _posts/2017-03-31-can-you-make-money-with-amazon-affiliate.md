@@ -2,6 +2,7 @@
 
 title: Amazonのアフィで儲けることはできるのか？
 slug: "can-you-make-money-with-amazon-affiliate"
+permalink: /2017-03-31-can-you-make-money-with-amazon-affiliate/
 id: 140
 date: '2017-03-31 02:44:22'
 layout: post

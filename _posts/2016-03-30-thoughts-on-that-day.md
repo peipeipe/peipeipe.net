@@ -2,6 +2,7 @@
 
 title: 「あの日」感想
 slug: "thoughts-on-that-day"
+permalink: /2016-03-30-thoughts-on-that-day/
 id: 192
 date: '2016-03-30 15:51:56'
 layout: post

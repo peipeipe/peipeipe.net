@@ -2,6 +2,7 @@
 
 title: 便利すぎると怠慢が増加する
 slug: "too-much-convenience-increases-laziness"
+permalink: /2015-12-05-too-much-convenience-increases-laziness/
 id: 215
 date: '2015-12-05 15:15:45'
 layout: post

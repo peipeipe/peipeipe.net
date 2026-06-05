@@ -2,6 +2,7 @@
 
 title: HHKB Liteを買った
 slug: "bought-an-hhkb-lite"
+permalink: /2015-06-06-bought-an-hhkb-lite/
 id: 245
 date: '2015-06-06 07:40:21'
 layout: post

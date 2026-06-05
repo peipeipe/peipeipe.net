@@ -2,6 +2,7 @@
 
 title: Qc30を買った(見た目編)
 slug: "bought-qc30-appearance"
+permalink: /2016-10-28-bought-qc30-appearance/
 id: 163
 date: '2016-10-28 14:18:35'
 layout: post

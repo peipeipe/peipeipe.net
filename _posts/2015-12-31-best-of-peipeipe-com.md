@@ -2,6 +2,7 @@
 
 title: よりぬきpeipeipe . com
 slug: "best-of-peipeipe-com"
+permalink: /2015-12-31-best-of-peipeipe-com/
 id: 212
 date: '2015-12-31 04:48:47'
 layout: post

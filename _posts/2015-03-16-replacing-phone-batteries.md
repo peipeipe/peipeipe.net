@@ -2,6 +2,7 @@
 
 title: 電話機の電池替え
 slug: "replacing-phone-batteries"
+permalink: /2015-03-16-replacing-phone-batteries/
 id: 268
 date: '2015-03-16 14:07:13'
 layout: post

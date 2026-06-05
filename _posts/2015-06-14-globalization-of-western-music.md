@@ -2,6 +2,7 @@
 
 title: 洋楽のグローバル化
 slug: "globalization-of-western-music"
+permalink: /2015-06-14-globalization-of-western-music/
 id: 243
 date: '2015-06-14 16:04:47'
 layout: post

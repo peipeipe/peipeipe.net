@@ -2,6 +2,7 @@
 
 title: 最近は料理
 slug: "cooking-lately"
+permalink: /2017-11-22-cooking-lately/
 id: 103
 date: '2017-11-22 12:37:45'
 layout: post
