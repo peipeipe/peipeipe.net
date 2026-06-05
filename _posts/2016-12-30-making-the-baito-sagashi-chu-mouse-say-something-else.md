@@ -1,0 +1,49 @@
+---
+
+title: バイトサガシチューのねずみに全く別のことをしゃべらせる。
+slug: "making-the-baito-sagashi-chu-mouse-say-something-else"
+id: 155
+date: '2016-12-30 17:19:01'
+layout: post
+categories:
+  - arduino
+  - 電子工作
+  - mp3
+---
+
+道端でくばってました。宣伝なのでしょうね。
+
+これを分解して、他のことを言わせてみましょう。
+
+![](https://cdn-ak.f.st-hatena.com/images/fotolife/p/peipeipe/20190630/20190630171108.webp)
+
+思ったとおり、スピーカとボタンのモジュールが出てきました。
+
+![](https://cdn-ak.f.st-hatena.com/images/fotolife/p/peipeipe/20190630/20190630171122.webp)
+
+なかは、[ボタン電池](http://d.hatena.ne.jp/keyword/%A5%DC%A5%BF%A5%F3%C5%C5%C3%D3)とタクトスイッチとコーンでした。
+
+スピーカの部分だけ使います。
+
+![](https://cdn-ak.f.st-hatena.com/images/fotolife/p/peipeipe/20190630/20190630171705.webp)
+
+半田でコードを繋ぎ直し
+
+![](https://cdn-ak.f.st-hatena.com/images/fotolife/p/peipeipe/20190630/20190630170757.webp)
+
+ブレッドボードに刺せるようにします。
+
+![](https://cdn-ak.f.st-hatena.com/images/fotolife/p/peipeipe/20190630/20190630170736.webp)
+
+[Arduino](http://d.hatena.ne.jp/keyword/Arduino)とSDカードモジュールを使って、
+
+![](https://cdn-ak.f.st-hatena.com/images/fotolife/p/peipeipe/20190630/20190630170313.webp)
+
+雑にプログラムし、また赤いネズミのなかに入れれば……
+
+歌をうたってくれます！可愛い！  
+後ろから飛び出ているコードが物々しい！
+
+mp3であれば、警報音とか、録音した声とかも入れられます。
+
+終わり

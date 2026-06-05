@@ -1,0 +1,55 @@
+---
+
+title: 洗練された超鬱ツイートのような
+slug: "like-a-refined-depressing-tweet"
+id: 181
+date: '2016-05-25 14:20:29'
+layout: post
+categories:
+  - 読んだ
+  - 日記
+---
+　生誕の災厄
+
+
+
+
+<div class="krb-amzlt-box" style="margin-bottom:0px;"><div class="krb-amzlt-image" style="float:left;margin:0px 12px 1px 0px;"><a href="https://www.amazon.co.jp/dp/431400147X?tag=peipeipe-22"><img width="160px" src="https://images-na.ssl-images-amazon.com/images/P/431400147X.09.LZZZZZZZ"></a></div><div class="krb-amzlt-info" style="line-height:120%; margin-bottom: 10px"><div class="krb-amzlt-name" style="margin-bottom:10px;line-height:120%"><a href="https://www.amazon.co.jp/dp/431400147X?tag=peipeipe-22" name="amazletlink" target="_blank" rel="nofollow" rel="nofollow">生誕の災厄</a></div><div class="krb-amzlt-detail"></div><div class="krb-amzlt-sub-info" style="float: left;"><div class="krb-amzlt-link" style="margin-top: 5px"><a href="https://www.amazon.co.jp/dp/431400147X?tag=peipeipe-22" name="amazletlink" target="_blank" rel="nofollow" rel="nofollow">Amazon.co.jpで詳細を見る</a></div></div></div><div class="krb-amzlt-footer" style="clear: left"></div></div>
+
+posted with [amazlet](http://www.amazlet.com/ "amazlet") at 16.05.25
+
+
+
+E.M.[シオラン](http://d.hatena.ne.jp/keyword/%A5%B7%A5%AA%A5%E9%A5%F3)  
+[紀伊國屋書店](http://d.hatena.ne.jp/keyword/%B5%AA%B0%CB%D4%A2%B2%B0%BD%F1%C5%B9)  
+売り上げランキング: 48,524  
+
+
+
+
+
+
+
+
+
+
+
+読みました。
+
+短文をいくつもと言った形式になっているのだけれどいちいち洗練されててとても良かった。
+
+引用を
+
+> 生まれるという事実のなかには、はなはだしい必然性の欠如が見られ、平生より少しでも長くそのことに思いを凝らせば、どういう反応を示したらいいのか分からなくなったすえ、私たちの表情は馬鹿のような薄笑いに固定してしまう。
+
+> 私は何もしていない。そのことは承認しよう。だが私は、時間が過ぎゆくのを眺めている。ー時間を埋めようとするのよりは高級なはずである。
+
+> あらゆる罪を犯した。父親となる罪だけは除いて。
+
+> かつて私は、死者を前にすると、「生まれるということがこの男にとって何の役に立ったか？」と自問したものだった。いまの私は、同じ質問を、いかなる生者を目の前にしてもおのが心に発している。
+
+> 新奇さを求めてやまないのは、道を誤ったゴリラの仕業である。
+
+もちろんこれはちょっと違うよなとか、客観的に考えれば……というところはあるのだけど、それを感じさせない完成されている感じが良い。
+
+「[ニヒリズム](http://d.hatena.ne.jp/keyword/%A5%CB%A5%D2%A5%EA%A5%BA%A5%E0)の境地」といってしまえば、たぶんそうなんだけれど、とにかく磨かれた言葉な感じ。かっこ良い!

@@ -1,0 +1,37 @@
+---
+
+title: 電話機の電池替え
+slug: "replacing-phone-batteries"
+id: 268
+date: '2015-03-16 14:07:13'
+layout: post
+categories:
+  - 電池
+  - 家電
+---
+
+電話機の子機がこの頃30分くらいしたら電池がなくなり電話が切れるようになったので交換。多分弱ってたんだと。A-002ってやつ。
+<div class="krb-amzlt-box" style="margin-bottom:0px;"><div class="krb-amzlt-image" style="float:left;margin:0px 12px 1px 0px;"><a href="https://www.amazon.co.jp/dp/B008CWOLG2?tag=peipeipe-22"><img width="160px" src="https://images-na.ssl-images-amazon.com/images/P/B008CWOLG2.09.LZZZZZZZ"></a></div><div class="krb-amzlt-info" style="line-height:120%; margin-bottom: 10px"><div class="krb-amzlt-name" style="margin-bottom:10px;line-height:120%"><a href="https://www.amazon.co.jp/dp/B008CWOLG2?tag=peipeipe-22" name="amazletlink" target="_blank" rel="nofollow" rel="nofollow">Sharp シャ-プ A - 002 コ-ドレス 子機用 充電池 【 UBATM0025AFZZ 対応 】</a></div><div class="krb-amzlt-detail"></div><div class="krb-amzlt-sub-info" style="float: left;"><div class="krb-amzlt-link" style="margin-top: 5px"><a href="https://www.amazon.co.jp/dp/B008CWOLG2?tag=peipeipe-22" name="amazletlink" target="_blank" rel="nofollow" rel="nofollow">Amazon.co.jpで詳細を見る</a></div></div></div><div class="krb-amzlt-footer" style="clear: left"></div></div>
+
+posted with [amazlet](http://www.amazlet.com/ "amazlet") at 15.03.16
+
+
+
+  
+売り上げランキング: 420  
+
+
+
+
+
+
+
+
+
+
+
+純正品ではなくて互換品です。値段は３分の１くらい。いつまで持つかな。いまのよりはいいでしょう。子機が２つあるので２つ購入。
+
+![](https://cdn-ak.f.st-hatena.com/images/fotolife/p/peipeipe/20190630/20190630172609.webp)
+
+左が弱ってたやつ。右が互換品。

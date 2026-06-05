@@ -1,0 +1,58 @@
+---
+
+title: WiiUを浪人生から借りた
+slug: "borrowed-a-wii-u-from-a-ronin-student"
+id: 241
+date: '2015-06-20 01:01:01'
+layout: post
+categories:
+  - ゲーム
+  - スプラトゥーン
+  - WiiU
+---
+
+[スプラトゥーン](http://d.hatena.ne.jp/keyword/%A5%B9%A5%D7%A5%E9%A5%C8%A5%A5%A1%BC%A5%F3)めっちゃやりたかったんですよ。でも[スプラトゥーン](http://d.hatena.ne.jp/keyword/%A5%B9%A5%D7%A5%E9%A5%C8%A5%A5%A1%BC%A5%F3)だけのために[WiiU](http://d.hatena.ne.jp/keyword/WiiU)を買うお金なんて持ってないんですよ。
+
+運良く浪人生のTくんから借りることが出来ました！やったね。ありがとう。
+
+返却期限は２月の中旬くらいかな？二浪ワンチャン
+
+[Wii](http://d.hatena.ne.jp/keyword/Wii)も持ってなかったのでなんだか新鮮。GamePadとか。
+
+[スプラトゥーン](http://d.hatena.ne.jp/keyword/%A5%B9%A5%D7%A5%E9%A5%C8%A5%A5%A1%BC%A5%F3)は明日到着予定です。やりまくっちゃうかもね。楽しみ！
+
+![image](https://cdn-ak.f.st-hatena.com/images/fotolife/p/peipeipe/20190630/20190630171303.webp)
+
+あ
+
+
+
+<div class="krb-amzlt-box" style="margin-bottom:0px;"><div class="krb-amzlt-image" style="float:left;margin:0px 12px 1px 0px;"><a href="https://www.amazon.co.jp/dp/B00D3GQC7S?tag=peipeipe-22"><img width="160px" src="https://images-na.ssl-images-amazon.com/images/P/B00D3GQC7S.09.LZZZZZZZ"></a></div><div class="krb-amzlt-info" style="line-height:120%; margin-bottom: 10px"><div class="krb-amzlt-name" style="margin-bottom:10px;line-height:120%"><a href="https://www.amazon.co.jp/dp/B00D3GQC7S?tag=peipeipe-22" name="amazletlink" target="_blank" rel="nofollow" rel="nofollow">Wii U プレミアムセット shiro (WUP-S-WAFC)</a></div><div class="krb-amzlt-detail"></div><div class="krb-amzlt-sub-info" style="float: left;"><div class="krb-amzlt-link" style="margin-top: 5px"><a href="https://www.amazon.co.jp/dp/B00D3GQC7S?tag=peipeipe-22" name="amazletlink" target="_blank" rel="nofollow" rel="nofollow">Amazon.co.jpで詳細を見る</a></div></div></div><div class="krb-amzlt-footer" style="clear: left"></div></div>
+
+posted with [amazlet](http://www.amazlet.com/ "amazlet") at 15.06.17
+
+
+
+[任天堂](http://d.hatena.ne.jp/keyword/%C7%A4%C5%B7%C6%B2) (2013-07-13)  
+売り上げランキング: 30  
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="krb-amzlt-box" style="margin-bottom:0px;"><div class="krb-amzlt-image" style="float:left;margin:0px 12px 1px 0px;"><a href="https://www.amazon.co.jp/dp/B00VDVY1C8?tag=peipeipe-22"><img width="160px" src="https://images-na.ssl-images-amazon.com/images/P/B00VDVY1C8.09.LZZZZZZZ"></a></div><div class="krb-amzlt-info" style="line-height:120%; margin-bottom: 10px"><div class="krb-amzlt-name" style="margin-bottom:10px;line-height:120%"><a href="https://www.amazon.co.jp/dp/B00VDVY1C8?tag=peipeipe-22" name="amazletlink" target="_blank" rel="nofollow" rel="nofollow">Splatoon(スプラトゥーン)</a></div><div class="krb-amzlt-detail"></div><div class="krb-amzlt-sub-info" style="float: left;"><div class="krb-amzlt-link" style="margin-top: 5px"><a href="https://www.amazon.co.jp/dp/B00VDVY1C8?tag=peipeipe-22" name="amazletlink" target="_blank" rel="nofollow" rel="nofollow">Amazon.co.jpで詳細を見る</a></div></div></div><div class="krb-amzlt-footer" style="clear: left"></div></div>
+
+posted with [amazlet](http://www.amazlet.com/ "amazlet") at 15.06.17
+
+
+
+[任天堂](http://d.hatena.ne.jp/keyword/%C7%A4%C5%B7%C6%B2) (2015-05-28)  
+売り上げランキング: 4  

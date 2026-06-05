@@ -1,0 +1,26 @@
+---
+
+title: とりあえずフル完走と感想
+slug: "finished-a-full-marathon-and-thoughts"
+id: 85
+date: '2018-03-20 13:48:47'
+layout: post
+categories:
+  - マラソン
+  - ランニング
+  - 大会
+---
+
+板橋Cityマ[ラソン](http://d.hatena.ne.jp/keyword/%A5%E9%A5%BD%A5%F3)、フル完走しました。
+
+左膝の[ランナーズ](http://d.hatena.ne.jp/keyword/%A5%E9%A5%F3%A5%CA%A1%BC%A5%BA)ニーがいまいち10キロ超えると痛くなっていて、練習不足＆痛みで3日前まで、欠場しようと思っていましたが、やっぱり出ようと決心し、出場。
+
+21キロ(半分)まではいい感じで走れたが、25キロを過ぎた辺りから左膝が痛くてなんともならなくなってしまった。
+
+明らかに筋力不足が原因だと。
+
+22キロからは[競歩](http://d.hatena.ne.jp/keyword/%B6%A5%CA%E2)で30キロ超えた辺りからは誰よりもゆっくりとしか歩けなかった。それでもなんとかゴール。5時間40分くらいかかってしまった。
+
+[サブフォー](http://d.hatena.ne.jp/keyword/%A5%B5%A5%D6%A5%D5%A5%A9%A1%BC)の夢は遠い。がんばろー。とりあえず筋肉つけよ。
+
+![](https://cdn-ak.f.st-hatena.com/images/fotolife/p/peipeipe/20190630/20190630170626.webp)

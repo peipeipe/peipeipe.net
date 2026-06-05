@@ -1,0 +1,43 @@
+---
+
+title: 地下鉄道
+slug: "the-underground-railroad"
+id: 90
+date: '2018-02-22 13:57:24'
+layout: post
+categories:
+  - 本
+---
+
+地下には私を運ぶ鉄道が走っているのだ。
+
+地下深く深く。
+
+おもしろくないわけがなかった。
+<div class="krb-amzlt-box" style="margin-bottom:0px;"><div class="krb-amzlt-image" style="float:left;margin:0px 12px 1px 0px;"><a href="https://www.amazon.co.jp/dp/4152097302?tag=peipeipe-22"><img width="160px" src="https://images-na.ssl-images-amazon.com/images/P/4152097302.09.LZZZZZZZ"></a></div><div class="krb-amzlt-info" style="line-height:120%; margin-bottom: 10px"><div class="krb-amzlt-name" style="margin-bottom:10px;line-height:120%"><a href="https://www.amazon.co.jp/dp/4152097302?tag=peipeipe-22" name="amazletlink" target="_blank" rel="nofollow" rel="nofollow">地下鉄道</a></div><div class="krb-amzlt-detail"></div><div class="krb-amzlt-sub-info" style="float: left;"><div class="krb-amzlt-link" style="margin-top: 5px"><a href="https://www.amazon.co.jp/dp/4152097302?tag=peipeipe-22" name="amazletlink" target="_blank" rel="nofollow" rel="nofollow">Amazon.co.jpで詳細を見る</a></div></div></div><div class="krb-amzlt-footer" style="clear: left"></div></div>
+
+posted with [amazlet](http://www.amazlet.com/ "amazlet") at 18.02.22
+
+
+
+コルソン [ホワイトヘッド](http://d.hatena.ne.jp/keyword/%A5%DB%A5%EF%A5%A4%A5%C8%A5%D8%A5%C3%A5%C9) Colson Whitehead  
+[早川書房](http://d.hatena.ne.jp/keyword/%C1%E1%C0%EE%BD%F1%CB%BC)  
+売り上げランキング: 58,778  
+
+
+
+
+
+
+
+
+
+
+
+ただし、内容はとても重い。[アメリ](http://d.hatena.ne.jp/keyword/%A5%A2%A5%E1%A5%EA)カ、黒人奴隷の話。彼女を乗せるために鉄道は走るのだ。  
+
+> 「誰が作ったの」 「この国にあるものすべて、誰が作った？」
+
+> まあたらしい木靴の先で、コーラはリッジウェイの顔面を三度蹴りつけた。仕方ないじゃないか、と彼女は思っていた。この世界が悪人どもをひとりでに罰してくれないならば。誰もコーラを止めはしなかった。
+
+> この国がどんなものか知りたいなら、わたしはつねに言うさ、鉄道に乗らなければならないと。列車が走るあいだ外を見ておくがいい。[アメリ](http://d.hatena.ne.jp/keyword/%A5%A2%A5%E1%A5%EA)カの真の顔がわかるだろう。
