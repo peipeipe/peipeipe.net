@@ -1,9 +1,9 @@
 {
-  "generatedAt": "2026-06-05T09:09:44.631Z",
+  "generatedAt": "2026-06-05T14:13:46.527Z",
   "counts": {
     "posts": 355,
     "diary": 40,
-    "urls": 397
+    "urls": 406
   },
   "urls": [
     "/",
@@ -358,6 +358,11 @@
     "/2026-03-31-books-read-this-month/",
     "/2026-04-30-books-read-this-month/",
     "/2026-05-09-ghost_of_yotei/",
+    "/404.html",
+    "/about",
+    "/activity-data.json",
+    "/activity/",
+    "/cloudflare-preview/",
     "/diary/",
     "/diary/2025-06-22/",
     "/diary/2025-06-23/",
@@ -400,8 +405,12 @@
     "/diary/2026-05-24/",
     "/diary/2026-06-04/",
     "/domain-change/",
+    "/feed.xml",
     "/Jekyll事始め/",
     "/pokemonsv/",
+    "/robots.txt",
+    "/search",
+    "/sitemap-index.xml",
     "/アイリスオーヤマ Alexa対応 LED シーリングライト/"
   ]
 }

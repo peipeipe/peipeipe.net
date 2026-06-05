@@ -22,8 +22,8 @@ Last verified locally:
 
 ```text
 Astro build: success
-Generated pages: 400
-URL manifest: 397 URLs
+Generated pages: 402
+URL manifest: 406 URLs
 Legacy invalid percent slugs: 0
 Workflow YAML parse: ok
 Cloudflare preview HTTP status: 200 before the local master merge
@@ -55,6 +55,8 @@ PATH=/home/peipeipe/.local/nodejs/current/bin:$PATH npm run build
 - Reads existing `../_posts/*.md` files without moving them.
 - Reads existing `../_diary/*.md` files without moving them.
 - Builds the blog index, post detail pages, diary index, diary detail pages, `about`, `search`, RSS, and sitemap.
+- Builds `404.html` and `robots.txt`.
+- Builds `/activity/` as the first wide map-focused data page, backed by `/activity-data.json`.
 - Builds a preview-only `/cloudflare-preview/` page.
 - Deploys the Astro prototype to Cloudflare Pages via `.github/workflows/cloudflare-pages-astro-preview.yml`.
 - Keeps the current Jekyll site deploy workflow untouched.
@@ -64,7 +66,7 @@ Current content counts from `migration/astro-url-manifest.json`:
 ```text
 posts: 355
 diary entries: 40
-tracked content URLs: 397
+tracked URLs: 406
 ```
 
 ## Verification
@@ -165,12 +167,12 @@ The old Japanese/percent-encoded filenames were normalized to English slugs on `
    - Check image layout on representative long posts.
 
 3. Migrate static root pages and special pages.
-   - `404`
-   - `robots.txt`
+   - `404`: done
+   - `robots.txt`: done
    - `CNAME` handling is not needed for preview, but matters during final cutover.
 
 4. Migrate data/map pages in this order.
-   - `/activity/`
+   - `/activity/`: done, using a wide map-focused Astro layout
    - `/mountains/`
    - `/places/`
    - `/onsen/`

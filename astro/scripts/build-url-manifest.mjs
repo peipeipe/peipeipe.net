@@ -9,7 +9,16 @@ const posts = await getPosts();
 const diary = await getDiaryEntries();
 const urls = [
   "/",
+  "/404.html",
+  "/activity/",
+  "/activity-data.json",
+  "/about",
+  "/cloudflare-preview/",
   "/diary/",
+  "/feed.xml",
+  "/robots.txt",
+  "/search",
+  "/sitemap-index.xml",
   ...posts.map((post) => post.url),
   ...diary.map((entry) => entry.url),
 ].sort((a, b) => a.localeCompare(b, "ja"));

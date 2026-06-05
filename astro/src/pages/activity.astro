@@ -1,0 +1,324 @@
+---
+import MapLayout from "@/layouts/MapLayout.astro";
+import { formatDate, formatDistance, formatDuration, getActivities, summarizeActivities } from "@/lib/activity";
+
+const activities = getActivities();
+const stats = summarizeActivities(activities);
+const recentActivities = activities.slice(0, 30);
+---
+
+<MapLayout title="アクティビティマップ" canonicalPath="/activity/" heat>
+  <section class="map-app activity-map-app">
+    <header class="map-app-header">
+      <div>
+        <h1>アクティビティマップ</h1>
+        <p>Strava に記録した走行・ライドの軌跡を、ヒートマップと軌跡線で眺めるページです。</p>
+      </div>
+      <div class="map-app-stats" aria-label="Activity stats">
+        <div>
+          <strong data-stat="count">{stats.count}</strong>
+          <span>Activities</span>
+        </div>
+        <div>
+          <strong data-stat="distance">{Math.round(stats.distance / 1000).toLocaleString()}</strong>
+          <span>Distance km</span>
+        </div>
+        <div>
+          <strong data-stat="time">{formatDuration(stats.moving_time)}</strong>
+          <span>Time</span>
+        </div>
+        <div>
+          <strong data-stat="elevation">{Math.round(stats.elevation).toLocaleString()}</strong>
+          <span>Elevation m</span>
+        </div>
+      </div>
+    </header>
+
+    <div class="map-workspace">
+      <section class="map-main-panel" aria-label="Activity map">
+        <div class="map-controlbar">
+          <div class="segmented-control" aria-label="Map display mode">
+            <button class="active" type="button" data-mode="heat">ヒート</button>
+            <button type="button" data-mode="routes">軌跡線</button>
+          </div>
+          <div class="segmented-control" aria-label="Activity type filter">
+            <button class="active" type="button" data-activity-type="all">すべて</button>
+            <button type="button" data-activity-type="run">Run</button>
+            <button type="button" data-activity-type="ride">Ride</button>
+            <button type="button" data-activity-type="walk">Walk</button>
+            <button type="button" data-activity-type="other">Other</button>
+          </div>
+        </div>
+        <div class="map-canvas-wrap">
+          <div id="activity-map" class="map-canvas"></div>
+          <div class="map-loading" id="activity-map-loading">読み込み中...</div>
+        </div>
+      </section>
+
+      <aside class="map-side-panel" aria-label="Recent activities">
+        <div class="panel-header">
+          <h2>最近のアクティビティ</h2>
+          <span id="activity-count-badge">{activities.length}件</span>
+        </div>
+        <div class="activity-list compact" id="activity-list">
+          {
+            recentActivities.map((activity) => (
+              <article class="activity-item" data-type={activity.type_class} data-activity-id={activity.id}>
+                <div class="activity-item-body">
+                  <h3>{activity.name}</h3>
+                  <p>
+                    <span>{formatDuration(activity.moving_time)}</span>
+                    <span>{formatDistance(activity.distance)}</span>
+                    {activity.total_elevation_gain > 0 && <span>{Math.round(activity.total_elevation_gain)}m up</span>}
+                  </p>
+                </div>
+                <time datetime={activity.start_date}>{formatDate(activity.start_date)}</time>
+              </article>
+            ))
+          }
+        </div>
+      </aside>
+    </div>
+  </section>
+
+  <script is:inline>
+    const DATA_URL = "/activity-data.json";
+    const listLimit = 80;
+    let activityData = [];
+    let currentType = "all";
+    let currentMode = "heat";
+    let map;
+    let activeLayer;
+    let latestBounds = null;
+
+    function decodePolyline(str) {
+      if (!str) return [];
+      let index = 0;
+      let lat = 0;
+      let lng = 0;
+      const coordinates = [];
+      while (index < str.length) {
+        let shift = 0;
+        let result = 0;
+        let byte = null;
+        do {
+          byte = str.charCodeAt(index++) - 63;
+          result |= (byte & 0x1f) << shift;
+          shift += 5;
+        } while (byte >= 0x20);
+        lat += result & 1 ? ~(result >> 1) : result >> 1;
+        shift = 0;
+        result = 0;
+        do {
+          byte = str.charCodeAt(index++) - 63;
+          result |= (byte & 0x1f) << shift;
+          shift += 5;
+        } while (byte >= 0x20);
+        lng += result & 1 ? ~(result >> 1) : result >> 1;
+        coordinates.push([lat / 1e5, lng / 1e5]);
+      }
+      return coordinates;
+    }
+
+    function formatTime(seconds) {
+      const hours = Math.floor(seconds / 3600);
+      const minutes = Math.floor((seconds % 3600) / 60);
+      return hours > 0 ? `${hours}h${minutes}m` : `${minutes}m`;
+    }
+
+    function formatDate(date) {
+      if (!date) return "";
+      return new Intl.DateTimeFormat("ja-JP", {
+        year: "numeric",
+        month: "2-digit",
+        day: "2-digit",
+      }).format(new Date(date));
+    }
+
+    function filteredData() {
+      return currentType === "all" ? activityData : activityData.filter((activity) => activity.type_class === currentType);
+    }
+
+    function summarize(data) {
+      return data.reduce(
+        (sum, activity) => ({
+          count: sum.count + 1,
+          distance: sum.distance + activity.distance,
+          moving_time: sum.moving_time + activity.moving_time,
+          elevation: sum.elevation + activity.total_elevation_gain,
+        }),
+        { count: 0, distance: 0, moving_time: 0, elevation: 0 },
+      );
+    }
+
+    function updateStats(data) {
+      const stats = summarize(data);
+      document.querySelector('[data-stat="count"]').textContent = stats.count.toLocaleString();
+      document.querySelector('[data-stat="distance"]').textContent = Math.round(stats.distance / 1000).toLocaleString();
+      document.querySelector('[data-stat="time"]').textContent = formatTime(stats.moving_time);
+      document.querySelector('[data-stat="elevation"]').textContent = Math.round(stats.elevation).toLocaleString();
+      document.getElementById("activity-count-badge").textContent = `${stats.count.toLocaleString()}件`;
+    }
+
+    function buildGeometry(data) {
+      const points = [];
+      const routes = [];
+      data.forEach((activity) => {
+        const coords = decodePolyline(activity.summary_polyline);
+        if (coords.length > 1) {
+          routes.push({ coords, activity });
+        }
+        const step = coords.length > 300 ? 3 : 1;
+        for (let i = 0; i < coords.length; i += step) points.push(coords[i]);
+      });
+      return { points, routes };
+    }
+
+    function fitPoints(points) {
+      if (!points.length || !map) return;
+      const bounds = L.latLngBounds(points);
+      if (!bounds.isValid()) return;
+      latestBounds = bounds;
+      map.fitBounds(bounds, { padding: [34, 34] });
+    }
+
+    function clearLayer() {
+      if (activeLayer) {
+        map.removeLayer(activeLayer);
+        activeLayer = null;
+      }
+    }
+
+    function renderMap(data) {
+      if (!map) return;
+      clearLayer();
+      const { points, routes } = buildGeometry(data);
+      if (!points.length) return;
+
+      if (currentMode === "heat" && typeof L.heatLayer === "function") {
+        activeLayer = L.heatLayer(points, {
+          radius: 13,
+          blur: 18,
+          minOpacity: 0.35,
+          maxZoom: 17,
+          gradient: {
+            0.2: "#2563eb",
+            0.45: "#16a34a",
+            0.7: "#facc15",
+            0.9: "#f97316",
+            1: "#dc2626",
+          },
+        }).addTo(map);
+      } else {
+        activeLayer = L.layerGroup(
+          routes.map(({ coords }) =>
+            L.polyline(coords, {
+              color: currentMode === "heat" ? "#fc4c02" : "#2563eb",
+              opacity: currentMode === "heat" ? 0.16 : 0.28,
+              weight: currentMode === "heat" ? 3 : 2,
+              interactive: false,
+            }),
+          ),
+        ).addTo(map);
+      }
+
+      fitPoints(points);
+    }
+
+    function renderList(data) {
+      const list = document.getElementById("activity-list");
+      const visible = data.slice(0, listLimit);
+      list.innerHTML = visible
+        .map((activity) => {
+          const distance = `${(activity.distance / 1000).toFixed(1)} km`;
+          const elevation = activity.total_elevation_gain > 0 ? `<span>${Math.round(activity.total_elevation_gain)}m up</span>` : "";
+          return `
+            <article class="activity-item" data-type="${activity.type_class}" data-activity-id="${activity.id}">
+              <div class="activity-item-body">
+                <h3>${escapeHtml(activity.name)}</h3>
+                <p>
+                  <span>${formatTime(activity.moving_time)}</span>
+                  <span>${distance}</span>
+                  ${elevation}
+                </p>
+              </div>
+              <time datetime="${escapeHtml(activity.start_date)}">${formatDate(activity.start_date)}</time>
+            </article>
+          `;
+        })
+        .join("");
+    }
+
+    function render() {
+      const data = filteredData();
+      updateStats(data);
+      renderList(data);
+      renderMap(data);
+    }
+
+    function setupControls() {
+      document.querySelectorAll("[data-activity-type]").forEach((button) => {
+        button.addEventListener("click", () => {
+          document.querySelectorAll("[data-activity-type]").forEach((item) => item.classList.remove("active"));
+          button.classList.add("active");
+          currentType = button.dataset.activityType || "all";
+          render();
+        });
+      });
+
+      document.querySelectorAll("[data-mode]").forEach((button) => {
+        button.addEventListener("click", () => {
+          document.querySelectorAll("[data-mode]").forEach((item) => item.classList.remove("active"));
+          button.classList.add("active");
+          currentMode = button.dataset.mode || "heat";
+          renderMap(filteredData());
+          if (latestBounds) map.fitBounds(latestBounds, { padding: [34, 34] });
+        });
+      });
+    }
+
+    function escapeHtml(value) {
+      return String(value).replace(/[&<>"']/g, (character) => ({
+        "&": "&amp;",
+        "<": "&lt;",
+        ">": "&gt;",
+        '"': "&quot;",
+        "'": "&#39;",
+      })[character]);
+    }
+
+    async function loadData() {
+      const response = await fetch(DATA_URL);
+      if (!response.ok) throw new Error("activity-data.json load failed");
+      const payload = await response.json();
+      activityData = Array.isArray(payload.activities) ? payload.activities : [];
+      document.getElementById("activity-map-loading").hidden = true;
+      render();
+    }
+
+    document.addEventListener("DOMContentLoaded", () => {
+      setupControls();
+      map = L.map("activity-map", {
+        scrollWheelZoom: false,
+        zoomControl: true,
+        preferCanvas: true,
+      }).setView([36.5, 136.5], 5);
+
+      map.on("focus", () => map.scrollWheelZoom.enable());
+      map.on("blur", () => map.scrollWheelZoom.disable());
+
+      L.tileLayer("https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png", {
+        attribution:
+          '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> &copy; <a href="https://carto.com/attributions">CARTO</a>',
+        subdomains: "abcd",
+        maxZoom: 19,
+      }).addTo(map);
+
+      requestAnimationFrame(() => map.invalidateSize());
+      loadData().catch((error) => {
+        console.error(error);
+        document.getElementById("activity-map-loading").textContent = "データの読み込みに失敗しました";
+      });
+    });
+  </script>
+</MapLayout>
