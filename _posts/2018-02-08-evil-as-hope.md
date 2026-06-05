@@ -1,0 +1,48 @@
+---
+
+title: 悪という希望
+slug: "evil-as-hope"
+permalink: /2018-02-08-evil-as-hope/
+id: 91
+date: '2018-02-08 13:36:46'
+layout: post
+categories:
+  - 本
+---
+
+悪という言葉によって、多様性や複雑性を認識しようとする試み。
+<div class="krb-amzlt-box" style="margin-bottom:0px;"><div class="krb-amzlt-image" style="float:left;margin:0px 12px 1px 0px;"><a href="https://www.amazon.co.jp/dp/490570698X?tag=peipeipe-22"><img width="160px" src="https://images-na.ssl-images-amazon.com/images/P/490570698X.09.LZZZZZZZ"></a></div><div class="krb-amzlt-info" style="line-height:120%; margin-bottom: 10px"><div class="krb-amzlt-name" style="margin-bottom:10px;line-height:120%"><a href="https://www.amazon.co.jp/dp/490570698X?tag=peipeipe-22" name="amazletlink" target="_blank" rel="nofollow" rel="nofollow">悪という希望――「生そのもの」のための政治社会学</a></div><div class="krb-amzlt-detail"></div><div class="krb-amzlt-sub-info" style="float: left;"><div class="krb-amzlt-link" style="margin-top: 5px"><a href="https://www.amazon.co.jp/dp/490570698X?tag=peipeipe-22" name="amazletlink" target="_blank" rel="nofollow" rel="nofollow">Amazon.co.jpで詳細を見る</a></div></div></div><div class="krb-amzlt-footer" style="clear: left"></div></div>
+
+posted with [amazlet](http://www.amazlet.com/ "amazlet") at 18.02.08
+
+
+
+堀内進之介  
+[教育評論社](http://d.hatena.ne.jp/keyword/%B6%B5%B0%E9%C9%BE%CF%C0%BC%D2)  
+売り上げランキング: 512,675  
+
+
+
+
+
+
+
+
+
+
+
+以下引用
+
+> 人間は「ネジを巻かれたマリオネット(操り人形)か、ヴォカンソンの自動人形」ではない、だからこそ我々は、道徳的に善くありうる。
+
+> だから我々は、デュルケムとともに、デュルケムに抗する。  
+> 中略  
+> 彼が、社会[有機](http://d.hatena.ne.jp/keyword/%CD%AD%B5%A1)体の進化という目的に沿って、必然的かつ有用であると論じた、悪とともにある社会。これを我々は、その途上にあることそれぞれ自体が価値であると主張したい。それは、悪によって変容が励起され続けているという意味で、決して現状の肯定ではない。しかし同時に、ある終局へ向かう道行きでもない。永遠に引き伸ばされる、過程である過程である限りの過程。
+
+> 我々は、悪を処罰しあるいは飼いならす統治を否定し得ないが、その統治の網目の及ぶ範囲を、可能な限り極小な範囲に引き絞ろうとすることに真に誠実な限りにおいて、みずからの選択をかろうじて許容するそうあり続けるために我々は、我々自身とその統治の行使を、悪と呼ぶ。
+
+かっこよすぎるでしょ。
+
+> 同じ規格品で構成されたシステムは、どこかに致命的な欠陥を持つことになるわ。組織も人間も同じ。特殊化の果てにあるのは、ゆるやかな死……それだけよ。
+
+[GHOST IN THE SHELL](http://d.hatena.ne.jp/keyword/GHOST%20IN%20THE%20SHELL) / [攻殻機動隊](http://d.hatena.ne.jp/keyword/%B9%B6%B3%CC%B5%A1%C6%B0%C2%E2)　より

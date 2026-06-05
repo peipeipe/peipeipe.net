@@ -1,0 +1,33 @@
+---
+
+title: バイクに乗りたい
+slug: "i-want-to-ride-a-motorcycle"
+permalink: /2018-08-26-i-want-to-ride-a-motorcycle/
+id: 80
+date: '2018-08-26 01:07:16'
+layout: post
+categories:
+  - バイク
+---
+
+ブログを書いていない間にバイクを買って、バイクで自損事故。
+
+運も悪かったし、自分も下手だった。体はなんともないのでそれだけが救い。
+
+上が事故前
+
+下が事故後
+
+![](https://cdn-ak.f.st-hatena.com/images/fotolife/p/peipeipe/20190630/20190630170652.webp)
+
+![](https://cdn-ak.f.st-hatena.com/images/fotolife/p/peipeipe/20190630/20190630170408.webp)
+
+だいぶボロボロになってしまって[バイク屋](http://d.hatena.ne.jp/keyword/%A5%D0%A5%A4%A5%AF%B2%B0)からの連絡を待っている状態。
+
+バイクの夢を見る。
+
+べつに風と自由を感じたいわけではない。
+
+[ニュートラ](http://d.hatena.ne.jp/keyword/%A5%CB%A5%E5%A1%BC%A5%C8%A5%E9)ルから一速に落とす感覚を味わいたい。
+
+スピードを出したときの集中する感じももう一度味わいたい。

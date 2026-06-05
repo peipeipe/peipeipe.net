@@ -1,0 +1,81 @@
+---
+
+title: みんなでガンプラを作った
+slug: "built-gunpla-with-everyone"
+permalink: /2016-03-06-built-gunpla-with-everyone/
+id: 195
+date: '2016-03-06 16:57:42'
+layout: post
+categories:
+  - ガンダム
+  - ガンプラ
+  - 日記
+---
+
+タイトルまんまなんですがすごく面白かったということで、またやりたい。
+
+[ガンダム](http://d.hatena.ne.jp/keyword/%A5%AC%A5%F3%A5%C0%A5%E0)って、知ってる人、何作か見た人、最近の見た人、ほぼ見てる人に分けられるんですけど、[宇宙世紀](http://d.hatena.ne.jp/keyword/%B1%A7%C3%E8%C0%A4%B5%AA)という架空の時代背景のおかげでみんな楽しめちゃうんですよ。文化だなと思いました。
+
+5人集まって、大学1年から大学4年生まで。それで14時から20時までずっと[ガンプラ](http://d.hatena.ne.jp/keyword/%A5%AC%A5%F3%A5%D7%A5%E9)作って話せるってすごくないですか？でもそれが[ガンダム](http://d.hatena.ne.jp/keyword/%A5%AC%A5%F3%A5%C0%A5%E0)という物なんだなぁと改めて思いました。
+
+これは先輩のツイートなんですけど鍵アカでも面白かったのでコピペ。
+
+> [ガンダム](http://d.hatena.ne.jp/keyword/%A5%AC%A5%F3%A5%C0%A5%E0)というコンテンツは可能性の獣だよ、そして僕等の楽しさを増幅させる機械なんだ。
+
+[ガンダムユニコーン](http://d.hatena.ne.jp/keyword/%A5%AC%A5%F3%A5%C0%A5%E0%A5%E6%A5%CB%A5%B3%A1%BC%A5%F3)のパロディなんですが。
+
+あと、大学が受験で部室があいてなかったので[カラオケボックス](http://d.hatena.ne.jp/keyword/%A5%AB%A5%E9%A5%AA%A5%B1%A5%DC%A5%C3%A5%AF%A5%B9)でやったのですがかなり居心地が良かったです。
+
+[カラオケの鉄人](http://d.hatena.ne.jp/keyword/%A5%AB%A5%E9%A5%AA%A5%B1%A4%CE%C5%B4%BF%CD)[巣鴨](http://d.hatena.ne.jp/keyword/%C1%E3%B3%FB)店。
+
+[カラオケの鉄人](http://d.hatena.ne.jp/keyword/%A5%AB%A5%E9%A5%AA%A5%B1%A4%CE%C5%B4%BF%CD)って高いイメージがあってあんまり進んで入った事なかったんですけど、机も大きく、椅子も綺麗で[ガンプラ](http://d.hatena.ne.jp/keyword/%A5%AC%A5%F3%A5%D7%A5%E9)を作るのに最適でした。
+
+飲み放題のドリンクバーに牛乳系のコーヒーがあったのも嬉しい。トイレも綺麗。
+
+カラオケなんて安ければ安いほどいいなんて考えがちですけど、なるほどなって思いました。
+
+![image](https://cdn-ak.f.st-hatena.com/images/fotolife/p/peipeipe/20190630/20190630172808.webp)
+
+みんな6時間もあれば二体くらい作れるだろうと思って2個買ったものの一個しか作れませんでした。最近のHGはクオリティが高いっすね。
+
+![image](https://cdn-ak.f.st-hatena.com/images/fotolife/p/peipeipe/20190630/20190630171147.webp)
+
+![image](https://cdn-ak.f.st-hatena.com/images/fotolife/p/peipeipe/20190630/20190630171816.webp)
+
+完成の図。[バンシィ](http://d.hatena.ne.jp/keyword/%A5%D0%A5%F3%A5%B7%A5%A3)は完成せず。いじめられてる感じになっている。
+
+![image](https://cdn-ak.f.st-hatena.com/images/fotolife/p/peipeipe/20190630/20190630171205.webp)
+
+自分の[ユニコーンガンダム](http://d.hatena.ne.jp/keyword/%A5%E6%A5%CB%A5%B3%A1%BC%A5%F3%A5%AC%A5%F3%A5%C0%A5%E0)。
+
+
+
+<div class="krb-amzlt-box" style="margin-bottom:0px;"><div class="krb-amzlt-image" style="float:left;margin:0px 12px 1px 0px;"><a href="https://www.amazon.co.jp/dp/B002NE795A?tag=peipeipe-22"><img width="160px" src="https://images-na.ssl-images-amazon.com/images/P/B002NE795A.09.LZZZZZZZ"></a></div><div class="krb-amzlt-info" style="line-height:120%; margin-bottom: 10px"><div class="krb-amzlt-name" style="margin-bottom:10px;line-height:120%"><a href="https://www.amazon.co.jp/dp/B002NE795A?tag=peipeipe-22" name="amazletlink" target="_blank" rel="nofollow" rel="nofollow">HGUC 1/144 RX-0 ユニコーンガンダム デストロイモード (機動戦士ガンダムUC)</a></div><div class="krb-amzlt-detail"></div><div class="krb-amzlt-sub-info" style="float: left;"><div class="krb-amzlt-link" style="margin-top: 5px"><a href="https://www.amazon.co.jp/dp/B002NE795A?tag=peipeipe-22" name="amazletlink" target="_blank" rel="nofollow" rel="nofollow">Amazon.co.jpで詳細を見る</a></div></div></div><div class="krb-amzlt-footer" style="clear: left"></div></div>
+
+posted with [amazlet](http://www.amazlet.com/ "amazlet") at 16.03.06
+
+
+
+[バンダイ](http://d.hatena.ne.jp/keyword/%A5%D0%A5%F3%A5%C0%A5%A4) ([2009-11-21](http://d.hatena.ne.jp/keyword/2009-11-21))  
+売り上げランキング: 1,813  
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="krb-amzlt-box" style="margin-bottom:0px;"><div class="krb-amzlt-image" style="float:left;margin:0px 12px 1px 0px;"><a href="https://www.amazon.co.jp/dp/B018TGV5EG?tag=peipeipe-22"><img width="160px" src="https://images-na.ssl-images-amazon.com/images/P/B018TGV5EG.09.LZZZZZZZ"></a></div><div class="krb-amzlt-info" style="line-height:120%; margin-bottom: 10px"><div class="krb-amzlt-name" style="margin-bottom:10px;line-height:120%"><a href="https://www.amazon.co.jp/dp/B018TGV5EG?tag=peipeipe-22" name="amazletlink" target="_blank" rel="nofollow" rel="nofollow">HG 機動戦士ガンダム THE ORIGIN MSD ドム試作実験機 1/144スケール 色分け済みプラモデル</a></div><div class="krb-amzlt-detail"></div><div class="krb-amzlt-sub-info" style="float: left;"><div class="krb-amzlt-link" style="margin-top: 5px"><a href="https://www.amazon.co.jp/dp/B018TGV5EG?tag=peipeipe-22" name="amazletlink" target="_blank" rel="nofollow" rel="nofollow">Amazon.co.jpで詳細を見る</a></div></div></div><div class="krb-amzlt-footer" style="clear: left"></div></div>
+
+posted with [amazlet](http://www.amazlet.com/ "amazlet") at 16.03.06
+
+
+
+[バンダイ](http://d.hatena.ne.jp/keyword/%A5%D0%A5%F3%A5%C0%A5%A4) (2016-02-27)  
+売り上げランキング: 84  

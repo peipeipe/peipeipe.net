@@ -1,0 +1,18 @@
+---
+
+title: Gif画像
+slug: "gif-images"
+permalink: /2015-06-06-gif-images/
+id: 246
+date: '2015-06-06 07:30:11'
+layout: post
+categories:
+  - カエル
+  - Tumblr
+---
+
+[Tumblr](http://d.hatena.ne.jp/keyword/Tumblr)がGifに対応したんだってさ。
+
+![](https://cdn-ak.f.st-hatena.com/images/fotolife/p/peipeipe/20190630/20190630172826.gif)
+
+まばたくカエルです。

@@ -1,0 +1,32 @@
+---
+
+title: メガネを買った
+slug: "bought-glasses"
+permalink: /2016-01-29-bought-glasses/
+id: 205
+date: '2016-01-29 14:44:22'
+layout: post
+categories:
+  - メガネ
+  - 日記
+---
+
+[JINS](http://d.hatena.ne.jp/keyword/JINS)で買いました。本物かどうか分からないプーさんがかけているやつです。
+
+![](https://cdn-ak.f.st-hatena.com/images/fotolife/p/peipeipe/20190630/20190630170928.webp)
+
+試しに[ブルーライト](http://d.hatena.ne.jp/keyword/%A5%D6%A5%EB%A1%BC%A5%E9%A5%A4%A5%C8)カットレンズにしてみましたよ。三段階あるうちの一番軽いもの。スクリーンデイユースというらしい。メガネの値段が5,900円だったとすると+4000円というのはなかなか高価な気もしますね。
+
+![](https://cdn-ak.f.st-hatena.com/images/fotolife/p/peipeipe/20190630/20190630171832.webp)
+
+度数情報をもらったのでちょっと調べてみましたよ。
+
+SPHは球面度数屈折の度合いだそうです。
+
+CYLは乱視度数。ちょっと乱視入ってるんですね……
+
+P.Dは瞳孔と間の数値だって。
+
+詳しくはこれをみました。
+
+[JINSが教える！「度数情報」の基礎知識](https://fashion.nanapi.com/ja/46952)

@@ -1,0 +1,61 @@
+---
+
+title: 便利すぎると怠慢が増加する
+slug: "too-much-convenience-increases-laziness"
+permalink: /2015-12-05-too-much-convenience-increases-laziness/
+id: 215
+date: '2015-12-05 15:15:45'
+layout: post
+categories:
+  - Kindle
+  - 本
+---
+
+[Kindle](http://d.hatena.ne.jp/keyword/Kindle)を買いました。一番安いやつ(4980円)。
+
+
+
+<div class="krb-amzlt-box" style="margin-bottom:0px;"><div class="krb-amzlt-image" style="float:left;margin:0px 12px 1px 0px;"><a href="https://www.amazon.co.jp/dp/B00Y3TMKKM?tag=peipeipe-22"><img width="160px" src="https://images-na.ssl-images-amazon.com/images/P/B00Y3TMKKM.09.LZZZZZZZ"></a></div><div class="krb-amzlt-info" style="line-height:120%; margin-bottom: 10px"><div class="krb-amzlt-name" style="margin-bottom:10px;line-height:120%"><a href="https://www.amazon.co.jp/dp/B00Y3TMKKM?tag=peipeipe-22" name="amazletlink" target="_blank" rel="nofollow" rel="nofollow">Fire タブレット 8GB、ブラック</a></div><div class="krb-amzlt-detail"></div><div class="krb-amzlt-sub-info" style="float: left;"><div class="krb-amzlt-link" style="margin-top: 5px"><a href="https://www.amazon.co.jp/dp/B00Y3TMKKM?tag=peipeipe-22" name="amazletlink" target="_blank" rel="nofollow" rel="nofollow">Amazon.co.jpで詳細を見る</a></div></div></div><div class="krb-amzlt-footer" style="clear: left"></div></div>
+
+posted with [amazlet](http://www.amazlet.com/ "amazlet") at 15.12.05
+
+
+
+[Amazon](http://d.hatena.ne.jp/keyword/Amazon) (2015-09-30)  
+売り上げランキング: 1  
+
+
+
+
+
+
+
+
+
+
+
+非常に便利です。解像度が低いですが、あんまり気になりません。流石に[iPhone](http://d.hatena.ne.jp/keyword/iPhone)と比較してしまうとアレだけど。動画見たり、本読むくらいだったら。
+
+重い本でセールになってたりすると[Kindle](http://d.hatena.ne.jp/keyword/Kindle)で読んでいます。ベットに寝っ転がりながら本を読むのに最適です。面が一面しかないので変に傾けたりしなくてよいし支えなくてもスタンドで立ってくれるので手は布団に入れっぱなし。手がキンキンに冷えることもありません。
+
+唯一の問題がページめくりです。ページめくりのために手を動かさなければならないのです。なんということでしょう。じっとして本を読みたいのに。音声とかで操作できないもんかなと思って調べてみましたがなさそう。
+
+仕方なく、ページめくりのたびに手を布団から出して、[Kindle](http://d.hatena.ne.jp/keyword/Kindle)をタッチして[伊藤計劃](http://d.hatena.ne.jp/keyword/%B0%CB%C6%A3%B7%D7%B3%C4)「[虐殺器官](http://d.hatena.ne.jp/keyword/%B5%D4%BB%A6%B4%EF%B4%B1)」を読み終えました。
+
+今までは手が冷えて読んでいてもあまり文句はなかったのに一気に便利になった瞬間、一瞬のページめくりも嫌になるんですね。（流石に怠慢すぎるか？）
+
+この調子で世界が便利になって言ったら、怠慢は比例的に増えてしまうかもしれませんね。
+
+ナニワトモアレ[Kindle](http://d.hatena.ne.jp/keyword/Kindle)大満足です。
+
+
+
+<div class="krb-amzlt-box" style="margin-bottom:0px;"><div class="krb-amzlt-image" style="float:left;margin:0px 12px 1px 0px;"><a href="https://www.amazon.co.jp/dp/4150309841?tag=peipeipe-22"><img width="160px" src="https://images-na.ssl-images-amazon.com/images/P/4150309841.09.LZZZZZZZ"></a></div><div class="krb-amzlt-info" style="line-height:120%; margin-bottom: 10px"><div class="krb-amzlt-name" style="margin-bottom:10px;line-height:120%"><a href="https://www.amazon.co.jp/dp/4150309841?tag=peipeipe-22" name="amazletlink" target="_blank" rel="nofollow" rel="nofollow">虐殺器官 (ハヤカワ文庫JA)</a></div><div class="krb-amzlt-detail"></div><div class="krb-amzlt-sub-info" style="float: left;"><div class="krb-amzlt-link" style="margin-top: 5px"><a href="https://www.amazon.co.jp/dp/4150309841?tag=peipeipe-22" name="amazletlink" target="_blank" rel="nofollow" rel="nofollow">Amazon.co.jpで詳細を見る</a></div></div></div><div class="krb-amzlt-footer" style="clear: left"></div></div>
+
+posted with [amazlet](http://www.amazlet.com/ "amazlet") at 15.12.05
+
+
+
+[伊藤 計劃](http://d.hatena.ne.jp/keyword/%B0%CB%C6%A3%20%B7%D7%B3%C4)  
+[早川書房](http://d.hatena.ne.jp/keyword/%C1%E1%C0%EE%BD%F1%CB%BC)  
+売り上げランキング: 2,243  

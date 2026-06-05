@@ -1,0 +1,21 @@
+---
+
+title: ボンバーマン
+slug: "bomberman"
+permalink: /2015-03-13-bomberman/
+id: 269
+date: '2015-03-13 16:10:46'
+layout: post
+categories:
+  - game
+---
+
+[ボンバーマン](http://d.hatena.ne.jp/keyword/%A5%DC%A5%F3%A5%D0%A1%BC%A5%DE%A5%F3)を友人宅でずっとやったのでメモ（？）
+
+ほんとにずっとやってました。
+
+[ボンバーマン](http://d.hatena.ne.jp/keyword/%A5%DC%A5%F3%A5%D0%A1%BC%A5%DE%A5%F3)カートといういかにも[クソゲー](http://d.hatena.ne.jp/keyword/%A5%AF%A5%BD%A5%B2%A1%BC)臭の漂う感じのゲームに[ミニゲーム](http://d.hatena.ne.jp/keyword/%A5%DF%A5%CB%A5%B2%A1%BC%A5%E0)として入ってました
+
+![](https://cdn-ak.f.st-hatena.com/images/fotolife/p/peipeipe/20190630/20190630170607.webp)
+
+対戦数が98/99なのがポイント。2時から5時までずっとボンバー。BGMが耳から離れません。

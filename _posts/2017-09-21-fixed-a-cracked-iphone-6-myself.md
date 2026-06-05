@@ -1,0 +1,63 @@
+---
+
+title: iPhone6が割れたので自分で修理
+slug: "fixed-a-cracked-iphone-6-myself"
+permalink: /2017-09-21-fixed-a-cracked-iphone-6-myself/
+id: 111
+date: '2017-09-21 11:50:31'
+layout: post
+categories:
+  - Apple
+  - モニター
+  - Gadget
+  - iPhone
+  - iPhone6
+  - 分解
+---
+
+タイトルまんま。
+
+[Amazon](http://d.hatena.ne.jp/keyword/Amazon)で適当に売ってるパネルを付ける。
+
+![image](https://cdn-ak.f.st-hatena.com/images/fotolife/p/peipeipe/20190630/20190630170535.webp)
+
+右が割れた[iPhone](http://d.hatena.ne.jp/keyword/iPhone)。左が買ったパネル。箱だけは立派。お値段¥2800
+
+なんとなく白。
+
+![image](https://cdn-ak.f.st-hatena.com/images/fotolife/p/peipeipe/20190630/20190630165908.webp)
+
+裏はこんなん。
+
+![image](https://cdn-ak.f.st-hatena.com/images/fotolife/p/peipeipe/20190630/20190630170129.webp)
+
+[バッテリィの時](http://peipeipe.com/post/155384600387/)と同じようにゴリゴリっと分解する。
+
+![image](https://cdn-ak.f.st-hatena.com/images/fotolife/p/peipeipe/20190630/20190630165855.webp)
+
+はい元通り。色味は若干違うかも。ほとんど気がつかないレベル。
+
+![image](https://cdn-ak.f.st-hatena.com/images/fotolife/p/peipeipe/20190630/20190630171347.webp)
+
+気になるのは分厚さ。0.5mmくらい分厚い。
+
+結構細かい所があったので初見殺しかも。
+
+これでバッテリィもモニターも純正じゃなくなっちゃった。
+
+でも大切なのは中身だから♡
+
+最近はぐんぐん[スマホ](http://d.hatena.ne.jp/keyword/%A5%B9%A5%DE%A5%DB)の操作時間が減っている。
+
+ランニングは今日で9月145km目。200km目指してます。
+
+
+
+<div class="krb-amzlt-box" style="margin-bottom:0px;"><div class="krb-amzlt-image" style="float:left;margin:0px 12px 1px 0px;"><a href="https://www.amazon.co.jp/dp/B00WHW6SY6?tag=peipeipe-22"><img width="160px" src="https://images-na.ssl-images-amazon.com/images/P/B00WHW6SY6.09.LZZZZZZZ"></a></div><div class="krb-amzlt-info" style="line-height:120%; margin-bottom: 10px"><div class="krb-amzlt-name" style="margin-bottom:10px;line-height:120%"><a href="https://www.amazon.co.jp/dp/B00WHW6SY6?tag=peipeipe-22" name="amazletlink" target="_blank" rel="nofollow" rel="nofollow">Flylinktech iPhone6 修理用フロントパネルセット 修理工具付属 (ホワイト)</a></div><div class="krb-amzlt-detail"></div><div class="krb-amzlt-sub-info" style="float: left;"><div class="krb-amzlt-link" style="margin-top: 5px"><a href="https://www.amazon.co.jp/dp/B00WHW6SY6?tag=peipeipe-22" name="amazletlink" target="_blank" rel="nofollow" rel="nofollow">Amazon.co.jpで詳細を見る</a></div></div></div><div class="krb-amzlt-footer" style="clear: left"></div></div>
+
+posted with [amazlet](http://www.amazlet.com/ "amazlet") at 17.09.21
+
+
+
+  
+売り上げランキング: 4,063  

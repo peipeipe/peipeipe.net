@@ -1,0 +1,49 @@
+---
+
+title: iPhoneはゼンマイ式
+slug: "iphone-is-clockwork"
+permalink: /2016-05-22-iphone-is-clockwork/
+id: 182
+date: '2016-05-22 13:36:46'
+layout: post
+categories:
+  - Gadget
+  - iPhone
+---
+iPhoneについてたバンカーリング(右)が一回取れたら取れやすくなってしまったので似たようなiRingという製品を買いました(真ん中)。
+
+　　
+![](https://cdn-ak.f.st-hatena.com/images/fotolife/p/peipeipe/20190630/20190630171730.webp)
+
+
+
+
+
+<div class="krb-amzlt-box" style="margin-bottom:0px;"><div class="krb-amzlt-image" style="float:left;margin:0px 12px 1px 0px;"><a href="https://www.amazon.co.jp/dp/B019DDUV44?tag=peipeipe-22"><img width="160px" src="https://images-na.ssl-images-amazon.com/images/P/B019DDUV44.09.LZZZZZZZ"></a></div><div class="krb-amzlt-info" style="line-height:120%; margin-bottom: 10px"><div class="krb-amzlt-name" style="margin-bottom:10px;line-height:120%"><a href="https://www.amazon.co.jp/dp/B019DDUV44?tag=peipeipe-22" name="amazletlink" target="_blank" rel="nofollow" rel="nofollow">iRing (全20色) iPhone スマホ タブレット用 スマホリング 落下防止 スマホスタンド 車載ホルダー にもなる フック付き (ローズゴールド)</a></div><div class="krb-amzlt-detail"></div><div class="krb-amzlt-sub-info" style="float: left;"><div class="krb-amzlt-link" style="margin-top: 5px"><a href="https://www.amazon.co.jp/dp/B019DDUV44?tag=peipeipe-22" name="amazletlink" target="_blank" rel="nofollow" rel="nofollow">Amazon.co.jpで詳細を見る</a></div></div></div><div class="krb-amzlt-footer" style="clear: left"></div></div>
+
+posted with [amazlet](http://www.amazlet.com/ "amazlet") at 16.05.22
+
+
+
+スリー・アールシステム  
+売り上げランキング: 8,486  
+
+
+
+
+
+
+
+
+
+
+
+バン[カーリング](http://d.hatena.ne.jp/keyword/%A5%AB%A1%BC%A5%EA%A5%F3%A5%B0)は使ってない[iPod touch](http://d.hatena.ne.jp/keyword/iPod%20touch)に適当に付けた。
+
+偽物がいっぱいあるみたいです。
+
+バン[カーリング](http://d.hatena.ne.jp/keyword/%A5%AB%A1%BC%A5%EA%A5%F3%A5%B0)と使い勝手は同じですが新しいので回るところが固い。
+
+車につけられるパーツ(左)がついてきました。うちの車にそんなスペースあったかなぁ。
+
+まぁ便利です。

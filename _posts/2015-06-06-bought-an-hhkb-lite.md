@@ -1,0 +1,60 @@
+---
+
+title: HHKB Liteを買った
+slug: "bought-an-hhkb-lite"
+permalink: /2015-06-06-bought-an-hhkb-lite/
+id: 245
+date: '2015-06-06 07:40:21'
+layout: post
+categories:
+  - キーボード
+  - Gadget
+  - Mac
+---
+結構前。１ヶ月前くらいに買いました。
+
+
+
+![image](https://cdn-ak.f.st-hatena.com/images/fotolife/p/peipeipe/20190630/20190630172352.webp)
+
+結構前。１ヶ月前くらいに買いました。
+
+短い文書だとうす～いキーボードでも全然いいんだけど、長い文章になると疲れるし遅いので買いました。
+
+Liteなのでそこまで超打ちやすいってわけじゃないけどやっぱり薄いキーボードよりいいよね。これでレポート書くのも早くなるはず？
+
+いつかは[HHK](http://d.hatena.ne.jp/keyword/HHK) proが欲しいものです。
+
+Lite fo [Mac](http://d.hatena.ne.jp/keyword/Mac)もあったけどプリントが違うだけでドライバ入れれば何ら変わりはないらしいので汚れが目立たない普通の[HHK](http://d.hatena.ne.jp/keyword/HHK) Liteにしました。
+
+
+
+<div class="krb-amzlt-box" style="margin-bottom:0px;"><div class="krb-amzlt-image" style="float:left;margin:0px 12px 1px 0px;"><a href="https://www.amazon.co.jp/dp/B0000U1DJ2?tag=peipeipe-22"><img width="160px" src="https://images-na.ssl-images-amazon.com/images/P/B0000U1DJ2.09.LZZZZZZZ"></a></div><div class="krb-amzlt-info" style="line-height:120%; margin-bottom: 10px"><div class="krb-amzlt-name" style="margin-bottom:10px;line-height:120%"><a href="https://www.amazon.co.jp/dp/B0000U1DJ2?tag=peipeipe-22" name="amazletlink" target="_blank" rel="nofollow" rel="nofollow">PFU Happy Hacking Keyboard Lite2 英語配列 USBキーボード ブラック PD-KB200B/U</a></div><div class="krb-amzlt-detail"></div><div class="krb-amzlt-sub-info" style="float: left;"><div class="krb-amzlt-link" style="margin-top: 5px"><a href="https://www.amazon.co.jp/dp/B0000U1DJ2?tag=peipeipe-22" name="amazletlink" target="_blank" rel="nofollow" rel="nofollow">Amazon.co.jpで詳細を見る</a></div></div></div><div class="krb-amzlt-footer" style="clear: left"></div></div>
+
+posted with [amazlet](http://www.amazlet.com/ "amazlet") at 15.06.10
+
+
+
+[PFU](http://d.hatena.ne.jp/keyword/PFU) (2001-08-01)  
+売り上げランキング: 9,410  
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="krb-amzlt-box" style="margin-bottom:0px;"><div class="krb-amzlt-image" style="float:left;margin:0px 12px 1px 0px;"><a href="https://www.amazon.co.jp/dp/B000MTELL8?tag=peipeipe-22"><img width="160px" src="https://images-na.ssl-images-amazon.com/images/P/B000MTELL8.09.LZZZZZZZ"></a></div><div class="krb-amzlt-info" style="line-height:120%; margin-bottom: 10px"><div class="krb-amzlt-name" style="margin-bottom:10px;line-height:120%"><a href="https://www.amazon.co.jp/dp/B000MTELL8?tag=peipeipe-22" name="amazletlink" target="_blank" rel="nofollow" rel="nofollow">PFU Happy Hacking Keyboard Lite2 for Mac 英語配列 USBキーボード Mac専用モデル ホワイト PD-KB200MA</a></div><div class="krb-amzlt-detail"></div><div class="krb-amzlt-sub-info" style="float: left;"><div class="krb-amzlt-link" style="margin-top: 5px"><a href="https://www.amazon.co.jp/dp/B000MTELL8?tag=peipeipe-22" name="amazletlink" target="_blank" rel="nofollow" rel="nofollow">Amazon.co.jpで詳細を見る</a></div></div></div><div class="krb-amzlt-footer" style="clear: left"></div></div>
+
+posted with [amazlet](http://www.amazlet.com/ "amazlet") at 15.06.10
+
+
+
+[PFU](http://d.hatena.ne.jp/keyword/PFU) (2007-01-24)  
+売り上げランキング: 7,046  

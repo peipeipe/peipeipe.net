@@ -1,0 +1,26 @@
+---
+
+title: 冷蔵庫の中に100%オレンジを
+slug: "put-100-percent-orange-in-the-fridge"
+permalink: /2018-02-25-put-100-percent-orange-in-the-fridge/
+id: 89
+date: '2018-02-25 14:10:21'
+layout: post
+categories:
+  - 食べ物
+  - 日記
+---
+ 美味しい飲み物はいっぱいある。
+
+   
+![](https://cdn-ak.f.st-hatena.com/images/fotolife/p/peipeipe/20190630/20190630172244.webp)
+
+美味しい飲み物はいっぱいある。
+
+コーヒーは美味しい。一日三杯くらいにしておこうと思っているし、あまり夜中には飲めない。
+
+[コカ・コーラ](http://d.hatena.ne.jp/keyword/%A5%B3%A5%AB%A1%A6%A5%B3%A1%BC%A5%E9)も好きだ。量が多いのでちっちゃい缶のが好きかな。
+
+ランニング、筋トレを初めて身にしみたのが食べ物の重要性だったりする。
+
+なんとなく気分の良い日、なんとなく気分の悪い日の違いはただ、体にいい食べ物を食べている日と、体に悪い食べ物を食べている日だったりする。

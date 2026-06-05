@@ -1,0 +1,73 @@
+---
+
+title: 鉄塔の模型
+slug: "transmission-tower-model"
+permalink: /2017-01-18-transmission-tower-model/
+id: 150
+date: '2017-01-18 08:16:34'
+layout: post
+categories:
+  - プラモデル
+  - 鉄塔
+  - 買った
+  - photo
+  - 模型
+---
+
+鉄塔が好きです。
+
+大きいのも好きだし、小さいのもなんか良い。
+
+変電所とかも好き。
+
+よく写真を撮ります。
+
+![](https://cdn-ak.f.st-hatena.com/images/fotolife/p/peipeipe/20190630/20190630172804.webp)
+
+![](https://cdn-ak.f.st-hatena.com/images/fotolife/p/peipeipe/20190630/20190630171636.webp)
+
+![](https://cdn-ak.f.st-hatena.com/images/fotolife/p/peipeipe/20190630/20190630170038.webp)
+
+![](https://cdn-ak.f.st-hatena.com/images/fotolife/p/peipeipe/20190630/20190630170948.webp)
+
+![](https://cdn-ak.f.st-hatena.com/images/fotolife/p/peipeipe/20190630/20190630170144.webp)
+
+![](https://cdn-ak.f.st-hatena.com/images/fotolife/p/peipeipe/20190630/20190630171037.webp)
+
+![](https://cdn-ak.f.st-hatena.com/images/fotolife/p/peipeipe/20190630/20190630172710.webp)
+
+夜に撮るといいんですよね。鉄塔で街の明かりが反射する[コントラ](http://d.hatena.ne.jp/keyword/%A5%B3%A5%F3%A5%C8%A5%E9)ストが好きなんだと思います。
+
+鉄塔の模型を買ってみました。
+<div class="krb-amzlt-box" style="margin-bottom:0px;"><div class="krb-amzlt-image" style="float:left;margin:0px 12px 1px 0px;"><a href="https://www.amazon.co.jp/dp/B00BQQZZ2K?tag=peipeipe-22"><img width="160px" src="https://images-na.ssl-images-amazon.com/images/P/B00BQQZZ2K.09.LZZZZZZZ"></a></div><div class="krb-amzlt-info" style="line-height:120%; margin-bottom: 10px"><div class="krb-amzlt-name" style="margin-bottom:10px;line-height:120%"><a href="https://www.amazon.co.jp/dp/B00BQQZZ2K?tag=peipeipe-22" name="amazletlink" target="_blank" rel="nofollow" rel="nofollow">情景コレクション 情景小物084-2 送電鉄塔A2</a></div><div class="krb-amzlt-detail"></div><div class="krb-amzlt-sub-info" style="float: left;"><div class="krb-amzlt-link" style="margin-top: 5px"><a href="https://www.amazon.co.jp/dp/B00BQQZZ2K?tag=peipeipe-22" name="amazletlink" target="_blank" rel="nofollow" rel="nofollow">Amazon.co.jpで詳細を見る</a></div></div></div><div class="krb-amzlt-footer" style="clear: left"></div></div>
+
+posted with [amazlet](http://www.amazlet.com/ "amazlet") at 17.01.18
+
+
+
+[トミーテック](http://d.hatena.ne.jp/keyword/%A5%C8%A5%DF%A1%BC%A5%C6%A5%C3%A5%AF)  
+売り上げランキング: 107,855  
+
+
+
+
+
+
+
+
+
+
+
+[Nゲージ](http://d.hatena.ne.jp/keyword/N%A5%B2%A1%BC%A5%B8)用のものでなかなか良くできてます。
+
+![](https://cdn-ak.f.st-hatena.com/images/fotolife/p/peipeipe/20190630/20190630172412.webp)
+
+何箇所か接着が必要ですが、うまく出来ました。
+
+![](https://cdn-ak.f.st-hatena.com/images/fotolife/p/peipeipe/20190630/20190630171656.webp)
+
+![](https://cdn-ak.f.st-hatena.com/images/fotolife/p/peipeipe/20190630/20190630172007.webp)
+
+![](https://cdn-ak.f.st-hatena.com/images/fotolife/p/peipeipe/20190630/20190630172525.webp)
+
+もう一個赤白鉄塔じゃないやつもあるのでそっちも買ってみようかしらん。

@@ -11,6 +11,13 @@ from pathlib import Path
 # Add scripts directory to path
 sys.path.insert(0, str(Path(__file__).parent))
 
+from enhance_amazon_links import (
+    extract_asin,
+    find_simple_amazon_links,
+    remove_duplicate_generic_amazon_cards,
+    remove_legacy_image_links_before_cards,
+)
+
 
 def test_asin_extraction():
     """Test ASIN extraction from various URL formats."""
@@ -23,28 +30,14 @@ def test_asin_extraction():
         ('https://www.amazon.co.jp/dp/B084MCR9KG', 'B084MCR9KG'),
         ('https://www.amazon.co.jp/dp/B084MCR9KG?linkCode=li2&tag=peipeipe-22', 'B084MCR9KG'),
         ('https://www.amazon.co.jp/gp/product/B09NVKTTM5', 'B09NVKTTM5'),
-    ]
-    
-    patterns = [
-        r'https?://(?:www\.)?amazon\.co\.jp/(?:exec/obidos/ASIN/|dp/|gp/product/)([A-Z0-9]{10})',
-        r'https?://(?:www\.)?amazon\.co\.jp/[^/]+/dp/([A-Z0-9]{10})',
+        ('http://www.amazon.co.jp/exec/obidos/asin/415209656X/peipeipe-22/', '415209656X'),
     ]
     
     passed = 0
     failed = 0
     
     for url, expected_asin in test_cases:
-        extracted = None
-        for pattern in patterns:
-            match = re.search(pattern, url)
-            if match and len(match.groups()) > 0:
-                extracted = match.group(1)
-                break
-        
-        if not extracted:
-            match = re.search(r'/(?:dp|gp/product)/([A-Z0-9]{10})', url)
-            if match:
-                extracted = match.group(1)
+        extracted = extract_asin(url)
         
         if extracted == expected_asin:
             print(f"✓ PASS: {url[:50]}...")
@@ -74,6 +67,12 @@ Simple markdown links (should be found):
 [Product 1](https://www.amazon.co.jp/dp/B084MCR9KG)
 [Product 2](http://www.amazon.co.jp/exec/obidos/ASIN/4062737388/peipeipe-22/ref=nosim/)
 
+Generic helper link (should be skipped):
+[Amazon](http://www.amazon.co.jp/exec/obidos/ASIN/4105430017/peipeipe-22/)
+
+Legacy image link (should be skipped):
+[![Product 3](https://m.media-amazon.com/images/I/product.jpg "Product 3")](https://www.amazon.co.jp/exec/obidos/ASIN/4105430017/peipeipe-22/)
+
 Complex widget (should be skipped):
 <div class="krb-amzlt-box">
   <a href="https://amzn.to/3VFbQSJ">Product</a>
@@ -94,15 +93,15 @@ Already enhanced (should be skipped):
     
     # Test 2: Markdown link detection
     print("\nTest 2: Markdown link detection")
-    md_link_pattern = r'\[([^\]]+)\]\((https?://(?:www\.)?(?:amazon\.co\.jp|amzn\.to)[^\s\)]+)\)'
-    matches = list(re.finditer(md_link_pattern, test_content))
+    matches = find_simple_amazon_links(test_content)
     
     if len(matches) == 2:
         print(f"✓ PASS: Found {len(matches)} markdown links")
-        for i, match in enumerate(matches, 1):
-            print(f"  Link {i}: {match.group(1)}")
+        for i, (_, link_text, _) in enumerate(matches, 1):
+            print(f"  Link {i}: {link_text}")
     else:
         print(f"✗ FAIL: Expected 2 markdown links, found {len(matches)}")
+        return False
     
     # Test 3: Skip already enhanced content
     print("\nTest 3: Skip already enhanced content")
@@ -112,6 +111,80 @@ Already enhanced (should be skipped):
     else:
         print("✗ FAIL: Did not detect existing rich content")
     
+    print()
+    return True
+
+
+def test_duplicate_generic_card_cleanup():
+    """Test cleanup of cards created from generic [Amazon](...) helper links."""
+    print("=" * 60)
+    print("Testing Duplicate Generic Card Cleanup")
+    print("=" * 60)
+
+    content = """<div class="krb-amzlt-box" style="margin-bottom:0px;"><div class="krb-amzlt-image"><a href="https://www.amazon.co.jp/dp/415209656X?tag=peipeipe-22"><img src="https://images-na.ssl-images-amazon.com/images/P/415209656X.09.LZZZZZZZ"></a></div><div class="krb-amzlt-info"><div class="krb-amzlt-name"><a href="https://www.amazon.co.jp/dp/415209656X?tag=peipeipe-22">プレイバック</a></div><div class="krb-amzlt-detail"></div></div></div>
+<div class="krb-amzlt-box" style="margin-bottom:0px;"><div class="krb-amzlt-image"><a href="https://www.amazon.co.jp/dp/415209656X?tag=peipeipe-22"><img src="https://images-na.ssl-images-amazon.com/images/P/415209656X.09.LZZZZZZZ"></a></div><div class="krb-amzlt-info"><div class="krb-amzlt-name"><a href="https://www.amazon.co.jp/dp/415209656X?tag=peipeipe-22">Amazon</a></div><div class="krb-amzlt-detail"></div></div></div>
+"""
+
+    cleaned, removed_count = remove_duplicate_generic_amazon_cards(content)
+
+    if removed_count != 1:
+        print(f"✗ FAIL: Expected 1 removed card, got {removed_count}")
+        return False
+
+    if ">Amazon</a></div><div class=\"krb-amzlt-detail\"" in cleaned:
+        print("✗ FAIL: Generic duplicate card was not removed")
+        return False
+
+    if "プレイバック" not in cleaned:
+        print("✗ FAIL: Product card was removed")
+        return False
+
+    print("✓ PASS: Removed generic duplicate card only")
+    print()
+    return True
+
+
+def test_legacy_image_link_cleanup():
+    """Test cleanup of duplicated old Hatena image links."""
+    print("=" * 60)
+    print("Testing Legacy Image Link Cleanup")
+    print("=" * 60)
+
+    content = """Before
+
+[![我が父サリンジャー](https://m.media-amazon.com/images/I/41JAX769Y1L._SL300_.jpg "我が父サリンジャー")](https://www.amazon.co.jp/exec/obidos/ASIN/4105430017/peipeipe-22/)
+
+
+<div class="krb-amzlt-box" style="margin-bottom:0px;"><div class="krb-amzlt-image"><a href="https://www.amazon.co.jp/dp/4105430017?tag=peipeipe-22"><img src="https://images-na.ssl-images-amazon.com/images/P/4105430017.09.LZZZZZZZ"></a></div></div>
+
+ [![](https://cdn-ak.f.st-hatena.com/images/fotolife/p/peipeipe/20190630/20190630171113.webp)](http://www.amazon.co.jp/exec/obidos/asin/415209656X/peipeipe-22/)
+
+<div class="krb-amzlt-box" style="margin-bottom:0px;"><div class="krb-amzlt-image"><a href="https://www.amazon.co.jp/dp/415209656X?tag=peipeipe-22"><img src="https://images-na.ssl-images-amazon.com/images/P/415209656X.09.LZZZZZZZ"></a></div></div>
+
+[![Different product](https://example.com/image.jpg)](https://www.amazon.co.jp/exec/obidos/ASIN/B000000000/peipeipe-22/)
+
+After
+"""
+
+    cleaned, removed_count = remove_legacy_image_links_before_cards(content)
+
+    if removed_count != 2:
+        print(f"✗ FAIL: Expected 2 removed links, got {removed_count}")
+        return False
+
+    if "我が父サリンジャー" in cleaned:
+        print("✗ FAIL: Duplicate legacy image link was not removed")
+        return False
+
+    if "20190630171113.webp" in cleaned:
+        print("✗ FAIL: Lowercase /asin/ legacy image link was not removed")
+        return False
+
+    if "Different product" not in cleaned:
+        print("✗ FAIL: Non-duplicated legacy image link was removed")
+        return False
+
+    print("✓ PASS: Removed only the duplicated legacy image link")
     print()
     return True
 
@@ -185,6 +258,8 @@ def main():
     
     results.append(("ASIN Extraction", test_asin_extraction()))
     results.append(("Link Detection", test_link_detection()))
+    results.append(("Legacy Image Cleanup", test_legacy_image_link_cleanup()))
+    results.append(("Duplicate Generic Card Cleanup", test_duplicate_generic_card_cleanup()))
     results.append(("HTML Escaping", test_html_escaping()))
     results.append(("File Discovery", test_markdown_files()))
     

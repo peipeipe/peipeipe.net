@@ -23,13 +23,22 @@ from pathlib import Path
 from typing import Optional, List, Tuple
 
 PARTNER_TAG = os.environ.get('AMAZON_PARTNER_TAG', 'peipeipe-22')
+GENERIC_AMAZON_LINK_TEXTS = {'Amazon', 'Amazon.co.jpで詳細を見る'}
 
 # Regex patterns to extract ASIN from full Amazon URLs
 AMAZON_ASIN_PATTERNS = [
-    r'https?://(?:www\.)?amazon\.co\.jp/(?:exec/obidos/ASIN/|dp/|gp/product/)([A-Z0-9]{10})',
+    r'https?://(?:www\.)?amazon\.co\.jp/(?:exec/obidos/(?:ASIN|asin)/|dp/|gp/product/)([A-Z0-9]{10})',
     r'https?://(?:www\.)?amazon\.co\.jp/[^/\s]+/dp/([A-Z0-9]{10})',
     r'/(?:dp|gp/product)/([A-Z0-9]{10})',
 ]
+
+LEGACY_IMAGE_LINK_BEFORE_CARD_PATTERN = re.compile(
+    r'(?m)^\s*\[!\[[^\]\n]*\]\([^\n]*\)\]\('
+    r'https?://(?:www\.)?amazon\.co\.jp/exec/obidos/(?:ASIN|asin)/([A-Z0-9]{10})/?[^\)\n]*'
+    r'\)[ \t]*\n+'
+    r'(?=<div class="krb-amzlt-box"[^\n]*(?:/dp/\1|/P/\1\.))',
+    re.IGNORECASE,
+)
 
 
 def resolve_short_url(url: str) -> Optional[str]:
@@ -53,9 +62,9 @@ def extract_asin(url: str) -> Optional[str]:
             target_url = resolved
 
     for pattern in AMAZON_ASIN_PATTERNS:
-        match = re.search(pattern, target_url)
+        match = re.search(pattern, target_url, re.IGNORECASE)
         if match:
-            return match.group(1)
+            return match.group(1).upper()
 
     return None
 
@@ -104,17 +113,55 @@ def find_simple_amazon_links(content: str) -> List[Tuple[str, str, str]]:
     """
     links = []
     pattern = re.compile(
-        r'\[([^\]]+)\]\((https?://(?:www\.)?(?:amazon\.co\.jp|amzn\.to)[^\s\)]*)\)'
+        r'(?<!!)\[([^\]]+)\]\((https?://(?:www\.)?(?:amazon\.co\.jp|amzn\.to)[^\s\)]*)\)'
     )
     for match in pattern.finditer(content):
+        link_text = match.group(1).strip()
+        if link_text in GENERIC_AMAZON_LINK_TEXTS:
+            continue
         # Check the 300 chars before this match for an open widget div
         start = max(0, match.start() - 300)
         context = content[start:match.start()]
         if 'krb-amzlt-box' in context or 'amazon-product-card' in context:
             continue
-        links.append((match.group(0), match.group(1), match.group(2)))
+        links.append((match.group(0), link_text, match.group(2)))
 
     return links
+
+
+def remove_legacy_image_links_before_cards(content: str) -> Tuple[str, int]:
+    """Remove old Hatena image Amazon links when a rich card already follows."""
+    new_content, removed_count = LEGACY_IMAGE_LINK_BEFORE_CARD_PATTERN.subn('', content)
+    return new_content, removed_count
+
+
+def remove_duplicate_generic_amazon_cards(content: str) -> Tuple[str, int]:
+    """Remove cards created from generic old [Amazon](...) helper links."""
+    lines = content.splitlines(keepends=True)
+    seen_asins: set = set()
+    kept_lines = []
+    removed_count = 0
+
+    for line in lines:
+        if '<div class="krb-amzlt-box"' not in line:
+            kept_lines.append(line)
+            continue
+
+        asins = set(re.findall(r'(?:/dp/|/P/)([A-Z0-9]{10})', line, re.IGNORECASE))
+        normalized_asins = {asin.upper() for asin in asins}
+        is_generic_card = any(
+            f'>{text}</a></div><div class="krb-amzlt-detail"' in line
+            for text in GENERIC_AMAZON_LINK_TEXTS
+        )
+
+        if is_generic_card and normalized_asins & seen_asins:
+            removed_count += 1
+            continue
+
+        seen_asins.update(normalized_asins)
+        kept_lines.append(line)
+
+    return ''.join(kept_lines), removed_count
 
 
 def process_file(file_path: Path) -> bool:
@@ -128,15 +175,32 @@ def process_file(file_path: Path) -> bool:
         print(f"Error reading {file_path}: {e}", file=sys.stderr)
         return False
 
-    links = find_simple_amazon_links(content)
+    new_content, removed_legacy_count = remove_legacy_image_links_before_cards(content)
+    new_content, removed_generic_card_count = remove_duplicate_generic_amazon_cards(new_content)
+    links = find_simple_amazon_links(new_content)
     if not links:
+        if removed_legacy_count or removed_generic_card_count:
+            try:
+                file_path.write_text(new_content, encoding='utf-8')
+                print(
+                    f"Cleaned {file_path.name} — removed "
+                    f"{removed_legacy_count} legacy image link(s), "
+                    f"{removed_generic_card_count} generic duplicate card(s)"
+                )
+            except Exception as e:
+                print(f"Error writing {file_path}: {e}", file=sys.stderr)
+                return False
+            return True
         return False
 
     print(f"Processing {file_path.name} — {len(links)} link(s) found")
+    if removed_legacy_count:
+        print(f"  Removed {removed_legacy_count} legacy image link(s)")
+    if removed_generic_card_count:
+        print(f"  Removed {removed_generic_card_count} generic duplicate card(s)")
 
-    new_content = content
     processed_asins: set = set()
-    modified = False
+    modified = removed_legacy_count > 0 or removed_generic_card_count > 0
 
     for full_match, link_text, url in links:
         asin = extract_asin(url)
@@ -156,6 +220,12 @@ def process_file(file_path: Path) -> bool:
         print(f"  ✓ {link_text[:60]}")
 
     if modified:
+        new_content, additional_removed_count = remove_legacy_image_links_before_cards(new_content)
+        if additional_removed_count:
+            print(f"  Removed {additional_removed_count} legacy image link(s)")
+        new_content, additional_generic_card_count = remove_duplicate_generic_amazon_cards(new_content)
+        if additional_generic_card_count:
+            print(f"  Removed {additional_generic_card_count} generic duplicate card(s)")
         try:
             file_path.write_text(new_content, encoding='utf-8')
             print(f"  Saved {file_path.name}")

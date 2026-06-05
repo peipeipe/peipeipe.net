@@ -1,0 +1,74 @@
+---
+
+title: Garmin 520jを買った。
+slug: "bought-a-garmin-520j"
+permalink: /2017-08-21-bought-a-garmin-520j/
+id: 117
+date: '2017-08-21 12:03:44'
+layout: post
+categories:
+  - 520j
+  - ガーミン
+  - チャリ
+  - ロードバイク
+  - 自転車
+  - GARMIN
+---
+
+高級[サイクルコンピュータ](http://d.hatena.ne.jp/keyword/%A5%B5%A5%A4%A5%AF%A5%EB%A5%B3%A5%F3%A5%D4%A5%E5%A1%BC%A5%BF)です。
+
+これ一台で高級ママチャリ、激安[クロスバイク](http://d.hatena.ne.jp/keyword/%A5%AF%A5%ED%A5%B9%A5%D0%A5%A4%A5%AF)が買えるくらい高い。
+
+がんばった。
+
+一週間使ってみてこれは楽しい。
+
+スピード、[ケイデンス](http://d.hatena.ne.jp/keyword/%A5%B1%A5%A4%A5%C7%A5%F3%A5%B9)はもちろん、高度、気温、カロリィ、心拍全部一個の画面で見れます。
+
+![image](https://cdn-ak.f.st-hatena.com/images/fotolife/p/peipeipe/20190630/20190630171737.webp)
+
+これは、[エヴァ](http://d.hatena.ne.jp/keyword/%A5%A8%A5%F4%A5%A1)の[コクピット](http://d.hatena.ne.jp/keyword/%A5%B3%A5%AF%A5%D4%A5%C3%A5%C8)、[ガンダム](http://d.hatena.ne.jp/keyword/%A5%AC%A5%F3%A5%C0%A5%E0)の[コクピット](http://d.hatena.ne.jp/keyword/%A5%B3%A5%AF%A5%D4%A5%C3%A5%C8)と同じですよ！！
+
+![image](https://cdn-ak.f.st-hatena.com/images/fotolife/p/peipeipe/20190630/20190630171846.webp)
+
+![image](https://cdn-ak.f.st-hatena.com/images/fotolife/p/peipeipe/20190630/20190630170646.webp)
+
+サイコンの[スクリーンショット](http://d.hatena.ne.jp/keyword/%A5%B9%A5%AF%A5%EA%A1%BC%A5%F3%A5%B7%A5%E7%A5%C3%A5%C8)の左下の最大心拍％なんてほぼシンクロ率だからね。100％に近づくほど速度あがる。0%は死亡。
+
+ナビ機能
+
+![image](https://cdn-ak.f.st-hatena.com/images/fotolife/p/peipeipe/20190630/20190630165939.webp)
+
+バーチャルトレーナ
+
+![image](https://cdn-ak.f.st-hatena.com/images/fotolife/p/peipeipe/20190630/20190630171551.webp)
+
+高度
+
+![](https://cdn-ak.f.st-hatena.com/images/fotolife/p/peipeipe/20190630/20190630172416.webp)
+
+ボタンで切り替えられる。
+
+そして、家に帰ってきたらコースと一緒に、速度、[ケイデンス](http://d.hatena.ne.jp/keyword/%A5%B1%A5%A4%A5%C7%A5%F3%A5%B9)、温度、心拍を振り返れる。この速度上昇は下り坂だったからかぁみたいな。
+
+![](https://cdn-ak.f.st-hatena.com/images/fotolife/p/peipeipe/20190630/20190630170451.webp)
+
+今日は荒サイを通って[榎本牧場](http://d.hatena.ne.jp/keyword/%B1%DD%CB%DC%CB%D2%BE%EC)まで。だいたい80km。
+
+![](https://cdn-ak.f.st-hatena.com/images/fotolife/p/peipeipe/20190630/20190630172322.webp)
+
+![](https://cdn-ak.f.st-hatena.com/images/fotolife/p/peipeipe/20190630/20190630170119.webp)
+
+![](https://cdn-ak.f.st-hatena.com/images/fotolife/p/peipeipe/20190630/20190630170413.webp)
+
+![](https://cdn-ak.f.st-hatena.com/images/fotolife/p/peipeipe/20190630/20190630172714.webp)
+
+そして２日連続チャリはお尻にきびしい。
+<div class="krb-amzlt-box" style="margin-bottom:0px;"><div class="krb-amzlt-image" style="float:left;margin:0px 12px 1px 0px;"><a href="https://www.amazon.co.jp/dp/B015IW5SKG?tag=peipeipe-22"><img width="160px" src="https://images-na.ssl-images-amazon.com/images/P/B015IW5SKG.09.LZZZZZZZ"></a></div><div class="krb-amzlt-info" style="line-height:120%; margin-bottom: 10px"><div class="krb-amzlt-name" style="margin-bottom:10px;line-height:120%"><a href="https://www.amazon.co.jp/dp/B015IW5SKG?tag=peipeipe-22" name="amazletlink" target="_blank" rel="nofollow" rel="nofollow">GARMIN(ガーミン) Edge520J 136807</a></div><div class="krb-amzlt-detail"></div><div class="krb-amzlt-sub-info" style="float: left;"><div class="krb-amzlt-link" style="margin-top: 5px"><a href="https://www.amazon.co.jp/dp/B015IW5SKG?tag=peipeipe-22" name="amazletlink" target="_blank" rel="nofollow" rel="nofollow">Amazon.co.jpで詳細を見る</a></div></div></div><div class="krb-amzlt-footer" style="clear: left"></div></div>
+
+posted with [amazlet](http://www.amazlet.com/ "amazlet") at 17.08.21
+
+
+
+[GARMIN](http://d.hatena.ne.jp/keyword/GARMIN)(ガーミン)  
+売り上げランキング: 8,994  

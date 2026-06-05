@@ -1,0 +1,50 @@
+---
+
+title: 最近は料理
+slug: "cooking-lately"
+permalink: /2017-11-22-cooking-lately/
+id: 103
+date: '2017-11-22 12:37:45'
+layout: post
+categories:
+  - 料理
+  - 日記
+---
+
+3年の秋学期になって休日と平日が逆転したような感じで大学に行っているのでだいぶ自由な時間が増えました。
+
+なので、前からやりたかった料理を一週間に1、2回。
+
+一人暮らしの人は当たり前にやっているんだろうけど。
+
+家族分(4人分つくっている)
+
+![image](https://cdn-ak.f.st-hatena.com/images/fotolife/p/peipeipe/20190630/20190630171751.webp)
+
+一番最初に作ったのがこれでなんかくちゃくちゃしていた。
+
+副菜、味噌汁は母に作ってもらった。
+
+![image](https://cdn-ak.f.st-hatena.com/images/fotolife/p/peipeipe/20190630/20190630170804.webp)
+
+LINE cameraの『デリシャス』フィルタをかけると何でも美味しそうに見える。
+
+ドリアは味が薄かった。
+
+![image](https://cdn-ak.f.st-hatena.com/images/fotolife/p/peipeipe/20190630/20190630172451.webp)
+
+![image](https://cdn-ak.f.st-hatena.com/images/fotolife/p/peipeipe/20190630/20190630171027.webp)
+
+パスタはフライパンから溢れるほど作ってしまった。
+
+![image](https://cdn-ak.f.st-hatena.com/images/fotolife/p/peipeipe/20190630/20190630170828.webp)
+
+ピーマンの肉詰めとか味噌汁とか。味噌汁は味が濃かった。
+
+![image](https://cdn-ak.f.st-hatena.com/images/fotolife/p/peipeipe/20190630/20190630171930.webp)
+
+なんか、[コスパ](http://d.hatena.ne.jp/keyword/%A5%B3%A5%B9%A5%D1)優先で作ったやつ。
+
+[クックパッド](http://d.hatena.ne.jp/keyword/%A5%AF%A5%C3%A5%AF%A5%D1%A5%C3%A5%C9)とかクラシル(めっちゃいいアプリ)とかどおりに作ればおんなじように出来る。
+
+ランニングから帰ってきてペラっと一枚羽織って、再利用トレーと[マイバッグ](http://d.hatena.ne.jp/keyword/%A5%DE%A5%A4%A5%D0%A5%C3%A5%B0)を持って[西友](http://d.hatena.ne.jp/keyword/%C0%BE%CD%A7)に行って、メモした食材を買ってきて、料理して美味しく出来るのはなんか悪くないなって思った。

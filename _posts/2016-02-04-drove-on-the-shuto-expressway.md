@@ -1,0 +1,24 @@
+---
+
+title: 首都高速に乗った
+slug: "drove-on-the-shuto-expressway"
+permalink: /2016-02-04-drove-on-the-shuto-expressway/
+id: 203
+date: '2016-02-04 08:00:05'
+layout: post
+categories:
+  - 車
+  - 日記
+---
+
+免許取得してあと2ヶ月で1年くらいなのに乗りました。
+
+ 乗ったのは主に渋谷線。 怖いけど謎の高揚感がありますね。
+
+俺は東京を走っているんだぞという。
+
+ よく調べてみると電車よりかっこいい気もしてきました。 
+
+[首都高速都心環状線](http://d.hatena.ne.jp/keyword/%BC%F3%C5%D4%B9%E2%C2%AE%C5%D4%BF%B4%B4%C4%BE%F5%C0%FE) [八重洲](http://d.hatena.ne.jp/keyword/%C8%AC%BD%C5%BD%A7)線 分岐線 貫通線 名前がかっこいいです。
+
+ もうちょっと調べてみよっと。
