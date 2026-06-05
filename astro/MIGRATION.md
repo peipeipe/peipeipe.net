@@ -8,18 +8,25 @@ This directory is a side-by-side Astro prototype. The current Jekyll site remain
 - Cloudflare Pages project: `peipeipe-net-astro`
 - Preview URL: `https://peipeipe-net-astro.pages.dev/`
 - Preview check page: `https://peipeipe-net-astro.pages.dev/cloudflare-preview/`
-- Latest successful GitHub Actions run: `26958949223`
+- Latest successful GitHub Actions run before the master merge: `26958949223`
 - Production `https://www.peipeipe.net` is still served by the existing GitHub Pages/Jekyll workflow.
 
 The Cloudflare Pages preview deploy is working. The first deploy attempt failed because root `.gitignore` ignored `astro/package.json`; that was fixed by explicitly tracking the Astro package manifest.
+
+`master` has now been merged into `astro-migration` locally at merge commit `26c0401`, bringing in:
+
+- `2188ea2 Normalize old post slugs`
+- `bb9bce8 Add dated permalinks to old posts`
 
 Last verified locally:
 
 ```text
 Astro build: success
 Generated pages: 400
+URL manifest: 397 URLs
+Legacy invalid percent slugs: 0
 Workflow YAML parse: ok
-Cloudflare preview HTTP status: 200
+Cloudflare preview HTTP status: 200 before the local master merge
 ```
 
 ## Local Node
@@ -131,26 +138,30 @@ or run the workflow manually from GitHub Actions.
 
 ## Known URL Issue
 
-Some older post filenames contain incomplete percent-encoded Japanese slugs. Astro cannot emit invalid percent escapes, so those URLs are escaped to safe `%25...` paths for now.
+The previous incomplete percent-encoded Japanese slug issue is resolved after merging `master`.
 
 Current count:
 
 ```text
-legacy invalid percent slugs: 32
+legacy invalid percent slugs: 0
 ```
 
-Before production cutover, compare these with the current Jekyll output and decide whether to:
+The old Japanese/percent-encoded filenames were normalized to English slugs on `master`, and the old post frontmatter now has dated permalinks to preserve the intended public URLs.
 
-- add redirects from the legacy malformed paths;
-- preserve them via a custom post-build copy step;
-- or accept the normalized safe URL for those old entries.
+One follow-up URL issue remains: `_posts/2015-05-19-sightseeing-in-ashikaga-during-driving-school-camp.md` currently has a malformed multiline `permalink` value, and Astro generated:
+
+```text
+/2015-05-19-sightseeing-in-ashikaga-during-driving-school-camp/ 2015-05-19-/
+```
+
+Fix that frontmatter before production URL comparison.
 
 ## Next Work
 
 1. Compare current Jekyll output with Astro output.
    - Generate or capture a Jekyll URL manifest from the production site or from CI.
    - Compare it with `migration/astro-url-manifest.json`.
-   - Resolve the 32 legacy malformed percent slugs.
+   - Fix and verify the malformed `2015-05-19` permalink.
 
 2. Improve visual parity for the blog and diary pages.
    - Port the current header/footer styling more closely.
