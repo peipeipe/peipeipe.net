@@ -1,26 +1,33 @@
-name: Deploy Astro Preview to Cloudflare Pages
+name: Deploy Astro to Cloudflare Pages
 
 on:
   workflow_dispatch:
   push:
     branches:
       - astro-migration
+      - master
     paths:
       - "astro/**"
       - "_posts/**"
       - "_diary/**"
       - "_data/**"
       - "images/**"
+      - ".well-known/**"
+      - "favicon.ico"
+      - "places.json"
 
 permissions:
   contents: read
 
 concurrency:
-  group: cloudflare-pages-astro-preview-${{ github.ref }}
+  group: cloudflare-pages-astro-${{ github.ref }}
   cancel-in-progress: true
 
+env:
+  CLOUDFLARE_PAGES_PROJECT: peipeipe-net-astro
+
 jobs:
-  deploy-preview:
+  deploy:
     runs-on: ubuntu-latest
     defaults:
       run:
@@ -43,12 +50,17 @@ jobs:
       - name: Build Astro
         run: npm run build
 
-      - name: Create Cloudflare Pages project if needed
-        env:
-          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
-          CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+      - name: Verify generated output
         run: |
-          npx wrangler pages project create peipeipe-net-astro --production-branch astro-migration || true
+          test -f dist/index.html
+          test -f dist/feed.xml
+          test -f dist/sitemap-index.xml
+          test -f dist/diary-post/index.html
+          test -f dist/.well-known/nostr.json
+          test -f dist/favicon.ico
+          test -d dist/images
+          npm run manifest
+          npm run check:legacy-slugs
 
       - name: Deploy to Cloudflare Pages
         env:
@@ -56,7 +68,7 @@ jobs:
           CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
         run: |
           npx wrangler pages deploy dist \
-            --project-name peipeipe-net-astro \
+            --project-name "${CLOUDFLARE_PAGES_PROJECT}" \
             --branch "${GITHUB_HEAD_REF:-${GITHUB_REF_NAME}}" \
             --commit-hash "${GITHUB_SHA}" \
-            --commit-message "Astro preview ${GITHUB_SHA}"
+            --commit-message "Astro ${GITHUB_REF_NAME} ${GITHUB_SHA}"

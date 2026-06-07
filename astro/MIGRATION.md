@@ -60,8 +60,9 @@ PATH=/home/peipeipe/.local/nodejs/current/bin:$PATH npm run build
 - Builds `404.html` and `robots.txt`.
 - Builds `/activity/`, `/mountains/`, `/places/`, and `/onsen/` as wide map-focused data pages.
 - Builds `/activity-data.json`, `/mountains-data.json`, `/places-data.json`, `/places.json`, and `/onsen-data.json`.
+- Copies root static assets from `../images/`, `../.well-known/`, and `../favicon.ico` into the Astro `dist/` output during `npm run build`.
 - Builds a preview-only `/cloudflare-preview/` page.
-- Deploys the Astro prototype to Cloudflare Pages via `.github/workflows/cloudflare-pages-astro-preview.yml`.
+- Deploys the Astro site to Cloudflare Pages via `.github/workflows/cloudflare-pages-astro-preview.yml`.
 - Keeps the current Jekyll site deploy workflow untouched.
 
 Current content counts from `migration/astro-url-manifest.json`:
@@ -128,9 +129,16 @@ NODE_VERSION: 22.22.3
 
 Keep the production custom domain on GitHub Pages until URL and visual checks pass. After cutover, move the custom domain in Cloudflare Pages and remove or disable the GitHub Pages deploy workflow.
 
-### GitHub Actions Preview
+### GitHub Actions Deployment
 
-The workflow `.github/workflows/cloudflare-pages-astro-preview.yml` deploys the Astro prototype to Cloudflare Pages on pushes to `astro-migration` and via manual `workflow_dispatch`.
+The workflow `.github/workflows/cloudflare-pages-astro-preview.yml` deploys the Astro site to Cloudflare Pages on pushes to `astro-migration`, future pushes to `master`, and via manual `workflow_dispatch`.
+
+It builds Astro, copies root static assets into `dist/`, verifies key generated files, runs the Astro URL manifest and legacy slug checks, and then deploys `dist/` with Wrangler.
+
+Branch behavior:
+
+- `astro-migration`: preview deployment for migration testing.
+- `master`: production deployment after Cloudflare Pages production branch is changed to `master` during cutover.
 
 Required GitHub repository secrets:
 
@@ -154,6 +162,17 @@ git push origin astro-migration
 ```
 
 or run the workflow manually from GitHub Actions.
+
+After cutover, ordinary blog/content updates on `master` should trigger this workflow when they touch:
+
+- `astro/**`
+- `_posts/**`
+- `_diary/**`
+- `_data/**`
+- `images/**`
+- `.well-known/**`
+- `favicon.ico`
+- `places.json`
 
 ## Known URL Issue
 
@@ -196,13 +215,21 @@ The old Japanese/percent-encoded filenames were normalized to English slugs on `
    - `webhook-diary.yml`: updates `_diary/` and `images/`; Cloudflare preview path filters include both.
    - `enhance-amazon-links.yml`: updates `_posts/**/*.md`; Cloudflare preview path filters include `_posts/**`.
    - `convert-images-to-webp.yml`: updates `images/` and Markdown references; Astro serves root `images/` assets and reads posts from `_posts/`.
-   - No workflow changes needed for the preview phase. Revisit deployment workflows during production cutover.
+   - The Astro deploy workflow now also watches `master`, `places.json`, `.well-known/**`, and `favicon.ico` for cutover readiness.
 
 6. Add production cutover checklist.
-   - Tag the last Jekyll production state.
-   - Confirm Cloudflare Pages custom domain setup.
-   - Disable or replace the GitHub Pages deploy workflow only after preview checks pass.
-   - Verify `https://www.peipeipe.net`, RSS, sitemap, canonical URLs, and key old post URLs.
+   - Before cutover:
+     - Tag the last Jekyll production state.
+     - Run Astro verification and preview checks.
+     - Confirm Cloudflare Pages custom domain setup for `www.peipeipe.net` and apex handling if needed.
+     - Decide whether to keep deploying from GitHub Actions/Wrangler or switch to Cloudflare Pages Git integration.
+   - Cutover:
+     - Point the production custom domain from GitHub Pages to Cloudflare Pages.
+     - Disable or replace `.github/workflows/jekyll.yml` only after preview checks pass.
+     - Make `master`/`main` blog updates deploy Astro production instead of Jekyll.
+   - After cutover:
+     - Verify `https://www.peipeipe.net`, RSS, sitemap, canonical URLs, key old post URLs, `/diary-post/`, `/images/...`, and `/.well-known/nostr.json`.
+     - Confirm scheduled/data workflows still trigger a production Astro deploy after committing content/data updates.
 
 ## Rollback
 
