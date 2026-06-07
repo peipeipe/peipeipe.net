@@ -15,6 +15,7 @@ const urls = [
   "/about",
   "/cloudflare-preview/",
   "/diary/",
+  "/diary-post/",
   "/feed.xml",
   "/mountains/",
   "/mountains-data.json",

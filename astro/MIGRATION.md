@@ -23,8 +23,8 @@ Last verified locally:
 
 ```text
 Astro build: success
-Generated pages: 405
-URL manifest: 413 URLs
+Generated pages: 407
+URL manifest: 415 URLs
 Legacy invalid percent slugs: 0
 Workflow YAML parse: ok
 Cloudflare preview HTTP status: 200 before the local master merge
@@ -56,7 +56,7 @@ PATH=/home/peipeipe/.local/nodejs/current/bin:$PATH npm run build
 
 - Reads existing `../_posts/*.md` files without moving them.
 - Reads existing `../_diary/*.md` files without moving them.
-- Builds the blog index, post detail pages, diary index, diary detail pages, `about`, `search`, RSS, and sitemap.
+- Builds the blog index, post detail pages, diary index, diary detail pages, diary posting page, `about`, `search`, RSS, and sitemap.
 - Builds `404.html` and `robots.txt`.
 - Builds `/activity/`, `/mountains/`, `/places/`, and `/onsen/` as wide map-focused data pages.
 - Builds `/activity-data.json`, `/mountains-data.json`, `/places-data.json`, `/places.json`, and `/onsen-data.json`.
@@ -67,9 +67,9 @@ PATH=/home/peipeipe/.local/nodejs/current/bin:$PATH npm run build
 Current content counts from `migration/astro-url-manifest.json`:
 
 ```text
-posts: 355
+posts: 356
 diary entries: 40
-tracked URLs: 413
+tracked URLs: 415
 ```
 
 ## Verification
@@ -77,13 +77,20 @@ tracked URLs: 413
 ```sh
 PATH=/home/peipeipe/.local/nodejs/current/bin:$PATH npm run build
 PATH=/home/peipeipe/.local/nodejs/current/bin:$PATH npm run manifest
+bundle exec jekyll build
+PATH=/home/peipeipe/.local/nodejs/current/bin:$PATH npm run manifest:jekyll
+PATH=/home/peipeipe/.local/nodejs/current/bin:$PATH npm run compare:urls
 PATH=/home/peipeipe/.local/nodejs/current/bin:$PATH npm run check:legacy-slugs
 ```
 
 Generated verification files:
 
 - `migration/astro-url-manifest.json`
+- `migration/jekyll-url-manifest.json`
+- `migration/url-comparison.json`
 - `migration/legacy-invalid-percent-slugs.json`
+
+Local note: this container currently has the Astro Node runtime available, but no local `ruby`/`bundle` command. Jekyll comparison commands need a Ruby environment or a captured `_site` directory from CI/production.
 
 ## Cloudflare Pages Preview
 
@@ -163,14 +170,16 @@ The old Japanese/percent-encoded filenames were normalized to English slugs on `
 ## Next Work
 
 1. Compare current Jekyll output with Astro output.
-   - Generate or capture a Jekyll URL manifest from the production site or from CI.
-   - Compare it with `migration/astro-url-manifest.json`.
+   - Jekyll `_site` URL manifest generation is scripted with `npm run manifest:jekyll`.
+   - Compare it with `migration/astro-url-manifest.json` using `npm run compare:urls`.
+   - Review `migration/url-comparison.json` and migrate or intentionally ignore any differences.
 
 2. Improve visual parity for the blog and diary pages.
    - Check image layout on representative long posts.
 
 3. Migrate static root pages and special pages.
    - `404`: done
+   - `/diary-post/`: done
    - `robots.txt`: done
    - `CNAME` handling is not needed for preview, but matters during final cutover.
 
@@ -181,11 +190,13 @@ The old Japanese/percent-encoded filenames were normalized to English slugs on `
    - `/onsen/`: done, using the onsen check-in JSON, search, photos, and a Leaflet marker map
 
 5. Verify existing automation remains compatible after preview deploys.
-   - `update-strava-activities.yml`
-   - `update-onsen-checkins.yml`
-   - `webhook-diary.yml`
-   - `enhance-amazon-links.yml`
-   - `convert-images-to-webp.yml`
+   - Reviewed on 2026-06-07: these workflows update source files that Astro reads directly.
+   - `update-strava-activities.yml`: updates `_data/strava_activities.json` and `_data/visited_mountains.json`; Cloudflare preview path filters include `_data/**`.
+   - `update-onsen-checkins.yml`: updates `_data/onsen_places.json`, `_data/places.json`, and root `places.json`; Astro reads these data files for map/data routes.
+   - `webhook-diary.yml`: updates `_diary/` and `images/`; Cloudflare preview path filters include both.
+   - `enhance-amazon-links.yml`: updates `_posts/**/*.md`; Cloudflare preview path filters include `_posts/**`.
+   - `convert-images-to-webp.yml`: updates `images/` and Markdown references; Astro serves root `images/` assets and reads posts from `_posts/`.
+   - No workflow changes needed for the preview phase. Revisit deployment workflows during production cutover.
 
 6. Add production cutover checklist.
    - Tag the last Jekyll production state.

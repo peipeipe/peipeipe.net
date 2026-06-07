@@ -1,0 +1,1531 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex, nofollow">
+  <title>日記投稿 | peipeipe.net</title>
+  <meta name="description" content="日記投稿フォーム">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/marked@9.1.6/marked.min.js"></script>
+  <style>
+    /* ── Design Tokens ── */
+    :root {
+      --bg:           #070b12;
+      --bg-2:         #0d1117;
+      --surface:      rgba(255,255,255,0.04);
+      --surface-hover:rgba(255,255,255,0.07);
+      --border:       rgba(255,255,255,0.08);
+      --border-focus: rgba(139,92,246,0.6);
+      --accent:       #8b5cf6;
+      --accent-2:     #a78bfa;
+      --accent-glow:  rgba(139,92,246,0.25);
+      --success:      #10b981;
+      --error:        #ef4444;
+      --warning:      #f59e0b;
+      --text:         #e2e8f0;
+      --text-sub:     #94a3b8;
+      --text-muted:   #475569;
+      --radius:       14px;
+      --radius-sm:    8px;
+      --transition:   0.2s ease;
+    }
+
+    /* ── Reset & Base ── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Inter', system-ui, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      min-height: 100dvh;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ── Background ── */
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background:
+        radial-gradient(ellipse 80% 60% at 20% -10%, rgba(139,92,246,0.12) 0%, transparent 60%),
+        radial-gradient(ellipse 60% 50% at 80% 110%, rgba(99,102,241,0.08) 0%, transparent 60%);
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    /* ── Layout ── */
+    .app-wrapper {
+      position: relative;
+      z-index: 1;
+      max-width: 760px;
+      margin: 0 auto;
+      padding: 16px 16px 80px;
+    }
+
+    /* ── Glass Card ── */
+    .glass {
+      background: var(--surface);
+      backdrop-filter: blur(16px) saturate(1.4);
+      -webkit-backdrop-filter: blur(16px) saturate(1.4);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+    }
+
+    /* ── Top Nav ── */
+    .nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 18px 0 22px;
+      margin-bottom: 4px;
+    }
+
+    .nav-brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      text-decoration: none;
+    }
+
+    .nav-brand .logo {
+      width: 34px;
+      height: 34px;
+      background: linear-gradient(135deg, var(--accent), #6366f1);
+      border-radius: 10px;
+      display: grid;
+      place-items: center;
+      font-size: 18px;
+      box-shadow: 0 0 20px var(--accent-glow);
+    }
+
+    .nav-brand .brand-name {
+      font-size: 17px;
+      font-weight: 600;
+      color: var(--text);
+    }
+
+    .nav-brand .brand-sub {
+      font-size: 12px;
+      color: var(--text-sub);
+    }
+
+    .nav-right {
+      display: flex;
+      gap: 8px;
+    }
+
+    /* ── Icon Button ── */
+    .icon-btn {
+      width: 40px;
+      height: 40px;
+      border-radius: var(--radius-sm);
+      border: 1px solid var(--border);
+      background: var(--surface);
+      color: var(--text-sub);
+      cursor: pointer;
+      display: grid;
+      place-items: center;
+      font-size: 18px;
+      transition: var(--transition);
+      position: relative;
+    }
+
+    .icon-btn:hover {
+      background: var(--surface-hover);
+      color: var(--text);
+      border-color: rgba(255,255,255,0.15);
+    }
+
+    .icon-btn.active {
+      background: var(--accent-glow);
+      border-color: var(--border-focus);
+      color: var(--accent-2);
+    }
+
+    /* ── Settings Panel ── */
+    .settings-panel {
+      overflow: hidden;
+      max-height: 0;
+      transition: max-height 0.35s cubic-bezier(0.4,0,0.2,1), opacity 0.25s ease, margin 0.25s ease;
+      opacity: 0;
+      margin-bottom: 0;
+    }
+
+    .settings-panel.open {
+      max-height: 600px;
+      opacity: 1;
+      margin-bottom: 16px;
+    }
+
+    .settings-inner {
+      padding: 20px;
+    }
+
+    .settings-inner h2 {
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--text-sub);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      margin-bottom: 16px;
+    }
+
+    .settings-grid {
+      display: grid;
+      gap: 12px;
+    }
+
+    .settings-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+    }
+
+    @media (max-width: 500px) {
+      .settings-row { grid-template-columns: 1fr; }
+    }
+
+    .settings-footer {
+      margin-top: 16px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+    }
+
+    .settings-status {
+      font-size: 13px;
+      color: var(--text-muted);
+    }
+
+    .settings-status.ok { color: var(--success); }
+    .settings-status.err { color: var(--error); }
+
+    /* ── Form Elements ── */
+    .field {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+
+    label {
+      font-size: 12px;
+      font-weight: 500;
+      color: var(--text-sub);
+      letter-spacing: 0.03em;
+    }
+
+    input[type="text"],
+    input[type="password"],
+    input[type="date"],
+    input[type="time"],
+    textarea {
+      background: rgba(0,0,0,0.25);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-sm);
+      color: var(--text);
+      font-family: inherit;
+      font-size: 14px;
+      padding: 10px 12px;
+      outline: none;
+      width: 100%;
+      transition: border-color var(--transition), box-shadow var(--transition);
+      -webkit-appearance: none;
+      appearance: none;
+    }
+
+    input[type="password"] {
+      font-family: 'JetBrains Mono', monospace;
+      letter-spacing: 0.05em;
+    }
+
+    input:focus, textarea:focus {
+      border-color: var(--border-focus);
+      box-shadow: 0 0 0 3px var(--accent-glow);
+    }
+
+    input::placeholder, textarea::placeholder {
+      color: var(--text-muted);
+    }
+
+    input[type="date"]::-webkit-calendar-picker-indicator,
+    input[type="time"]::-webkit-calendar-picker-indicator {
+      filter: invert(0.6);
+      cursor: pointer;
+    }
+
+    textarea {
+      resize: vertical;
+      min-height: 200px;
+      line-height: 1.7;
+      font-size: 15px;
+    }
+
+    /* ── Buttons ── */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      padding: 10px 18px;
+      border-radius: var(--radius-sm);
+      font-family: inherit;
+      font-size: 14px;
+      font-weight: 500;
+      cursor: pointer;
+      border: 1px solid transparent;
+      transition: var(--transition);
+      white-space: nowrap;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, var(--accent), #6366f1);
+      color: #fff;
+      box-shadow: 0 4px 20px var(--accent-glow);
+    }
+
+    .btn-primary:hover:not(:disabled) {
+      transform: translateY(-1px);
+      box-shadow: 0 6px 28px rgba(139,92,246,0.4);
+    }
+
+    .btn-primary:active:not(:disabled) {
+      transform: translateY(0);
+    }
+
+    .btn-primary:disabled {
+      opacity: 0.5;
+      cursor: not-allowed;
+    }
+
+    .btn-secondary {
+      background: var(--surface);
+      border-color: var(--border);
+      color: var(--text-sub);
+    }
+
+    .btn-secondary:hover {
+      background: var(--surface-hover);
+      color: var(--text);
+      border-color: rgba(255,255,255,0.15);
+    }
+
+    .btn-ghost {
+      background: transparent;
+      border-color: transparent;
+      color: var(--text-sub);
+      padding: 8px 12px;
+    }
+
+    .btn-ghost:hover {
+      background: var(--surface);
+      color: var(--text);
+    }
+
+    .btn-danger {
+      background: rgba(239,68,68,0.15);
+      border-color: rgba(239,68,68,0.3);
+      color: #f87171;
+    }
+
+    .btn-danger:hover {
+      background: rgba(239,68,68,0.25);
+    }
+
+    /* ── Date/Time Bar ── */
+    .datetime-bar {
+      display: grid;
+      grid-template-columns: 1fr 1fr auto;
+      gap: 10px;
+      align-items: end;
+      padding: 16px 20px;
+      margin-bottom: 12px;
+    }
+
+    .btn-now {
+      height: 42px;
+      padding: 0 14px;
+      border-radius: var(--radius-sm);
+      border: 1px solid var(--border);
+      background: var(--surface);
+      color: var(--accent-2);
+      font-family: inherit;
+      font-size: 13px;
+      font-weight: 500;
+      cursor: pointer;
+      transition: var(--transition);
+      white-space: nowrap;
+    }
+
+    .btn-now:hover {
+      background: var(--accent-glow);
+      border-color: var(--border-focus);
+    }
+
+    /* ── Tabs ── */
+    .tabs {
+      display: flex;
+      gap: 2px;
+      padding: 4px;
+      background: rgba(0,0,0,0.2);
+      border-radius: 10px;
+      margin-bottom: 12px;
+    }
+
+    .tab-btn {
+      flex: 1;
+      padding: 9px 16px;
+      border-radius: 8px;
+      border: none;
+      background: transparent;
+      color: var(--text-sub);
+      font-family: inherit;
+      font-size: 13px;
+      font-weight: 500;
+      cursor: pointer;
+      transition: var(--transition);
+    }
+
+    .tab-btn.active {
+      background: var(--surface-hover);
+      color: var(--text);
+      box-shadow: 0 1px 3px rgba(0,0,0,0.3);
+    }
+
+    .tab-btn:hover:not(.active) {
+      color: var(--text);
+    }
+
+    /* ── Write / Preview Panels ── */
+    .tab-panel { display: none; }
+    .tab-panel.active { display: block; }
+
+    .write-card { padding: 4px; }
+
+    .write-toolbar {
+      display: flex;
+      gap: 2px;
+      padding: 8px 8px 0;
+      flex-wrap: wrap;
+    }
+
+    .toolbar-btn {
+      width: 32px;
+      height: 28px;
+      border-radius: 6px;
+      border: none;
+      background: transparent;
+      color: var(--text-sub);
+      font-size: 13px;
+      font-family: 'JetBrains Mono', monospace;
+      font-weight: 500;
+      cursor: pointer;
+      transition: var(--transition);
+      display: grid;
+      place-items: center;
+    }
+
+    .toolbar-btn:hover {
+      background: var(--surface-hover);
+      color: var(--text);
+    }
+
+    .toolbar-sep {
+      width: 1px;
+      height: 20px;
+      background: var(--border);
+      margin: 4px 4px;
+      align-self: center;
+    }
+
+    textarea#content {
+      border: none;
+      background: transparent;
+      border-radius: 0 0 var(--radius-sm) var(--radius-sm);
+      padding: 12px 16px;
+      min-height: 220px;
+      box-shadow: none;
+    }
+
+    textarea#content:focus {
+      box-shadow: none;
+    }
+
+    .char-count {
+      text-align: right;
+      padding: 6px 12px 8px;
+      font-size: 12px;
+      color: var(--text-muted);
+    }
+
+    /* ── Preview ── */
+    .preview-card {
+      padding: 20px 24px;
+      min-height: 200px;
+    }
+
+    .preview-empty {
+      color: var(--text-muted);
+      font-style: italic;
+      text-align: center;
+      padding: 40px 0;
+    }
+
+    .preview-card h1,h2,h3 { color: var(--text); margin: 1em 0 0.5em; }
+    .preview-card h2 {
+      font-size: 16px;
+      color: var(--accent-2);
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 4px;
+    }
+    .preview-card p { margin: 0.6em 0; color: var(--text); }
+    .preview-card img { max-width: 100%; border-radius: 10px; }
+    .preview-card code {
+      background: rgba(0,0,0,0.3);
+      padding: 2px 6px;
+      border-radius: 4px;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 13px;
+    }
+    .preview-card pre {
+      background: rgba(0,0,0,0.3);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 14px;
+      overflow-x: auto;
+      margin: 10px 0;
+    }
+    .preview-card blockquote {
+      border-left: 3px solid var(--accent);
+      padding-left: 14px;
+      color: var(--text-sub);
+      margin: 10px 0;
+    }
+
+    /* ── Upload Zone ── */
+    .upload-zone {
+      margin-top: 12px;
+    }
+
+    .drop-zone {
+      border: 2px dashed var(--border);
+      border-radius: var(--radius);
+      padding: 28px 20px;
+      text-align: center;
+      cursor: pointer;
+      transition: all var(--transition);
+      position: relative;
+    }
+
+    .drop-zone:hover, .drop-zone.drag-over {
+      border-color: var(--accent);
+      background: var(--accent-glow);
+    }
+
+    .drop-zone.drag-over {
+      transform: scale(1.01);
+    }
+
+    .drop-icon {
+      font-size: 36px;
+      margin-bottom: 10px;
+      display: block;
+      opacity: 0.7;
+    }
+
+    .drop-title {
+      font-size: 15px;
+      font-weight: 500;
+      color: var(--text);
+      margin-bottom: 4px;
+    }
+
+    .drop-sub {
+      font-size: 13px;
+      color: var(--text-muted);
+      margin-bottom: 14px;
+    }
+
+    .upload-btns {
+      display: flex;
+      gap: 8px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    /* ── Image Preview ── */
+    .attached-image {
+      position: relative;
+      display: inline-block;
+      margin-top: 14px;
+    }
+
+    .attached-image img {
+      max-width: 100%;
+      max-height: 240px;
+      border-radius: 10px;
+      border: 1px solid var(--border);
+      display: block;
+    }
+
+    .image-overlay {
+      position: absolute;
+      top: 8px;
+      right: 8px;
+      display: flex;
+      gap: 6px;
+    }
+
+    .image-info {
+      display: block;
+      margin-top: 6px;
+      font-size: 12px;
+      color: var(--text-muted);
+    }
+
+    /* ── Submit Footer ── */
+    .submit-bar {
+      margin-top: 16px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+    }
+
+    .submit-info {
+      font-size: 13px;
+      color: var(--text-muted);
+    }
+
+    .btn-submit {
+      padding: 13px 32px;
+      font-size: 15px;
+      border-radius: 12px;
+    }
+
+    /* Spinner */
+    @keyframes spin {
+      to { transform: rotate(360deg); }
+    }
+
+    .spinner {
+      display: inline-block;
+      width: 16px;
+      height: 16px;
+      border: 2px solid rgba(255,255,255,0.3);
+      border-top-color: #fff;
+      border-radius: 50%;
+      animation: spin 0.7s linear infinite;
+    }
+
+    /* ── Toast ── */
+    .toast-container {
+      position: fixed;
+      bottom: 24px;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 999;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      pointer-events: none;
+      width: min(90vw, 400px);
+    }
+
+    .toast {
+      background: #1a1f2e;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 14px 18px;
+      font-size: 14px;
+      color: var(--text);
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      box-shadow: 0 8px 32px rgba(0,0,0,0.4);
+      animation: toastIn 0.35s cubic-bezier(0.34,1.56,0.64,1);
+      pointer-events: auto;
+    }
+
+    .toast.out {
+      animation: toastOut 0.25s ease forwards;
+    }
+
+    .toast.success { border-color: rgba(16,185,129,0.35); }
+    .toast.error   { border-color: rgba(239,68,68,0.35); }
+
+    .toast-icon { font-size: 18px; flex-shrink: 0; }
+    .toast-body { flex: 1; }
+    .toast-title { font-weight: 600; line-height: 1.3; margin-bottom: 2px; }
+    .toast-msg { font-size: 13px; color: var(--text-sub); }
+
+    @keyframes toastIn {
+      from { opacity: 0; transform: translateY(16px) scale(0.95); }
+      to   { opacity: 1; transform: translateY(0) scale(1); }
+    }
+
+    @keyframes toastOut {
+      to { opacity: 0; transform: translateY(8px) scale(0.96); }
+    }
+
+    /* ── Utility ── */
+    .hidden { display: none !important; }
+
+    .section-gap { margin-bottom: 12px; }
+
+    /* ── Token Badge ── */
+    .token-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      padding: 3px 10px;
+      border-radius: 20px;
+      font-size: 12px;
+      font-weight: 500;
+    }
+
+    .token-badge.saved {
+      background: rgba(16,185,129,0.15);
+      color: #34d399;
+      border: 1px solid rgba(16,185,129,0.25);
+    }
+
+    .token-badge.missing {
+      background: rgba(239,68,68,0.12);
+      color: #f87171;
+      border: 1px solid rgba(239,68,68,0.25);
+    }
+
+    /* ── Progress ── */
+    .progress-bar {
+      height: 3px;
+      background: rgba(255,255,255,0.06);
+      border-radius: 3px;
+      overflow: hidden;
+      margin-top: 10px;
+    }
+
+    .progress-fill {
+      height: 100%;
+      background: linear-gradient(90deg, var(--accent), #6366f1);
+      border-radius: 3px;
+      width: 0;
+      transition: width 0.4s ease;
+    }
+
+    @keyframes progressPulse {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.5; }
+    }
+
+    .progress-fill.uploading {
+      animation: progressPulse 1.2s ease infinite;
+      width: 100%;
+    }
+  </style>
+</head>
+<body>
+
+<div class="app-wrapper">
+
+  <!-- ── Navigation ── -->
+  <nav class="nav">
+    <a href="/diary/" class="nav-brand" title="日記一覧へ">
+      <div class="logo">📝</div>
+      <div>
+        <div class="brand-name">日記を書く</div>
+        <div class="brand-sub">peipeipe.net</div>
+      </div>
+    </a>
+    <div class="nav-right">
+      <div id="token-badge" class="token-badge missing">⚠ 設定未完了</div>
+      <button class="icon-btn" id="btn-settings" title="設定" aria-label="設定を開く">⚙</button>
+    </div>
+  </nav>
+
+  <!-- ── Settings Panel ── -->
+  <div class="settings-panel glass section-gap" id="settings-panel" role="region" aria-label="設定パネル">
+    <div class="settings-inner">
+      <h2>⚙ 認証・リポジトリ設定</h2>
+      <div class="settings-grid">
+        <div class="field">
+          <label for="input-token">GitHub Personal Access Token</label>
+          <input type="password" id="input-token" placeholder="ghp_xxxxxxxxxxxxxxxxxxxx" autocomplete="off" spellcheck="false">
+        </div>
+        <div class="settings-row">
+          <div class="field">
+            <label for="input-owner">リポジトリオーナー</label>
+            <input type="text" id="input-owner" placeholder="username" autocomplete="off">
+          </div>
+          <div class="field">
+            <label for="input-repo">リポジトリ名</label>
+            <input type="text" id="input-repo" placeholder="repo-name" autocomplete="off">
+          </div>
+        </div>
+      </div>
+      <div class="settings-footer">
+        <span class="settings-status" id="settings-status"></span>
+        <div style="display:flex;gap:8px;">
+          <button class="btn btn-danger" id="btn-clear-settings">クリア</button>
+          <button class="btn btn-primary" id="btn-save-settings">💾 保存</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── Date / Time ── -->
+  <div class="glass datetime-bar section-gap">
+    <div class="field">
+      <label for="input-date">📅 日付</label>
+      <input type="date" id="input-date">
+    </div>
+    <div class="field">
+      <label for="input-time">🕐 時刻</label>
+      <input type="time" id="input-time">
+    </div>
+    <button class="btn-now" id="btn-now" title="現在時刻を設定">⟳ 今</button>
+  </div>
+
+  <!-- ── Write / Preview Tabs ── -->
+  <div class="section-gap">
+    <div class="tabs" role="tablist">
+      <button class="tab-btn active" role="tab" aria-selected="true"  data-tab="write"   id="tab-write-btn">✏️ 書く</button>
+      <button class="tab-btn"        role="tab" aria-selected="false" data-tab="preview" id="tab-preview-btn">👁 プレビュー</button>
+    </div>
+
+    <!-- Write -->
+    <div class="tab-panel active glass write-card" id="panel-write" role="tabpanel">
+      <div class="write-toolbar">
+        <button class="toolbar-btn" data-action="bold"      title="太字 (Ctrl+B)"><b>B</b></button>
+        <button class="toolbar-btn" data-action="italic"    title="斜体 (Ctrl+I)"><i>I</i></button>
+        <button class="toolbar-btn" data-action="strike"    title="取り消し線">S̶</button>
+        <div class="toolbar-sep"></div>
+        <button class="toolbar-btn" data-action="h2"        title="見出し"># </button>
+        <button class="toolbar-btn" data-action="quote"     title="引用">"</button>
+        <button class="toolbar-btn" data-action="code"      title="コード">`</button>
+        <div class="toolbar-sep"></div>
+        <button class="toolbar-btn" data-action="ul"        title="リスト">• </button>
+        <button class="toolbar-btn" data-action="hr"        title="区切り線">─</button>
+      </div>
+      <textarea id="content" placeholder="今日の出来事を書く...&#10;&#10;Markdownが使えます。"></textarea>
+      <div class="char-count"><span id="char-count">0</span> 文字</div>
+    </div>
+
+    <!-- Preview -->
+    <div class="tab-panel glass preview-card" id="panel-preview" role="tabpanel">
+      <div id="preview-content"><p class="preview-empty">← 書くタブにテキストを入力するとここにプレビューが表示されます</p></div>
+    </div>
+  </div>
+
+  <!-- ── Upload Zone ── -->
+  <div class="glass upload-zone section-gap" id="upload-zone">
+    <div class="drop-zone" id="drop-zone" role="button" tabindex="0" aria-label="ファイルをドラッグ&ドロップ">
+      <span class="drop-icon">📎</span>
+      <div class="drop-title">画像 / Markdownファイルを添付</div>
+      <div class="drop-sub">ドラッグ&ドロップ、またはクリックして選択</div>
+      <div class="upload-btns">
+        <button class="btn btn-secondary" id="btn-pick-image" type="button">🖼 画像を選ぶ</button>
+        <button class="btn btn-secondary" id="btn-pick-md"    type="button">📄 .mdファイル</button>
+      </div>
+    </div>
+
+    <!-- Attached image preview -->
+    <div id="image-attached" class="hidden" style="padding: 0 16px 16px;">
+      <div class="attached-image">
+        <img id="preview-img" src="" alt="添付画像プレビュー">
+        <div class="image-overlay">
+          <button class="btn btn-danger" id="btn-remove-image" title="画像を削除">✕</button>
+        </div>
+      </div>
+      <span class="image-info" id="image-info"></span>
+      <div class="progress-bar" id="progress-bar">
+        <div class="progress-fill" id="progress-fill"></div>
+      </div>
+    </div>
+
+    <!-- Hidden file inputs -->
+    <input type="file" id="file-image" accept="image/*" hidden aria-hidden="true">
+    <input type="file" id="file-md"    accept=".md,.txt,.markdown" hidden aria-hidden="true">
+  </div>
+
+  <!-- ── Submit ── -->
+  <div class="submit-bar">
+    <span class="submit-info" id="submit-info"></span>
+    <button class="btn btn-primary btn-submit" id="btn-submit" disabled>
+      <span id="submit-label">🚀 投稿する</span>
+    </button>
+  </div>
+
+</div>
+
+<!-- ── Toast Container ── -->
+<div class="toast-container" id="toast-container" aria-live="polite" aria-atomic="false"></div>
+
+<script>
+  /* ════════════════════════════════════════════
+     State
+  ════════════════════════════════════════════ */
+  const state = {
+    token:     '',
+    owner:     '',
+    repo:      '',
+    imageB64:  null,
+    imageName: '',
+    processing: false,
+  };
+
+  /* ════════════════════════════════════════════
+     DOM Refs
+  ════════════════════════════════════════════ */
+  const $ = id => document.getElementById(id);
+  const btnSettings      = $('btn-settings');
+  const settingsPanel    = $('settings-panel');
+  const inputToken       = $('input-token');
+  const inputOwner       = $('input-owner');
+  const inputRepo        = $('input-repo');
+  const btnSave          = $('btn-save-settings');
+  const btnClear         = $('btn-clear-settings');
+  const settingsStatus   = $('settings-status');
+  const tokenBadge       = $('token-badge');
+  const inputDate        = $('input-date');
+  const inputTime        = $('input-time');
+  const btnNow           = $('btn-now');
+  const textarea         = $('content');
+  const charCount        = $('char-count');
+  const previewContent   = $('preview-content');
+  const dropZone         = $('drop-zone');
+  const fileImage        = $('file-image');
+  const fileMd           = $('file-md');
+  const btnPickImage     = $('btn-pick-image');
+  const btnPickMd        = $('btn-pick-md');
+  const imageAttached    = $('image-attached');
+  const previewImg       = $('preview-img');
+  const imageInfo        = $('image-info');
+  const btnRemoveImage   = $('btn-remove-image');
+  const progressFill     = $('progress-fill');
+  const btnSubmit        = $('btn-submit');
+  const submitLabel      = $('submit-label');
+  const submitInfo       = $('submit-info');
+  const toastContainer   = $('toast-container');
+  const tabBtns          = document.querySelectorAll('.tab-btn');
+  const tabPanels        = document.querySelectorAll('.tab-panel');
+  const toolbarBtns      = document.querySelectorAll('.toolbar-btn');
+
+  /* ════════════════════════════════════════════
+     LocalStorage
+  ════════════════════════════════════════════ */
+  const LS_KEY = 'diary_post_cfg';
+
+  function loadSettings() {
+    try {
+      const raw = localStorage.getItem(LS_KEY);
+      if (!raw) return;
+      const cfg = JSON.parse(raw);
+      state.token = cfg.token || '';
+      state.owner = cfg.owner || '';
+      state.repo  = cfg.repo  || '';
+      inputToken.value = state.token;
+      inputOwner.value = state.owner;
+      inputRepo.value  = state.repo;
+    } catch(e) {}
+    updateTokenBadge();
+  }
+
+  function saveSettings() {
+    state.token = inputToken.value.trim();
+    state.owner = inputOwner.value.trim();
+    state.repo  = inputRepo.value.trim();
+    if (!state.token || !state.owner || !state.repo) {
+      settingsStatus.textContent = '⚠ 全フィールドを入力してください';
+      settingsStatus.className = 'settings-status err';
+      return;
+    }
+    localStorage.setItem(LS_KEY, JSON.stringify({ token: state.token, owner: state.owner, repo: state.repo }));
+    settingsStatus.textContent = '✓ 保存しました';
+    settingsStatus.className = 'settings-status ok';
+    updateTokenBadge();
+    validateForm();
+    setTimeout(() => { settingsStatus.textContent = ''; }, 2500);
+  }
+
+  function clearSettings() {
+    localStorage.removeItem(LS_KEY);
+    state.token = state.owner = state.repo = '';
+    inputToken.value = inputOwner.value = inputRepo.value = '';
+    settingsStatus.textContent = '🗑 設定をクリアしました';
+    settingsStatus.className = 'settings-status';
+    updateTokenBadge();
+    validateForm();
+    setTimeout(() => { settingsStatus.textContent = ''; }, 2500);
+  }
+
+  function updateTokenBadge() {
+    const ok = state.token && state.owner && state.repo;
+    tokenBadge.textContent = ok ? '✓ 設定済み' : '⚠ 設定未完了';
+    tokenBadge.className = 'token-badge ' + (ok ? 'saved' : 'missing');
+  }
+
+  /* ════════════════════════════════════════════
+     Settings Panel Toggle
+  ════════════════════════════════════════════ */
+  function toggleSettings() {
+    const open = settingsPanel.classList.toggle('open');
+    btnSettings.classList.toggle('active', open);
+    if (open) inputToken.focus();
+  }
+
+  btnSettings.addEventListener('click', toggleSettings);
+  btnSave.addEventListener('click', saveSettings);
+  btnClear.addEventListener('click', clearSettings);
+
+  /* ════════════════════════════════════════════
+     Date / Time
+  ════════════════════════════════════════════ */
+  function toJSTString(d) {
+    // Returns YYYY-MM-DD and HH:MM in JST
+    const jst = new Date(d.getTime() + (9 * 60 * 60 * 1000));
+    const iso = jst.toISOString();
+    return {
+      date: iso.slice(0,10),
+      time: iso.slice(11,16),
+    };
+  }
+
+  function setNow() {
+    const { date, time } = toJSTString(new Date());
+    inputDate.value = date;
+    inputTime.value = time;
+  }
+
+  btnNow.addEventListener('click', setNow);
+  setNow(); // init
+
+  /* ════════════════════════════════════════════
+     Tabs
+  ════════════════════════════════════════════ */
+  tabBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const target = btn.dataset.tab;
+      tabBtns.forEach(b => {
+        b.classList.toggle('active', b.dataset.tab === target);
+        b.setAttribute('aria-selected', b.dataset.tab === target);
+      });
+      tabPanels.forEach(p => {
+        p.classList.toggle('active', p.id === `panel-${target}`);
+      });
+      if (target === 'preview') renderPreview();
+    });
+  });
+
+  function renderPreview() {
+    const md = textarea.value.trim();
+    if (!md) {
+      previewContent.innerHTML = '<p class="preview-empty">← 書くタブにテキストを入力するとここにプレビューが表示されます</p>';
+      return;
+    }
+    previewContent.innerHTML = marked.parse(md, { breaks: true });
+  }
+
+  /* ════════════════════════════════════════════
+     Textarea
+  ════════════════════════════════════════════ */
+  textarea.addEventListener('input', () => {
+    charCount.textContent = textarea.value.length.toLocaleString();
+    validateForm();
+  });
+
+  // Ctrl+B / I shortcuts
+  textarea.addEventListener('keydown', e => {
+    if ((e.ctrlKey || e.metaKey) && e.key === 'b') { e.preventDefault(); wrapSelection('**', '**'); }
+    if ((e.ctrlKey || e.metaKey) && e.key === 'i') { e.preventDefault(); wrapSelection('*', '*'); }
+    if ((e.ctrlKey || e.metaKey) && e.key === 'Enter') { e.preventDefault(); doSubmit(); }
+  });
+
+  /* ════════════════════════════════════════════
+     Toolbar
+  ════════════════════════════════════════════ */
+  const toolbarActions = {
+    bold:   () => wrapSelection('**', '**'),
+    italic: () => wrapSelection('*', '*'),
+    strike: () => wrapSelection('~~', '~~'),
+    h2:     () => insertPrefix('## '),
+    quote:  () => insertPrefix('> '),
+    code:   () => wrapSelection('`', '`'),
+    ul:     () => insertPrefix('- '),
+    hr:     () => insertLine('\n---\n'),
+  };
+
+  toolbarBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const action = btn.dataset.action;
+      if (toolbarActions[action]) {
+        toolbarActions[action]();
+        textarea.focus();
+        charCount.textContent = textarea.value.length.toLocaleString();
+        validateForm();
+      }
+    });
+  });
+
+  function wrapSelection(before, after) {
+    const { selectionStart: s, selectionEnd: e, value } = textarea;
+    const selected = value.slice(s, e);
+    const replacement = before + (selected || 'テキスト') + after;
+    textarea.setRangeText(replacement, s, e, 'select');
+  }
+
+  function insertPrefix(prefix) {
+    const { selectionStart: s, value } = textarea;
+    const lineStart = value.lastIndexOf('\n', s - 1) + 1;
+    const line = value.slice(lineStart, s);
+    // toggle: if line already starts with prefix, remove it
+    if (line.startsWith(prefix)) {
+      textarea.setRangeText('', lineStart, lineStart + prefix.length, 'end');
+    } else {
+      textarea.setRangeText(prefix, lineStart, lineStart, 'end');
+    }
+  }
+
+  function insertLine(text) {
+    const { selectionStart: s, value } = textarea;
+    textarea.setRangeText(text, s, s, 'end');
+  }
+
+  /* ════════════════════════════════════════════
+     Image Processing
+  ════════════════════════════════════════════ */
+  const MAX_RAW_BYTES = 4.5 * 1024 * 1024; // 4.5MB
+  const MAX_DIMENSION = 1920;
+  const JPEG_QUALITY  = 0.85;
+
+  async function processImageFile(file) {
+    if (!file.type.startsWith('image/')) {
+      showToast('error', 'エラー', '画像ファイルを選択してください');
+      return;
+    }
+
+    progressFill.className = 'progress-fill uploading';
+    imageInfo.textContent = '画像を処理中...';
+    imageAttached.classList.remove('hidden');
+    dropZone.style.display = 'none';
+
+    try {
+      let b64;
+      const needsResize = file.size > MAX_RAW_BYTES;
+
+      if (needsResize) {
+        b64 = await resizeImage(file);
+        const approxKB = Math.round(b64.length * 0.75 / 1024);
+        imageInfo.textContent = `${file.name} (リサイズ済み, 約${approxKB}KB)`;
+      } else {
+        b64 = await fileToBase64(file);
+        imageInfo.textContent = `${file.name} (${formatSize(file.size)})`;
+      }
+
+      state.imageB64  = b64;
+      state.imageName = file.name;
+      previewImg.src  = `data:${file.type};base64,${b64}`;
+      progressFill.className = 'progress-fill';
+      progressFill.style.width = '100%';
+      validateForm();
+    } catch(err) {
+      console.error(err);
+      showToast('error', '画像エラー', err.message);
+      resetImage();
+    }
+  }
+
+  function fileToBase64(file) {
+    return new Promise((resolve, reject) => {
+      const reader = new FileReader();
+      reader.onload  = e => resolve(e.target.result.split(',')[1]);
+      reader.onerror = () => reject(new Error('ファイル読み込み失敗'));
+      reader.readAsDataURL(file);
+    });
+  }
+
+  function resizeImage(file) {
+    return new Promise((resolve, reject) => {
+      const img = new Image();
+      const url = URL.createObjectURL(file);
+      img.onload = () => {
+        URL.revokeObjectURL(url);
+        let { width, height } = img;
+        const ratio = Math.min(MAX_DIMENSION / width, MAX_DIMENSION / height, 1);
+        const canvas = document.createElement('canvas');
+        canvas.width  = Math.round(width  * ratio);
+        canvas.height = Math.round(height * ratio);
+        canvas.getContext('2d').drawImage(img, 0, 0, canvas.width, canvas.height);
+        const dataUrl = canvas.toDataURL('image/jpeg', JPEG_QUALITY);
+        resolve(dataUrl.split(',')[1]);
+      };
+      img.onerror = () => { URL.revokeObjectURL(url); reject(new Error('画像デコード失敗')); };
+      img.src = url;
+    });
+  }
+
+  function resetImage() {
+    state.imageB64  = null;
+    state.imageName = '';
+    previewImg.src  = '';
+    progressFill.style.width = '0';
+    progressFill.className = 'progress-fill';
+    imageAttached.classList.add('hidden');
+    dropZone.style.display = '';
+    fileImage.value = '';
+    validateForm();
+  }
+
+  btnRemoveImage.addEventListener('click', resetImage);
+
+  /* ════════════════════════════════════════════
+     MD File
+  ════════════════════════════════════════════ */
+  function processMdFile(file) {
+    const reader = new FileReader();
+    reader.onload = e => {
+      textarea.value = e.target.result;
+      charCount.textContent = textarea.value.length.toLocaleString();
+      validateForm();
+      showToast('success', 'MDファイル読み込み完了', `${file.name} を本文にセットしました`);
+    };
+    reader.onerror = () => showToast('error', 'エラー', 'ファイルの読み込みに失敗しました');
+    reader.readAsText(file, 'utf-8');
+  }
+
+  /* ════════════════════════════════════════════
+     File Pickers & Drag-and-Drop
+  ════════════════════════════════════════════ */
+  btnPickImage.addEventListener('click', e => { e.stopPropagation(); fileImage.click(); });
+  btnPickMd.addEventListener('click',    e => { e.stopPropagation(); fileMd.click(); });
+  dropZone.addEventListener('click', () => {
+    // Default: pick image
+    fileImage.click();
+  });
+
+  dropZone.addEventListener('keydown', e => {
+    if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); fileImage.click(); }
+  });
+
+  fileImage.addEventListener('change', e => { if (e.target.files[0]) processImageFile(e.target.files[0]); });
+  fileMd.addEventListener('change',   e => { if (e.target.files[0]) processMdFile(e.target.files[0]); });
+
+  // Drag & Drop
+  const preventDefaults = e => { e.preventDefault(); e.stopPropagation(); };
+  ['dragenter','dragover','dragleave','drop'].forEach(ev => {
+    dropZone.addEventListener(ev, preventDefaults);
+    document.body.addEventListener(ev, preventDefaults);
+  });
+
+  dropZone.addEventListener('dragenter', () => dropZone.classList.add('drag-over'));
+  dropZone.addEventListener('dragleave', e => {
+    if (!dropZone.contains(e.relatedTarget)) dropZone.classList.remove('drag-over');
+  });
+  dropZone.addEventListener('drop', e => {
+    dropZone.classList.remove('drag-over');
+    const file = e.dataTransfer.files[0];
+    if (!file) return;
+    if (file.name.match(/\.(md|txt|markdown)$/i)) {
+      processMdFile(file);
+    } else if (file.type.startsWith('image/')) {
+      processImageFile(file);
+    } else {
+      showToast('error', '対応していないファイル形式', '画像または .md ファイルを選択してください');
+    }
+  });
+
+  // Also support paste
+  document.addEventListener('paste', e => {
+    const items = Array.from(e.clipboardData?.items || []);
+    const imgItem = items.find(i => i.type.startsWith('image/'));
+    if (imgItem) {
+      const file = imgItem.getAsFile();
+      if (file) { processImageFile(file); }
+    }
+  });
+
+  /* ════════════════════════════════════════════
+     Validation
+  ════════════════════════════════════════════ */
+  function validateForm() {
+    const ok = state.token && state.owner && state.repo && textarea.value.trim() && !state.processing;
+    btnSubmit.disabled = !ok;
+
+    if (!state.token || !state.owner || !state.repo) {
+      submitInfo.textContent = '⚙ 右上の設定から認証情報を入力してください';
+    } else if (!textarea.value.trim()) {
+      submitInfo.textContent = '📝 本文を入力してください';
+    } else {
+      submitInfo.textContent = '';
+    }
+  }
+
+  /* ════════════════════════════════════════════
+     GitHub Contents API
+  ════════════════════════════════════════════ */
+  const API = 'https://api.github.com';
+
+  function ghHeaders() {
+    return {
+      'Authorization': `Bearer ${state.token}`,
+      'Accept':        'application/vnd.github.v3+json',
+      'Content-Type':  'application/json',
+    };
+  }
+
+  /** ファイルの現在の内容とSHAを取得（なければ null） */
+  async function getFileInfo(path) {
+    const res = await fetch(`${API}/repos/${state.owner}/${state.repo}/contents/${path}`, {
+      headers: ghHeaders(),
+    });
+    if (res.status === 404) return null;
+    if (!res.ok) throw new Error(`ファイル取得失敗 (${res.status}): ${path}`);
+    const data = await res.json();
+    return {
+      sha:     data.sha,
+      content: base64ToUtf8(data.content), // UTF-8 decode
+    };
+  }
+
+  /** UTF-8文字列をbase64に変換（TextEncoder使用） */
+  function utf8ToBase64(str) {
+    const bytes = new TextEncoder().encode(str);
+    let binary = '';
+    bytes.forEach(b => binary += String.fromCharCode(b));
+    return btoa(binary);
+  }
+
+  /** base64をUTF-8文字列に変換（TextDecoder使用） */
+  function base64ToUtf8(b64) {
+    const binary = atob(b64.replace(/\n/g, ''));
+    const bytes = new Uint8Array([...binary].map(c => c.charCodeAt(0)));
+    return new TextDecoder().decode(bytes);
+  }
+
+  /** ファイルを作成または更新 */
+  async function putFile(path, content, message, sha = null) {
+    const body = {
+      message,
+      content: utf8ToBase64(content), // UTF-8 → base64（TextEncoder使用）
+    };
+    if (sha) body.sha = sha;
+
+    const res = await fetch(`${API}/repos/${state.owner}/${state.repo}/contents/${path}`, {
+      method:  'PUT',
+      headers: ghHeaders(),
+      body:    JSON.stringify(body),
+    });
+    if (!res.ok) {
+      const err = await res.json().catch(() => ({}));
+      throw new Error(`書き込み失敗 (${res.status}): ${err.message || path}`);
+    }
+    return res.json();
+  }
+
+  /** 画像をバイナリとしてアップロード（base64 → GitHub Contents API） */
+  async function uploadImage(b64, filename) {
+    const res = await fetch(`${API}/repos/${state.owner}/${state.repo}/contents/${filename}`, {
+      method:  'PUT',
+      headers: ghHeaders(),
+      body: JSON.stringify({
+        message: `📸 diary image: ${filename}`,
+        content: b64, // GitHubはbase64をそのまま受け付ける
+      }),
+    });
+    if (!res.ok) {
+      const err = await res.json().catch(() => ({}));
+      throw new Error(`画像アップロード失敗 (${res.status}): ${err.message || ''}`);
+    }
+    return res.json();
+  }
+
+  /** 日記ファイルのMarkdownを生成・更新 */
+  function buildDiaryContent(existingContent, date, time, text, imagePath) {
+    const WEEKDAYS = ['日','月','火','水','木','金','土'];
+    function formatTitle(d) {
+      const [y,m,day] = d.split('-').map(Number);
+      const wd = WEEKDAYS[new Date(y,m-1,day).getDay()];
+      return `${y}年${String(m).padStart(2,'0')}月${String(day).padStart(2,'0')}日(${wd})`;
+    }
+
+    // 新しいセクションを組み立て
+    let newSection = `\n## ${time}\n`;
+    if (imagePath) newSection += `![投稿画像](/${imagePath})\n`;
+    if (text)      newSection += `${text}\n`;
+
+    if (existingContent) {
+      // 既存ファイルに追記
+      return existingContent.trimEnd() + '\n' + newSection;
+    } else {
+      // 新規ファイル
+      const title = formatTitle(date);
+      const frontMatter = `---\ndate: ${date} 00:00:00 +0900\nlayout: diary\ntitle: ${title}\n---\n`;
+      return frontMatter + newSection;
+    }
+  }
+
+  /* ════════════════════════════════════════════
+     Submit（Contents API直接書き込み方式）
+  ════════════════════════════════════════════ */
+  btnSubmit.addEventListener('click', doSubmit);
+
+  async function doSubmit() {
+    if (state.processing || btnSubmit.disabled) return;
+
+    const content = textarea.value.trim();
+    const date    = inputDate.value;
+    const time    = inputTime.value;
+
+    if (!content && !state.imageB64) { showToast('error', '本文が空です', 'テキストまたは画像を入力してください'); return; }
+    if (!date || !time) { showToast('error', '日時エラー', '日付と時刻を入力してください'); return; }
+    if (!state.token || !state.owner || !state.repo) {
+      showToast('error', '設定エラー', 'GitHub Tokenとリポジトリを設定してください');
+      toggleSettings();
+      return;
+    }
+
+    setLoading(true, '📤 アップロード中...');
+
+    try {
+      let imagePath = null;
+
+      // ── Step 1: 画像アップロード ──
+      if (state.imageB64) {
+        const timeStamp = time.replace(':', '');
+        const ext = state.imageName.match(/\.(jpg|jpeg|png|gif|webp)/i)?.[1]?.toLowerCase() || 'jpg';
+        imagePath = `images/diary/${date}-${timeStamp}.${ext}`;
+
+        setLoading(true, '🖼 画像をアップロード中...');
+        await uploadImage(state.imageB64, imagePath);
+      }
+
+      // ── Step 2: 日記ファイルを読み込み ──
+      setLoading(true, '📖 日記ファイルを確認中...');
+      const diaryPath = `_diary/${date}.md`;
+      const existing  = await getFileInfo(diaryPath);
+
+      // ── Step 3: Markdownを生成して書き込み ──
+      setLoading(true, '✍️ 日記を保存中...');
+      const newContent = buildDiaryContent(
+        existing?.content ?? null,
+        date, time, content, imagePath
+      );
+      const commitMsg = `📝 日記: ${date} ${time}`;
+      await putFile(diaryPath, newContent, commitMsg, existing?.sha ?? null);
+
+      showToast('success', '投稿完了 🎉',
+        `${date} ${time} の日記を保存しました。GitHub Pagesのビルド後（〜1分）に反映されます。`,
+        7000
+      );
+      resetAfterSubmit();
+
+    } catch (err) {
+      console.error(err);
+      if (err.message.includes('401') || err.message.includes('Bad credentials')) {
+        showToast('error', '認証エラー', 'GitHub Tokenを確認してください（Contents: Read and write 権限が必要です）');
+        toggleSettings();
+      } else if (err.message.includes('404')) {
+        showToast('error', 'リポジトリが見つかりません', `${state.owner}/${state.repo} を確認してください`);
+        toggleSettings();
+      } else {
+        showToast('error', '投稿失敗', err.message);
+      }
+    } finally {
+      setLoading(false);
+    }
+  }
+
+  function setLoading(on, label = '🚀 投稿する') {
+    state.processing = on;
+    submitLabel.textContent = on ? label : '🚀 投稿する';
+    btnSubmit.disabled = on;
+    const existing = $('submit-spinner');
+    if (on && !existing) {
+      const spinner = document.createElement('div');
+      spinner.className = 'spinner';
+      spinner.id = 'submit-spinner';
+      submitLabel.before(spinner);
+    } else if (!on) {
+      existing?.remove();
+      validateForm();
+    }
+  }
+
+  function resetAfterSubmit() {
+    textarea.value = '';
+    charCount.textContent = '0';
+    resetImage();
+    setNow();
+  }
+
+
+  /* ════════════════════════════════════════════
+     Toast
+  ════════════════════════════════════════════ */
+  const TOAST_ICONS = { success: '✅', error: '❌', info: 'ℹ️', warning: '⚠️' };
+
+  function showToast(type, title, message = '', duration = 5000) {
+    const toast = document.createElement('div');
+    toast.className = `toast ${type}`;
+    toast.innerHTML = `
+      <span class="toast-icon">${TOAST_ICONS[type] || 'ℹ️'}</span>
+      <div class="toast-body">
+        <div class="toast-title">${escHtml(title)}</div>
+        ${message ? `<div class="toast-msg">${escHtml(message)}</div>` : ''}
+      </div>
+    `;
+    toastContainer.appendChild(toast);
+    toast.addEventListener('click', () => dismissToast(toast));
+    setTimeout(() => dismissToast(toast), duration);
+  }
+
+  function dismissToast(toast) {
+    if (toast.classList.contains('out')) return;
+    toast.classList.add('out');
+    setTimeout(() => toast.remove(), 300);
+  }
+
+  /* ════════════════════════════════════════════
+     Utils
+  ════════════════════════════════════════════ */
+  function formatSize(bytes) {
+    if (bytes < 1024)       return `${bytes}B`;
+    if (bytes < 1024*1024)  return `${(bytes/1024).toFixed(1)}KB`;
+    return `${(bytes/1024/1024).toFixed(1)}MB`;
+  }
+
+  function escHtml(str) {
+    return String(str)
+      .replace(/&/g,'&amp;')
+      .replace(/</g,'&lt;')
+      .replace(/>/g,'&gt;');
+  }
+
+  /* ════════════════════════════════════════════
+     Init
+  ════════════════════════════════════════════ */
+  loadSettings();
+  validateForm();
+
+  // Auto-open settings if no token
+  if (!state.token || !state.owner || !state.repo) {
+    setTimeout(() => {
+      settingsPanel.classList.add('open');
+      btnSettings.classList.add('active');
+      inputToken.focus();
+    }, 300);
+  }
+
+  marked.setOptions({ breaks: true, gfm: true });
+  console.log('📝 日記投稿 Web UI 起動完了');
+</script>
+
+</body>
+</html>
