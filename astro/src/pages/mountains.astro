@@ -1,0 +1,241 @@
+---
+import MapLayout from "@/layouts/MapLayout.astro";
+import { getMountainsByElevation, latestMountainActivity, summarizeMountains } from "@/lib/mountains";
+
+const mountains = getMountainsByElevation();
+const stats = summarizeMountains(mountains);
+const highestElevation = stats.highest ? stats.highest.elevation.toLocaleString() : "0";
+const latestVisit = stats.latest?.last_visit || "";
+---
+
+<MapLayout
+  title="訪問済み山リスト"
+  description="Strava の軌跡から山頂付近を通過したアクティビティを自動判定して集計した山リストです。"
+  canonicalPath="/mountains/"
+>
+  <section class="map-app mountains-map-app">
+    <header class="map-app-header">
+      <div>
+        <h1>訪問済み山リスト</h1>
+        <p>Strava の軌跡から、山頂付近を通過したアクティビティを自動判定して集計しています。</p>
+      </div>
+      <div class="map-app-stats mountains-stats" aria-label="Mountain stats">
+        <div>
+          <strong data-stat="count">{stats.count}</strong>
+          <span>Mountains</span>
+        </div>
+        <div>
+          <strong data-stat="visits">{stats.visits}</strong>
+          <span>Visits</span>
+        </div>
+        <div>
+          <strong>{highestElevation}</strong>
+          <span>Highest m</span>
+        </div>
+        <div>
+          <strong>{latestVisit}</strong>
+          <span>Latest</span>
+        </div>
+      </div>
+    </header>
+
+    <div class="map-workspace">
+      <section class="map-main-panel" aria-label="Mountains map">
+        <div class="map-controlbar">
+          <div class="segmented-control" aria-label="Elevation filter">
+            <button class="active" type="button" data-elevation-tier="all">すべて</button>
+            <button type="button" data-elevation-tier="2500">2500m+</button>
+            <button type="button" data-elevation-tier="2000">2000m+</button>
+            <button type="button" data-elevation-tier="1500">1500m+</button>
+          </div>
+        </div>
+        <div class="map-canvas-wrap">
+          <div id="mountains-map" class="map-canvas"></div>
+          <div class="map-loading" id="mountains-map-loading">読み込み中...</div>
+        </div>
+      </section>
+
+      <aside class="map-side-panel" aria-label="Visited mountains">
+        <div class="panel-header">
+          <h2>訪問済み山一覧</h2>
+          <span id="mountains-count-badge">{mountains.length}座</span>
+        </div>
+        <div class="mountain-list compact" id="mountain-list">
+          {
+            mountains.map((mountain) => {
+              const latestActivity = latestMountainActivity(mountain);
+              return (
+                <article class="mountain-item" data-elevation={mountain.elevation}>
+                  <div class="mountain-item-body">
+                    <h3>{mountain.name}</h3>
+                    <p>
+                      <span>{mountain.elevation.toLocaleString()}m</span>
+                      <span>{mountain.visit_count}回訪問</span>
+                      <span>初回 {mountain.first_visit}</span>
+                    </p>
+                    {latestActivity && <p class="mountain-latest">最新 {mountain.last_visit} / {latestActivity.name}</p>}
+                  </div>
+                </article>
+              );
+            })
+          }
+        </div>
+      </aside>
+    </div>
+  </section>
+
+  <script is:inline>
+    const DATA_URL = "/mountains-data.json";
+    let mountainData = [];
+    let currentElevationTier = "all";
+    let map;
+    let markerLayer;
+    let latestBounds = null;
+
+    function colorForElevation(elevation) {
+      if (elevation >= 2500) return "#dc2626";
+      if (elevation >= 2000) return "#f97316";
+      if (elevation >= 1500) return "#ca8a04";
+      return "#15803d";
+    }
+
+    function filteredMountains() {
+      if (currentElevationTier === "all") return mountainData;
+      const minElevation = Number(currentElevationTier);
+      return mountainData.filter((mountain) => mountain.elevation >= minElevation);
+    }
+
+    function fitMountains(data) {
+      if (!data.length || !map) return;
+      const bounds = L.latLngBounds(data.map((mountain) => [mountain.lat, mountain.lng]));
+      if (!bounds.isValid()) return;
+      latestBounds = bounds;
+      map.fitBounds(bounds, { padding: [42, 42], maxZoom: 12 });
+    }
+
+    function renderMarkers(data) {
+      if (!map) return;
+      if (markerLayer) markerLayer.clearLayers();
+      markerLayer = L.layerGroup().addTo(map);
+
+      data.forEach((mountain) => {
+        const marker = L.circleMarker([mountain.lat, mountain.lng], {
+          radius: 9,
+          fillColor: colorForElevation(mountain.elevation),
+          color: "#fff",
+          weight: 2,
+          opacity: 1,
+          fillOpacity: 0.9,
+        }).addTo(markerLayer);
+
+        marker.bindPopup(`
+          <strong style="font-size:15px">${escapeHtml(mountain.name)}</strong><br>
+          ${mountain.elevation.toLocaleString()}m / ${mountain.visit_count}回訪問<br>
+          初回: ${escapeHtml(mountain.first_visit)}<br>
+          最新: ${escapeHtml(mountain.last_visit)}
+        `);
+      });
+
+      fitMountains(data);
+    }
+
+    function renderList(data) {
+      const list = document.getElementById("mountain-list");
+      list.innerHTML = data
+        .map((mountain) => {
+          const latestActivity = Array.isArray(mountain.activities)
+            ? mountain.activities.reduce((current, activity) => (!current || activity.date > current.date ? activity : current), null)
+            : null;
+          const latest = latestActivity
+            ? `<p class="mountain-latest">最新 ${escapeHtml(mountain.last_visit)} / ${escapeHtml(latestActivity.name)}</p>`
+            : "";
+
+          return `
+            <article class="mountain-item" data-elevation="${mountain.elevation}">
+              <div class="mountain-item-body">
+                <h3>${escapeHtml(mountain.name)}</h3>
+                <p>
+                  <span>${mountain.elevation.toLocaleString()}m</span>
+                  <span>${mountain.visit_count}回訪問</span>
+                  <span>初回 ${escapeHtml(mountain.first_visit)}</span>
+                </p>
+                ${latest}
+              </div>
+            </article>
+          `;
+        })
+        .join("");
+    }
+
+    function updateStats(data) {
+      document.querySelector('[data-stat="count"]').textContent = data.length.toLocaleString();
+      document.querySelector('[data-stat="visits"]').textContent = data
+        .reduce((sum, mountain) => sum + mountain.visit_count, 0)
+        .toLocaleString();
+      document.getElementById("mountains-count-badge").textContent = `${data.length.toLocaleString()}座`;
+    }
+
+    function render() {
+      const data = filteredMountains();
+      updateStats(data);
+      renderList(data);
+      renderMarkers(data);
+    }
+
+    function setupControls() {
+      document.querySelectorAll("[data-elevation-tier]").forEach((button) => {
+        button.addEventListener("click", () => {
+          document.querySelectorAll("[data-elevation-tier]").forEach((item) => item.classList.remove("active"));
+          button.classList.add("active");
+          currentElevationTier = button.dataset.elevationTier || "all";
+          render();
+          if (latestBounds) map.fitBounds(latestBounds, { padding: [42, 42], maxZoom: 12 });
+        });
+      });
+    }
+
+    function escapeHtml(value) {
+      return String(value).replace(/[&<>"']/g, (character) => ({
+        "&": "&amp;",
+        "<": "&lt;",
+        ">": "&gt;",
+        '"': "&quot;",
+        "'": "&#39;",
+      })[character]);
+    }
+
+    async function loadData() {
+      const response = await fetch(DATA_URL);
+      if (!response.ok) throw new Error("mountains-data.json load failed");
+      const payload = await response.json();
+      mountainData = Array.isArray(payload.mountains) ? payload.mountains : [];
+      document.getElementById("mountains-map-loading").hidden = true;
+      render();
+    }
+
+    document.addEventListener("DOMContentLoaded", () => {
+      setupControls();
+      map = L.map("mountains-map", {
+        scrollWheelZoom: false,
+        zoomControl: true,
+        preferCanvas: true,
+      }).setView([36.2, 138.0], 7);
+
+      map.on("focus", () => map.scrollWheelZoom.enable());
+      map.on("blur", () => map.scrollWheelZoom.disable());
+
+      L.tileLayer("https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png", {
+        attribution:
+          '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> &copy; <a href="https://carto.com/attributions">CARTO</a>',
+        subdomains: "abcd",
+        maxZoom: 19,
+      }).addTo(map);
+
+      requestAnimationFrame(() => map.invalidateSize());
+      loadData().catch((error) => {
+        console.error(error);
+        document.getElementById("mountains-map-loading").textContent = "データの読み込みに失敗しました";
+      });
+    });
+  </script>
+</MapLayout>

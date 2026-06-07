@@ -1,9 +1,9 @@
 {
-  "generatedAt": "2026-06-05T14:13:46.527Z",
+  "generatedAt": "2026-06-07T10:44:27.779Z",
   "counts": {
     "posts": 355,
     "diary": 40,
-    "urls": 406
+    "urls": 413
   },
   "urls": [
     "/",
@@ -407,6 +407,13 @@
     "/domain-change/",
     "/feed.xml",
     "/Jekyll事始め/",
+    "/mountains-data.json",
+    "/mountains/",
+    "/onsen-data.json",
+    "/onsen/",
+    "/places-data.json",
+    "/places.json",
+    "/places/",
     "/pokemonsv/",
     "/robots.txt",
     "/search",

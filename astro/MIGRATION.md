@@ -173,9 +173,9 @@ The old Japanese/percent-encoded filenames were normalized to English slugs on `
 
 4. Migrate data/map pages in this order.
    - `/activity/`: done, using a wide map-focused Astro layout
-   - `/mountains/`
-   - `/places/`
-   - `/onsen/`
+   - `/mountains/`: done, using the visited mountain JSON and a Leaflet marker map
+   - `/places/`: done, using the check-in JSON, category filters, search, and a Leaflet marker map
+   - `/onsen/`: done, using the onsen check-in JSON, search, photos, and a Leaflet marker map
 
 5. Keep existing automation compatible.
    - `update-strava-activities.yml`

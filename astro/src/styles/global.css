@@ -726,6 +726,217 @@ body.js-diary .diary-content h2 + p {
   line-height: 1.6;
 }
 
+.mountain-list.compact {
+  display: block;
+  overflow-y: auto;
+  padding: 10px;
+}
+
+.mountain-item {
+  border: 1px solid #e5e5e5;
+  border-radius: 8px;
+  background: #fff;
+  padding: 11px 12px;
+}
+
+.mountain-list.compact .mountain-item + .mountain-item {
+  margin-top: 8px;
+}
+
+.mountain-item h3 {
+  margin: 0;
+  overflow: hidden;
+  color: #333;
+  font-size: 14px;
+  line-height: 1.35;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.mountain-item p {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 5px 0 0;
+  color: #666;
+  font-size: 12px;
+}
+
+.mountain-item .mountain-latest {
+  display: block;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.map-search {
+  width: min(100%, 320px);
+  border: 1px solid #d3d3d3;
+  border-radius: 8px;
+  background: #fff;
+  color: #333;
+  padding: 8px 10px;
+  font: inherit;
+  font-size: 13px;
+  line-height: 1.2;
+}
+
+.checkin-controlbar {
+  justify-content: flex-start;
+}
+
+.checkin-filter {
+  max-width: 100%;
+}
+
+.checkin-list.compact {
+  display: block;
+  overflow-y: auto;
+  padding: 10px;
+}
+
+.checkin-item {
+  border: 1px solid #e5e5e5;
+  border-radius: 8px;
+  background: #fff;
+}
+
+.checkin-list.compact .checkin-item + .checkin-item,
+.checkin-list-note {
+  margin-top: 8px;
+}
+
+.checkin-item.active {
+  border-color: #fc4c02;
+  box-shadow: 0 0 0 1px rgba(252, 76, 2, 0.22);
+}
+
+.checkin-item-focus {
+  display: grid;
+  width: 100%;
+  grid-template-columns: 76px minmax(0, 1fr);
+  gap: 10px;
+  border: 0;
+  background: transparent;
+  padding: 9px;
+  color: inherit;
+  font: inherit;
+  text-align: left;
+  cursor: pointer;
+}
+
+.checkin-item-focus:hover h3 {
+  color: #4183c4;
+}
+
+.checkin-item-photo {
+  width: 76px;
+  height: 76px;
+  overflow: hidden;
+  border-radius: 6px;
+  background: #f1f1f1;
+}
+
+.checkin-item-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.checkin-item-placeholder {
+  display: grid;
+  height: 100%;
+  place-items: center;
+  color: #777;
+  font-size: 24px;
+}
+
+.checkin-item-heading {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  justify-content: space-between;
+  color: #777;
+  font-size: 11px;
+}
+
+.checkin-item-category {
+  overflow: hidden;
+  border-radius: 6px;
+  background: #607d8b;
+  color: #fff;
+  padding: 2px 6px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.checkin-item h3 {
+  margin: 5px 0 0;
+  overflow: hidden;
+  color: #333;
+  font-size: 14px;
+  line-height: 1.35;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.checkin-item-address,
+.checkin-item-comment,
+.checkin-item-meta,
+.checkin-list-note,
+.checkin-empty {
+  margin: 5px 0 0;
+  color: #666;
+  font-size: 12px;
+  line-height: 1.35;
+}
+
+.checkin-item-address,
+.checkin-item-comment {
+  display: -webkit-box;
+  overflow: hidden;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+}
+
+.checkin-item-meta {
+  color: #777;
+}
+
+.checkin-list-note,
+.checkin-empty {
+  padding: 8px 4px;
+  text-align: center;
+}
+
+.popup-image {
+  margin: 0 0 8px;
+}
+
+.popup-image img {
+  display: block;
+  width: 220px;
+  max-width: 100%;
+  height: 132px;
+  border-radius: 6px;
+  object-fit: cover;
+}
+
+.popup-title {
+  margin: 0 0 4px;
+  font-size: 15px;
+  line-height: 1.35;
+}
+
+.popup-address,
+.popup-comment,
+.popup-date {
+  margin: 4px 0 0;
+  color: #555;
+  font-size: 12px;
+  line-height: 1.35;
+}
+
 @media (max-width: 600px) {
   body {
     font-size: 17px;
@@ -835,5 +1046,22 @@ body.js-diary .diary-content h2 + p {
 
   .activity-list.compact {
     max-height: 480px;
+  }
+
+  .mountain-list.compact {
+    max-height: 480px;
+  }
+
+  .checkin-list.compact {
+    max-height: 520px;
+  }
+
+  .checkin-item-focus {
+    grid-template-columns: 68px minmax(0, 1fr);
+  }
+
+  .checkin-item-photo {
+    width: 68px;
+    height: 68px;
   }
 }
