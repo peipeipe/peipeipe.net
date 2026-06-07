@@ -9,6 +9,7 @@ This directory is a side-by-side Astro prototype. The current Jekyll site remain
 - Preview URL: `https://peipeipe-net-astro.pages.dev/`
 - Preview check page: `https://peipeipe-net-astro.pages.dev/cloudflare-preview/`
 - Latest successful GitHub Actions run before the master merge: `26958949223`
+- Latest pushed migration commit: `94474c5 Migrate map data pages to Astro`
 - Production `https://www.peipeipe.net` is still served by the existing GitHub Pages/Jekyll workflow.
 
 The Cloudflare Pages preview deploy is working. The first deploy attempt failed because root `.gitignore` ignored `astro/package.json`; that was fixed by explicitly tracking the Astro package manifest.
@@ -22,8 +23,8 @@ Last verified locally:
 
 ```text
 Astro build: success
-Generated pages: 402
-URL manifest: 406 URLs
+Generated pages: 405
+URL manifest: 413 URLs
 Legacy invalid percent slugs: 0
 Workflow YAML parse: ok
 Cloudflare preview HTTP status: 200 before the local master merge
@@ -35,6 +36,7 @@ Recent UI/content work on `astro-migration`:
 - Tightened blog and diary page spacing and typography to match the current site more closely.
 - Changed list excerpts to show only the first sentence instead of a long multi-sentence snippet.
 - Normalized Markdown image URLs with spaces so posts that were rendering cleanly in Jekyll also render correctly in Astro.
+- Migrated the wide data/map pages for activity, mountains, places, and onsen into Astro layouts.
 
 ## Local Node
 
@@ -56,7 +58,8 @@ PATH=/home/peipeipe/.local/nodejs/current/bin:$PATH npm run build
 - Reads existing `../_diary/*.md` files without moving them.
 - Builds the blog index, post detail pages, diary index, diary detail pages, `about`, `search`, RSS, and sitemap.
 - Builds `404.html` and `robots.txt`.
-- Builds `/activity/` as the first wide map-focused data page, backed by `/activity-data.json`.
+- Builds `/activity/`, `/mountains/`, `/places/`, and `/onsen/` as wide map-focused data pages.
+- Builds `/activity-data.json`, `/mountains-data.json`, `/places-data.json`, `/places.json`, and `/onsen-data.json`.
 - Builds a preview-only `/cloudflare-preview/` page.
 - Deploys the Astro prototype to Cloudflare Pages via `.github/workflows/cloudflare-pages-astro-preview.yml`.
 - Keeps the current Jekyll site deploy workflow untouched.
@@ -66,7 +69,7 @@ Current content counts from `migration/astro-url-manifest.json`:
 ```text
 posts: 355
 diary entries: 40
-tracked URLs: 406
+tracked URLs: 413
 ```
 
 ## Verification
@@ -171,13 +174,13 @@ The old Japanese/percent-encoded filenames were normalized to English slugs on `
    - `robots.txt`: done
    - `CNAME` handling is not needed for preview, but matters during final cutover.
 
-4. Migrate data/map pages in this order.
+4. Migrate data/map pages.
    - `/activity/`: done, using a wide map-focused Astro layout
    - `/mountains/`: done, using the visited mountain JSON and a Leaflet marker map
    - `/places/`: done, using the check-in JSON, category filters, search, and a Leaflet marker map
    - `/onsen/`: done, using the onsen check-in JSON, search, photos, and a Leaflet marker map
 
-5. Keep existing automation compatible.
+5. Verify existing automation remains compatible after preview deploys.
    - `update-strava-activities.yml`
    - `update-onsen-checkins.yml`
    - `webhook-diary.yml`
