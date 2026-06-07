@@ -9,6 +9,7 @@ const posts = await getPosts();
 const diary = await getDiaryEntries();
 const urls = [
   "/",
+  "/.well-known/nostr.json",
   "/404.html",
   "/activity/",
   "/activity-data.json",

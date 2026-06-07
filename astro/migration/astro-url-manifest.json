@@ -1,12 +1,13 @@
 {
-  "generatedAt": "2026-06-07T14:02:33.186Z",
+  "generatedAt": "2026-06-07T14:06:05.274Z",
   "counts": {
     "posts": 356,
     "diary": 40,
-    "urls": 415
+    "urls": 416
   },
   "urls": [
     "/",
+    "/.well-known/nostr.json",
     "/2014-03-03-youre-up-and-running/",
     "/2015-02-27-white-gold-or-blue-black-dress/",
     "/2015-03-07-fire-safety/",

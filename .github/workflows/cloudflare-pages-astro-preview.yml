@@ -56,7 +56,8 @@ jobs:
           test -f dist/feed.xml
           test -f dist/sitemap-index.xml
           test -f dist/diary-post/index.html
-          test -f dist/.well-known/nostr.json
+          test -f dist/nostr.json
+          test -f dist/_redirects
           test -f dist/favicon.ico
           test -d dist/images
           npm run manifest

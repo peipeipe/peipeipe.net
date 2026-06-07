@@ -24,7 +24,7 @@ Last verified locally:
 ```text
 Astro build: success
 Generated pages: 407
-URL manifest: 415 URLs
+URL manifest: 416 URLs
 Legacy invalid percent slugs: 0
 Workflow YAML parse: ok
 Cloudflare preview HTTP status: 200 before the local master merge
@@ -61,6 +61,7 @@ PATH=/home/peipeipe/.local/nodejs/current/bin:$PATH npm run build
 - Builds `/activity/`, `/mountains/`, `/places/`, and `/onsen/` as wide map-focused data pages.
 - Builds `/activity-data.json`, `/mountains-data.json`, `/places-data.json`, `/places.json`, and `/onsen-data.json`.
 - Copies root static assets from `../images/`, `../.well-known/`, and `../favicon.ico` into the Astro `dist/` output during `npm run build`.
+- Publishes `/.well-known/nostr.json` through a Cloudflare Pages `_redirects` rewrite to avoid direct-upload hidden directory handling.
 - Builds a preview-only `/cloudflare-preview/` page.
 - Deploys the Astro site to Cloudflare Pages via `.github/workflows/cloudflare-pages-astro-preview.yml`.
 - Keeps the current Jekyll site deploy workflow untouched.
@@ -70,7 +71,7 @@ Current content counts from `migration/astro-url-manifest.json`:
 ```text
 posts: 356
 diary entries: 40
-tracked URLs: 415
+tracked URLs: 416
 ```
 
 ## Verification
