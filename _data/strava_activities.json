@@ -1,5 +1,22 @@
 [
   {
+    "id": 18858197506,
+    "name": "朝のランニング",
+    "sport_type": "Run",
+    "distance": 10260.1,
+    "moving_time": 3540,
+    "elapsed_time": 3927,
+    "total_elevation_gain": 53.0,
+    "start_date": "2026-06-09T22:38:42Z",
+    "start_latlng": [
+      36.391887,
+      138.24248
+    ],
+    "average_speed": 2.898,
+    "max_speed": 4.233,
+    "summary_polyline": "q`c}EujwjY}AnCIOU}AMi@Wy@Ue@gAoAa@]KE]TIJ{ApCsApB[tAQf@oExKc@nAm@|A{@pCcC`GoBpEq@rA]j@[n@@LJXhA~@DLAHy@Xq@\\wAz@kAx@}@~@c@h@qAtBe@l@Q\\_@h@eAvASj@m@rAITEX@LFl@Ld@TvAJlAT`BBf@ZxBDx@^vCPh@DXBr@F\\N~AVhBDr@Jj@AJBKQoAEEI?kAToAZmDn@g@NYLQLAfBCbAEBEAIFG\\KxCY|CId@e@zAQX]b@WLi@b@m@n@KH[d@Sd@?ZKx@?h@g@nCAh@JZFBT@ZWRI?B}@rAs@vAeD~HMZOz@GAaB{@cHqEoEcDwCcCGMXmD?q@Eo@?u@_@mFAe@HKT@rAf@ZI`@e@r@wBT_ALo@DK|AsIhAiFb@{BxBoK`@qDTmDHq@Bc@?{@@e@HGhBw@rBcAt@c@v@m@rAiA|AwBnBeDPc@x@w@PSx@iAlB{BtC}DtAsBtDgGrCcFl@kAz@gBt@gBv@}B\\s@dAqC`DoHdEcIVWFKLc@lDwIjA{Cv@uCdBmFtAeDdBwDbAqBhAoB|BuDlAaBbBiCjAuBbAqBRDz@t@jAp@hDdChAr@`@PtBxApBnAl@Z\\Lh@NBB@LDt@ILuAl@WPgAh@MJ]FeAl@o@b@aA|@o@t@_EjFDPjBpBHd@y@vB{@vAcAfCY~@WhAq@xAi@vA"
+  },
+  {
     "id": 18808338121,
     "name": "奥信濃100 50kmの部",
     "sport_type": "TrailRun",
