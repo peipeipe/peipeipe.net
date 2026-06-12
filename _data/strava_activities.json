@@ -1,5 +1,22 @@
 [
   {
+    "id": 18889400226,
+    "name": "夕方のトレイルランニング",
+    "sport_type": "TrailRun",
+    "distance": 10007.5,
+    "moving_time": 5134,
+    "elapsed_time": 5368,
+    "total_elevation_gain": 712.0,
+    "start_date": "2026-06-12T10:06:32Z",
+    "start_latlng": [
+      36.408432,
+      138.25272
+    ],
+    "average_speed": 1.949,
+    "max_speed": 3.986,
+    "summary_polyline": "u_f}EonyjYqAGMGGUVyDLyB@_Au@MIK}Be@cBYoA_@i@GyFGqHJw@GoCJ{AGcBNYGeDFg@AO@IHMz@w@{@GqBM]Aa@c@}AgAuEy@iCWq@c@qBeAsJEgA@i@JkAHWAi@O}AWy@q@s@Ym@MIy@RcBO}BFgAZOHQ@cAz@eAXs@C@LEBIGSNWHVB?NKDITWT_@p@NPKBJHIF@BVPSF\\JIDG?IHj@DLHTBQVK?SHCJP?JZTLBF{@n@]AX`@BPWR_@KBL?`@OGCB@HE@QEa@@LT@Vg@C]LCJTb@@`@SJELH\\CJBFa@xAQ^a@XCFe@@]bAe@T[Fu@IY[MEA^GJKD[n@WHIRKHELO@QPG@i@GOd@?LGHE@IMKECDA\\GJGOME?`@_@OG@ENK@@HEd@ORUCy@ASIWB?XGHGTE@GGEH@p@Cl@F`ACXEHKDW]ALGAKREAI[MECJc@t@KIEPM?WRm@Pa@r@]VO`@MNMd@Gd@KNCPG?MZKB?JGPcAdAW\\]TMRi@VUZYRIV]b@MDCFs@l@IfA@~@QbAMZg@Tk@EUd@WDo@n@y@dAYr@S\\El@QTUj@`@aAD_@`@oAjAwAJGX_@LEV[Tw@f@m@R]\\wAJ[l@s@HSd@]`@i@fAu@RYt@m@X]j@{@BKX[FSb@s@Vk@T]RIDQ?UJOHWr@WLQNCDQTFf@aANB@RNMJ@DOD?LTBRLCBKEi@FoAG[BQCUBCL@L_@B[JCj@D\\EXJJ?NSAi@PKBMLAVTD]H?BLFGJm@PJNPPw@z@[j@MJSJAXu@ROJk@LDZ\\~@F\\I\\YXw@h@OXU\\m@Xw@Da@AQIO?ILKREC]W_@?GVQ\\DRM?MUYp@BDCCGFKLHIq@FA^HTGO[OMb@Mr@c@@EOIKSIGO?@IRQd@Sm@SSBDILA]GRMWOAGHEIGDIGKOKTa@z@}@WW^QTADG?Gj@B`@Kd@S|@q@`AQtAi@~BGxBLJDXl@n@`@NRh@pC?d@QrC@z@|AzMNj@bAzB|BhJd@lADn@[vAKx@d@q@EJZ[Ns@NCfADxHGjAMj@BdEK~GAlEHl@Hj@XhBZ`@NJLb@A~Bd@DF?L_@jGEbB^JhC\\L@RSFa@F{AAu@LkCCUaBg@sASW`BDVEf@"
+  },
+  {
     "id": 18877073296,
     "name": "夕方のランニング",
     "sport_type": "Run",
