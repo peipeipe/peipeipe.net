@@ -12,6 +12,10 @@ on:
 permissions:
   contents: write
 
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: false
+
 jobs:
   convert-images:
     runs-on: ubuntu-latest
@@ -44,5 +48,14 @@ jobs:
             echo "No changes to commit"
           else
             git commit -m "Convert JPEG images to WebP and update markdown references"
-            git push
+            for attempt in 1 2 3; do
+              git pull --rebase --autostash origin "$GITHUB_REF_NAME"
+              if git push; then
+                exit 0
+              fi
+              echo "Push failed; retrying after remote update (attempt $attempt/3)"
+              sleep $((attempt * 5))
+            done
+            echo "Failed to push converted images after 3 attempts"
+            exit 1
           fi

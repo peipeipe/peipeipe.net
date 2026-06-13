@@ -78,8 +78,8 @@ def update_markdown_files(old_path, new_path):
     
     updated_files = []
     
-    # _posts/ と _drafts/ を検索
-    for markdown_dir in ['_posts', '_drafts']:
+    # Markdown content directories to update when image filenames change.
+    for markdown_dir in ['_posts', '_drafts', '_diary']:
         if os.path.exists(markdown_dir):
             for md_file in glob.glob(f"{markdown_dir}/**/*.md", recursive=True):
                 try:
