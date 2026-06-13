@@ -4,30 +4,32 @@ This directory contains the Astro implementation used for the Cloudflare Pages m
 
 ## Current Status
 
-- Branch: `astro-migration`
+- Branch: `master`
 - Cloudflare Pages project: `peipeipe-net-astro`
-- Preview URL: `https://peipeipe-net-astro.pages.dev/`
-- Preview check page: `https://peipeipe-net-astro.pages.dev/cloudflare-preview/`
-- Latest successful GitHub Actions run before the master merge: `26958949223`
-- Latest pushed migration commit: `94474c5 Migrate map data pages to Astro`
-- Production cutover is in progress. Repository automation now deploys Astro to Cloudflare Pages from `master`; the legacy Jekyll workflow is manual-only for rollback.
+- Production URL: `https://www.peipeipe.net/`
+- Cloudflare Pages URL: `https://peipeipe-net-astro.pages.dev/`
+- Cloudflare check page: `https://www.peipeipe.net/cloudflare-preview/`
+- Latest successful GitHub Actions run after cutover: `27457888707`
+- Latest pushed cutover commit: `4a9eff7 Set Cloudflare Pages production branch`
+- Production cutover is complete. Repository automation deploys Astro to Cloudflare Pages from `master`; the legacy Jekyll workflow is manual-only for rollback.
 
 The Cloudflare Pages deploy is working. The first deploy attempt failed because root `.gitignore` ignored `astro/package.json`; that was fixed by explicitly tracking the Astro package manifest.
 
-`master` has now been merged into `astro-migration` locally at merge commit `039eb7d`, bringing in:
+The migration branch was fast-forwarded into `master`. The final cutover commits on `master` include:
 
-- latest Foursquare/Strava data updates from `origin/master`
-- diary entry `_diary/2026-06-12.md`
-- the earlier old-slug normalization and dated permalink updates
+- `1024e46 Prepare Astro production cutover`
+- `e7758bc Fix Astro date URLs in CI`
+- `4a9eff7 Set Cloudflare Pages production branch`
 
-Last verified locally on 2026-06-13:
+Last verified on 2026-06-13:
 
 ```text
 Astro build: success
 Generated pages: 408
 URL manifest: 417 URLs
 Legacy invalid percent slugs: 0
-Cloudflare preview HTTP status: 200 for /diary-post/, /.well-known/nostr.json, and /images/2024-03-31-mother3/0.webp
+Cloudflare Pages production HTTP status: 200 for /cloudflare-preview/ and /diary/2026-06-12/ on www.peipeipe.net
+Cloudflare Pages direct HTTP status: 200 for /.well-known/nostr.json on peipeipe-net-astro.pages.dev
 Jekyll build: not run locally; ruby/bundle are unavailable in this container
 URL comparison: blocked until migration/jekyll-url-manifest.json is generated from a Jekyll _site build
 ```
@@ -96,9 +98,40 @@ Generated verification files:
 
 Local note: this container currently has the Astro Node runtime available, but no local `ruby`/`bundle` command. Jekyll comparison commands need a Ruby environment or a captured `_site` directory from CI/production. If `npm run compare:urls` is run before `migration/jekyll-url-manifest.json` exists, it exits with a concise instruction to run `npm run manifest:jekyll` first.
 
-## Cloudflare Pages Preview
+## Cloudflare Pages Production
 
-This site is published to Cloudflare Pages. Production traffic should be moved by attaching the custom domain to the Cloudflare Pages project.
+This site is published to Cloudflare Pages and served from the production custom domain.
+
+Current Cloudflare DNS/custom-domain state:
+
+```text
+peipeipe.net.      CNAME peipeipe-net-astro.pages.dev.  proxied
+www.peipeipe.net.  CNAME peipeipe-net-astro.pages.dev.  proxied
+```
+
+The old GitHub Pages apex A records were removed:
+
+```text
+185.199.108.153
+185.199.109.153
+185.199.110.153
+185.199.111.153
+```
+
+The stale Google Domains zone NS records were also removed from the Cloudflare zone. The authoritative nameservers are:
+
+```text
+naomi.ns.cloudflare.com
+sterling.ns.cloudflare.com
+```
+
+Cloudflare Redirect Rules should keep the apex canonicalized to `www`:
+
+```text
+If: Hostname equals peipeipe.net
+Then: 301 redirect to concat("https://www.peipeipe.net", http.request.uri.path)
+Preserve query string: on
+```
 
 Local Wrangler is available through npm. This machine is not authenticated unless `wrangler login` has been run or `CLOUDFLARE_API_TOKEN` is set:
 
@@ -106,7 +139,7 @@ Local Wrangler is available through npm. This machine is not authenticated unles
 PATH=/home/peipeipe/.local/nodejs/current/bin:$PATH npx wrangler whoami
 ```
 
-After logging in, create a Pages preview deployment:
+After logging in, create a manual Pages deployment:
 
 ```sh
 cd astro
@@ -121,7 +154,7 @@ This deploys `dist/` to the `peipeipe-net-astro` Pages project and should produc
 /cloudflare-preview/
 ```
 
-Recommended Cloudflare Pages Git integration settings, if switching away from the GitHub Actions/Wrangler deploy:
+Recommended Cloudflare Pages Git integration settings, if switching away from the current GitHub Actions/Wrangler deploy:
 
 ```text
 Root directory: astro
@@ -130,7 +163,7 @@ Build output directory: dist
 NODE_VERSION: 22.22.3
 ```
 
-Move the production custom domain to Cloudflare Pages after URL and visual checks pass. The GitHub Pages/Jekyll workflow has been disabled for automatic pushes and is retained as a manual rollback path.
+The GitHub Pages/Jekyll workflow has been disabled for automatic pushes and is retained as a manual rollback path.
 
 ### GitHub Actions Deployment
 
@@ -154,11 +187,12 @@ The token needs permission to manage Cloudflare Pages for the account. The deplo
 
 ```text
 Project: peipeipe-net-astro
-Preview URL: https://peipeipe-net-astro.pages.dev/
-Check page: https://peipeipe-net-astro.pages.dev/cloudflare-preview/
+Production URL: https://www.peipeipe.net/
+Pages URL: https://peipeipe-net-astro.pages.dev/
+Check page: https://www.peipeipe.net/cloudflare-preview/
 ```
 
-To trigger a new preview deployment:
+To trigger a migration-branch preview deployment:
 
 ```sh
 git push origin astro-migration
@@ -191,13 +225,13 @@ The old Japanese/percent-encoded filenames were normalized to English slugs on `
 
 ## Next Work
 
-1. Compare current Jekyll output with Astro output.
+1. Optional: compare current Jekyll output with Astro output.
    - Jekyll `_site` URL manifest generation is scripted with `npm run manifest:jekyll`.
    - Compare it with `migration/astro-url-manifest.json` using `npm run compare:urls`.
    - Review `migration/url-comparison.json` and migrate or intentionally ignore any differences.
    - Current local blocker: Ruby/Bundler are not installed here, and `_site` is absent. Generate `_site` in a Ruby environment or obtain the production/CI `_site` artifact, then run `npm run manifest:jekyll` and `npm run compare:urls`.
 
-2. Improve visual parity for the blog and diary pages.
+2. Optional: improve visual parity for the blog and diary pages.
    - Check image layout on representative long posts.
 
 3. Migrate static root pages and special pages.
@@ -221,27 +255,19 @@ The old Japanese/percent-encoded filenames were normalized to English slugs on `
    - `convert-images-to-webp.yml`: updates `images/` and Markdown references; Astro serves root `images/` assets and reads posts from `_posts/`.
    - The Astro deploy workflow now also watches `master`, `places.json`, `.well-known/**`, and `favicon.ico` for cutover readiness.
 
-6. Finish production cutover.
-   - Before cutover:
-     - Tag the last Jekyll production state.
-     - Run Astro verification and preview checks.
-     - Confirm Cloudflare Pages custom domain setup for `www.peipeipe.net` and apex handling if needed.
-     - Decide whether to keep deploying from GitHub Actions/Wrangler or switch to Cloudflare Pages Git integration.
-   - Cutover:
-     - Point the production custom domain from GitHub Pages to Cloudflare Pages.
-     - Confirm `.github/workflows/jekyll.yml` remains manual-only.
-     - Confirm `master` blog updates deploy Astro production instead of Jekyll.
-   - After cutover:
-     - Verify `https://www.peipeipe.net`, RSS, sitemap, canonical URLs, key old post URLs, `/diary-post/`, `/images/...`, and `/.well-known/nostr.json`.
-     - Confirm scheduled/data workflows still trigger a production Astro deploy after committing content/data updates.
+6. Post-cutover monitoring.
+   - Re-check DNS after propagation stabilizes:
+     - `https://peipeipe.net/` should 301 to `https://www.peipeipe.net/`
+     - `https://www.peipeipe.net/` should return 200 from Cloudflare
+     - `https://www.peipeipe.net/feed.xml` should return 200
+     - `https://www.peipeipe.net/.well-known/nostr.json` should return 200
+     - representative `/images/...` URLs should return 200
+   - Confirm scheduled/data workflows still trigger a production Astro deploy after committing content/data updates.
 
 ## Rollback
 
-After cutover, rollback is to run the manual `Legacy Jekyll deploy` workflow and move the custom domain back to GitHub Pages.
+After cutover, rollback is to run the manual `Legacy Jekyll deploy` workflow and move the custom domain/DNS back to GitHub Pages. The rollback tag is already pushed:
 
-Before any production cutover, create a tag from the last Jekyll deployment commit:
-
-```sh
-git tag before-astro-migration
-git push origin before-astro-migration
+```text
+before-astro-migration -> 29ec979 Update Foursquare checkins
 ```
