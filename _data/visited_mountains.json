@@ -5,8 +5,15 @@
     "lng": 138.403813,
     "elevation": 1351,
     "tags": [],
-    "visit_count": 1,
+    "visit_count": 2,
     "activities": [
+      {
+        "id": 14513942739,
+        "name": "Morning Trail Run",
+        "date": "2025-05-17",
+        "sport_type": "Run",
+        "distance_km": 21.5
+      },
       {
         "id": 3143581945,
         "name": "Morning Activity",
@@ -16,7 +23,7 @@
       }
     ],
     "first_visit": "2020-03-01",
-    "last_visit": "2020-03-01"
+    "last_visit": "2025-05-17"
   },
   {
     "name": "高尾山",
@@ -55,6 +62,108 @@
     ],
     "first_visit": "2023-07-29",
     "last_visit": "2023-07-29"
+  },
+  {
+    "name": "斑尾山",
+    "lat": 36.837396,
+    "lng": 138.274312,
+    "elevation": 1381,
+    "tags": [],
+    "visit_count": 2,
+    "activities": [
+      {
+        "id": 17234427072,
+        "name": "Lunch Snowboard",
+        "date": "2026-01-31",
+        "sport_type": "Snowboard",
+        "distance_km": 17.1
+      },
+      {
+        "id": 13185478396,
+        "name": "Morning Snowboard",
+        "date": "2024-12-24",
+        "sport_type": "Snowboard",
+        "distance_km": 29.9
+      }
+    ],
+    "first_visit": "2024-12-24",
+    "last_visit": "2026-01-31"
+  },
+  {
+    "name": "赤岳",
+    "lat": 35.970797,
+    "lng": 138.370067,
+    "elevation": 2899,
+    "tags": [],
+    "visit_count": 1,
+    "activities": [
+      {
+        "id": 14948091632,
+        "name": "Night Trail Run",
+        "date": "2025-06-28",
+        "sport_type": "Run",
+        "distance_km": 21.2
+      }
+    ],
+    "first_visit": "2025-06-28",
+    "last_visit": "2025-06-28"
+  },
+  {
+    "name": "横岳",
+    "lat": 35.985965,
+    "lng": 138.372841,
+    "elevation": 2830,
+    "tags": [],
+    "visit_count": 1,
+    "activities": [
+      {
+        "id": 14948091632,
+        "name": "Night Trail Run",
+        "date": "2025-06-28",
+        "sport_type": "Run",
+        "distance_km": 21.2
+      }
+    ],
+    "first_visit": "2025-06-28",
+    "last_visit": "2025-06-28"
+  },
+  {
+    "name": "阿弥陀岳",
+    "lat": 35.972453,
+    "lng": 138.358797,
+    "elevation": 2805,
+    "tags": [],
+    "visit_count": 1,
+    "activities": [
+      {
+        "id": 14948091632,
+        "name": "Night Trail Run",
+        "date": "2025-06-28",
+        "sport_type": "Run",
+        "distance_km": 21.2
+      }
+    ],
+    "first_visit": "2025-06-28",
+    "last_visit": "2025-06-28"
+  },
+  {
+    "name": "硫黄岳",
+    "lat": 35.998776,
+    "lng": 138.369968,
+    "elevation": 2760,
+    "tags": [],
+    "visit_count": 1,
+    "activities": [
+      {
+        "id": 14948091632,
+        "name": "Night Trail Run",
+        "date": "2025-06-28",
+        "sport_type": "Run",
+        "distance_km": 21.2
+      }
+    ],
+    "first_visit": "2025-06-28",
+    "last_visit": "2025-06-28"
   },
   {
     "name": "霧ヶ峰",
@@ -207,25 +316,6 @@
     ],
     "first_visit": "2025-09-27",
     "last_visit": "2025-09-27"
-  },
-  {
-    "name": "斑尾山",
-    "lat": 36.837396,
-    "lng": 138.274312,
-    "elevation": 1381,
-    "tags": [],
-    "visit_count": 1,
-    "activities": [
-      {
-        "id": 17234427072,
-        "name": "Lunch Snowboard",
-        "date": "2026-01-31",
-        "sport_type": "Snowboard",
-        "distance_km": 17.1
-      }
-    ],
-    "first_visit": "2026-01-31",
-    "last_visit": "2026-01-31"
   },
   {
     "name": "冠着山（姨捨山）",
