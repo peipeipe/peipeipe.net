@@ -116,7 +116,7 @@ function dateFromFilename(filename: string): Date | undefined {
 
 function titleFromFilename(filename: string): string | undefined {
   const match = filename.match(/^\d{4}-\d{1,2}-\d{1,2}-(.+)$/);
-  return match?.[1];
+  return match?.[1]?.trim();
 }
 
 function parseDate(value: unknown): Date | undefined {

@@ -6,13 +6,14 @@ interface Props {
   description?: string;
   canonicalPath?: string;
   wide?: boolean;
+  robots?: string;
 }
 
 const siteName = "peipeipe.net";
 const siteDescription = "読んだ本とやったこと";
 const siteUrl = "https://www.peipeipe.net";
 const avatar = "/images/jekyll-logo.png";
-const { title, description = siteDescription, canonicalPath = Astro.url.pathname, wide = false } = Astro.props;
+const { title, description = siteDescription, canonicalPath = Astro.url.pathname, wide = false, robots } = Astro.props;
 const pageTitle = title ? `${title} - ${siteName} - ${siteDescription}` : `${siteName} - ${siteDescription}`;
 const canonicalUrl = new URL(canonicalPath, siteUrl).toString();
 ---
@@ -38,6 +39,7 @@ const canonicalUrl = new URL(canonicalPath, siteUrl).toString();
     <meta property="og:description" content={description} />
     <meta property="og:type" content="website" />
     <meta property="og:url" content={canonicalUrl} />
+    {robots && <meta name="robots" content={robots} />}
     <link rel="me" href="https://mstdn.jp/@peipeipe" />
     <link rel="canonical" href={canonicalUrl} />
     <link rel="alternate" type="application/rss+xml" title={`${siteName} - ${siteDescription}`} href="/feed.xml" />

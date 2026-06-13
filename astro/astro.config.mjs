@@ -1,8 +1,18 @@
 import { defineConfig } from "astro/config";
 import sitemap from "@astrojs/sitemap";
 
+const excludedSitemapPaths = new Set([
+  "/cloudflare-preview/",
+  "/diary-post/",
+  "/search/",
+]);
+
 export default defineConfig({
   site: "https://www.peipeipe.net",
   output: "static",
-  integrations: [sitemap()],
+  integrations: [
+    sitemap({
+      filter: (url) => !excludedSitemapPaths.has(new URL(url).pathname),
+    }),
+  ],
 });
