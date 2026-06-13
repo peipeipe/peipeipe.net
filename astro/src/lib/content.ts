@@ -68,11 +68,12 @@ async function readEntry(file: string, kind: "post" | "diary"): Promise<Entry> {
 
 function postUrl(filename: string, data: Frontmatter, date: Date): string {
   const slug = safeUrlSlug(titleFromFilename(filename) || filename);
+  const parts = datePartsInTokyo(date);
   const permalink = typeof data.permalink === "string" ? data.permalink : "/:title/";
   const replaced = permalink
-    .replace(":year", String(date.getFullYear()))
-    .replace(":month", pad2(date.getMonth() + 1))
-    .replace(":day", pad2(date.getDate()))
+    .replace(":year", parts.year)
+    .replace(":month", parts.month)
+    .replace(":day", parts.day)
     .replace(":title", slug);
 
   return normalizeUrl(replaced);
@@ -88,7 +89,17 @@ function safeUrlSlug(slug: string): string {
 }
 
 function diaryUrl(date: Date): string {
-  return normalizeUrl(`/diary/${date.getFullYear()}-${pad2(date.getMonth() + 1)}-${pad2(date.getDate())}/`);
+  return normalizeUrl(`/diary/${formatEntryDate(date)}/`);
+}
+
+export function formatEntryDate(date: Date): string {
+  const parts = datePartsInTokyo(date);
+  return `${parts.year}-${parts.month}-${parts.day}`;
+}
+
+export function formatEntryDateTime(date: Date): string {
+  const parts = datePartsInTokyo(date);
+  return `${parts.year}-${parts.month}-${parts.day} ${parts.hour}:${parts.minute}`;
 }
 
 function normalizeUrl(value: string): string {
@@ -135,6 +146,26 @@ function normalizeMarkdownImageUrls(content: string): string {
 
 function pad2(value: number): string {
   return String(value).padStart(2, "0");
+}
+
+function datePartsInTokyo(date: Date) {
+  const parts = new Intl.DateTimeFormat("en", {
+    timeZone: "Asia/Tokyo",
+    year: "numeric",
+    month: "2-digit",
+    day: "2-digit",
+    hour: "2-digit",
+    minute: "2-digit",
+    hourCycle: "h23",
+  }).formatToParts(date);
+  const values = Object.fromEntries(parts.map((part) => [part.type, part.value]));
+  return {
+    year: values.year,
+    month: values.month,
+    day: values.day,
+    hour: values.hour,
+    minute: values.minute,
+  };
 }
 
 function escapeHtml(value: string): string {
