@@ -136,12 +136,12 @@ Move the production custom domain to Cloudflare Pages after URL and visual check
 
 The workflow `.github/workflows/cloudflare-pages-astro-preview.yml` deploys the Astro site to Cloudflare Pages on pushes to `astro-migration`, pushes to `master`, and via manual `workflow_dispatch`.
 
-It builds Astro, copies root static assets into `dist/`, verifies key generated files, runs the Astro URL manifest and legacy slug checks, and then deploys `dist/` with Wrangler.
+It builds Astro, copies root static assets into `dist/`, verifies key generated files, runs the Astro URL manifest and legacy slug checks, sets the Cloudflare Pages production branch to `master` on master pushes, and then deploys `dist/` with Wrangler.
 
 Branch behavior:
 
 - `astro-migration`: preview deployment for migration testing.
-- `master`: production deployment after Cloudflare Pages production branch/custom domain cutover.
+- `master`: production deployment; the workflow updates the Cloudflare Pages production branch to `master` before deploying.
 
 Required GitHub repository secrets:
 
