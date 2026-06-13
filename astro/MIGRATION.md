@@ -264,6 +264,32 @@ The old Japanese/percent-encoded filenames were normalized to English slugs on `
      - representative `/images/...` URLs should return 200
    - Confirm scheduled/data workflows still trigger a production Astro deploy after committing content/data updates.
 
+7. Plan the Jekyll cleanup.
+   - Do not delete Jekyll rollback pieces immediately; keep the manual `Legacy Jekyll deploy` workflow until the Astro production site has been stable for a short period.
+   - First create a file-by-file cleanup inventory and classify each item as `delete`, `keep`, or `hold`.
+   - Update repository guidance so this repository is described as an Astro site rather than primarily a Jekyll site.
+   - Consider renaming `.github/workflows/cloudflare-pages-astro-preview.yml` to a production-oriented name such as `cloudflare-pages.yml`.
+   - Delete candidates after rollback risk is acceptable:
+     - `_layouts/`
+     - `_includes/`
+     - `_sass/`
+     - `style.scss`
+     - `_config.yml`
+     - `Gemfile`
+     - `Gemfile.lock`
+     - Jekyll root pages that are now implemented in Astro, such as `activity.html`, `mountains.html`, `onsen.html`, `places.html`, `search.html`, and old about/static pages.
+     - `.github/workflows/jekyll.yml` once GitHub Pages rollback is no longer needed.
+   - Keep because Astro and automation still read them directly:
+     - `_posts/`
+     - `_diary/`
+     - `_data/`
+     - `images/`
+     - `.well-known/`
+     - `favicon.ico`
+     - `places.json`
+     - automation scripts and non-Jekyll GitHub Actions workflows.
+   - Defer moving the Astro project from `astro/` to the repository root. That can be a separate cleanup after the Jekyll files are removed and deployment has stayed stable.
+
 ## Rollback
 
 After cutover, rollback is to run the manual `Legacy Jekyll deploy` workflow and move the custom domain/DNS back to GitHub Pages. The rollback tag is already pushed:
