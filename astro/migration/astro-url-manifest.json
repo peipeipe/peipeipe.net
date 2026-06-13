@@ -1,9 +1,9 @@
 {
-  "generatedAt": "2026-06-13T05:22:14.512Z",
+  "generatedAt": "2026-06-13T06:13:39.215Z",
   "counts": {
     "posts": 356,
-    "diary": 41,
-    "urls": 417
+    "diary": 42,
+    "urls": 418
   },
   "urls": [
     "/",
@@ -408,6 +408,7 @@
     "/diary/2026-05-24/",
     "/diary/2026-06-04/",
     "/diary/2026-06-12/",
+    "/diary/2026-06-13/",
     "/domain-change/",
     "/feed.xml",
     "/Jekyll事始め/",
