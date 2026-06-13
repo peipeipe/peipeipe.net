@@ -1,10 +1,10 @@
 ---
 import BaseLayout from "@/layouts/BaseLayout.astro";
-import { readRootPage } from "@/lib/pages";
-
-const page = await readRootPage("search.md");
 ---
 
-<BaseLayout title={page.title || "Search"}>
-  <article class="post" set:html={page.html} />
+<BaseLayout title="Search">
+  <article class="post">
+    <script async src="https://cse.google.com/cse.js?cx=57db4a3f2477ed7c0"></script>
+    <div class="gcse-search"></div>
+  </article>
 </BaseLayout>

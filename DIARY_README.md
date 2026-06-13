@@ -78,7 +78,7 @@ python scripts/test_image_diary.py
 
 1. **iPhoneショートカット** → GitHub API（repository_dispatch）を呼び出し
 2. **GitHub Actions** → 日記ファイルを自動生成・更新（画像保存機能付き）
-3. **Jekyll (GitHub Pages)** → 日記サイトを自動ビルド・公開
+3. **Astro (Cloudflare Pages)** → 日記サイトを自動ビルド・公開
 
 ## 利点
 
@@ -93,13 +93,12 @@ python scripts/test_image_diary.py
 
 - `_diary/`: 日記のMarkdownファイル
 - `images/diary/`: 日記用画像ファイル
-- `_layouts/diary.html`: 日記ページのレイアウト
-- `diary.html`: 日記一覧ページ
+- `astro/src/pages/diary/[date].astro`: 日記詳細ページ
+- `astro/src/pages/diary/index.astro`: 日記一覧ページ
 - `scripts/update_diary_webhook.py`: 日記更新スクリプト
 - `scripts/test_image_diary.py`: テスト用スクリプト
 - `.github/workflows/webhook-diary.yml`: GitHub Actions ワークフロー（メイン）
-- `.github/workflows/update-diary.yml`: 手動実行用ワークフロー
-- `.github/workflows/jekyll.yml`: サイトビルド用ワークフロー
+- `.github/workflows/cloudflare-pages.yml`: Astro/Cloudflare Pages デプロイ用ワークフロー
 
 ## 日記の形式
 

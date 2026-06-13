@@ -366,7 +366,7 @@ def request_foursquare(url, api_key, params=None):
 
 def build_parser():
     parser = argparse.ArgumentParser(
-        description="Foursquare APIから温泉の位置情報と写真を取得してJekyll data JSONを生成します。"
+        description="Foursquare APIから温泉の位置情報と写真を取得してサイト用data JSONを生成します。"
     )
     parser.add_argument(
         "--refresh",

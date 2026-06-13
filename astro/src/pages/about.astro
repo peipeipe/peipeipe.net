@@ -1,10 +1,18 @@
 ---
 import BaseLayout from "@/layouts/BaseLayout.astro";
-import { readRootPage } from "@/lib/pages";
-
-const page = await readRootPage("about.md");
 ---
 
-<BaseLayout title={page.title || "About"}>
-  <article class="post" set:html={page.html} />
+<BaseLayout title="About">
+  <article class="post">
+    <p>このサイトはアフィリエイト広告（Amazonアソシエイト含む）を掲載しています。</p>
+    <p><a href="https://twitter.com/peipeipe" target="_blank" rel="noopener noreferrer">@peipeipe</a></p>
+    <p>
+      IT企業生き残り.fmというラジオをやっている。<br />
+      <a href="https://open.spotify.com/show/3RUx6evxSPqElnsTCq6RQk" target="_blank" rel="noopener noreferrer">IT企業生き残り.fm | Podcast on Spotify</a>
+    </p>
+    <p>
+      過去WWWでつかまえてというラジオをやっていた。<br />
+      <a href="https://www-de-tsukamaete.github.io/" target="_blank" rel="noopener noreferrer">WWWでつかまえて</a>
+    </p>
+  </article>
 </BaseLayout>
