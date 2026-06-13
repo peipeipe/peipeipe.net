@@ -1,6 +1,6 @@
 # Astro Migration
 
-This directory is a side-by-side Astro prototype. The current Jekyll site remains intact at the repository root.
+This directory contains the Astro implementation used for the Cloudflare Pages migration. The legacy Jekyll source remains at the repository root for rollback/reference.
 
 ## Current Status
 
@@ -10,24 +10,26 @@ This directory is a side-by-side Astro prototype. The current Jekyll site remain
 - Preview check page: `https://peipeipe-net-astro.pages.dev/cloudflare-preview/`
 - Latest successful GitHub Actions run before the master merge: `26958949223`
 - Latest pushed migration commit: `94474c5 Migrate map data pages to Astro`
-- Production `https://www.peipeipe.net` is still served by the existing GitHub Pages/Jekyll workflow.
+- Production cutover is in progress. Repository automation now deploys Astro to Cloudflare Pages from `master`; the legacy Jekyll workflow is manual-only for rollback.
 
-The Cloudflare Pages preview deploy is working. The first deploy attempt failed because root `.gitignore` ignored `astro/package.json`; that was fixed by explicitly tracking the Astro package manifest.
+The Cloudflare Pages deploy is working. The first deploy attempt failed because root `.gitignore` ignored `astro/package.json`; that was fixed by explicitly tracking the Astro package manifest.
 
-`master` has now been merged into `astro-migration` locally at merge commit `26c0401`, bringing in:
+`master` has now been merged into `astro-migration` locally at merge commit `039eb7d`, bringing in:
 
-- `2188ea2 Normalize old post slugs`
-- `bb9bce8 Add dated permalinks to old posts`
+- latest Foursquare/Strava data updates from `origin/master`
+- diary entry `_diary/2026-06-12.md`
+- the earlier old-slug normalization and dated permalink updates
 
-Last verified locally:
+Last verified locally on 2026-06-13:
 
 ```text
 Astro build: success
-Generated pages: 407
-URL manifest: 416 URLs
+Generated pages: 408
+URL manifest: 417 URLs
 Legacy invalid percent slugs: 0
-Workflow YAML parse: ok
-Cloudflare preview HTTP status: 200 before the local master merge
+Cloudflare preview HTTP status: 200 for /diary-post/, /.well-known/nostr.json, and /images/2024-03-31-mother3/0.webp
+Jekyll build: not run locally; ruby/bundle are unavailable in this container
+URL comparison: blocked until migration/jekyll-url-manifest.json is generated from a Jekyll _site build
 ```
 
 Recent UI/content work on `astro-migration`:
@@ -62,16 +64,16 @@ PATH=/home/peipeipe/.local/nodejs/current/bin:$PATH npm run build
 - Builds `/activity-data.json`, `/mountains-data.json`, `/places-data.json`, `/places.json`, and `/onsen-data.json`.
 - Copies root static assets from `../images/`, `../.well-known/`, and `../favicon.ico` into the Astro `dist/` output during `npm run build`.
 - Publishes `/.well-known/nostr.json` through a Cloudflare Pages `_redirects` rewrite to avoid direct-upload hidden directory handling.
-- Builds a preview-only `/cloudflare-preview/` page.
+- Builds a Cloudflare deployment check page at `/cloudflare-preview/`.
 - Deploys the Astro site to Cloudflare Pages via `.github/workflows/cloudflare-pages-astro-preview.yml`.
-- Keeps the current Jekyll site deploy workflow untouched.
+- Keeps the legacy Jekyll GitHub Pages deploy available only through manual `workflow_dispatch` rollback.
 
 Current content counts from `migration/astro-url-manifest.json`:
 
 ```text
 posts: 356
-diary entries: 40
-tracked URLs: 416
+diary entries: 41
+tracked URLs: 417
 ```
 
 ## Verification
@@ -92,11 +94,11 @@ Generated verification files:
 - `migration/url-comparison.json`
 - `migration/legacy-invalid-percent-slugs.json`
 
-Local note: this container currently has the Astro Node runtime available, but no local `ruby`/`bundle` command. Jekyll comparison commands need a Ruby environment or a captured `_site` directory from CI/production.
+Local note: this container currently has the Astro Node runtime available, but no local `ruby`/`bundle` command. Jekyll comparison commands need a Ruby environment or a captured `_site` directory from CI/production. If `npm run compare:urls` is run before `migration/jekyll-url-manifest.json` exists, it exits with a concise instruction to run `npm run manifest:jekyll` first.
 
 ## Cloudflare Pages Preview
 
-This prototype is published to Cloudflare Pages without touching the current GitHub Pages production deployment.
+This site is published to Cloudflare Pages. Production traffic should be moved by attaching the custom domain to the Cloudflare Pages project.
 
 Local Wrangler is available through npm. This machine is not authenticated unless `wrangler login` has been run or `CLOUDFLARE_API_TOKEN` is set:
 
@@ -113,13 +115,13 @@ PATH=/home/peipeipe/.local/nodejs/current/bin:$PATH npm run pages:create
 PATH=/home/peipeipe/.local/nodejs/current/bin:$PATH npm run pages:deploy
 ```
 
-This deploys `dist/` to the `peipeipe-net-astro` Pages project and should produce a `*.pages.dev` URL. The preview-only check page is:
+This deploys `dist/` to the `peipeipe-net-astro` Pages project and should produce a `*.pages.dev` URL. The Cloudflare check page is:
 
 ```text
 /cloudflare-preview/
 ```
 
-Recommended Cloudflare Pages Git integration settings:
+Recommended Cloudflare Pages Git integration settings, if switching away from the GitHub Actions/Wrangler deploy:
 
 ```text
 Root directory: astro
@@ -128,18 +130,18 @@ Build output directory: dist
 NODE_VERSION: 22.22.3
 ```
 
-Keep the production custom domain on GitHub Pages until URL and visual checks pass. After cutover, move the custom domain in Cloudflare Pages and remove or disable the GitHub Pages deploy workflow.
+Move the production custom domain to Cloudflare Pages after URL and visual checks pass. The GitHub Pages/Jekyll workflow has been disabled for automatic pushes and is retained as a manual rollback path.
 
 ### GitHub Actions Deployment
 
-The workflow `.github/workflows/cloudflare-pages-astro-preview.yml` deploys the Astro site to Cloudflare Pages on pushes to `astro-migration`, future pushes to `master`, and via manual `workflow_dispatch`.
+The workflow `.github/workflows/cloudflare-pages-astro-preview.yml` deploys the Astro site to Cloudflare Pages on pushes to `astro-migration`, pushes to `master`, and via manual `workflow_dispatch`.
 
 It builds Astro, copies root static assets into `dist/`, verifies key generated files, runs the Astro URL manifest and legacy slug checks, and then deploys `dist/` with Wrangler.
 
 Branch behavior:
 
 - `astro-migration`: preview deployment for migration testing.
-- `master`: production deployment after Cloudflare Pages production branch is changed to `master` during cutover.
+- `master`: production deployment after Cloudflare Pages production branch/custom domain cutover.
 
 Required GitHub repository secrets:
 
@@ -164,7 +166,7 @@ git push origin astro-migration
 
 or run the workflow manually from GitHub Actions.
 
-After cutover, ordinary blog/content updates on `master` should trigger this workflow when they touch:
+Ordinary blog/content updates on `master` trigger this workflow when they touch:
 
 - `astro/**`
 - `_posts/**`
@@ -193,6 +195,7 @@ The old Japanese/percent-encoded filenames were normalized to English slugs on `
    - Jekyll `_site` URL manifest generation is scripted with `npm run manifest:jekyll`.
    - Compare it with `migration/astro-url-manifest.json` using `npm run compare:urls`.
    - Review `migration/url-comparison.json` and migrate or intentionally ignore any differences.
+   - Current local blocker: Ruby/Bundler are not installed here, and `_site` is absent. Generate `_site` in a Ruby environment or obtain the production/CI `_site` artifact, then run `npm run manifest:jekyll` and `npm run compare:urls`.
 
 2. Improve visual parity for the blog and diary pages.
    - Check image layout on representative long posts.
@@ -201,7 +204,7 @@ The old Japanese/percent-encoded filenames were normalized to English slugs on `
    - `404`: done
    - `/diary-post/`: done
    - `robots.txt`: done
-   - `CNAME` handling is not needed for preview, but matters during final cutover.
+   - `CNAME` is not copied into Astro output because Cloudflare Pages custom domains are managed in Cloudflare.
 
 4. Migrate data/map pages.
    - `/activity/`: done, using a wide map-focused Astro layout
@@ -218,7 +221,7 @@ The old Japanese/percent-encoded filenames were normalized to English slugs on `
    - `convert-images-to-webp.yml`: updates `images/` and Markdown references; Astro serves root `images/` assets and reads posts from `_posts/`.
    - The Astro deploy workflow now also watches `master`, `places.json`, `.well-known/**`, and `favicon.ico` for cutover readiness.
 
-6. Add production cutover checklist.
+6. Finish production cutover.
    - Before cutover:
      - Tag the last Jekyll production state.
      - Run Astro verification and preview checks.
@@ -226,15 +229,15 @@ The old Japanese/percent-encoded filenames were normalized to English slugs on `
      - Decide whether to keep deploying from GitHub Actions/Wrangler or switch to Cloudflare Pages Git integration.
    - Cutover:
      - Point the production custom domain from GitHub Pages to Cloudflare Pages.
-     - Disable or replace `.github/workflows/jekyll.yml` only after preview checks pass.
-     - Make `master`/`main` blog updates deploy Astro production instead of Jekyll.
+     - Confirm `.github/workflows/jekyll.yml` remains manual-only.
+     - Confirm `master` blog updates deploy Astro production instead of Jekyll.
    - After cutover:
      - Verify `https://www.peipeipe.net`, RSS, sitemap, canonical URLs, key old post URLs, `/diary-post/`, `/images/...`, and `/.well-known/nostr.json`.
      - Confirm scheduled/data workflows still trigger a production Astro deploy after committing content/data updates.
 
 ## Rollback
 
-Until the production deploy workflow and custom domain are changed, rollback is simply deleting or ignoring this `astro/` directory and Cloudflare preview project. The production Jekyll site is not affected.
+After cutover, rollback is to run the manual `Legacy Jekyll deploy` workflow and move the custom domain back to GitHub Pages.
 
 Before any production cutover, create a tag from the last Jekyll deployment commit:
 

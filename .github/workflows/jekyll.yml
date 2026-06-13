@@ -1,10 +1,6 @@
-name: Deploy Jekyll with GitHub Pages dependencies preinstalled
+name: Legacy Jekyll deploy
 
 on:
-  push:
-    branches: [ "main", "master" ]
-  pull_request:
-    branches: [ "main", "master" ]
   workflow_dispatch:
 
 permissions:
@@ -48,6 +44,7 @@ jobs:
         uses: actions/upload-pages-artifact@v5
 
   deploy:
+    name: Manual rollback deploy to GitHub Pages
     if: github.event_name != 'pull_request'
     environment:
       name: github-pages

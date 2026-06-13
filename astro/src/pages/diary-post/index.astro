@@ -1421,7 +1421,7 @@
       await putFile(diaryPath, newContent, commitMsg, existing?.sha ?? null);
 
       showToast('success', '投稿完了 🎉',
-        `${date} ${time} の日記を保存しました。GitHub Pagesのビルド後（〜1分）に反映されます。`,
+        `${date} ${time} の日記を保存しました。Cloudflare Pagesのビルド後に反映されます。`,
         7000
       );
       resetAfterSubmit();
