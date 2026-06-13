@@ -98,11 +98,6 @@ export function formatEntryDate(date: Date): string {
   return `${parts.year}-${parts.month}-${parts.day}`;
 }
 
-export function formatEntryDateTime(date: Date): string {
-  const parts = datePartsInTokyo(date);
-  return `${parts.year}-${parts.month}-${parts.day} ${parts.hour}:${parts.minute}`;
-}
-
 function normalizeUrl(value: string): string {
   const withoutDuplicateSlash = value.replace(/\/+/g, "/");
   const withLeadingSlash = withoutDuplicateSlash.startsWith("/") ? withoutDuplicateSlash : `/${withoutDuplicateSlash}`;

@@ -1,6 +1,6 @@
 ---
 import BaseLayout from "@/layouts/BaseLayout.astro";
-import { formatEntryDateTime, getDiaryEntries } from "@/lib/content";
+import { getDiaryEntries } from "@/lib/content";
 
 export async function getStaticPaths() {
   const entries = await getDiaryEntries();
@@ -12,7 +12,6 @@ export async function getStaticPaths() {
 
 const { entry } = Astro.props;
 const diaryDate = entry.title;
-const createdAt = formatEntryDateTime(entry.date);
 ---
 
 <BaseLayout title={entry.title}>
@@ -22,10 +21,6 @@ const createdAt = formatEntryDateTime(entry.date);
     </header>
 
     <div class="diary-content" set:html={entry.html} />
-
-    <footer class="diary-footer">
-      <p class="diary-meta">作成日時: {createdAt}</p>
-    </footer>
   </article>
 
   <script is:inline>

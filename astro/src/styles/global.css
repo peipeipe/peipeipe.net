@@ -539,19 +539,6 @@ body.js-diary .diary-content h2 + p {
   color: #333;
 }
 
-.diary-footer {
-  margin-top: 40px;
-  border-top: 1px solid #f0f0f0;
-  padding-top: 20px;
-}
-
-.diary-meta {
-  margin: 0;
-  color: #666;
-  font-size: 0.9em;
-  text-align: center;
-}
-
 .diary-content img {
   display: block;
   max-width: 100%;
