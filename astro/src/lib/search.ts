@@ -9,7 +9,6 @@ export interface SearchItem {
   date: string;
   excerpt: string;
   plainText: string;
-  imageSrc?: string;
 }
 
 export interface SearchIndex {
@@ -33,7 +32,6 @@ export async function buildSearchIndex(): Promise<SearchIndex> {
       date: formatEntryDate(entry.date),
       excerpt: entry.excerpt,
       plainText: htmlToPlainText(entry.html),
-      imageSrc: getFirstImageSrc(entry.html),
     })),
     ...diaryEntries.map((entry) => ({
       kind: "diary" as const,
@@ -42,7 +40,6 @@ export async function buildSearchIndex(): Promise<SearchIndex> {
       date: formatEntryDate(entry.date),
       excerpt: entry.excerpt,
       plainText: htmlToPlainText(entry.html),
-      imageSrc: getFirstImageSrc(entry.html),
     })),
   ].sort((a, b) => b.date.localeCompare(a.date));
 
@@ -55,10 +52,6 @@ export async function buildSearchIndex(): Promise<SearchIndex> {
     },
     items,
   };
-}
-
-function getFirstImageSrc(html: string): string | undefined {
-  return html.match(/<img\s[^>]*src="([^"]+)"/)?.[1];
 }
 
 function htmlToPlainText(html: string): string {

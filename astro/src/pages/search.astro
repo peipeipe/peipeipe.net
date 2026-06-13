@@ -47,9 +47,6 @@ const serializedSearchIndex = JSON.stringify(searchIndex).replace(/</g, "\\u003c
       {initialResults.map((item) => (
         <li class:list={["search-result", `kind-${item.kind}`]}>
           <a class="search-result-link" href={item.url}>
-            {item.imageSrc && (
-              <img class="search-result-image" src={item.imageSrc} alt="" loading="lazy" />
-            )}
             <div class="search-result-body">
               <div class="search-result-meta">
                 <span class="search-badge">{item.kind === "post" ? "Post" : "Diary"}</span>
@@ -149,7 +146,6 @@ const serializedSearchIndex = JSON.stringify(searchIndex).replace(/</g, "\\u003c
         return `
           <li class="search-result kind-${item.kind}">
             <a class="search-result-link" href="${escapeHtml(item.url)}">
-              ${item.imageSrc ? `<img class="search-result-image" src="${escapeHtml(item.imageSrc)}" alt="" loading="lazy" />` : ""}
               <div class="search-result-body">
                 <div class="search-result-meta">
                   <span class="search-badge">${item.kind === "post" ? "Post" : "Diary"}</span>
@@ -354,8 +350,6 @@ const serializedSearchIndex = JSON.stringify(searchIndex).replace(/</g, "\\u003c
 
     .search-result-link {
       display: grid;
-      grid-template-columns: auto minmax(0, 1fr);
-      gap: 0.9rem;
       align-items: start;
       padding: 1rem 0;
       color: inherit;
@@ -364,15 +358,6 @@ const serializedSearchIndex = JSON.stringify(searchIndex).replace(/</g, "\\u003c
 
     .search-result-link:hover h2 {
       color: #4183c4;
-    }
-
-    .search-result-image {
-      width: 96px;
-      height: 96px;
-      object-fit: cover;
-      border-radius: 6px;
-      background: #f3f3f3;
-      flex: 0 0 auto;
     }
 
     .search-result-body {
