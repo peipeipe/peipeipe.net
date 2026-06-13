@@ -38,8 +38,8 @@ const recentActivities = activities.slice(0, 30);
       <section class="map-main-panel" aria-label="Activity map">
         <div class="map-controlbar">
           <div class="segmented-control" aria-label="Map display mode">
-            <button class="active" type="button" data-mode="heat">ヒート</button>
-            <button type="button" data-mode="routes">軌跡線</button>
+            <button class="active" type="button" data-mode="routes">軌跡線</button>
+            <button type="button" data-mode="heat">ヒート</button>
           </div>
           <div class="segmented-control" aria-label="Activity type filter">
             <button class="active" type="button" data-activity-type="all">すべて</button>
@@ -86,7 +86,7 @@ const recentActivities = activities.slice(0, 30);
     const listLimit = 80;
     let activityData = [];
     let currentType = "all";
-    let currentMode = "heat";
+    let currentMode = "routes";
     let map;
     let activeLayer;
     let latestBounds = null;

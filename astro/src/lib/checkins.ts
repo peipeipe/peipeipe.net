@@ -1,4 +1,3 @@
-import onsenPlaces from "../../../_data/onsen_places.json";
 import places from "../../../_data/places.json";
 
 export type CheckinPlace = {
@@ -44,10 +43,6 @@ export function normalizePlace(place: CheckinPlace): Required<Pick<CheckinPlace,
 
 export function getPlaces() {
   return (places as CheckinPlace[]).map(normalizePlace);
-}
-
-export function getOnsenPlaces() {
-  return (onsenPlaces as CheckinPlace[]).map(normalizePlace);
 }
 
 export function summarizePlaces(items: CheckinPlace[]) {
