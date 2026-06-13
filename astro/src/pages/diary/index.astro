@@ -3,19 +3,64 @@ import BaseLayout from "@/layouts/BaseLayout.astro";
 import { getDiaryEntries } from "@/lib/content";
 
 const entries = await getDiaryEntries();
+const groupedEntries = groupEntriesByMonth(entries);
+
+function groupEntriesByMonth(entries) {
+  const groups = [];
+
+  for (const entry of entries) {
+    const monthKey = `${entry.date.getFullYear()}-${entry.date.getMonth()}`;
+    const lastGroup = groups.at(-1);
+    const imageSrc = getFirstImageSrc(entry.html);
+    const item = { ...entry, imageSrc };
+
+    if (lastGroup?.key === monthKey) {
+      lastGroup.entries.push(item);
+    } else {
+      groups.push({
+        key: monthKey,
+        label: `${entry.date.getFullYear()}年${entry.date.getMonth() + 1}月`,
+        entries: [item],
+      });
+    }
+  }
+
+  return groups;
+}
+
+function getFirstImageSrc(html) {
+  return html.match(/<img\s[^>]*src="([^"]+)"/)?.[1];
+}
 ---
 
 <BaseLayout title="日記一覧">
   <h1>日記一覧</h1>
   <p>AIに食わせるために日記を書く</p>
-  <div class="posts">
-    {entries.map((entry) => (
-      <article class="post">
-        <h1><a href={entry.url}>{entry.title}</a></h1>
-        <div class="entry">
-          <p>{entry.excerpt}</p>
-        </div>
-      </article>
+  <div class="diary-archive">
+    {groupedEntries.map((group) => (
+      <section class="diary-month">
+        <h2>{group.label}</h2>
+        {group.entries.some((entry) => entry.imageSrc) && (
+          <div class="diary-month-photos" aria-label={`${group.label}の写真`}>
+            {group.entries.filter((entry) => entry.imageSrc).slice(0, 8).map((entry) => (
+              entry.imageSrc && (
+                <a href={entry.url} title={entry.title}>
+                  <img src={entry.imageSrc} alt="" loading="lazy" />
+                </a>
+              )
+            ))}
+          </div>
+        )}
+        <ol class="diary-list">
+          {group.entries.map((entry) => (
+            <li class="diary-list-item">
+              <a href={entry.url}>
+                <span>{entry.title}</span>
+              </a>
+            </li>
+          ))}
+        </ol>
+      </section>
     ))}
   </div>
 </BaseLayout>

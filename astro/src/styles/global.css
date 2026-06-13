@@ -296,6 +296,74 @@ th {
   text-transform: uppercase;
 }
 
+.diary-archive {
+  margin-top: 32px;
+}
+
+.diary-month {
+  margin-top: 34px;
+}
+
+.diary-month:first-child {
+  margin-top: 0;
+}
+
+.diary-month h2 {
+  margin: 0 0 12px;
+  border-bottom: 1px solid #e6e6e6;
+  padding-bottom: 8px;
+  color: #555;
+  font-size: 18px;
+  line-height: 1.4;
+}
+
+.diary-month-photos {
+  display: flex;
+  gap: 8px;
+  overflow-x: auto;
+  margin: 0 0 12px;
+  padding-bottom: 2px;
+}
+
+.diary-month-photos a {
+  flex: 0 0 auto;
+  width: 84px;
+  height: 84px;
+  border-radius: 6px;
+  overflow: hidden;
+  background: #f3f3f3;
+}
+
+.diary-month-photos img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.diary-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.diary-list-item {
+  border-bottom: 1px solid #eee;
+}
+
+.diary-list-item a {
+  display: flex;
+  align-items: center;
+  min-height: 46px;
+  padding: 9px 0;
+  font-size: 20px;
+  line-height: 1.4;
+}
+
+.diary-list-item span {
+  overflow-wrap: anywhere;
+}
+
 .wrapper-footer {
   margin-top: 50px;
   border-top: 1px solid #ddd;
