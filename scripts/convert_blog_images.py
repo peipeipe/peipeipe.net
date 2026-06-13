@@ -71,15 +71,17 @@ def update_markdown_files(old_path, new_path):
     # 相対パスに変換
     old_rel_path = old_path.replace('/home/peipeipe/peipeipe.net/', '')
     new_rel_path = new_path.replace('/home/peipeipe/peipeipe.net/', '')
+    old_site_path = old_rel_path.replace('astro/public/', '')
+    new_site_path = new_rel_path.replace('astro/public/', '')
     
     # URLパスに変換（サイト用）
-    old_url_path = f"https://www.peipeipe.net/{old_rel_path}"
-    new_url_path = f"https://www.peipeipe.net/{new_rel_path}"
+    old_url_path = f"https://www.peipeipe.net/{old_site_path}"
+    new_url_path = f"https://www.peipeipe.net/{new_site_path}"
     
     updated_files = []
     
     # Markdown content directories to update when image filenames change.
-    for markdown_dir in ['_posts', '_drafts', '_diary']:
+    for markdown_dir in ['astro/content/posts', 'astro/content/drafts', 'astro/content/diary']:
         if os.path.exists(markdown_dir):
             for md_file in glob.glob(f"{markdown_dir}/**/*.md", recursive=True):
                 try:
@@ -92,7 +94,7 @@ def update_markdown_files(old_path, new_path):
                     content = content.replace(old_url_path, new_url_path)
                     
                     # パターン2: 相対パス
-                    content = content.replace(old_rel_path, new_rel_path)
+                    content = content.replace(old_site_path, new_site_path)
                     
                     # パターン3: ファイル名のみ（単純な文字列置換を使用）
                     old_filename = os.path.basename(old_path)
@@ -122,12 +124,12 @@ def update_markdown_files(old_path, new_path):
     return updated_files
 
 def find_jpeg_images():
-    """imagesディレクトリ内のJPEG画像を検索"""
+    """astro/public/imagesディレクトリ内のJPEG画像を検索"""
     jpeg_patterns = ['*.jpg', '*.jpeg', '*.JPG', '*.JPEG']
     jpeg_files = []
     
     for pattern in jpeg_patterns:
-        jpeg_files.extend(glob.glob(f"images/**/{pattern}", recursive=True))
+        jpeg_files.extend(glob.glob(f"astro/public/images/**/{pattern}", recursive=True))
     
     return sorted(jpeg_files)
 

@@ -2,12 +2,13 @@
 
 Astro site for `https://www.peipeipe.net/`, deployed to Cloudflare Pages.
 
-The Astro app lives in `astro/` and reads root content/data/assets directly:
+The Astro app lives in `astro/` and keeps site inputs inside that project:
 
-- `_posts/`: blog posts
-- `_diary/`: diary entries
-- `_data/` and `places.json`: map/check-in/activity data
-- `images/`, `.well-known/`, `favicon.ico`: static assets copied into `astro/dist/`
+- `astro/content/posts/`: blog posts
+- `astro/content/diary/`: diary entries
+- `astro/content/drafts/`: drafts
+- `astro/data/`: map/check-in/activity data
+- `astro/public/`: static assets copied by Astro
 
 Build and verify:
 

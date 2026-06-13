@@ -34,9 +34,9 @@ def haversine_m(lat1, lng1, lat2, lng2):
 THRESHOLD_M = 600  # 山頂から600m以内を通過で「訪問」とみなす
 
 base = os.path.dirname(__file__)
-mountains_path = os.path.join(base, "..", "_data", "mountains.json")
-activities_path = os.path.join(base, "..", "_data", "strava_activities.json")
-output_path = os.path.join(base, "..", "_data", "visited_mountains.json")
+mountains_path = os.path.join(base, "..", "astro", "data", "mountains.json")
+activities_path = os.path.join(base, "..", "astro", "data", "strava_activities.json")
+output_path = os.path.join(base, "..", "astro", "data", "visited_mountains.json")
 
 with open(mountains_path) as f:
     mountains = json.load(f)

@@ -15,6 +15,7 @@ on:
 
 permissions:
   contents: write
+  actions: write
 
 jobs:
   update-strava-activities-from-export:
@@ -48,13 +49,22 @@ jobs:
         run: python scripts/generate_visited_mountains.py
 
       - name: Commit and push changes
+        id: commit-changes
         run: |
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
-          git add _data/strava_activities.json _data/visited_mountains.json
+          git add astro/data/strava_activities.json astro/data/visited_mountains.json
           if git diff --cached --exit-code; then
             echo "No new activities"
+            echo "changed=false" >> "$GITHUB_OUTPUT"
           else
             git commit -m "Update Strava activities from export"
             git push
+            echo "changed=true" >> "$GITHUB_OUTPUT"
           fi
+
+      - name: Trigger Cloudflare Pages deploy
+        if: steps.commit-changes.outputs.changed == 'true'
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: gh workflow run cloudflare-pages.yml --ref "${GITHUB_REF_NAME:-master}"

@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-Strava export ZIP から _data/strava_activities.json を生成する。
+Strava export ZIP から astro/data/strava_activities.json を生成する。
 
 使い方:
   python3 scripts/generate_strava_activities_from_export.py /path/to/export.zip
@@ -24,7 +24,7 @@ from datetime import datetime, timezone
 from xml.etree import ElementTree
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-DEFAULT_OUTPUT_JSON = os.path.join(BASE_DIR, "_data", "strava_activities.json")
+DEFAULT_OUTPUT_JSON = os.path.join(BASE_DIR, "astro", "data", "strava_activities.json")
 SEMICIRCLE_TO_DEGREES = 180.0 / (2**31)
 INVALID_SINT32 = 0x7FFFFFFF
 
@@ -64,7 +64,7 @@ SPORT_TYPE_MAP = {
 
 def parse_args():
     parser = argparse.ArgumentParser(
-        description="Generate _data/strava_activities.json from a Strava export ZIP."
+        description="Generate astro/data/strava_activities.json from a Strava export ZIP."
     )
     parser.add_argument("export_zip", help="Path to Strava export ZIP")
     parser.add_argument(

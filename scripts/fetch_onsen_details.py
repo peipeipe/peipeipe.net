@@ -12,8 +12,8 @@ import requests
 
 # パスの定義
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-INPUT_YML = os.path.join(BASE_DIR, '_data', 'onsen_list.yml')
-OUTPUT_JSON = os.path.join(BASE_DIR, '_data', 'onsen_places.json')
+INPUT_YML = os.path.join(BASE_DIR, 'astro', 'data', 'onsen_list.yml')
+OUTPUT_JSON = os.path.join(BASE_DIR, 'astro', 'data', 'onsen_places.json')
 
 # カテゴリで絞ると施設名検索を取り逃すことがあるため、デフォルトでは使わない。
 # 必要な場合は FOURSQUARE_CATEGORIES にカンマ区切りのカテゴリIDを設定する。
@@ -383,7 +383,7 @@ def build_parser():
         "--source",
         choices=("yaml", "foursquare"),
         default="yaml",
-        help="yaml: _data/onsen_list.ymlを補完します。foursquare: Foursquare検索から一覧を生成します。"
+        help="yaml: astro/data/onsen_list.ymlを補完します。foursquare: Foursquare検索から一覧を生成します。"
     )
     parser.add_argument(
         "--query",

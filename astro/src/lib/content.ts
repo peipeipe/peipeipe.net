@@ -4,7 +4,8 @@ import fg from "fast-glob";
 import matter from "gray-matter";
 import { marked } from "marked";
 
-const repoRoot = path.resolve("..");
+const astroRoot = path.resolve(".");
+const contentRoot = path.join(astroRoot, "content");
 
 type Frontmatter = Record<string, unknown>;
 
@@ -30,13 +31,13 @@ marked.use({
 });
 
 export async function getPosts(): Promise<Entry[]> {
-  const files = await fg("_posts/*.md", { cwd: repoRoot, absolute: true });
+  const files = await fg("posts/*.md", { cwd: contentRoot, absolute: true });
   const posts = await Promise.all(files.map((file) => readEntry(file, "post")));
   return posts.sort((a, b) => b.date.getTime() - a.date.getTime());
 }
 
 export async function getDiaryEntries(): Promise<Entry[]> {
-  const files = await fg("_diary/*.md", { cwd: repoRoot, absolute: true });
+  const files = await fg("diary/*.md", { cwd: contentRoot, absolute: true });
   const entries = await Promise.all(files.map((file) => readEntry(file, "diary")));
   return entries.sort((a, b) => b.date.getTime() - a.date.getTime());
 }
@@ -56,7 +57,7 @@ async function readEntry(file: string, kind: "post" | "diary"): Promise<Entry> {
     : postUrl(filename, parsed.data, date);
 
   return {
-    sourcePath: path.relative(repoRoot, file),
+    sourcePath: path.relative(astroRoot, file),
     title,
     date,
     url,

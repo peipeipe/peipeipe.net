@@ -26,7 +26,7 @@ fi
 
 echo ""
 echo "📄 生成された日記ファイルを確認:"
-ls -la _diary/
+ls -la astro/content/diary/
 echo ""
 echo "🔍 今日の日記内容（最後の5行）:"
-tail -5 _diary/$(date '+%Y-%m-%d').md
+tail -5 astro/content/diary/$(date '+%Y-%m-%d').md

@@ -188,7 +188,7 @@ def plan(posts_dir: Path, cutoff: date) -> list[tuple[Path, Path, str]]:
 def main() -> int:
     parser = argparse.ArgumentParser()
     parser.add_argument("--apply", action="store_true")
-    parser.add_argument("--posts-dir", default="_posts")
+    parser.add_argument("--posts-dir", default="astro/content/posts")
     parser.add_argument("--cutoff", default="2019-05-31")
     args = parser.parse_args()
 

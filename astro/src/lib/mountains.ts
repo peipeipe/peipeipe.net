@@ -1,4 +1,4 @@
-import visitedMountains from "../../../_data/visited_mountains.json";
+import visitedMountains from "../../data/visited_mountains.json";
 
 export type MountainActivity = {
   id: number;

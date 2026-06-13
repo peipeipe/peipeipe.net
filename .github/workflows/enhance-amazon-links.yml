@@ -3,11 +3,12 @@ name: Enhance Amazon Affiliate Links
 on:
   push:
     paths:
-      - '_posts/**/*.md'
+      - 'astro/content/posts/**/*.md'
   workflow_dispatch:
 
 permissions:
   contents: write
+  actions: write
 
 jobs:
   enhance-amazon-links:
@@ -35,13 +36,22 @@ jobs:
         run: python scripts/enhance_amazon_links.py
         
       - name: Commit and push changes
+        id: commit-changes
         run: |
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
           git add -A
           if git diff --cached --exit-code; then
             echo "No changes to commit"
+            echo "changed=false" >> "$GITHUB_OUTPUT"
           else
             git commit -m "Enhance Amazon affiliate links with Creators API"
             git push
+            echo "changed=true" >> "$GITHUB_OUTPUT"
           fi
+
+      - name: Trigger Cloudflare Pages deploy
+        if: steps.commit-changes.outputs.changed == 'true'
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: gh workflow run cloudflare-pages.yml --ref "${GITHUB_REF_NAME:-master}"

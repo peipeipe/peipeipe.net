@@ -2,7 +2,7 @@
 
 ## Project Structure & Module Organization
 
-This repository is an Astro site deployed from `astro/` to Cloudflare Pages. Blog posts live in `_posts/`, diary entries in `_diary/`, data files in `_data/` plus root `places.json`, and static assets under `images/`, `.well-known/`, and `favicon.ico`. Astro reads those root content/data/assets directly while page templates, styles, and build scripts live under `astro/`.
+This repository is an Astro site deployed from `astro/` to Cloudflare Pages. Blog posts live in `astro/content/posts/`, diary entries in `astro/content/diary/`, drafts in `astro/content/drafts/`, data files in `astro/data/`, and static assets under `astro/public/`. Page templates, styles, and build scripts also live under `astro/`.
 
 Automation and data refresh scripts live in `scripts/`. GitHub Actions workflows are in `.github/workflows/`. See `astro/MIGRATION.md` for migration history and deployment notes.
 

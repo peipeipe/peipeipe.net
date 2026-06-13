@@ -222,13 +222,13 @@ def test_html_escaping():
 
 
 def test_markdown_files():
-    """Test finding markdown files in _posts directory."""
+    """Test finding markdown files in the Astro posts directory."""
     print("=" * 60)
     print("Testing Markdown File Discovery")
     print("=" * 60)
     
     repo_root = Path(__file__).parent.parent
-    posts_dir = repo_root / '_posts'
+    posts_dir = repo_root / 'astro' / 'content' / 'posts'
     
     if not posts_dir.exists():
         print(f"✗ FAIL: Posts directory not found: {posts_dir}")

@@ -1,4 +1,4 @@
-import places from "../../../_data/places.json";
+import places from "../../data/places.json";
 
 export type CheckinPlace = {
   name: string;

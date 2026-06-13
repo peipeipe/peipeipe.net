@@ -18,6 +18,10 @@ on:
         type: string
         default: 'iOS'
 
+permissions:
+  contents: write
+  actions: write
+
 jobs:
   update-diary:
     runs-on: ubuntu-latest
@@ -55,12 +59,14 @@ jobs:
         MANUAL_USERNAME: ${{ github.event.inputs.username }}
     
     - name: Commit and push changes
+      id: commit-changes
       run: |
         git config --local user.email "action@github.com"
         git config --local user.name "GitHub Action (iOS Diary)"
-        git add _diary/ images/
+        git add astro/content/diary/ astro/public/images/
         if git diff --staged --quiet; then
           echo "変更がありません"
+          echo "changed=false" >> "$GITHUB_OUTPUT"
         else
           COMMIT_MSG="📱 日記更新: $(date '+%Y-%m-%d %H:%M')"
           if [ ! -z "${{ github.event.client_payload.date }}" ]; then
@@ -68,4 +74,11 @@ jobs:
           fi
           git commit -m "$COMMIT_MSG"
           git push
+          echo "changed=true" >> "$GITHUB_OUTPUT"
         fi
+
+    - name: Trigger Cloudflare Pages deploy
+      if: steps.commit-changes.outputs.changed == 'true'
+      env:
+        GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      run: gh workflow run cloudflare-pages.yml --ref "${GITHUB_REF_NAME:-master}"

@@ -2,7 +2,7 @@
 """
 国土地理院「日本の山岳標高一覧」CSVから mountains.json を生成するスクリプト。
 ソース: https://www.gsi.go.jp/KOKUJYOHO/MOUNTAIN/1003zan20260130.csv
-出力: _data/mountains.json
+出力: astro/data/mountains.json
 """
 import csv, json, os, re
 
@@ -10,7 +10,7 @@ import csv, json, os, re
 def main():
     base = os.path.dirname(__file__)
     csv_path = os.path.join(base, "gsi_mountains.csv")
-    output_path = os.path.join(base, "..", "_data", "mountains.json")
+    output_path = os.path.join(base, "..", "astro", "data", "mountains.json")
 
     rows = []
     with open(csv_path, encoding="utf-8-sig") as f:
@@ -50,4 +50,3 @@ def main():
 
 if __name__ == "__main__":
     main()
-

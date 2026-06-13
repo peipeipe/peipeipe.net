@@ -12,7 +12,7 @@ interface Props {
 const siteName = "peipeipe.net";
 const siteDescription = "読んだ本とやったこと";
 const siteUrl = "https://www.peipeipe.net";
-const avatar = "/images/jekyll-logo.png";
+const avatar = "/images/avatar.png";
 const { title, description = siteDescription, canonicalPath = Astro.url.pathname, wide = false, robots } = Astro.props;
 const pageTitle = title ? `${title} - ${siteName} - ${siteDescription}` : `${siteName} - ${siteDescription}`;
 const canonicalUrl = new URL(canonicalPath, siteUrl).toString();

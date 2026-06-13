@@ -3,14 +3,15 @@ name: Convert JPEG Images to WebP
 on:
   push:
     paths:
-      - 'images/**/*.jpg'
-      - 'images/**/*.jpeg'
-      - 'images/**/*.JPG'
-      - 'images/**/*.JPEG'
+      - 'astro/public/images/**/*.jpg'
+      - 'astro/public/images/**/*.jpeg'
+      - 'astro/public/images/**/*.JPG'
+      - 'astro/public/images/**/*.JPEG'
   workflow_dispatch:
 
 permissions:
   contents: write
+  actions: write
 
 concurrency:
   group: ${{ github.workflow }}-${{ github.ref }}
@@ -40,17 +41,20 @@ jobs:
         run: python scripts/convert_blog_images.py
         
       - name: Commit and push changes
+        id: commit-changes
         run: |
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
           git add -A
           if git diff --cached --exit-code; then
             echo "No changes to commit"
+            echo "changed=false" >> "$GITHUB_OUTPUT"
           else
             git commit -m "Convert JPEG images to WebP and update markdown references"
             for attempt in 1 2 3; do
               git pull --rebase --autostash origin "$GITHUB_REF_NAME"
               if git push; then
+                echo "changed=true" >> "$GITHUB_OUTPUT"
                 exit 0
               fi
               echo "Push failed; retrying after remote update (attempt $attempt/3)"
@@ -59,3 +63,9 @@ jobs:
             echo "Failed to push converted images after 3 attempts"
             exit 1
           fi
+
+      - name: Trigger Cloudflare Pages deploy
+        if: steps.commit-changes.outputs.changed == 'true'
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: gh workflow run cloudflare-pages.yml --ref "${GITHUB_REF_NAME:-master}"

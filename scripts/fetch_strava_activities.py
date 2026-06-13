@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-Strava API からアクティビティを取得し、_data/strava_activities.json に保存するスクリプト。
+Strava API からアクティビティを取得し、astro/data/strava_activities.json に保存するスクリプト。
 
 必要な環境変数:
   STRAVA_CLIENT_ID      - Strava API のクライアントID
@@ -20,7 +20,7 @@ from datetime import datetime, timezone
 import requests
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-OUTPUT_JSON = os.path.join(BASE_DIR, "_data", "strava_activities.json")
+OUTPUT_JSON = os.path.join(BASE_DIR, "astro", "data", "strava_activities.json")
 
 STRAVA_TOKEN_URL = "https://www.strava.com/oauth/token"
 STRAVA_ACTIVITIES_URL = "https://www.strava.com/api/v3/athlete/activities"

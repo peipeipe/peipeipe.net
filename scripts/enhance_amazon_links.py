@@ -238,10 +238,10 @@ def process_file(file_path: Path) -> bool:
 
 def main() -> None:
     repo_root = Path(__file__).parent.parent
-    posts_dir = repo_root / '_posts'
+    posts_dir = repo_root / 'astro' / 'content' / 'posts'
 
     if not posts_dir.exists():
-        print(f"Error: _posts directory not found at {posts_dir}", file=sys.stderr)
+        print(f"Error: posts directory not found at {posts_dir}", file=sys.stderr)
         sys.exit(1)
 
     md_files = sorted(posts_dir.glob('*.md'))

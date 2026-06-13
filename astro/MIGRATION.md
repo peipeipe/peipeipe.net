@@ -13,7 +13,8 @@ This directory contains the Astro implementation used for the Cloudflare Pages m
 - Latest pushed cutover commit: `4a9eff7 Set Cloudflare Pages production branch`
 - Production cutover is complete. Repository automation deploys Astro to Cloudflare Pages from `master`.
 - GitHub Pages branch-based legacy build was switched to `build_type: workflow` on 2026-06-13 to stop automatic Jekyll builds from parsing `astro/**/*.astro`.
-- Jekyll cleanup was started on 2026-06-13: legacy layouts/includes/Sass/config/root pages/Gemfiles/CNAME and the manual Jekyll rollback workflow were removed from the working tree.
+- Jekyll cleanup is complete as of 2026-06-13: legacy layouts/includes/Sass/config/root pages/Gemfiles/CNAME, `.nojekyll`, `.jekyll-cache`, and the manual Jekyll rollback workflow were removed.
+- Repository structure is now Astro-centered: content, data, and public assets live under `astro/`.
 
 The Cloudflare Pages deploy is working. The first deploy attempt failed because root `.gitignore` ignored `astro/package.json`; that was fixed by explicitly tracking the Astro package manifest.
 
@@ -35,13 +36,13 @@ Cloudflare Pages direct HTTP status: 200 for /.well-known/nostr.json on peipeipe
 Jekyll build: removed from normal verification after cleanup
 ```
 
-Recent UI/content work on `astro-migration`:
+Recent UI/content work during migration:
 
 - Ported the legacy masthead, footer links, RSS link, avatar, and metadata into Astro.
 - Tightened blog and diary page spacing and typography to match the current site more closely.
 - Changed list excerpts to show only the first sentence instead of a long multi-sentence snippet.
 - Normalized Markdown image URLs with spaces so posts render correctly in Astro.
-- Migrated the wide data/map pages for activity, mountains, places, and onsen into Astro layouts.
+- Migrated the wide data/map pages for activity, mountains, and places into Astro layouts.
 
 ## Local Node
 
@@ -59,13 +60,14 @@ PATH=/home/peipeipe/.local/nodejs/current/bin:$PATH npm run build
 
 ## Current Scope
 
-- Reads existing `../_posts/*.md` files without moving them.
-- Reads existing `../_diary/*.md` files without moving them.
+- Reads blog posts from `content/posts/*.md`.
+- Reads diary entries from `content/diary/*.md`.
+- Keeps drafts in `content/drafts/*.md`.
 - Builds the blog index, post detail pages, diary index, diary detail pages, diary posting page, `about`, `search`, RSS, and sitemap.
 - Builds `404.html` and `robots.txt`.
-- Builds `/activity/`, `/mountains/`, `/places/`, and `/onsen/` as wide map-focused data pages.
-- Builds `/activity-data.json`, `/mountains-data.json`, `/places-data.json`, `/places.json`, and `/onsen-data.json`.
-- Copies root static assets from `../images/`, `../.well-known/`, and `../favicon.ico` into the Astro `dist/` output during `npm run build`.
+- Builds `/activity/`, `/mountains/`, and `/places/` as wide map-focused data pages.
+- Builds `/activity-data.json`, `/mountains-data.json`, `/places-data.json`, and `/places.json`.
+- Serves static assets from `public/`.
 - Publishes `/.well-known/nostr.json` through a Cloudflare Pages `_redirects` rewrite to avoid direct-upload hidden directory handling.
 - Builds a Cloudflare deployment check page at `/cloudflare-preview/`.
 - Deploys the Astro site to Cloudflare Pages via `.github/workflows/cloudflare-pages.yml`.
@@ -74,8 +76,8 @@ Current content counts from `migration/astro-url-manifest.json`:
 
 ```text
 posts: 356
-diary entries: 41
-tracked URLs: 417
+diary entries: 42
+tracked URLs: 416
 ```
 
 ## Verification
@@ -162,13 +164,12 @@ The old GitHub Pages legacy branch build is disabled by setting the repository P
 
 ### GitHub Actions Deployment
 
-The workflow `.github/workflows/cloudflare-pages.yml` deploys the Astro site to Cloudflare Pages on pushes to `astro-migration`, pushes to `master`, and via manual `workflow_dispatch`.
+The workflow `.github/workflows/cloudflare-pages.yml` deploys the Astro site to Cloudflare Pages on pushes to `master` and via manual `workflow_dispatch`.
 
-It builds Astro, copies root static assets into `dist/`, verifies key generated files, runs the Astro URL manifest and legacy slug checks, sets the Cloudflare Pages production branch to `master` on master pushes, and then deploys `dist/` with Wrangler.
+It builds Astro, verifies key generated files, runs the Astro URL manifest and legacy slug checks, sets the Cloudflare Pages production branch to `master`, and then deploys `dist/` with Wrangler.
 
 Branch behavior:
 
-- `astro-migration`: preview deployment for migration testing.
 - `master`: production deployment; the workflow updates the Cloudflare Pages production branch to `master` before deploying.
 
 Required GitHub repository secrets:
@@ -187,24 +188,14 @@ Pages URL: https://peipeipe-net-astro.pages.dev/
 Check page: https://www.peipeipe.net/cloudflare-preview/
 ```
 
-To trigger a migration-branch preview deployment:
-
-```sh
-git push origin astro-migration
-```
-
-or run the workflow manually from GitHub Actions.
+To trigger a deploy without a commit, run the workflow manually from GitHub Actions.
 
 Ordinary blog/content updates on `master` trigger this workflow when they touch:
 
 - `astro/**`
-- `_posts/**`
-- `_diary/**`
-- `_data/**`
-- `images/**`
-- `.well-known/**`
-- `favicon.ico`
-- `places.json`
+- `astro/content/**`
+- `astro/data/**`
+- `astro/public/**`
 
 ## Known URL Issue
 
@@ -233,30 +224,24 @@ The old Japanese/percent-encoded filenames were normalized to English slugs on `
      - one representative image URL under `/images/`
 
 2. Confirm content/data automation still chains into an Astro production deploy.
-   - `update-strava-activities.yml`: updates `_data/strava_activities.json` and `_data/visited_mountains.json`.
-   - `update-onsen-checkins.yml`: updates `_data/onsen_places.json`, `_data/places.json`, and root `places.json`.
-   - `webhook-diary.yml`: updates `_diary/` and `images/`.
-   - `enhance-amazon-links.yml`: updates `_posts/**/*.md`.
-   - `convert-images-to-webp.yml`: updates `images/` and Markdown references.
+   - `update-strava-activities.yml`: updates `astro/data/strava_activities.json` and `astro/data/visited_mountains.json`.
+   - `update-onsen-checkins.yml`: updates `astro/data/onsen_places.json` and `astro/data/places.json`.
+   - `webhook-diary.yml`: updates `astro/content/diary/` and `astro/public/images/`.
+   - `enhance-amazon-links.yml`: updates `astro/content/posts/**/*.md`.
+   - `convert-images-to-webp.yml`: updates `astro/public/images/` and Markdown references.
    - If any workflow commits successfully but does not trigger `.github/workflows/cloudflare-pages.yml`, adjust the deploy workflow path filters.
 
-3. Decide whether to fully disable GitHub Pages.
+3. Decide whether to fully disable GitHub Pages in repository settings.
    - Current state is `build_type: workflow`, which stops branch-based Jekyll builds.
    - If Cloudflare remains the only production host, consider disabling Pages entirely in repository settings after confirming no rollback path depends on it.
-   - Keep `.nojekyll` as a harmless guard while GitHub Pages remains enabled.
 
 4. Clean up stale migration tooling after one stable deploy.
    - Review whether `astro/migration/astro-url-manifest.json` and `astro/migration/legacy-invalid-percent-slugs.json` should stay committed or become generated-only artifacts.
    - Keep `npm run manifest` and `npm run check:legacy-slugs` while old URL coverage is still useful.
-   - Remove references to the old `astro-migration` branch if that branch is deleted.
 
 5. Optional visual/content parity pass.
    - Check image layout on representative long posts.
    - Check `about`, `search`, `diary-post`, and the four map pages on mobile after the cleanup deploy.
-
-6. Deferred structural cleanup.
-   - Do not move the Astro project from `astro/` to the repository root yet.
-   - Revisit root-level structure only after Cloudflare deploys and content automation have stayed stable.
 
 ## Completed Cleanup
 
@@ -265,19 +250,12 @@ The old Japanese/percent-encoded filenames were normalized to English slugs on `
      - GitHub Pages build type changed from legacy branch build to workflow build.
      - `.github/workflows/cloudflare-pages-astro-preview.yml` renamed to `.github/workflows/cloudflare-pages.yml`.
      - `.github/workflows/jekyll.yml` removed.
-     - Jekyll `_layouts/`, `_includes/`, `_sass/`, `style.scss`, `_config.yml`, `_config_diary.yml`, `Gemfile`, `Gemfile.lock`, `CNAME`, root Jekyll pages, and stale `.jekyll-cache` file removed.
+     - Jekyll `_layouts/`, `_includes/`, `_sass`, `style.scss`, `_config.yml`, `_config_diary.yml`, `Gemfile`, `Gemfile.lock`, `CNAME`, root Jekyll pages, `.nojekyll`, and stale `.jekyll-cache` removed.
      - `about` and `search` content moved into Astro pages before deleting the root Markdown files.
-     - `.nojekyll` added as a guard if GitHub Pages branch serving is accidentally re-enabled.
-   - Keep because Astro and automation still read them directly:
-     - `_posts/`
-     - `_diary/`
-     - `_data/`
-     - `images/`
-     - `.well-known/`
-     - `favicon.ico`
-     - `places.json`
-     - automation scripts and GitHub Actions workflows that update content/data.
-   - Defer moving the Astro project from `astro/` to the repository root. That can be a separate cleanup after the Jekyll files are removed and deployment has stayed stable.
+     - Content moved to `astro/content/posts/`, `astro/content/diary/`, and `astro/content/drafts/`.
+     - Data moved to `astro/data/`.
+     - Public assets moved to `astro/public/`.
+     - Automation scripts and GitHub Actions workflows were updated for the Astro-centered paths.
 
 ## Rollback
 

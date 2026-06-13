@@ -91,8 +91,8 @@ python scripts/test_image_diary.py
 
 ## ファイル構成
 
-- `_diary/`: 日記のMarkdownファイル
-- `images/diary/`: 日記用画像ファイル
+- `astro/content/diary/`: 日記のMarkdownファイル
+- `astro/public/images/diary/`: 日記用画像ファイル
 - `astro/src/pages/diary/[date].astro`: 日記詳細ページ
 - `astro/src/pages/diary/index.astro`: 日記一覧ページ
 - `scripts/update_diary_webhook.py`: 日記更新スクリプト
@@ -111,7 +111,7 @@ python scripts/test_image_diary.py
 朝のコーヒーが美味しい。今日も一日頑張ろう。
 
 ## 14:25
-![写真](images/diary/2024-12-22-1425.jpg)
+![写真](/images/diary/2024-12-22-1425.jpg)
 ランチで美味しいパスタを食べました。
 
 ## 21:00

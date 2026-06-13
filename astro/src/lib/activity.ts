@@ -1,4 +1,4 @@
-import stravaActivities from "../../../_data/strava_activities.json";
+import stravaActivities from "../../data/strava_activities.json";
 
 export type ActivityKind = "run" | "ride" | "walk" | "swim" | "other";
 

@@ -4,17 +4,12 @@ on:
   workflow_dispatch:
   push:
     branches:
-      - astro-migration
       - master
     paths:
       - "astro/**"
-      - "_posts/**"
-      - "_diary/**"
-      - "_data/**"
-      - "images/**"
-      - ".well-known/**"
-      - "favicon.ico"
-      - "places.json"
+      - "astro/content/**"
+      - "astro/data/**"
+      - "astro/public/**"
 
 permissions:
   contents: read

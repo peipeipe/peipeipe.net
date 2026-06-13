@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "astro dev",
-    "build": "astro build && node scripts/copy-root-assets.mjs",
+    "build": "astro build && node scripts/finalize-public-assets.mjs",
     "preview": "astro preview",
     "pages:dev": "wrangler pages dev dist",
     "pages:create": "wrangler pages project create peipeipe-net-astro --production-branch master",

@@ -46,7 +46,7 @@ def save_image(image_data, image_filename, date_str, time_str):
             data = image_data
         
         # 画像ディレクトリを作成
-        image_dir = Path('images/diary')
+        image_dir = Path('astro/public/images/diary')
         image_dir.mkdir(parents=True, exist_ok=True)
         
         # ファイル名を生成（重複回避）
@@ -97,7 +97,7 @@ def update_diary_entry():
         print(f"投稿者: {username}")
     
     # ファイルパス
-    diary_dir = Path('_diary')
+    diary_dir = Path('astro/content/diary')
     diary_dir.mkdir(exist_ok=True)
     
     file_path = diary_dir / f"{date_str}.md"
