@@ -81,8 +81,15 @@
     "lng": 138.400961,
     "elevation": 2101,
     "tags": [],
-    "visit_count": 1,
+    "visit_count": 2,
     "activities": [
+      {
+        "id": 18910743520,
+        "name": "Morning Trail Run",
+        "date": "2026-06-13",
+        "sport_type": "TrailRun",
+        "distance_km": 8.5
+      },
       {
         "id": 15426273017,
         "name": "Morning Trail Run",
@@ -92,7 +99,7 @@
       }
     ],
     "first_visit": "2025-08-11",
-    "last_visit": "2025-08-11"
+    "last_visit": "2026-06-13"
   },
   {
     "name": "駒ヶ岳",
@@ -321,5 +328,24 @@
     ],
     "first_visit": "2026-05-04",
     "last_visit": "2026-05-04"
+  },
+  {
+    "name": "東篭ノ登山",
+    "lat": 36.419305,
+    "lng": 138.447168,
+    "elevation": 2228,
+    "tags": [],
+    "visit_count": 1,
+    "activities": [
+      {
+        "id": 18914374878,
+        "name": "Afternoon Run",
+        "date": "2026-06-14",
+        "sport_type": "TrailRun",
+        "distance_km": 13.6
+      }
+    ],
+    "first_visit": "2026-06-14",
+    "last_visit": "2026-06-14"
   }
 ]
