@@ -8,8 +8,10 @@ import os
 import yaml
 import re
 import base64
+import io
 from datetime import datetime, timezone, timedelta
 from pathlib import Path
+from PIL import Image
 
 def escape_html(text):
     """HTMLエスケープ"""
@@ -26,40 +28,46 @@ def get_jst_now():
     return datetime.now(jst)
 
 def save_image(image_data, image_filename, date_str, time_str):
-    """Base64画像データを保存"""
+    """Base64画像データをWebPで保存"""
     if not image_data:
         return None
     
     try:
-        # Base64データから画像形式を判定
+        # data URL ならヘッダを取り除き、そうでなければ生のbase64として扱う
         if image_data.startswith('data:image/'):
-            # data:image/jpeg;base64,... の形式
             header, data = image_data.split(',', 1)
-            file_ext = header.split('/')[1].split(';')[0]
-        elif image_filename and '.' in image_filename:
-            # ファイル名から拡張子を判定
-            file_ext = image_filename.split('.')[-1].lower()
-            data = image_data
+            _ = header
         else:
-            # デフォルトでJPEG
-            file_ext = 'jpg'
             data = image_data
-        
+
         # 画像ディレクトリを作成
         image_dir = Path('astro/public/images/diary')
         image_dir.mkdir(parents=True, exist_ok=True)
         
         # ファイル名を生成（重複回避）
         timestamp = time_str.replace(':', '')
-        filename = f"{date_str}-{timestamp}.{file_ext}"
+        filename = f"{date_str}-{timestamp}.webp"
         image_path = image_dir / filename
-        
-        # Base64データをデコードして保存
+
+        # WebPへ変換して保存
         image_bytes = base64.b64decode(data)
-        with open(image_path, 'wb') as f:
-            f.write(image_bytes)
+        original_size = len(image_bytes)
+        with Image.open(io.BytesIO(image_bytes)) as image:
+            if image.mode not in ('RGBA', 'LA', 'P', 'RGB'):
+                image = image.convert('RGB')
+            elif image.mode == 'P':
+                image = image.convert('RGBA')
+
+            if image.mode != 'RGBA' and image.mode != 'RGB':
+                image = image.convert('RGB')
+
+            image.save(image_path, format='WEBP', quality=85, optimize=True)
+
+        webp_size = image_path.stat().st_size
+        reduction = (1 - webp_size / original_size) * 100 if original_size else 0
         
         print(f"画像を保存しました: {image_path}")
+        print(f"  サイズ: {original_size:,} bytes -> {webp_size:,} bytes (-{reduction:.1f}%)")
         return f"/images/diary/{filename}"
         
     except Exception as e:

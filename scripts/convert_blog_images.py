@@ -81,7 +81,8 @@ def update_markdown_files(old_path, new_path):
     updated_files = []
     
     # Markdown content directories to update when image filenames change.
-    for markdown_dir in ['astro/content/posts', 'astro/content/drafts', 'astro/content/diary']:
+    # Diary entries now write WebP at source, so this stays focused on blog content.
+    for markdown_dir in ['astro/content/posts', 'astro/content/drafts']:
         if os.path.exists(markdown_dir):
             for md_file in glob.glob(f"{markdown_dir}/**/*.md", recursive=True):
                 try:
