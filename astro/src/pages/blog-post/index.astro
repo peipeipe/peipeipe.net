@@ -1,0 +1,988 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="robots" content="noindex, nofollow" />
+    <title>ブログ投稿 | peipeipe.net</title>
+    <meta name="description" content="ブログ投稿フォーム" />
+    <script src="https://cdn.jsdelivr.net/npm/marked@9.1.6/marked.min.js"></script>
+    <style>
+      :root {
+        --bg: #0d1117;
+        --panel: #161b22;
+        --panel-2: #0d1117;
+        --border: #30363d;
+        --border-strong: #484f58;
+        --text: #e6edf3;
+        --muted: #8b949e;
+        --accent: #58a6ff;
+        --accent-2: #1f6feb;
+        --ok: #3fb950;
+        --warn: #d29922;
+        --error: #f85149;
+        --editor: #0d1117;
+        --gutter: #161b22;
+        --mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace;
+        --sans: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      }
+
+      * { box-sizing: border-box; }
+      body {
+        margin: 0;
+        min-height: 100dvh;
+        background: var(--bg);
+        color: var(--text);
+        font-family: var(--sans);
+        line-height: 1.5;
+      }
+
+      a { color: var(--accent); }
+      .app {
+        width: min(1280px, calc(100vw - 24px));
+        margin: 0 auto;
+        padding: 14px 0 36px;
+      }
+
+      .topbar {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 12px;
+        min-height: 44px;
+        border: 1px solid var(--border);
+        background: var(--panel);
+        padding: 8px 10px;
+      }
+
+      .brand {
+        display: flex;
+        align-items: baseline;
+        gap: 10px;
+        min-width: 0;
+      }
+      .brand strong { font-size: 15px; }
+      .brand span { color: var(--muted); font-size: 12px; }
+
+      .top-actions,
+      .row-actions {
+        display: flex;
+        gap: 8px;
+        align-items: center;
+        flex-wrap: wrap;
+      }
+
+      button,
+      select,
+      input,
+      textarea {
+        font: inherit;
+      }
+
+      button {
+        border: 1px solid var(--border);
+        background: #21262d;
+        color: var(--text);
+        min-height: 34px;
+        padding: 7px 11px;
+        cursor: pointer;
+      }
+      button:hover { border-color: var(--border-strong); background: #30363d; }
+      button:disabled { opacity: 0.45; cursor: not-allowed; }
+      .primary { background: var(--accent-2); border-color: var(--accent-2); color: #fff; }
+      .danger { color: #ffb3ad; border-color: rgba(248,81,73,0.55); background: rgba(248,81,73,0.12); }
+
+      .status {
+        font-size: 12px;
+        color: var(--muted);
+        min-height: 18px;
+      }
+      .status.ok { color: var(--ok); }
+      .status.err { color: var(--error); }
+      .status.warn { color: var(--warn); }
+
+      .settings {
+        display: none;
+        border: 1px solid var(--border);
+        border-top: 0;
+        background: var(--panel);
+        padding: 12px;
+      }
+      .settings.open { display: block; }
+
+      .grid {
+        display: grid;
+        grid-template-columns: 340px minmax(0, 1fr);
+        gap: 12px;
+        margin-top: 12px;
+      }
+
+      .side,
+      .workspace {
+        border: 1px solid var(--border);
+        background: var(--panel);
+        min-width: 0;
+      }
+
+      .side {
+        padding: 12px;
+      }
+
+      .section + .section {
+        margin-top: 18px;
+        padding-top: 16px;
+        border-top: 1px solid var(--border);
+      }
+
+      h1,
+      h2 {
+        margin: 0;
+        font-size: 13px;
+        letter-spacing: 0;
+      }
+      h2 {
+        color: var(--muted);
+        font-weight: 600;
+        margin-bottom: 10px;
+      }
+
+      .field {
+        display: grid;
+        gap: 5px;
+        margin-bottom: 10px;
+      }
+      label {
+        color: var(--muted);
+        font-size: 12px;
+      }
+      input,
+      select,
+      textarea {
+        width: 100%;
+        border: 1px solid var(--border);
+        background: var(--panel-2);
+        color: var(--text);
+        min-height: 34px;
+        padding: 7px 9px;
+        outline: none;
+      }
+      input:focus,
+      select:focus,
+      textarea:focus {
+        border-color: var(--accent);
+        box-shadow: 0 0 0 2px rgba(88,166,255,0.18);
+      }
+      input[type="password"],
+      .mono { font-family: var(--mono); }
+      .two { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+      .hint { color: var(--muted); font-size: 12px; }
+
+      .tabs {
+        display: flex;
+        border-bottom: 1px solid var(--border);
+        background: #010409;
+      }
+      .tab {
+        border: 0;
+        border-right: 1px solid var(--border);
+        background: transparent;
+        min-height: 38px;
+        padding: 8px 14px;
+        color: var(--muted);
+      }
+      .tab.active {
+        background: var(--panel);
+        color: var(--text);
+      }
+      .panel { display: none; }
+      .panel.active { display: block; }
+
+      .editor-toolbar {
+        display: flex;
+        align-items: center;
+        gap: 2px;
+        flex-wrap: wrap;
+        padding: 7px;
+        border-bottom: 1px solid var(--border);
+        background: var(--panel);
+      }
+      .tool {
+        min-width: 32px;
+        min-height: 30px;
+        padding: 5px 8px;
+        font-family: var(--mono);
+      }
+      .tool-wide { font-family: var(--sans); }
+
+      .editor-shell {
+        display: grid;
+        grid-template-columns: 48px minmax(0, 1fr);
+        height: min(68dvh, 760px);
+        min-height: 460px;
+        background: var(--editor);
+      }
+      .gutter {
+        overflow: hidden;
+        border-right: 1px solid var(--border);
+        background: var(--gutter);
+        color: #6e7681;
+        font-family: var(--mono);
+        font-size: 13px;
+        line-height: 1.65;
+        padding: 12px 8px 12px 0;
+        text-align: right;
+        user-select: none;
+        white-space: pre;
+      }
+      #body {
+        border: 0;
+        box-shadow: none;
+        resize: none;
+        min-height: 100%;
+        padding: 12px 14px;
+        font-family: var(--mono);
+        font-size: 13px;
+        line-height: 1.65;
+        tab-size: 2;
+      }
+      #body:focus { box-shadow: none; }
+
+      .preview {
+        min-height: 520px;
+        padding: 24px;
+        background: #fff;
+        color: #222;
+      }
+      .preview :global(h1),
+      .preview :global(h2),
+      .preview :global(h3) { color: #111; line-height: 1.3; }
+      .preview :global(h1) { font-size: 28px; margin: 0 0 18px; }
+      .preview :global(h2) { font-size: 22px; margin: 28px 0 12px; }
+      .preview :global(p) { margin: 0 0 1em; }
+      .preview :global(img) { max-width: 100%; height: auto; }
+      .preview :global(blockquote) {
+        margin: 1em 0;
+        border-left: 4px solid #ddd;
+        padding-left: 14px;
+        color: #555;
+      }
+      .preview :global(pre) {
+        overflow: auto;
+        padding: 12px;
+        background: #f6f8fa;
+      }
+
+      .bottom {
+        display: flex;
+        justify-content: space-between;
+        gap: 12px;
+        align-items: center;
+        border-top: 1px solid var(--border);
+        padding: 10px 12px;
+        background: var(--panel);
+      }
+
+      @media (max-width: 900px) {
+        .grid { grid-template-columns: 1fr; }
+        .editor-shell { height: 62dvh; min-height: 380px; }
+        .topbar { align-items: flex-start; flex-direction: column; }
+      }
+    </style>
+  </head>
+  <body>
+    <main class="app">
+      <div class="topbar">
+        <div class="brand">
+          <h1>Blog Post</h1>
+          <span id="token-badge">設定未完了</span>
+        </div>
+        <div class="top-actions">
+          <a href="/" target="_blank" rel="noreferrer">Blog</a>
+          <a href="/diary-post/">Diary Post</a>
+          <button id="btn-settings" type="button">設定</button>
+        </div>
+      </div>
+
+      <section id="settings" class="settings" aria-label="GitHub settings">
+        <div class="two">
+          <div class="field">
+            <label for="owner">Owner</label>
+            <input id="owner" type="text" autocomplete="username" placeholder="peipeipe" />
+          </div>
+          <div class="field">
+            <label for="repo">Repo</label>
+            <input id="repo" type="text" placeholder="peipeipe.net" />
+          </div>
+        </div>
+        <div class="field">
+          <label for="token">GitHub token</label>
+          <input id="token" type="password" autocomplete="current-password" placeholder="Contents: Read and write が必要" />
+        </div>
+        <div class="row-actions">
+          <button id="btn-save-settings" type="button" class="primary">保存</button>
+          <button id="btn-clear-settings" type="button">クリア</button>
+          <span id="settings-status" class="status"></span>
+        </div>
+      </section>
+
+      <div class="grid">
+        <aside class="side">
+          <section class="section">
+            <h2>コピー元</h2>
+            <div class="field">
+              <label for="source-path">既存記事パス</label>
+              <input id="source-path" class="mono" type="text" list="post-list" placeholder="astro/content/posts/2026-06-30-books-read-this-month.md" />
+              <datalist id="post-list"></datalist>
+            </div>
+            <div class="row-actions">
+              <button id="btn-list-posts" type="button">最近の記事を取得</button>
+              <button id="btn-load-source" type="button">読み込む</button>
+            </div>
+            <p id="source-status" class="status"></p>
+            <button id="btn-next-month" type="button">次月の本記事にする</button>
+          </section>
+
+          <section class="section">
+            <h2>記事情報</h2>
+            <div class="field">
+              <label for="title">Title</label>
+              <input id="title" type="text" placeholder="今月読んだ本" />
+            </div>
+            <div class="two">
+              <div class="field">
+                <label for="date">Date</label>
+                <input id="date" type="date" />
+              </div>
+              <div class="field">
+                <label for="time">Time</label>
+                <input id="time" type="time" value="18:00" />
+              </div>
+            </div>
+            <div class="field">
+              <label for="slug">Slug</label>
+              <input id="slug" class="mono" type="text" placeholder="books-read-this-month" />
+            </div>
+            <div class="field">
+              <label for="categories">Categories</label>
+              <input id="categories" type="text" placeholder="Book" />
+            </div>
+            <div class="field">
+              <label for="image">Image URL</label>
+              <input id="image" type="text" placeholder="https://..." />
+            </div>
+            <div class="field">
+              <label for="permalink">Permalink</label>
+              <input id="permalink" class="mono" type="text" value="/:year-:month-:day-:title/" />
+            </div>
+          </section>
+
+          <section class="section">
+            <h2>保存</h2>
+            <div class="field">
+              <label for="target">保存先</label>
+              <select id="target">
+                <option value="posts">公開 posts</option>
+                <option value="drafts">下書き drafts</option>
+              </select>
+            </div>
+            <div class="field">
+              <label for="output-path">出力パス</label>
+              <input id="output-path" class="mono" type="text" readonly />
+            </div>
+            <label class="hint"><input id="overwrite" type="checkbox" /> 既存ファイルを上書きする</label>
+          </section>
+        </aside>
+
+        <section class="workspace">
+          <div class="tabs" role="tablist">
+            <button class="tab active" type="button" data-tab="write">Write</button>
+            <button class="tab" type="button" data-tab="preview">Preview</button>
+            <button class="tab" type="button" data-tab="raw">Markdown</button>
+          </div>
+
+          <div id="panel-write" class="panel active">
+            <div class="editor-toolbar">
+              <button class="tool" type="button" data-action="bold">B</button>
+              <button class="tool" type="button" data-action="italic">I</button>
+              <button class="tool" type="button" data-action="h2">H2</button>
+              <button class="tool" type="button" data-action="quote">&gt;</button>
+              <button class="tool" type="button" data-action="ul">-</button>
+              <button class="tool" type="button" data-action="link">[]</button>
+              <button class="tool" type="button" data-action="image">img</button>
+              <button class="tool" type="button" data-action="code">`</button>
+              <button class="tool tool-wide" type="button" data-action="hr">hr</button>
+              <input id="md-file" type="file" accept=".md,.markdown,.txt" hidden />
+              <button id="btn-import-md" class="tool-wide" type="button">MD読込</button>
+            </div>
+            <div class="editor-shell">
+              <pre id="gutter" class="gutter">1</pre>
+              <textarea id="body" spellcheck="false" placeholder="Markdown本文を書く"></textarea>
+            </div>
+          </div>
+
+          <div id="panel-preview" class="panel">
+            <article id="preview" class="preview"></article>
+          </div>
+
+          <div id="panel-raw" class="panel">
+            <textarea id="raw" class="mono" readonly style="min-height: 620px; border: 0; resize: vertical;"></textarea>
+          </div>
+
+          <footer class="bottom">
+            <div>
+              <div id="doc-status" class="status"></div>
+              <div class="hint"><span id="char-count">0</span> chars</div>
+            </div>
+            <div class="row-actions">
+              <button id="btn-build-raw" type="button">Markdown確認</button>
+              <button id="btn-submit" type="button" class="primary">GitHubへ保存</button>
+            </div>
+          </footer>
+        </section>
+      </div>
+    </main>
+
+    <script>
+      const $ = (id) => document.getElementById(id);
+      const state = {
+        token: '',
+        owner: '',
+        repo: '',
+        sourcePath: '',
+        sourceDate: '',
+        processing: false,
+      };
+
+      const els = {
+        settings: $('settings'),
+        tokenBadge: $('token-badge'),
+        owner: $('owner'),
+        repo: $('repo'),
+        token: $('token'),
+        settingsStatus: $('settings-status'),
+        sourcePath: $('source-path'),
+        postList: $('post-list'),
+        sourceStatus: $('source-status'),
+        title: $('title'),
+        date: $('date'),
+        time: $('time'),
+        slug: $('slug'),
+        categories: $('categories'),
+        image: $('image'),
+        permalink: $('permalink'),
+        target: $('target'),
+        outputPath: $('output-path'),
+        overwrite: $('overwrite'),
+        body: $('body'),
+        gutter: $('gutter'),
+        preview: $('preview'),
+        raw: $('raw'),
+        docStatus: $('doc-status'),
+        charCount: $('char-count'),
+        submit: $('btn-submit'),
+        mdFile: $('md-file'),
+      };
+
+      const API = 'https://api.github.com';
+      const LS_KEY = 'blog_post_cfg';
+
+      function loadSettings() {
+        try {
+          const cfg = JSON.parse(localStorage.getItem(LS_KEY) || '{}');
+          state.token = cfg.token || '';
+          state.owner = cfg.owner || '';
+          state.repo = cfg.repo || '';
+          els.token.value = state.token;
+          els.owner.value = state.owner;
+          els.repo.value = state.repo;
+        } catch (_) {}
+        updateTokenBadge();
+      }
+
+      function saveSettings() {
+        state.token = els.token.value.trim();
+        state.owner = els.owner.value.trim();
+        state.repo = els.repo.value.trim();
+        if (!state.token || !state.owner || !state.repo) {
+          setStatus(els.settingsStatus, 'err', '全フィールドを入力してください');
+          return;
+        }
+        localStorage.setItem(LS_KEY, JSON.stringify({
+          token: state.token,
+          owner: state.owner,
+          repo: state.repo,
+        }));
+        updateTokenBadge();
+        validate();
+        setStatus(els.settingsStatus, 'ok', '保存しました');
+      }
+
+      function clearSettings() {
+        localStorage.removeItem(LS_KEY);
+        state.token = state.owner = state.repo = '';
+        els.token.value = els.owner.value = els.repo.value = '';
+        updateTokenBadge();
+        validate();
+        setStatus(els.settingsStatus, 'warn', '設定をクリアしました');
+      }
+
+      function updateTokenBadge() {
+        const ok = Boolean(state.token && state.owner && state.repo);
+        els.tokenBadge.textContent = ok ? 'GitHub設定済み' : 'GitHub設定未完了';
+      }
+
+      function setStatus(el, kind, text) {
+        el.className = `status ${kind || ''}`.trim();
+        el.textContent = text || '';
+      }
+
+      function todayJst() {
+        const d = new Date(Date.now() + 9 * 60 * 60 * 1000);
+        return d.toISOString().slice(0, 10);
+      }
+
+      function endOfMonth(year, month1) {
+        return new Date(year, month1, 0).getDate();
+      }
+
+      function pad2(n) {
+        return String(n).padStart(2, '0');
+      }
+
+      function slugify(value) {
+        return value
+          .toLowerCase()
+          .normalize('NFKD')
+          .replace(/[^\w\s-]/g, '')
+          .trim()
+          .replace(/\s+/g, '-')
+          .replace(/-+/g, '-') || 'post';
+      }
+
+      function parseFrontmatter(text) {
+        const match = text.match(/^---\n([\s\S]*?)\n---\n?/);
+        if (!match) return { data: {}, body: text };
+        const data = {};
+        for (const line of match[1].split('\n')) {
+          const m = line.match(/^([A-Za-z0-9_-]+):\s*(.*)$/);
+          if (!m) continue;
+          let value = m[2].trim();
+          value = value.replace(/^["']|["']$/g, '');
+          data[m[1]] = value;
+        }
+        return { data, body: text.slice(match[0].length) };
+      }
+
+      function dateParts(date) {
+        const [y, m, d] = date.split('-');
+        return { y, m, d };
+      }
+
+      function outputPath() {
+        const date = els.date.value || todayJst();
+        const slug = els.slug.value.trim() || slugify(els.title.value);
+        const dir = els.target.value === 'drafts' ? 'drafts' : 'posts';
+        return `astro/content/${dir}/${date}-${slug}.md`;
+      }
+
+      function syncOutputPath() {
+        els.outputPath.value = outputPath();
+      }
+
+      function buildMarkdown() {
+        const date = els.date.value;
+        const time = els.time.value || '18:00';
+        const title = els.title.value.trim();
+        const permalink = els.permalink.value.trim() || '/:year-:month-:day-:title/';
+        const categories = els.categories.value.trim();
+        const image = els.image.value.trim();
+        const lines = [
+          '---',
+          'layout: post',
+          `title:  "${title}"`,
+          `date:   ${date} ${time}:00 +0900`,
+          `permalink:   ${permalink}`,
+        ];
+        if (categories) lines.push(`categories: ${categories}`);
+        if (image) lines.push(`image: ${image}`);
+        lines.push('---');
+        return `${lines.join('\n')}\n${els.body.value.trimStart()}`;
+      }
+
+      function renderPreview() {
+        const title = els.title.value.trim();
+        const body = els.body.value.trim();
+        const html = body ? marked.parse(body, { gfm: true, breaks: false }) : '<p style="color:#777;">本文を入力するとプレビューが表示されます。</p>';
+        els.preview.innerHTML = `${title ? `<h1>${escapeHtml(title)}</h1>` : ''}${html}`;
+      }
+
+      function escapeHtml(value) {
+        return value.replace(/[&<>"']/g, (c) => ({
+          '&': '&amp;',
+          '<': '&lt;',
+          '>': '&gt;',
+          '"': '&quot;',
+          "'": '&#39;',
+        }[c]));
+      }
+
+      function updateEditorStats() {
+        const lineCount = Math.max(1, els.body.value.split('\n').length);
+        els.gutter.textContent = Array.from({ length: lineCount }, (_, i) => i + 1).join('\n');
+        els.charCount.textContent = els.body.value.length.toLocaleString();
+        syncOutputPath();
+        validate();
+      }
+
+      function ghHeaders() {
+        return {
+          Authorization: `Bearer ${state.token}`,
+          Accept: 'application/vnd.github.v3+json',
+          'Content-Type': 'application/json',
+        };
+      }
+
+      function utf8ToBase64(str) {
+        const bytes = new TextEncoder().encode(str);
+        let binary = '';
+        bytes.forEach((b) => binary += String.fromCharCode(b));
+        return btoa(binary);
+      }
+
+      function base64ToUtf8(b64) {
+        const binary = atob(b64.replace(/\n/g, ''));
+        const bytes = new Uint8Array([...binary].map((c) => c.charCodeAt(0)));
+        return new TextDecoder().decode(bytes);
+      }
+
+      async function ghJson(path, options = {}) {
+        const res = await fetch(`${API}/repos/${state.owner}/${state.repo}${path}`, {
+          ...options,
+          headers: {
+            ...ghHeaders(),
+            ...(options.headers || {}),
+          },
+        });
+        if (!res.ok) {
+          const err = await res.json().catch(() => ({}));
+          throw new Error(`GitHub APIエラー (${res.status}): ${err.message || path}`);
+        }
+        return res.json();
+      }
+
+      async function getFileInfo(path) {
+        const res = await fetch(`${API}/repos/${state.owner}/${state.repo}/contents/${path}`, {
+          headers: ghHeaders(),
+        });
+        if (res.status === 404) return null;
+        if (!res.ok) throw new Error(`ファイル取得失敗 (${res.status}): ${path}`);
+        const data = await res.json();
+        return {
+          sha: data.sha,
+          content: base64ToUtf8(data.content),
+        };
+      }
+
+      async function createBlob(content, encoding = 'base64') {
+        const data = await ghJson('/git/blobs', {
+          method: 'POST',
+          body: JSON.stringify({ content, encoding }),
+        });
+        return data.sha;
+      }
+
+      async function commitFilesOnce(files, message) {
+        const branch = 'master';
+        const ref = await ghJson(`/git/ref/heads/${branch}`);
+        const parentSha = ref.object.sha;
+        const parent = await ghJson(`/git/commits/${parentSha}`);
+        const tree = [];
+        for (const file of files) {
+          tree.push({
+            path: file.path,
+            mode: '100644',
+            type: 'blob',
+            sha: await createBlob(file.content, file.encoding),
+          });
+        }
+        const newTree = await ghJson('/git/trees', {
+          method: 'POST',
+          body: JSON.stringify({ base_tree: parent.tree.sha, tree }),
+        });
+        const commit = await ghJson('/git/commits', {
+          method: 'POST',
+          body: JSON.stringify({
+            message,
+            tree: newTree.sha,
+            parents: [parentSha],
+          }),
+        });
+        return ghJson(`/git/refs/heads/${branch}`, {
+          method: 'PATCH',
+          body: JSON.stringify({ sha: commit.sha, force: false }),
+        });
+      }
+
+      async function listRecentPosts() {
+        if (!ensureSettings()) return;
+        setStatus(els.sourceStatus, '', '記事一覧を取得中...');
+        try {
+          const items = await ghJson('/contents/astro/content/posts?ref=master');
+          const files = items
+            .filter((item) => item.type === 'file' && item.name.endsWith('.md'))
+            .sort((a, b) => b.name.localeCompare(a.name))
+            .slice(0, 80);
+          els.postList.innerHTML = files.map((file) => `<option value="${file.path}">${file.name}</option>`).join('');
+          setStatus(els.sourceStatus, 'ok', `${files.length}件を候補に追加しました`);
+        } catch (err) {
+          setStatus(els.sourceStatus, 'err', err.message);
+        }
+      }
+
+      async function loadSource() {
+        if (!ensureSettings()) return;
+        const path = els.sourcePath.value.trim();
+        if (!path) {
+          setStatus(els.sourceStatus, 'err', 'コピー元パスを入力してください');
+          return;
+        }
+        setStatus(els.sourceStatus, '', '読み込み中...');
+        try {
+          const file = await getFileInfo(path);
+          if (!file) {
+            setStatus(els.sourceStatus, 'err', 'ファイルが見つかりません');
+            return;
+          }
+          const parsed = parseFrontmatter(file.content);
+          const filename = path.split('/').pop().replace(/\.md$/, '');
+          const filenameDate = filename.match(/^(\d{4}-\d{2}-\d{2})-(.+)$/);
+          state.sourcePath = path;
+          state.sourceDate = filenameDate?.[1] || '';
+          els.title.value = parsed.data.title || '';
+          els.date.value = extractDate(parsed.data.date) || filenameDate?.[1] || todayJst();
+          els.time.value = extractTime(parsed.data.date) || '18:00';
+          els.slug.value = filenameDate?.[2] || slugify(els.title.value);
+          els.categories.value = parsed.data.categories || '';
+          els.image.value = parsed.data.image || '';
+          els.permalink.value = parsed.data.permalink || '/:year-:month-:day-:title/';
+          els.body.value = parsed.body;
+          updateEditorStats();
+          renderPreview();
+          setStatus(els.sourceStatus, 'ok', `${path} を読み込みました`);
+        } catch (err) {
+          setStatus(els.sourceStatus, 'err', err.message);
+        }
+      }
+
+      function extractDate(value) {
+        return String(value || '').match(/\d{4}-\d{2}-\d{2}/)?.[0] || '';
+      }
+
+      function extractTime(value) {
+        return String(value || '').match(/\d{2}:\d{2}/)?.[0] || '';
+      }
+
+      function makeNextMonthTemplate() {
+        const base = els.date.value || state.sourceDate;
+        if (!base) {
+          setStatus(els.sourceStatus, 'err', '元の日付がありません');
+          return;
+        }
+        const { y, m } = dateParts(base);
+        let nextY = Number(y);
+        let nextM = Number(m) + 1;
+        if (nextM > 12) {
+          nextY += 1;
+          nextM = 1;
+        }
+        const oldYm = `${y}-${m}`;
+        const newYm = `${nextY}-${pad2(nextM)}`;
+        els.date.value = `${newYm}-${pad2(endOfMonth(nextY, nextM))}`;
+        if (!els.time.value) els.time.value = '18:00';
+        if (/books-read-this-month/.test(els.slug.value)) {
+          els.slug.value = 'books-read-this-month';
+        }
+        els.body.value = els.body.value.replaceAll(oldYm, newYm);
+        syncOutputPath();
+        updateEditorStats();
+        renderPreview();
+        setStatus(els.sourceStatus, 'ok', `${oldYm} から ${newYm} のテンプレートにしました`);
+      }
+
+      function ensureSettings() {
+        if (state.token && state.owner && state.repo) return true;
+        setStatus(els.settingsStatus, 'err', 'GitHub設定を保存してください');
+        els.settings.classList.add('open');
+        return false;
+      }
+
+      function validate() {
+        const ok = state.token && state.owner && state.repo
+          && els.title.value.trim()
+          && els.date.value
+          && els.slug.value.trim()
+          && els.body.value.trim()
+          && !state.processing;
+        els.submit.disabled = !ok;
+        if (!state.token || !state.owner || !state.repo) {
+          setStatus(els.docStatus, 'warn', 'GitHub設定が必要です');
+        } else if (!els.title.value.trim() || !els.date.value || !els.slug.value.trim()) {
+          setStatus(els.docStatus, 'warn', 'title/date/slug を入力してください');
+        } else if (!els.body.value.trim()) {
+          setStatus(els.docStatus, 'warn', '本文を入力してください');
+        } else {
+          setStatus(els.docStatus, '', '');
+        }
+      }
+
+      function insertAround(before, after, fallback) {
+        const s = els.body.selectionStart;
+        const e = els.body.selectionEnd;
+        const selected = els.body.value.slice(s, e) || fallback;
+        els.body.setRangeText(`${before}${selected}${after}`, s, e, 'select');
+        updateEditorStats();
+      }
+
+      function insertPrefix(prefix) {
+        const s = els.body.selectionStart;
+        const start = els.body.value.lastIndexOf('\n', s - 1) + 1;
+        els.body.setRangeText(prefix, start, start, 'end');
+        updateEditorStats();
+      }
+
+      function insertText(text) {
+        const s = els.body.selectionStart;
+        els.body.setRangeText(text, s, s, 'end');
+        updateEditorStats();
+      }
+
+      async function submitPost() {
+        if (!ensureSettings()) return;
+        validate();
+        if (els.submit.disabled) return;
+        state.processing = true;
+        els.submit.disabled = true;
+        setStatus(els.docStatus, '', '保存中...');
+        try {
+          const path = outputPath();
+          const exists = await getFileInfo(path);
+          if (exists && !els.overwrite.checked) {
+            throw new Error('同名ファイルが存在します。上書きする場合はチェックを入れてください。');
+          }
+          const markdown = buildMarkdown();
+          await commitFilesOnce([{
+            path,
+            content: utf8ToBase64(markdown),
+            encoding: 'base64',
+          }], `Post: ${els.date.value} ${els.title.value.trim()}`);
+          setStatus(els.docStatus, 'ok', `${path} を保存しました`);
+        } catch (err) {
+          setStatus(els.docStatus, 'err', err.message);
+        } finally {
+          state.processing = false;
+          validate();
+        }
+      }
+
+      document.querySelectorAll('.tab').forEach((tab) => {
+        tab.addEventListener('click', () => {
+          document.querySelectorAll('.tab').forEach((el) => el.classList.toggle('active', el === tab));
+          document.querySelectorAll('.panel').forEach((panel) => panel.classList.remove('active'));
+          $(`panel-${tab.dataset.tab}`).classList.add('active');
+          if (tab.dataset.tab === 'preview') renderPreview();
+          if (tab.dataset.tab === 'raw') els.raw.value = buildMarkdown();
+        });
+      });
+
+      document.querySelectorAll('[data-action]').forEach((button) => {
+        button.addEventListener('click', () => {
+          const action = button.dataset.action;
+          if (action === 'bold') insertAround('**', '**', 'テキスト');
+          if (action === 'italic') insertAround('*', '*', 'テキスト');
+          if (action === 'h2') insertPrefix('## ');
+          if (action === 'quote') insertPrefix('> ');
+          if (action === 'ul') insertPrefix('- ');
+          if (action === 'link') insertAround('[', '](https://example.com)', 'リンク');
+          if (action === 'image') insertText('![画像の説明](https://example.com/image.jpg)');
+          if (action === 'code') insertAround('`', '`', 'code');
+          if (action === 'hr') insertText('\n---\n');
+          els.body.focus();
+        });
+      });
+
+      $('btn-settings').addEventListener('click', () => els.settings.classList.toggle('open'));
+      $('btn-save-settings').addEventListener('click', saveSettings);
+      $('btn-clear-settings').addEventListener('click', clearSettings);
+      $('btn-list-posts').addEventListener('click', listRecentPosts);
+      $('btn-load-source').addEventListener('click', loadSource);
+      $('btn-next-month').addEventListener('click', makeNextMonthTemplate);
+      $('btn-build-raw').addEventListener('click', () => {
+        els.raw.value = buildMarkdown();
+        document.querySelector('[data-tab="raw"]').click();
+      });
+      $('btn-submit').addEventListener('click', submitPost);
+      $('btn-import-md').addEventListener('click', () => els.mdFile.click());
+
+      els.mdFile.addEventListener('change', (event) => {
+        const file = event.target.files[0];
+        if (!file) return;
+        const reader = new FileReader();
+        reader.onload = () => {
+          const parsed = parseFrontmatter(String(reader.result || ''));
+          els.body.value = parsed.body;
+          if (parsed.data.title) els.title.value = parsed.data.title;
+          if (parsed.data.date) {
+            els.date.value = extractDate(parsed.data.date);
+            els.time.value = extractTime(parsed.data.date) || els.time.value;
+          }
+          if (parsed.data.categories) els.categories.value = parsed.data.categories;
+          if (parsed.data.image) els.image.value = parsed.data.image;
+          if (parsed.data.permalink) els.permalink.value = parsed.data.permalink;
+          updateEditorStats();
+          renderPreview();
+        };
+        reader.readAsText(file, 'utf-8');
+      });
+
+      ['input', 'change'].forEach((eventName) => {
+        [els.title, els.date, els.time, els.slug, els.categories, els.image, els.permalink, els.target].forEach((el) => {
+          el.addEventListener(eventName, () => {
+            syncOutputPath();
+            validate();
+          });
+        });
+      });
+
+      els.title.addEventListener('blur', () => {
+        if (!els.slug.value.trim()) {
+          els.slug.value = slugify(els.title.value);
+          syncOutputPath();
+        }
+      });
+      els.body.addEventListener('input', updateEditorStats);
+      els.body.addEventListener('scroll', () => {
+        els.gutter.scrollTop = els.body.scrollTop;
+      });
+      els.body.addEventListener('keydown', (event) => {
+        if (event.key === 'Tab') {
+          event.preventDefault();
+          insertText('  ');
+        }
+        if ((event.ctrlKey || event.metaKey) && event.key === 's') {
+          event.preventDefault();
+          submitPost();
+        }
+        if ((event.ctrlKey || event.metaKey) && event.key === 'Enter') {
+          event.preventDefault();
+          renderPreview();
+          document.querySelector('[data-tab="preview"]').click();
+        }
+      });
+
+      loadSettings();
+      els.date.value = todayJst();
+      syncOutputPath();
+      updateEditorStats();
+    </script>
+  </body>
+</html>

@@ -15,6 +15,7 @@ const urls = [
   "/activity-data.json",
   "/about",
   "/cloudflare-preview/",
+  "/blog-post/",
   "/diary/",
   "/diary-post/",
   "/feed.xml",

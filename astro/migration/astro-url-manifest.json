@@ -1,9 +1,9 @@
 {
-  "generatedAt": "2026-06-13T12:14:56.247Z",
+  "generatedAt": "2026-06-15T13:12:42.838Z",
   "counts": {
     "posts": 356,
-    "diary": 42,
-    "urls": 416
+    "diary": 44,
+    "urls": 419
   },
   "urls": [
     "/",
@@ -364,6 +364,7 @@
     "/about",
     "/activity-data.json",
     "/activity/",
+    "/blog-post/",
     "/cloudflare-preview/",
     "/diary-post/",
     "/diary/",
@@ -409,6 +410,8 @@
     "/diary/2026-06-04/",
     "/diary/2026-06-12/",
     "/diary/2026-06-13/",
+    "/diary/2026-06-14/",
+    "/diary/2026-06-15/",
     "/domain-change/",
     "/feed.xml",
     "/Jekyll事始め/",
