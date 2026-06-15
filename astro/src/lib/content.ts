@@ -50,7 +50,7 @@ async function readEntry(file: string, kind: "post" | "diary"): Promise<Entry> {
   const date = parseDate(parsed.data.date) || fileDate || new Date(0);
   const title = String(parsed.data.title || titleFromFilename(filename) || filename);
   const content = normalizeMarkdownImageUrls(parsed.content);
-  const html = await marked.parse(content, { async: true, gfm: true });
+  const html = await marked.parse(content, { async: true, gfm: true, breaks: kind === "diary" });
   const excerpt = makeExcerpt(html);
   const url = kind === "diary"
     ? diaryUrl(date)

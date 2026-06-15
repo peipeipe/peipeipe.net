@@ -478,7 +478,9 @@
       padding: 40px 0;
     }
 
-    .preview-card h1,h2,h3 { color: var(--text); margin: 1em 0 0.5em; }
+    .preview-card h1,
+    .preview-card h2,
+    .preview-card h3 { color: var(--text); margin: 1em 0 0.5em; }
     .preview-card h2 {
       font-size: 16px;
       color: var(--accent-2);
@@ -1274,13 +1276,14 @@
      Validation
   ════════════════════════════════════════════ */
   function validateForm() {
-    const ok = state.token && state.owner && state.repo && textarea.value.trim() && !state.processing;
+    const hasContent = Boolean(textarea.value.trim() || state.imageB64);
+    const ok = state.token && state.owner && state.repo && hasContent && !state.processing;
     btnSubmit.disabled = !ok;
 
     if (!state.token || !state.owner || !state.repo) {
       submitInfo.textContent = '⚙ 右上の設定から認証情報を入力してください';
-    } else if (!textarea.value.trim()) {
-      submitInfo.textContent = '📝 本文を入力してください';
+    } else if (!hasContent) {
+      submitInfo.textContent = '📝 本文または画像を追加してください';
     } else {
       submitInfo.textContent = '';
     }
