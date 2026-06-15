@@ -1,0 +1,62 @@
+name: Update Books From Booklog
+
+on:
+  workflow_dispatch:
+    inputs:
+      booklog_csv_url:
+        description: "HTTPS URL to the Booklog CSV export"
+        required: true
+        type: string
+      booklog_csv_name:
+        description: "Local filename to use for the downloaded CSV"
+        required: false
+        default: "booklog.csv"
+        type: string
+
+permissions:
+  contents: write
+  actions: write
+
+jobs:
+  update-books-from-booklog:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v6
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Set up Python
+        uses: actions/setup-python@v6
+        with:
+          python-version: "3.14"
+
+      - name: Download Booklog CSV
+        run: |
+          curl -fsSL "${{ inputs.booklog_csv_url }}" -o "$RUNNER_TEMP/${{ inputs.booklog_csv_name }}"
+
+      - name: Generate books data
+        run: |
+          python scripts/generate_books.py "$RUNNER_TEMP/${{ inputs.booklog_csv_name }}"
+
+      - name: Commit and push changes
+        id: commit-changes
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git add astro/data/books.json
+          if git diff --cached --exit-code; then
+            echo "No book changes"
+            echo "changed=false" >> "$GITHUB_OUTPUT"
+          else
+            git commit -m "Update books from Booklog export"
+            git push
+            echo "changed=true" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Trigger Cloudflare Pages deploy
+        if: steps.commit-changes.outputs.changed == 'true'
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: gh workflow run cloudflare-pages.yml --ref "${GITHUB_REF_NAME:-master}"

@@ -35,7 +35,7 @@ def main() -> None:
 
     payload = {
         "source": "booklog",
-        "generatedFrom": str(args.csv),
+        "generatedFrom": Path(args.csv).name,
         "stats": {
             "books": len(books),
             "withNotes": sum(1 for row in rows if cell(row, 8)),
