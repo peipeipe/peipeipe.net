@@ -16,42 +16,65 @@ function metaParts(book) {
     book.rating ? `★${book.rating}` : "",
   ].filter(Boolean);
 }
+
+function ratingLabel(book) {
+  return book.rating ? "★".repeat(book.rating) : "";
+}
 ---
 
-<BaseLayout title="Books" wide={true}>
+<BaseLayout title="Books" robots="noindex, nofollow" wide={true}>
   <article class="books-page">
     <header class="books-header">
-      <h1>Books</h1>
-      <p>
-        {data.stats.books}冊 / 引用あり {data.stats.withQuotes}冊 / 引用 {data.stats.quotes}件
-      </p>
+      <div>
+        <h1>Books</h1>
+        <p>読んだ本と、残しておきたい引用</p>
+      </div>
+      <dl class="books-stats" aria-label="Books stats">
+        <div>
+          <dt>Books</dt>
+          <dd>{data.stats.books}</dd>
+        </div>
+        <div>
+          <dt>Quoted</dt>
+          <dd>{data.stats.withQuotes}</dd>
+        </div>
+        <div>
+          <dt>Quotes</dt>
+          <dd>{data.stats.quotes}</dd>
+        </div>
+      </dl>
     </header>
 
-    <form class="books-search" id="books-search" role="search">
-      <label for="books-query">Search books</label>
-      <input
-        id="books-query"
-        name="q"
-        type="search"
-        autocomplete="off"
-        spellcheck="false"
-        placeholder="タイトル、著者、出版社、引用から検索"
-      />
-    </form>
-
-    <p class="books-status" id="books-status" aria-live="polite">最近読んだ本</p>
+    <div class="books-toolbar">
+      <form class="books-search" id="books-search" role="search">
+        <label for="books-query">Search books</label>
+        <input
+          id="books-query"
+          name="q"
+          type="search"
+          autocomplete="off"
+          spellcheck="false"
+          placeholder="タイトル、著者、出版社、引用から検索"
+        />
+      </form>
+      <p class="books-status" id="books-status" aria-live="polite">最近読んだ本</p>
+    </div>
 
     <ol class="books-list" id="books-list">
       {initialBooks.map((book) => (
-        <li class="book-item" id={book.id}>
+        <li class:list={["book-item", { "has-quotes": book.quotes.length > 0 }]} id={book.id}>
           <article>
             <header>
-              <h2>{book.title}</h2>
-              <p>{metaParts(book).join(" / ")}</p>
+              <div class="book-title-row">
+                <h2>{book.title}</h2>
+                {book.quotes.length > 0 && <span class="book-quote-count">{book.quotes.length}</span>}
+              </div>
+              <p class="book-meta">{metaParts(book).join(" / ")}</p>
+              {ratingLabel(book) && <p class="book-rating" aria-label={`Rating ${book.rating}`}>{ratingLabel(book)}</p>}
             </header>
             {book.quotes.length > 0 && (
               <div class="book-quotes">
-                {book.quotes.slice(0, 4).map((quote) => (
+                {book.quotes.slice(0, 2).map((quote) => (
                   <blockquote>{quote.text}</blockquote>
                 ))}
               </div>
@@ -95,6 +118,10 @@ function metaParts(book) {
         ].filter(Boolean);
       }
 
+      function ratingLabel(book) {
+        return book.rating ? "★".repeat(book.rating) : "";
+      }
+
       function searchableText(book) {
         return normalize([
           book.title,
@@ -114,14 +141,19 @@ function metaParts(book) {
             const text = normalize(quote.text);
             return terms.some((term) => text.includes(term));
           })
-          .slice(0, terms.length ? 8 : 4);
+          .slice(0, terms.length ? 6 : 2);
+        const rating = ratingLabel(book);
 
         return `
-          <li class="book-item" id="${escapeHtml(book.id)}">
+          <li class="book-item ${book.quotes?.length ? "has-quotes" : ""}" id="${escapeHtml(book.id)}">
             <article>
               <header>
-                <h2>${escapeHtml(book.title)}</h2>
-                <p>${escapeHtml(metaParts(book).join(" / "))}</p>
+                <div class="book-title-row">
+                  <h2>${escapeHtml(book.title)}</h2>
+                  ${book.quotes?.length ? `<span class="book-quote-count">${escapeHtml(book.quotes.length)}</span>` : ""}
+                </div>
+                <p class="book-meta">${escapeHtml(metaParts(book).join(" / "))}</p>
+                ${rating ? `<p class="book-rating" aria-label="Rating ${escapeHtml(book.rating)}">${escapeHtml(rating)}</p>` : ""}
               </header>
               ${quotes.length ? `<div class="book-quotes">${quotes.map((quote) => `<blockquote>${escapeHtml(quote.text)}</blockquote>`).join("")}</div>` : ""}
             </article>
@@ -152,28 +184,80 @@ function metaParts(book) {
 
   <style>
     .books-page {
+      --books-ink: #252525;
+      --books-muted: #666;
+      --books-rule: #e3e0da;
+      --books-paper: #fff;
+      --books-soft: #f7f6f3;
+      --books-accent: #8f4f3f;
       padding-bottom: 2rem;
     }
 
     .books-header {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr);
+      gap: 1rem;
+      align-items: end;
       margin-bottom: 1.25rem;
+      border-bottom: 1px solid var(--books-rule);
+      padding-bottom: 1.1rem;
     }
 
     .books-header h1 {
       margin: 0 0 0.35rem;
-      font-size: 30px;
+      color: var(--books-ink);
+      font-size: 34px;
       line-height: 1.25;
     }
 
     .books-header p,
     .books-status {
       margin: 0;
-      color: #666;
+      color: var(--books-muted);
       font-size: 15px;
     }
 
+    .books-stats {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 8px;
+      margin: 0;
+    }
+
+    .books-stats div {
+      border-left: 3px solid var(--books-accent);
+      background: var(--books-soft);
+      padding: 8px 10px;
+    }
+
+    .books-stats dt {
+      color: var(--books-muted);
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+    }
+
+    .books-stats dd {
+      margin: 1px 0 0;
+      color: var(--books-ink);
+      font-size: 23px;
+      font-weight: 700;
+      line-height: 1.1;
+    }
+
+    .books-toolbar {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr);
+      gap: 0.7rem;
+      align-items: end;
+      margin-bottom: 1.1rem;
+      border-bottom: 1px solid var(--books-rule);
+      padding-bottom: 1rem;
+    }
+
     .books-search {
-      margin: 0 0 1rem;
+      margin: 0;
     }
 
     .books-search label {
@@ -191,67 +275,135 @@ function metaParts(book) {
       border: 1px solid #d6d6d6;
       border-radius: 4px;
       background: #fff;
-      padding: 0.75rem 0.9rem;
+      padding: 0.78rem 0.9rem;
       font-size: 16px;
       line-height: 1.3;
     }
 
+    .books-search input:focus {
+      outline: 2px solid rgba(143, 79, 63, 0.2);
+      outline-offset: 1px;
+      border-color: var(--books-accent);
+    }
+
     .books-status {
-      margin-bottom: 0.75rem;
+      justify-self: start;
+      color: var(--books-muted);
+      font-size: 14px;
     }
 
     .books-list {
       display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-      gap: 14px;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 12px;
       margin: 0;
       padding: 0;
       list-style: none;
     }
 
     .book-item {
+      position: relative;
       min-width: 0;
-      border: 1px solid #e3e3e3;
+      border: 1px solid var(--books-rule);
       border-radius: 6px;
-      background: #fff;
+      background: var(--books-paper);
+      box-shadow: 0 1px 0 rgba(0, 0, 0, 0.03);
+      overflow: hidden;
+    }
+
+    .book-item::before {
+      position: absolute;
+      inset: 0 auto 0 0;
+      width: 5px;
+      background: #b8b1a4;
+      content: "";
+    }
+
+    .book-item.has-quotes::before {
+      background: var(--books-accent);
     }
 
     .book-item article {
-      padding: 14px;
+      padding: 14px 14px 15px 18px;
+    }
+
+    .book-title-row {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) auto;
+      gap: 8px;
+      align-items: start;
     }
 
     .book-item h2 {
-      margin: 0 0 0.35rem;
+      margin: 0;
+      color: var(--books-ink);
       font-size: 18px;
-      line-height: 1.35;
+      line-height: 1.45;
       overflow-wrap: anywhere;
     }
 
-    .book-item header p {
-      margin: 0;
-      color: #666;
+    .book-quote-count {
+      min-width: 26px;
+      border: 1px solid rgba(143, 79, 63, 0.35);
+      border-radius: 999px;
+      color: var(--books-accent);
+      padding: 2px 7px;
+      font-size: 12px;
+      font-weight: 700;
+      line-height: 1.3;
+      text-align: center;
+    }
+
+    .book-meta {
+      margin: 0.35rem 0 0;
+      color: var(--books-muted);
       font-size: 13px;
       line-height: 1.45;
       overflow-wrap: anywhere;
     }
 
+    .book-rating {
+      margin: 0.25rem 0 0;
+      color: #b36b18;
+      font-size: 12px;
+      letter-spacing: 0.04em;
+      line-height: 1.2;
+    }
+
     .book-quotes {
-      margin-top: 0.85rem;
+      margin-top: 0.95rem;
+      border-top: 1px solid #efede8;
+      padding-top: 0.15rem;
     }
 
     .book-quotes blockquote {
-      margin: 0.7rem 0 0;
-      border-left: 2px solid #8a8a8a;
-      padding-left: 0.8rem;
+      margin: 0.75rem 0 0;
+      border-left: 2px solid #b7a093;
+      padding-left: 0.75rem;
       color: #444;
       font-size: 14px;
-      line-height: 1.65;
+      line-height: 1.7;
       white-space: pre-wrap;
       overflow-wrap: anywhere;
     }
 
     .books-empty {
       color: #666;
+    }
+
+    @media (min-width: 720px) {
+      .books-header {
+        grid-template-columns: minmax(0, 1fr) minmax(300px, 430px);
+      }
+
+      .books-toolbar {
+        grid-template-columns: minmax(0, 1fr) auto;
+      }
+
+      .books-status {
+        justify-self: end;
+        padding-bottom: 0.8rem;
+      }
     }
   </style>
 </BaseLayout>

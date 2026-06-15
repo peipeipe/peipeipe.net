@@ -99,14 +99,15 @@ def extract_quotes(note: str) -> tuple[list[QuoteCandidate], list[str]]:
 
     marker = re.search(r"以下引用(?:[＋+].*)?|^引用$", text, flags=re.MULTILINE)
     kindle_mode = "黄色のハイライト" in text
-    if not marker and not kindle_mode:
+    unmarked_mode = not marker and not kindle_mode and likely_unmarked_quotes(text)
+    if not marker and not kindle_mode and not unmarked_mode:
         return [], []
 
     working = text[marker.end() :] if marker else text
     lines = [line.rstrip() for line in working.splitlines()]
     blocks: list[list[str]] = []
     current: list[str] = []
-    current_reason = "after-marker"
+    current_reason = "unmarked-long-note" if unmarked_mode else "after-marker"
     reasons: list[str] = []
 
     for raw_line in lines:
@@ -121,7 +122,7 @@ def extract_quotes(note: str) -> tuple[list[QuoteCandidate], list[str]]:
             continue
         if not line:
             flush_block(blocks, reasons, current, current_reason)
-            current_reason = "after-marker"
+            current_reason = "unmarked-long-note" if unmarked_mode else "after-marker"
             continue
         current.append(line)
     flush_block(blocks, reasons, current, current_reason)
@@ -159,6 +160,16 @@ def clean_quote_block(value: str) -> str:
 
 def is_quote_marker(line: str) -> bool:
     return bool(re.fullmatch(r"(以下)?引用(?:[＋+].*)?|引用メモ", line))
+
+
+def likely_unmarked_quotes(value: str) -> bool:
+    paragraphs = [paragraph.strip() for paragraph in re.split(r"\n\s*\n+", value) if paragraph.strip()]
+    if len(paragraphs) < 2:
+        return False
+    long_paragraphs = [paragraph for paragraph in paragraphs if len(paragraph) >= 80]
+    if len(long_paragraphs) >= 2:
+        return True
+    return len(value) >= 450 and len(long_paragraphs) >= 1
 
 
 def is_metadata_line(line: str) -> bool:
