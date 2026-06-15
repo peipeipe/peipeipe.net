@@ -318,17 +318,14 @@ th {
 }
 
 .diary-month-photos {
-  display: flex;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(72px, 1fr));
   gap: 8px;
-  overflow-x: auto;
   margin: 0 0 12px;
-  padding-bottom: 2px;
 }
 
 .diary-month-photos a {
-  flex: 0 0 auto;
-  width: 84px;
-  height: 84px;
+  aspect-ratio: 1;
   border-radius: 6px;
   overflow: hidden;
   background: #f3f3f3;

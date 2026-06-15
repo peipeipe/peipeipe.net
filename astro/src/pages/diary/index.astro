@@ -11,16 +11,18 @@ function groupEntriesByMonth(entries) {
   for (const entry of entries) {
     const monthKey = `${entry.date.getFullYear()}-${entry.date.getMonth()}`;
     const lastGroup = groups.at(-1);
-    const imageSrc = getFirstImageSrc(entry.html);
-    const item = { ...entry, imageSrc };
+    const imageSrcs = getImageSrcs(entry.html);
+    const item = { ...entry, imageSrcs };
 
     if (lastGroup?.key === monthKey) {
       lastGroup.entries.push(item);
+      lastGroup.photoItems.push(...getPhotoItems(item));
     } else {
       groups.push({
         key: monthKey,
         label: `${entry.date.getFullYear()}年${entry.date.getMonth() + 1}月`,
         entries: [item],
+        photoItems: getPhotoItems(item),
       });
     }
   }
@@ -28,8 +30,16 @@ function groupEntriesByMonth(entries) {
   return groups;
 }
 
-function getFirstImageSrc(html) {
-  return html.match(/<img\s[^>]*src="([^"]+)"/)?.[1];
+function getImageSrcs(html) {
+  return [...html.matchAll(/<img\s[^>]*src="([^"]+)"/g)].map((match) => match[1]);
+}
+
+function getPhotoItems(entry) {
+  return entry.imageSrcs.map((src) => ({
+    src,
+    title: entry.title,
+    url: entry.url,
+  }));
 }
 ---
 
@@ -40,14 +50,12 @@ function getFirstImageSrc(html) {
     {groupedEntries.map((group) => (
       <section class="diary-month">
         <h2>{group.label}</h2>
-        {group.entries.some((entry) => entry.imageSrc) && (
+        {group.photoItems.length > 0 && (
           <div class="diary-month-photos" aria-label={`${group.label}の写真`}>
-            {group.entries.filter((entry) => entry.imageSrc).slice(0, 8).map((entry) => (
-              entry.imageSrc && (
-                <a href={entry.url} title={entry.title}>
-                  <img src={entry.imageSrc} alt="" loading="lazy" />
-                </a>
-              )
+            {group.photoItems.map((photo) => (
+              <a href={photo.url} title={photo.title}>
+                <img src={photo.src} alt="" loading="lazy" />
+              </a>
             ))}
           </div>
         )}
