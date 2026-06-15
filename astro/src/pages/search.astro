@@ -12,7 +12,7 @@ const serializedSearchIndex = JSON.stringify(searchIndex).replace(/</g, "\\u003c
     <header class="search-header">
       <h1>Search</h1>
       <p class="search-summary">
-        Posts {searchIndex.stats.posts} / Diary {searchIndex.stats.diary}
+        Posts {searchIndex.stats.posts} / Diary {searchIndex.stats.diary} / Books {searchIndex.stats.books}
       </p>
     </header>
 
@@ -31,6 +31,7 @@ const serializedSearchIndex = JSON.stringify(searchIndex).replace(/</g, "\\u003c
           <button type="button" class="search-kind is-active" data-kind="all" aria-pressed="true">All</button>
           <button type="button" class="search-kind" data-kind="post" aria-pressed="false">Posts</button>
           <button type="button" class="search-kind" data-kind="diary" aria-pressed="false">Diary</button>
+          <button type="button" class="search-kind" data-kind="book" aria-pressed="false">Books</button>
         </div>
       </div>
     </form>
@@ -40,6 +41,7 @@ const serializedSearchIndex = JSON.stringify(searchIndex).replace(/</g, "\\u003c
       <p class="search-counts">
         <span>Posts {searchIndex.stats.posts}</span>
         <span>Diary {searchIndex.stats.diary}</span>
+        <span>Books {searchIndex.stats.books}</span>
       </p>
     </div>
 
@@ -49,7 +51,7 @@ const serializedSearchIndex = JSON.stringify(searchIndex).replace(/</g, "\\u003c
           <a class="search-result-link" href={item.url}>
             <div class="search-result-body">
               <div class="search-result-meta">
-                <span class="search-badge">{item.kind === "post" ? "Post" : "Diary"}</span>
+                <span class="search-badge">{item.kind === "post" ? "Post" : item.kind === "diary" ? "Diary" : "Book"}</span>
                 <time datetime={item.date}>{item.date}</time>
               </div>
               <h2>{item.title}</h2>
@@ -148,7 +150,7 @@ const serializedSearchIndex = JSON.stringify(searchIndex).replace(/</g, "\\u003c
             <a class="search-result-link" href="${escapeHtml(item.url)}">
               <div class="search-result-body">
                 <div class="search-result-meta">
-                  <span class="search-badge">${item.kind === "post" ? "Post" : "Diary"}</span>
+                  <span class="search-badge">${item.kind === "post" ? "Post" : item.kind === "diary" ? "Diary" : "Book"}</span>
                   <time datetime="${escapeHtml(item.date)}">${escapeHtml(item.date)}</time>
                 </div>
                 <h2>${escapeHtml(item.title)}</h2>
