@@ -1287,7 +1287,7 @@
   }
 
   /* ════════════════════════════════════════════
-     GitHub Contents API
+     GitHub API
   ════════════════════════════════════════════ */
   const API = 'https://api.github.com';
 
@@ -1328,41 +1328,69 @@
     return new TextDecoder().decode(bytes);
   }
 
-  /** ファイルを作成または更新 */
-  async function putFile(path, content, message, sha = null) {
-    const body = {
-      message,
-      content: utf8ToBase64(content), // UTF-8 → base64（TextEncoder使用）
-    };
-    if (sha) body.sha = sha;
-
-    const res = await fetch(`${API}/repos/${state.owner}/${state.repo}/contents/${path}`, {
-      method:  'PUT',
-      headers: ghHeaders(),
-      body:    JSON.stringify(body),
+  async function ghJson(path, options = {}) {
+    const res = await fetch(`${API}/repos/${state.owner}/${state.repo}${path}`, {
+      ...options,
+      headers: {
+        ...ghHeaders(),
+        ...(options.headers || {}),
+      },
     });
     if (!res.ok) {
       const err = await res.json().catch(() => ({}));
-      throw new Error(`書き込み失敗 (${res.status}): ${err.message || path}`);
+      throw new Error(`GitHub APIエラー (${res.status}): ${err.message || path}`);
     }
     return res.json();
   }
 
-  /** 画像をバイナリとしてアップロード（base64 → GitHub Contents API） */
-  async function uploadImage(b64, filename) {
-    const res = await fetch(`${API}/repos/${state.owner}/${state.repo}/contents/${filename}`, {
-      method:  'PUT',
-      headers: ghHeaders(),
+  async function createBlob(content, encoding = 'base64') {
+    const data = await ghJson('/git/blobs', {
+      method: 'POST',
+      body: JSON.stringify({ content, encoding }),
+    });
+    return data.sha;
+  }
+
+  async function commitFilesOnce(files, message) {
+    const branch = 'master';
+    const ref = await ghJson(`/git/ref/heads/${branch}`);
+    const parentSha = ref.object.sha;
+    const parent = await ghJson(`/git/commits/${parentSha}`);
+
+    const tree = [];
+    for (const file of files) {
+      tree.push({
+        path: file.path,
+        mode: '100644',
+        type: 'blob',
+        sha: await createBlob(file.content, file.encoding),
+      });
+    }
+
+    const newTree = await ghJson('/git/trees', {
+      method: 'POST',
       body: JSON.stringify({
-        message: `📸 diary image: ${filename}`,
-        content: b64, // GitHubはbase64をそのまま受け付ける
+        base_tree: parent.tree.sha,
+        tree,
       }),
     });
-    if (!res.ok) {
-      const err = await res.json().catch(() => ({}));
-      throw new Error(`画像アップロード失敗 (${res.status}): ${err.message || ''}`);
-    }
-    return res.json();
+
+    const commit = await ghJson('/git/commits', {
+      method: 'POST',
+      body: JSON.stringify({
+        message,
+        tree: newTree.sha,
+        parents: [parentSha],
+      }),
+    });
+
+    return ghJson(`/git/refs/heads/${branch}`, {
+      method: 'PATCH',
+      body: JSON.stringify({
+        sha: commit.sha,
+        force: false,
+      }),
+    });
   }
 
   /** 日記ファイルのMarkdownを生成・更新 */
@@ -1391,7 +1419,7 @@
   }
 
   /* ════════════════════════════════════════════
-     Submit（Contents API直接書き込み方式）
+     Submit（Git Data API単一コミット方式）
   ════════════════════════════════════════════ */
   btnSubmit.addEventListener('click', doSubmit);
 
@@ -1414,16 +1442,20 @@
 
     try {
       let imageUrl = null;
+      const files = [];
 
-      // ── Step 1: 画像アップロード ──
+      // ── Step 1: 画像パスを決定 ──
       if (state.imageB64) {
         const timeStamp = time.replace(':', '');
         const ext = state.imageName.split('.').pop() || 'webp';
         const imagePath = `astro/public/images/diary/${date}-${timeStamp}.${ext}`;
         imageUrl = `/images/diary/${date}-${timeStamp}.${ext}`;
 
-        setLoading(true, '🖼 画像をアップロード中...');
-        await uploadImage(state.imageB64, imagePath);
+        files.push({
+          path: imagePath,
+          content: state.imageB64,
+          encoding: 'base64',
+        });
       }
 
       // ── Step 2: 日記ファイルを読み込み ──
@@ -1438,7 +1470,13 @@
         date, time, content, imageUrl
       );
       const commitMsg = `📝 日記: ${date} ${time}`;
-      await putFile(diaryPath, newContent, commitMsg, existing?.sha ?? null);
+      files.push({
+        path: diaryPath,
+        content: utf8ToBase64(newContent),
+        encoding: 'base64',
+      });
+
+      await commitFilesOnce(files, commitMsg);
 
       showToast('success', '投稿完了 🎉',
         `${date} ${time} の日記を保存しました。Cloudflare Pagesのビルド後に反映されます。`,
