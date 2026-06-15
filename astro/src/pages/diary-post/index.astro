@@ -1103,7 +1103,7 @@
   ════════════════════════════════════════════ */
   const MAX_RAW_BYTES = 4.5 * 1024 * 1024; // 4.5MB
   const MAX_DIMENSION = 1920;
-  const JPEG_QUALITY  = 0.85;
+  const IMAGE_QUALITY  = 0.85;
 
   async function processImageFile(file) {
     if (!file.type.startsWith('image/')) {
@@ -1117,16 +1117,17 @@
     dropZone.style.display = 'none';
 
     try {
-      const result = await fileToWebpBase64(file);
+      const result = await fileToUploadBase64(file);
       const reduction = result.originalBytes > 0
-        ? (1 - (result.webpBytes / result.originalBytes)) * 100
+        ? (1 - (result.outputBytes / result.originalBytes)) * 100
         : 0;
-      const approxKB = Math.round(result.webpBytes / 1024);
+      const approxKB = Math.round(result.outputBytes / 1024);
+      const formatLabel = result.ext === 'webp' ? 'WebP化' : 'JPEG化';
 
-      imageInfo.textContent = `${file.name} (WebP化, -${reduction.toFixed(1)}%, 約${approxKB}KB)`;
+      imageInfo.textContent = `${file.name} (${formatLabel}, -${reduction.toFixed(1)}%, 約${approxKB}KB)`;
       state.imageB64  = result.b64;
-      state.imageName = file.name.replace(/\.[^.]+$/, '.webp');
-      previewImg.src  = `data:image/webp;base64,${result.b64}`;
+      state.imageName = file.name.replace(/\.[^.]+$/, `.${result.ext}`);
+      previewImg.src  = `data:${result.mime};base64,${result.b64}`;
       progressFill.className = 'progress-fill';
       progressFill.style.width = '100%';
       validateForm();
@@ -1137,7 +1138,7 @@
     }
   }
 
-  function fileToWebpBase64(file) {
+  function fileToUploadBase64(file) {
     return new Promise((resolve, reject) => {
       const img = new Image();
       const url = URL.createObjectURL(file);
@@ -1149,31 +1150,43 @@
         canvas.width  = Math.round(width  * ratio);
         canvas.height = Math.round(height * ratio);
         canvas.getContext('2d').drawImage(img, 0, 0, canvas.width, canvas.height);
-        canvas.toBlob(blob => {
-          if (!blob) {
-            reject(new Error('WebP変換に対応していません'));
-            return;
-          }
-
-          const reader = new FileReader();
-          reader.onload = () => {
-            const dataUrl = String(reader.result || '');
-            if (!dataUrl.startsWith('data:image/webp')) {
-              reject(new Error('WebP変換に対応していません'));
-              return;
-            }
-            resolve({
-              b64: dataUrl.split(',')[1],
-              originalBytes: file.size,
-              webpBytes: blob.size,
-            });
-          };
-          reader.onerror = () => reject(new Error('WebPデータの読み取りに失敗しました'));
-          reader.readAsDataURL(blob);
-        }, 'image/webp', JPEG_QUALITY);
+        writeCanvasBlob(canvas, 'image/webp')
+          .catch(() => writeCanvasBlob(canvas, 'image/jpeg'))
+          .then(({ blob, mime }) => {
+            const reader = new FileReader();
+            reader.onload = () => {
+              const dataUrl = String(reader.result || '');
+              if (!dataUrl.startsWith(`data:${mime}`)) {
+                reject(new Error('画像変換に失敗しました'));
+                return;
+              }
+              resolve({
+                b64: dataUrl.split(',')[1],
+                mime,
+                ext: mime === 'image/webp' ? 'webp' : 'jpg',
+                originalBytes: file.size,
+                outputBytes: blob.size,
+              });
+            };
+            reader.onerror = () => reject(new Error('画像データの読み取りに失敗しました'));
+            reader.readAsDataURL(blob);
+          })
+          .catch(() => reject(new Error('画像変換に対応していません')));
       };
       img.onerror = () => { URL.revokeObjectURL(url); reject(new Error('画像デコード失敗')); };
       img.src = url;
+    });
+  }
+
+  function writeCanvasBlob(canvas, mime) {
+    return new Promise((resolve, reject) => {
+      canvas.toBlob(blob => {
+        if (!blob || blob.type !== mime) {
+          reject(new Error(`${mime} conversion failed`));
+          return;
+        }
+        resolve({ blob, mime });
+      }, mime, IMAGE_QUALITY);
     });
   }
 
@@ -1405,8 +1418,9 @@
       // ── Step 1: 画像アップロード ──
       if (state.imageB64) {
         const timeStamp = time.replace(':', '');
-        const imagePath = `astro/public/images/diary/${date}-${timeStamp}.webp`;
-        imageUrl = `/images/diary/${date}-${timeStamp}.webp`;
+        const ext = state.imageName.split('.').pop() || 'webp';
+        const imagePath = `astro/public/images/diary/${date}-${timeStamp}.${ext}`;
+        imageUrl = `/images/diary/${date}-${timeStamp}.${ext}`;
 
         setLoading(true, '🖼 画像をアップロード中...');
         await uploadImage(state.imageB64, imagePath);
