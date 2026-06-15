@@ -111,6 +111,7 @@ def fetch_all_activities(access_token):
                     "elapsed_time": activity.get("elapsed_time", 0),
                     "total_elevation_gain": activity.get("total_elevation_gain", 0),
                     "start_date": activity.get("start_date", ""),
+                    "start_date_local": activity.get("start_date_local", ""),
                     "start_latlng": activity.get("start_latlng") or [],
                     "average_speed": activity.get("average_speed", 0),
                     "max_speed": activity.get("max_speed", 0),

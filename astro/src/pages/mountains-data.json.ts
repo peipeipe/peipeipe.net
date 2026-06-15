@@ -1,7 +1,7 @@
-import { getMountainsByElevation, summarizeMountains } from "@/lib/mountains";
+import { getMountainsByLatestVisit, summarizeMountains } from "@/lib/mountains";
 
 export async function GET() {
-  const mountains = getMountainsByElevation();
+  const mountains = getMountainsByLatestVisit();
   const stats = summarizeMountains(mountains);
 
   return new Response(

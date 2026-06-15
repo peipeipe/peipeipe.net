@@ -50,6 +50,15 @@ export function getMountainsByElevation(): Mountain[] {
   return [...getMountains()].sort((a, b) => b.elevation - a.elevation);
 }
 
+export function getMountainsByLatestVisit(): Mountain[] {
+  return [...getMountains()].sort((a, b) => {
+    const dateCompare = b.last_visit.localeCompare(a.last_visit);
+    if (dateCompare !== 0) return dateCompare;
+
+    return b.elevation - a.elevation;
+  });
+}
+
 export function summarizeMountains(mountains: Mountain[]) {
   const highest = mountains.reduce<Mountain | null>(
     (current, mountain) => (!current || mountain.elevation > current.elevation ? mountain : current),

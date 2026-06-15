@@ -4,6 +4,8 @@ Stravaアクティビティのポリラインと mountains.json を照合して
 visited_mountains.json を生成するスクリプト。
 """
 import json, math, os
+from datetime import datetime
+from zoneinfo import ZoneInfo
 
 def decode_polyline(s):
     coords, i, lat, lng = [], 0, 0, 0
@@ -30,6 +32,23 @@ def haversine_m(lat1, lng1, lat2, lng2):
     dlng = math.radians(lng2 - lng1)
     a = math.sin(dlat/2)**2 + math.cos(math.radians(lat1)) * math.cos(math.radians(lat2)) * math.sin(dlng/2)**2
     return R * 2 * math.asin(math.sqrt(a))
+
+def activity_local_date(activity):
+    """StravaのUTC開始時刻を日本時間の日付に変換する。"""
+    local_start = activity.get("start_date_local", "")
+    if local_start:
+        return local_start[:10]
+
+    start_date = activity.get("start_date", "")
+    if not start_date:
+        return ""
+
+    try:
+        utc_start = datetime.fromisoformat(start_date.replace("Z", "+00:00"))
+    except ValueError:
+        return start_date[:10]
+
+    return utc_start.astimezone(ZoneInfo("Asia/Tokyo")).date().isoformat()
 
 THRESHOLD_M = 600  # 山頂から600m以内を通過で「訪問」とみなす
 
@@ -90,7 +109,7 @@ for idx, act in enumerate(activities):
                 }
             v = visited[name]
             v["visit_count"] += 1
-            date = act.get("start_date", "")[:10]
+            date = activity_local_date(act)
             v["activities"].append({
                 "id": act["id"],
                 "name": act["name"],

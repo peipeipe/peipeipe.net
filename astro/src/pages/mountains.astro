@@ -1,8 +1,8 @@
 ---
 import MapLayout from "@/layouts/MapLayout.astro";
-import { getMountainsByElevation, latestMountainActivity, summarizeMountains } from "@/lib/mountains";
+import { getMountainsByLatestVisit, latestMountainActivity, summarizeMountains } from "@/lib/mountains";
 
-const mountains = getMountainsByElevation();
+const mountains = getMountainsByLatestVisit();
 const stats = summarizeMountains(mountains);
 const highestElevation = stats.highest ? stats.highest.elevation.toLocaleString() : "0";
 const latestVisit = stats.latest?.last_visit || "";

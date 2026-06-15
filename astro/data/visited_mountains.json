@@ -29,13 +29,13 @@
       {
         "id": 7100041942,
         "name": "Morning Hike",
-        "date": "2022-05-06",
+        "date": "2022-05-07",
         "sport_type": "Hike",
         "distance_km": 7.6
       }
     ],
-    "first_visit": "2022-05-06",
-    "last_visit": "2022-05-06"
+    "first_visit": "2022-05-07",
+    "last_visit": "2022-05-07"
   },
   {
     "name": "火打山",
@@ -48,13 +48,13 @@
       {
         "id": 9546891427,
         "name": "Morning Trail Run",
-        "date": "2023-07-29",
+        "date": "2023-07-30",
         "sport_type": "TrailRun",
         "distance_km": 18.2
       }
     ],
-    "first_visit": "2023-07-29",
-    "last_visit": "2023-07-29"
+    "first_visit": "2023-07-30",
+    "last_visit": "2023-07-30"
   },
   {
     "name": "霧ヶ峰",
@@ -67,13 +67,13 @@
       {
         "id": 15170599644,
         "name": "Morning Trail Run",
-        "date": "2025-07-19",
+        "date": "2025-07-20",
         "sport_type": "TrailRun",
         "distance_km": 9.2
       }
     ],
-    "first_visit": "2025-07-19",
-    "last_visit": "2025-07-19"
+    "first_visit": "2025-07-20",
+    "last_visit": "2025-07-20"
   },
   {
     "name": "湯ノ丸山",
@@ -86,20 +86,20 @@
       {
         "id": 18910743520,
         "name": "Morning Trail Run",
-        "date": "2026-06-13",
+        "date": "2026-06-14",
         "sport_type": "TrailRun",
         "distance_km": 8.5
       },
       {
         "id": 15426273017,
         "name": "Morning Trail Run",
-        "date": "2025-08-11",
+        "date": "2025-08-12",
         "sport_type": "TrailRun",
         "distance_km": 8.6
       }
     ],
-    "first_visit": "2025-08-11",
-    "last_visit": "2026-06-13"
+    "first_visit": "2025-08-12",
+    "last_visit": "2026-06-14"
   },
   {
     "name": "駒ヶ岳",
@@ -112,13 +112,13 @@
       {
         "id": 15463671680,
         "name": "Night Trail Run",
-        "date": "2025-08-14",
+        "date": "2025-08-15",
         "sport_type": "TrailRun",
         "distance_km": 24.2
       }
     ],
-    "first_visit": "2025-08-14",
-    "last_visit": "2025-08-14"
+    "first_visit": "2025-08-15",
+    "last_visit": "2025-08-15"
   },
   {
     "name": "駒ヶ岳＜宝剣岳＞",
@@ -131,13 +131,13 @@
       {
         "id": 15463671680,
         "name": "Night Trail Run",
-        "date": "2025-08-14",
+        "date": "2025-08-15",
         "sport_type": "TrailRun",
         "distance_km": 24.2
       }
     ],
-    "first_visit": "2025-08-14",
-    "last_visit": "2025-08-14"
+    "first_visit": "2025-08-15",
+    "last_visit": "2025-08-15"
   },
   {
     "name": "将棊頭山",
@@ -150,13 +150,13 @@
       {
         "id": 15463671680,
         "name": "Night Trail Run",
-        "date": "2025-08-14",
+        "date": "2025-08-15",
         "sport_type": "TrailRun",
         "distance_km": 24.2
       }
     ],
-    "first_visit": "2025-08-14",
-    "last_visit": "2025-08-14"
+    "first_visit": "2025-08-15",
+    "last_visit": "2025-08-15"
   },
   {
     "name": "将棊頭山＜茶臼山＞",
@@ -169,13 +169,13 @@
       {
         "id": 15463671680,
         "name": "Night Trail Run",
-        "date": "2025-08-14",
+        "date": "2025-08-15",
         "sport_type": "TrailRun",
         "distance_km": 24.2
       }
     ],
-    "first_visit": "2025-08-14",
-    "last_visit": "2025-08-14"
+    "first_visit": "2025-08-15",
+    "last_visit": "2025-08-15"
   },
   {
     "name": "常念岳",
@@ -188,13 +188,13 @@
       {
         "id": 15961413279,
         "name": "Night Trail Run",
-        "date": "2025-09-27",
+        "date": "2025-09-28",
         "sport_type": "TrailRun",
         "distance_km": 19.4
       }
     ],
-    "first_visit": "2025-09-27",
-    "last_visit": "2025-09-27"
+    "first_visit": "2025-09-28",
+    "last_visit": "2025-09-28"
   },
   {
     "name": "蝶ヶ岳",
@@ -207,13 +207,13 @@
       {
         "id": 15961413279,
         "name": "Night Trail Run",
-        "date": "2025-09-27",
+        "date": "2025-09-28",
         "sport_type": "TrailRun",
         "distance_km": 19.4
       }
     ],
-    "first_visit": "2025-09-27",
-    "last_visit": "2025-09-27"
+    "first_visit": "2025-09-28",
+    "last_visit": "2025-09-28"
   },
   {
     "name": "斑尾山",
@@ -245,13 +245,13 @@
       {
         "id": 17322846287,
         "name": "Morning Trail Run",
-        "date": "2026-02-07",
+        "date": "2026-02-08",
         "sport_type": "TrailRun",
         "distance_km": 13.1
       }
     ],
-    "first_visit": "2026-02-07",
-    "last_visit": "2026-02-07"
+    "first_visit": "2026-02-08",
+    "last_visit": "2026-02-08"
   },
   {
     "name": "飯縄山（飯綱山）",
@@ -264,13 +264,13 @@
       {
         "id": 18245138332,
         "name": "飯綱山ハイク",
-        "date": "2026-04-24",
+        "date": "2026-04-25",
         "sport_type": "TrailRun",
         "distance_km": 11.5
       }
     ],
-    "first_visit": "2026-04-24",
-    "last_visit": "2026-04-24"
+    "first_visit": "2026-04-25",
+    "last_visit": "2026-04-25"
   },
   {
     "name": "四阿山＜根子岳＞",
@@ -283,13 +283,13 @@
       {
         "id": 18258887407,
         "name": "Morning Trail Run",
-        "date": "2026-04-25",
+        "date": "2026-04-26",
         "sport_type": "TrailRun",
         "distance_km": 22.0
       }
     ],
-    "first_visit": "2026-04-25",
-    "last_visit": "2026-04-25"
+    "first_visit": "2026-04-26",
+    "last_visit": "2026-04-26"
   },
   {
     "name": "美ヶ原",
@@ -302,13 +302,13 @@
       {
         "id": 18380418944,
         "name": "Morning Trail Run",
-        "date": "2026-05-04",
+        "date": "2026-05-05",
         "sport_type": "TrailRun",
         "distance_km": 35.1
       }
     ],
-    "first_visit": "2026-05-04",
-    "last_visit": "2026-05-04"
+    "first_visit": "2026-05-05",
+    "last_visit": "2026-05-05"
   },
   {
     "name": "鉢伏山",
@@ -321,13 +321,13 @@
       {
         "id": 18380418944,
         "name": "Morning Trail Run",
-        "date": "2026-05-04",
+        "date": "2026-05-05",
         "sport_type": "TrailRun",
         "distance_km": 35.1
       }
     ],
-    "first_visit": "2026-05-04",
-    "last_visit": "2026-05-04"
+    "first_visit": "2026-05-05",
+    "last_visit": "2026-05-05"
   },
   {
     "name": "東篭ノ登山",
