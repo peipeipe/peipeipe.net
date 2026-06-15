@@ -1407,8 +1407,8 @@
 
     // 新しいセクションを組み立て
     let newSection = `\n## ${time}\n`;
-    if (imageUrl) newSection += `![投稿画像](${imageUrl})\n`;
     if (text)      newSection += `${text}\n`;
+    if (imageUrl) newSection += `![投稿画像](${imageUrl})\n`;
 
     if (existingContent) {
       // 既存ファイルに追記
