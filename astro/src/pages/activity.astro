@@ -48,6 +48,7 @@ const recentActivities = activities.slice(0, 30);
             <button type="button" data-activity-type="walk">Walk</button>
             <button type="button" data-activity-type="other">Other</button>
           </div>
+          <button class="map-expand-button" type="button" data-map-expand aria-pressed="false">拡大</button>
         </div>
         <div class="map-canvas-wrap">
           <div id="activity-map" class="map-canvas"></div>
@@ -90,6 +91,7 @@ const recentActivities = activities.slice(0, 30);
     let map;
     let activeLayer;
     let latestBounds = null;
+    let isExpanded = false;
 
     function decodePolyline(str) {
       if (!str) return [];
@@ -275,6 +277,25 @@ const recentActivities = activities.slice(0, 30);
           if (latestBounds) map.fitBounds(latestBounds, { padding: [34, 34] });
         });
       });
+
+      const expandButton = document.querySelector("[data-map-expand]");
+      expandButton?.addEventListener("click", () => setExpanded(!isExpanded));
+      document.addEventListener("keydown", (event) => {
+        if (event.key === "Escape" && isExpanded) setExpanded(false);
+      });
+    }
+
+    function setExpanded(expanded) {
+      isExpanded = expanded;
+      const app = document.querySelector(".activity-map-app");
+      const button = document.querySelector("[data-map-expand]");
+      app?.classList.toggle("map-expanded", expanded);
+      document.body.classList.toggle("map-expanded-lock", expanded);
+      if (button) {
+        button.setAttribute("aria-pressed", String(expanded));
+        button.textContent = expanded ? "戻す" : "拡大";
+      }
+      requestAnimationFrame(() => map?.invalidateSize());
     }
 
     function escapeHtml(value) {
@@ -307,12 +328,30 @@ const recentActivities = activities.slice(0, 30);
       map.on("focus", () => map.scrollWheelZoom.enable());
       map.on("blur", () => map.scrollWheelZoom.disable());
 
-      L.tileLayer("https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png", {
+      const cartoLayer = L.tileLayer("https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png", {
         attribution:
           '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> &copy; <a href="https://carto.com/attributions">CARTO</a>',
         subdomains: "abcd",
         maxZoom: 19,
-      }).addTo(map);
+      });
+
+      const gsiLayer = L.tileLayer("https://cyberjapandata.gsi.go.jp/xyz/std/{z}/{x}/{y}.png", {
+        attribution: '<a href="https://maps.gsi.go.jp/development/ichiran.html">地理院タイル</a>',
+        minZoom: 5,
+        maxZoom: 18,
+      });
+
+      cartoLayer.addTo(map);
+      L.control
+        .layers(
+          {
+            "CARTO Voyager": cartoLayer,
+            "地理院地図": gsiLayer,
+          },
+          null,
+          { collapsed: false },
+        )
+        .addTo(map);
 
       requestAnimationFrame(() => map.invalidateSize());
       loadData().catch((error) => {

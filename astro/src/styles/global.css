@@ -668,6 +668,55 @@ body.js-diary .diary-content h2 + p {
   color: #fff;
 }
 
+.map-expand-button {
+  border: 1px solid #d3d3d3;
+  border-radius: 8px;
+  background: #fff;
+  color: #333;
+  padding: 7px 12px;
+  font: inherit;
+  font-size: 13px;
+  line-height: 1.2;
+  cursor: pointer;
+}
+
+.map-expand-button:hover {
+  background: #f1f1f1;
+}
+
+.map-expand-button[aria-pressed="true"] {
+  background: #222;
+  color: #fff;
+}
+
+.map-expanded-lock {
+  overflow: hidden;
+}
+
+.map-app.map-expanded .map-main-panel {
+  position: fixed;
+  z-index: 1000;
+  inset: 12px;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 18px 56px rgba(0, 0, 0, 0.24);
+}
+
+.map-app.map-expanded .map-canvas-wrap {
+  flex: 1;
+  min-height: 0;
+}
+
+.map-app.map-expanded .map-canvas {
+  height: 100%;
+  min-height: 0;
+  max-height: none;
+}
+
+.map-app.map-expanded .map-side-panel {
+  display: none;
+}
+
 .map-canvas-wrap {
   position: relative;
   background: #f2f2f2;
