@@ -9,6 +9,8 @@ export interface BookQuote {
 export interface Book {
   id: string;
   asin: string;
+  amazonUrl: string;
+  coverUrl: string;
   isbn13: string;
   format: string;
   rating: number | null;

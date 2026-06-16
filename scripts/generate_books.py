@@ -74,6 +74,8 @@ def book_from_row(row: list[str], index: int) -> dict:
     return {
         "id": slugify(stable_key),
         "asin": asin,
+        "amazonUrl": amazon_url(asin),
+        "coverUrl": amazon_cover_url(asin),
         "isbn13": isbn13,
         "format": cell(row, 3),
         "rating": parse_int(cell(row, 4)),
@@ -109,12 +111,17 @@ def extract_quotes(note: str) -> tuple[list[QuoteCandidate], list[str]]:
     current: list[str] = []
     current_reason = "unmarked-long-note" if unmarked_mode else "after-marker"
     reasons: list[str] = []
+    dropped_inline_notes: list[str] = []
 
     for raw_line in lines:
         line = raw_line.strip()
+        if is_highlight_metadata_line(line):
+            if current:
+                flush_block(blocks, reasons, current, "highlight")
+            current_reason = "highlight"
+            continue
         if is_metadata_line(line):
             flush_block(blocks, reasons, current, current_reason)
-            current_reason = "highlight"
             continue
         if is_quote_marker(line):
             flush_block(blocks, reasons, current, current_reason)
@@ -124,11 +131,16 @@ def extract_quotes(note: str) -> tuple[list[QuoteCandidate], list[str]]:
             flush_block(blocks, reasons, current, current_reason)
             current_reason = "unmarked-long-note" if unmarked_mode else "after-marker"
             continue
+        if is_personal_note_line(line):
+            flush_block(blocks, reasons, current, current_reason)
+            dropped_inline_notes.append(line)
+            current_reason = "unmarked-long-note" if unmarked_mode else "after-marker"
+            continue
         current.append(line)
     flush_block(blocks, reasons, current, current_reason)
 
     quotes: list[QuoteCandidate] = []
-    dropped: list[str] = []
+    dropped: list[str] = dropped_inline_notes[:]
     for block, reason in zip(blocks, reasons):
         cleaned = clean_quote_block("\n".join(block))
         if not cleaned:
@@ -176,16 +188,22 @@ def is_metadata_line(line: str) -> bool:
     if not line:
         return False
     return bool(
-        re.fullmatch(r"黄色のハイライト\s*\|\s*位置:\s*[\d,]+", line)
+        is_highlight_metadata_line(line)
         or re.fullmatch(r"\d{4}-\d{2}-\d{2}", line)
         or line.startswith("http://")
         or line.startswith("https://")
     )
 
 
+def is_highlight_metadata_line(line: str) -> bool:
+    return bool(re.fullmatch(r"黄色のハイライト\s*\|\s*位置:\s*[\d,]+.*", line))
+
+
 def is_personal_note(value: str) -> bool:
+    if "再読" in value:
+        return True
     first_line = value.splitlines()[0].strip()
-    if re.match(r"^[ー―\-－]", first_line):
+    if is_personal_note_line(first_line):
         return True
     if first_line.startswith("メモ"):
         return True
@@ -212,6 +230,10 @@ def is_personal_note(value: str) -> bool:
     return False
 
 
+def is_personal_note_line(line: str) -> bool:
+    return bool(re.match(r"^[ー―\-－]", line.strip()))
+
+
 def dedupe_quotes(quotes: list[QuoteCandidate]) -> list[QuoteCandidate]:
     seen: set[str] = set()
     result: list[QuoteCandidate] = []
@@ -235,6 +257,22 @@ def parse_int(value: str) -> int | None:
 
 def split_tags(value: str) -> list[str]:
     return [tag.strip() for tag in value.split(",") if tag.strip()]
+
+
+def amazon_url(asin: str) -> str:
+    if not is_asin(asin):
+        return ""
+    return f"https://www.amazon.co.jp/dp/{asin}?tag=peipeipe-22"
+
+
+def amazon_cover_url(asin: str) -> str:
+    if not is_asin(asin):
+        return ""
+    return f"https://images-na.ssl-images-amazon.com/images/P/{asin}.09.LZZZZZZZ"
+
+
+def is_asin(value: str) -> bool:
+    return bool(re.fullmatch(r"[0-9A-Z]{10}", value))
 
 
 def date_only(value: str) -> str:

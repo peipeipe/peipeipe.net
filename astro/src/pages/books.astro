@@ -5,6 +5,7 @@ import { getBooksData } from "@/lib/books";
 const data = getBooksData();
 const books = data.books;
 const initialBooks = books.slice(0, 80);
+const years = Array.from(new Set(books.map((book) => book.readDate?.slice(0, 4)).filter(Boolean))).sort((a, b) => b.localeCompare(a));
 const serializedBooks = JSON.stringify({ books }).replace(/</g, "\\u003c");
 
 function metaParts(book) {
@@ -45,44 +46,80 @@ function ratingLabel(book) {
       </dl>
     </header>
 
-    <div class="books-toolbar">
-      <form class="books-search" id="books-search" role="search">
-        <label for="books-query">Search books</label>
-        <input
-          id="books-query"
-          name="q"
-          type="search"
-          autocomplete="off"
-          spellcheck="false"
-          placeholder="タイトル、著者、出版社、引用から検索"
-        />
-      </form>
-      <p class="books-status" id="books-status" aria-live="polite">最近読んだ本</p>
-    </div>
+    <div class="books-browser">
+      <aside class="books-toolbar">
+        <form class="books-search" id="books-search" role="search">
+          <label for="books-query">Search books</label>
+          <input
+            id="books-query"
+            name="q"
+            type="search"
+            autocomplete="off"
+            spellcheck="false"
+            placeholder="タイトル、著者、出版社、引用から検索"
+          />
+          <div class="books-filters" aria-label="Book filters">
+            <label>
+              <span>Year</span>
+              <select id="books-year" name="year">
+                <option value="">すべて</option>
+                {years.map((year) => <option value={year}>{year}</option>)}
+              </select>
+            </label>
+            <label>
+              <span>Rating</span>
+              <select id="books-rating" name="rating">
+                <option value="">すべて</option>
+                <option value="5">★5</option>
+                <option value="4">★4以上</option>
+                <option value="3">★3以上</option>
+              </select>
+            </label>
+            <label class="books-check">
+              <input id="books-quotes-only" name="quotes" type="checkbox" />
+              <span>引用あり</span>
+            </label>
+          </div>
+        </form>
+      </aside>
 
-    <ol class="books-list" id="books-list">
-      {initialBooks.map((book) => (
-        <li class:list={["book-item", { "has-quotes": book.quotes.length > 0 }]} id={book.id}>
-          <article>
-            <header>
-              <div class="book-title-row">
-                <h2>{book.title}</h2>
-                {book.quotes.length > 0 && <span class="book-quote-count">{book.quotes.length}</span>}
-              </div>
-              <p class="book-meta">{metaParts(book).join(" / ")}</p>
-              {ratingLabel(book) && <p class="book-rating" aria-label={`Rating ${book.rating}`}>{ratingLabel(book)}</p>}
-            </header>
-            {book.quotes.length > 0 && (
-              <div class="book-quotes">
-                {book.quotes.slice(0, 2).map((quote) => (
-                  <blockquote>{quote.text}</blockquote>
-                ))}
-              </div>
-            )}
-          </article>
-        </li>
-      ))}
-    </ol>
+      <section class="books-results" aria-label="Books results">
+        <p class="books-status" id="books-status" aria-live="polite">最近読んだ本</p>
+        <ol class="books-list" id="books-list">
+          {initialBooks.map((book) => (
+            <li class:list={["book-item", { "has-quotes": book.quotes.length > 0 }]} id={book.id}>
+              <article>
+                <div class="book-record">
+                  {book.coverUrl && (
+                    <a class="book-cover" href={book.amazonUrl || undefined} target="_blank" rel="nofollow noopener" aria-label={`${book.title} on Amazon`}>
+                      <img src={book.coverUrl} alt="" loading="lazy" onerror="this.closest('.book-cover')?.remove()" />
+                    </a>
+                  )}
+                  <div class="book-body">
+                    <header>
+                      <div class="book-title-row">
+                        <h2>{book.amazonUrl ? <a href={book.amazonUrl} target="_blank" rel="nofollow noopener">{book.title}</a> : book.title}</h2>
+                        {book.quotes.length > 0 && <span class="book-quote-count">{book.quotes.length} quotes</span>}
+                      </div>
+                      <p class="book-meta">{metaParts(book).join(" / ")}</p>
+                      {ratingLabel(book) && <p class="book-rating" aria-label={`Rating ${book.rating}`}>{ratingLabel(book)}</p>}
+                    </header>
+                  </div>
+                </div>
+                {book.quotes.length > 0 && (
+                  <div class="book-quotes">
+                    {book.quotes.map((quote) => (
+                      <blockquote>{quote.text}</blockquote>
+                    ))}
+                  </div>
+                )}
+              </article>
+            </li>
+          ))}
+        </ol>
+        <button class="books-more" id="books-more" type="button" hidden>もっと見る</button>
+      </section>
+    </div>
   </article>
 
   <script type="application/json" id="books-data" set:html={serializedBooks}></script>
@@ -90,11 +127,19 @@ function ratingLabel(book) {
     (() => {
       const dataTag = document.getElementById("books-data");
       const input = document.getElementById("books-query");
+      const yearSelect = document.getElementById("books-year");
+      const ratingSelect = document.getElementById("books-rating");
+      const quotesOnly = document.getElementById("books-quotes-only");
       const list = document.getElementById("books-list");
       const status = document.getElementById("books-status");
-      if (!dataTag || !input || !list || !status) return;
+      const moreButton = document.getElementById("books-more");
+      if (!dataTag || !input || !yearSelect || !ratingSelect || !quotesOnly || !list || !status || !moreButton) return;
 
       const { books } = JSON.parse(dataTag.textContent || "{}");
+      const defaultLimit = 80;
+      const filteredLimit = 120;
+      const pageSize = 80;
+      let displayLimit = defaultLimit;
 
       function normalize(value) {
         return value.normalize("NFKC").toLowerCase().trim();
@@ -135,26 +180,36 @@ function ratingLabel(book) {
       }
 
       function renderBook(book, terms) {
-        const quotes = (book.quotes || [])
+        const matchingQuotes = (book.quotes || [])
           .filter((quote) => {
             if (!terms.length) return true;
             const text = normalize(quote.text);
             return terms.some((term) => text.includes(term));
-          })
-          .slice(0, terms.length ? 6 : 2);
+          });
+        const sourceQuotes = terms.length && matchingQuotes.length ? matchingQuotes : (book.quotes || []);
+        const quotes = sourceQuotes;
         const rating = ratingLabel(book);
+
+        const cover = book.coverUrl
+          ? `<a class="book-cover" href="${escapeHtml(book.amazonUrl || "#")}" target="_blank" rel="nofollow noopener" aria-label="${escapeHtml(`${book.title} on Amazon`)}"><img src="${escapeHtml(book.coverUrl)}" alt="" loading="lazy" onerror="this.closest('.book-cover')?.remove()"></a>`
+          : "";
 
         return `
           <li class="book-item ${book.quotes?.length ? "has-quotes" : ""}" id="${escapeHtml(book.id)}">
             <article>
-              <header>
-                <div class="book-title-row">
-                  <h2>${escapeHtml(book.title)}</h2>
-                  ${book.quotes?.length ? `<span class="book-quote-count">${escapeHtml(book.quotes.length)}</span>` : ""}
+              <div class="book-record">
+                ${cover}
+                <div class="book-body">
+                  <header>
+                    <div class="book-title-row">
+                      <h2>${book.amazonUrl ? `<a href="${escapeHtml(book.amazonUrl)}" target="_blank" rel="nofollow noopener">${escapeHtml(book.title)}</a>` : escapeHtml(book.title)}</h2>
+                      ${book.quotes?.length ? `<span class="book-quote-count">${escapeHtml(book.quotes.length)} quotes</span>` : ""}
+                    </div>
+                    <p class="book-meta">${escapeHtml(metaParts(book).join(" / "))}</p>
+                    ${rating ? `<p class="book-rating" aria-label="Rating ${escapeHtml(book.rating)}">${escapeHtml(rating)}</p>` : ""}
+                  </header>
                 </div>
-                <p class="book-meta">${escapeHtml(metaParts(book).join(" / "))}</p>
-                ${rating ? `<p class="book-rating" aria-label="Rating ${escapeHtml(book.rating)}">${escapeHtml(rating)}</p>` : ""}
-              </header>
+              </div>
               ${quotes.length ? `<div class="book-quotes">${quotes.map((quote) => `<blockquote>${escapeHtml(quote.text)}</blockquote>`).join("")}</div>` : ""}
             </article>
           </li>
@@ -164,33 +219,62 @@ function ratingLabel(book) {
       function render() {
         const query = normalize(input.value);
         const terms = query ? query.split(/\s+/).filter(Boolean) : [];
+        const year = yearSelect.value;
+        const minimumRating = ratingSelect.value ? Number(ratingSelect.value) : 0;
+        const wantsQuotes = quotesOnly.checked;
+        const isFiltered = terms.length || year || minimumRating || wantsQuotes;
         const filtered = books.filter((book) => {
+          if (year && !book.readDate?.startsWith(`${year}-`)) return false;
+          if (minimumRating && (!book.rating || book.rating < minimumRating)) return false;
+          if (wantsQuotes && !book.quotes?.length) return false;
           if (!terms.length) return true;
           const text = searchableText(book);
           return terms.every((term) => text.includes(term));
         });
-        const displayBooks = filtered.slice(0, terms.length ? 120 : 80);
+        const baseLimit = isFiltered ? filteredLimit : defaultLimit;
+        const limit = Math.max(displayLimit, baseLimit);
+        const displayBooks = filtered.slice(0, limit);
+        const shownLabel = filtered.length > displayBooks.length ? `${displayBooks.length} / ` : "";
 
-        status.textContent = terms.length ? `${filtered.length}冊見つかりました` : "最近読んだ本";
+        status.textContent = isFiltered ? `${shownLabel}${filtered.length}冊見つかりました` : `${shownLabel}最近読んだ本`;
         list.innerHTML = displayBooks.length
           ? displayBooks.map((book) => renderBook(book, terms)).join("")
           : '<li class="books-empty">該当する本はありません。</li>';
+        moreButton.hidden = displayBooks.length >= filtered.length;
       }
 
-      input.addEventListener("input", render);
+      function resetAndRender() {
+        displayLimit = termsAreActive() ? filteredLimit : defaultLimit;
+        render();
+      }
+
+      function termsAreActive() {
+        return Boolean(normalize(input.value) || yearSelect.value || ratingSelect.value || quotesOnly.checked);
+      }
+
+      input.addEventListener("input", resetAndRender);
+      yearSelect.addEventListener("change", resetAndRender);
+      ratingSelect.addEventListener("change", resetAndRender);
+      quotesOnly.addEventListener("change", resetAndRender);
+      moreButton.addEventListener("click", () => {
+        displayLimit += pageSize;
+        render();
+      });
       render();
     })();
   </script>
 
-  <style>
+  <style is:global>
     .books-page {
-      --books-ink: #252525;
-      --books-muted: #666;
-      --books-rule: #e3e0da;
-      --books-paper: #fff;
-      --books-soft: #f7f6f3;
-      --books-accent: #8f4f3f;
-      padding-bottom: 2rem;
+      --books-ink: #24211f;
+      --books-muted: #6d6862;
+      --books-subtle: #8d867c;
+      --books-rule: #dfd8ce;
+      --books-paper: #fffdf9;
+      --books-panel: #f6f3ed;
+      --books-quote: #fffaf1;
+      --books-accent: #80614e;
+      padding-bottom: 2.4rem;
     }
 
     .books-header {
@@ -198,20 +282,20 @@ function ratingLabel(book) {
       grid-template-columns: minmax(0, 1fr);
       gap: 1rem;
       align-items: end;
-      margin-bottom: 1.25rem;
+      max-width: 1180px;
+      margin: 0 auto 1.4rem;
       border-bottom: 1px solid var(--books-rule);
-      padding-bottom: 1.1rem;
+      padding-bottom: 1rem;
     }
 
     .books-header h1 {
       margin: 0 0 0.35rem;
       color: var(--books-ink);
-      font-size: 34px;
-      line-height: 1.25;
+      font-size: 38px;
+      line-height: 1.15;
     }
 
-    .books-header p,
-    .books-status {
+    .books-header p {
       margin: 0;
       color: var(--books-muted);
       font-size: 15px;
@@ -220,189 +304,364 @@ function ratingLabel(book) {
     .books-stats {
       display: grid;
       grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 8px;
+      gap: 1px;
       margin: 0;
+      overflow: hidden;
+      border: 1px solid var(--books-rule);
+      border-radius: 6px;
+      background: var(--books-rule);
     }
 
     .books-stats div {
-      border-left: 3px solid var(--books-accent);
-      background: var(--books-soft);
-      padding: 8px 10px;
+      background: var(--books-paper);
+      padding: 10px 12px;
     }
 
     .books-stats dt {
-      color: var(--books-muted);
+      color: var(--books-subtle);
       font-size: 11px;
       font-weight: 700;
-      letter-spacing: 0.04em;
       text-transform: uppercase;
     }
 
     .books-stats dd {
-      margin: 1px 0 0;
+      margin: 2px 0 0;
       color: var(--books-ink);
       font-size: 23px;
       font-weight: 700;
       line-height: 1.1;
     }
 
-    .books-toolbar {
+    .books-browser {
       display: grid;
       grid-template-columns: minmax(0, 1fr);
-      gap: 0.7rem;
-      align-items: end;
-      margin-bottom: 1.1rem;
-      border-bottom: 1px solid var(--books-rule);
-      padding-bottom: 1rem;
+      gap: 1rem;
+      max-width: 1180px;
+      margin: 0 auto;
+    }
+
+    .books-toolbar {
+      align-self: start;
+      border: 1px solid var(--books-rule);
+      border-radius: 6px;
+      background: var(--books-panel);
+      padding: 14px;
     }
 
     .books-search {
       margin: 0;
     }
 
-    .books-search label {
+    .books-search > label,
+    .books-filters span {
       display: inline-block;
       margin-bottom: 0.45rem;
-      color: #555;
-      font-size: 13px;
+      color: var(--books-muted);
+      font-size: 12px;
       font-weight: 700;
-      letter-spacing: 0.04em;
       text-transform: uppercase;
     }
 
-    .books-search input {
+    .books-search input[type="search"],
+    .books-filters select {
       width: 100%;
-      border: 1px solid #d6d6d6;
-      border-radius: 4px;
+      border: 1px solid #d6cec2;
+      border-radius: 5px;
       background: #fff;
-      padding: 0.78rem 0.9rem;
+      color: var(--books-ink);
+      padding: 0.72rem 0.82rem;
       font-size: 16px;
       line-height: 1.3;
     }
 
-    .books-search input:focus {
-      outline: 2px solid rgba(143, 79, 63, 0.2);
+    .books-search input:focus,
+    .books-filters select:focus,
+    .books-check input:focus {
+      outline: 2px solid rgba(128, 97, 78, 0.22);
       outline-offset: 1px;
       border-color: var(--books-accent);
     }
 
+    .books-filters {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+      gap: 10px;
+      margin-top: 0.85rem;
+    }
+
+    .books-filters label {
+      min-width: 0;
+    }
+
+    .books-check {
+      display: inline-flex;
+      gap: 8px;
+      align-items: center;
+      min-height: 43px;
+      border: 1px solid #d6cec2;
+      border-radius: 5px;
+      background: #fff;
+      padding: 0 0.78rem;
+    }
+
+    .books-check input {
+      width: 18px;
+      height: 18px;
+      accent-color: var(--books-accent);
+    }
+
+    .books-check span {
+      margin: 0;
+      color: var(--books-ink);
+      text-transform: none;
+    }
+
+    .books-results {
+      min-width: 0;
+    }
+
     .books-status {
-      justify-self: start;
+      margin: 0 0 0.8rem;
       color: var(--books-muted);
       font-size: 14px;
     }
 
     .books-list {
       display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-      gap: 12px;
+      grid-template-columns: minmax(0, 1fr);
+      gap: 16px;
       margin: 0;
       padding: 0;
       list-style: none;
     }
 
     .book-item {
-      position: relative;
       min-width: 0;
       border: 1px solid var(--books-rule);
       border-radius: 6px;
       background: var(--books-paper);
-      box-shadow: 0 1px 0 rgba(0, 0, 0, 0.03);
       overflow: hidden;
     }
 
-    .book-item::before {
-      position: absolute;
-      inset: 0 auto 0 0;
-      width: 5px;
-      background: #b8b1a4;
-      content: "";
-    }
-
-    .book-item.has-quotes::before {
-      background: var(--books-accent);
-    }
-
     .book-item article {
-      padding: 14px 14px 15px 18px;
+      padding: 16px;
+    }
+
+    .book-record {
+      display: grid;
+      grid-template-columns: 72px minmax(0, 1fr);
+      gap: 14px;
+      align-items: start;
+    }
+
+    .book-record:not(:has(.book-cover)) {
+      grid-template-columns: minmax(0, 1fr);
+    }
+
+    .book-cover {
+      display: block;
+      width: 72px;
+      min-height: 102px;
+      border: 1px solid #ddd4c8;
+      border-radius: 4px;
+      background: #eee9df;
+      overflow: hidden;
+    }
+
+    .book-cover img {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+
+    .book-body {
+      min-width: 0;
+      padding-top: 1px;
     }
 
     .book-title-row {
       display: grid;
-      grid-template-columns: minmax(0, 1fr) auto;
-      gap: 8px;
+      grid-template-columns: minmax(0, 1fr);
+      gap: 0.45rem;
       align-items: start;
     }
 
     .book-item h2 {
       margin: 0;
       color: var(--books-ink);
-      font-size: 18px;
-      line-height: 1.45;
+      font-size: 20px;
+      line-height: 1.38;
       overflow-wrap: anywhere;
     }
 
-    .book-quote-count {
-      min-width: 26px;
-      border: 1px solid rgba(143, 79, 63, 0.35);
-      border-radius: 999px;
+    .book-item h2 a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .book-item h2 a:hover,
+    .book-item h2 a:focus {
       color: var(--books-accent);
-      padding: 2px 7px;
+      text-decoration: underline;
+    }
+
+    .book-quote-count {
+      width: max-content;
+      border: 1px solid #d9cabc;
+      border-radius: 999px;
+      background: #fff;
+      color: var(--books-accent);
+      padding: 3px 9px;
       font-size: 12px;
       font-weight: 700;
-      line-height: 1.3;
-      text-align: center;
+      line-height: 1.2;
     }
 
     .book-meta {
-      margin: 0.35rem 0 0;
+      margin: 0.55rem 0 0;
       color: var(--books-muted);
       font-size: 13px;
-      line-height: 1.45;
+      line-height: 1.55;
       overflow-wrap: anywhere;
     }
 
     .book-rating {
-      margin: 0.25rem 0 0;
-      color: #b36b18;
+      margin: 0.35rem 0 0;
+      color: #a96516;
       font-size: 12px;
-      letter-spacing: 0.04em;
       line-height: 1.2;
     }
 
     .book-quotes {
-      margin-top: 0.95rem;
-      border-top: 1px solid #efede8;
-      padding-top: 0.15rem;
+      display: grid;
+      gap: 0.95rem;
+      margin-top: 1rem;
+      padding-top: 1rem;
+      border-top: 1px solid #e8e0d6;
     }
 
     .book-quotes blockquote {
-      margin: 0.75rem 0 0;
-      border-left: 2px solid #b7a093;
-      padding-left: 0.75rem;
-      color: #444;
-      font-size: 14px;
-      line-height: 1.7;
+      margin: 0;
+      border-left: 4px solid #a98b76;
+      background: linear-gradient(90deg, rgba(169, 139, 118, 0.11), rgba(255, 250, 241, 0));
+      padding: 0.15rem 0 0.18rem 1rem;
+      color: #332f2b;
+      font-size: 15px;
+      line-height: 1.9;
       white-space: pre-wrap;
       overflow-wrap: anywhere;
     }
 
     .books-empty {
-      color: #666;
+      border: 1px solid var(--books-rule);
+      border-radius: 6px;
+      background: var(--books-paper);
+      color: var(--books-muted);
+      padding: 1rem;
+    }
+
+    .books-more {
+      display: block;
+      margin: 1.25rem auto 0;
+      border: 1px solid var(--books-accent);
+      border-radius: 5px;
+      background: #fff;
+      color: var(--books-accent);
+      padding: 0.72rem 1.2rem;
+      font-size: 15px;
+      font-weight: 700;
+      line-height: 1.2;
+      cursor: pointer;
+    }
+
+    .books-more:hover,
+    .books-more:focus {
+      background: var(--books-accent);
+      color: #fff;
     }
 
     @media (min-width: 720px) {
       .books-header {
-        grid-template-columns: minmax(0, 1fr) minmax(300px, 430px);
+        grid-template-columns: minmax(0, 1fr) minmax(300px, 420px);
+      }
+
+      .book-record {
+        grid-template-columns: 88px minmax(0, 1fr);
+        gap: 18px;
+      }
+
+      .book-cover {
+        width: 88px;
+        min-height: 124px;
+      }
+
+      .book-title-row {
+        grid-template-columns: minmax(0, 1fr) auto;
+      }
+    }
+
+    @media (min-width: 980px) {
+      .books-browser {
+        grid-template-columns: 285px minmax(0, 1fr);
+        align-items: start;
       }
 
       .books-toolbar {
-        grid-template-columns: minmax(0, 1fr) auto;
+        position: sticky;
+        top: 18px;
+      }
+    }
+
+    @media (min-width: 1100px) {
+      .book-item article {
+        padding: 20px;
       }
 
-      .books-status {
-        justify-self: end;
-        padding-bottom: 0.8rem;
+      .book-record {
+        grid-template-columns: 104px minmax(0, 1fr);
+      }
+
+      .book-cover {
+        width: 104px;
+        min-height: 147px;
+      }
+
+      .book-quotes blockquote {
+        font-size: 16px;
+      }
+    }
+
+    @media (max-width: 520px) {
+      .books-header h1 {
+        font-size: 32px;
+      }
+
+      .books-stats dd {
+        font-size: 20px;
+      }
+
+      .book-item article {
+        padding: 13px;
+      }
+
+      .book-record {
+        grid-template-columns: 62px minmax(0, 1fr);
+        gap: 12px;
+      }
+
+      .book-cover {
+        width: 62px;
+        min-height: 88px;
+      }
+
+      .book-item h2 {
+        font-size: 17px;
+      }
+
+      .book-quotes blockquote {
+        padding: 0.82rem 0.85rem;
+        font-size: 14px;
+        line-height: 1.85;
       }
     }
   </style>
