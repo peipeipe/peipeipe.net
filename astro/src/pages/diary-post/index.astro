@@ -563,15 +563,22 @@
     }
 
     /* ── Image Preview ── */
-    .attached-image {
-      position: relative;
-      display: inline-block;
+    .attached-images {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+      gap: 12px;
       margin-top: 14px;
     }
 
+    .attached-image {
+      position: relative;
+      min-width: 0;
+    }
+
     .attached-image img {
-      max-width: 100%;
-      max-height: 240px;
+      width: 100%;
+      aspect-ratio: 4 / 3;
+      object-fit: cover;
       border-radius: 10px;
       border: 1px solid var(--border);
       display: block;
@@ -588,6 +595,14 @@
     .image-info {
       display: block;
       margin-top: 6px;
+      font-size: 12px;
+      color: var(--text-muted);
+      overflow-wrap: anywhere;
+    }
+
+    .image-summary {
+      display: block;
+      margin-top: 10px;
       font-size: 12px;
       color: var(--text-muted);
     }
@@ -838,22 +853,17 @@
       </div>
     </div>
 
-    <!-- Attached image preview -->
+    <!-- Attached image previews -->
     <div id="image-attached" class="hidden" style="padding: 0 16px 16px;">
-      <div class="attached-image">
-        <img id="preview-img" src="" alt="添付画像プレビュー">
-        <div class="image-overlay">
-          <button class="btn btn-danger" id="btn-remove-image" title="画像を削除">✕</button>
-        </div>
-      </div>
-      <span class="image-info" id="image-info"></span>
+      <div id="image-list" class="attached-images"></div>
+      <span class="image-summary" id="image-summary"></span>
       <div class="progress-bar" id="progress-bar">
         <div class="progress-fill" id="progress-fill"></div>
       </div>
     </div>
 
     <!-- Hidden file inputs -->
-    <input type="file" id="file-image" accept="image/*" hidden aria-hidden="true">
+    <input type="file" id="file-image" accept="image/*" multiple hidden aria-hidden="true">
     <input type="file" id="file-md"    accept=".md,.txt,.markdown" hidden aria-hidden="true">
   </div>
 
@@ -878,8 +888,8 @@
     token:     '',
     owner:     '',
     repo:      '',
-    imageB64:  null,
-    imageName: '',
+    imageUploads: [],
+    imageProcessing: false,
     processing: false,
   };
 
@@ -908,9 +918,8 @@
   const btnPickImage     = $('btn-pick-image');
   const btnPickMd        = $('btn-pick-md');
   const imageAttached    = $('image-attached');
-  const previewImg       = $('preview-img');
-  const imageInfo        = $('image-info');
-  const btnRemoveImage   = $('btn-remove-image');
+  const imageList        = $('image-list');
+  const imageSummary     = $('image-summary');
   const progressFill     = $('progress-fill');
   const btnSubmit        = $('btn-submit');
   const submitLabel      = $('submit-label');
@@ -1103,57 +1112,64 @@
   /* ════════════════════════════════════════════
      Image Processing
   ════════════════════════════════════════════ */
-  const MAX_RAW_BYTES = 4.5 * 1024 * 1024; // 4.5MB
-  const MAX_DIMENSION = 1920;
-  const IMAGE_QUALITY  = 0.85;
+  const IMAGE_MAX_DIMENSION = 1920;
+  const IMAGE_OUTPUT_QUALITY = 0.85;
+  const IMAGE_PRIMARY_MIME = 'image/webp';
+  const IMAGE_FALLBACK_MIME = 'image/jpeg';
+  const IMAGE_EXT_BY_MIME = {
+    [IMAGE_PRIMARY_MIME]: 'webp',
+    [IMAGE_FALLBACK_MIME]: 'jpg',
+  };
 
-  async function processImageFile(file) {
-    if (!file.type.startsWith('image/')) {
+  async function processImageFiles(files) {
+    const imageFiles = Array.from(files).filter(file => file.type.startsWith('image/'));
+    if (imageFiles.length === 0) {
       showToast('error', 'エラー', '画像ファイルを選択してください');
       return;
     }
-
     progressFill.className = 'progress-fill uploading';
-    imageInfo.textContent = '画像を処理中...';
+    imageSummary.textContent = '画像を処理中...';
     imageAttached.classList.remove('hidden');
-    dropZone.style.display = 'none';
+    state.imageProcessing = true;
+    validateForm();
 
     try {
-      const result = await fileToUploadBase64(file);
-      const reduction = result.originalBytes > 0
-        ? (1 - (result.outputBytes / result.originalBytes)) * 100
-        : 0;
-      const approxKB = Math.round(result.outputBytes / 1024);
-      const formatLabel = result.ext === 'webp' ? 'WebP化' : 'JPEG化';
-
-      imageInfo.textContent = `${file.name} (${formatLabel}, -${reduction.toFixed(1)}%, 約${approxKB}KB)`;
-      state.imageB64  = result.b64;
-      state.imageName = file.name.replace(/\.[^.]+$/, `.${result.ext}`);
-      previewImg.src  = `data:${result.mime};base64,${result.b64}`;
+      for (const file of imageFiles) {
+        const upload = await createImageUpload(file);
+        state.imageUploads.push(upload);
+        if (upload.ext !== 'webp') {
+          showToast('warning', 'JPEGで添付しました', 'このブラウザではWebP変換に対応していないためJPEGにしました');
+        }
+      }
+      renderImageUploads();
       progressFill.className = 'progress-fill';
       progressFill.style.width = '100%';
-      validateForm();
     } catch(err) {
       console.error(err);
       showToast('error', '画像エラー', err.message);
-      resetImage();
+      progressFill.className = 'progress-fill';
+      progressFill.style.width = state.imageUploads.length > 0 ? '100%' : '0';
+      renderImageUploads();
+    } finally {
+      state.imageProcessing = false;
+      validateForm();
     }
   }
 
-  function fileToUploadBase64(file) {
+  function createImageUpload(file) {
     return new Promise((resolve, reject) => {
       const img = new Image();
       const url = URL.createObjectURL(file);
       img.onload = () => {
         URL.revokeObjectURL(url);
         let { width, height } = img;
-        const ratio = Math.min(MAX_DIMENSION / width, MAX_DIMENSION / height, 1);
+        const ratio = Math.min(IMAGE_MAX_DIMENSION / width, IMAGE_MAX_DIMENSION / height, 1);
         const canvas = document.createElement('canvas');
         canvas.width  = Math.round(width  * ratio);
         canvas.height = Math.round(height * ratio);
         canvas.getContext('2d').drawImage(img, 0, 0, canvas.width, canvas.height);
-        writeCanvasBlob(canvas, 'image/webp')
-          .catch(() => writeCanvasBlob(canvas, 'image/jpeg'))
+        writeCanvasBlob(canvas, IMAGE_PRIMARY_MIME)
+          .catch(() => writeCanvasBlob(canvas, IMAGE_FALLBACK_MIME))
           .then(({ blob, mime }) => {
             const reader = new FileReader();
             reader.onload = () => {
@@ -1162,10 +1178,14 @@
                 reject(new Error('画像変換に失敗しました'));
                 return;
               }
+              const ext = IMAGE_EXT_BY_MIME[mime];
               resolve({
+                id: crypto.randomUUID?.() || `${Date.now()}-${Math.random()}`,
                 b64: dataUrl.split(',')[1],
+                dataUrl,
                 mime,
-                ext: mime === 'image/webp' ? 'webp' : 'jpg',
+                ext,
+                originalName: file.name,
                 originalBytes: file.size,
                 outputBytes: blob.size,
               });
@@ -1188,23 +1208,75 @@
           return;
         }
         resolve({ blob, mime });
-      }, mime, IMAGE_QUALITY);
+      }, mime, IMAGE_OUTPUT_QUALITY);
     });
   }
 
-  function resetImage() {
-    state.imageB64  = null;
-    state.imageName = '';
-    previewImg.src  = '';
-    progressFill.style.width = '0';
-    progressFill.className = 'progress-fill';
-    imageAttached.classList.add('hidden');
-    dropZone.style.display = '';
-    fileImage.value = '';
+  function renderImageUploads() {
+    imageList.innerHTML = '';
+    state.imageUploads.forEach(upload => {
+      const item = document.createElement('div');
+      item.className = 'attached-image';
+
+      const img = document.createElement('img');
+      img.src = upload.dataUrl;
+      img.alt = upload.originalName || '添付画像プレビュー';
+
+      const overlay = document.createElement('div');
+      overlay.className = 'image-overlay';
+
+      const removeButton = document.createElement('button');
+      removeButton.className = 'btn btn-danger';
+      removeButton.type = 'button';
+      removeButton.title = '画像を削除';
+      removeButton.textContent = '✕';
+      removeButton.addEventListener('click', () => removeImageUpload(upload.id));
+
+      const info = document.createElement('span');
+      info.className = 'image-info';
+      info.textContent = imageUploadLabel(upload);
+
+      overlay.append(removeButton);
+      item.append(img, overlay, info);
+      imageList.append(item);
+    });
+
+    if (state.imageUploads.length === 0) {
+      imageAttached.classList.add('hidden');
+      imageSummary.textContent = '';
+      progressFill.className = 'progress-fill';
+      progressFill.style.width = '0';
+    } else {
+      imageAttached.classList.remove('hidden');
+      const totalBytes = state.imageUploads.reduce((sum, upload) => sum + upload.outputBytes, 0);
+      imageSummary.textContent = `${state.imageUploads.length}枚添付中 / 合計 約${Math.round(totalBytes / 1024)}KB`;
+    }
+  }
+
+  function imageUploadLabel(upload) {
+    const reduction = upload.originalBytes > 0
+      ? (1 - (upload.outputBytes / upload.originalBytes)) * 100
+      : 0;
+    const formatLabel = upload.ext === 'webp' ? 'WebP' : 'JPEG';
+    return `${upload.originalName} (${formatLabel}, -${reduction.toFixed(1)}%, 約${Math.round(upload.outputBytes / 1024)}KB)`;
+  }
+
+  function removeImageUpload(id) {
+    state.imageUploads = state.imageUploads.filter(upload => upload.id !== id);
+    renderImageUploads();
     validateForm();
   }
 
-  btnRemoveImage.addEventListener('click', resetImage);
+  function resetImages() {
+    state.imageUploads = [];
+    imageList.innerHTML = '';
+    imageSummary.textContent = '';
+    progressFill.style.width = '0';
+    progressFill.className = 'progress-fill';
+    imageAttached.classList.add('hidden');
+    fileImage.value = '';
+    validateForm();
+  }
 
   /* ════════════════════════════════════════════
      MD File
@@ -1235,7 +1307,10 @@
     if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); fileImage.click(); }
   });
 
-  fileImage.addEventListener('change', e => { if (e.target.files[0]) processImageFile(e.target.files[0]); });
+  fileImage.addEventListener('change', e => {
+    if (e.target.files.length > 0) processImageFiles(e.target.files);
+    fileImage.value = '';
+  });
   fileMd.addEventListener('change',   e => { if (e.target.files[0]) processMdFile(e.target.files[0]); });
 
   // Drag & Drop
@@ -1251,13 +1326,15 @@
   });
   dropZone.addEventListener('drop', e => {
     dropZone.classList.remove('drag-over');
-    const file = e.dataTransfer.files[0];
-    if (!file) return;
-    if (file.name.match(/\.(md|txt|markdown)$/i)) {
-      processMdFile(file);
-    } else if (file.type.startsWith('image/')) {
-      processImageFile(file);
-    } else {
+    const files = Array.from(e.dataTransfer.files || []);
+    if (files.length === 0) return;
+    const mdFile = files.find(file => file.name.match(/\.(md|txt|markdown)$/i));
+    const imageFiles = files.filter(file => file.type.startsWith('image/'));
+
+    if (mdFile) processMdFile(mdFile);
+    if (imageFiles.length > 0) {
+      processImageFiles(imageFiles);
+    } else if (!mdFile) {
       showToast('error', '対応していないファイル形式', '画像または .md ファイルを選択してください');
     }
   });
@@ -1265,23 +1342,25 @@
   // Also support paste
   document.addEventListener('paste', e => {
     const items = Array.from(e.clipboardData?.items || []);
-    const imgItem = items.find(i => i.type.startsWith('image/'));
-    if (imgItem) {
-      const file = imgItem.getAsFile();
-      if (file) { processImageFile(file); }
-    }
+    const imageFiles = items
+      .filter(item => item.type.startsWith('image/'))
+      .map(item => item.getAsFile())
+      .filter(Boolean);
+    if (imageFiles.length > 0) processImageFiles(imageFiles);
   });
 
   /* ════════════════════════════════════════════
      Validation
   ════════════════════════════════════════════ */
   function validateForm() {
-    const hasContent = Boolean(textarea.value.trim() || state.imageB64);
-    const ok = state.token && state.owner && state.repo && hasContent && !state.processing;
+    const hasContent = Boolean(textarea.value.trim() || state.imageUploads.length > 0);
+    const ok = state.token && state.owner && state.repo && hasContent && !state.processing && !state.imageProcessing;
     btnSubmit.disabled = !ok;
 
     if (!state.token || !state.owner || !state.repo) {
       submitInfo.textContent = '⚙ 右上の設定から認証情報を入力してください';
+    } else if (state.imageProcessing) {
+      submitInfo.textContent = '画像を処理中です';
     } else if (!hasContent) {
       submitInfo.textContent = '📝 本文または画像を追加してください';
     } else {
@@ -1396,8 +1475,18 @@
     });
   }
 
+  function diaryImagePath(date, time, ext, index, total) {
+    const timeStamp = time.replace(':', '');
+    const suffix = total > 1 ? `-${String(index + 1).padStart(2, '0')}` : '';
+    const filename = `${date}-${timeStamp}${suffix}.${ext}`;
+    return {
+      repoPath: `astro/public/images/diary/${filename}`,
+      publicUrl: `/images/diary/${filename}`,
+    };
+  }
+
   /** 日記ファイルのMarkdownを生成・更新 */
-  function buildDiaryContent(existingContent, date, time, text, imageUrl) {
+  function buildDiaryContent(existingContent, date, time, text, imageUrls) {
     const WEEKDAYS = ['日','月','火','水','木','金','土'];
     function formatTitle(d) {
       const [y,m,day] = d.split('-').map(Number);
@@ -1408,7 +1497,10 @@
     // 新しいセクションを組み立て
     let newSection = `\n## ${time}\n`;
     if (text)      newSection += `${text}\n`;
-    if (imageUrl) newSection += `![投稿画像](${imageUrl})\n`;
+    imageUrls.forEach((imageUrl, index) => {
+      const altText = imageUrls.length > 1 ? `投稿画像${index + 1}` : '投稿画像';
+      newSection += `![${altText}](${imageUrl})\n`;
+    });
 
     if (existingContent) {
       // 既存ファイルに追記
@@ -1433,7 +1525,7 @@
     const date    = inputDate.value;
     const time    = inputTime.value;
 
-    if (!content && !state.imageB64) { showToast('error', '本文が空です', 'テキストまたは画像を入力してください'); return; }
+    if (!content && state.imageUploads.length === 0) { showToast('error', '本文が空です', 'テキストまたは画像を入力してください'); return; }
     if (!date || !time) { showToast('error', '日時エラー', '日付と時刻を入力してください'); return; }
     if (!state.token || !state.owner || !state.repo) {
       showToast('error', '設定エラー', 'GitHub Tokenとリポジトリを設定してください');
@@ -1444,22 +1536,20 @@
     setLoading(true, '📤 アップロード中...');
 
     try {
-      let imageUrl = null;
+      const imageUrls = [];
       const files = [];
 
       // ── Step 1: 画像パスを決定 ──
-      if (state.imageB64) {
-        const timeStamp = time.replace(':', '');
-        const ext = state.imageName.split('.').pop() || 'webp';
-        const imagePath = `astro/public/images/diary/${date}-${timeStamp}.${ext}`;
-        imageUrl = `/images/diary/${date}-${timeStamp}.${ext}`;
+      state.imageUploads.forEach((upload, index) => {
+        const imagePath = diaryImagePath(date, time, upload.ext, index, state.imageUploads.length);
+        imageUrls.push(imagePath.publicUrl);
 
         files.push({
-          path: imagePath,
-          content: state.imageB64,
+          path: imagePath.repoPath,
+          content: upload.b64,
           encoding: 'base64',
         });
-      }
+      });
 
       // ── Step 2: 日記ファイルを読み込み ──
       setLoading(true, '📖 日記ファイルを確認中...');
@@ -1470,7 +1560,7 @@
       setLoading(true, '✍️ 日記を保存中...');
       const newContent = buildDiaryContent(
         existing?.content ?? null,
-        date, time, content, imageUrl
+        date, time, content, imageUrls
       );
       const commitMsg = `📝 日記: ${date} ${time}`;
       files.push({
@@ -1522,7 +1612,7 @@
   function resetAfterSubmit() {
     textarea.value = '';
     charCount.textContent = '0';
-    resetImage();
+    resetImages();
     setNow();
   }
 
