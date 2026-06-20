@@ -23,7 +23,7 @@ function ratingLabel(book) {
 }
 ---
 
-<BaseLayout title="Books" robots="noindex, nofollow" wide={true}>
+<BaseLayout title="Books" wide={true}>
   <article class="books-page">
     <header class="books-header">
       <div>
@@ -572,6 +572,10 @@ function ratingLabel(book) {
       font-weight: 700;
       line-height: 1.2;
       cursor: pointer;
+    }
+
+    .books-more[hidden] {
+      display: none;
     }
 
     .books-more:hover,

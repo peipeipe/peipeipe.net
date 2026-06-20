@@ -44,23 +44,3 @@ export interface BooksData {
 export function getBooksData(): BooksData {
   return booksData as BooksData;
 }
-
-export function getBooks(): Book[] {
-  return getBooksData().books;
-}
-
-export function bookUrl(book: Book): string {
-  return `/books/#${book.id}`;
-}
-
-export function bookPlainText(book: Book): string {
-  return [
-    book.title,
-    book.author,
-    book.publisher,
-    book.publishedYear,
-    book.readDate,
-    book.tags.join(" "),
-    book.quotes.map((quote) => quote.text).join(" "),
-  ].filter(Boolean).join(" ");
-}

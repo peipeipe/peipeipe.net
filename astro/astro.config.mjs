@@ -2,8 +2,6 @@ import { defineConfig } from "astro/config";
 import sitemap from "@astrojs/sitemap";
 
 const excludedSitemapPaths = new Set([
-  "/books/",
-  "/books/review/",
   "/cloudflare-preview/",
   "/diary-post/",
   "/search/",
