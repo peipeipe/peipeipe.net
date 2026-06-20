@@ -14,6 +14,7 @@ from pathlib import Path
 
 DEFAULT_INPUT = "/mnt/c/Users/peipe/Downloads/booklog20260615223359.csv"
 DEFAULT_OUTPUT = "astro/data/books.json"
+AMAZON_PARTNER_TAG = "peipeipe-22"
 
 
 @dataclass
@@ -262,7 +263,7 @@ def split_tags(value: str) -> list[str]:
 def amazon_url(asin: str) -> str:
     if not is_asin(asin):
         return ""
-    return f"https://www.amazon.co.jp/dp/{asin}?tag=peipeipe-22"
+    return f"https://www.amazon.co.jp/dp/{asin}?tag={AMAZON_PARTNER_TAG}"
 
 
 def amazon_cover_url(asin: str) -> str:
