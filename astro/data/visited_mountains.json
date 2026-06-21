@@ -278,8 +278,15 @@
     "lng": 138.395272,
     "elevation": 2207,
     "tags": [],
-    "visit_count": 1,
+    "visit_count": 2,
     "activities": [
+      {
+        "id": 19003152185,
+        "name": "Morning Trail Run",
+        "date": "2026-06-21",
+        "sport_type": "TrailRun",
+        "distance_km": 10.3
+      },
       {
         "id": 18258887407,
         "name": "Morning Trail Run",
@@ -289,7 +296,7 @@
       }
     ],
     "first_visit": "2026-04-26",
-    "last_visit": "2026-04-26"
+    "last_visit": "2026-06-21"
   },
   {
     "name": "美ヶ原",
@@ -347,5 +354,24 @@
     ],
     "first_visit": "2026-06-14",
     "last_visit": "2026-06-14"
+  },
+  {
+    "name": "四阿山",
+    "lat": 36.541764,
+    "lng": 138.412969,
+    "elevation": 2354,
+    "tags": [],
+    "visit_count": 1,
+    "activities": [
+      {
+        "id": 19003152185,
+        "name": "Morning Trail Run",
+        "date": "2026-06-21",
+        "sport_type": "TrailRun",
+        "distance_km": 10.3
+      }
+    ],
+    "first_visit": "2026-06-21",
+    "last_visit": "2026-06-21"
   }
 ]
