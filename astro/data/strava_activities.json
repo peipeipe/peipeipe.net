@@ -1,5 +1,59 @@
 [
   {
+    "id": 19028198905,
+    "name": "朝のランニング",
+    "sport_type": "Run",
+    "distance": 2960.5,
+    "moving_time": 1056,
+    "elapsed_time": 1080,
+    "total_elevation_gain": 62.0,
+    "start_date": "2026-06-22T21:59:25Z",
+    "start_date_local": "2026-06-23T06:59:25Z",
+    "start_latlng": [
+      36.372016,
+      138.140028
+    ],
+    "average_speed": 2.804,
+    "max_speed": 3.225,
+    "summary_polyline": "a|~|EcncjYTrA^lDHTHr@Nn@TlBl@jEPdBDLd@lDVrAZjCl@~FPtAfA`LXzBLbBb@zCJ|A@|@CRk@rB^~BTf@v@vAr@~AnBhFr@zAfAnCvC`Hb@lAz@lBd@r@x@v@zAjApBjBjJzHzAvAjBvAp@l@vAdApBbBlCdAxGdCn@X"
+  },
+  {
+    "id": 19027643193,
+    "name": "朝のランニング",
+    "sport_type": "Run",
+    "distance": 4534.8,
+    "moving_time": 1528,
+    "elapsed_time": 1915,
+    "total_elevation_gain": 25.0,
+    "start_date": "2026-06-22T21:05:42Z",
+    "start_date_local": "2026-06-23T06:05:42Z",
+    "start_latlng": [
+      36.407134,
+      138.203875
+    ],
+    "average_speed": 2.968,
+    "max_speed": 4.36,
+    "summary_polyline": "qwe}Ee}ojYI?KEUAGI?WNIr@MVi@?MU]Oe@Ca@Lq@XWLWe@JS@SCa@Qe@EKKAKH]@OGAKR_@XYDoA|Am@l@MX_BnCw@dBe@VW\\Wh@K`@Q`Ac@fBSnAQ|Bm@hCKNWHYLY`@MV[b@ITWb@?LG\\KZWVCLCXYdAGNY\\]r@QNi@dAOHc@`@k@t@_@bAQNGLQNQVe@nAQPK^qBzBK\\[j@ET_@b@URGVKRKHUZRIFI`@wAJi@PWVo@WlAg@hA_@f@_@~@eBfC}AdC_@b@qCtBk@\\g@CQ@w@VEAkAsCj@|@TSt@e@dCoAVIP?\\BLFX^HB`@OfDiFR[HUPST_@Lc@R_@j@{@\\y@R[h@q@Je@x@kAL]Zc@l@iA`@g@R]dBkB`@WrAsBr@eC\\}@ZmANa@p@_AZYn@_@NWHg@ZeAJq@NgBXiBJw@h@}BVi@^]NIjCo@`@SRc@Vs@N[|AuDRs@l@o@DFMt@@D|@Vf@AFCP|@GERr@GJGAMBEHANDLTVRZ@JCLKXOJKBW?YP"
+  },
+  {
+    "id": 19027317762,
+    "name": "朝のランニング",
+    "sport_type": "Run",
+    "distance": 4666.9,
+    "moving_time": 2263,
+    "elapsed_time": 2763,
+    "total_elevation_gain": 316.0,
+    "start_date": "2026-06-22T20:13:47Z",
+    "start_date_local": "2026-06-23T05:13:47Z",
+    "start_latlng": [
+      36.407102,
+      138.20367
+    ],
+    "average_speed": 2.062,
+    "max_speed": 4.45,
+    "summary_polyline": "kwe}E{{ojYLSHA?DHHNb@JLfAAJHZBFDFNEP_@DKEGBLFRBJFFHDRBDH@Vl@?NPn@PZBNLPPFDDB^Pt@B^@VGX@ZBXLP?RJN?NAREBWY_@De@KQSG]?[MUERGFI@G?KWEAC?SVMl@IVCBKDECOQECKAGEi@AQKY?UGOFKJLI^Gd@DX?\\HHFJRJDHMRw@Z]JAHDDJJ@RUHDB\\HXHNRPFBj@BJHLX@GAOMc@CUMi@D]?{@MSCKSg@[[G_@Gu@IUKIKAIG[o@IKGKQSCGDGFA^H@GEIIOICe@]OAg@o@a@As@\\HSJIXI@BH@LHBNDB^DTFN?DFHCLLRFBJDB?DEFG?EAQS?FFHPDLRHBJH@JLP@VHH?XFd@?RJHBNHJVNFH@FJDPd@D^CXLnALLCVDJA^BNCDCEEOMCs@TGE_@KEKAQEQCYEOCAEPOHIGAQCEOBENONOh@GNKHG?SWUAMEM@}@EWEMDEHJKXE^Ad@Hb@@HHHNJDLUPo@VUNEJBJJH@DC?IDCB@FN@XDN`@Nb@BVCNBJJBN@?AOKIe@_AA[Dy@E[IW]i@Wg@KeAA_@Oi@MWa@KSWSMEKBGVANHFAMBM?OKESK?UWWICCESUII?g@TJq@GBBFXCP@RERDBJD@BLLFH?BNBAJDF?HFBJLB@BLFAHGDMMUD?BBHHBLLPXZTFPJHDJJr@?\\HN?RJDHH?DDTAFB@BFDDD?JFBRFFCP?LH`@FLCH@FJPND@FAJBB@JEHFT?RK@_@GQD?EGAOBSA]]K]A_@CGEBCHIHKKGSE?KDQTYdAMHOQs@KU?[Ki@A[LDETKN?vALVHJTFBHEDIHs@Xc@LGNVDBH?RSD?J@D^AJFPPRND`ACLBBD@XAW[w@Q}@?q@I]KUIMQSMGKMEa@EOKi@O[Km@SSGCIIWm@?I@Aj@J?CGSYa@WEQSE?OIGMMG[AEFI?GE"
+  },
+  {
     "id": 19004545321,
     "name": "Lunch Run",
     "sport_type": "Run",
