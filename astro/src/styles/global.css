@@ -461,6 +461,12 @@ th {
 
 .diary-content {
   line-height: 1.6;
+  overflow-wrap: anywhere;
+}
+
+.diary-content a {
+  overflow-wrap: anywhere;
+  word-break: break-word;
 }
 
 .diary-content h2 {
@@ -489,6 +495,7 @@ th {
   border-radius: 4px;
   background: #f8f9fa;
   padding: 10px 15px 15px;
+  min-width: 0;
 }
 
 .diary-block h2 {
