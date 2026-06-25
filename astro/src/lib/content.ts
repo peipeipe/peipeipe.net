@@ -9,6 +9,22 @@ const contentRoot = path.join(astroRoot, "content");
 
 type Frontmatter = Record<string, unknown>;
 
+interface LinkCardMetadata {
+  url: string;
+  title: string;
+  description: string;
+  image: string;
+  siteName: string;
+  host: string;
+}
+
+interface LinkCardCandidate {
+  url: string;
+  fallbackTitle: string;
+}
+
+const linkCardCache = new Map<string, LinkCardMetadata | undefined>();
+
 export interface Entry {
   sourcePath: string;
   title: string;
@@ -49,7 +65,7 @@ async function readEntry(file: string, kind: "post" | "diary"): Promise<Entry> {
   const fileDate = dateFromFilename(filename);
   const date = parseDate(parsed.data.date) || fileDate || new Date(0);
   const title = String(parsed.data.title || titleFromFilename(filename) || filename);
-  const content = normalizeMarkdownImageUrls(parsed.content);
+  const content = await renderStandaloneLinkCards(normalizeMarkdownImageUrls(parsed.content));
   const html = await marked.parse(content, { async: true, gfm: true, breaks: kind === "diary" });
   const excerpt = makeExcerpt(html);
   const url = kind === "diary"
@@ -138,6 +154,175 @@ function normalizeMarkdownImageUrls(content: string): string {
     if (!/\s/.test(trimmed) || !/^(https?:\/\/|\/)/.test(trimmed)) return match;
     return `![${alt}](${trimmed.replace(/\s+/g, "%20")})`;
   });
+}
+
+async function renderStandaloneLinkCards(content: string): Promise<string> {
+  const lines = content.split("\n");
+  const rendered = await Promise.all(lines.map(async (line) => {
+    const candidate = linkCardCandidate(line);
+    if (!candidate || !shouldRenderLinkCard(candidate.url)) return line;
+
+    const metadata = await getLinkCardMetadata(candidate.url);
+    return renderLinkCard(metadata || fallbackLinkCardMetadata(candidate));
+  }));
+
+  return rendered.join("\n");
+}
+
+function linkCardCandidate(line: string): LinkCardCandidate | undefined {
+  const trimmed = line.trim();
+  const match = trimmed.match(/^(?:(.*?)\s+)?<?(https?:\/\/\S+?)>?$/);
+  if (!match) return undefined;
+
+  try {
+    const url = new URL(match[2]).toString();
+    if ((trimmed.match(/https?:\/\//g) || []).length > 1) return undefined;
+    return {
+      url,
+      fallbackTitle: match[1]?.trim() || "",
+    };
+  } catch {
+    return undefined;
+  }
+}
+
+function shouldRenderLinkCard(value: string): boolean {
+  const url = new URL(value);
+  const hostname = url.hostname.replace(/^www\./, "").toLowerCase();
+  return !["x.com", "twitter.com"].includes(hostname);
+}
+
+async function getLinkCardMetadata(url: string): Promise<LinkCardMetadata | undefined> {
+  if (linkCardCache.has(url)) return linkCardCache.get(url);
+
+  const metadata = await fetchLinkCardMetadata(url).catch(() => undefined);
+  linkCardCache.set(url, metadata);
+  return metadata;
+}
+
+async function fetchLinkCardMetadata(url: string): Promise<LinkCardMetadata | undefined> {
+  const controller = new AbortController();
+  const timeout = setTimeout(() => controller.abort(), 2500);
+
+  try {
+    const response = await fetch(url, {
+      headers: {
+        "accept": "text/html,application/xhtml+xml",
+        "user-agent": "peipeipe.net link-card fetcher",
+      },
+      redirect: "follow",
+      signal: controller.signal,
+    });
+
+    if (!response.ok) return undefined;
+
+    const contentType = response.headers.get("content-type") || "";
+    if (contentType && !/text\/html|application\/xhtml\+xml/i.test(contentType)) return undefined;
+
+    const contentLength = Number(response.headers.get("content-length") || 0);
+    if (contentLength > 2_000_000) return undefined;
+
+    const html = await response.text();
+    const finalUrl = response.url || url;
+    const title = firstMeta(html, [
+      ['meta[property="og:title"]', "content"],
+      ['meta[name="twitter:title"]', "content"],
+      ["title", "text"],
+    ]);
+    const description = firstMeta(html, [
+      ['meta[property="og:description"]', "content"],
+      ['meta[name="description"]', "content"],
+      ['meta[name="twitter:description"]', "content"],
+    ]);
+    const image = firstMeta(html, [
+      ['meta[property="og:image"]', "content"],
+      ['meta[name="twitter:image"]', "content"],
+    ]);
+    const siteName = firstMeta(html, [
+      ['meta[property="og:site_name"]', "content"],
+      ['meta[name="application-name"]', "content"],
+    ]);
+    const host = new URL(finalUrl).hostname.replace(/^www\./, "");
+
+    return {
+      url: finalUrl,
+      title: title || host,
+      description,
+      image: image ? new URL(image, finalUrl).toString() : "",
+      siteName,
+      host,
+    };
+  } finally {
+    clearTimeout(timeout);
+  }
+}
+
+function fallbackLinkCardMetadata(candidate: LinkCardCandidate): LinkCardMetadata {
+  const url = new URL(candidate.url);
+  const host = url.hostname.replace(/^www\./, "");
+
+  return {
+    url: candidate.url,
+    title: candidate.fallbackTitle || host,
+    description: "",
+    image: "",
+    siteName: "",
+    host,
+  };
+}
+
+function firstMeta(html: string, selectors: Array<[string, "content" | "text"]>): string {
+  for (const [selector, source] of selectors) {
+    const value = source === "text" ? matchTitle(html) : matchMetaContent(html, selector);
+    if (value) return normalizeMetaValue(value);
+  }
+  return "";
+}
+
+function matchTitle(html: string): string {
+  return html.match(/<title[^>]*>([\s\S]*?)<\/title>/i)?.[1] || "";
+}
+
+function matchMetaContent(html: string, selector: string): string {
+  const attrMatch = selector.match(/^meta\[(name|property)="([^"]+)"\]$/);
+  if (!attrMatch) return "";
+
+  const [, attrName, attrValue] = attrMatch;
+  const tagPattern = new RegExp(`<meta\\b(?=[^>]*\\b${attrName}=["']${escapeRegExp(attrValue)}["'])(?=[^>]*\\bcontent=["']([^"']*)["'])[^>]*>`, "i");
+  return html.match(tagPattern)?.[1] || "";
+}
+
+function normalizeMetaValue(value: string): string {
+  return decodeHtmlEntities(value)
+    .replace(/\s+/g, " ")
+    .trim();
+}
+
+function decodeHtmlEntities(value: string): string {
+  return value
+    .replace(/&#(\d+);/g, (_match, code) => String.fromCodePoint(Number(code)))
+    .replace(/&#x([0-9a-f]+);/gi, (_match, code) => String.fromCodePoint(Number.parseInt(code, 16)))
+    .replace(/&amp;/g, "&")
+    .replace(/&lt;/g, "<")
+    .replace(/&gt;/g, ">")
+    .replace(/&quot;/g, '"')
+    .replace(/&#39;/g, "'");
+}
+
+function renderLinkCard(metadata: LinkCardMetadata): string {
+  const media = metadata.image
+    ? `<span class="link-card-media"><img src="${escapeHtml(metadata.image)}" alt="" loading="lazy"></span>`
+    : "";
+  const description = metadata.description
+    ? `<span class="link-card-description">${escapeHtml(metadata.description)}</span>`
+    : "";
+  const source = metadata.siteName || metadata.host;
+
+  return `<a class="link-card" href="${escapeHtml(metadata.url)}" target="_blank" rel="noopener noreferrer">${media}<span class="link-card-body"><span class="link-card-title">${escapeHtml(metadata.title)}</span>${description}<span class="link-card-source">${escapeHtml(source)}</span></span></a>`;
+}
+
+function escapeRegExp(value: string): string {
+  return value.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
 }
 
 function pad2(value: number): string {
