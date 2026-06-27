@@ -12,9 +12,39 @@ export async function getStaticPaths() {
 
 const { entry } = Astro.props;
 const diaryDate = entry.title;
+const entryUrl = new URL(entry.url, "https://www.peipeipe.net").toString();
+const diaryJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  headline: entry.title,
+  description: entry.excerpt,
+  datePublished: entry.date.toISOString(),
+  dateModified: entry.date.toISOString(),
+  mainEntityOfPage: entryUrl,
+  url: entryUrl,
+  inLanguage: "ja",
+  author: {
+    "@type": "Person",
+    name: "peipeipe",
+    url: "https://www.peipeipe.net/about",
+  },
+  publisher: {
+    "@type": "Person",
+    name: "peipeipe",
+    url: "https://www.peipeipe.net",
+  },
+};
 ---
 
-<BaseLayout title={entry.title}>
+<BaseLayout
+  title={entry.title}
+  description={entry.excerpt}
+  canonicalPath={entry.url}
+  type="article"
+  publishedTime={entry.date}
+  modifiedTime={entry.date}
+  jsonLd={diaryJsonLd}
+>
   <article class="diary-entry">
     <header class="diary-header">
       <h1 class="diary-date">{diaryDate}</h1>
