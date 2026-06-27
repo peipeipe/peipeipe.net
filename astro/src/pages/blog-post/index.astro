@@ -222,6 +222,7 @@
         background: var(--editor);
       }
       .gutter {
+        margin: 0;
         overflow: hidden;
         border-right: 1px solid var(--border);
         background: var(--gutter);
@@ -442,7 +443,7 @@
               <label for="output-path">出力パス</label>
               <input id="output-path" class="mono" type="text" readonly />
             </div>
-            <label class="hint"><input id="overwrite" type="checkbox" /> 既存ファイルを上書きする</label>
+            <label class="hint"><input id="overwrite" type="checkbox" /> 既存ファイルを上書きする / 読み込んだ元記事を置き換える</label>
           </section>
         </aside>
 
@@ -506,6 +507,7 @@
         repo: '',
         sourcePath: '',
         sourceDate: '',
+        replaceSourcePath: '',
         images: [],
         processing: false,
       };
@@ -878,12 +880,21 @@
         const parent = await ghJson(`/git/commits/${parentSha}`);
         const tree = [];
         for (const file of files) {
-          tree.push({
-            path: file.path,
-            mode: '100644',
-            type: 'blob',
-            sha: await createBlob(file.content, file.encoding),
-          });
+          if (file.delete) {
+            tree.push({
+              path: file.path,
+              mode: '100644',
+              type: 'blob',
+              sha: null,
+            });
+          } else {
+            tree.push({
+              path: file.path,
+              mode: '100644',
+              type: 'blob',
+              sha: await createBlob(file.content, file.encoding),
+            });
+          }
         }
         const newTree = await ghJson('/git/trees', {
           method: 'POST',
@@ -938,6 +949,7 @@
           const filenameDate = filename.match(/^(\d{4}-\d{2}-\d{2})-(.+)$/);
           state.sourcePath = path;
           state.sourceDate = filenameDate?.[1] || '';
+          state.replaceSourcePath = path;
           els.title.value = parsed.data.title || '';
           els.date.value = extractDate(parsed.data.date) || filenameDate?.[1] || todayJst();
           els.time.value = extractTime(parsed.data.date) || '18:00';
@@ -983,6 +995,7 @@
           els.slug.value = 'books-read-this-month';
         }
         els.body.value = els.body.value.replaceAll(oldYm, newYm);
+        state.replaceSourcePath = '';
         syncOutputPath();
         updateEditorStats();
         renderPreview();
@@ -1045,6 +1058,13 @@
         setStatus(els.docStatus, '', '保存中...');
         try {
           const path = outputPath();
+          const targetDir = els.target.value === 'drafts' ? 'drafts' : 'posts';
+          const replacesSameCollection = state.replaceSourcePath?.startsWith(`astro/content/${targetDir}/`);
+          const replacesSource = Boolean(
+            els.overwrite.checked
+            && replacesSameCollection
+            && state.replaceSourcePath !== path
+          );
           const exists = await getFileInfo(path);
           if (exists && !els.overwrite.checked) {
             throw new Error('同名ファイルが存在します。上書きする場合はチェックを入れてください。');
@@ -1061,8 +1081,25 @@
             content: utf8ToBase64(markdown),
             encoding: 'base64',
           });
+          if (replacesSource) {
+            files.push({
+              path: state.replaceSourcePath,
+              delete: true,
+            });
+          }
           await commitFilesOnce(files, `Post: ${els.date.value} ${els.title.value.trim()}`);
-          setStatus(els.docStatus, 'ok', `${path} を保存しました`);
+          setStatus(
+            els.docStatus,
+            'ok',
+            replacesSource
+              ? `${path} を保存し、${state.replaceSourcePath} を削除しました`
+              : `${path} を保存しました`
+          );
+          if (replacesSource) {
+            state.sourcePath = path;
+            state.replaceSourcePath = path;
+            els.sourcePath.value = path;
+          }
         } catch (err) {
           setStatus(els.docStatus, 'err', err.message);
         } finally {
