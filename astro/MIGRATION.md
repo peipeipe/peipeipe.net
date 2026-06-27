@@ -226,7 +226,6 @@ The old Japanese/percent-encoded filenames were normalized to English slugs on `
 2. Confirm content/data automation still chains into an Astro production deploy.
    - `update-strava-activities.yml`: updates `astro/data/strava_activities.json` and `astro/data/visited_mountains.json`.
    - `update-onsen-checkins.yml`: updates `astro/data/onsen_places.json` and `astro/data/places.json`.
-   - `webhook-diary.yml`: updates `astro/content/diary/` and `astro/public/images/`.
    - `enhance-amazon-links.yml`: updates `astro/content/posts/**/*.md`.
    - `convert-images-to-webp.yml`: updates `astro/public/images/` and Markdown references.
    - If any workflow commits successfully but does not trigger `.github/workflows/cloudflare-pages.yml`, adjust the deploy workflow path filters.

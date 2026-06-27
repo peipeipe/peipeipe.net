@@ -8,7 +8,6 @@ Automation and data refresh scripts live in `scripts/`. GitHub Actions workflows
 
 ## Build, Test, and Development Commands
 
-- `./test_local.sh`: exercise the diary webhook flow locally; it may prompt for a Discord webhook.
 - `cd astro && PATH=/home/peipeipe/.local/nodejs/current/bin:$PATH npm ci`: install Astro dependencies with the required Node version.
 - `cd astro && PATH=/home/peipeipe/.local/nodejs/current/bin:$PATH npm run build`: build the production Astro site.
 - `cd astro && PATH=/home/peipeipe/.local/nodejs/current/bin:$PATH npm run manifest && PATH=/home/peipeipe/.local/nodejs/current/bin:$PATH npm run check:legacy-slugs`: verify Astro URL coverage and legacy slug handling.
