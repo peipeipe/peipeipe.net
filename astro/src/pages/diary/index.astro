@@ -31,7 +31,8 @@ function groupEntriesByMonth(entries) {
 }
 
 function getImageSrcs(html) {
-  return [...html.matchAll(/<img\s[^>]*src="([^"]+)"/g)].map((match) => match[1]);
+  const withoutLinkCards = html.replace(/<a\b(?=[^>]*\bclass="[^"]*\blink-card\b[^"]*")[\s\S]*?<\/a>/g, "");
+  return [...withoutLinkCards.matchAll(/<img\s[^>]*src="([^"]+)"/g)].map((match) => match[1]);
 }
 
 function getPhotoItems(entry) {
