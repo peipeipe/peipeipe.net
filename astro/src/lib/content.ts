@@ -1,7 +1,7 @@
 import fs from "node:fs/promises";
 import path from "node:path";
 import fg from "fast-glob";
-import matter from "gray-matter";
+import { load as parseYaml } from "js-yaml";
 import { marked } from "marked";
 
 const astroRoot = path.resolve(".");
@@ -60,7 +60,7 @@ export async function getDiaryEntries(): Promise<Entry[]> {
 
 async function readEntry(file: string, kind: "post" | "diary"): Promise<Entry> {
   const raw = await fs.readFile(file, "utf8");
-  const parsed = matter(raw);
+  const parsed = parseFrontmatter(raw);
   const filename = path.basename(file, ".md");
   const fileDate = dateFromFilename(filename);
   const date = parseDate(parsed.data.date) || fileDate || new Date(0);
@@ -81,6 +81,26 @@ async function readEntry(file: string, kind: "post" | "diary"): Promise<Entry> {
     html,
     data: parsed.data,
   };
+}
+
+function parseFrontmatter(raw: string): { data: Frontmatter; content: string } {
+  const normalized = raw.replace(/\r\n/g, "\n");
+  const match = normalized.match(/^---\n([\s\S]*?)\n---(?:\n|$)([\s\S]*)$/);
+  if (!match) {
+    return { data: {}, content: raw };
+  }
+
+  const [, frontmatter, content] = match;
+  const data = parseYaml(frontmatter);
+
+  return {
+    data: isFrontmatter(data) ? data : {},
+    content,
+  };
+}
+
+function isFrontmatter(value: unknown): value is Frontmatter {
+  return typeof value === "object" && value !== null && !Array.isArray(value);
 }
 
 function postUrl(filename: string, data: Frontmatter, date: Date): string {
