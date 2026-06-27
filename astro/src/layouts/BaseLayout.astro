@@ -7,15 +7,58 @@ interface Props {
   canonicalPath?: string;
   wide?: boolean;
   robots?: string;
+  type?: "website" | "article";
+  image?: string;
+  publishedTime?: Date | string;
+  modifiedTime?: Date | string;
+  jsonLd?: Record<string, unknown> | Record<string, unknown>[];
 }
 
 const siteName = "peipeipe.net";
 const siteDescription = "読んだ本とやったこと";
 const siteUrl = "https://www.peipeipe.net";
 const avatar = "/images/avatar.png";
-const { title, description = siteDescription, canonicalPath = Astro.url.pathname, wide = false, robots } = Astro.props;
+const {
+  title,
+  description = siteDescription,
+  canonicalPath = Astro.url.pathname,
+  wide = false,
+  robots,
+  type = "website",
+  image = avatar,
+  publishedTime,
+  modifiedTime,
+  jsonLd,
+} = Astro.props;
 const pageTitle = title ? `${title} - ${siteName} - ${siteDescription}` : `${siteName} - ${siteDescription}`;
 const canonicalUrl = new URL(canonicalPath, siteUrl).toString();
+const imageUrl = new URL(image, siteUrl).toString();
+const toIsoString = (value?: Date | string) => {
+  if (!value) return undefined;
+  const date = value instanceof Date ? value : new Date(value);
+  return Number.isNaN(date.getTime()) ? undefined : date.toISOString();
+};
+const publishedTimeIso = toIsoString(publishedTime);
+const modifiedTimeIso = toIsoString(modifiedTime);
+const websiteJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  name: siteName,
+  url: siteUrl,
+  description: siteDescription,
+  inLanguage: "ja",
+  publisher: {
+    "@type": "Person",
+    name: "peipeipe",
+    url: siteUrl,
+  },
+  potentialAction: {
+    "@type": "SearchAction",
+    target: `${siteUrl}/search/?q={search_term_string}`,
+    "query-input": "required name=search_term_string",
+  },
+};
+const structuredData = [websiteJsonLd, ...(Array.isArray(jsonLd) ? jsonLd : jsonLd ? [jsonLd] : [])];
 ---
 
 <!doctype html>
@@ -32,17 +75,25 @@ const canonicalUrl = new URL(canonicalPath, siteUrl).toString();
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>{pageTitle}</title>
     <meta name="description" content={description} />
-    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:site" content="@peipeipe" />
+    <meta name="twitter:title" content={pageTitle} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={imageUrl} />
     <meta property="og:site_name" content={siteName} />
     <meta property="og:title" content={pageTitle} />
     <meta property="og:description" content={description} />
-    <meta property="og:type" content="website" />
+    <meta property="og:type" content={type} />
     <meta property="og:url" content={canonicalUrl} />
+    <meta property="og:image" content={imageUrl} />
+    <meta property="og:locale" content="ja_JP" />
+    {publishedTimeIso && <meta property="article:published_time" content={publishedTimeIso} />}
+    {modifiedTimeIso && <meta property="article:modified_time" content={modifiedTimeIso} />}
     {robots && <meta name="robots" content={robots} />}
     <link rel="me" href="https://mstdn.jp/@peipeipe" />
     <link rel="canonical" href={canonicalUrl} />
     <link rel="alternate" type="application/rss+xml" title={`${siteName} - ${siteDescription}`} href="/feed.xml" />
+    <script type="application/ld+json" set:html={JSON.stringify(structuredData).replace(/</g, "\\u003c")} />
     <slot name="head" />
   </head>
   <body>
