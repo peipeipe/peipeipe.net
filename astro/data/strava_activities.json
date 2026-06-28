@@ -1,5 +1,23 @@
 [
   {
+    "id": 19092828654,
+    "name": "朝のトレイルランニング",
+    "sport_type": "TrailRun",
+    "distance": 34492.7,
+    "moving_time": 20590,
+    "elapsed_time": 21563,
+    "total_elevation_gain": 1800.0,
+    "start_date": "2026-06-27T20:40:22Z",
+    "start_date_local": "2026-06-28T05:40:22Z",
+    "start_latlng": [
+      36.259608,
+      137.985984
+    ],
+    "average_speed": 1.675,
+    "max_speed": 4.583,
+    "summary_polyline": "o}h|EkkeiYs@}BwK`BsDwGkCaLmBaEQyEdFeAvFmKZaD[}AcBvBP_@qCbAa@C?_Bs@Fl@gC_BcPP}AByFkAoAN_BE|AyB|DwDr@Gf@t@XR~Ag@`D`@IsAnByA]kAkCD\\Y[Ir@o@MoAlCqClBgCTwB{A_DCi@g@Ej@tBpEfGbGx@DJeBl@]n@bEwAlDv@ZlA~EHzAg@jA|BSe@|AL`@pENnCxS}DlL]`DfAx@IcARVsA|A}Djc@_AtEuAxA{@rPsAjDcEk@qApC{DtAw@zFqAz@uArCKxElA|FCdD~AtDaHw@iDr@_CrKkEnHeDjBqKnCw@jH~@xG}@bM|@bDpYnAtCj@pBmAgAxC`DyC[zCoBfDxCyA`BrBnDQ~@^f@vAnBv@bKgGpEt@rJ{Cj@R_@pBnBMtBhAx@oD`FcCt@rAY|FpBBjCyAZyArEaCdA_BnDYn@y@n@f@fHaA~A~Bl@DbDaBrAl@fIcAfABbAbAtCc@|G`@z@q@vF]vB~@bIDp@n@D~@MsA|A}@tKw@GsEwDi_@mA_ZnAuMQvBnBjApDqBBkBP`BxGMb@qC|H@?rBf@n@Xs@~EqAv@}EfD_DbD`BvH\\iAaCdC]^hEn@`@hUFjXcAfByGHsChm@gGfDmFjBwFfBgCv@Q`@kHrAo@P{H|GFk@wH_AeCXStAjA^qCfC{BvIyFZv@hJcGrBM|C{BdEu@pAkClCiAdGNrFmChB{CdGwA|FkF`DN|@gB~BKn@q@zCn@tBsA[cFlF~DhBSt@_BxAZvAoGzCLNpA\\iAbCGj@yBr@rDfBh@dAa@~BaKzAcAaAuMwAqEl@yBzDd@Kae@nE_@i@mCrDkCp@{Br@GpAiE_E}CWoEj@aDc@zAJwC]qAb@oBoBCdDwIUeB{AmDTsBkAsAs@sCKmDf@}GgAsGgAaB[mBmAGo@aA@_Gs@cDVkAu@iDAeDeAu@d@y@CgBq@qD_BeC^mF}Aq@VwEQeE]yAzAy@TgCpAyBc@cDmCvC_Kg@uFrDiGd@cB|FgAtGTdA_ApCuDlDyBIq@zAwCZuBvFqBBuA{@yIu@mD?}Az@UhBeAr@sHxMiCbBgH~AoCa@cHt@yDvFgAZsBM_AwBs@RO~@`C|IiAdCbAnBw@|C_C`@qGhE}AGmAbA|BFBdB}BdGwBvBeKzEgKjA_Da@cBz@qFjH}Bz@eA~BwB~@sDxF{@BuAhBwGdKOdEiBxHcCxARPM\\q@Bc@E"
+  },
+  {
     "id": 19080639690,
     "name": "Morning Run",
     "sport_type": "Run",
