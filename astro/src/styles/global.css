@@ -189,13 +189,23 @@ th {
   margin-bottom: 50px;
 }
 
+.wrapper-masthead .container {
+  max-width: 980px;
+}
+
 .masthead {
   display: grid;
-  grid-template-columns: 70px minmax(0, 1fr);
+  grid-template-columns: 70px minmax(180px, 1fr) auto;
   gap: 14px 15px;
   align-items: center;
   border-bottom: 1px solid #eee;
   padding: 20px 0;
+}
+
+.masthead::before,
+.masthead::after {
+  display: none;
+  content: none;
 }
 
 .site-avatar {
@@ -237,10 +247,9 @@ th {
 
 .nav {
   display: flex;
-  grid-column: 1 / -1;
   flex-wrap: wrap;
   gap: 8px 18px;
-  justify-content: center;
+  justify-content: flex-end;
   min-width: 0;
   margin-top: 0;
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
@@ -254,6 +263,13 @@ th {
   letter-spacing: 1px;
   text-align: right;
   white-space: nowrap;
+}
+
+@media (max-width: 900px) {
+  .nav {
+    grid-column: 1 / -1;
+    justify-content: center;
+  }
 }
 
 .posts > .post {
