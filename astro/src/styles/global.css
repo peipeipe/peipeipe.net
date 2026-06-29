@@ -1165,8 +1165,13 @@ body.js-diary .diary-content h2 + p {
     margin: 0 auto;
   }
 
+  .site-info {
+    width: 100%;
+  }
+
   .site-description {
     margin: 3px 0;
+    white-space: nowrap;
   }
 
   .nav {
