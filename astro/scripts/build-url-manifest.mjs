@@ -21,6 +21,8 @@ const urls = [
   "/feed.xml",
   "/mountains/",
   "/mountains-data.json",
+  "/onsen/",
+  "/onsen-data.json",
   "/places/",
   "/places-data.json",
   "/places.json",

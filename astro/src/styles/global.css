@@ -1076,6 +1076,10 @@ body.js-diary .diary-content h2 + p {
   white-space: nowrap;
 }
 
+.checkin-item-category.onsen-category {
+  background: #ff7a59;
+}
+
 .checkin-item h3 {
   margin: 5px 0 0;
   overflow: hidden;

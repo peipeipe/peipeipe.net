@@ -1,9 +1,9 @@
 {
-  "generatedAt": "2026-06-27T09:36:29.741Z",
+  "generatedAt": "2026-06-29T12:01:26.473Z",
   "counts": {
     "posts": 357,
-    "diary": 48,
-    "urls": 424
+    "diary": 50,
+    "urls": 428
   },
   "urls": [
     "/",
@@ -417,11 +417,15 @@
     "/diary/2026-06-23/",
     "/diary/2026-06-25/",
     "/diary/2026-06-27/",
+    "/diary/2026-06-28/",
+    "/diary/2026-06-29/",
     "/domain-change/",
     "/feed.xml",
     "/Jekyll事始め/",
     "/mountains-data.json",
     "/mountains/",
+    "/onsen-data.json",
+    "/onsen/",
     "/places-data.json",
     "/places.json",
     "/places/",
