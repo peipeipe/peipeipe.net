@@ -1,5 +1,23 @@
 [
   {
+    "id": 19115852509,
+    "name": "朝のランニング",
+    "sport_type": "Run",
+    "distance": 12403.3,
+    "moving_time": 4555,
+    "elapsed_time": 4634,
+    "total_elevation_gain": 163.0,
+    "start_date": "2026-06-29T20:14:15Z",
+    "start_date_local": "2026-06-30T05:14:15Z",
+    "start_latlng": [
+      36.391673,
+      138.242935
+    ],
+    "average_speed": 2.723,
+    "max_speed": 5.433,
+    "summary_polyline": "w`c}EgjwjY{AhCGA[yAYD[s@o@gAkAsA[QSCG@_DjFWhAYp@wA~CkAtCaAvCuArD{@dCkApCiFvKKj@HZfAdAFN?FOJwAn@wAv@qAdAy@x@kCjDa@n@ST[VcBzBk@bAaAvB]dAa@xAQ~@WrBQ|BKlICfGIlEAzACbAQrCUrB]|Aq@zAa@h@mBlBY`@s@dBSdBI~@B`@Hj@P^X?XWFABD?DKZkB~D}@|Bu@fDWz@u@hBc@vAk@xAOp@UlAW`C]vEy@`N?~@Pf@~@h@b@Hl@K~ASd@KzAg@~@QH?lAQn@Av@Fb@H~@?a@jBIl@MpAkAzGWdBOn@Uh@[T_BLe@@e@Ci@D]J_@PQNmAVEL@@@?PGb@?HEHN\\FLTEHPFVVLFDJGB[MG?AB@BJ@PHb@^LND`@DHDXNPF`@?RBTHJ`@NBPFRF`@?VDbA@JRZL^Df@EPGMMCEAYHUAWGKGMWIq@IKQXMAKOMG]^Ol@GNIASOWKsAEPIDDRBv@FDBNZF?FIJq@T[LEF@JPJBFEBMFMFCHNF^HTVVDBXCXILDFFBVD@AYKWE_@GMGWAQK_@?[Wk@CYQMOWIc@?SCSS_@G]c@m@KSW[EKDKN?TJBAACWY[SEOOOMEW[AGOJI?i@m@Q?IIFWDAd@CNCNk@EQa@[Ug@[UIWXq@DUKGo@OYCEONa@@OEAKPUH?ORi@\\c@j@UtC[v@Ed@@dAGz@Wb@Gb@M|@]`AS\\U^{BEEuBI]AmABIAaBVuAj@]J}BVo@Bc@Kq@k@U_@C]ZyGRcCTcEZeEFm@RsARm@dAgC`@mAHc@Ri@@]^iBNgAlCqGXi@l@w@CEE@_@ZQAOQQ}@A]XoCJk@l@yA|@kAfAaAx@kAL[ZgANy@VaDPoEDeF?mBDeBBaHDkBDo@PiBl@mDLe@b@iAnBgErAqBv@_AtDaFdAiAfAy@jBeAtAg@HKEOkAoAMe@A?CD?NCIBKBCfBaDdEqJfFqNxDqJXkALYnAmBfAiBJKTATLj@j@vAnBTj@HXPIB?FLBh@Dd@JRd@\\vA|@LBjAiB"
+  },
+  {
     "id": 19092828654,
     "name": "朝のトレイルランニング",
     "sport_type": "TrailRun",
