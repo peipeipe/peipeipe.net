@@ -274,7 +274,32 @@ function ratingLabel(book) {
       --books-panel: #f6f3ed;
       --books-quote: #fffaf1;
       --books-accent: #80614e;
+      --books-field: #fff;
+      --books-focus: rgba(128, 97, 78, 0.22);
+      --books-cover-border: #ddd4c8;
+      --books-cover-bg: #eee9df;
+      --books-rating: #a96516;
+      --books-quote-border: #a98b76;
+      --books-quote-gradient: linear-gradient(90deg, rgba(169, 139, 118, 0.11), rgba(255, 250, 241, 0));
       padding-bottom: 2.4rem;
+    }
+
+    html[data-theme="dark"] .books-page {
+      --books-ink: #ece5da;
+      --books-muted: #b9ad9e;
+      --books-subtle: #92897f;
+      --books-rule: #463d35;
+      --books-paper: #1b1815;
+      --books-panel: #231f1a;
+      --books-quote: #211d18;
+      --books-accent: #d5ad86;
+      --books-field: #161411;
+      --books-focus: rgba(213, 173, 134, 0.24);
+      --books-cover-border: #554a3f;
+      --books-cover-bg: #2b251f;
+      --books-rating: #e6b15f;
+      --books-quote-border: #bf9874;
+      --books-quote-gradient: linear-gradient(90deg, rgba(191, 152, 116, 0.16), rgba(35, 31, 26, 0));
     }
 
     .books-header {
@@ -365,9 +390,9 @@ function ratingLabel(book) {
     .books-search input[type="search"],
     .books-filters select {
       width: 100%;
-      border: 1px solid #d6cec2;
+      border: 1px solid var(--books-rule);
       border-radius: 5px;
-      background: #fff;
+      background: var(--books-field);
       color: var(--books-ink);
       padding: 0.72rem 0.82rem;
       font-size: 16px;
@@ -377,7 +402,7 @@ function ratingLabel(book) {
     .books-search input:focus,
     .books-filters select:focus,
     .books-check input:focus {
-      outline: 2px solid rgba(128, 97, 78, 0.22);
+      outline: 2px solid var(--books-focus);
       outline-offset: 1px;
       border-color: var(--books-accent);
     }
@@ -398,9 +423,9 @@ function ratingLabel(book) {
       gap: 8px;
       align-items: center;
       min-height: 43px;
-      border: 1px solid #d6cec2;
+      border: 1px solid var(--books-rule);
       border-radius: 5px;
-      background: #fff;
+      background: var(--books-field);
       padding: 0 0.78rem;
     }
 
@@ -462,9 +487,9 @@ function ratingLabel(book) {
       display: block;
       width: 72px;
       min-height: 102px;
-      border: 1px solid #ddd4c8;
+      border: 1px solid var(--books-cover-border);
       border-radius: 4px;
-      background: #eee9df;
+      background: var(--books-cover-bg);
       overflow: hidden;
     }
 
@@ -507,9 +532,9 @@ function ratingLabel(book) {
 
     .book-quote-count {
       width: max-content;
-      border: 1px solid #d9cabc;
+      border: 1px solid var(--books-rule);
       border-radius: 999px;
-      background: #fff;
+      background: var(--books-field);
       color: var(--books-accent);
       padding: 3px 9px;
       font-size: 12px;
@@ -527,7 +552,7 @@ function ratingLabel(book) {
 
     .book-rating {
       margin: 0.35rem 0 0;
-      color: #a96516;
+      color: var(--books-rating);
       font-size: 12px;
       line-height: 1.2;
     }
@@ -537,15 +562,15 @@ function ratingLabel(book) {
       gap: 0.95rem;
       margin-top: 1rem;
       padding-top: 1rem;
-      border-top: 1px solid #e8e0d6;
+      border-top: 1px solid var(--books-rule);
     }
 
     .book-quotes blockquote {
       margin: 0;
-      border-left: 4px solid #a98b76;
-      background: linear-gradient(90deg, rgba(169, 139, 118, 0.11), rgba(255, 250, 241, 0));
+      border-left: 4px solid var(--books-quote-border);
+      background: var(--books-quote-gradient);
       padding: 0.15rem 0 0.18rem 1rem;
-      color: #332f2b;
+      color: var(--books-ink);
       font-size: 15px;
       line-height: 1.9;
       white-space: pre-wrap;
@@ -565,7 +590,7 @@ function ratingLabel(book) {
       margin: 1.25rem auto 0;
       border: 1px solid var(--books-accent);
       border-radius: 5px;
-      background: #fff;
+      background: var(--books-field);
       color: var(--books-accent);
       padding: 0.72rem 1.2rem;
       font-size: 15px;
