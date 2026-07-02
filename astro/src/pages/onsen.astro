@@ -1,10 +1,18 @@
 ---
 import MapLayout from "@/layouts/MapLayout.astro";
-import { getOnsenPlaces, summarizePlaces } from "@/lib/checkins";
+import { getOnsenPlaces, summarizePlaces, type CheckinPlace } from "@/lib/checkins";
 
 const places = getOnsenPlaces();
 const stats = summarizePlaces(places);
 const recentPlaces = places.slice(0, 60);
+
+const googleMapsUrl = (place: CheckinPlace) => {
+  const lat = Number(place.lat);
+  const lng = Number(place.lng);
+  const coordinates = Number.isFinite(lat) && Number.isFinite(lng) ? `${lat},${lng}` : "";
+  const query = [place.name, coordinates].filter(Boolean).join(" ");
+  return `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(query)}`;
+};
 ---
 
 <MapLayout
@@ -79,6 +87,15 @@ const recentPlaces = places.slice(0, 60);
                     <div class="checkin-item-meta">{place.checkin_count}回チェックイン</div>
                   </div>
                 </button>
+                <a
+                  class="checkin-item-map-link"
+                  href={googleMapsUrl(place)}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label={`${place.name}をGoogle Mapsで開く`}
+                >
+                  Google Mapsで開く
+                </a>
               </article>
             ))
           }
@@ -116,6 +133,14 @@ const recentPlaces = places.slice(0, 60);
     function markerRadius(place) {
       const count = Number(place.checkin_count) || 1;
       return Math.min(10, 5 + Math.log2(count + 1));
+    }
+
+    function googleMapsUrl(place) {
+      const lat = Number(place.lat);
+      const lng = Number(place.lng);
+      const coordinates = Number.isFinite(lat) && Number.isFinite(lng) ? `${lat},${lng}` : "";
+      const query = [place.name, coordinates].filter(Boolean).join(" ");
+      return `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(query)}`;
     }
 
     function render() {
@@ -169,6 +194,7 @@ const recentPlaces = places.slice(0, 60);
             ? `<img src="${escapeHtml(place.photos[0])}" alt="${escapeHtml(place.name)}の写真" loading="lazy">`
             : '<div class="checkin-item-placeholder">♨️</div>';
           const comment = place.user_comment ? `<p class="checkin-item-comment">${escapeHtml(place.user_comment)}</p>` : "";
+          const mapsUrl = googleMapsUrl(place);
           return `
             <article class="checkin-item" id="onsen-item-${place._index}">
               <button class="checkin-item-focus" type="button" data-place-index="${place._index}">
@@ -184,6 +210,7 @@ const recentPlaces = places.slice(0, 60);
                   <div class="checkin-item-meta">${Number(place.checkin_count) || 1}回チェックイン</div>
                 </div>
               </button>
+              <a class="checkin-item-map-link" href="${escapeHtml(mapsUrl)}" target="_blank" rel="noopener noreferrer" aria-label="${escapeHtml(place.name || "")}をGoogle Mapsで開く">Google Mapsで開く</a>
             </article>
           `;
         })
@@ -211,7 +238,6 @@ const recentPlaces = places.slice(0, 60);
       const target = document.getElementById(`onsen-item-${index}`);
       if (target) {
         target.classList.add("active");
-        target.scrollIntoView({ block: "nearest", behavior: "smooth" });
       }
     }
 
@@ -220,7 +246,8 @@ const recentPlaces = places.slice(0, 60);
       const photoBlock = photo ? `<div class="popup-image"><img src="${escapeHtml(photo)}" alt="${escapeHtml(place.name || "")}"></div>` : "";
       const commentBlock = place.user_comment ? `<div class="popup-comment">"${escapeHtml(place.user_comment)}"</div>` : "";
       const dateBlock = place.date ? `<div class="popup-date">📅 ${escapeHtml(place.date)} 訪問</div>` : "";
-      return `<div class="map-popup-content">${photoBlock}<h4 class="popup-title">♨️ ${escapeHtml(place.name || "")}</h4><p class="popup-address">📍 ${escapeHtml(place.address || "")}</p>${commentBlock}${dateBlock}</div>`;
+      const mapsBlock = `<a class="popup-map-link" href="${escapeHtml(googleMapsUrl(place))}" target="_blank" rel="noopener noreferrer">Google Mapsで開く</a>`;
+      return `<div class="map-popup-content">${photoBlock}<h4 class="popup-title">♨️ ${escapeHtml(place.name || "")}</h4><p class="popup-address">📍 ${escapeHtml(place.address || "")}</p>${commentBlock}${dateBlock}${mapsBlock}</div>`;
     }
 
     function escapeHtml(value) {

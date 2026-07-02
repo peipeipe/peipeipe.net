@@ -1113,6 +1113,26 @@ body.js-diary .diary-content h2 + p {
   color: #777;
 }
 
+.checkin-item-map-link,
+.popup-map-link {
+  display: inline-flex;
+  align-items: center;
+  color: #2f6fa8;
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 1.35;
+  text-decoration: none;
+}
+
+.checkin-item-map-link {
+  margin: 0 9px 9px 95px;
+}
+
+.checkin-item-map-link:hover,
+.popup-map-link:hover {
+  text-decoration: underline;
+}
+
 .checkin-list-note,
 .checkin-empty {
   padding: 8px 4px;
@@ -1145,6 +1165,10 @@ body.js-diary .diary-content h2 + p {
   color: #555;
   font-size: 12px;
   line-height: 1.35;
+}
+
+.popup-map-link {
+  margin-top: 8px;
 }
 
 @media (max-width: 600px) {
@@ -1294,5 +1318,9 @@ body.js-diary .diary-content h2 + p {
   .checkin-item-photo {
     width: 68px;
     height: 68px;
+  }
+
+  .checkin-item-map-link {
+    margin-left: 87px;
   }
 }
