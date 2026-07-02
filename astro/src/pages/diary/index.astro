@@ -1,6 +1,6 @@
 ---
 import BaseLayout from "@/layouts/BaseLayout.astro";
-import { getDiaryEntries } from "@/lib/content";
+import { datePartsInTokyo, getDiaryEntries } from "@/lib/content";
 
 const entries = await getDiaryEntries();
 const groupedEntries = groupEntriesByMonth(entries);
@@ -9,7 +9,8 @@ function groupEntriesByMonth(entries) {
   const groups = [];
 
   for (const entry of entries) {
-    const monthKey = `${entry.date.getFullYear()}-${entry.date.getMonth()}`;
+    const parts = datePartsInTokyo(entry.date);
+    const monthKey = `${parts.year}-${parts.month}`;
     const lastGroup = groups.at(-1);
     const imageSrcs = getImageSrcs(entry.html);
     const item = { ...entry, imageSrcs };
@@ -20,7 +21,7 @@ function groupEntriesByMonth(entries) {
     } else {
       groups.push({
         key: monthKey,
-        label: `${entry.date.getFullYear()}年${entry.date.getMonth() + 1}月`,
+        label: `${parts.year}年${Number(parts.month)}月`,
         entries: [item],
         photoItems: getPhotoItems(item),
       });

@@ -349,7 +349,7 @@ function pad2(value: number): string {
   return String(value).padStart(2, "0");
 }
 
-function datePartsInTokyo(date: Date) {
+export function datePartsInTokyo(date: Date) {
   const parts = new Intl.DateTimeFormat("en", {
     timeZone: "Asia/Tokyo",
     year: "numeric",
