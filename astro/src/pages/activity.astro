@@ -335,18 +335,27 @@ const recentActivities = activities.slice(0, 30);
         maxZoom: 19,
       });
 
-      const gsiLayer = L.tileLayer("https://cyberjapandata.gsi.go.jp/xyz/std/{z}/{x}/{y}.png", {
-        attribution: '<a href="https://maps.gsi.go.jp/development/ichiran.html">地理院タイル</a>',
-        minZoom: 5,
-        maxZoom: 18,
-      });
+      const gsiShadedLayer = L.layerGroup([
+        L.tileLayer("https://cyberjapandata.gsi.go.jp/xyz/std/{z}/{x}/{y}.png", {
+          attribution: '<a href="https://maps.gsi.go.jp/development/ichiran.html">地理院タイル</a>',
+          minZoom: 5,
+          maxZoom: 18,
+        }),
+        L.tileLayer("https://cyberjapandata.gsi.go.jp/xyz/hillshademap/{z}/{x}/{y}.png", {
+          attribution: '<a href="https://maps.gsi.go.jp/development/ichiran.html">地理院タイル</a>',
+          minZoom: 5,
+          maxZoom: 18,
+          maxNativeZoom: 16,
+          opacity: 0.42,
+        }),
+      ]);
 
       cartoLayer.addTo(map);
       L.control
         .layers(
           {
             "CARTO Voyager": cartoLayer,
-            "地理院地図": gsiLayer,
+            "地理院地図（陰影）": gsiShadedLayer,
           },
           null,
           { collapsed: false },

@@ -430,9 +430,35 @@ function ratingLabel(book) {
     }
 
     .books-check input {
+      appearance: none;
+      display: grid;
+      flex: 0 0 auto;
+      place-content: center;
       width: 18px;
       height: 18px;
-      accent-color: var(--books-accent);
+      margin: 0;
+      border: 2px solid var(--books-accent);
+      border-radius: 4px;
+      background: var(--books-paper);
+    }
+
+    .books-check input::before {
+      content: "";
+      width: 5px;
+      height: 9px;
+      margin-top: -2px;
+      border: solid #fff;
+      border-width: 0 2px 2px 0;
+      transform: rotate(45deg) scale(0);
+      transition: transform 120ms ease;
+    }
+
+    .books-check input:checked {
+      background: var(--books-accent);
+    }
+
+    .books-check input:checked::before {
+      transform: rotate(45deg) scale(1);
     }
 
     .books-check span {
