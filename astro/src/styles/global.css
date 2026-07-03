@@ -247,8 +247,8 @@ th {
 
 .masthead {
   display: grid;
-  grid-template-columns: 70px minmax(180px, 1fr) auto;
-  gap: 14px 15px;
+  grid-template-columns: 1fr;
+  gap: 18px;
   align-items: center;
   border-bottom: 1px solid var(--color-border-soft);
   padding: 20px 0;
@@ -258,6 +258,16 @@ th {
 .masthead::after {
   display: none;
   content: none;
+}
+
+.site-brand {
+  display: grid;
+  grid-template-columns: 70px minmax(180px, 1fr);
+  gap: 15px;
+  align-items: center;
+  width: 100%;
+  max-width: 740px;
+  margin: 0 auto;
 }
 
 .site-avatar {
@@ -301,9 +311,9 @@ th {
   display: flex;
   flex-wrap: wrap;
   gap: 8px 18px;
-  justify-content: flex-end;
+  justify-content: center;
   min-width: 0;
-  margin-top: 0;
+  margin-top: 2px;
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 18px;
   line-height: 1.4;
@@ -361,8 +371,11 @@ html[data-theme="dark"] .theme-toggle-moon {
 }
 
 @media (max-width: 900px) {
+  .site-brand {
+    max-width: none;
+  }
+
   .nav {
-    grid-column: 1 / -1;
     justify-content: center;
   }
 }
@@ -1296,6 +1309,12 @@ body.js-diary .diary-content h2 + p {
     grid-template-columns: 1fr;
     justify-content: center;
     text-align: center;
+  }
+
+  .site-brand {
+    grid-template-columns: 1fr;
+    justify-items: center;
+    gap: 8px;
   }
 
   .site-avatar,

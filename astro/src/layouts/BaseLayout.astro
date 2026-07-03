@@ -125,13 +125,15 @@ const structuredData = [websiteJsonLd, ...(Array.isArray(jsonLd) ? jsonLd : json
     <div class="wrapper-masthead">
       <div class="container">
         <header class="masthead clearfix">
-          <a href="/" class="site-avatar" aria-label={siteName}>
-            <img src={avatar} alt="" />
-          </a>
+          <div class="site-brand">
+            <a href="/" class="site-avatar" aria-label={siteName}>
+              <img src={avatar} alt="" />
+            </a>
 
-          <div class="site-info">
-            <h1 class="site-name"><a href="/">{siteName}</a></h1>
-            <p class="site-description">{siteDescription}</p>
+            <div class="site-info">
+              <h1 class="site-name"><a href="/">{siteName}</a></h1>
+              <p class="site-description">{siteDescription}</p>
+            </div>
           </div>
 
           <nav class="nav" aria-label="Main navigation">
