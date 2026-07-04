@@ -639,6 +639,61 @@ html[data-theme="dark"] .theme-toggle-moon {
   white-space: nowrap;
 }
 
+.amazon-link-card {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin: 18px 0;
+  border: 1px solid color-mix(in srgb, var(--amazon-bg) 45%, var(--color-border));
+  border-radius: 6px;
+  background: var(--color-surface);
+  color: var(--color-text);
+  min-width: 0;
+  padding: 12px 14px;
+  text-decoration: none;
+}
+
+.amazon-link-card:hover {
+  border-color: var(--amazon-bg-hover);
+  text-decoration: none;
+}
+
+.amazon-link-card-badge {
+  flex: 0 0 auto;
+  border-radius: 4px;
+  background-color: var(--amazon-bg);
+  color: #fff;
+  padding: 5px 9px;
+  font-size: 0.82em;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.amazon-link-card-body {
+  display: flex;
+  flex: 1 1 auto;
+  flex-direction: column;
+  gap: 3px;
+  min-width: 0;
+}
+
+.amazon-link-card-title {
+  overflow: hidden;
+  color: var(--color-heading);
+  font-weight: 700;
+  line-height: 1.35;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.amazon-link-card-source {
+  overflow: hidden;
+  color: var(--color-subtle);
+  font-size: 0.82em;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
 .diary-entry {
   max-width: 800px;
   margin: 0 auto;

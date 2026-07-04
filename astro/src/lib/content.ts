@@ -65,7 +65,7 @@ async function readEntry(file: string, kind: "post" | "diary"): Promise<Entry> {
   const fileDate = dateFromFilename(filename);
   const date = parseDate(parsed.data.date) || fileDate || new Date(0);
   const title = String(parsed.data.title || titleFromFilename(filename) || filename);
-  const content = await renderStandaloneLinkCards(normalizeMarkdownImageUrls(parsed.content));
+  const content = await renderStandaloneLinkCards(normalizeMarkdownImageUrls(parsed.content), kind);
   const html = await marked.parse(content, { async: true, gfm: true, breaks: kind === "diary" });
   const excerpt = makeExcerpt(html);
   const url = kind === "diary"
@@ -176,11 +176,13 @@ function normalizeMarkdownImageUrls(content: string): string {
   });
 }
 
-async function renderStandaloneLinkCards(content: string): Promise<string> {
+async function renderStandaloneLinkCards(content: string, kind: "post" | "diary"): Promise<string> {
   const lines = content.split("\n");
   const rendered = await Promise.all(lines.map(async (line) => {
     const candidate = linkCardCandidate(line);
-    if (!candidate || !shouldRenderLinkCard(candidate.url)) return line;
+    if (!candidate) return line;
+    if (kind === "post" && isAmazonUrl(candidate.url)) return renderAmazonLinkCard(candidate);
+    if (!shouldRenderLinkCard(candidate.url)) return line;
 
     const metadata = await getLinkCardMetadata(candidate.url);
     return renderLinkCard(metadata || fallbackLinkCardMetadata(candidate));
@@ -191,6 +193,8 @@ async function renderStandaloneLinkCards(content: string): Promise<string> {
 
 function linkCardCandidate(line: string): LinkCardCandidate | undefined {
   const trimmed = line.trim();
+  if (trimmed.startsWith("[") && trimmed.endsWith("]")) return undefined;
+
   const match = trimmed.match(/^(?:(.*?)\s+)?<?(https?:\/\/\S+?)>?$/);
   if (!match) return undefined;
 
@@ -210,6 +214,17 @@ function shouldRenderLinkCard(value: string): boolean {
   const url = new URL(value);
   const hostname = url.hostname.replace(/^www\./, "").toLowerCase();
   return !["x.com", "twitter.com"].includes(hostname);
+}
+
+function isAmazonUrl(value: string): boolean {
+  const hostname = new URL(value).hostname.replace(/^www\./, "").toLowerCase();
+  return hostname === "amzn.to"
+    || hostname === "a.co"
+    || hostname === "amzn.asia"
+    || hostname === "amazon.com"
+    || hostname.endsWith(".amazon.com")
+    || hostname === "amazon.co.jp"
+    || hostname.endsWith(".amazon.co.jp");
 }
 
 async function getLinkCardMetadata(url: string): Promise<LinkCardMetadata | undefined> {
@@ -339,6 +354,13 @@ function renderLinkCard(metadata: LinkCardMetadata): string {
   const source = metadata.siteName || metadata.host;
 
   return `<a class="link-card" href="${escapeHtml(metadata.url)}" target="_blank" rel="noopener noreferrer">${media}<span class="link-card-body"><span class="link-card-title">${escapeHtml(metadata.title)}</span>${description}<span class="link-card-source">${escapeHtml(source)}</span></span></a>`;
+}
+
+function renderAmazonLinkCard(candidate: LinkCardCandidate): string {
+  const title = candidate.fallbackTitle || "Amazon.co.jpで詳細を見る";
+  const host = new URL(candidate.url).hostname.replace(/^www\./, "");
+
+  return `<a class="amazon-link-card" href="${escapeHtml(candidate.url)}" target="_blank" rel="nofollow noopener noreferrer"><span class="amazon-link-card-badge">Amazon</span><span class="amazon-link-card-body"><span class="amazon-link-card-title">${escapeHtml(title)}</span><span class="amazon-link-card-source">${escapeHtml(host)}</span></span></a>`;
 }
 
 function escapeRegExp(value: string): string {
