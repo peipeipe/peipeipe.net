@@ -357,10 +357,29 @@ function renderLinkCard(metadata: LinkCardMetadata): string {
 }
 
 function renderAmazonLinkCard(candidate: LinkCardCandidate): string {
-  const title = candidate.fallbackTitle || "Amazon.co.jpで詳細を見る";
-  const host = new URL(candidate.url).hostname.replace(/^www\./, "");
+  const url = new URL(candidate.url);
+  const title = candidate.fallbackTitle || amazonTitleFromUrl(url) || "Amazon.co.jpで詳細を見る";
+  const asin = amazonAsinFromUrl(url);
+  const image = asin
+    ? `<div class="krb-amzlt-image" style="float:left;margin:0px 12px 1px 0px;"><a href="${escapeHtml(candidate.url)}"><img width="160px" src="https://images-na.ssl-images-amazon.com/images/P/${escapeHtml(asin)}.09.LZZZZZZZ"></a></div>`
+    : "";
 
-  return `<a class="amazon-link-card" href="${escapeHtml(candidate.url)}" target="_blank" rel="nofollow noopener noreferrer"><span class="amazon-link-card-badge">Amazon</span><span class="amazon-link-card-body"><span class="amazon-link-card-title">${escapeHtml(title)}</span><span class="amazon-link-card-source">${escapeHtml(host)}</span></span></a>`;
+  return `<div class="krb-amzlt-box" style="margin-bottom:0px;">${image}<div class="krb-amzlt-info" style="line-height:120%; margin-bottom: 10px"><div class="krb-amzlt-name" style="margin-bottom:10px;line-height:120%"><a href="${escapeHtml(candidate.url)}" name="amazletlink" target="_blank" rel="nofollow" rel="nofollow">${escapeHtml(title)}</a></div><div class="krb-amzlt-detail"></div><div class="krb-amzlt-sub-info" style="float: left;"><div class="krb-amzlt-link" style="margin-top: 5px"><a href="${escapeHtml(candidate.url)}" name="amazletlink" target="_blank" rel="nofollow" rel="nofollow">Amazon.co.jpで詳細を見る</a></div></div></div><div class="krb-amzlt-footer" style="clear: left"></div></div>`;
+}
+
+function amazonAsinFromUrl(url: URL): string {
+  return url.pathname.match(/\/(?:dp|gp\/product)\/([A-Z0-9]{10})/i)?.[1]?.toUpperCase() || "";
+}
+
+function amazonTitleFromUrl(url: URL): string {
+  const match = url.pathname.match(/^\/([^/]+)\/(?:dp|gp\/product)\//i);
+  if (!match) return "";
+
+  try {
+    return decodeURIComponent(match[1]).replace(/-/g, " ").trim();
+  } catch {
+    return "";
+  }
 }
 
 function escapeRegExp(value: string): string {
