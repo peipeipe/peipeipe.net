@@ -759,6 +759,56 @@ body.js-diary .diary-content h2 + p {
   box-shadow: 0 2px 8px var(--color-shadow);
 }
 
+.diary-content-image {
+  cursor: zoom-in;
+}
+
+.diary-lightbox {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  background: rgba(0, 0, 0, 0.85);
+}
+
+.diary-lightbox.open {
+  display: flex;
+}
+
+.diary-lightbox img {
+  max-width: 100%;
+  max-height: 100%;
+  border-radius: 8px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.6);
+  cursor: zoom-out;
+}
+
+.diary-lightbox-close {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  width: 40px;
+  height: 40px;
+  border: 0;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.15);
+  color: #fff;
+  font-size: 20px;
+  line-height: 1;
+  cursor: pointer;
+}
+
+.diary-lightbox-close:hover {
+  background: rgba(255, 255, 255, 0.3);
+}
+
+body.diary-lightbox-open {
+  overflow: hidden;
+}
+
 .gmnoprint img {
   max-width: none;
 }

@@ -53,6 +53,11 @@ const diaryJsonLd = {
     <div class="diary-content" set:html={entry.html} />
   </article>
 
+  <div class="diary-lightbox" id="diary-lightbox" role="dialog" aria-modal="true" aria-hidden="true">
+    <button type="button" class="diary-lightbox-close" aria-label="閉じる">✕</button>
+    <img src="" alt="">
+  </div>
+
   <script is:inline>
     (function() {
       var content = document.querySelector(".diary-content");
@@ -69,6 +74,47 @@ const diaryJsonLd = {
         var blocks = content.querySelectorAll(".diary-block");
         var latestBlock = blocks[blocks.length - 1];
         if (latestBlock) latestBlock.appendChild(el);
+      });
+    })();
+  </script>
+
+  <script is:inline>
+    (function() {
+      var content = document.querySelector(".diary-content");
+      var lightbox = document.getElementById("diary-lightbox");
+      if (!content || !lightbox) return;
+      var lightboxImg = lightbox.querySelector("img");
+      var closeBtn = lightbox.querySelector(".diary-lightbox-close");
+
+      function openLightbox(src, alt) {
+        lightboxImg.src = src;
+        lightboxImg.alt = alt || "";
+        lightbox.classList.add("open");
+        lightbox.setAttribute("aria-hidden", "false");
+        document.body.classList.add("diary-lightbox-open");
+      }
+
+      function closeLightbox() {
+        lightbox.classList.remove("open");
+        lightbox.setAttribute("aria-hidden", "true");
+        document.body.classList.remove("diary-lightbox-open");
+        lightboxImg.src = "";
+      }
+
+      Array.from(content.querySelectorAll("img")).forEach(function(img) {
+        if (img.closest(".link-card-media") || img.closest(".krb-amzlt-image")) return;
+        img.classList.add("diary-content-image");
+        img.addEventListener("click", function() {
+          openLightbox(img.currentSrc || img.src, img.alt);
+        });
+      });
+
+      lightbox.addEventListener("click", function(event) {
+        if (event.target === lightbox || event.target === closeBtn) closeLightbox();
+      });
+
+      document.addEventListener("keydown", function(event) {
+        if (event.key === "Escape" && lightbox.classList.contains("open")) closeLightbox();
       });
     })();
   </script>
