@@ -66,16 +66,24 @@ const googleMapsUrl = (place: CheckinPlace) => {
           {
             recentPlaces.map((place, index) => (
               <article class="checkin-item" id={`onsen-item-${index}`}>
-                <button class="checkin-item-focus" type="button" data-place-index={index}>
-                  <div class="checkin-item-photo">
-                    {
-                      place.photos?.[0] ? (
-                        <img src={place.photos[0]} alt={`${place.name}の写真`} loading="lazy" />
-                      ) : (
-                        <div class="checkin-item-placeholder">♨️</div>
-                      )
-                    }
+                {place.photos?.length ? (
+                  <button
+                    class="checkin-item-photo checkin-item-photo-btn"
+                    type="button"
+                    data-lightbox-index={index}
+                    aria-label={`${place.name}の写真を拡大 (${place.photos.length}枚)`}
+                  >
+                    <img src={place.photos[0]} alt={`${place.name}の写真`} loading="lazy" />
+                    {place.photos.length > 1 && (
+                      <span class="checkin-item-photo-count">📷 {place.photos.length}</span>
+                    )}
+                  </button>
+                ) : (
+                  <div class="checkin-item-photo checkin-item-photo--empty">
+                    <div class="checkin-item-placeholder">♨️</div>
                   </div>
+                )}
+                <button class="checkin-item-focus" type="button" data-place-index={index}>
                   <div class="checkin-item-body">
                     <div class="checkin-item-heading">
                       <span class="checkin-item-category onsen-category">♨️ 温泉・サウナ</span>
@@ -84,18 +92,20 @@ const googleMapsUrl = (place: CheckinPlace) => {
                     <h3>{place.name}</h3>
                     <p class="checkin-item-address">{place.address}</p>
                     {place.user_comment && <p class="checkin-item-comment">{place.user_comment}</p>}
-                    <div class="checkin-item-meta">{place.checkin_count}回チェックイン</div>
                   </div>
                 </button>
-                <a
-                  class="checkin-item-map-link"
-                  href={googleMapsUrl(place)}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  aria-label={`${place.name}をGoogle Mapsで開く`}
-                >
-                  Google Mapsで開く
-                </a>
+                <div class="checkin-item-footer">
+                  <span class="checkin-item-meta">{place.checkin_count}回チェックイン</span>
+                  <a
+                    class="checkin-item-map-link"
+                    href={googleMapsUrl(place)}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label={`${place.name}をGoogle Mapsで開く`}
+                  >
+                    Google Maps ↗
+                  </a>
+                </div>
               </article>
             ))
           }
@@ -104,6 +114,16 @@ const googleMapsUrl = (place: CheckinPlace) => {
       </aside>
     </div>
   </section>
+
+  <div class="photo-lightbox" id="onsen-lightbox" role="dialog" aria-modal="true" aria-hidden="true">
+    <button type="button" class="photo-lightbox-close" aria-label="閉じる">✕</button>
+    <button type="button" class="photo-lightbox-nav prev" aria-label="前の写真" hidden>‹</button>
+    <figure class="photo-lightbox-figure">
+      <img src="" alt="" />
+      <figcaption class="photo-lightbox-counter" hidden></figcaption>
+    </figure>
+    <button type="button" class="photo-lightbox-nav next" aria-label="次の写真" hidden>›</button>
+  </div>
 
   <script is:inline>
     const DATA_URL = "/onsen-data.json";
@@ -190,15 +210,16 @@ const googleMapsUrl = (place: CheckinPlace) => {
       const visible = filtered.slice(0, LIST_LIMIT);
       list.innerHTML = visible
         .map((place) => {
-          const photo = place.photos && place.photos.length
-            ? `<img src="${escapeHtml(place.photos[0])}" alt="${escapeHtml(place.name)}の写真" loading="lazy">`
-            : '<div class="checkin-item-placeholder">♨️</div>';
+          const photoCount = (place.photos && place.photos.length) || 0;
+          const photoCell = photoCount
+            ? `<button class="checkin-item-photo checkin-item-photo-btn" type="button" data-lightbox-index="${place._index}" aria-label="${escapeHtml(place.name || "")}の写真を拡大 (${photoCount}枚)"><img src="${escapeHtml(place.photos[0])}" alt="${escapeHtml(place.name || "")}の写真" loading="lazy">${photoCount > 1 ? `<span class="checkin-item-photo-count">📷 ${photoCount}</span>` : ""}</button>`
+            : '<div class="checkin-item-photo checkin-item-photo--empty"><div class="checkin-item-placeholder">♨️</div></div>';
           const comment = place.user_comment ? `<p class="checkin-item-comment">${escapeHtml(place.user_comment)}</p>` : "";
           const mapsUrl = googleMapsUrl(place);
           return `
             <article class="checkin-item" id="onsen-item-${place._index}">
+              ${photoCell}
               <button class="checkin-item-focus" type="button" data-place-index="${place._index}">
-                <div class="checkin-item-photo">${photo}</div>
                 <div class="checkin-item-body">
                   <div class="checkin-item-heading">
                     <span class="checkin-item-category onsen-category">♨️ 温泉・サウナ</span>
@@ -207,10 +228,12 @@ const googleMapsUrl = (place: CheckinPlace) => {
                   <h3>${escapeHtml(place.name || "")}</h3>
                   <p class="checkin-item-address">${escapeHtml(place.address || "")}</p>
                   ${comment}
-                  <div class="checkin-item-meta">${Number(place.checkin_count) || 1}回チェックイン</div>
                 </div>
               </button>
-              <a class="checkin-item-map-link" href="${escapeHtml(mapsUrl)}" target="_blank" rel="noopener noreferrer" aria-label="${escapeHtml(place.name || "")}をGoogle Mapsで開く">Google Mapsで開く</a>
+              <div class="checkin-item-footer">
+                <span class="checkin-item-meta">${Number(place.checkin_count) || 1}回チェックイン</span>
+                <a class="checkin-item-map-link" href="${escapeHtml(mapsUrl)}" target="_blank" rel="noopener noreferrer" aria-label="${escapeHtml(place.name || "")}をGoogle Mapsで開く">Google Maps ↗</a>
+              </div>
             </article>
           `;
         })
@@ -242,12 +265,98 @@ const googleMapsUrl = (place: CheckinPlace) => {
     }
 
     function popupHtml(place) {
-      const photo = place.photos && place.photos.length ? place.photos[0] : "";
-      const photoBlock = photo ? `<div class="popup-image"><img src="${escapeHtml(photo)}" alt="${escapeHtml(place.name || "")}"></div>` : "";
+      const photoCount = (place.photos && place.photos.length) || 0;
+      const photoBlock = photoCount
+        ? `<button class="popup-image" type="button" data-lightbox-index="${place._index}" aria-label="${escapeHtml(place.name || "")}の写真を拡大 (${photoCount}枚)"><img src="${escapeHtml(place.photos[0])}" alt="${escapeHtml(place.name || "")}">${photoCount > 1 ? `<span class="popup-image-count">📷 ${photoCount}</span>` : ""}</button>`
+        : "";
       const commentBlock = place.user_comment ? `<div class="popup-comment">"${escapeHtml(place.user_comment)}"</div>` : "";
       const dateBlock = place.date ? `<div class="popup-date">📅 ${escapeHtml(place.date)} 訪問</div>` : "";
       const mapsBlock = `<a class="popup-map-link" href="${escapeHtml(googleMapsUrl(place))}" target="_blank" rel="noopener noreferrer">Google Mapsで開く</a>`;
       return `<div class="map-popup-content">${photoBlock}<h4 class="popup-title">♨️ ${escapeHtml(place.name || "")}</h4><p class="popup-address">📍 ${escapeHtml(place.address || "")}</p>${commentBlock}${dateBlock}${mapsBlock}</div>`;
+    }
+
+    let lightboxPhotos = [];
+    let lightboxIndex = 0;
+
+    // Foursquare の写真 URL は prefix + サイズ + suffix 構造。拡大時は元解像度を使う。
+    function highResPhoto(url) {
+      if (!url) return "";
+      return url.replace(/\/(?:\d+x\d+|original|cap\d+|width\d+|height\d+)\//, "/original/");
+    }
+
+    function updateLightbox() {
+      const lightbox = document.getElementById("onsen-lightbox");
+      const img = lightbox.querySelector("img");
+      const counter = lightbox.querySelector(".photo-lightbox-counter");
+      const prev = lightbox.querySelector(".photo-lightbox-nav.prev");
+      const next = lightbox.querySelector(".photo-lightbox-nav.next");
+      const multiple = lightboxPhotos.length > 1;
+      img.src = highResPhoto(lightboxPhotos[lightboxIndex]);
+      counter.textContent = `${lightboxIndex + 1} / ${lightboxPhotos.length}`;
+      counter.hidden = !multiple;
+      prev.hidden = !multiple;
+      next.hidden = !multiple;
+    }
+
+    function openLightbox(photos, start) {
+      if (!photos || !photos.length) return;
+      lightboxPhotos = photos;
+      lightboxIndex = Math.min(Math.max(start || 0, 0), photos.length - 1);
+      const lightbox = document.getElementById("onsen-lightbox");
+      updateLightbox();
+      lightbox.classList.add("open");
+      lightbox.setAttribute("aria-hidden", "false");
+      document.body.classList.add("photo-lightbox-open");
+    }
+
+    function closeLightbox() {
+      const lightbox = document.getElementById("onsen-lightbox");
+      lightbox.classList.remove("open");
+      lightbox.setAttribute("aria-hidden", "true");
+      document.body.classList.remove("photo-lightbox-open");
+      lightbox.querySelector("img").src = "";
+      lightboxPhotos = [];
+    }
+
+    function stepLightbox(delta) {
+      if (lightboxPhotos.length < 2) return;
+      lightboxIndex = (lightboxIndex + delta + lightboxPhotos.length) % lightboxPhotos.length;
+      updateLightbox();
+    }
+
+    function initLightbox() {
+      const lightbox = document.getElementById("onsen-lightbox");
+      const img = lightbox.querySelector("img");
+      lightbox.querySelector(".photo-lightbox-close").addEventListener("click", closeLightbox);
+      lightbox.querySelector(".photo-lightbox-nav.prev").addEventListener("click", (event) => {
+        event.stopPropagation();
+        stepLightbox(-1);
+      });
+      lightbox.querySelector(".photo-lightbox-nav.next").addEventListener("click", (event) => {
+        event.stopPropagation();
+        stepLightbox(1);
+      });
+      lightbox.addEventListener("click", (event) => {
+        if (event.target === lightbox) closeLightbox();
+      });
+      img.addEventListener("click", (event) => {
+        event.stopPropagation();
+        if (lightboxPhotos.length > 1) stepLightbox(1);
+        else closeLightbox();
+      });
+      document.addEventListener("keydown", (event) => {
+        if (!lightbox.classList.contains("open")) return;
+        if (event.key === "Escape") closeLightbox();
+        else if (event.key === "ArrowLeft") stepLightbox(-1);
+        else if (event.key === "ArrowRight") stepLightbox(1);
+      });
+      document.addEventListener("click", (event) => {
+        const trigger = event.target.closest("[data-lightbox-index]");
+        if (!trigger) return;
+        event.preventDefault();
+        const place = placesData[Number(trigger.dataset.lightboxIndex)];
+        if (place) openLightbox(place.photos, 0);
+      });
     }
 
     function escapeHtml(value) {
@@ -274,6 +383,7 @@ const googleMapsUrl = (place: CheckinPlace) => {
     }
 
     document.addEventListener("DOMContentLoaded", () => {
+      initLightbox();
       const search = document.getElementById("onsen-search");
       search.addEventListener("input", (event) => {
         window.clearTimeout(searchTimer);
