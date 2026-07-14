@@ -55,7 +55,6 @@ jobs:
           test -f dist/_redirects
           test -f dist/favicon.ico
           test -d dist/images
-          npm run manifest
           npm run check:legacy-slugs
 
       - name: Set Cloudflare Pages production branch

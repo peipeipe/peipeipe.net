@@ -16,7 +16,6 @@ Build and verify:
 cd astro
 PATH=/home/peipeipe/.local/nodejs/current/bin:$PATH npm ci
 PATH=/home/peipeipe/.local/nodejs/current/bin:$PATH npm run build
-PATH=/home/peipeipe/.local/nodejs/current/bin:$PATH npm run manifest
 PATH=/home/peipeipe/.local/nodejs/current/bin:$PATH npm run check:legacy-slugs
 ```
 

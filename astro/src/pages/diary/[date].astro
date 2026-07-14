@@ -60,6 +60,15 @@ const diaryJsonLd = {
 
   <script is:inline>
     (function() {
+      if (window.location.hash) return;
+      var header = document.querySelector(".diary-header");
+      if (!header || window.scrollY > 0) return;
+      window.scrollTo(0, header.getBoundingClientRect().top + window.scrollY);
+    })();
+  </script>
+
+  <script is:inline>
+    (function() {
       var content = document.querySelector(".diary-content");
       if (!content) return;
       document.body.classList.add("js-diary");

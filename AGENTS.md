@@ -10,7 +10,7 @@ Automation and data refresh scripts live in `scripts/`. GitHub Actions workflows
 
 - `cd astro && PATH=/home/peipeipe/.local/nodejs/current/bin:$PATH npm ci`: install Astro dependencies with the required Node version.
 - `cd astro && PATH=/home/peipeipe/.local/nodejs/current/bin:$PATH npm run build`: build the production Astro site.
-- `cd astro && PATH=/home/peipeipe/.local/nodejs/current/bin:$PATH npm run manifest && PATH=/home/peipeipe/.local/nodejs/current/bin:$PATH npm run check:legacy-slugs`: verify Astro URL coverage and legacy slug handling.
+- `cd astro && PATH=/home/peipeipe/.local/nodejs/current/bin:$PATH npm run check:legacy-slugs`: verify legacy slug handling.
 
 ## Coding Style & Naming Conventions
 
@@ -18,7 +18,7 @@ Use two-space indentation for Astro, HTML, YAML, JavaScript, and TypeScript. Kee
 
 ## Testing Guidelines
 
-There is no single full test suite. Validate site changes with `npm run build`, `npm run manifest`, and `npm run check:legacy-slugs` from `astro/` using the required Node path. For Python automation, run the specific script or focused helper test, for example `python scripts/test_amazon_enhancement.py`.
+There is no single full test suite. Validate site changes with `npm run build` and `npm run check:legacy-slugs` from `astro/` using the required Node path. For Python automation, run the specific script or focused helper test, for example `python scripts/test_amazon_enhancement.py`.
 
 ## Commit & Pull Request Guidelines
 

@@ -15,11 +15,10 @@ cd astro
 PATH=/home/peipeipe/.local/nodejs/current/bin:$PATH npm ci
 PATH=/home/peipeipe/.local/nodejs/current/bin:$PATH npm run dev      # local dev server
 PATH=/home/peipeipe/.local/nodejs/current/bin:$PATH npm run build    # astro build + finalize-public-assets.mjs
-PATH=/home/peipeipe/.local/nodejs/current/bin:$PATH npm run manifest              # verify URL coverage (scripts/build-url-manifest.mjs)
 PATH=/home/peipeipe/.local/nodejs/current/bin:$PATH npm run check:legacy-slugs    # verify legacy Jekyll slugs still resolve
 ```
 
-There is no single test suite. Validate changes with `npm run build`, `npm run manifest`, and `npm run check:legacy-slugs` — CI (`.github/workflows/cloudflare-pages.yml`) runs all three plus asserts specific files exist in `dist/` before deploying.
+There is no single test suite. Validate changes with `npm run build` and `npm run check:legacy-slugs` — CI (`.github/workflows/cloudflare-pages.yml`) runs both plus asserts specific files exist in `dist/` before deploying.
 
 For Python automation scripts in `scripts/`, run the specific script directly, or the focused test for Amazon link enhancement:
 
