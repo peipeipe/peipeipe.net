@@ -20,7 +20,6 @@ export type CheckinPlace = {
   checkin_count?: number;
   first_checkin_at?: string;
   last_checkin_at?: string;
-  updated_at?: string;
 };
 
 export function normalizePlace(place: CheckinPlace): Required<Pick<CheckinPlace, "name" | "address">> & CheckinPlace {

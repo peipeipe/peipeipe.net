@@ -436,7 +436,6 @@ def build_places_from_checkins(checkins, category_ids, onsen_only=False):
             "checkin_count": 1,
             "first_checkin_at": visited_iso,
             "last_checkin_at": visited_iso,
-            "updated_at": datetime.now(timezone.utc).isoformat(),
         }
 
     return sorted(
