@@ -19,3 +19,4 @@ diary_bot_env/
 venv/
 env/
 .venv/
+__pycache__/

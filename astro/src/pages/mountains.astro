@@ -18,6 +18,10 @@ const latestVisit = stats.latest?.last_visit || "";
       <div>
         <h1>訪問済み山リスト</h1>
         <p>Strava の軌跡から、山頂付近を通過したアクティビティを自動判定して集計しています。</p>
+        <p class="mountains-data-credit">
+          山データ: 国土地理院「日本の山岳標高一覧」 /
+          <a href="https://www.openstreetmap.org/copyright">© OpenStreetMap contributors</a>
+        </p>
       </div>
       <div class="map-app-stats mountains-stats" aria-label="Mountain stats">
         <div>
@@ -67,7 +71,10 @@ const latestVisit = stats.latest?.last_visit || "";
               return (
                 <article class="mountain-item" data-elevation={mountain.elevation}>
                   <div class="mountain-item-body">
-                    <h3>{mountain.name}</h3>
+                    <h3>
+                      {mountain.name}
+                      {mountain.tags.map((tag) => <span class="mountain-tag">{tag}</span>)}
+                    </h3>
                     <p>
                       <span>{mountain.elevation.toLocaleString()}m</span>
                       <span>{mountain.visit_count}回訪問</span>
@@ -128,8 +135,12 @@ const latestVisit = stats.latest?.last_visit || "";
           fillOpacity: 0.9,
         }).addTo(markerLayer);
 
+        const popupTags = (mountain.tags || []).length
+          ? `${(mountain.tags || []).map((tag) => escapeHtml(tag)).join("・")}<br>`
+          : "";
         marker.bindPopup(`
           <strong style="font-size:15px">${escapeHtml(mountain.name)}</strong><br>
+          ${popupTags}
           ${mountain.elevation.toLocaleString()}m / ${mountain.visit_count}回訪問<br>
           初回: ${escapeHtml(mountain.first_visit)}<br>
           最新: ${escapeHtml(mountain.last_visit)}
@@ -149,11 +160,14 @@ const latestVisit = stats.latest?.last_visit || "";
           const latest = latestActivity
             ? `<p class="mountain-latest">最新 ${escapeHtml(mountain.last_visit)} / ${escapeHtml(latestActivity.name)}</p>`
             : "";
+          const tags = (mountain.tags || [])
+            .map((tag) => ` <span class="mountain-tag">${escapeHtml(tag)}</span>`)
+            .join("");
 
           return `
             <article class="mountain-item" data-elevation="${mountain.elevation}">
               <div class="mountain-item-body">
-                <h3>${escapeHtml(mountain.name)}</h3>
+                <h3>${escapeHtml(mountain.name)}${tags}</h3>
                 <p>
                   <span>${mountain.elevation.toLocaleString()}m</span>
                   <span>${mountain.visit_count}回訪問</span>

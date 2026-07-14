@@ -838,6 +838,15 @@ body.diary-lightbox-open {
   font-size: 15px;
 }
 
+.map-app-header .mountains-data-credit {
+  margin-top: 4px;
+  font-size: 12px;
+}
+
+.map-app-header .mountains-data-credit a {
+  color: inherit;
+}
+
 .map-app-stats {
   display: grid;
   grid-template-columns: repeat(4, minmax(96px, 1fr));
@@ -1131,6 +1140,17 @@ body.diary-lightbox-open {
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
+}
+
+.mountain-tag {
+  display: inline-block;
+  border: 1px solid var(--color-border);
+  border-radius: 999px;
+  padding: 0 7px;
+  color: var(--color-muted);
+  font-size: 11px;
+  line-height: 1.7;
+  vertical-align: 2px;
 }
 
 .map-search {

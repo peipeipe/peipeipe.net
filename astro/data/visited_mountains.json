@@ -1,24 +1,5 @@
 [
   {
-    "name": "高社山（高井富士）",
-    "lat": 36.799269,
-    "lng": 138.403813,
-    "elevation": 1351,
-    "tags": [],
-    "visit_count": 1,
-    "activities": [
-      {
-        "id": 3143581945,
-        "name": "Morning Activity",
-        "date": "2020-03-01",
-        "sport_type": "AlpineSki",
-        "distance_km": 8.6
-      }
-    ],
-    "first_visit": "2020-03-01",
-    "last_visit": "2020-03-01"
-  },
-  {
     "name": "高尾山",
     "lat": 35.625166,
     "lng": 139.243612,
@@ -38,10 +19,10 @@
     "last_visit": "2022-05-07"
   },
   {
-    "name": "火打山",
-    "lat": 36.922702,
-    "lng": 138.068122,
-    "elevation": 2462,
+    "name": "黒沢岳",
+    "lat": 36.903175,
+    "lng": 138.088495,
+    "elevation": 2212,
     "tags": [],
     "visit_count": 1,
     "activities": [
@@ -57,11 +38,187 @@
     "last_visit": "2023-07-30"
   },
   {
+    "name": "火打山",
+    "lat": 36.922702,
+    "lng": 138.068122,
+    "elevation": 2462,
+    "tags": [
+      "百名山"
+    ],
+    "visit_count": 1,
+    "activities": [
+      {
+        "id": 9546891427,
+        "name": "Morning Trail Run",
+        "date": "2023-07-30",
+        "sport_type": "TrailRun",
+        "distance_km": 18.2
+      }
+    ],
+    "first_visit": "2023-07-30",
+    "last_visit": "2023-07-30"
+  },
+  {
+    "name": "太郎山",
+    "lat": 36.433175,
+    "lng": 138.248709,
+    "elevation": 1164,
+    "tags": [
+      "信州百名山"
+    ],
+    "visit_count": 17,
+    "activities": [
+      {
+        "id": 18889400226,
+        "name": "夕方のトレイルランニング",
+        "date": "2026-06-12",
+        "sport_type": "TrailRun",
+        "distance_km": 10.0
+      },
+      {
+        "id": 18701351268,
+        "name": "Afternoon Trail Run",
+        "date": "2026-05-29",
+        "sport_type": "TrailRun",
+        "distance_km": 18.1
+      },
+      {
+        "id": 18353984921,
+        "name": "Morning Trail Run",
+        "date": "2026-05-03",
+        "sport_type": "TrailRun",
+        "distance_km": 13.0
+      },
+      {
+        "id": 18290569801,
+        "name": "Evening Trail Run",
+        "date": "2026-04-28",
+        "sport_type": "TrailRun",
+        "distance_km": 11.2
+      },
+      {
+        "id": 17876125343,
+        "name": "Afternoon Trail Run",
+        "date": "2026-03-27",
+        "sport_type": "TrailRun",
+        "distance_km": 18.4
+      },
+      {
+        "id": 17706896328,
+        "name": "金曜太郎山練",
+        "date": "2026-03-13",
+        "sport_type": "TrailRun",
+        "distance_km": 17.0
+      },
+      {
+        "id": 17148804722,
+        "name": "Friday Taro Mountain Session",
+        "date": "2026-01-23",
+        "sport_type": "TrailRun",
+        "distance_km": 18.5
+      },
+      {
+        "id": 16988976578,
+        "name": "信州R&T  金曜トレイル練習会",
+        "date": "2026-01-09",
+        "sport_type": "TrailRun",
+        "distance_km": 18.6
+      },
+      {
+        "id": 16898712655,
+        "name": "Morning Trail Run",
+        "date": "2026-01-01",
+        "sport_type": "TrailRun",
+        "distance_km": 5.6
+      },
+      {
+        "id": 16843371156,
+        "name": "Afternoon Run",
+        "date": "2025-12-26",
+        "sport_type": "Run",
+        "distance_km": 9.7
+      },
+      {
+        "id": 16590368335,
+        "name": "Afternoon Run",
+        "date": "2025-11-28",
+        "sport_type": "Run",
+        "distance_km": 14.5
+      },
+      {
+        "id": 16241010543,
+        "name": "Afternoon Run",
+        "date": "2025-10-24",
+        "sport_type": "Run",
+        "distance_km": 18.0
+      },
+      {
+        "id": 16095892438,
+        "name": "Evening Run",
+        "date": "2025-10-10",
+        "sport_type": "Run",
+        "distance_km": 7.3
+      },
+      {
+        "id": 16019093282,
+        "name": "Evening Trail Run",
+        "date": "2025-10-03",
+        "sport_type": "TrailRun",
+        "distance_km": 6.8
+      },
+      {
+        "id": 15942167602,
+        "name": "家から夜太郎",
+        "date": "2025-09-26",
+        "sport_type": "Run",
+        "distance_km": 15.2
+      },
+      {
+        "id": 15681920171,
+        "name": "Afternoon Run",
+        "date": "2025-09-03",
+        "sport_type": "Run",
+        "distance_km": 11.1
+      },
+      {
+        "id": 12528565251,
+        "name": "Morning Trail Run",
+        "date": "2024-09-29",
+        "sport_type": "TrailRun",
+        "distance_km": 15.6
+      }
+    ],
+    "first_visit": "2024-09-29",
+    "last_visit": "2026-06-12"
+  },
+  {
+    "name": "丸山",
+    "lat": 36.470466,
+    "lng": 138.146076,
+    "elevation": 416,
+    "tags": [],
+    "visit_count": 1,
+    "activities": [
+      {
+        "id": 12586083054,
+        "name": "Morning Run",
+        "date": "2024-10-06",
+        "sport_type": "Run",
+        "distance_km": 16.4
+      }
+    ],
+    "first_visit": "2024-10-06",
+    "last_visit": "2024-10-06"
+  },
+  {
     "name": "霧ヶ峰",
     "lat": 36.102894,
     "lng": 138.19667,
     "elevation": 1925,
-    "tags": [],
+    "tags": [
+      "百名山",
+      "信州百名山"
+    ],
     "visit_count": 1,
     "activities": [
       {
@@ -74,6 +231,112 @@
     ],
     "first_visit": "2025-07-20",
     "last_visit": "2025-07-20"
+  },
+  {
+    "name": "三峰山",
+    "lat": 36.166262,
+    "lng": 138.128503,
+    "elevation": 1888,
+    "tags": [],
+    "visit_count": 4,
+    "activities": [
+      {
+        "id": 18380418944,
+        "name": "Morning Trail Run",
+        "date": "2026-05-05",
+        "sport_type": "TrailRun",
+        "distance_km": 35.1
+      },
+      {
+        "id": 15715715747,
+        "name": "下諏訪御柱トレイル",
+        "date": "2025-09-06",
+        "sport_type": "TrailRun",
+        "distance_km": 42.0
+      },
+      {
+        "id": 15642284322,
+        "name": "Morning Trail Run",
+        "date": "2025-08-31",
+        "sport_type": "TrailRun",
+        "distance_km": 13.8
+      },
+      {
+        "id": 15405912609,
+        "name": "Morning Trail Run",
+        "date": "2025-08-10",
+        "sport_type": "TrailRun",
+        "distance_km": 44.9
+      }
+    ],
+    "first_visit": "2025-08-10",
+    "last_visit": "2026-05-05"
+  },
+  {
+    "name": "二ツ山",
+    "lat": 36.15664,
+    "lng": 138.08751,
+    "elevation": 1827,
+    "tags": [],
+    "visit_count": 3,
+    "activities": [
+      {
+        "id": 18380418944,
+        "name": "Morning Trail Run",
+        "date": "2026-05-05",
+        "sport_type": "TrailRun",
+        "distance_km": 35.1
+      },
+      {
+        "id": 15715715747,
+        "name": "下諏訪御柱トレイル",
+        "date": "2025-09-06",
+        "sport_type": "TrailRun",
+        "distance_km": 42.0
+      },
+      {
+        "id": 15405912609,
+        "name": "Morning Trail Run",
+        "date": "2025-08-10",
+        "sport_type": "TrailRun",
+        "distance_km": 44.9
+      }
+    ],
+    "first_visit": "2025-08-10",
+    "last_visit": "2026-05-05"
+  },
+  {
+    "name": "鷲ヶ峰",
+    "lat": 36.130096,
+    "lng": 138.154378,
+    "elevation": 1798,
+    "tags": [],
+    "visit_count": 3,
+    "activities": [
+      {
+        "id": 15715715747,
+        "name": "下諏訪御柱トレイル",
+        "date": "2025-09-06",
+        "sport_type": "TrailRun",
+        "distance_km": 42.0
+      },
+      {
+        "id": 15642284322,
+        "name": "Morning Trail Run",
+        "date": "2025-08-31",
+        "sport_type": "TrailRun",
+        "distance_km": 13.8
+      },
+      {
+        "id": 15405912609,
+        "name": "Morning Trail Run",
+        "date": "2025-08-10",
+        "sport_type": "TrailRun",
+        "distance_km": 44.9
+      }
+    ],
+    "first_visit": "2025-08-10",
+    "last_visit": "2025-09-06"
   },
   {
     "name": "湯ノ丸山",
@@ -102,10 +365,100 @@
     "last_visit": "2026-06-14"
   },
   {
+    "name": "烏帽子山",
+    "lat": 36.433365,
+    "lng": 138.387139,
+    "elevation": 2066,
+    "tags": [
+      "信州百名山"
+    ],
+    "visit_count": 5,
+    "activities": [
+      {
+        "id": 18910743520,
+        "name": "Morning Trail Run",
+        "date": "2026-06-14",
+        "sport_type": "TrailRun",
+        "distance_km": 8.5
+      },
+      {
+        "id": 18445959392,
+        "name": "上田城から烏帽子岳",
+        "date": "2026-05-10",
+        "sport_type": "TrailRun",
+        "distance_km": 38.7
+      },
+      {
+        "id": 16112567780,
+        "name": "EBOSHI SKY RUN SKYコース",
+        "date": "2025-10-12",
+        "sport_type": "TrailRun",
+        "distance_km": 34.6
+      },
+      {
+        "id": 16058891945,
+        "name": "烏帽子SkyRun試走　",
+        "date": "2025-10-07",
+        "sport_type": "TrailRun",
+        "distance_km": 23.9
+      },
+      {
+        "id": 15426273017,
+        "name": "Morning Trail Run",
+        "date": "2025-08-12",
+        "sport_type": "TrailRun",
+        "distance_km": 8.6
+      }
+    ],
+    "first_visit": "2025-08-12",
+    "last_visit": "2026-06-14"
+  },
+  {
+    "name": "将棊頭山",
+    "lat": 35.803393,
+    "lng": 137.827058,
+    "elevation": 2730,
+    "tags": [],
+    "visit_count": 1,
+    "activities": [
+      {
+        "id": 15463671680,
+        "name": "Night Trail Run",
+        "date": "2025-08-15",
+        "sport_type": "TrailRun",
+        "distance_km": 24.2
+      }
+    ],
+    "first_visit": "2025-08-15",
+    "last_visit": "2025-08-15"
+  },
+  {
     "name": "駒ヶ岳",
     "lat": 35.78955,
     "lng": 137.804574,
     "elevation": 2956,
+    "tags": [
+      "百名山",
+      "信州百名山"
+    ],
+    "visit_count": 1,
+    "activities": [
+      {
+        "id": 15463671680,
+        "name": "Night Trail Run",
+        "date": "2025-08-15",
+        "sport_type": "TrailRun",
+        "distance_km": 24.2
+      }
+    ],
+    "first_visit": "2025-08-15",
+    "last_visit": "2025-08-15"
+  },
+  {
+    "name": "中岳",
+    "lat": 35.786192,
+    "lng": 137.807669,
+    "elevation": 2925,
     "tags": [],
     "visit_count": 1,
     "activities": [
@@ -140,48 +493,72 @@
     "last_visit": "2025-08-15"
   },
   {
-    "name": "将棊頭山",
-    "lat": 35.803393,
-    "lng": 137.827058,
-    "elevation": 2730,
-    "tags": [],
+    "name": "蝶ヶ岳",
+    "lat": 36.287421,
+    "lng": 137.726084,
+    "elevation": 2677,
+    "tags": [
+      "信州百名山"
+    ],
     "visit_count": 1,
     "activities": [
       {
-        "id": 15463671680,
+        "id": 15961413279,
         "name": "Night Trail Run",
-        "date": "2025-08-15",
+        "date": "2025-09-28",
         "sport_type": "TrailRun",
-        "distance_km": 24.2
+        "distance_km": 19.4
       }
     ],
-    "first_visit": "2025-08-15",
-    "last_visit": "2025-08-15"
+    "first_visit": "2025-09-28",
+    "last_visit": "2025-09-28"
   },
   {
-    "name": "将棊頭山＜茶臼山＞",
-    "lat": 35.81492,
-    "lng": 137.821546,
-    "elevation": 2658,
+    "name": "蝶槍",
+    "lat": 36.300084,
+    "lng": 137.721953,
+    "elevation": 2665,
     "tags": [],
     "visit_count": 1,
     "activities": [
       {
-        "id": 15463671680,
+        "id": 15961413279,
         "name": "Night Trail Run",
-        "date": "2025-08-15",
+        "date": "2025-09-28",
         "sport_type": "TrailRun",
-        "distance_km": 24.2
+        "distance_km": 19.4
       }
     ],
-    "first_visit": "2025-08-15",
-    "last_visit": "2025-08-15"
+    "first_visit": "2025-09-28",
+    "last_visit": "2025-09-28"
   },
   {
     "name": "常念岳",
     "lat": 36.325524,
     "lng": 137.727592,
     "elevation": 2857,
+    "tags": [
+      "百名山",
+      "信州百名山"
+    ],
+    "visit_count": 1,
+    "activities": [
+      {
+        "id": 15961413279,
+        "name": "Night Trail Run",
+        "date": "2025-09-28",
+        "sport_type": "TrailRun",
+        "distance_km": 19.4
+      }
+    ],
+    "first_visit": "2025-09-28",
+    "last_visit": "2025-09-28"
+  },
+  {
+    "name": "前常念岳",
+    "lat": 36.32304,
+    "lng": 137.73811,
+    "elevation": 2662,
     "tags": [],
     "visit_count": 1,
     "activities": [
@@ -197,49 +574,58 @@
     "last_visit": "2025-09-28"
   },
   {
-    "name": "蝶ヶ岳",
-    "lat": 36.287421,
-    "lng": 137.726084,
-    "elevation": 2677,
+    "name": "殿城山",
+    "lat": 36.417611,
+    "lng": 138.335706,
+    "elevation": 1193,
     "tags": [],
-    "visit_count": 1,
+    "visit_count": 2,
     "activities": [
       {
-        "id": 15961413279,
-        "name": "Night Trail Run",
-        "date": "2025-09-28",
+        "id": 16112567780,
+        "name": "EBOSHI SKY RUN SKYコース",
+        "date": "2025-10-12",
         "sport_type": "TrailRun",
-        "distance_km": 19.4
+        "distance_km": 34.6
+      },
+      {
+        "id": 16058891945,
+        "name": "烏帽子SkyRun試走　",
+        "date": "2025-10-07",
+        "sport_type": "TrailRun",
+        "distance_km": 23.9
       }
     ],
-    "first_visit": "2025-09-28",
-    "last_visit": "2025-09-28"
+    "first_visit": "2025-10-07",
+    "last_visit": "2025-10-12"
   },
   {
-    "name": "斑尾山",
-    "lat": 36.837396,
-    "lng": 138.274312,
-    "elevation": 1381,
+    "name": "丘の輪",
+    "lat": 36.060259,
+    "lng": 138.076005,
+    "elevation": 764,
     "tags": [],
     "visit_count": 1,
     "activities": [
       {
-        "id": 17234427072,
-        "name": "Lunch Snowboard",
-        "date": "2026-01-31",
-        "sport_type": "Snowboard",
-        "distance_km": 17.1
+        "id": 17244572097,
+        "name": "【岡谷市】 ROAD TO NAGANO 30km走練習会",
+        "date": "2026-02-01",
+        "sport_type": "Run",
+        "distance_km": 32.0
       }
     ],
-    "first_visit": "2026-01-31",
-    "last_visit": "2026-01-31"
+    "first_visit": "2026-02-01",
+    "last_visit": "2026-02-01"
   },
   {
     "name": "冠着山（姨捨山）",
     "lat": 36.468797,
     "lng": 138.10666,
     "elevation": 1252,
-    "tags": [],
+    "tags": [
+      "信州百名山"
+    ],
     "visit_count": 1,
     "activities": [
       {
@@ -254,11 +640,174 @@
     "last_visit": "2026-02-08"
   },
   {
+    "name": "一重山",
+    "lat": 36.532905,
+    "lng": 138.130856,
+    "elevation": 457,
+    "tags": [],
+    "visit_count": 6,
+    "activities": [
+      {
+        "id": 19061732335,
+        "name": "Evening Trail Run",
+        "date": "2026-06-25",
+        "sport_type": "TrailRun",
+        "distance_km": 10.6
+      },
+      {
+        "id": 18970382828,
+        "name": "Evening Trail Run",
+        "date": "2026-06-18",
+        "sport_type": "TrailRun",
+        "distance_km": 10.4
+      },
+      {
+        "id": 18687701446,
+        "name": "夕方のトレイルランニング",
+        "date": "2026-05-28",
+        "sport_type": "TrailRun",
+        "distance_km": 10.3
+      },
+      {
+        "id": 18411099671,
+        "name": "Evening Trail Run",
+        "date": "2026-05-07",
+        "sport_type": "TrailRun",
+        "distance_km": 10.3
+      },
+      {
+        "id": 18039628939,
+        "name": "Evening Trail Run",
+        "date": "2026-04-09",
+        "sport_type": "TrailRun",
+        "distance_km": 10.2
+      },
+      {
+        "id": 17778351222,
+        "name": "初夜山練",
+        "date": "2026-03-19",
+        "sport_type": "TrailRun",
+        "distance_km": 10.8
+      }
+    ],
+    "first_visit": "2026-03-19",
+    "last_visit": "2026-06-25"
+  },
+  {
+    "name": "有明山",
+    "lat": 36.52617,
+    "lng": 138.138078,
+    "elevation": 652,
+    "tags": [],
+    "visit_count": 6,
+    "activities": [
+      {
+        "id": 19061732335,
+        "name": "Evening Trail Run",
+        "date": "2026-06-25",
+        "sport_type": "TrailRun",
+        "distance_km": 10.6
+      },
+      {
+        "id": 18970382828,
+        "name": "Evening Trail Run",
+        "date": "2026-06-18",
+        "sport_type": "TrailRun",
+        "distance_km": 10.4
+      },
+      {
+        "id": 18687701446,
+        "name": "夕方のトレイルランニング",
+        "date": "2026-05-28",
+        "sport_type": "TrailRun",
+        "distance_km": 10.3
+      },
+      {
+        "id": 18411099671,
+        "name": "Evening Trail Run",
+        "date": "2026-05-07",
+        "sport_type": "TrailRun",
+        "distance_km": 10.3
+      },
+      {
+        "id": 18039628939,
+        "name": "Evening Trail Run",
+        "date": "2026-04-09",
+        "sport_type": "TrailRun",
+        "distance_km": 10.2
+      },
+      {
+        "id": 17778351222,
+        "name": "初夜山練",
+        "date": "2026-03-19",
+        "sport_type": "TrailRun",
+        "distance_km": 10.8
+      }
+    ],
+    "first_visit": "2026-03-19",
+    "last_visit": "2026-06-25"
+  },
+  {
+    "name": "髻山",
+    "lat": 36.720363,
+    "lng": 138.243469,
+    "elevation": 744,
+    "tags": [],
+    "visit_count": 2,
+    "activities": [
+      {
+        "id": 18340812810,
+        "name": "いいづなトレイルランニングレース",
+        "date": "2026-05-02",
+        "sport_type": "TrailRun",
+        "distance_km": 19.5
+      },
+      {
+        "id": 18248296981,
+        "name": "いいづなトレイルランニングレースロング試走",
+        "date": "2026-04-25",
+        "sport_type": "TrailRun",
+        "distance_km": 19.5
+      }
+    ],
+    "first_visit": "2026-04-25",
+    "last_visit": "2026-05-02"
+  },
+  {
+    "name": "三登山",
+    "lat": 36.710697,
+    "lng": 138.221584,
+    "elevation": 923,
+    "tags": [],
+    "visit_count": 2,
+    "activities": [
+      {
+        "id": 18340812810,
+        "name": "いいづなトレイルランニングレース",
+        "date": "2026-05-02",
+        "sport_type": "TrailRun",
+        "distance_km": 19.5
+      },
+      {
+        "id": 18248296981,
+        "name": "いいづなトレイルランニングレースロング試走",
+        "date": "2026-04-25",
+        "sport_type": "TrailRun",
+        "distance_km": 19.5
+      }
+    ],
+    "first_visit": "2026-04-25",
+    "last_visit": "2026-05-02"
+  },
+  {
     "name": "飯縄山（飯綱山）",
     "lat": 36.739437,
     "lng": 138.133694,
     "elevation": 1917,
-    "tags": [],
+    "tags": [
+      "二百名山",
+      "信州百名山"
+    ],
     "visit_count": 1,
     "activities": [
       {
@@ -299,10 +848,70 @@
     "last_visit": "2026-06-21"
   },
   {
+    "name": "小根子岳",
+    "lat": 36.553628,
+    "lng": 138.391652,
+    "elevation": 2128,
+    "tags": [],
+    "visit_count": 1,
+    "activities": [
+      {
+        "id": 18258887407,
+        "name": "Morning Trail Run",
+        "date": "2026-04-26",
+        "sport_type": "TrailRun",
+        "distance_km": 22.0
+      }
+    ],
+    "first_visit": "2026-04-26",
+    "last_visit": "2026-04-26"
+  },
+  {
+    "name": "観峰",
+    "lat": 36.197011,
+    "lng": 138.08565,
+    "elevation": 1424,
+    "tags": [],
+    "visit_count": 1,
+    "activities": [
+      {
+        "id": 18380418944,
+        "name": "Morning Trail Run",
+        "date": "2026-05-05",
+        "sport_type": "TrailRun",
+        "distance_km": 35.1
+      }
+    ],
+    "first_visit": "2026-05-05",
+    "last_visit": "2026-05-05"
+  },
+  {
     "name": "美ヶ原",
     "lat": 36.225796,
     "lng": 138.107445,
     "elevation": 2034,
+    "tags": [
+      "百名山",
+      "信州百名山"
+    ],
+    "visit_count": 1,
+    "activities": [
+      {
+        "id": 18380418944,
+        "name": "Morning Trail Run",
+        "date": "2026-05-05",
+        "sport_type": "TrailRun",
+        "distance_km": 35.1
+      }
+    ],
+    "first_visit": "2026-05-05",
+    "last_visit": "2026-05-05"
+  },
+  {
+    "name": "茶臼山",
+    "lat": 36.204118,
+    "lng": 138.126883,
+    "elevation": 2006,
     "tags": [],
     "visit_count": 1,
     "activities": [
@@ -322,7 +931,10 @@
     "lat": 36.163046,
     "lng": 138.059154,
     "elevation": 1929,
-    "tags": [],
+    "tags": [
+      "三百名山",
+      "信州百名山"
+    ],
     "visit_count": 1,
     "activities": [
       {
@@ -337,11 +949,171 @@
     "last_visit": "2026-05-05"
   },
   {
+    "name": "Mt. Nagamine",
+    "lat": 36.335938,
+    "lng": 137.940818,
+    "elevation": 931,
+    "tags": [],
+    "visit_count": 1,
+    "activities": [
+      {
+        "id": 18394367312,
+        "name": "光城山ハイク　下りはトレラン",
+        "date": "2026-05-06",
+        "sport_type": "TrailRun",
+        "distance_km": 8.7
+      }
+    ],
+    "first_visit": "2026-05-06",
+    "last_visit": "2026-05-06"
+  },
+  {
+    "name": "東山",
+    "lat": 36.373619,
+    "lng": 138.238468,
+    "elevation": 694,
+    "tags": [],
+    "visit_count": 3,
+    "activities": [
+      {
+        "id": 18641710649,
+        "name": "Morning Trail Run",
+        "date": "2026-05-25",
+        "sport_type": "TrailRun",
+        "distance_km": 11.6
+      },
+      {
+        "id": 18540799985,
+        "name": "上田里山ぐるり前半省略　後半電池切れ",
+        "date": "2026-05-17",
+        "sport_type": "TrailRun",
+        "distance_km": 43.5
+      },
+      {
+        "id": 18470325484,
+        "name": "Morning Trail Run",
+        "date": "2026-05-12",
+        "sport_type": "TrailRun",
+        "distance_km": 7.5
+      }
+    ],
+    "first_visit": "2026-05-12",
+    "last_visit": "2026-05-25"
+  },
+  {
+    "name": "子檀嶺岳",
+    "lat": 36.392306,
+    "lng": 138.116407,
+    "elevation": 1223,
+    "tags": [
+      "信州百名山"
+    ],
+    "visit_count": 2,
+    "activities": [
+      {
+        "id": 18991355967,
+        "name": "Morning Trail Run",
+        "date": "2026-06-20",
+        "sport_type": "TrailRun",
+        "distance_km": 5.6
+      },
+      {
+        "id": 18540799985,
+        "name": "上田里山ぐるり前半省略　後半電池切れ",
+        "date": "2026-05-17",
+        "sport_type": "TrailRun",
+        "distance_km": 43.5
+      }
+    ],
+    "first_visit": "2026-05-17",
+    "last_visit": "2026-06-20"
+  },
+  {
+    "name": "湯坂山",
+    "lat": 36.381323,
+    "lng": 138.118124,
+    "elevation": 812,
+    "tags": [],
+    "visit_count": 1,
+    "activities": [
+      {
+        "id": 18540799985,
+        "name": "上田里山ぐるり前半省略　後半電池切れ",
+        "date": "2026-05-17",
+        "sport_type": "TrailRun",
+        "distance_km": 43.5
+      }
+    ],
+    "first_visit": "2026-05-17",
+    "last_visit": "2026-05-17"
+  },
+  {
+    "name": "夫神岳",
+    "lat": 36.347503,
+    "lng": 138.129526,
+    "elevation": 1250,
+    "tags": [],
+    "visit_count": 1,
+    "activities": [
+      {
+        "id": 18540799985,
+        "name": "上田里山ぐるり前半省略　後半電池切れ",
+        "date": "2026-05-17",
+        "sport_type": "TrailRun",
+        "distance_km": 43.5
+      }
+    ],
+    "first_visit": "2026-05-17",
+    "last_visit": "2026-05-17"
+  },
+  {
+    "name": "独鈷山",
+    "lat": 36.320013,
+    "lng": 138.187366,
+    "elevation": 1266,
+    "tags": [
+      "信州百名山"
+    ],
+    "visit_count": 1,
+    "activities": [
+      {
+        "id": 18540799985,
+        "name": "上田里山ぐるり前半省略　後半電池切れ",
+        "date": "2026-05-17",
+        "sport_type": "TrailRun",
+        "distance_km": 43.5
+      }
+    ],
+    "first_visit": "2026-05-17",
+    "last_visit": "2026-05-17"
+  },
+  {
+    "name": "水の塔山",
+    "lat": 36.420525,
+    "lng": 138.457155,
+    "elevation": 2202,
+    "tags": [],
+    "visit_count": 1,
+    "activities": [
+      {
+        "id": 18914374878,
+        "name": "Afternoon Run",
+        "date": "2026-06-14",
+        "sport_type": "TrailRun",
+        "distance_km": 13.6
+      }
+    ],
+    "first_visit": "2026-06-14",
+    "last_visit": "2026-06-14"
+  },
+  {
     "name": "東篭ノ登山",
     "lat": 36.419305,
     "lng": 138.447168,
     "elevation": 2228,
-    "tags": [],
+    "tags": [
+      "信州百名山"
+    ],
     "visit_count": 1,
     "activities": [
       {
@@ -360,7 +1132,10 @@
     "lat": 36.541764,
     "lng": 138.412969,
     "elevation": 2354,
-    "tags": [],
+    "tags": [
+      "百名山",
+      "信州百名山"
+    ],
     "visit_count": 1,
     "activities": [
       {
@@ -373,5 +1148,81 @@
     ],
     "first_visit": "2026-06-21",
     "last_visit": "2026-06-21"
+  },
+  {
+    "name": "牙山",
+    "lat": 36.39681,
+    "lng": 138.496612,
+    "elevation": 2111,
+    "tags": [],
+    "visit_count": 1,
+    "activities": [
+      {
+        "id": 19262400403,
+        "name": "浅間山荘～前掛山～蛇骨山",
+        "date": "2026-07-11",
+        "sport_type": "TrailRun",
+        "distance_km": 18.4
+      }
+    ],
+    "first_visit": "2026-07-11",
+    "last_visit": "2026-07-11"
+  },
+  {
+    "name": "前掛山",
+    "lat": 36.403798,
+    "lng": 138.513302,
+    "elevation": 2524,
+    "tags": [],
+    "visit_count": 1,
+    "activities": [
+      {
+        "id": 19262400403,
+        "name": "浅間山荘～前掛山～蛇骨山",
+        "date": "2026-07-11",
+        "sport_type": "TrailRun",
+        "distance_km": 18.4
+      }
+    ],
+    "first_visit": "2026-07-11",
+    "last_visit": "2026-07-11"
+  },
+  {
+    "name": "蛇骨岳",
+    "lat": 36.411958,
+    "lng": 138.4915,
+    "elevation": 2366,
+    "tags": [],
+    "visit_count": 1,
+    "activities": [
+      {
+        "id": 19262400403,
+        "name": "浅間山荘～前掛山～蛇骨山",
+        "date": "2026-07-11",
+        "sport_type": "TrailRun",
+        "distance_km": 18.4
+      }
+    ],
+    "first_visit": "2026-07-11",
+    "last_visit": "2026-07-11"
+  },
+  {
+    "name": "黒斑山",
+    "lat": 36.405231,
+    "lng": 138.488548,
+    "elevation": 2404,
+    "tags": [],
+    "visit_count": 1,
+    "activities": [
+      {
+        "id": 19262400403,
+        "name": "浅間山荘～前掛山～蛇骨山",
+        "date": "2026-07-11",
+        "sport_type": "TrailRun",
+        "distance_km": 18.4
+      }
+    ],
+    "first_visit": "2026-07-11",
+    "last_visit": "2026-07-11"
   }
 ]
