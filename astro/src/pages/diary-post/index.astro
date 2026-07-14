@@ -10,7 +10,11 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
   <script src="https://cdn.jsdelivr.net/npm/marked@9.1.6/marked.min.js"></script>
-  <style>
+  <!-- is:global so styles also reach elements built at runtime via document.createElement
+       (image previews, toasts, spinner, delete buttons); Astro's scoped styles never match
+       those nodes because they lack the compiler-injected data-astro-cid marker. This page is
+       standalone with its own <head>, so the CSS only ever loads here — no cross-page leakage. -->
+  <style is:global>
     /* ── Design Tokens ── */
     :root {
       --bg:           #070b12;
