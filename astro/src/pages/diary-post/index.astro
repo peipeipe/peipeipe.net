@@ -185,16 +185,6 @@
       gap: 12px;
     }
 
-    .settings-row {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 12px;
-    }
-
-    @media (max-width: 500px) {
-      .settings-row { grid-template-columns: 1fr; }
-    }
-
     .settings-footer {
       margin-top: 16px;
       display: flex;
@@ -256,6 +246,16 @@
 
     input::placeholder, textarea::placeholder {
       color: var(--text-muted);
+    }
+
+    input[readonly] {
+      color: var(--text-sub);
+      cursor: default;
+    }
+
+    input[readonly]:focus {
+      border-color: var(--border);
+      box-shadow: none;
     }
 
     input[type="date"]::-webkit-calendar-picker-indicator,
@@ -778,32 +778,28 @@
 
   <!-- ── Settings Panel ── -->
   <div class="settings-panel glass section-gap" id="settings-panel" role="region" aria-label="設定パネル">
-    <div class="settings-inner">
-      <h2>⚙ 認証・リポジトリ設定</h2>
+    <!-- Real <form> with username + current-password fields so the browser's password
+         manager offers to save the token; submission is intercepted in JS. -->
+    <form class="settings-inner" id="settings-form" action="#" method="post">
+      <h2>⚙ 認証設定</h2>
       <div class="settings-grid">
         <div class="field">
-          <label for="input-token">GitHub Personal Access Token</label>
-          <input type="password" id="input-token" placeholder="ghp_xxxxxxxxxxxxxxxxxxxx" autocomplete="off" spellcheck="false">
+          <label for="input-repo-target">対象リポジトリ</label>
+          <input type="text" id="input-repo-target" name="username" autocomplete="username" readonly>
         </div>
-        <div class="settings-row">
-          <div class="field">
-            <label for="input-owner">リポジトリオーナー</label>
-            <input type="text" id="input-owner" placeholder="username" autocomplete="off">
-          </div>
-          <div class="field">
-            <label for="input-repo">リポジトリ名</label>
-            <input type="text" id="input-repo" placeholder="repo-name" autocomplete="off">
-          </div>
+        <div class="field">
+          <label for="input-token">GitHub Personal Access Token</label>
+          <input type="password" id="input-token" name="password" placeholder="ghp_xxxxxxxxxxxxxxxxxxxx" autocomplete="current-password" spellcheck="false">
         </div>
       </div>
       <div class="settings-footer">
         <span class="settings-status" id="settings-status"></span>
         <div style="display:flex;gap:8px;">
-          <button class="btn btn-danger" id="btn-clear-settings">クリア</button>
-          <button class="btn btn-primary" id="btn-save-settings">💾 保存</button>
+          <button class="btn btn-danger" id="btn-clear-settings" type="button">クリア</button>
+          <button class="btn btn-primary" id="btn-save-settings" type="submit">💾 保存</button>
         </div>
       </div>
-    </div>
+    </form>
   </div>
 
   <!-- ── Date / Time ── -->
@@ -852,13 +848,12 @@
 
   <!-- ── Upload Zone ── -->
   <div class="glass upload-zone section-gap" id="upload-zone">
-    <div class="drop-zone" id="drop-zone" role="button" tabindex="0" aria-label="ファイルをドラッグ&ドロップ">
-      <span class="drop-icon">📎</span>
-      <div class="drop-title">画像 / Markdownファイルを添付</div>
+    <div class="drop-zone" id="drop-zone" role="button" tabindex="0" aria-label="画像をドラッグ&ドロップ">
+      <span class="drop-icon">🖼</span>
+      <div class="drop-title">画像を添付</div>
       <div class="drop-sub">ドラッグ&ドロップ、またはクリックして選択</div>
       <div class="upload-btns">
         <button class="btn btn-secondary" id="btn-pick-image" type="button">🖼 画像を選ぶ</button>
-        <button class="btn btn-secondary" id="btn-pick-md"    type="button">📄 .mdファイル</button>
       </div>
     </div>
 
@@ -871,9 +866,8 @@
       </div>
     </div>
 
-    <!-- Hidden file inputs -->
+    <!-- Hidden file input -->
     <input type="file" id="file-image" accept="image/*" multiple hidden aria-hidden="true">
-    <input type="file" id="file-md"    accept=".md,.txt,.markdown" hidden aria-hidden="true">
   </div>
 
   <!-- ── Submit ── -->
@@ -893,10 +887,11 @@
   /* ════════════════════════════════════════════
      State
   ════════════════════════════════════════════ */
+  const REPO_OWNER = 'peipeipe';
+  const REPO_NAME  = 'peipeipe.net';
+
   const state = {
     token:     '',
-    owner:     '',
-    repo:      '',
     imageUploads: [],
     imageProcessing: false,
     processing: false,
@@ -908,10 +903,9 @@
   const $ = id => document.getElementById(id);
   const btnSettings      = $('btn-settings');
   const settingsPanel    = $('settings-panel');
+  const settingsForm     = $('settings-form');
   const inputToken       = $('input-token');
-  const inputOwner       = $('input-owner');
-  const inputRepo        = $('input-repo');
-  const btnSave          = $('btn-save-settings');
+  const inputRepoTarget  = $('input-repo-target');
   const btnClear         = $('btn-clear-settings');
   const settingsStatus   = $('settings-status');
   const tokenBadge       = $('token-badge');
@@ -923,9 +917,7 @@
   const previewContent   = $('preview-content');
   const dropZone         = $('drop-zone');
   const fileImage        = $('file-image');
-  const fileMd           = $('file-md');
   const btnPickImage     = $('btn-pick-image');
-  const btnPickMd        = $('btn-pick-md');
   const imageAttached    = $('image-attached');
   const imageList        = $('image-list');
   const imageSummary     = $('image-summary');
@@ -944,30 +936,26 @@
   const LS_KEY = 'diary_post_cfg';
 
   function loadSettings() {
+    inputRepoTarget.value = `${REPO_OWNER}/${REPO_NAME}`;
     try {
       const raw = localStorage.getItem(LS_KEY);
-      if (!raw) return;
-      const cfg = JSON.parse(raw);
-      state.token = cfg.token || '';
-      state.owner = cfg.owner || '';
-      state.repo  = cfg.repo  || '';
-      inputToken.value = state.token;
-      inputOwner.value = state.owner;
-      inputRepo.value  = state.repo;
+      if (raw) {
+        const cfg = JSON.parse(raw);
+        state.token = cfg.token || '';
+        inputToken.value = state.token;
+      }
     } catch(e) {}
     updateTokenBadge();
   }
 
   function saveSettings() {
     state.token = inputToken.value.trim();
-    state.owner = inputOwner.value.trim();
-    state.repo  = inputRepo.value.trim();
-    if (!state.token || !state.owner || !state.repo) {
-      settingsStatus.textContent = '⚠ 全フィールドを入力してください';
+    if (!state.token) {
+      settingsStatus.textContent = '⚠ トークンを入力してください';
       settingsStatus.className = 'settings-status err';
       return;
     }
-    localStorage.setItem(LS_KEY, JSON.stringify({ token: state.token, owner: state.owner, repo: state.repo }));
+    localStorage.setItem(LS_KEY, JSON.stringify({ token: state.token }));
     settingsStatus.textContent = '✓ 保存しました';
     settingsStatus.className = 'settings-status ok';
     updateTokenBadge();
@@ -977,8 +965,8 @@
 
   function clearSettings() {
     localStorage.removeItem(LS_KEY);
-    state.token = state.owner = state.repo = '';
-    inputToken.value = inputOwner.value = inputRepo.value = '';
+    state.token = '';
+    inputToken.value = '';
     settingsStatus.textContent = '🗑 設定をクリアしました';
     settingsStatus.className = 'settings-status';
     updateTokenBadge();
@@ -987,7 +975,7 @@
   }
 
   function updateTokenBadge() {
-    const ok = state.token && state.owner && state.repo;
+    const ok = Boolean(state.token);
     tokenBadge.textContent = ok ? '✓ 設定済み' : '⚠ 設定未完了';
     tokenBadge.className = 'token-badge ' + (ok ? 'saved' : 'missing');
   }
@@ -1002,7 +990,7 @@
   }
 
   btnSettings.addEventListener('click', toggleSettings);
-  btnSave.addEventListener('click', saveSettings);
+  settingsForm.addEventListener('submit', e => { e.preventDefault(); saveSettings(); });
   btnClear.addEventListener('click', clearSettings);
 
   /* ════════════════════════════════════════════
@@ -1288,29 +1276,10 @@
   }
 
   /* ════════════════════════════════════════════
-     MD File
-  ════════════════════════════════════════════ */
-  function processMdFile(file) {
-    const reader = new FileReader();
-    reader.onload = e => {
-      textarea.value = e.target.result;
-      charCount.textContent = textarea.value.length.toLocaleString();
-      validateForm();
-      showToast('success', 'MDファイル読み込み完了', `${file.name} を本文にセットしました`);
-    };
-    reader.onerror = () => showToast('error', 'エラー', 'ファイルの読み込みに失敗しました');
-    reader.readAsText(file, 'utf-8');
-  }
-
-  /* ════════════════════════════════════════════
-     File Pickers & Drag-and-Drop
+     File Picker & Drag-and-Drop
   ════════════════════════════════════════════ */
   btnPickImage.addEventListener('click', e => { e.stopPropagation(); fileImage.click(); });
-  btnPickMd.addEventListener('click',    e => { e.stopPropagation(); fileMd.click(); });
-  dropZone.addEventListener('click', () => {
-    // Default: pick image
-    fileImage.click();
-  });
+  dropZone.addEventListener('click', () => fileImage.click());
 
   dropZone.addEventListener('keydown', e => {
     if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); fileImage.click(); }
@@ -1320,7 +1289,6 @@
     if (e.target.files.length > 0) processImageFiles(e.target.files);
     fileImage.value = '';
   });
-  fileMd.addEventListener('change',   e => { if (e.target.files[0]) processMdFile(e.target.files[0]); });
 
   // Drag & Drop
   const preventDefaults = e => { e.preventDefault(); e.stopPropagation(); };
@@ -1335,16 +1303,11 @@
   });
   dropZone.addEventListener('drop', e => {
     dropZone.classList.remove('drag-over');
-    const files = Array.from(e.dataTransfer.files || []);
-    if (files.length === 0) return;
-    const mdFile = files.find(file => file.name.match(/\.(md|txt|markdown)$/i));
-    const imageFiles = files.filter(file => file.type.startsWith('image/'));
-
-    if (mdFile) processMdFile(mdFile);
+    const imageFiles = Array.from(e.dataTransfer.files || []).filter(file => file.type.startsWith('image/'));
     if (imageFiles.length > 0) {
       processImageFiles(imageFiles);
-    } else if (!mdFile) {
-      showToast('error', '対応していないファイル形式', '画像または .md ファイルを選択してください');
+    } else {
+      showToast('error', '対応していないファイル形式', '画像ファイルを選択してください');
     }
   });
 
@@ -1363,11 +1326,11 @@
   ════════════════════════════════════════════ */
   function validateForm() {
     const hasContent = Boolean(textarea.value.trim() || state.imageUploads.length > 0);
-    const ok = state.token && state.owner && state.repo && hasContent && !state.processing && !state.imageProcessing;
+    const ok = state.token && hasContent && !state.processing && !state.imageProcessing;
     btnSubmit.disabled = !ok;
 
-    if (!state.token || !state.owner || !state.repo) {
-      submitInfo.textContent = '⚙ 右上の設定から認証情報を入力してください';
+    if (!state.token) {
+      submitInfo.textContent = '⚙ 右上の設定からGitHub Tokenを入力してください';
     } else if (state.imageProcessing) {
       submitInfo.textContent = '画像を処理中です';
     } else if (!hasContent) {
@@ -1392,7 +1355,7 @@
 
   /** ファイルの現在の内容とSHAを取得（なければ null） */
   async function getFileInfo(path) {
-    const res = await fetch(`${API}/repos/${state.owner}/${state.repo}/contents/${path}`, {
+    const res = await fetch(`${API}/repos/${REPO_OWNER}/${REPO_NAME}/contents/${path}`, {
       headers: ghHeaders(),
     });
     if (res.status === 404) return null;
@@ -1420,7 +1383,7 @@
   }
 
   async function ghJson(path, options = {}) {
-    const res = await fetch(`${API}/repos/${state.owner}/${state.repo}${path}`, {
+    const res = await fetch(`${API}/repos/${REPO_OWNER}/${REPO_NAME}${path}`, {
       ...options,
       headers: {
         ...ghHeaders(),
@@ -1536,8 +1499,8 @@
 
     if (!content && state.imageUploads.length === 0) { showToast('error', '本文が空です', 'テキストまたは画像を入力してください'); return; }
     if (!date || !time) { showToast('error', '日時エラー', '日付と時刻を入力してください'); return; }
-    if (!state.token || !state.owner || !state.repo) {
-      showToast('error', '設定エラー', 'GitHub Tokenとリポジトリを設定してください');
+    if (!state.token) {
+      showToast('error', '設定エラー', 'GitHub Tokenを設定してください');
       toggleSettings();
       return;
     }
@@ -1592,7 +1555,7 @@
         showToast('error', '認証エラー', 'GitHub Tokenを確認してください（Contents: Read and write 権限が必要です）');
         toggleSettings();
       } else if (err.message.includes('404')) {
-        showToast('error', 'リポジトリが見つかりません', `${state.owner}/${state.repo} を確認してください`);
+        showToast('error', 'リポジトリにアクセスできません', `${REPO_OWNER}/${REPO_NAME} へのToken権限を確認してください`);
         toggleSettings();
       } else {
         showToast('error', '投稿失敗', err.message);
@@ -1675,7 +1638,7 @@
   validateForm();
 
   // Auto-open settings if no token
-  if (!state.token || !state.owner || !state.repo) {
+  if (!state.token) {
     setTimeout(() => {
       settingsPanel.classList.add('open');
       btnSettings.classList.add('active');
