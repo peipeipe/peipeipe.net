@@ -174,6 +174,14 @@
       }
       input[type="password"],
       .mono { font-family: var(--mono); }
+      input[readonly] {
+        color: var(--muted);
+        cursor: default;
+      }
+      input[readonly]:focus {
+        border-color: var(--border);
+        box-shadow: none;
+      }
       .two { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
       input[type="checkbox"] {
         appearance: none;
@@ -395,27 +403,23 @@
         </div>
       </div>
 
-      <section id="settings" class="settings" aria-label="GitHub settings">
-        <div class="two">
-          <div class="field">
-            <label for="owner">Owner</label>
-            <input id="owner" type="text" autocomplete="username" placeholder="peipeipe" />
-          </div>
-          <div class="field">
-            <label for="repo">Repo</label>
-            <input id="repo" type="text" placeholder="peipeipe.net" />
-          </div>
+      <!-- Real <form> with username + current-password fields so the browser's password
+           manager offers to save the token; submission is intercepted in JS. -->
+      <form id="settings" class="settings" aria-label="GitHub settings" action="#" method="post">
+        <div class="field">
+          <label for="repo-target">対象リポジトリ</label>
+          <input id="repo-target" type="text" name="username" autocomplete="username" readonly />
         </div>
         <div class="field">
           <label for="token">GitHub token</label>
-          <input id="token" type="password" autocomplete="current-password" placeholder="Contents: Read and write が必要" />
+          <input id="token" type="password" name="password" autocomplete="current-password" placeholder="Contents: Read and write が必要" />
         </div>
         <div class="row-actions">
-          <button id="btn-save-settings" type="button" class="primary">保存</button>
+          <button id="btn-save-settings" type="submit" class="primary">保存</button>
           <button id="btn-clear-settings" type="button">クリア</button>
           <span id="settings-status" class="status"></span>
         </div>
-      </section>
+      </form>
 
       <div class="grid">
         <aside class="side">
@@ -503,10 +507,8 @@
               <button class="tool" type="button" data-action="image">img</button>
               <button class="tool" type="button" data-action="code">`</button>
               <button class="tool tool-wide" type="button" data-action="hr">hr</button>
-              <input id="md-file" type="file" accept=".md,.markdown,.txt" hidden />
               <input id="image-file" type="file" accept="image/*" multiple hidden />
               <button id="btn-add-image" class="tool-wide" type="button">画像追加</button>
-              <button id="btn-import-md" class="tool-wide" type="button">MD読込</button>
             </div>
             <div id="drop-target" class="editor-shell drop-target">
               <pre id="gutter" class="gutter">1</pre>
@@ -539,10 +541,10 @@
 
     <script>
       const $ = (id) => document.getElementById(id);
+      const REPO_OWNER = 'peipeipe';
+      const REPO_NAME = 'peipeipe.net';
       const state = {
         token: '',
-        owner: '',
-        repo: '',
         sourcePath: '',
         sourceDate: '',
         replaceSourcePath: '',
@@ -552,9 +554,8 @@
 
       const els = {
         settings: $('settings'),
+        repoTarget: $('repo-target'),
         tokenBadge: $('token-badge'),
-        owner: $('owner'),
-        repo: $('repo'),
         token: $('token'),
         settingsStatus: $('settings-status'),
         sourcePath: $('source-path'),
@@ -577,7 +578,6 @@
         docStatus: $('doc-status'),
         charCount: $('char-count'),
         submit: $('btn-submit'),
-        mdFile: $('md-file'),
         imageFile: $('image-file'),
         imageList: $('image-list'),
         dropTarget: $('drop-target'),
@@ -587,31 +587,22 @@
       const LS_KEY = 'blog_post_cfg';
 
       function loadSettings() {
+        els.repoTarget.value = `${REPO_OWNER}/${REPO_NAME}`;
         try {
           const cfg = JSON.parse(localStorage.getItem(LS_KEY) || '{}');
           state.token = cfg.token || '';
-          state.owner = cfg.owner || '';
-          state.repo = cfg.repo || '';
           els.token.value = state.token;
-          els.owner.value = state.owner;
-          els.repo.value = state.repo;
         } catch (_) {}
         updateTokenBadge();
       }
 
       function saveSettings() {
         state.token = els.token.value.trim();
-        state.owner = els.owner.value.trim();
-        state.repo = els.repo.value.trim();
-        if (!state.token || !state.owner || !state.repo) {
-          setStatus(els.settingsStatus, 'err', '全フィールドを入力してください');
+        if (!state.token) {
+          setStatus(els.settingsStatus, 'err', 'トークンを入力してください');
           return;
         }
-        localStorage.setItem(LS_KEY, JSON.stringify({
-          token: state.token,
-          owner: state.owner,
-          repo: state.repo,
-        }));
+        localStorage.setItem(LS_KEY, JSON.stringify({ token: state.token }));
         updateTokenBadge();
         validate();
         setStatus(els.settingsStatus, 'ok', '保存しました');
@@ -619,15 +610,15 @@
 
       function clearSettings() {
         localStorage.removeItem(LS_KEY);
-        state.token = state.owner = state.repo = '';
-        els.token.value = els.owner.value = els.repo.value = '';
+        state.token = '';
+        els.token.value = '';
         updateTokenBadge();
         validate();
         setStatus(els.settingsStatus, 'warn', '設定をクリアしました');
       }
 
       function updateTokenBadge() {
-        const ok = Boolean(state.token && state.owner && state.repo);
+        const ok = Boolean(state.token);
         els.tokenBadge.textContent = ok ? 'GitHub設定済み' : 'GitHub設定未完了';
       }
 
@@ -876,7 +867,7 @@
       }
 
       async function ghJson(path, options = {}) {
-        const res = await fetch(`${API}/repos/${state.owner}/${state.repo}${path}`, {
+        const res = await fetch(`${API}/repos/${REPO_OWNER}/${REPO_NAME}${path}`, {
           ...options,
           headers: {
             ...ghHeaders(),
@@ -891,7 +882,7 @@
       }
 
       async function getFileInfo(path) {
-        const res = await fetch(`${API}/repos/${state.owner}/${state.repo}/contents/${path}`, {
+        const res = await fetch(`${API}/repos/${REPO_OWNER}/${REPO_NAME}/contents/${path}`, {
           headers: ghHeaders(),
         });
         if (res.status === 404) return null;
@@ -1041,22 +1032,22 @@
       }
 
       function ensureSettings() {
-        if (state.token && state.owner && state.repo) return true;
-        setStatus(els.settingsStatus, 'err', 'GitHub設定を保存してください');
+        if (state.token) return true;
+        setStatus(els.settingsStatus, 'err', 'GitHubトークンを保存してください');
         els.settings.classList.add('open');
         return false;
       }
 
       function validate() {
-        const ok = state.token && state.owner && state.repo
+        const ok = state.token
           && els.title.value.trim()
           && els.date.value
           && els.slug.value.trim()
           && els.body.value.trim()
           && !state.processing;
         els.submit.disabled = !ok;
-        if (!state.token || !state.owner || !state.repo) {
-          setStatus(els.docStatus, 'warn', 'GitHub設定が必要です');
+        if (!state.token) {
+          setStatus(els.docStatus, 'warn', 'GitHubトークンが必要です');
         } else if (!els.title.value.trim() || !els.date.value || !els.slug.value.trim()) {
           setStatus(els.docStatus, 'warn', 'title/date/slug を入力してください');
         } else if (!els.body.value.trim()) {
@@ -1173,7 +1164,7 @@
       });
 
       $('btn-settings').addEventListener('click', () => els.settings.classList.toggle('open'));
-      $('btn-save-settings').addEventListener('click', saveSettings);
+      els.settings.addEventListener('submit', (event) => { event.preventDefault(); saveSettings(); });
       $('btn-clear-settings').addEventListener('click', clearSettings);
       $('btn-list-posts').addEventListener('click', listRecentPosts);
       $('btn-load-source').addEventListener('click', loadSource);
@@ -1183,29 +1174,7 @@
         document.querySelector('[data-tab="raw"]').click();
       });
       $('btn-submit').addEventListener('click', submitPost);
-      $('btn-import-md').addEventListener('click', () => els.mdFile.click());
       $('btn-add-image').addEventListener('click', () => els.imageFile.click());
-
-      els.mdFile.addEventListener('change', (event) => {
-        const file = event.target.files[0];
-        if (!file) return;
-        const reader = new FileReader();
-        reader.onload = () => {
-          const parsed = parseFrontmatter(String(reader.result || ''));
-          els.body.value = parsed.body;
-          if (parsed.data.title) els.title.value = parsed.data.title;
-          if (parsed.data.date) {
-            els.date.value = extractDate(parsed.data.date);
-            els.time.value = extractTime(parsed.data.date) || els.time.value;
-          }
-          if (parsed.data.categories) els.categories.value = parsed.data.categories;
-          if (parsed.data.image) els.image.value = parsed.data.image;
-          if (parsed.data.permalink) els.permalink.value = parsed.data.permalink;
-          updateEditorStats();
-          renderPreview();
-        };
-        reader.readAsText(file, 'utf-8');
-      });
 
       els.imageFile.addEventListener('change', (event) => {
         addImageFiles(event.target.files || []);
