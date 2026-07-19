@@ -1,5 +1,32 @@
 [
   {
+    "name": "ふるさとの湯",
+    "user_comment": "やはり良い！！",
+    "date": "2026-07-19",
+    "lat": 36.924654774926644,
+    "lng": 138.44761552741667,
+    "address": "豊郷8734, 野沢温泉村, 長野県, 389-2502",
+    "foursquare_url": "https://foursquare.com/v/4ee552f10e61681b9717a448",
+    "photos": [
+      "https://fastly.4sqi.net/img/general/500x300/41463109_Khhc5zf5ur_PvVT6lIHf2SmLjXU1l2nif0TgtxA8MsI.jpg",
+      "https://fastly.4sqi.net/img/general/500x300/41463109_Zh6j_ue_RvdPODqvdrvSK4j5Bb_RSGVc2YH8OaVJDro.jpg",
+      "https://fastly.4sqi.net/img/general/500x300/41463109_Ct6QYpmg6HY9_4cny4Cm0hhoICQhsv69DCLKHpLohfc.jpg",
+      "https://fastly.4sqi.net/img/general/500x300/41463109_7cfoqnDhNkUlBmNGhdTwK8GgFvZ9SFINd2D3F7sIq1s.jpg"
+    ],
+    "categories": [
+      "温泉"
+    ],
+    "category_group": "onsen",
+    "category_label": "温泉・サウナ",
+    "category_emoji": "♨️",
+    "category_color": "#ff7a59",
+    "data_source": "foursquare_checkin",
+    "fsq_id": "4ee552f10e61681b9717a448",
+    "checkin_count": 2,
+    "first_checkin_at": "2026-07-10T02:13:50+00:00",
+    "last_checkin_at": "2026-07-19T07:28:08+00:00"
+  },
+  {
     "name": "おぶせ温泉穴観音の湯",
     "user_comment": "小布施ミニマラソンの後。やはり最高に湯質いいな",
     "date": "2026-07-12",
@@ -47,32 +74,6 @@
     "checkin_count": 1,
     "first_checkin_at": "2026-07-11T01:47:21+00:00",
     "last_checkin_at": "2026-07-11T01:47:21+00:00"
-  },
-  {
-    "name": "ふるさとの湯",
-    "user_comment": "",
-    "date": "2026-07-10",
-    "lat": 36.924654774926644,
-    "lng": 138.44761552741667,
-    "address": "豊郷8734, 野沢温泉村, 長野県, 389-2502",
-    "foursquare_url": "https://foursquare.com/v/4ee552f10e61681b9717a448",
-    "photos": [
-      "https://fastly.4sqi.net/img/general/500x300/41463109_Zh6j_ue_RvdPODqvdrvSK4j5Bb_RSGVc2YH8OaVJDro.jpg",
-      "https://fastly.4sqi.net/img/general/500x300/41463109_Ct6QYpmg6HY9_4cny4Cm0hhoICQhsv69DCLKHpLohfc.jpg",
-      "https://fastly.4sqi.net/img/general/500x300/41463109_7cfoqnDhNkUlBmNGhdTwK8GgFvZ9SFINd2D3F7sIq1s.jpg"
-    ],
-    "categories": [
-      "温泉"
-    ],
-    "category_group": "onsen",
-    "category_label": "温泉・サウナ",
-    "category_emoji": "♨️",
-    "category_color": "#ff7a59",
-    "data_source": "foursquare_checkin",
-    "fsq_id": "4ee552f10e61681b9717a448",
-    "checkin_count": 1,
-    "first_checkin_at": "2026-07-10T02:13:50+00:00",
-    "last_checkin_at": "2026-07-10T02:13:50+00:00"
   },
   {
     "name": "野沢温泉 麻釜",

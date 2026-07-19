@@ -1,5 +1,56 @@
 [
   {
+    "name": "あすぺる樹",
+    "user_comment": "",
+    "date": "2026-07-19",
+    "lat": 36.75615509282313,
+    "lng": 138.3658504486084,
+    "address": "新井465-3, 中野市, 長野県, 383-0064",
+    "foursquare_url": "https://foursquare.com/v/4d3ab23534ee3704917f7a9b",
+    "photos": [
+      "https://fastly.4sqi.net/img/general/500x300/41463109_ugUUw-nOH_3CmAVafMRPlTBG1ZniV8eQspDmW8CAOuQ.jpg"
+    ],
+    "categories": [
+      "レストラン"
+    ],
+    "category_group": "food",
+    "category_label": "食事",
+    "category_emoji": "🍜",
+    "category_color": "#e67e22",
+    "data_source": "foursquare_checkin",
+    "fsq_id": "4d3ab23534ee3704917f7a9b",
+    "checkin_count": 1,
+    "first_checkin_at": "2026-07-19T09:20:41+00:00",
+    "last_checkin_at": "2026-07-19T09:20:41+00:00"
+  },
+  {
+    "name": "ふるさとの湯",
+    "user_comment": "やはり良い！！",
+    "date": "2026-07-19",
+    "lat": 36.924654774926644,
+    "lng": 138.44761552741667,
+    "address": "豊郷8734, 野沢温泉村, 長野県, 389-2502",
+    "foursquare_url": "https://foursquare.com/v/4ee552f10e61681b9717a448",
+    "photos": [
+      "https://fastly.4sqi.net/img/general/500x300/41463109_Khhc5zf5ur_PvVT6lIHf2SmLjXU1l2nif0TgtxA8MsI.jpg",
+      "https://fastly.4sqi.net/img/general/500x300/41463109_Zh6j_ue_RvdPODqvdrvSK4j5Bb_RSGVc2YH8OaVJDro.jpg",
+      "https://fastly.4sqi.net/img/general/500x300/41463109_Ct6QYpmg6HY9_4cny4Cm0hhoICQhsv69DCLKHpLohfc.jpg",
+      "https://fastly.4sqi.net/img/general/500x300/41463109_7cfoqnDhNkUlBmNGhdTwK8GgFvZ9SFINd2D3F7sIq1s.jpg"
+    ],
+    "categories": [
+      "温泉"
+    ],
+    "category_group": "onsen",
+    "category_label": "温泉・サウナ",
+    "category_emoji": "♨️",
+    "category_color": "#ff7a59",
+    "data_source": "foursquare_checkin",
+    "fsq_id": "4ee552f10e61681b9717a448",
+    "checkin_count": 2,
+    "first_checkin_at": "2026-07-10T02:13:50+00:00",
+    "last_checkin_at": "2026-07-19T07:28:08+00:00"
+  },
+  {
     "name": "おぶせ温泉穴観音の湯",
     "user_comment": "小布施ミニマラソンの後。やはり最高に湯質いいな",
     "date": "2026-07-12",
@@ -189,32 +240,6 @@
     "checkin_count": 1,
     "first_checkin_at": "2026-07-10T03:21:47+00:00",
     "last_checkin_at": "2026-07-10T03:21:47+00:00"
-  },
-  {
-    "name": "ふるさとの湯",
-    "user_comment": "",
-    "date": "2026-07-10",
-    "lat": 36.924654774926644,
-    "lng": 138.44761552741667,
-    "address": "豊郷8734, 野沢温泉村, 長野県, 389-2502",
-    "foursquare_url": "https://foursquare.com/v/4ee552f10e61681b9717a448",
-    "photos": [
-      "https://fastly.4sqi.net/img/general/500x300/41463109_Zh6j_ue_RvdPODqvdrvSK4j5Bb_RSGVc2YH8OaVJDro.jpg",
-      "https://fastly.4sqi.net/img/general/500x300/41463109_Ct6QYpmg6HY9_4cny4Cm0hhoICQhsv69DCLKHpLohfc.jpg",
-      "https://fastly.4sqi.net/img/general/500x300/41463109_7cfoqnDhNkUlBmNGhdTwK8GgFvZ9SFINd2D3F7sIq1s.jpg"
-    ],
-    "categories": [
-      "温泉"
-    ],
-    "category_group": "onsen",
-    "category_label": "温泉・サウナ",
-    "category_emoji": "♨️",
-    "category_color": "#ff7a59",
-    "data_source": "foursquare_checkin",
-    "fsq_id": "4ee552f10e61681b9717a448",
-    "checkin_count": 1,
-    "first_checkin_at": "2026-07-10T02:13:50+00:00",
-    "last_checkin_at": "2026-07-10T02:13:50+00:00"
   },
   {
     "name": "野沢温泉 麻釜",
@@ -4705,7 +4730,7 @@
       "https://fastly.4sqi.net/img/general/500x300/41463109_IerdVGB2o3iNP5EUDrAqO5t9B6wGHkmfqQejf5qnnGw.jpg"
     ],
     "categories": [
-      "ラーメン屋"
+      "Ramen Restaurant"
     ],
     "category_group": "food",
     "category_label": "食事",
@@ -4718,7 +4743,7 @@
     "last_checkin_at": "2025-10-11T04:19:43+00:00"
   },
   {
-    "name": "権堂駅",
+    "name": "Gondo Station (権堂駅)",
     "user_comment": "",
     "date": "2025-10-11",
     "lat": 36.653133559561574,
@@ -4729,7 +4754,7 @@
       "https://fastly.4sqi.net/img/general/500x300/41463109_L3EVEAGlBbCfXlsb1nZOZsI6290IChIOKpatpZS1QNM.jpg"
     ],
     "categories": [
-      "鉄道駅"
+      "Rail Station"
     ],
     "category_group": "transport",
     "category_label": "交通",
@@ -17533,8 +17558,8 @@
     "name": "JR Ueno Station (JR 上野駅)",
     "user_comment": "混んでる",
     "date": "2023-03-19",
-    "lat": 35.71302024566382,
-    "lng": 139.77628810102416,
+    "lat": 35.71342643908671,
+    "lng": 139.7764678361808,
     "address": "上野7-1-1, 台東区, 東京都, 110-0005",
     "foursquare_url": "https://foursquare.com/v/4b661ccdf964a52055142be3",
     "photos": [
@@ -47616,8 +47641,8 @@
     "name": "Kita-ikebukuro Station (TJ02) (北池袋駅)",
     "user_comment": "",
     "date": "2013-07-11",
-    "lat": 35.74096158671064,
-    "lng": 139.7163468377791,
+    "lat": 35.741279,
+    "lng": 139.71675,
     "address": "池袋本町1-36-6, 豊島区, 東京都, 170-0011",
     "foursquare_url": "https://foursquare.com/v/4b56d1eff964a520171c28e3",
     "photos": [],
@@ -48232,8 +48257,8 @@
     "name": "Ochanomizu Station (御茶ノ水駅)",
     "user_comment": "",
     "date": "2013-05-02",
-    "lat": 35.69981444953369,
-    "lng": 139.76475623182498,
+    "lat": 35.69965832761927,
+    "lng": 139.76505573257626,
     "address": "神田駿河台2-6-1, 千代田区, 東京都",
     "foursquare_url": "https://foursquare.com/v/4b38b418f964a520914f25e3",
     "photos": [],
@@ -50326,8 +50351,8 @@
     "name": "Kyoto Station (京都駅)",
     "user_comment": "京都なう。これから清水寺行く",
     "date": "2013-01-03",
-    "lat": 34.98527217895804,
-    "lng": 135.75894518198325,
+    "lat": 34.98543588306917,
+    "lng": 135.75859808182526,
     "address": "下京区東塩小路町/東塩小路高倉町/東塩小路釜殿町, 京都市, 京都府, 600-8214",
     "foursquare_url": "https://foursquare.com/v/4b570e89f964a520b22428e3",
     "photos": [
