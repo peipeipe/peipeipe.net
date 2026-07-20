@@ -973,8 +973,15 @@
     "lng": 138.238468,
     "elevation": 694,
     "tags": [],
-    "visit_count": 3,
+    "visit_count": 4,
     "activities": [
+      {
+        "id": 19386957052,
+        "name": "夕方のトレイルランニング",
+        "date": "2026-07-20",
+        "sport_type": "TrailRun",
+        "distance_km": 14.2
+      },
       {
         "id": 18641710649,
         "name": "Morning Trail Run",
@@ -998,7 +1005,7 @@
       }
     ],
     "first_visit": "2026-05-12",
-    "last_visit": "2026-05-25"
+    "last_visit": "2026-07-20"
   },
   {
     "name": "子檀嶺岳",
