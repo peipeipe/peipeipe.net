@@ -13152,7 +13152,7 @@
     "last_checkin_at": "2024-02-29T03:25:45+00:00"
   },
   {
-    "name": "ステーキライスとカレーの店 センタービーフ 西新宿店",
+    "name": "センタービーフ 西新宿店",
     "user_comment": "",
     "date": "2024-02-28",
     "lat": 35.695045,
@@ -13165,10 +13165,10 @@
     "categories": [
       "Steakhouse"
     ],
-    "category_group": "food",
-    "category_label": "食事",
-    "category_emoji": "🍜",
-    "category_color": "#e67e22",
+    "category_group": "cafe",
+    "category_label": "カフェ",
+    "category_emoji": "☕",
+    "category_color": "#8d6e63",
     "data_source": "foursquare_checkin",
     "fsq_id": "641d6d7400b9775e069efaed",
     "checkin_count": 1,
@@ -17961,8 +17961,8 @@
     "name": "Kansai International Airport (KIX) (関西国際空港)",
     "user_comment": "",
     "date": "2023-02-27",
-    "lat": 34.43541308149386,
-    "lng": 135.24392518737886,
+    "lat": 34.43522874814575,
+    "lng": 135.24489564994715,
     "address": "泉州空港北1, 泉佐野市, 大阪府, 549-0001",
     "foursquare_url": "https://foursquare.com/v/4b2696c0f964a520fa7d24e3",
     "photos": [
