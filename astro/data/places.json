@@ -1,5 +1,49 @@
 [
   {
+    "name": "松屋",
+    "user_comment": "",
+    "date": "2026-07-21",
+    "lat": 36.4115641816554,
+    "lng": 138.2317430592898,
+    "address": "秋和492-5, 上田市, 長野県, 386-0041",
+    "foursquare_url": "https://foursquare.com/v/4fc54566e4b079c69e9dcdfc",
+    "photos": [],
+    "categories": [
+      "どんぶり屋"
+    ],
+    "category_group": "other",
+    "category_label": "その他",
+    "category_emoji": "📍",
+    "category_color": "#607d8b",
+    "data_source": "foursquare_checkin",
+    "fsq_id": "4fc54566e4b079c69e9dcdfc",
+    "checkin_count": 3,
+    "first_checkin_at": "2024-10-02T12:23:22+00:00",
+    "last_checkin_at": "2026-07-21T11:41:14+00:00"
+  },
+  {
+    "name": "ザ・ビッグ 上田中央店",
+    "user_comment": "",
+    "date": "2026-07-20",
+    "lat": 36.406382345524506,
+    "lng": 138.25839145670972,
+    "address": "中央5-13-31, 上田市, 長野県, 386-0012",
+    "foursquare_url": "https://foursquare.com/v/51dc8b8c498edc1985a20ae2",
+    "photos": [],
+    "categories": [
+      "スーパーマーケット"
+    ],
+    "category_group": "shop",
+    "category_label": "買い物",
+    "category_emoji": "🛍️",
+    "category_color": "#ec407a",
+    "data_source": "foursquare_checkin",
+    "fsq_id": "51dc8b8c498edc1985a20ae2",
+    "checkin_count": 6,
+    "first_checkin_at": "2024-10-02T13:00:44+00:00",
+    "last_checkin_at": "2026-07-20T04:50:37+00:00"
+  },
+  {
     "name": "あすぺる樹",
     "user_comment": "",
     "date": "2026-07-19",
@@ -4583,28 +4627,6 @@
     "last_checkin_at": "2025-10-25T02:00:33+00:00"
   },
   {
-    "name": "松屋",
-    "user_comment": "",
-    "date": "2025-10-23",
-    "lat": 36.4115641816554,
-    "lng": 138.2317430592898,
-    "address": "秋和492-5, 上田市, 長野県, 386-0041",
-    "foursquare_url": "https://foursquare.com/v/4fc54566e4b079c69e9dcdfc",
-    "photos": [],
-    "categories": [
-      "どんぶり屋"
-    ],
-    "category_group": "other",
-    "category_label": "その他",
-    "category_emoji": "📍",
-    "category_color": "#607d8b",
-    "data_source": "foursquare_checkin",
-    "fsq_id": "4fc54566e4b079c69e9dcdfc",
-    "checkin_count": 2,
-    "first_checkin_at": "2024-10-02T12:23:22+00:00",
-    "last_checkin_at": "2025-10-23T12:39:28+00:00"
-  },
-  {
     "name": "ハードオフ/オフハウス/ホビーオフ 上田店",
     "user_comment": "",
     "date": "2025-10-22",
@@ -4697,7 +4719,7 @@
     "last_checkin_at": "2025-10-18T07:34:51+00:00"
   },
   {
-    "name": "マクドナルド 143上田原店",
+    "name": "McDonald's (マクドナルド 143上田原店)",
     "user_comment": "",
     "date": "2025-10-13",
     "lat": 36.39004030188172,
@@ -4706,12 +4728,12 @@
     "foursquare_url": "https://foursquare.com/v/4c1c98a1b4e62d7f9a4ddb93",
     "photos": [],
     "categories": [
-      "ファーストフード店"
+      "Fast Food Restaurant"
     ],
-    "category_group": "other",
-    "category_label": "その他",
-    "category_emoji": "📍",
-    "category_color": "#607d8b",
+    "category_group": "food",
+    "category_label": "食事",
+    "category_emoji": "🍜",
+    "category_color": "#e67e22",
     "data_source": "foursquare_checkin",
     "fsq_id": "4c1c98a1b4e62d7f9a4ddb93",
     "checkin_count": 2,
@@ -6026,28 +6048,6 @@
     "checkin_count": 2,
     "first_checkin_at": "2025-06-27T23:56:04+00:00",
     "last_checkin_at": "2025-07-26T03:21:14+00:00"
-  },
-  {
-    "name": "ザ・ビッグ 上田中央店",
-    "user_comment": "",
-    "date": "2025-07-19",
-    "lat": 36.406382345524506,
-    "lng": 138.25839145670972,
-    "address": "中央5-13-31, 上田市, 長野県, 386-0012",
-    "foursquare_url": "https://foursquare.com/v/51dc8b8c498edc1985a20ae2",
-    "photos": [],
-    "categories": [
-      "Supermarket"
-    ],
-    "category_group": "shop",
-    "category_label": "買い物",
-    "category_emoji": "🛍️",
-    "category_color": "#ec407a",
-    "data_source": "foursquare_checkin",
-    "fsq_id": "51dc8b8c498edc1985a20ae2",
-    "checkin_count": 5,
-    "first_checkin_at": "2024-10-02T13:00:44+00:00",
-    "last_checkin_at": "2025-07-19T03:00:39+00:00"
   },
   {
     "name": "Curry Shop C&C (カレーショップ C&C)",
@@ -18157,12 +18157,12 @@
       "https://fastly.4sqi.net/img/general/500x300/41463109_MkuoNYD-64Q6nZSqfWtMSaeDM7YgdTljlrIDHvpgPzw.jpg"
     ],
     "categories": [
-      "Scenic Lookout"
+      "Tower"
     ],
-    "category_group": "outdoors",
-    "category_label": "自然・公園",
-    "category_emoji": "🌿",
-    "category_color": "#2e7d32",
+    "category_group": "other",
+    "category_label": "その他",
+    "category_emoji": "📍",
+    "category_color": "#607d8b",
     "data_source": "foursquare_checkin",
     "fsq_id": "4b63a4c9f964a52053892ae3",
     "checkin_count": 1,
@@ -36822,8 +36822,8 @@
     "name": "Ōsaka Station (大阪駅)",
     "user_comment": "",
     "date": "2017-10-15",
-    "lat": 34.70256064836896,
-    "lng": 135.49584210356494,
+    "lat": 34.702396859955456,
+    "lng": 135.49560278134064,
     "address": "北区梅田3-1-1, 大阪市, 大阪府, 530-0001",
     "foursquare_url": "https://foursquare.com/v/4b3ae51bf964a520956f25e3",
     "photos": [
@@ -50691,12 +50691,12 @@
     "foursquare_url": "https://foursquare.com/v/4b5c3d00f964a520322829e3",
     "photos": [],
     "categories": [
-      "Monument"
+      "Public Art"
     ],
-    "category_group": "other",
-    "category_label": "その他",
-    "category_emoji": "📍",
-    "category_color": "#607d8b",
+    "category_group": "bar",
+    "category_label": "酒場",
+    "category_emoji": "🍺",
+    "category_color": "#7e57c2",
     "data_source": "foursquare_checkin",
     "fsq_id": "4b5c3d00f964a520322829e3",
     "checkin_count": 1,
