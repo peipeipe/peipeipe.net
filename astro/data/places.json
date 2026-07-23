@@ -14001,8 +14001,8 @@
     "name": "Tokaido Shinkansen Tokyo Station (東海道新幹線 東京駅)",
     "user_comment": "",
     "date": "2024-01-26",
-    "lat": 35.681207664809634,
-    "lng": 139.7677862507466,
+    "lat": 35.681043587110956,
+    "lng": 139.76789607311622,
     "address": "丸の内1-9-1, 千代田区, 東京都, 100-0005",
     "foursquare_url": "https://foursquare.com/v/4b792714f964a52018ed2ee3",
     "photos": [
@@ -15196,8 +15196,8 @@
     "name": "天然温泉 七福の湯 戸田店",
     "user_comment": "ランニング&スパとかいうやつ",
     "date": "2023-10-14",
-    "lat": 35.805987009635444,
-    "lng": 139.6959604400923,
+    "lat": 35.805787,
+    "lng": 139.696262,
     "address": "喜沢南1-4-56, 戸田市, 埼玉県, 335-0014",
     "foursquare_url": "https://foursquare.com/v/4b5d0319f964a520e04e29e3",
     "photos": [
@@ -40054,12 +40054,12 @@
     "last_checkin_at": "2016-09-02T11:49:29+00:00"
   },
   {
-    "name": "BOOKOFF (BOOKOFF 新宿駅西口店)",
+    "name": "BOOKOFF (BOOKOFF PLUS 新宿駅西口店)",
     "user_comment": "",
     "date": "2016-09-02",
     "lat": 35.689551,
     "lng": 139.698331,
-    "address": "西新宿1-10-2 (110ビル 3F-6F), 新宿区, 東京都, 160-0023　",
+    "address": "西新宿1-10-2 (110ビル 3F-6F), 新宿区, 東京都, 160-0023",
     "foursquare_url": "https://foursquare.com/v/51a86b29498e110c3a3fb5e7",
     "photos": [],
     "categories": [
