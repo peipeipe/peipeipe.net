@@ -1,5 +1,59 @@
 [
   {
+    "id": 19454507995,
+    "name": "白馬クロスカントリー駅伝",
+    "sport_type": "Run",
+    "distance": 4015.7,
+    "moving_time": 951,
+    "elapsed_time": 954,
+    "total_elevation_gain": 71.0,
+    "start_date": "2026-07-25T07:12:27Z",
+    "start_date_local": "2026-07-25T16:12:27Z",
+    "start_latlng": [
+      36.63452,
+      137.858418
+    ],
+    "average_speed": 4.209,
+    "max_speed": 6.06,
+    "summary_polyline": "wdr~EanlhYPi@@KAWM[kD_DgAq@w@_@GOKeAEkA\\a@REj@FTHnBfB^j@JF^Db@@n@\\z@XPB~@?p@MLMz@uARI\\FJPJZD`@Rf@^JH?NG`@]PQ\\OXHXZJj@@p@Kd@MLOBECYs@Me@GEa@Ha@Xu@XoB@s@Lu@DEDET?b@CRQb@O@e@]uDaDgAw@OC_@DEA_Ao@SI[TI\\MbAGNQPIT?DLx@Ah@DXRRlAd@`@\\dEpDt@t@Td@V`A\\n@LXF^?TAPIZo@tAe@f@]RUBg@?YCiA_@SO[a@_@s@WUEAMDs@nASHKAOGUg@?SFY\\[t@e@`A{@b@UT]DQNaBN}@Gk@IUwAqAa@Qw@OWQKIUg@QGWC]RGR@VLRVRLFf@Df@Ov@@PDTJBFoAQaALk@OOG_@[Ai@N_@f@SDE@ECQGGi@Ac@KWK][DED@~@^RFT@RCXKRQnAkBTOR?RFXNTT@TAHq@xAG^DZXVjAx@dAx@VLNCLMP["
+  },
+  {
+    "id": 19454508023,
+    "name": "Afternoon Run",
+    "sport_type": "Run",
+    "distance": 2412.5,
+    "moving_time": 778,
+    "elapsed_time": 3056,
+    "total_elevation_gain": 9.0,
+    "start_date": "2026-07-25T05:55:23Z",
+    "start_date_local": "2026-07-25T14:55:23Z",
+    "start_latlng": [
+      36.633806,
+      137.858411
+    ],
+    "average_speed": 3.101,
+    "max_speed": 4.46,
+    "summary_polyline": "g`r~EanlhYPQBI@MCGECOHKPi@vBUJIFAJF@pAyBNm@EGI@GFGNIXMlAa@z@K^FG`@kAXa@h@sAG]I?Q^i@~AG`@BFDCJ]Fa@AUGIQA[WG?]d@]JCD@JRV`@N^w@ZS@D@TADIL]XK@g@MUUEUDGJCZA`@F?S^XDALKRi@BA?Ls@~@AF[z@BT?XDH?g@CWOo@Ci@x@Ig@ZIHWl@Je@^gA?CC?{@`BGAEIBOVYd@}@G^Oj@Wj@@DFIR_AEy@q@c@OGgA{@}AwACE?OHEJDtArAfA~@RC{@`C@HF@@Cn@sBg@y@sBaBOCKK@Cz@n@b@j@N\\PRz@r@LDOEc@SsAaAwAoAd@d@vAjAz@l@t@`@S{BaAy@o@a@"
+  },
+  {
+    "id": 19453781341,
+    "name": "午後のランニング",
+    "sport_type": "Run",
+    "distance": 4153.0,
+    "moving_time": 1361,
+    "elapsed_time": 1361,
+    "total_elevation_gain": 75.0,
+    "start_date": "2026-07-25T04:28:10Z",
+    "start_date_local": "2026-07-25T13:28:10Z",
+    "start_latlng": [
+      36.633718,
+      137.85874
+    ],
+    "average_speed": 3.051,
+    "max_speed": 4.82,
+    "summary_polyline": "u_r~EcplhYeCmBgCuBa@Y]DYNsAi@GGMc@KyABi@@INQ`@M`@BvAx@Xb@ZZb@p@VJ|@@n@TTBNNd@Nj@B`@?VIVe@d@q@d@YTETLDFN^@LCRJb@`@TJ?RIp@o@TKR?b@p@Lt@It@ENWPMCIGSeAUUc@@s@h@SFm@Ho@?]FeA@e@HEBGRBn@I\\KPKBICUSoBiBqCqBOCg@DUMc@][QIC_@FGRElAOf@QZ@\\Lf@Af@Lb@\\Rt@P\\TnEdEf@ZV\\Pj@RZj@pAHj@CZGVq@bBm@n@e@Tq@?_@Mg@Kg@WYYg@iAa@USHUj@a@d@a@BUYASFWbAmAROj@s@l@CJIJYFi@X}@P_A@YMq@[_@_@]g@_@SK_AQYKKKSe@IM[IUFYf@DZRRh@RVBZORELAv@PRJBFk@Sw@Aa@Rc@@k@QSSGa@Rc@ZYNS?GMMa@Ew@a@a@_@CIH?lAt@VFL?PGNMLQPe@FCVc@f@k@PGR@NDXRFJAXB@JKDFG\\Wd@[z@?ZBDpD~CPTL@LFz@r@"
+  },
+  {
     "id": 19443987682,
     "name": "夕方のトレイルランニング",
     "sport_type": "TrailRun",
