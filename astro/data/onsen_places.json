@@ -1,5 +1,31 @@
 [
   {
+    "name": "ゆーぷる木崎湖",
+    "user_comment": "白馬クロスカントリー駅伝後に急いで利用 900円　サウナあり水風呂なし",
+    "date": "2026-07-25",
+    "lat": 36.54255156779344,
+    "lng": 137.84183873518205,
+    "address": "平10639-1, 大町市, 長野県, 398-0001",
+    "foursquare_url": "https://foursquare.com/v/4b6e35ddf964a520e5b12ce3",
+    "photos": [
+      "https://fastly.4sqi.net/img/general/500x300/41463109_upbzMkXVV-LBv8AQmalIGM48quCGinxDpoHPbob5wCY.jpg",
+      "https://fastly.4sqi.net/img/general/500x300/41463109_NMrF4NUx2x7-ukCkTbo_09RrEtBbImQ4feU17mYLOOc.jpg",
+      "https://fastly.4sqi.net/img/general/500x300/41463109_Z_egmbl1hPG44ftsMjMS2cOPzYzzUZ0QFAzpdbJD_iY.jpg"
+    ],
+    "categories": [
+      "温泉"
+    ],
+    "category_group": "onsen",
+    "category_label": "温泉・サウナ",
+    "category_emoji": "♨️",
+    "category_color": "#ff7a59",
+    "data_source": "foursquare_checkin",
+    "fsq_id": "4b6e35ddf964a520e5b12ce3",
+    "checkin_count": 1,
+    "first_checkin_at": "2026-07-25T09:16:54+00:00",
+    "last_checkin_at": "2026-07-25T09:16:54+00:00"
+  },
+  {
     "name": "ふるさとの湯",
     "user_comment": "やはり良い！！",
     "date": "2026-07-19",
@@ -818,7 +844,7 @@
       "https://fastly.4sqi.net/img/general/500x300/41463109_8io_i2oTaY-Jl-z_f6qMFHnkhnDAb4c61j_308-0oyA.jpg"
     ],
     "categories": [
-      "温泉"
+      "Hot Spring"
     ],
     "category_group": "onsen",
     "category_label": "温泉・サウナ",
@@ -840,7 +866,7 @@
     "foursquare_url": "https://foursquare.com/v/4c5fa46f3986e21e16a9924f",
     "photos": [],
     "categories": [
-      "温泉"
+      "Hot Spring"
     ],
     "category_group": "onsen",
     "category_label": "温泉・サウナ",

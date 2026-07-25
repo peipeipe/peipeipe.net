@@ -1,5 +1,82 @@
 [
   {
+    "name": "喜多さん",
+    "user_comment": "",
+    "date": "2026-07-25",
+    "lat": 36.50267320017557,
+    "lng": 137.86175488685956,
+    "address": "大町3222, 大町市, 長野県, 398-0002",
+    "foursquare_url": "https://foursquare.com/v/540a9859498e234757a82110",
+    "photos": [
+      "https://fastly.4sqi.net/img/general/500x300/41463109_mDVAzzEGp-9SPUsImTV8JP01NC8EqWn1I6qjuGMqJb8.jpg",
+      "https://fastly.4sqi.net/img/general/500x300/41463109_iyDUF-bTTkF2yWkdPgxCm9h1aseJ7T4r15kc5qCUEDk.jpg"
+    ],
+    "categories": [
+      "居酒屋"
+    ],
+    "category_group": "food",
+    "category_label": "食事",
+    "category_emoji": "🍜",
+    "category_color": "#e67e22",
+    "data_source": "foursquare_checkin",
+    "fsq_id": "540a9859498e234757a82110",
+    "checkin_count": 2,
+    "first_checkin_at": "2025-07-26T09:38:21+00:00",
+    "last_checkin_at": "2026-07-25T09:43:24+00:00"
+  },
+  {
+    "name": "ゆーぷる木崎湖",
+    "user_comment": "白馬クロスカントリー駅伝後に急いで利用 900円　サウナあり水風呂なし",
+    "date": "2026-07-25",
+    "lat": 36.54255156779344,
+    "lng": 137.84183873518205,
+    "address": "平10639-1, 大町市, 長野県, 398-0001",
+    "foursquare_url": "https://foursquare.com/v/4b6e35ddf964a520e5b12ce3",
+    "photos": [
+      "https://fastly.4sqi.net/img/general/500x300/41463109_upbzMkXVV-LBv8AQmalIGM48quCGinxDpoHPbob5wCY.jpg",
+      "https://fastly.4sqi.net/img/general/500x300/41463109_NMrF4NUx2x7-ukCkTbo_09RrEtBbImQ4feU17mYLOOc.jpg",
+      "https://fastly.4sqi.net/img/general/500x300/41463109_Z_egmbl1hPG44ftsMjMS2cOPzYzzUZ0QFAzpdbJD_iY.jpg"
+    ],
+    "categories": [
+      "温泉"
+    ],
+    "category_group": "onsen",
+    "category_label": "温泉・サウナ",
+    "category_emoji": "♨️",
+    "category_color": "#ff7a59",
+    "data_source": "foursquare_checkin",
+    "fsq_id": "4b6e35ddf964a520e5b12ce3",
+    "checkin_count": 1,
+    "first_checkin_at": "2026-07-25T09:16:54+00:00",
+    "last_checkin_at": "2026-07-25T09:16:54+00:00"
+  },
+  {
+    "name": "白馬クロスカントリー競技場(スノーハープ)",
+    "user_comment": "",
+    "date": "2026-07-25",
+    "lat": 36.63435880612384,
+    "lng": 137.85766851116128,
+    "address": "神城3003, 白馬村, 長野県, 399-9211",
+    "foursquare_url": "https://foursquare.com/v/4d5f11b3ef378cfa43926aa6",
+    "photos": [
+      "https://fastly.4sqi.net/img/general/500x300/41463109_9EX14VrrEI1lXuPM_4MBt_pO7TfwOiqU_yt3PErPBT4.jpg",
+      "https://fastly.4sqi.net/img/general/500x300/41463109_5NRRJtx695nuf5tTYHFd_3X051NWl4per5Cx6rdWHBY.jpg",
+      "https://fastly.4sqi.net/img/general/500x300/41463109_TjAQ-IDIs8UYf3iGnc_u2pArulZ5HIHMC7V2SDTyXIg.jpg"
+    ],
+    "categories": [
+      "競技場"
+    ],
+    "category_group": "other",
+    "category_label": "その他",
+    "category_emoji": "📍",
+    "category_color": "#607d8b",
+    "data_source": "foursquare_checkin",
+    "fsq_id": "4d5f11b3ef378cfa43926aa6",
+    "checkin_count": 3,
+    "first_checkin_at": "2025-06-27T23:56:04+00:00",
+    "last_checkin_at": "2026-07-25T05:20:25+00:00"
+  },
+  {
     "name": "松屋",
     "user_comment": "",
     "date": "2026-07-21",
@@ -4684,7 +4761,7 @@
       "https://fastly.4sqi.net/img/general/500x300/41463109_8io_i2oTaY-Jl-z_f6qMFHnkhnDAb4c61j_308-0oyA.jpg"
     ],
     "categories": [
-      "温泉"
+      "Hot Spring"
     ],
     "category_group": "onsen",
     "category_label": "温泉・サウナ",
@@ -4706,7 +4783,7 @@
     "foursquare_url": "https://foursquare.com/v/4c5fa46f3986e21e16a9924f",
     "photos": [],
     "categories": [
-      "温泉"
+      "Hot Spring"
     ],
     "category_group": "onsen",
     "category_label": "温泉・サウナ",
@@ -5530,8 +5607,8 @@
     "name": "JR Tokyo Station (JR 東京駅)",
     "user_comment": "",
     "date": "2025-08-17",
-    "lat": 35.68125488115722,
-    "lng": 139.7666630790794,
+    "lat": 35.68129031585252,
+    "lng": 139.7669026872528,
     "address": "丸の内1-9-1, 千代田区, 東京都, 100-6505",
     "foursquare_url": "https://foursquare.com/v/4be4f932d4f7c9b61df92420",
     "photos": [],
@@ -5979,30 +6056,6 @@
     "last_checkin_at": "2025-07-27T01:05:44+00:00"
   },
   {
-    "name": "喜多さん",
-    "user_comment": "",
-    "date": "2025-07-26",
-    "lat": 36.50267320017557,
-    "lng": 137.86175488685956,
-    "address": "大町3222, 大町市, 長野県, 398-0002",
-    "foursquare_url": "https://foursquare.com/v/540a9859498e234757a82110",
-    "photos": [
-      "https://fastly.4sqi.net/img/general/500x300/41463109_iyDUF-bTTkF2yWkdPgxCm9h1aseJ7T4r15kc5qCUEDk.jpg"
-    ],
-    "categories": [
-      "Sake Bar"
-    ],
-    "category_group": "bar",
-    "category_label": "酒場",
-    "category_emoji": "🍺",
-    "category_color": "#7e57c2",
-    "data_source": "foursquare_checkin",
-    "fsq_id": "540a9859498e234757a82110",
-    "checkin_count": 1,
-    "first_checkin_at": "2025-07-26T09:38:21+00:00",
-    "last_checkin_at": "2025-07-26T09:38:21+00:00"
-  },
-  {
     "name": "Michi no Eki Poka-Poka Land Miasa (道の駅 ぽかぽかランド美麻)",
     "user_comment": "",
     "date": "2025-07-26",
@@ -6023,31 +6076,6 @@
     "checkin_count": 1,
     "first_checkin_at": "2025-07-26T08:52:38+00:00",
     "last_checkin_at": "2025-07-26T08:52:38+00:00"
-  },
-  {
-    "name": "白馬クロスカントリー競技場(スノーハープ)",
-    "user_comment": "",
-    "date": "2025-07-26",
-    "lat": 36.63435880612384,
-    "lng": 137.85766851116128,
-    "address": "神城3003, 白馬村, 長野県, 399-9211",
-    "foursquare_url": "https://foursquare.com/v/4d5f11b3ef378cfa43926aa6",
-    "photos": [
-      "https://fastly.4sqi.net/img/general/500x300/41463109_5NRRJtx695nuf5tTYHFd_3X051NWl4per5Cx6rdWHBY.jpg",
-      "https://fastly.4sqi.net/img/general/500x300/41463109_TjAQ-IDIs8UYf3iGnc_u2pArulZ5HIHMC7V2SDTyXIg.jpg"
-    ],
-    "categories": [
-      "Stadium"
-    ],
-    "category_group": "other",
-    "category_label": "その他",
-    "category_emoji": "📍",
-    "category_color": "#607d8b",
-    "data_source": "foursquare_checkin",
-    "fsq_id": "4d5f11b3ef378cfa43926aa6",
-    "checkin_count": 2,
-    "first_checkin_at": "2025-06-27T23:56:04+00:00",
-    "last_checkin_at": "2025-07-26T03:21:14+00:00"
   },
   {
     "name": "Curry Shop C&C (カレーショップ C&C)",
@@ -13929,8 +13957,8 @@
     "name": "Echigo-Yuzawa Station (越後湯沢駅)",
     "user_comment": "",
     "date": "2024-01-27",
-    "lat": 36.93578709763373,
-    "lng": 138.80964259620234,
+    "lat": 36.936186083696626,
+    "lng": 138.80967696473022,
     "address": "湯沢2427-1 (上越新幹線/上越線), 湯沢町, 新潟県, 949-6101",
     "foursquare_url": "https://foursquare.com/v/4b55cde0f964a520daf027e3",
     "photos": [
@@ -17242,8 +17270,8 @@
     "name": "Ebisu Station (恵比寿駅)",
     "user_comment": "",
     "date": "2023-04-22",
-    "lat": 35.646776444403685,
-    "lng": 139.71010768723437,
+    "lat": 35.6469332208829,
+    "lng": 139.70997303655753,
     "address": "恵比寿南1-5-5, 渋谷区, 東京都, 150-0022",
     "foursquare_url": "https://foursquare.com/v/4b42a9c9f964a5206dd825e3",
     "photos": [],
@@ -17961,8 +17989,8 @@
     "name": "Kansai International Airport (KIX) (関西国際空港)",
     "user_comment": "",
     "date": "2023-02-27",
-    "lat": 34.43522874814575,
-    "lng": 135.24489564994715,
+    "lat": 34.43581164362259,
+    "lng": 135.2442730867208,
     "address": "泉州空港北1, 泉佐野市, 大阪府, 549-0001",
     "foursquare_url": "https://foursquare.com/v/4b2696c0f964a520fa7d24e3",
     "photos": [
