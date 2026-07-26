@@ -1,10 +1,27 @@
 ---
 import MapLayout from "@/layouts/MapLayout.astro";
 import { getOnsenPlaces, summarizePlaces, type CheckinPlace } from "@/lib/checkins";
+import {
+  formatMgKg,
+  formatTemp,
+  getCompositionMap,
+  getOnsenCompositions,
+  qualityBreakdown,
+  scatterPoints,
+  summarizeCompositions,
+  TREATMENT_LABELS,
+  type CompositionIngredient,
+  type OnsenComposition,
+} from "@/lib/composition";
 
 const places = getOnsenPlaces();
 const stats = summarizePlaces(places);
 const recentPlaces = places.slice(0, 60);
+
+const compositions = getOnsenCompositions();
+const compositionMap = getCompositionMap();
+const compositionStats = summarizeCompositions(compositions);
+const qualities = qualityBreakdown(compositions);
 
 const googleMapsUrl = (place: CheckinPlace) => {
   const lat = Number(place.lat);
@@ -13,6 +30,80 @@ const googleMapsUrl = (place: CheckinPlace) => {
   const query = [place.name, coordinates].filter(Boolean).join(" ");
   return `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(query)}`;
 };
+
+// 掲示から拾えた指標だけをバッジにする
+const compositionBadges = (entry: OnsenComposition) =>
+  [
+    typeof entry.source_temp_c === "number" ? `源泉 ${formatTemp(entry.source_temp_c)}` : "",
+    typeof entry.ph === "number" ? `pH ${entry.ph}` : "",
+    typeof entry.total_ingredients_mg_kg === "number" ? `成分総計 ${formatMgKg(entry.total_ingredients_mg_kg)}` : "",
+  ].filter(Boolean);
+
+const ingredientGroups = (entry: OnsenComposition) =>
+  [
+    { label: "陽イオン", items: entry.cations, total: entry.cations_total_mg_kg },
+    { label: "陰イオン", items: entry.anions, total: entry.anions_total_mg_kg },
+    { label: "非解離成分", items: entry.undissociated, total: entry.undissociated_total_mg_kg },
+    { label: "溶存ガス", items: entry.dissolved_gas, total: entry.dissolved_gas_total_mg_kg },
+  ].filter((group) => (group.items?.length || 0) > 0) as {
+    label: string;
+    items: CompositionIngredient[];
+    total?: number | null;
+  }[];
+
+const treatmentEntries = (entry: OnsenComposition) =>
+  TREATMENT_LABELS.map(({ key, label }) => ({ label, value: entry.treatment?.[key] })).filter(
+    (item) => item.value && typeof item.value.applied === "boolean",
+  );
+
+const confidenceLabel: Record<string, string> = {
+  high: "",
+  medium: "読み取り精度: 中",
+  low: "読み取り精度: 低",
+};
+
+// --- pH × 成分総計の散布図 ---
+const CHART = { width: 720, height: 400, left: 58, right: 18, top: 18, bottom: 46 };
+const PH_DOMAIN = [5.5, 9.5];
+const TOTAL_DOMAIN = [300, 20000];
+const plotWidth = CHART.width - CHART.left - CHART.right;
+const plotHeight = CHART.height - CHART.top - CHART.bottom;
+
+const phToX = (ph: number) =>
+  CHART.left + ((ph - PH_DOMAIN[0]) / (PH_DOMAIN[1] - PH_DOMAIN[0])) * plotWidth;
+const totalToY = (total: number) => {
+  const ratio =
+    (Math.log10(total) - Math.log10(TOTAL_DOMAIN[0])) /
+    (Math.log10(TOTAL_DOMAIN[1]) - Math.log10(TOTAL_DOMAIN[0]));
+  return CHART.top + plotHeight - ratio * plotHeight;
+};
+
+const phTicks = [6, 7, 8, 9];
+const totalTicks = [300, 1000, 3000, 10000];
+
+// ラベルが重ならないよう、点ごとに空いているオフセットを順に試す
+const labelOffsets = [-11, 15, -23, 27, -35];
+const placedLabels: { x: number; y: number }[] = [];
+const plotted = scatterPoints(compositions)
+  .slice()
+  .sort((a, b) => b.total - a.total)
+  .map((point) => {
+    const x = phToX(point.ph);
+    const y = totalToY(point.total);
+    const dy =
+      labelOffsets.find(
+        (offset) =>
+          !placedLabels.some(
+            (placed) => Math.abs(placed.x - x) < 78 && Math.abs(placed.y - (y + offset)) < 12,
+          ),
+      ) ?? labelOffsets[0];
+    placedLabels.push({ x, y: y + dy });
+
+    const anchor = x > CHART.left + plotWidth - 70 ? "end" : x < CHART.left + 70 ? "start" : "middle";
+    return { ...point, x, y, dy, anchor };
+  });
+
+const scatterGroups = [...new Map(plotted.map((point) => [point.group.key, point.group])).values()];
 ---
 
 <MapLayout
@@ -38,6 +129,10 @@ const googleMapsUrl = (place: CheckinPlace) => {
         <div>
           <strong>{stats.withPhotos.toLocaleString()}</strong>
           <span>Photos</span>
+        </div>
+        <div>
+          <strong>{compositionStats.count.toLocaleString()}</strong>
+          <span>成分表</span>
         </div>
         <div>
           <strong>{stats.latest?.date || ""}</strong>
@@ -90,6 +185,12 @@ const googleMapsUrl = (place: CheckinPlace) => {
                       <span>{place.date}</span>
                     </div>
                     <h3>{place.name}</h3>
+                    {place.fsq_id && compositionMap.has(place.fsq_id) && (
+                      <p class="checkin-item-quality">
+                        <span class="quality-mark">分析書</span>
+                        <span class="quality-text">{compositionMap.get(place.fsq_id)!.spring_quality}</span>
+                      </p>
+                    )}
                     <p class="checkin-item-address">{place.address}</p>
                     {place.user_comment && <p class="checkin-item-comment">{place.user_comment}</p>}
                   </div>
@@ -113,6 +214,251 @@ const googleMapsUrl = (place: CheckinPlace) => {
         <div class="checkin-empty" id="onsen-empty" hidden>表示できる温泉がありません。</div>
       </aside>
     </div>
+
+    <section class="composition-section" id="composition" aria-label="温泉成分表">
+      <header class="composition-header">
+        <div>
+          <h2>温泉成分表</h2>
+          <p>
+            チェックイン写真に写っていた温泉分析書・成分掲示表を読み取ってまとめたものです。数値は掲示の記載そのままで、
+            単位は mg/kg に揃えています。
+          </p>
+        </div>
+        <dl class="composition-stats" aria-label="成分表の統計">
+          <div>
+            <dt>施設</dt>
+            <dd>{compositionStats.count}</dd>
+          </div>
+          {compositionStats.hottest && (
+            <div>
+              <dt>最高源泉温度</dt>
+              <dd>{formatTemp(compositionStats.hottest.source_temp_c)}</dd>
+            </div>
+          )}
+          {compositionStats.mostAlkaline && (
+            <div>
+              <dt>最高pH</dt>
+              <dd>{compositionStats.mostAlkaline.ph}</dd>
+            </div>
+          )}
+          {compositionStats.richest && (
+            <div>
+              <dt>最高成分総計</dt>
+              <dd>{formatMgKg(compositionStats.richest.total_ingredients_mg_kg)}</dd>
+            </div>
+          )}
+        </dl>
+      </header>
+
+      {qualities.length > 0 && (
+        <ul class="composition-qualities" aria-label="泉質の内訳">
+          {qualities.map((item) => (
+            <li>
+              <span>{item.quality}</span>
+              <strong>{item.count}</strong>
+            </li>
+          ))}
+        </ul>
+      )}
+
+      <div class="composition-charts">
+        <figure class="composition-chart">
+          <figcaption>
+            <strong>pH と成分総計</strong>
+            <span>右へ行くほどアルカリ性、上へ行くほど濃い温泉です（縦軸は対数）。</span>
+          </figcaption>
+
+          <ul class="scatter-legend">
+            {scatterGroups.map((group) => (
+              <li>
+                <span class={`scatter-swatch quality-${group.key}`} aria-hidden="true"></span>
+                {group.label}
+              </li>
+            ))}
+          </ul>
+
+          <div class="scatter-wrap">
+            <svg
+              class="scatter-chart"
+              viewBox={`0 0 ${CHART.width} ${CHART.height}`}
+              role="img"
+              aria-label={`pHと成分総計の散布図。${plotted.length}施設をプロットしています。`}
+            >
+              {totalTicks.map((tick) => (
+                <>
+                  <line
+                    class="scatter-grid"
+                    x1={CHART.left}
+                    x2={CHART.width - CHART.right}
+                    y1={totalToY(tick)}
+                    y2={totalToY(tick)}
+                  />
+                  <text class="scatter-tick" x={CHART.left - 9} y={totalToY(tick) + 4} text-anchor="end">
+                    {tick.toLocaleString("ja-JP")}
+                  </text>
+                </>
+              ))}
+
+              {phTicks.map((tick) => (
+                <>
+                  <line
+                    class="scatter-grid"
+                    x1={phToX(tick)}
+                    x2={phToX(tick)}
+                    y1={CHART.top}
+                    y2={CHART.top + plotHeight}
+                  />
+                  <text
+                    class="scatter-tick"
+                    x={phToX(tick)}
+                    y={CHART.top + plotHeight + 20}
+                    text-anchor="middle"
+                  >
+                    pH {tick}
+                  </text>
+                </>
+              ))}
+
+              <text class="scatter-axis" x={CHART.left - 9} y={CHART.top - 4} text-anchor="end">
+                mg/kg
+              </text>
+
+              {plotted.map((point) => (
+                <>
+                  <circle class={`scatter-dot quality-${point.group.key}`} cx={point.x} cy={point.y} r="6" />
+                  <text
+                    class="scatter-label"
+                    x={point.x}
+                    y={point.y + point.dy}
+                    text-anchor={point.anchor}
+                  >
+                    {point.name}
+                  </text>
+                </>
+              ))}
+            </svg>
+          </div>
+        </figure>
+      </div>
+
+      <div class="composition-items">
+        {compositions.map((entry) => (
+          <details class="composition-item">
+            <summary>
+              <div class="composition-item-head">
+                <h3>{entry.name}</h3>
+                <p class="composition-quality">{entry.spring_quality}</p>
+                {entry.spring_quality_class && <p class="composition-quality-class">{entry.spring_quality_class}</p>}
+              </div>
+              <ul class="composition-badges">
+                {compositionBadges(entry).map((badge) => (
+                  <li>{badge}</li>
+                ))}
+              </ul>
+            </summary>
+
+            <div class="composition-body">
+              <dl class="composition-meta">
+                {entry.spring_name && (
+                  <div>
+                    <dt>源泉名</dt>
+                    <dd>{entry.spring_name}</dd>
+                  </div>
+                )}
+                {typeof entry.use_temp_c === "number" && (
+                  <div>
+                    <dt>使用位置温度</dt>
+                    <dd>{formatTemp(entry.use_temp_c)}</dd>
+                  </div>
+                )}
+                {typeof entry.yield_l_min === "number" && (
+                  <div>
+                    <dt>湧出量</dt>
+                    <dd>{entry.yield_l_min} L/分</dd>
+                  </div>
+                )}
+                {typeof entry.dissolved_solids_mg_kg === "number" && (
+                  <div>
+                    <dt>溶存物質</dt>
+                    <dd>{formatMgKg(entry.dissolved_solids_mg_kg)}</dd>
+                  </div>
+                )}
+                {typeof entry.evaporation_residue_mg_kg === "number" && (
+                  <div>
+                    <dt>蒸発残留物</dt>
+                    <dd>{formatMgKg(entry.evaporation_residue_mg_kg)}</dd>
+                  </div>
+                )}
+              </dl>
+
+              {treatmentEntries(entry).length > 0 && (
+                <ul class="composition-treatment" aria-label="加水・加温・循環・消毒">
+                  {treatmentEntries(entry).map((item) => (
+                    <li class={item.value!.applied ? "is-applied" : "is-none"}>
+                      <span>{item.label}</span>
+                      <strong>{item.value!.applied ? "あり" : "なし"}</strong>
+                      {item.value!.reason && <em>{item.value!.reason}</em>}
+                    </li>
+                  ))}
+                </ul>
+              )}
+
+              {ingredientGroups(entry).length > 0 && (
+                <div class="composition-tables">
+                  {ingredientGroups(entry).map((group) => (
+                    <table class="composition-table">
+                      <caption>
+                        {group.label}
+                        {typeof group.total === "number" && <span>計 {formatMgKg(group.total)}</span>}
+                      </caption>
+                      <tbody>
+                        {group.items.map((item) => (
+                          <tr>
+                            <th scope="row">
+                              {item.name}
+                              {item.symbol && <span class="composition-symbol">{item.symbol}</span>}
+                            </th>
+                            <td>{typeof item.mg_kg === "number" ? item.mg_kg.toLocaleString("ja-JP") : "—"}</td>
+                          </tr>
+                        ))}
+                      </tbody>
+                    </table>
+                  ))}
+                </div>
+              )}
+
+              {(entry.indications?.length || entry.contraindications?.length) && (
+                <div class="composition-symptoms">
+                  {entry.indications?.length ? (
+                    <p>
+                      <span class="composition-symptom-label">泉質別適応症</span>
+                      {entry.indications.join("、")}
+                    </p>
+                  ) : null}
+                  {entry.contraindications?.length ? (
+                    <p>
+                      <span class="composition-symptom-label is-warn">泉質別禁忌症</span>
+                      {entry.contraindications.join("、")}
+                    </p>
+                  ) : null}
+                </div>
+              )}
+
+              {entry.notes && <p class="composition-notes">{entry.notes}</p>}
+
+              <p class="composition-source">
+                {entry.analyzed_on && <span>分析 {entry.analyzed_on}</span>}
+                {entry.analyzer && <span>{entry.analyzer}</span>}
+                {entry.analyzer_registration && <span>{entry.analyzer_registration}</span>}
+                {entry.confidence && confidenceLabel[entry.confidence] && (
+                  <span class="composition-confidence">{confidenceLabel[entry.confidence]}</span>
+                )}
+              </p>
+            </div>
+          </details>
+        ))}
+      </div>
+    </section>
   </section>
 
   <div class="photo-lightbox" id="onsen-lightbox" role="dialog" aria-modal="true" aria-hidden="true">
@@ -129,6 +475,7 @@ const googleMapsUrl = (place: CheckinPlace) => {
     const DATA_URL = "/onsen-data.json";
     const LIST_LIMIT = 80;
     let placesData = [];
+    let compositionByFsqId = {};
     let map;
     let markerLayer;
     let canvasRenderer;
@@ -137,7 +484,15 @@ const googleMapsUrl = (place: CheckinPlace) => {
     let searchTimer = null;
 
     function searchableText(place) {
-      return [place.name, place.address, place.user_comment, (place.categories || []).join(" ")]
+      const composition = compositionByFsqId[place.fsq_id];
+      return [
+        place.name,
+        place.address,
+        place.user_comment,
+        (place.categories || []).join(" "),
+        composition ? composition.quality : "",
+        composition ? composition.qualityClass : "",
+      ]
         .join(" ")
         .toLowerCase();
     }
@@ -215,6 +570,10 @@ const googleMapsUrl = (place: CheckinPlace) => {
             ? `<button class="checkin-item-photo checkin-item-photo-btn" type="button" data-lightbox-index="${place._index}" aria-label="${escapeHtml(place.name || "")}の写真を拡大 (${photoCount}枚)"><img src="${escapeHtml(place.photos[0])}" alt="${escapeHtml(place.name || "")}の写真" loading="lazy">${photoCount > 1 ? `<span class="checkin-item-photo-count">📷 ${photoCount}</span>` : ""}</button>`
             : '<div class="checkin-item-photo checkin-item-photo--empty"><div class="checkin-item-placeholder">♨️</div></div>';
           const comment = place.user_comment ? `<p class="checkin-item-comment">${escapeHtml(place.user_comment)}</p>` : "";
+          const quality = compositionByFsqId[place.fsq_id];
+          const qualityBlock = quality && quality.quality
+            ? `<p class="checkin-item-quality"><span class="quality-mark">分析書</span><span class="quality-text">${escapeHtml(quality.quality)}</span></p>`
+            : "";
           const mapsUrl = googleMapsUrl(place);
           return `
             <article class="checkin-item" id="onsen-item-${place._index}">
@@ -226,6 +585,7 @@ const googleMapsUrl = (place: CheckinPlace) => {
                     <span>${escapeHtml(place.date || "")}</span>
                   </div>
                   <h3>${escapeHtml(place.name || "")}</h3>
+                  ${qualityBlock}
                   <p class="checkin-item-address">${escapeHtml(place.address || "")}</p>
                   ${comment}
                 </div>
@@ -373,6 +733,7 @@ const googleMapsUrl = (place: CheckinPlace) => {
       const response = await fetch(DATA_URL);
       if (!response.ok) throw new Error("onsen-data.json load failed");
       const payload = await response.json();
+      compositionByFsqId = payload.composition || {};
       placesData = Array.isArray(payload.places) ? payload.places : [];
       placesData.forEach((place, index) => {
         place._index = index;

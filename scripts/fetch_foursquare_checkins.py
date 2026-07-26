@@ -276,7 +276,18 @@ def photo_display_size():
 
 
 def photos_per_place_limit():
-    return max(1, int(os.environ.get('FOURSQUARE_CHECKIN_PHOTOS_PER_PLACE', '5')))
+    """1施設あたりに残す写真の枚数。既定は無制限（None）。
+
+    枚数を絞ると古い写真が押し出され、成分表を撮った写真が
+    onsen_places.json から消えて解析対象から漏れる。制限したいときだけ
+    FOURSQUARE_CHECKIN_PHOTOS_PER_PLACE に1以上を設定する。
+    """
+    raw = os.environ.get('FOURSQUARE_CHECKIN_PHOTOS_PER_PLACE', '')
+    try:
+        limit = int(raw)
+    except ValueError:
+        return None
+    return limit if limit > 0 else None
 
 
 def photo_url_from_item(photo, size=None):
@@ -345,7 +356,7 @@ def update_user_comment(place, shout, is_latest):
 
 
 def merge_photo_urls(existing, new_urls, limit, prepend=False):
-    """URL の重複を除き、施設ごとの上限枚数までまとめる"""
+    """URL の重複を除いてまとめる（limit が None なら枚数制限なし）"""
     ordered = (new_urls + existing) if prepend else (existing + new_urls)
     merged = []
     seen = set()
@@ -355,7 +366,7 @@ def merge_photo_urls(existing, new_urls, limit, prepend=False):
             continue
         seen.add(url)
         merged.append(url)
-        if len(merged) >= limit:
+        if limit is not None and len(merged) >= limit:
             break
 
     return merged
@@ -421,7 +432,7 @@ def build_places_from_checkins(checkins, category_ids, onsen_only=False):
             "lng": lng,
             "address": format_address(location),
             "foursquare_url": venue.get('canonicalUrl') or f"https://foursquare.com/v/{venue_id}",
-            "photos": checkin_photos[:photo_limit],
+            "photos": checkin_photos[:photo_limit] if photo_limit else list(checkin_photos),
             "categories": [
                 category.get('name')
                 for category in venue.get('categories', [])

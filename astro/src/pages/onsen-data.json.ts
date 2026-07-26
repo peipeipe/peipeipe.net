@@ -1,8 +1,10 @@
 import { getOnsenPlaces, summarizePlaces } from "@/lib/checkins";
+import { compositionSummaryByFsqId } from "@/lib/composition";
 
 export async function GET() {
   const places = getOnsenPlaces();
   const stats = summarizePlaces(places);
+  const composition = compositionSummaryByFsqId();
 
   return new Response(
     JSON.stringify(
@@ -19,6 +21,7 @@ export async function GET() {
               }
             : null,
         },
+        composition,
         places,
       },
       null,
