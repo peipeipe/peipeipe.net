@@ -1238,5 +1238,27 @@
     ],
     "first_visit": "2026-07-11",
     "last_visit": "2026-07-11"
+  },
+  {
+    "name": "爺ヶ岳",
+    "lat": 36.588301,
+    "lng": 137.750922,
+    "elevation": 2670,
+    "tags": [
+      "三百名山",
+      "信州百名山"
+    ],
+    "visit_count": 1,
+    "activities": [
+      {
+        "id": 19466515901,
+        "name": "爺ヶ岳、鹿島槍ヶ岳の予定だったけど雨で爺ヶ岳先まで",
+        "date": "2026-07-26",
+        "sport_type": "TrailRun",
+        "distance_km": 19.7
+      }
+    ],
+    "first_visit": "2026-07-26",
+    "last_visit": "2026-07-26"
   }
 ]

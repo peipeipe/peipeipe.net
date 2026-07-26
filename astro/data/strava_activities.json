@@ -1,5 +1,23 @@
 [
   {
+    "id": 19466515901,
+    "name": "爺ヶ岳、鹿島槍ヶ岳の予定だったけど雨で爺ヶ岳先まで",
+    "sport_type": "TrailRun",
+    "distance": 19700.1,
+    "moving_time": 23192,
+    "elapsed_time": 24439,
+    "total_elevation_gain": 1819.0,
+    "start_date": "2026-07-25T19:05:22Z",
+    "start_date_local": "2026-07-26T04:05:22Z",
+    "start_latlng": [
+      36.561053,
+      137.726323
+    ],
+    "average_speed": 0.849,
+    "max_speed": 4.1,
+    "summary_polyline": "qyc~EotrgYMcDLgBl@oCvBwC`@mCOcAyFjBEaA~AwBYa@KJh@uAWe@c@BEq@]BGWaAROSo@b@UGMU_AVuAOe@c@WeBm@SaAmAq@Qm@o@Cs@_@p@OSiB`AkAmBwCcC@WoDAj@oAUUcAj@]KoAx@_Be@u@w@c@mAgA_AiAOvAu@oAs@l@a@kBg@qCM}AsCTU_@_A_A{A{D_BoAOuCiCq@DwAk@kAkAgAkCmDo@gCoBF[}AiAaCGeCm@_Dp@qAdA_BfE{Al@_D{@oCqB}AZcAzAkC@B|CwA^YlAmALo@xAkBTU~@wAl@|AYf@~Aq@pDPl@aAbA]zAsAXe@VBoA]uAe@dAo@IyC~Bc@FOEHh@@}@n@wAh@_E_A{Cc@Qq@_EXqC`AaCL}AM[b@wBA{@d@uA`@qCKyBVm@N}AByAMcCt@mESaBXEl@sAK_@e@PcA}DS@uBeCs@qERIcAqD}AIsAl@qC]cBj@uATgAqAuA?sBwBy@iBgCaByCeA{CHqJrCm@l@m@HsBtB_Hh@oAU_DfA}BnAc@hAu@rAqCdCm@AeAHo@b@Kb@IYMtAe@t@{BbBy@WaHpBmBH{BvA_Cp@_IJ~HO~Bq@pC}AdCi@dEm@h@a@v@\\tCaCz@aCtAc@~@H`@m@lAk@~AaCFs@nBuA~DkADSrAR|CEhAe@l@L|@q@l@iA~@Ov@o@tFgAzBmA`CAbBbAdAAxBxAbAvBjBhBzAJlApAhEcApDj@bAh@jBbBv@rE`B`BJb@TAp@rBVnCG`@MCPnBIjAo@hCP|BWdDWn@NxAgA`G[pDGhCaA|BWnCr@`E\\J`AtCm@pFi@tAtCeCrAAl@kARrCb@KBVbAe@NeAzA_BQkA~@sBo@gBgA[x@MVaA`BIp@{AnAOb@kAlA_@?aD`CAz@gAzAy@zD`CjCh@vAg@hBcE~AqAlCg@|Cn@pAGtBzBt@Tl@v@fBz@~AJx@zAX~@z@t@lAn@z@GfC~B|GbCtAfBJj@I`@pAdCfCNhBl@Y^nAx@sAn@fBj@KFhA`AJp@l@l@zA\\xBc@Vc@l@?m@~@pAf@bBIvChCr@zAjAHf@c@LVR{@z@vAxCbB~@zB`D`@Tb@Xc@BTVA\\_@fA?h@PdBzAs@r@x@Ze@Ly@jAKnAfCHnB{ANTCxAa@dByBzDu@nDChALrErAfFCrA~@lBZH"
+  },
+  {
     "id": 19454507995,
     "name": "白馬クロスカントリー駅伝",
     "sport_type": "Run",
