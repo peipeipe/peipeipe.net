@@ -31,6 +31,25 @@
       ],
       "groupName": "npm minor and patch dependencies",
       "groupSlug": "npm-minor-patch"
+    },
+    {
+      "description": "Group GitHub Actions updates into a single PR.",
+      "matchManagers": [
+        "github-actions"
+      ],
+      "groupName": "github actions",
+      "groupSlug": "github-actions"
+    },
+    {
+      "description": "Auto-merge low-risk updates once the build check passes. Major updates stay manual.",
+      "matchUpdateTypes": [
+        "minor",
+        "patch",
+        "pin",
+        "digest"
+      ],
+      "automerge": true,
+      "automergeType": "pr"
     }
   ]
 }
