@@ -1,5 +1,54 @@
 [
   {
+    "name": "湯けむり屋敷 薬師の湯",
+    "user_comment": "新館と休館あり。新館のみ入った。薄め。ニフティ温泉割引あり",
+    "date": "2026-07-26",
+    "lat": 36.526835,
+    "lng": 137.809962,
+    "address": "平2811-41, 大町市, 長野県, 398-0001",
+    "foursquare_url": "https://foursquare.com/v/4ca679b5d971b1f70fa300e1",
+    "photos": [
+      "https://fastly.4sqi.net/img/general/500x300/41463109_Wq9EEzgpnxAuUejt7GauCtgr6C-eHEM5_6CSuqKYLYQ.jpg",
+      "https://fastly.4sqi.net/img/general/500x300/41463109_eo_pN2TdlWhAcYHKPL-kZaH0AXiSPSallE6Ic_-T82M.jpg"
+    ],
+    "categories": [
+      "温泉"
+    ],
+    "category_group": "onsen",
+    "category_label": "温泉・サウナ",
+    "category_emoji": "♨️",
+    "category_color": "#ff7a59",
+    "data_source": "foursquare_checkin",
+    "fsq_id": "4ca679b5d971b1f70fa300e1",
+    "checkin_count": 1,
+    "first_checkin_at": "2026-07-26T02:24:03+00:00",
+    "last_checkin_at": "2026-07-26T02:24:03+00:00"
+  },
+  {
+    "name": "冷池山荘",
+    "user_comment": "",
+    "date": "2026-07-25",
+    "lat": 36.602826678464154,
+    "lng": 137.74862101162879,
+    "address": "平, 大町市, 長野県, 398-0001",
+    "foursquare_url": "https://foursquare.com/v/50404ddbe4b013302004ed4c",
+    "photos": [
+      "https://fastly.4sqi.net/img/general/500x300/41463109_v5H-zONhCegQms_I3zHvnxp-hUM0jSCPUmM23fDB1Gg.jpg"
+    ],
+    "categories": [
+      "山小屋"
+    ],
+    "category_group": "outdoors",
+    "category_label": "自然・公園",
+    "category_emoji": "🌿",
+    "category_color": "#2e7d32",
+    "data_source": "foursquare_checkin",
+    "fsq_id": "50404ddbe4b013302004ed4c",
+    "checkin_count": 1,
+    "first_checkin_at": "2026-07-25T22:17:52+00:00",
+    "last_checkin_at": "2026-07-25T22:17:52+00:00"
+  },
+  {
     "name": "喜多さん",
     "user_comment": "",
     "date": "2026-07-25",
@@ -2282,7 +2331,8 @@
       "https://fastly.4sqi.net/img/general/500x300/41463109_2Sy0RSu5J-QWKROjV-js_R_a0mXJM46VDSrrE1XwQWc.jpg",
       "https://fastly.4sqi.net/img/general/500x300/41463109_AwyLMUO0XvHD0juIcp6oAAUF0e4fZIY9LaasAQqypjU.jpg",
       "https://fastly.4sqi.net/img/general/500x300/41463109_9xntp0VfM6c4v_Pu5wWxS7M8TFQUOI0AiVdUge2Vv5U.jpg",
-      "https://fastly.4sqi.net/img/general/500x300/41463109_rcpetPMmMXlqa6B1Nd5XEpglyR7jyLq7X8UdtiahHtU.jpg"
+      "https://fastly.4sqi.net/img/general/500x300/41463109_rcpetPMmMXlqa6B1Nd5XEpglyR7jyLq7X8UdtiahHtU.jpg",
+      "https://fastly.4sqi.net/img/general/500x300/41463109_moIiX5GlF0YMllbHk-Y6yA0C9MU2o3rGSrlvxGOYxpo.jpg"
     ],
     "categories": [
       "スパ"
@@ -4713,7 +4763,7 @@
     "foursquare_url": "https://foursquare.com/v/4c258e885c5ca59398ba44fe",
     "photos": [],
     "categories": [
-      "ヴィンテージとリサイクルショップ"
+      "Vintage and Thrift Store"
     ],
     "category_group": "shop",
     "category_label": "買い物",
@@ -4737,7 +4787,7 @@
       "https://fastly.4sqi.net/img/general/500x300/41463109_J4w44HKdG0JgI4rDR8aOgNqwhPaiU3EO3UJmVzz_nGI.jpg"
     ],
     "categories": [
-      "中華料理店"
+      "Chinese Restaurant"
     ],
     "category_group": "food",
     "category_label": "食事",
@@ -10367,7 +10417,9 @@
       "https://fastly.4sqi.net/img/general/500x300/41463109_uKa4bJNgR7Iij1hd21j3GDBI8JTX3sbbdpdz_Z_14Os.jpg",
       "https://fastly.4sqi.net/img/general/500x300/41463109_xfHm6eKGrcSQmWqsZ8jHt-zxgf6cM0nmA-h7K_M_V3M.jpg",
       "https://fastly.4sqi.net/img/general/500x300/41463109_ytr5XIm721NvImuTYFXIXvKIpGXJKXA9DhIDTjcA9rc.jpg",
-      "https://fastly.4sqi.net/img/general/500x300/41463109_j5nbSnUaCi8qMiPZZQQHZt7FwPXbW8ddxClgSUBBB6g.jpg"
+      "https://fastly.4sqi.net/img/general/500x300/41463109_j5nbSnUaCi8qMiPZZQQHZt7FwPXbW8ddxClgSUBBB6g.jpg",
+      "https://fastly.4sqi.net/img/general/500x300/41463109_AQFemD24QgpQ5uh3FIxfx2t0RUHMGqlgWJ5RV8fnVFM.jpg",
+      "https://fastly.4sqi.net/img/general/500x300/41463109_WWYlBXZN7ZiMRwRg53Whk-nvqYOBRsgeNHuCWYLfskw.jpg"
     ],
     "categories": [
       "International Airport"
@@ -12714,7 +12766,8 @@
       "https://fastly.4sqi.net/img/general/500x300/41463109_PdK4eEl97r3pUdAJia0JvDb2kavto_bSAn4t1XflNd8.jpg",
       "https://fastly.4sqi.net/img/general/500x300/41463109_tKx0mV1wuqh69h-OMjjkx8Io0z5zBAWKgwW_XKGLmhw.jpg",
       "https://fastly.4sqi.net/img/general/500x300/41463109_USXjjJZQnTz2vwE7aCu-6Oph4pjfVo3alvrwlWFCT14.jpg",
-      "https://fastly.4sqi.net/img/general/500x300/41463109_NeIxehv9DO88w8ZDDeWWlEAs2BGn4CN4JvP9M5nGPew.jpg"
+      "https://fastly.4sqi.net/img/general/500x300/41463109_NeIxehv9DO88w8ZDDeWWlEAs2BGn4CN4JvP9M5nGPew.jpg",
+      "https://fastly.4sqi.net/img/general/500x300/41463109_FnFFOZXQu-Yv00fBboVhRAWXmgs9dNql033nPceJg6U.jpg"
     ],
     "categories": [
       "Japanese Restaurant"
@@ -17445,7 +17498,13 @@
       "https://fastly.4sqi.net/img/general/500x300/41463109_zf1WmfDTnzcCPiCSpBUk8SPYkYnONSvhgNn8wzhk4rA.jpg",
       "https://fastly.4sqi.net/img/general/500x300/41463109_kSf8YhLyx_1wIZFYDFyJRirjcLBURYNGbBXuG8hhSjQ.jpg",
       "https://fastly.4sqi.net/img/general/500x300/41463109_kF0A1XkjNIfhjErOJ_BlUF1WxMYQlg9qrQM9huG8SM4.jpg",
-      "https://fastly.4sqi.net/img/general/500x300/41463109_OJLYPNYXocmD_fk_soYf47Krc5fHG6M1docWLbzXIiM.jpg"
+      "https://fastly.4sqi.net/img/general/500x300/41463109_OJLYPNYXocmD_fk_soYf47Krc5fHG6M1docWLbzXIiM.jpg",
+      "https://fastly.4sqi.net/img/general/500x300/41463109_7wwSQvggb-JXiZZJrrI2GHfv5L0kpS7skKhDs1Bd02w.jpg",
+      "https://fastly.4sqi.net/img/general/500x300/41463109_iGZR9gD-pgACqCYzTaiz4XpDvSYDU04Z4Na1ccQIlmQ.jpg",
+      "https://fastly.4sqi.net/img/general/500x300/41463109_HH2tAyWQ6RHFMx9sYt35pmYGsTgG0O72ZWx8w0JfUH4.jpg",
+      "https://fastly.4sqi.net/img/general/500x300/41463109_GW4vHotZEb6zQ2N7xSz-N9RQtZkAWTDnJs9f4U_BSDs.jpg",
+      "https://fastly.4sqi.net/img/general/500x300/41463109_GMOqwTDhzIalEbRmSvDTql4VjjyGh-VvHPfFf2DskkU.jpg",
+      "https://fastly.4sqi.net/img/general/500x300/41463109_hVJDcKlQ3S2wpnjETnKD_LSviXPZhlNp7PQhuQKN244.jpg"
     ],
     "categories": [
       "Monument"
@@ -25369,7 +25428,8 @@
       "https://fastly.4sqi.net/img/general/500x300/41463109_rFPzUX77LdJN_DhXiZ3HMjGPWtuvPe1pMB4inmcyVBg.jpg",
       "https://fastly.4sqi.net/img/general/500x300/41463109_MkuHKfrU1sdZ1qcDr7mo5n2XgvznwlayElcHs-V6j4o.jpg",
       "https://fastly.4sqi.net/img/general/500x300/41463109_w4lS__w2GqYBUaqPIkPzBtE4DlC9ugKBnaAVNvhwYgI.jpg",
-      "https://fastly.4sqi.net/img/general/500x300/41463109_xIrD-KdIk2bZozoGUP7Bv5AXsEop-nwRUFa0tnmWqIc.jpg"
+      "https://fastly.4sqi.net/img/general/500x300/41463109_xIrD-KdIk2bZozoGUP7Bv5AXsEop-nwRUFa0tnmWqIc.jpg",
+      "https://fastly.4sqi.net/img/general/500x300/41463109_POXH1dnl8i8aTDEOvzt3zYF4R_1olgWy2jJOvyCqCe8.jpg"
     ],
     "categories": [
       "Park"
@@ -27294,8 +27354,8 @@
     "name": "Iidabashi Station (飯田橋駅)",
     "user_comment": "人生どうでも",
     "date": "2020-02-15",
-    "lat": 35.7006046638891,
-    "lng": 139.7439346509222,
+    "lat": 35.70104750447939,
+    "lng": 139.74395960050572,
     "address": "飯田橋4/神楽坂1/後楽1, 東京, 東京都, 102-0072",
     "foursquare_url": "https://foursquare.com/v/4b18bed2f964a5207dd523e3",
     "photos": [],
@@ -28800,7 +28860,20 @@
       "https://fastly.4sqi.net/img/general/500x300/41463109_mFLnk7cR83oo434CaG7QN_WU_sHd0L1sPlEPG4okV6c.jpg",
       "https://fastly.4sqi.net/img/general/500x300/41463109_yJGXNKRwN8m_EQ3QAMgztzT93q78BaHQilNw6cJatEY.jpg",
       "https://fastly.4sqi.net/img/general/500x300/41463109_KkNuRbTDTJsQ1buEYHPn4eYx13sobEZUuNBlmGT-qm0.jpg",
-      "https://fastly.4sqi.net/img/general/500x300/41463109_RdALRzkX3myfmyga-IY0b4X4z0V1Q3uj3i2Ux_dY8zo.jpg"
+      "https://fastly.4sqi.net/img/general/500x300/41463109_RdALRzkX3myfmyga-IY0b4X4z0V1Q3uj3i2Ux_dY8zo.jpg",
+      "https://fastly.4sqi.net/img/general/500x300/41463109__8YZTKoEjvBNe8iWCOftE50NDIiB7bIzS7Nejwu1lAQ.jpg",
+      "https://fastly.4sqi.net/img/general/500x300/41463109_CwkQYd8EUf2USa7aMVV34J1M0jd580oE_PKX0Bm0JGE.jpg",
+      "https://fastly.4sqi.net/img/general/500x300/41463109_IaNI9ZZPWjAn2hqCOvaxlbdFCp_Fma8dzTLZtKeovOQ.jpg",
+      "https://fastly.4sqi.net/img/general/500x300/41463109_ovc2h8jhPlvHBxz8G4ZMc2N9One6Hu0LjMBylBqCTGY.jpg",
+      "https://fastly.4sqi.net/img/general/500x300/41463109_bIcdeaFxB8802Lr62-ylXe7mzplS7NzoTRJYPcmuW5w.jpg",
+      "https://fastly.4sqi.net/img/general/500x300/41463109_b0_EqV7w7J_kViV15BbhIyXDZv8hP7vm0y8RoAJZh2E.jpg",
+      "https://fastly.4sqi.net/img/general/500x300/41463109_A2KGHtcPccTVeNrViGQ8YUHV2M0el3yO9KUqCoV9pjY.jpg",
+      "https://fastly.4sqi.net/img/general/500x300/41463109_HFVaUOzQn0JZ-QAJfTq9vT4Q1ZsVuMEMtrv500l52wo.jpg",
+      "https://fastly.4sqi.net/img/general/500x300/41463109_mA43ulRHsP7S45Vwb0qzZb_5BQbx0ioSFLAwxcYSRZo.jpg",
+      "https://fastly.4sqi.net/img/general/500x300/41463109_C4tAlujKbJD61y9HJC3OGRAVOzW0EsAxojQsxtRJzac.jpg",
+      "https://fastly.4sqi.net/img/general/500x300/41463109_QiCJ6VSmcdwkT2y1SodqplU-YGyOYfA-HslmgaQ85OI.jpg",
+      "https://fastly.4sqi.net/img/general/500x300/41463109_iXtpFWgABlxDRxMbxkOiiyykknekP5aI8BGZtTADFE8.jpg",
+      "https://fastly.4sqi.net/img/general/500x300/41463109_MoCabvqo66xh6_Wu2CXwPf4BnDZYaB48gQL-JF4x8SE.jpg"
     ],
     "categories": [
       "Park"
@@ -33045,8 +33118,8 @@
     "name": "Nagoya Station (名古屋駅)",
     "user_comment": "",
     "date": "2019-01-21",
-    "lat": 35.17035080973872,
-    "lng": 136.88231802441496,
+    "lat": 35.17030735880228,
+    "lng": 136.8818113588271,
     "address": "中村区名駅1, 名古屋市, 愛知県, 450-0002",
     "foursquare_url": "https://foursquare.com/v/4b56811cf964a520381328e3",
     "photos": [
@@ -44649,8 +44722,8 @@
     "name": "Tabata Station (田端駅)",
     "user_comment": "遅刻っぽ",
     "date": "2014-09-16",
-    "lat": 35.737822684733196,
-    "lng": 139.7614019266096,
+    "lat": 35.73759584418893,
+    "lng": 139.76149676299335,
     "address": "東田端1-17-1, 北区, 東京都, 114-0013",
     "foursquare_url": "https://foursquare.com/v/4b4f2be8f964a52025fc26e3",
     "photos": [],

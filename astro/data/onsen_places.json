@@ -1,5 +1,30 @@
 [
   {
+    "name": "湯けむり屋敷 薬師の湯",
+    "user_comment": "新館と休館あり。新館のみ入った。薄め。ニフティ温泉割引あり",
+    "date": "2026-07-26",
+    "lat": 36.526835,
+    "lng": 137.809962,
+    "address": "平2811-41, 大町市, 長野県, 398-0001",
+    "foursquare_url": "https://foursquare.com/v/4ca679b5d971b1f70fa300e1",
+    "photos": [
+      "https://fastly.4sqi.net/img/general/500x300/41463109_Wq9EEzgpnxAuUejt7GauCtgr6C-eHEM5_6CSuqKYLYQ.jpg",
+      "https://fastly.4sqi.net/img/general/500x300/41463109_eo_pN2TdlWhAcYHKPL-kZaH0AXiSPSallE6Ic_-T82M.jpg"
+    ],
+    "categories": [
+      "温泉"
+    ],
+    "category_group": "onsen",
+    "category_label": "温泉・サウナ",
+    "category_emoji": "♨️",
+    "category_color": "#ff7a59",
+    "data_source": "foursquare_checkin",
+    "fsq_id": "4ca679b5d971b1f70fa300e1",
+    "checkin_count": 1,
+    "first_checkin_at": "2026-07-26T02:24:03+00:00",
+    "last_checkin_at": "2026-07-26T02:24:03+00:00"
+  },
+  {
     "name": "ゆーぷる木崎湖",
     "user_comment": "白馬クロスカントリー駅伝後に急いで利用 900円　サウナあり水風呂なし",
     "date": "2026-07-25",
@@ -579,7 +604,8 @@
       "https://fastly.4sqi.net/img/general/500x300/41463109_2Sy0RSu5J-QWKROjV-js_R_a0mXJM46VDSrrE1XwQWc.jpg",
       "https://fastly.4sqi.net/img/general/500x300/41463109_AwyLMUO0XvHD0juIcp6oAAUF0e4fZIY9LaasAQqypjU.jpg",
       "https://fastly.4sqi.net/img/general/500x300/41463109_9xntp0VfM6c4v_Pu5wWxS7M8TFQUOI0AiVdUge2Vv5U.jpg",
-      "https://fastly.4sqi.net/img/general/500x300/41463109_rcpetPMmMXlqa6B1Nd5XEpglyR7jyLq7X8UdtiahHtU.jpg"
+      "https://fastly.4sqi.net/img/general/500x300/41463109_rcpetPMmMXlqa6B1Nd5XEpglyR7jyLq7X8UdtiahHtU.jpg",
+      "https://fastly.4sqi.net/img/general/500x300/41463109_moIiX5GlF0YMllbHk-Y6yA0C9MU2o3rGSrlvxGOYxpo.jpg"
     ],
     "categories": [
       "スパ"
