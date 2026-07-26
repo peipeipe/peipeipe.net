@@ -34,7 +34,7 @@ python scripts/test_amazon_enhancement.py
 - Standalone URLs on their own line get turned into link cards (fetches OG/Twitter meta tags at build time, 2.5s timeout, cached in-memory) — except Amazon links in posts, which render a legacy "amazlet"-style affiliate card instead, and x.com/twitter.com links, which are left alone.
 - `layout` frontmatter fields on old Markdown are legacy Jekyll metadata and must not drive new rendering logic.
 
-Other structured data (`astro/data/*.json` — activities, mountains, onsen, places, books) is generated ahead of time by the Python scripts in `scripts/` and read at build time by the matching `astro/src/lib/*.ts` module (`activity.ts`, `mountains.ts`, `checkins.ts`, `books.ts`). These JSON files are checked in and refreshed by scheduled GitHub Actions workflows (`update-strava-activities.yml`, `update-onsen-checkins.yml`, `update-books-from-booklog.yml`), not regenerated on every build.
+Other structured data (`astro/data/*.json` — activities, mountains, onsen, places, books) is generated ahead of time by the Python scripts in `scripts/` and read at build time by the matching `astro/src/lib/*.ts` module (`activity.ts`, `mountains.ts`, `checkins.ts`, `books.ts`, `composition.ts`). These JSON files are checked in and refreshed by scheduled GitHub Actions workflows (`update-strava-activities.yml`, `update-onsen-checkins.yml`, `update-books-from-booklog.yml`), not regenerated on every build.
 
 Pages under `astro/src/pages/*-data.json.ts` expose some of this same data as JSON endpoints for client-side map/list rendering (used by `MapLayout.astro`).
 
@@ -50,6 +50,22 @@ python3 scripts/generate_visited_mountains.py   # if mountain data also needs up
 ```
 
 Never commit the export ZIP — it contains location data. If using the manual `Update Strava Activities From Export` workflow, only point `export_zip_url` at a short-lived URL.
+
+### Onsen composition data (manual, Claude-in-the-loop)
+
+`astro/data/onsen_composition.json` holds hot spring analysis sheets (温泉分析書 / 温泉成分等掲示表) transcribed from the Foursquare check-in photos in `astro/data/onsen_places.json`. There is no OCR service and no API key involved — the reading step happens inside a Claude Code session, driven by `.claude/commands/onsen-composition.md` (run `/onsen-composition`).
+
+```sh
+python3 scripts/prepare_onsen_composition.py   # 未解析写真を original 解像度で取得＋選別用シート生成
+# → Claude が .cache/onsen_photos/ の画像を読んで extracted.json を書く
+python3 scripts/merge_onsen_composition.py     # astro/data/onsen_composition.json に反映
+```
+
+Photo URLs are converted from Foursquare's `500x300` variant to `original` before download — the resized version is too small to read. Everything under `.cache/` is gitignored working data; only `astro/data/onsen_composition.json` gets committed. Photos that turn out not to be analysis sheets are recorded in `not_composition_photos` so the next run skips them, which is what makes the batch incremental. Re-visiting a venue and re-reading part of its posting is fine: `merge_onsen_composition.py` merges per field on `fsq_id`, so previously read values survive.
+
+Related: `fetch_foursquare_checkins.py` keeps **every** check-in photo per venue by default. Capping it via `FOURSQUARE_CHECKIN_PHOTOS_PER_PLACE` (1 or more; empty/0 means unlimited) makes newer check-ins push older photos out of `onsen_places.json`, which would silently drop analysis sheets that were never analyzed.
+
+The data renders inside `/onsen` (`onsen.astro`): a 泉質 badge on each check-in card plus a 温泉成分表 section below the map. `onsen-data.json.ts` also exposes a per-`fsq_id` summary so client-side re-rendering keeps the badges.
 
 ### Deploy
 
