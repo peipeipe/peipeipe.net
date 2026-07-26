@@ -63,6 +63,49 @@ jobs:
           test -d dist/images
           npm run check:legacy-slugs
 
+      - name: Verify rendered content
+        run: |
+          # The build can succeed while silently producing empty or malformed
+          # pages (a Markdown or card-rendering regression). Assert that each
+          # kind of content actually made it into dist/. Thresholds sit well
+          # below current counts so ordinary content changes do not trip them.
+          fail=0
+
+          assert_pages() {
+            local marker="$1" min="$2" actual
+            actual=$(grep -rl --include=index.html -e "$marker" dist | wc -l)
+            if [ "$actual" -lt "$min" ]; then
+              echo "::error::'$marker' on $actual page(s), expected at least $min"
+              fail=1
+            fi
+          }
+
+          assert_count() {
+            local marker="$1" file="$2" min="$3" actual
+            actual=$(grep -o -e "$marker" "$file" | wc -l)
+            if [ "$actual" -lt "$min" ]; then
+              echo "::error::'$marker' appears $actual time(s) in $file, expected at least $min"
+              fail=1
+            fi
+          }
+
+          pages=$(find dist -name index.html | wc -l)
+          if [ "$pages" -lt 400 ]; then
+            echo "::error::built $pages page(s), expected at least 400"
+            fail=1
+          fi
+
+          assert_pages '<article class="post"' 300
+          assert_pages '<article class="diary-entry"' 40
+          assert_pages 'krb-amzlt-box' 120
+          assert_pages 'class="link-card"' 3
+
+          assert_count '<article class="checkin-item"' dist/onsen/index.html 40
+          assert_count '<article class="mountain-item"' dist/mountains/index.html 30
+          assert_count '<article class="activity-item"' dist/activity/index.html 20
+
+          exit $fail
+
       - name: Set Cloudflare Pages production branch
         if: github.ref_name == 'master'
         env:
