@@ -1149,6 +1149,14 @@ body.photo-lightbox-open {
   font-size: 12px;
 }
 
+/* Let the ellipsis/line-clamp inside side-panel cards win over long titles
+   instead of the card widening and forcing a horizontal scroll. */
+.activity-item-body,
+.mountain-item-body,
+.checkin-item-body {
+  min-width: 0;
+}
+
 .activity-list {
   display: grid;
   gap: 10px;
