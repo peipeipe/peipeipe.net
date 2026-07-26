@@ -10,6 +10,12 @@ on:
       - "astro/content/**"
       - "astro/data/**"
       - "astro/public/**"
+  pull_request:
+    branches:
+      - master
+    paths:
+      - "astro/**"
+      - ".github/workflows/**"
 
 permissions:
   contents: read
@@ -70,6 +76,7 @@ jobs:
             --data "{\"name\":\"${CLOUDFLARE_PAGES_PROJECT}\",\"production_branch\":\"master\"}"
 
       - name: Deploy to Cloudflare Pages
+        if: github.event_name != 'pull_request'
         env:
           CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
