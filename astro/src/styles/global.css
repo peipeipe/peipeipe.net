@@ -954,11 +954,25 @@ body.photo-lightbox-open {
   gap: 8px;
 }
 
-.map-app-stats div {
+.map-app-stats > * {
   border: 1px solid var(--color-border);
   border-radius: 8px;
   background: var(--color-surface-soft);
   padding: 10px 12px;
+}
+
+/* 成分表タイルはページ下部の一覧へのジャンプリンクを兼ねる */
+.map-app-stats a {
+  display: block;
+  color: inherit;
+}
+
+.map-app-stats a:hover {
+  border-color: var(--map-accent);
+}
+
+.map-app-stats a span::after {
+  content: " ↓";
 }
 
 .map-app-stats strong {
@@ -1551,6 +1565,7 @@ body.photo-lightbox-open {
   margin-top: 28px;
   border-top: 1px solid var(--color-border-soft);
   padding-top: 22px;
+  scroll-margin-top: 12px;
 }
 
 .composition-header {
@@ -1646,11 +1661,16 @@ html[data-theme="dark"] {
 
 .composition-charts {
   display: grid;
+  /* 既定の auto トラックだと図の min-content（＝SVG の min-width）まで広がって
+     ページ全体が横スクロールしてしまうので、列幅をコンテナ幅で頭打ちにする */
+  grid-template-columns: minmax(0, 1fr);
   gap: 18px;
   margin-top: 20px;
 }
 
 .composition-chart {
+  /* グリッドアイテムの自動最小サイズも同じ理由で潰しておく */
+  min-width: 0;
   margin: 0;
   border: 1px solid var(--color-border-soft);
   border-radius: 10px;
@@ -1674,6 +1694,18 @@ html[data-theme="dark"] {
   color: var(--color-subtle);
   font-size: 12px;
   line-height: 1.5;
+}
+
+/* 図が実際に収まらなくなる幅（.scatter-chart の min-width + 余白）でだけ出す */
+.scatter-hint {
+  display: none;
+}
+
+@media (max-width: 569px) {
+  .composition-chart figcaption .scatter-hint {
+    display: inline;
+    color: var(--map-accent);
+  }
 }
 
 .scatter-legend {
@@ -1710,6 +1742,8 @@ html[data-theme="dark"] {
 
 .scatter-wrap {
   overflow-x: auto;
+  /* 図をスワイプしたときにページ側の横スクロールへ連鎖させない */
+  overscroll-behavior-x: contain;
   margin-top: 12px;
 }
 
@@ -2132,7 +2166,7 @@ html[data-theme="dark"] .composition-confidence {
   }
 
   .map-side-panel {
-    max-height: none;
+    max-height: 70vh;
   }
 
   .activity-list.compact {
@@ -2141,10 +2175,6 @@ html[data-theme="dark"] .composition-confidence {
 
   .mountain-list.compact {
     max-height: 480px;
-  }
-
-  .checkin-list.compact {
-    max-height: none;
   }
 
   .checkin-item-photo {

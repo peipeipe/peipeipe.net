@@ -130,10 +130,10 @@ const scatterGroups = [...new Map(plotted.map((point) => [point.group.key, point
           <strong>{stats.withPhotos.toLocaleString()}</strong>
           <span>Photos</span>
         </div>
-        <div>
+        <a href="#composition">
           <strong>{compositionStats.count.toLocaleString()}</strong>
           <span>成分表</span>
-        </div>
+        </a>
         <div>
           <strong>{stats.latest?.date || ""}</strong>
           <span>Latest</span>
@@ -266,6 +266,7 @@ const scatterGroups = [...new Map(plotted.map((point) => [point.group.key, point
           <figcaption>
             <strong>pH と成分総計</strong>
             <span>右へ行くほどアルカリ性、上へ行くほど濃い温泉です（縦軸は対数）。</span>
+            <span class="scatter-hint">図は横にスワイプできます。</span>
           </figcaption>
 
           <ul class="scatter-legend">
