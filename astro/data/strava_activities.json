@@ -1,5 +1,23 @@
 [
   {
+    "id": 19483445514,
+    "name": "夕方のランニング",
+    "sport_type": "Run",
+    "distance": 7626.1,
+    "moving_time": 2523,
+    "elapsed_time": 3270,
+    "total_elevation_gain": 34.0,
+    "start_date": "2026-07-27T09:53:38Z",
+    "start_date_local": "2026-07-27T18:53:38Z",
+    "start_latlng": [
+      36.391553,
+      138.243324
+    ],
+    "average_speed": 3.023,
+    "max_speed": 4.143,
+    "summary_polyline": "{`c}EsjwjYa@z@s@pAGDS[UsB_@qAMYOOYS{A}A[Uc@e@sCeCo@o@w@o@C?ILi@a@aDwCi@m@Qc@a@s@]_@e@}@S[s@mAEg@?U}BcCe@@C@g@XcAz@]RY^i@TaAt@uAx@IDi@JO@m@OK@{@Wq@KIEgAW]GC@GJERG`Ac@HU\\Cf@P\\PBB@I?SO[g@WMIBCB_@p@AXBDhAR~@T^V?Zo@|DBKRcA?KCMCASFCJKh@Cn@IXCf@XnAKt@QRYDg@A}@N[?W_@i@kAEg@NcCTgFk@_Ag@QaAI_@VKACMVqBHa@LKBIDqACe@sAKg@IMEELWzASzAEp@]bC]vAShAMfA[lDGxAKfA@JHDZDr@Hb@LR^^ZdAp@lBtAb@JROR_@Pq@LMHAf@@p@FnD^XBHCJUVsB`@gBAi@P[\\cA^k@PQN\\LRlA`Bn@t@x@hAJHJ[Ck@Kg@Ci@f@aAt@iAnAyB`A{ALGR^xFuAf@w@BIJENUH?JLf@x@Pj@f@^b@n@VJ~BvBd@PlBfB^BLFpCpCD?xGsLbAqAtE_H\\_@lEaEzC_DnAiArCeD~@uAh@k@ZOb@]~@g@p@W~@e@rBq@f@ULOBS?U\\GLFTb@F@g@o@[DKHA`@KNuEjBy@`@yAdA}@z@m@p@sAhB_BjBKT@BrBbCFJ?XcA~Bs@lA}AhEOz@{@jB_@bA"
+  },
+  {
     "id": 19466515901,
     "name": "爺ヶ岳、鹿島槍ヶ岳の予定だったけど雨で爺ヶ岳先まで",
     "sport_type": "TrailRun",
