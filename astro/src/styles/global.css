@@ -948,9 +948,11 @@ body.photo-lightbox-open {
   color: inherit;
 }
 
+/* タイル数はページごとに違う (温泉は5枚) ので、列数を固定せず必ず横一列に並べる */
 .map-app-stats {
   display: grid;
-  grid-template-columns: repeat(4, minmax(96px, 1fr));
+  grid-auto-flow: column;
+  grid-auto-columns: minmax(96px, 1fr);
   gap: 8px;
 }
 
@@ -2144,6 +2146,7 @@ html[data-theme="dark"] .composition-confidence {
   }
 
   .map-app-stats {
+    grid-auto-flow: row;
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
