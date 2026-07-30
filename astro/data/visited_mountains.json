@@ -949,10 +949,29 @@
     "last_visit": "2026-05-05"
   },
   {
-    "name": "Mt. Nagamine",
+    "name": "光城山",
+    "lat": 36.322435,
+    "lng": 137.944445,
+    "elevation": 880,
+    "tags": [],
+    "visit_count": 1,
+    "activities": [
+      {
+        "id": 18394367312,
+        "name": "光城山ハイク　下りはトレラン",
+        "date": "2026-05-06",
+        "sport_type": "TrailRun",
+        "distance_km": 8.7
+      }
+    ],
+    "first_visit": "2026-05-06",
+    "last_visit": "2026-05-06"
+  },
+  {
+    "name": "長峰山",
     "lat": 36.335938,
     "lng": 137.940818,
-    "elevation": 931,
+    "elevation": 933,
     "tags": [],
     "visit_count": 1,
     "activities": [
