@@ -1279,5 +1279,46 @@
     ],
     "first_visit": "2026-07-26",
     "last_visit": "2026-07-26"
+  },
+  {
+    "name": "斑尾山",
+    "lat": 36.837396,
+    "lng": 138.274312,
+    "elevation": 1381,
+    "tags": [
+      "三百名山",
+      "信州百名山"
+    ],
+    "visit_count": 1,
+    "activities": [
+      {
+        "id": 19565233311,
+        "name": "信越五岳110km前半部分SRT試走",
+        "date": "2026-08-02",
+        "sport_type": "TrailRun",
+        "distance_km": 48.3
+      }
+    ],
+    "first_visit": "2026-08-02",
+    "last_visit": "2026-08-02"
+  },
+  {
+    "name": "袴岳",
+    "lat": 36.865356,
+    "lng": 138.257731,
+    "elevation": 1135,
+    "tags": [],
+    "visit_count": 1,
+    "activities": [
+      {
+        "id": 19565233311,
+        "name": "信越五岳110km前半部分SRT試走",
+        "date": "2026-08-02",
+        "sport_type": "TrailRun",
+        "distance_km": 48.3
+      }
+    ],
+    "first_visit": "2026-08-02",
+    "last_visit": "2026-08-02"
   }
 ]
