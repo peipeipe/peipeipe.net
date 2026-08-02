@@ -372,6 +372,99 @@ def merge_photo_urls(existing, new_urls, limit, prepend=False):
     return merged
 
 
+def load_existing_places(path):
+    """前回書き出した JSON を fsq_id 辞書で読み込む（無ければ空）"""
+    if not os.path.exists(path):
+        return {}
+
+    try:
+        with open(path, 'r', encoding='utf-8') as f:
+            items = json.load(f)
+    except (json.JSONDecodeError, OSError) as error:
+        print(f"[Warn] 既存データを読めませんでした: {path} ({error})", file=sys.stderr)
+        return {}
+
+    if not isinstance(items, list):
+        return {}
+
+    return {
+        item['fsq_id']: item
+        for item in items
+        if isinstance(item, dict) and item.get('fsq_id')
+    }
+
+
+def apply_name_override(place):
+    """手動で name_override を書いた施設は API 側のリネームを無視する"""
+    override = place.get('name_override')
+    if isinstance(override, str) and override.strip():
+        place['name'] = override.strip()
+    return place
+
+
+def merge_place(existing, fresh, photo_limit):
+    """既存レコードに今回の取得結果を重ねる（履歴側の情報は捨てない）"""
+    fresh_last = fresh.get('last_checkin_at', '')
+    existing_last = existing.get('last_checkin_at', '')
+
+    # 新しいチェックインがあるときだけ表示用の属性を差し替える
+    merged = dict(fresh) if fresh_last >= existing_last else dict(existing)
+
+    merged['photos'] = merge_photo_urls(
+        existing.get('photos', []),
+        fresh.get('photos', []),
+        photo_limit,
+        prepend=fresh_last >= existing_last,
+    )
+    merged['checkin_count'] = max(
+        fresh.get('checkin_count', 0),
+        existing.get('checkin_count', 0),
+    )
+    firsts = [
+        value
+        for value in (fresh.get('first_checkin_at'), existing.get('first_checkin_at'))
+        if value
+    ]
+    merged['first_checkin_at'] = min(firsts) if firsts else ''
+    merged['last_checkin_at'] = max(fresh_last, existing_last)
+
+    if not merged.get('user_comment'):
+        merged['user_comment'] = existing.get('user_comment', '') or fresh.get('user_comment', '')
+
+    if existing.get('name_override'):
+        merged['name_override'] = existing['name_override']
+
+    return apply_name_override(merged)
+
+
+def merge_with_existing(fresh_places, existing_by_id, photo_limit):
+    """API に出てこなくなった施設を残したままマージする
+
+    Foursquare 側の venue 削除や、チェックイン履歴のページ上限で古い訪問が
+    取得範囲から外れても、一度記録した場所は JSON から消さない。
+    """
+    merged = {}
+    kept = 0
+
+    for place in fresh_places:
+        venue_id = place['fsq_id']
+        existing = existing_by_id.get(venue_id)
+        merged[venue_id] = merge_place(existing, place, photo_limit) if existing else apply_name_override(place)
+
+    for venue_id, place in existing_by_id.items():
+        if venue_id in merged:
+            continue
+        merged[venue_id] = apply_name_override(dict(place))
+        kept += 1
+
+    ordered = sorted(
+        merged.values(),
+        key=lambda item: item.get('last_checkin_at', ''),
+        reverse=True,
+    )
+    return ordered, kept
+
+
 def build_places_from_checkins(checkins, category_ids, onsen_only=False):
     places = {}
     photo_limit = photos_per_place_limit()
@@ -464,13 +557,29 @@ def main():
         sys.exit(1)
 
     limit = int(os.environ.get('FOURSQUARE_CHECKIN_LIMIT', '250'))
-    max_pages = int(os.environ.get('FOURSQUARE_CHECKIN_MAX_PAGES', '20'))
+    max_pages = int(os.environ.get('FOURSQUARE_CHECKIN_MAX_PAGES', '40'))
     category_ids = get_category_filter()
+    photo_limit = photos_per_place_limit()
 
     print("=== Foursquareチェックインから温泉リストを更新 ===")
     checkins = fetch_checkins(oauth_token, limit=limit, max_pages=max_pages)
-    places = build_places_from_checkins(checkins, category_ids, onsen_only=False)
-    onsen_places = build_places_from_checkins(checkins, category_ids, onsen_only=True)
+    if len(checkins) >= limit * max_pages:
+        print(
+            f"[Warn] 取得件数がページ上限({limit * max_pages}件)に達しました。"
+            "FOURSQUARE_CHECKIN_MAX_PAGES を増やしてください。",
+            file=sys.stderr,
+        )
+
+    places, kept_places = merge_with_existing(
+        build_places_from_checkins(checkins, category_ids, onsen_only=False),
+        load_existing_places(OUTPUT_PLACES_JSON),
+        photo_limit,
+    )
+    onsen_places, kept_onsen = merge_with_existing(
+        build_places_from_checkins(checkins, category_ids, onsen_only=True),
+        load_existing_places(OUTPUT_ONSEN_JSON),
+        photo_limit,
+    )
 
     os.makedirs(os.path.dirname(OUTPUT_PLACES_JSON), exist_ok=True)
     with open(OUTPUT_PLACES_JSON, 'w', encoding='utf-8') as f:
@@ -485,8 +594,8 @@ def main():
     with_comments = sum(1 for place in onsen_places if place.get('user_comment'))
 
     print(f"取得チェックイン: {len(checkins)}件")
-    print(f"全スポット: {len(places)}件")
-    print(f"温泉カテゴリ一致: {len(onsen_places)}件")
+    print(f"全スポット: {len(places)}件（うち今回のAPIに無く既存から保持: {kept_places}件）")
+    print(f"温泉カテゴリ一致: {len(onsen_places)}件（うち既存から保持: {kept_onsen}件）")
     print(f"温泉写真あり: {with_photos}件")
     print(f"温泉コメントあり: {with_comments}件")
     print(f"書き出し先: {OUTPUT_PLACES_JSON}")

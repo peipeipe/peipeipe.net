@@ -65,6 +65,8 @@ Photo URLs are converted from Foursquare's `500x300` variant to `original` befor
 
 Related: `fetch_foursquare_checkins.py` keeps **every** check-in photo per venue by default. Capping it via `FOURSQUARE_CHECKIN_PHOTOS_PER_PLACE` (1 or more; empty/0 means unlimited) makes newer check-ins push older photos out of `onsen_places.json`, which would silently drop analysis sheets that were never analyzed.
 
+`fetch_foursquare_checkins.py` re-fetches the full check-in history every run, but it **merges into the existing `places.json` / `onsen_places.json` instead of overwriting them**: a venue that no longer comes back from the API (deleted on Foursquare, or pushed past the `limit × MAX_PAGES` history window) stays in the JSON. `checkin_count`/`first_checkin_at` keep their widest values and photos accumulate, so a shrinking API response can't erase history. Foursquare renames venues (and localizes category names) from time to time — that normally just propagates, but to pin a display name add a `name_override` field to the entry in the JSON by hand; the merge preserves it and it wins over the API name.
+
 The data renders inside `/onsen` (`onsen.astro`): a 泉質 badge on each check-in card plus a 温泉成分表 section below the map. `onsen-data.json.ts` also exposes a per-`fsq_id` summary so client-side re-rendering keeps the badges.
 
 ### Deploy
