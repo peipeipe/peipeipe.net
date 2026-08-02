@@ -596,6 +596,54 @@
       gap: 6px;
     }
 
+    .image-order {
+      position: absolute;
+      top: 8px;
+      left: 8px;
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      padding: 4px 6px;
+      border-radius: var(--radius-sm);
+      background: rgba(0,0,0,0.55);
+    }
+
+    .image-order-index {
+      min-width: 14px;
+      text-align: center;
+      font-size: 12px;
+      font-weight: 600;
+      color: #fff;
+    }
+
+    .image-move {
+      width: 28px;
+      height: 28px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0;
+      border: 1px solid rgba(255,255,255,0.2);
+      border-radius: 6px;
+      background: rgba(255,255,255,0.12);
+      color: #fff;
+      font-family: inherit;
+      font-size: 13px;
+      line-height: 1;
+      cursor: pointer;
+      transition: var(--transition);
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    .image-move:hover:not(:disabled) {
+      background: rgba(255,255,255,0.24);
+    }
+
+    .image-move:disabled {
+      opacity: 0.35;
+      cursor: not-allowed;
+    }
+
     .image-info {
       display: block;
       margin-top: 6px;
@@ -1132,11 +1180,10 @@
 
     try {
       for (const file of imageFiles) {
+        // WebP非対応ブラウザ(iOS Safari等)はJPEGにフォールバックする。
+        // push後に convert-images-to-webp.yml がWebP化するので警告は出さない。
         const upload = await createImageUpload(file);
         state.imageUploads.push(upload);
-        if (upload.ext !== 'webp') {
-          showToast('warning', 'JPEGで添付しました', 'このブラウザではWebP変換に対応していないためJPEGにしました');
-        }
       }
       renderImageUploads();
       progressFill.className = 'progress-fill';
@@ -1211,7 +1258,7 @@
 
   function renderImageUploads() {
     imageList.innerHTML = '';
-    state.imageUploads.forEach(upload => {
+    state.imageUploads.forEach((upload, index) => {
       const item = document.createElement('div');
       item.className = 'attached-image';
 
@@ -1235,6 +1282,24 @@
 
       overlay.append(removeButton);
       item.append(img, overlay, info);
+
+      // 2枚以上のときだけ並び替えUIを出す(投稿時のファイル名連番は配列順で決まる)
+      if (state.imageUploads.length > 1) {
+        const order = document.createElement('div');
+        order.className = 'image-order';
+
+        const position = document.createElement('span');
+        position.className = 'image-order-index';
+        position.textContent = String(index + 1);
+
+        order.append(
+          moveImageButton('◀', '前へ移動', index, -1),
+          position,
+          moveImageButton('▶', '後ろへ移動', index, 1),
+        );
+        item.append(order);
+      }
+
       imageList.append(item);
     });
 
@@ -1256,6 +1321,25 @@
       : 0;
     const formatLabel = upload.ext === 'webp' ? 'WebP' : 'JPEG';
     return `${upload.originalName} (${formatLabel}, -${reduction.toFixed(1)}%, 約${Math.round(upload.outputBytes / 1024)}KB)`;
+  }
+
+  function moveImageButton(label, title, index, delta) {
+    const button = document.createElement('button');
+    button.className = 'image-move';
+    button.type = 'button';
+    button.title = title;
+    button.textContent = label;
+    button.disabled = index + delta < 0 || index + delta >= state.imageUploads.length;
+    button.addEventListener('click', () => moveImageUpload(index, delta));
+    return button;
+  }
+
+  function moveImageUpload(index, delta) {
+    const target = index + delta;
+    if (target < 0 || target >= state.imageUploads.length) return;
+    const [moved] = state.imageUploads.splice(index, 1);
+    state.imageUploads.splice(target, 0, moved);
+    renderImageUploads();
   }
 
   function removeImageUpload(id) {
