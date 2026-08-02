@@ -600,25 +600,6 @@
     "last_visit": "2025-10-12"
   },
   {
-    "name": "丘の輪",
-    "lat": 36.060259,
-    "lng": 138.076005,
-    "elevation": 764,
-    "tags": [],
-    "visit_count": 1,
-    "activities": [
-      {
-        "id": 17244572097,
-        "name": "【岡谷市】 ROAD TO NAGANO 30km走練習会",
-        "date": "2026-02-01",
-        "sport_type": "Run",
-        "distance_km": 32.0
-      }
-    ],
-    "first_visit": "2026-02-01",
-    "last_visit": "2026-02-01"
-  },
-  {
     "name": "冠着山（姨捨山）",
     "lat": 36.468797,
     "lng": 138.10666,
@@ -952,7 +933,7 @@
     "name": "光城山",
     "lat": 36.322435,
     "lng": 137.944445,
-    "elevation": 880,
+    "elevation": 912,
     "tags": [],
     "visit_count": 1,
     "activities": [
