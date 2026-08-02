@@ -68,5 +68,18 @@ jobs:
       - name: Notify Discord
         if: steps.peak-diff.outputs.changed == 'true' && steps.commit-changes.outputs.changed == 'true' && env.DISCORD_WEBHOOK_URL != ''
         run: |
-          curl -fsS -X POST -H "Content-Type: application/json" \
-            -d @"$RUNNER_TEMP/osm_peaks_diff.json" "$DISCORD_WEBHOOK_URL"
+          # 送信内容とレスポンスをログに残す（ペイロードに秘密情報は含まれない）
+          cat "$RUNNER_TEMP/osm_peaks_diff.json"
+          # wait=true を付けると Discord が投稿されたメッセージを返すので、
+          # 実際にどのチャンネルに入ったかまで確認できる
+          case "$DISCORD_WEBHOOK_URL" in
+            *\?*) url="$DISCORD_WEBHOOK_URL&wait=true" ;;
+            *) url="$DISCORD_WEBHOOK_URL?wait=true" ;;
+          esac
+          code=$(curl -sS -X POST -H "Content-Type: application/json" \
+            -d @"$RUNNER_TEMP/osm_peaks_diff.json" \
+            -o "$RUNNER_TEMP/discord_response.txt" -w '%{http_code}' \
+            "$url") || exit 1
+          echo "Discord response: HTTP $code"
+          cat "$RUNNER_TEMP/discord_response.txt"
+          [ "$code" -lt 400 ] || exit 1
