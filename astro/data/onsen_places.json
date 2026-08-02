@@ -1,5 +1,30 @@
 [
   {
+    "name": "アルペンブリックスパ 日帰り温泉",
+    "user_comment": "ここ来たことあるぞ！水上とだな。",
+    "date": "2026-08-02",
+    "lat": 36.87173368830039,
+    "lng": 138.17969418215648,
+    "address": "池ノ平2413−11, 妙高市, 新潟県, 949-2112",
+    "foursquare_url": "https://foursquare.com/v/53df3c94498e8be7080b98bc",
+    "photos": [
+      "https://fastly.4sqi.net/img/general/500x300/41463109_DcaPh7xwKMB08k4222PGSS8xMMzBPcGUSpNRo8FjW7U.jpg",
+      "https://fastly.4sqi.net/img/general/500x300/41463109_4U644mS_-lF3Q84wb-hq59q6YZKyGHFStFP6tguSnSo.jpg"
+    ],
+    "categories": [
+      "スパ"
+    ],
+    "category_group": "onsen",
+    "category_label": "温泉・サウナ",
+    "category_emoji": "♨️",
+    "category_color": "#ff7a59",
+    "data_source": "foursquare_checkin",
+    "fsq_id": "53df3c94498e8be7080b98bc",
+    "checkin_count": 2,
+    "first_checkin_at": "2023-07-29T09:47:18+00:00",
+    "last_checkin_at": "2026-08-02T07:22:48+00:00"
+  },
+  {
     "name": "湯けむり屋敷 薬師の湯",
     "user_comment": "新館と休館あり。新館のみ入った。薄め。ニフティ温泉割引あり",
     "date": "2026-07-26",
@@ -2042,28 +2067,6 @@
     "checkin_count": 2,
     "first_checkin_at": "2023-08-26T08:26:28+00:00",
     "last_checkin_at": "2023-08-27T05:47:32+00:00"
-  },
-  {
-    "name": "アルペンブリックスパ 日帰り温泉",
-    "user_comment": "",
-    "date": "2023-07-29",
-    "lat": 36.87173368830039,
-    "lng": 138.17969418215648,
-    "address": "池ノ平2413−11, 妙高市, 新潟県, 949-2112",
-    "foursquare_url": "https://foursquare.com/v/53df3c94498e8be7080b98bc",
-    "photos": [],
-    "categories": [
-      "Spa"
-    ],
-    "category_group": "onsen",
-    "category_label": "温泉・サウナ",
-    "category_emoji": "♨️",
-    "category_color": "#ff7a59",
-    "data_source": "foursquare_checkin",
-    "fsq_id": "53df3c94498e8be7080b98bc",
-    "checkin_count": 1,
-    "first_checkin_at": "2023-07-29T09:47:18+00:00",
-    "last_checkin_at": "2023-07-29T09:47:18+00:00"
   },
   {
     "name": "Naena no Yu (杉野沢温泉 苗名の湯)",
