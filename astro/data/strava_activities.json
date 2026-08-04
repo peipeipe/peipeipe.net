@@ -1,5 +1,23 @@
 [
   {
+    "id": 19590137648,
+    "name": "朝のランニング",
+    "sport_type": "Run",
+    "distance": 10470.8,
+    "moving_time": 3474,
+    "elapsed_time": 3915,
+    "total_elevation_gain": 50.0,
+    "start_date": "2026-08-03T22:55:32Z",
+    "start_date_local": "2026-08-04T07:55:32Z",
+    "start_latlng": [
+      36.391705,
+      138.242987
+    ],
+    "average_speed": 3.014,
+    "max_speed": 3.813,
+    "summary_polyline": "y`c}EgjwjYq@rA]j@SDMi@Ky@Ki@EEAIQFKCyBgCg@]I?[R}@pBuAnBa@~AkDhIkCnHm@jBw@pBcDhH_BfDYf@Ef@BNJNbAdA@LcAd@}BnAmA~@o@n@mA~A}AxBM\\_BtBU^Sh@c@|@Qf@ALD^b@bCT`BDn@RnA|@fIr@hFb@pD@LXF_@SM[C?gAPiB\\c@LcBZyAd@CHGl@Bv@GfAK@GJOtCMvAYlBSv@Yr@s@dAiBjBYb@c@fAWt@]tC@`@Hr@BDXTLEXYJC@BEHu@jAs@vAqB`Fw@|BMf@OXEAcAy@}BsAyGqEa@_@g@[{D{CGGG[\\_CBq@Io@@mAc@qGDKTE~Ah@XCZ]\\mA^eAlBsJtAmG~CePf@wDZoDHmB?gADIHEnAg@~DqBnAcA|AcBxA_CfB}Cf@k@fIuKfEkGhDcGv@qAfBoDbAqCjAyCNg@s@g@eBo@iAo@Uo@TwAf@s@Z_AZsABi@Jo@dAiBj@mAPWnAgBRUb@]b@g@^ITB`DnCRN\\Jd@_A~@}BjDaJfAyDd@wAdAwChC{FpAgCt@sAfCcEvCkEzAeC~@mBV_@H@f@d@r@f@l@Z~AfAlA|@bAn@r@`@hCfBxBrA`AXPJ?^Cn@YTaC`AmAl@q@\\q@b@_@ZqAxAaBzBeBpBAJDHb@l@^VZ`@Rh@?Tw@fBYl@[d@Wj@{@xBY`AMf@qAtC"
+  },
+  {
     "id": 19565233311,
     "name": "信越五岳110km前半部分SRT試走",
     "sport_type": "TrailRun",
