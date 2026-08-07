@@ -1,5 +1,79 @@
 [
   {
+    "name": "別所温泉 あいそめの湯",
+    "user_comment": "",
+    "date": "2026-08-07",
+    "lat": 36.353516129807986,
+    "lng": 138.16289191889751,
+    "address": "別所温泉58, 上田市, 長野県, 386-1431",
+    "foursquare_url": "https://foursquare.com/v/4b83b4caf964a520a30d31e3",
+    "photos": [
+      "https://fastly.4sqi.net/img/general/500x300/41463109_EBAbU6immgM3yveg5y3S2HX4d1YVOXRbhmdqM20BGbo.jpg",
+      "https://fastly.4sqi.net/img/general/500x300/41463109_LCF2sfbuZtxmJUt2zyPDq5uKjMS7S9ahm5ktDEoG-Yg.jpg"
+    ],
+    "categories": [
+      "温泉"
+    ],
+    "category_group": "onsen",
+    "category_label": "温泉・サウナ",
+    "category_emoji": "♨️",
+    "category_color": "#ff7a59",
+    "data_source": "foursquare_checkin",
+    "fsq_id": "4b83b4caf964a520a30d31e3",
+    "checkin_count": 12,
+    "first_checkin_at": "2024-07-21T08:39:38+00:00",
+    "last_checkin_at": "2026-08-07T12:45:36+00:00"
+  },
+  {
+    "name": "すき家 上田店",
+    "user_comment": "",
+    "date": "2026-08-06",
+    "lat": 36.415568196871824,
+    "lng": 138.22332266556688,
+    "address": "秋和344-4, 上田市, 長野県",
+    "foursquare_url": "https://foursquare.com/v/4c74a591604a370492b58049",
+    "photos": [],
+    "categories": [
+      "どんぶり屋"
+    ],
+    "category_group": "other",
+    "category_label": "その他",
+    "category_emoji": "📍",
+    "category_color": "#607d8b",
+    "data_source": "foursquare_checkin",
+    "fsq_id": "4c74a591604a370492b58049",
+    "checkin_count": 4,
+    "first_checkin_at": "2026-04-09T13:05:11+00:00",
+    "last_checkin_at": "2026-08-06T13:26:24+00:00"
+  },
+  {
+    "name": "万葉超音波温泉",
+    "user_comment": "めちゃくちゃ良い",
+    "date": "2026-08-06",
+    "lat": 36.48055728598682,
+    "lng": 138.15005470314597,
+    "address": "磯部1125, 千曲市, 長野県, 389-0806",
+    "foursquare_url": "https://foursquare.com/v/4b679f6ef964a52045582be3",
+    "photos": [
+      "https://fastly.4sqi.net/img/general/500x300/41463109_LhgRG6qk5LUijfJbejOmPv9uh5kbcw7i5nszJmwQots.jpg",
+      "https://fastly.4sqi.net/img/general/500x300/41463109_R1AxOOVqfOdD4JSYDjpeYDRLdBcBwSZ9YZ5GZmgFqks.jpg",
+      "https://fastly.4sqi.net/img/general/500x300/41463109_ppqd7Rk5sq5LLZr9l4Qyqx7bZvYoBjLNcA3gjzylhEc.jpg",
+      "https://fastly.4sqi.net/img/general/500x300/41463109_mc4pqveJa7iDe7-MELyxqz67X3zE67HPUAFkY3bW4FU.jpg"
+    ],
+    "categories": [
+      "温泉"
+    ],
+    "category_group": "onsen",
+    "category_label": "温泉・サウナ",
+    "category_emoji": "♨️",
+    "category_color": "#ff7a59",
+    "data_source": "foursquare_checkin",
+    "fsq_id": "4b679f6ef964a52045582be3",
+    "checkin_count": 6,
+    "first_checkin_at": "2026-03-19T13:10:05+00:00",
+    "last_checkin_at": "2026-08-06T12:56:39+00:00"
+  },
+  {
     "name": "アルペンブリックスパ 日帰り温泉",
     "user_comment": "ここ来たことあるぞ！水上とだな。",
     "date": "2026-08-02",
@@ -776,33 +850,6 @@
     "last_checkin_at": "2026-06-27T23:48:38+00:00"
   },
   {
-    "name": "万葉超音波温泉",
-    "user_comment": "めちゃくちゃ良い",
-    "date": "2026-06-25",
-    "lat": 36.48055728598682,
-    "lng": 138.15005470314597,
-    "address": "磯部1125, 千曲市, 長野県, 389-0806",
-    "foursquare_url": "https://foursquare.com/v/4b679f6ef964a52045582be3",
-    "photos": [
-      "https://fastly.4sqi.net/img/general/500x300/41463109_LhgRG6qk5LUijfJbejOmPv9uh5kbcw7i5nszJmwQots.jpg",
-      "https://fastly.4sqi.net/img/general/500x300/41463109_R1AxOOVqfOdD4JSYDjpeYDRLdBcBwSZ9YZ5GZmgFqks.jpg",
-      "https://fastly.4sqi.net/img/general/500x300/41463109_ppqd7Rk5sq5LLZr9l4Qyqx7bZvYoBjLNcA3gjzylhEc.jpg",
-      "https://fastly.4sqi.net/img/general/500x300/41463109_mc4pqveJa7iDe7-MELyxqz67X3zE67HPUAFkY3bW4FU.jpg"
-    ],
-    "categories": [
-      "温泉"
-    ],
-    "category_group": "onsen",
-    "category_label": "温泉・サウナ",
-    "category_emoji": "♨️",
-    "category_color": "#ff7a59",
-    "data_source": "foursquare_checkin",
-    "fsq_id": "4b679f6ef964a52045582be3",
-    "checkin_count": 5,
-    "first_checkin_at": "2026-03-19T13:10:05+00:00",
-    "last_checkin_at": "2026-06-25T13:07:09+00:00"
-  },
-  {
     "name": "Masaoki Bakery",
     "user_comment": "",
     "date": "2026-06-22",
@@ -1242,28 +1289,6 @@
     "last_checkin_at": "2026-06-13T01:58:39+00:00"
   },
   {
-    "name": "別所温泉 あいそめの湯",
-    "user_comment": "",
-    "date": "2026-06-11",
-    "lat": 36.353516129807986,
-    "lng": 138.16289191889751,
-    "address": "別所温泉58, 上田市, 長野県, 386-1431",
-    "foursquare_url": "https://foursquare.com/v/4b83b4caf964a520a30d31e3",
-    "photos": [],
-    "categories": [
-      "温泉"
-    ],
-    "category_group": "onsen",
-    "category_label": "温泉・サウナ",
-    "category_emoji": "♨️",
-    "category_color": "#ff7a59",
-    "data_source": "foursquare_checkin",
-    "fsq_id": "4b83b4caf964a520a30d31e3",
-    "checkin_count": 11,
-    "first_checkin_at": "2024-07-21T08:39:38+00:00",
-    "last_checkin_at": "2026-06-11T12:14:02+00:00"
-  },
-  {
     "name": "とんかつ 力亭",
     "user_comment": "",
     "date": "2026-06-11",
@@ -1688,28 +1713,6 @@
     "checkin_count": 1,
     "first_checkin_at": "2026-05-30T00:46:16+00:00",
     "last_checkin_at": "2026-05-30T00:46:16+00:00"
-  },
-  {
-    "name": "すき家 上田店",
-    "user_comment": "",
-    "date": "2026-05-28",
-    "lat": 36.415568196871824,
-    "lng": 138.22332266556688,
-    "address": "秋和344-4, 上田市, 長野県",
-    "foursquare_url": "https://foursquare.com/v/4c74a591604a370492b58049",
-    "photos": [],
-    "categories": [
-      "どんぶり屋"
-    ],
-    "category_group": "other",
-    "category_label": "その他",
-    "category_emoji": "📍",
-    "category_color": "#607d8b",
-    "data_source": "foursquare_checkin",
-    "fsq_id": "4c74a591604a370492b58049",
-    "checkin_count": 3,
-    "first_checkin_at": "2026-04-09T13:05:11+00:00",
-    "last_checkin_at": "2026-05-28T12:48:00+00:00"
   },
   {
     "name": "ほっともっと",
@@ -4765,7 +4768,7 @@
     "foursquare_url": "https://foursquare.com/v/576f24ca38fa91411ecba073",
     "photos": [],
     "categories": [
-      "市役所"
+      "City Hall"
     ],
     "category_group": "other",
     "category_label": "その他",
@@ -4790,7 +4793,7 @@
       "https://fastly.4sqi.net/img/general/500x300/41463109_Annf1ZewDpZh-B0CujaneluWEckz57S2w0q2Un-khzk.jpg"
     ],
     "categories": [
-      "映画館"
+      "Movie Theater"
     ],
     "category_group": "culture",
     "category_label": "文化・娯楽",
@@ -5706,8 +5709,8 @@
     "name": "JR Tokyo Station (JR 東京駅)",
     "user_comment": "",
     "date": "2025-08-17",
-    "lat": 35.68156021980971,
-    "lng": 139.7666530954265,
+    "lat": 35.68130839279344,
+    "lng": 139.7668328014357,
     "address": "丸の内1-9-1, 千代田区, 東京都, 100-6505",
     "foursquare_url": "https://foursquare.com/v/4be4f932d4f7c9b61df92420",
     "photos": [],
@@ -17672,8 +17675,8 @@
     "name": "JR Ueno Station (JR 上野駅)",
     "user_comment": "混んでる",
     "date": "2023-03-19",
-    "lat": 35.71342643908671,
-    "lng": 139.7764678361808,
+    "lat": 35.713683,
+    "lng": 139.776915,
     "address": "上野7-1-1, 台東区, 東京都, 110-0005",
     "foursquare_url": "https://foursquare.com/v/4b661ccdf964a52055142be3",
     "photos": [
@@ -20178,8 +20181,8 @@
     "name": "Ōmiya Station (大宮駅)",
     "user_comment": "初上陸（マジ）",
     "date": "2022-09-21",
-    "lat": 35.90646282806195,
-    "lng": 139.62429271887476,
+    "lat": 35.90635298026599,
+    "lng": 139.62393915236612,
     "address": "大宮区錦町, さいたま市, 埼玉県, 330-0853",
     "foursquare_url": "https://foursquare.com/v/4b3dd6ddf964a520089725e3",
     "photos": [],
@@ -38040,12 +38043,12 @@
     "foursquare_url": "https://foursquare.com/v/5527cf64498e695e76854aa9",
     "photos": [],
     "categories": [
-      "Sake Bar"
+      "Yakitori Restaurant"
     ],
-    "category_group": "bar",
-    "category_label": "酒場",
-    "category_emoji": "🍺",
-    "category_color": "#7e57c2",
+    "category_group": "food",
+    "category_label": "食事",
+    "category_emoji": "🍜",
+    "category_color": "#e67e22",
     "data_source": "foursquare_checkin",
     "fsq_id": "5527cf64498e695e76854aa9",
     "checkin_count": 1,
