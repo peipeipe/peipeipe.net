@@ -6,9 +6,16 @@ import {
   formatTemp,
   getCompositionMap,
   getOnsenCompositions,
+  layoutScatterPoints,
+  phToX,
   qualityBreakdown,
+  scatterPlotHeight,
   scatterPoints,
+  SCATTER_CHART,
+  SCATTER_PH_TICKS,
+  SCATTER_TOTAL_TICKS,
   summarizeCompositions,
+  totalToY,
   TREATMENT_LABELS,
   type CompositionIngredient,
   type OnsenComposition,
@@ -62,47 +69,14 @@ const confidenceLabel: Record<string, string> = {
   low: "読み取り精度: 低",
 };
 
-// --- pH × 成分総計の散布図 ---
-const CHART = { width: 720, height: 400, left: 58, right: 18, top: 18, bottom: 46 };
-const PH_DOMAIN = [5.5, 9.5];
-const TOTAL_DOMAIN = [300, 20000];
+// --- pH × 成分総計の散布図（配置の計算は lib/composition.ts 側） ---
+const CHART = SCATTER_CHART;
 const plotWidth = CHART.width - CHART.left - CHART.right;
-const plotHeight = CHART.height - CHART.top - CHART.bottom;
+const plotHeight = scatterPlotHeight;
+const phTicks = SCATTER_PH_TICKS;
+const totalTicks = SCATTER_TOTAL_TICKS;
 
-const phToX = (ph: number) =>
-  CHART.left + ((ph - PH_DOMAIN[0]) / (PH_DOMAIN[1] - PH_DOMAIN[0])) * plotWidth;
-const totalToY = (total: number) => {
-  const ratio =
-    (Math.log10(total) - Math.log10(TOTAL_DOMAIN[0])) /
-    (Math.log10(TOTAL_DOMAIN[1]) - Math.log10(TOTAL_DOMAIN[0]));
-  return CHART.top + plotHeight - ratio * plotHeight;
-};
-
-const phTicks = [6, 7, 8, 9];
-const totalTicks = [300, 1000, 3000, 10000];
-
-// ラベルが重ならないよう、点ごとに空いているオフセットを順に試す
-const labelOffsets = [-11, 15, -23, 27, -35];
-const placedLabels: { x: number; y: number }[] = [];
-const plotted = scatterPoints(compositions)
-  .slice()
-  .sort((a, b) => b.total - a.total)
-  .map((point) => {
-    const x = phToX(point.ph);
-    const y = totalToY(point.total);
-    const dy =
-      labelOffsets.find(
-        (offset) =>
-          !placedLabels.some(
-            (placed) => Math.abs(placed.x - x) < 78 && Math.abs(placed.y - (y + offset)) < 12,
-          ),
-      ) ?? labelOffsets[0];
-    placedLabels.push({ x, y: y + dy });
-
-    const anchor = x > CHART.left + plotWidth - 70 ? "end" : x < CHART.left + 70 ? "start" : "middle";
-    return { ...point, x, y, dy, anchor };
-  });
-
+const plotted = layoutScatterPoints(scatterPoints(compositions));
 const scatterGroups = [...new Map(plotted.map((point) => [point.group.key, point.group])).values()];
 ---
 
@@ -324,18 +298,27 @@ const scatterGroups = [...new Map(plotted.map((point) => [point.group.key, point
                 mg/kg
               </text>
 
+              {/* 引き出し線 → 点 → ラベルの順に描いて、後ろの点がラベルを隠さないようにする */}
+              {plotted.map((point) =>
+                point.leader ? (
+                  <line
+                    class="scatter-leader"
+                    x1={point.leader.x1}
+                    y1={point.leader.y1}
+                    x2={point.leader.x2}
+                    y2={point.leader.y2}
+                  />
+                ) : null,
+              )}
+
               {plotted.map((point) => (
-                <>
-                  <circle class={`scatter-dot quality-${point.group.key}`} cx={point.x} cy={point.y} r="6" />
-                  <text
-                    class="scatter-label"
-                    x={point.x}
-                    y={point.y + point.dy}
-                    text-anchor={point.anchor}
-                  >
-                    {point.name}
-                  </text>
-                </>
+                <circle class={`scatter-dot quality-${point.group.key}`} cx={point.x} cy={point.y} r="6" />
+              ))}
+
+              {plotted.map((point) => (
+                <text class="scatter-label" x={point.labelX} y={point.labelY} text-anchor={point.anchor}>
+                  {point.label}
+                </text>
               ))}
             </svg>
           </div>

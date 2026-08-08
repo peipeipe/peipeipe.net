@@ -188,6 +188,227 @@ export function scatterPoints(entries: OnsenComposition[] = getOnsenCompositions
     }));
 }
 
+// --- 散布図（pH × 成分総計）のレイアウト ---
+
+export const SCATTER_CHART = {
+  width: 760,
+  height: 440,
+  left: 58,
+  right: 18,
+  top: 20,
+  bottom: 46,
+};
+
+/** 287.9mg/kg の別所温泉が枠の外に出ないよう、下限は実データより少し低く取る */
+const PH_DOMAIN = [5.5, 9.5];
+const TOTAL_DOMAIN = [250, 20000];
+
+export const SCATTER_PH_TICKS = [6, 7, 8, 9];
+export const SCATTER_TOTAL_TICKS = [300, 1000, 3000, 10000];
+
+export const scatterPlotWidth = SCATTER_CHART.width - SCATTER_CHART.left - SCATTER_CHART.right;
+export const scatterPlotHeight = SCATTER_CHART.height - SCATTER_CHART.top - SCATTER_CHART.bottom;
+
+export const phToX = (ph: number) =>
+  SCATTER_CHART.left + ((ph - PH_DOMAIN[0]) / (PH_DOMAIN[1] - PH_DOMAIN[0])) * scatterPlotWidth;
+
+export const totalToY = (total: number) => {
+  const ratio =
+    (Math.log10(total) - Math.log10(TOTAL_DOMAIN[0])) /
+    (Math.log10(TOTAL_DOMAIN[1]) - Math.log10(TOTAL_DOMAIN[0]));
+  return SCATTER_CHART.top + scatterPlotHeight - ratio * scatterPlotHeight;
+};
+
+const LABEL_FONT_SIZE = 12;
+const LABEL_ASCENT = 9;
+const LABEL_DESCENT = 3;
+const LABEL_GAP = 3;
+const DOT_RADIUS = 6;
+
+/** 括弧書きは図では読み切れないので落とす（「コタン温泉 (コタン温泉 露天風呂)」→「コタン温泉」） */
+function shortLabel(name: string) {
+  return name.replace(/\s*[（(].*$/, "").trim() || name;
+}
+
+/** SVG の text は等幅ではないので、半角を 0.55em・全角を 1em として概算する */
+function estimateLabelWidth(text: string) {
+  let em = 0;
+  for (const char of text) {
+    em += /[ -~｡-ﾟ]/.test(char) ? 0.55 : 1;
+  }
+  return em * LABEL_FONT_SIZE;
+}
+
+type Rect = { x1: number; y1: number; x2: number; y2: number };
+
+function overlapArea(a: Rect, b: Rect) {
+  const w = Math.min(a.x2, b.x2) - Math.max(a.x1, b.x1);
+  const h = Math.min(a.y2, b.y2) - Math.max(a.y1, b.y1);
+  return w > 0 && h > 0 ? w * h : 0;
+}
+
+type Anchor = "start" | "middle" | "end";
+
+function labelRect(cx: number, baseline: number, width: number, anchor: Anchor): Rect {
+  const x1 = anchor === "start" ? cx : anchor === "end" ? cx - width : cx - width / 2;
+  return {
+    x1: x1 - LABEL_GAP,
+    y1: baseline - LABEL_ASCENT - LABEL_GAP,
+    x2: x1 + width + LABEL_GAP,
+    y2: baseline + LABEL_DESCENT + LABEL_GAP,
+  };
+}
+
+/**
+ * 点ごとに候補位置を近い順に試し、既に置いたラベル・全ての点・枠の外と
+ * 重ならない場所を選ぶ。全滅した場合は重なりが最小の候補へ逃がす。
+ */
+const CANDIDATES: { anchor: Anchor; dx: number; dy: number }[] = [];
+for (const [dy, rank] of [
+  [-12, 0],
+  [16, 0],
+  [4, 1],
+  [-25, 2],
+  [29, 2],
+  [-16, 3],
+  [21, 3],
+  [-38, 4],
+  [42, 4],
+  [-29, 5],
+  [34, 5],
+  [-51, 6],
+  [55, 6],
+  [-42, 7],
+  [47, 7],
+  [-64, 8],
+  [68, 8],
+  [-77, 9],
+  [81, 9],
+] as [number, number][]) {
+  const horizontals: { anchor: Anchor; dx: number }[] =
+    rank % 2 === 1 || Math.abs(dy) < 12
+      ? [
+          { anchor: "start", dx: DOT_RADIUS + 4 },
+          { anchor: "end", dx: -(DOT_RADIUS + 4) },
+        ]
+      : [
+          { anchor: "middle", dx: 0 },
+          { anchor: "start", dx: DOT_RADIUS + 4 },
+          { anchor: "end", dx: -(DOT_RADIUS + 4) },
+        ];
+  for (const horizontal of horizontals) {
+    CANDIDATES.push({ anchor: horizontal.anchor, dx: horizontal.dx, dy });
+  }
+}
+
+export type ScatterLayoutPoint = ScatterPoint & {
+  x: number;
+  y: number;
+  label: string;
+  labelX: number;
+  labelY: number;
+  anchor: Anchor;
+  leader: { x1: number; y1: number; x2: number; y2: number } | null;
+};
+
+export function layoutScatterPoints(
+  points: ScatterPoint[] = scatterPoints(),
+): ScatterLayoutPoint[] {
+  const positioned = points.map((point) => ({
+    point,
+    x: phToX(point.ph),
+    y: totalToY(point.total),
+    label: shortLabel(point.name),
+  }));
+
+  const dotRects: Rect[] = positioned.map((item) => ({
+    x1: item.x - DOT_RADIUS - 1,
+    y1: item.y - DOT_RADIUS - 1,
+    x2: item.x + DOT_RADIUS + 1,
+    y2: item.y + DOT_RADIUS + 1,
+  }));
+
+  const bounds: Rect = {
+    x1: SCATTER_CHART.left,
+    y1: SCATTER_CHART.top,
+    x2: SCATTER_CHART.width - SCATTER_CHART.right,
+    y2: SCATTER_CHART.top + scatterPlotHeight,
+  };
+
+  // 近くに点が多いものほど逃げ場が少ないので先に置く
+  const order = positioned
+    .map((item, index) => {
+      const crowding = positioned.filter(
+        (other) => other !== item && Math.abs(other.x - item.x) < 90 && Math.abs(other.y - item.y) < 60,
+      ).length;
+      return { index, crowding };
+    })
+    .sort((a, b) => b.crowding - a.crowding || a.index - b.index)
+    .map((item) => item.index);
+
+  const placed: Rect[] = [];
+  const results: ScatterLayoutPoint[] = new Array(positioned.length);
+
+  for (const index of order) {
+    const item = positioned[index];
+    const width = estimateLabelWidth(item.label);
+
+    let best: { candidate: (typeof CANDIDATES)[number]; rect: Rect; cost: number } | null = null;
+
+    for (const candidate of CANDIDATES) {
+      const cx = item.x + candidate.dx;
+      const baseline = item.y + candidate.dy;
+      const rect = labelRect(cx, baseline, width, candidate.anchor);
+
+      // 枠からはみ出す候補は、はみ出した幅ぶんのペナルティを付ける
+      const outside =
+        Math.max(0, bounds.x1 - rect.x1) +
+        Math.max(0, rect.x2 - bounds.x2) +
+        Math.max(0, bounds.y1 - rect.y1) +
+        Math.max(0, rect.y2 - bounds.y2);
+
+      let cost = outside * 100;
+      for (const other of placed) cost += overlapArea(rect, other);
+      for (const dot of dotRects) cost += overlapArea(rect, dot);
+
+      if (cost === 0) {
+        best = { candidate, rect, cost };
+        break;
+      }
+      if (!best || cost < best.cost) best = { candidate, rect, cost };
+    }
+
+    const chosen = best!;
+    placed.push(chosen.rect);
+
+    const labelX = item.x + chosen.candidate.dx;
+    const labelY = item.y + chosen.candidate.dy;
+    const distance = Math.hypot(labelX - item.x, labelY - LABEL_ASCENT / 2 - item.y);
+
+    results[index] = {
+      ...item.point,
+      x: item.x,
+      y: item.y,
+      label: item.label,
+      labelX,
+      labelY,
+      anchor: chosen.candidate.anchor,
+      // 点から離して置いたものは、どの点のラベルか分かるよう引き出し線でつなぐ
+      leader:
+        distance > 26
+          ? {
+              x1: item.x,
+              y1: item.y,
+              x2: labelX,
+              y2: labelY - (chosen.candidate.dy < 0 ? -LABEL_DESCENT : LABEL_ASCENT / 2),
+            }
+          : null,
+    };
+  }
+
+  return results;
+}
+
 export function formatMgKg(value?: number | null) {
   if (typeof value !== "number") return "";
   if (value >= 1000) return `${value.toLocaleString("ja-JP")} mg/kg`;

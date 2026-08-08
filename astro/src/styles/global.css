@@ -1703,7 +1703,7 @@ html[data-theme="dark"] {
   display: none;
 }
 
-@media (max-width: 569px) {
+@media (max-width: 669px) {
   .composition-chart figcaption .scatter-hint {
     display: inline;
     color: var(--map-accent);
@@ -1752,7 +1752,7 @@ html[data-theme="dark"] {
 .scatter-chart {
   display: block;
   width: 100%;
-  min-width: 520px;
+  min-width: 620px;
   height: auto;
 }
 
@@ -1769,7 +1769,17 @@ html[data-theme="dark"] {
 
 .scatter-label {
   fill: var(--color-muted);
-  font-size: 11px;
+  font-size: 12px;
+  /* グリッド線や引き出し線の上を通っても読めるよう、地色で縁取りしてから塗る */
+  paint-order: stroke;
+  stroke: var(--color-surface);
+  stroke-width: 3px;
+  stroke-linejoin: round;
+}
+
+.scatter-leader {
+  stroke: var(--color-border-soft);
+  stroke-width: 1;
 }
 
 .scatter-dot {
