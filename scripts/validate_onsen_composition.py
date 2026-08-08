@@ -62,13 +62,17 @@ LIQUID_RANGES = [
     ('酸性', None, 3),
     ('中性', 6, 7.5),
 ]
-# 泉温（源泉温度 ℃ による）
+# 泉温（源泉温度 ℃ による）。「低温泉」は「微温泉」の古い言い方で、掲示にはどちらも出る。
 TEMPERATURE_RANGES = [
     ('高温泉', 42, None),
     ('冷鉱泉', None, 25),
     ('微温泉', 25, 34),
-    ('温泉', 34, 42),
+    ('低温泉', 25, 34),
 ]
+# 34〜42℃ の区分語は「温泉」だが、これは泉質名の末尾（「アルカリ性単純温泉」など）と
+# 見分けがつかない。泉温の区分として読めるのは、他の区分語を含まない泉質別区分
+# （spring_quality_class）に出てきたときだけ。
+PLAIN_TEMPERATURE_RANGE = ('温泉', 34, 42)
 
 
 def load_json(path, fallback=None):
@@ -133,6 +137,29 @@ def check_ranges(quality, value, ranges, unit):
     return None
 
 
+def check_temperature(entry, quality):
+    """泉温の区分語と源泉温度が食い違っていれば理由を返す。
+
+    「冷鉱泉」「高温泉」などは泉質名にも区分にも現れるので全体から探すが、34〜42℃ を
+    指す「温泉」だけは泉質名の末尾と区別がつかないため、他の区分語を含まない
+    spring_quality_class に出てきたときに限って区分語として読む。
+    """
+    value = number(entry.get('source_temp_c'))
+    if value is None:
+        return None
+
+    reason = check_ranges(quality, value, TEMPERATURE_RANGES, '℃')
+    if reason:
+        return reason
+    if any(word in quality for word, _, _ in TEMPERATURE_RANGES):
+        return None
+
+    quality_class = entry.get('spring_quality_class') or ''
+    if PLAIN_TEMPERATURE_RANGE[0] in quality_class:
+        return check_ranges(quality_class, value, [PLAIN_TEMPERATURE_RANGE], '℃')
+    return None
+
+
 def check_quality(entry):
     """泉質名が成分値と矛盾していないか見る。
 
@@ -165,7 +192,6 @@ def check_quality(entry):
         (dissolved, OSMOTIC_RANGES, 'mg/kg', '浸透圧'),
         (number(entry.get('ph')) if entry.get('ph') is not None else number(entry.get('ph_lab')),
          LIQUID_RANGES, '', '液性'),
-        (number(entry.get('source_temp_c')), TEMPERATURE_RANGES, '℃', '泉温'),
     ]
     for value, ranges, unit, label in checks:
         if value is None:
@@ -173,6 +199,10 @@ def check_quality(entry):
         reason = check_ranges(quality, value, ranges, unit)
         if reason:
             issues.append(("泉質", f"{label}の区分が{reason}"))
+
+    reason = check_temperature(entry, quality)
+    if reason:
+        issues.append(("泉質", f"泉温の区分が{reason}"))
 
     return issues
 
