@@ -1,0 +1,128 @@
+name: Update Onsen Composition
+
+# 新しいチェックイン写真に温泉分析書が写っていれば、Gemini に読ませて
+# astro/data/onsen_composition.json に反映する。書き起こしは読み違いや、
+# 反射で読めない欄を埋めにいく幻覚が混じりうるので、直接 push せず
+# プルリクエストにして人が確認できるようにしている。
+
+on:
+  schedule:
+    # チェックイン取得（0 16 * * *）のあとに走らせる
+    - cron: '30 17 * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  update-onsen-composition:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v7
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Set up Python
+        uses: actions/setup-python@v7
+        with:
+          python-version: '3.14'
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+
+      # 前回のPRが未マージだと master のデータは未更新のままなので、そのまま走ると
+      # 同じ写真を読み直して同じ内容のPRを毎日積み上げてしまう。先に見て止める。
+      - name: Skip if a previous pull request is still open
+        id: open-pr
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          existing=$(gh pr list --state open --json url,headRefName \
+            --jq '[.[] | select(.headRefName | startswith("onsen-composition/"))][0].url // empty')
+          if [ -n "$existing" ]; then
+            echo "Previous pull request is still open: $existing"
+            echo "レビュー待ちのPRがあるため何もしませんでした: $existing" >> "$GITHUB_STEP_SUMMARY"
+            echo "blocked=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "blocked=false" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Collect unanalyzed checkin photos
+        id: prepare
+        if: steps.open-pr.outputs.blocked == 'false'
+        run: |
+          python scripts/prepare_onsen_composition.py
+          if [ -f .cache/onsen_photos/manifest.json ]; then
+            echo "found=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "No unanalyzed photos"
+            echo "found=false" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Transcribe analysis sheets
+        if: steps.prepare.outputs.found == 'true'
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          GEMINI_MODEL: ${{ vars.GEMINI_MODEL || 'gemini-3.6-flash' }}
+        run: python scripts/extract_onsen_composition.py
+
+      - name: Merge into composition data
+        if: steps.prepare.outputs.found == 'true'
+        run: python scripts/merge_onsen_composition.py
+
+      - name: Verify totals add up
+        if: steps.prepare.outputs.found == 'true'
+        run: |
+          python scripts/validate_onsen_composition.py | tee validation.txt
+          {
+            echo '## 温泉成分表の検算'
+            echo '```'
+            cat validation.txt
+            echo '```'
+          } >> "$GITHUB_STEP_SUMMARY"
+
+      - name: Open pull request
+        if: steps.prepare.outputs.found == 'true'
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          if git diff --quiet -- astro/data/onsen_composition.json; then
+            echo "No change to composition data"
+            exit 0
+          fi
+
+          branch="onsen-composition/$(date +%Y%m%d-%H%M%S)"
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git checkout -b "$branch"
+          git add astro/data/onsen_composition.json
+          git commit -m "温泉成分表を自動書き起こしで更新"
+          git push origin "$branch"
+
+          {
+            echo '`scripts/extract_onsen_composition.py` が新しいチェックイン写真から'
+            echo '温泉分析書を読み取りました。マージ前に次を確認してください。'
+            echo
+            echo '- `confidence` が `low` / `medium` のエントリ'
+            echo '- 泉質・源泉名・登録分析機関など、検算で守れない文字項目'
+            echo '- 反射や見切れについて `notes` に書かれている断り書き'
+            echo
+            echo '## 検算結果'
+            echo '```'
+            cat validation.txt
+            echo '```'
+            echo
+            echo '読み直しが必要なら、ローカルで `/onsen-composition` を実行して'
+            echo '該当施設だけ人の目で読み替えられます。'
+          } > pr-body.md
+
+          gh pr create \
+            --title "温泉成分表の更新" \
+            --body-file pr-body.md \
+            --base "${GITHUB_REF_NAME:-master}" \
+            --head "$branch"

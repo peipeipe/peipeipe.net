@@ -1,15 +1,20 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
-"""Claude Code が書き起こした成分表データを astro/data/onsen_composition.json に反映する。
+"""書き起こした成分表データを astro/data/onsen_composition.json に反映する。
 
-prepare_onsen_composition.py が用意した .cache/onsen_photos/manifest.json と、
-そこにある写真を読んで書き起こした .cache/onsen_photos/extracted.json を突き合わせ、
+書き起こしは extract_onsen_composition.py（Gemini）でも、Claude Code のセッション
+（/onsen-composition）でもよく、どちらも .cache/onsen_photos/extracted.json を書く。
+それを prepare_onsen_composition.py が用意した manifest.json と突き合わせ、写真を
+次のいずれかに仕分けする:
 
-  * extracted.json に出てくる写真 → 施設ごとの成分データとして記録
-  * manifest にあるのに extracted.json に出てこない写真 → 成分表ではなかった写真として記録
+  * extracted.json の places に出てくる → 施設ごとの成分データとして記録
+  * 読ませたが採用されなかった → 成分表ではなかった写真として記録
+  * 読ませたが読み取れなかった → unreadable_photos に試行回数つきで記録
+  * そもそも読ませていない → 何もせず未解析のまま残す
 
-の2つに仕分けして保存する。どちらも「解析済み」として扱われるので、次回の
-prepare_onsen_composition.py は残りの写真だけを対象にする。
+前の3つは「解析済み」として扱われ、次回の prepare_onsen_composition.py の対象から
+外れる（unreadable_photos は MAX_READ_ATTEMPTS 回に達するまで再挑戦する）。最後の
+1つを取り違えると、見てもいない分析書が二度と解析されなくなるので注意。
 """
 
 import argparse
@@ -25,6 +30,11 @@ MANIFEST_JSON = os.path.join(CACHE_DIR, 'manifest.json')
 EXTRACTED_JSON = os.path.join(CACHE_DIR, 'extracted.json')
 ONSEN_JSON = os.path.join(ASTRO_DIR, 'data', 'onsen_places.json')
 OUTPUT_JSON = os.path.join(ASTRO_DIR, 'data', 'onsen_composition.json')
+
+# 同じ写真の書き起こしを何回まで試すか。壊れた画像や安全フィルタに引っかかる写真を
+# 毎日叩き続けないための上限。到達した写真は prepare_onsen_composition.py の対象から
+# 外れる（--all を付ければまた拾える）。
+MAX_READ_ATTEMPTS = 3
 
 # 施設ごとに保持するキーの並び（出力の見やすさのため固定）
 FIELD_ORDER = [
@@ -59,6 +69,7 @@ FIELD_ORDER = [
     "analyzer",
     "analyzer_registration",
     "notes",
+    "validation_exceptions",
     "source_photos",
 ]
 
@@ -167,10 +178,56 @@ def main():
     current = load_json(OUTPUT_JSON, {}) or {}
     places = merge_places(current.get('places', []), entries)
 
-    not_composition = list(current.get('not_composition_photos') or [])
-    for photo in manifest.get('photos', []):
+    # 書き起こし側が読めなかったと申告した写真は、判定を保留して未解析のまま残す。
+    # 「成分表ではなかった」と確定させてしまうと、一時的なエラーで読めなかった分析書が
+    # 二度と解析対象に戻らなくなるため。ただし何度やっても読めない写真を毎日叩き続けても
+    # 仕方がないので、試行回数を数えて MAX_READ_ATTEMPTS で打ち切る。
+    unreadable = {
+        entry['photo_url']: entry
+        for entry in current.get('unreadable_photos') or []
+        if entry.get('photo_url')
+    }
+    # 読めるようになった写真は記録から外す
+    for url in used_photo_urls:
+        unreadable.pop(url, None)
+
+    failed_urls = set()
+    for failure in extracted.get('failed_photos') or []:
+        photo = photos_by_index.get(failure.get('index'))
+        if not photo:
+            continue
         url = photo['photo_url']
-        if url in used_photo_urls or url in not_composition:
+        failed_urls.add(url)
+        entry = unreadable.get(url) or {'photo_url': url, 'attempts': 0}
+        entry['attempts'] = entry.get('attempts', 0) + 1
+        entry['last_error'] = failure.get('error', '')
+        entry['last_attempt_on'] = date.today().isoformat()
+        unreadable[url] = entry
+
+    if failed_urls:
+        exhausted = sum(
+            1 for url in failed_urls
+            if unreadable[url]['attempts'] >= MAX_READ_ATTEMPTS
+        )
+        print(f"読み取れなかった写真: {len(failed_urls)}枚（うち{exhausted}枚は試行上限に到達）")
+
+    # 「成分表ではなかった」と言えるのは、実際に読ませたうえで採用されなかった写真だけ。
+    # extract 側が枚数上限や --limit で送らなかった写真、Claude が見なかった写真は
+    # 未解析のまま残す。processed_photo_indexes が無い書き起こし（/onsen-composition で
+    # 手書きしたもの）は、コンタクトシートで全部に目を通しているので manifest 全体を対象とする。
+    processed = extracted.get('processed_photo_indexes')
+    if processed is None:
+        reviewed = manifest.get('photos', [])
+    else:
+        reviewed = [photos_by_index[i] for i in processed if i in photos_by_index]
+        unseen = len(manifest.get('photos', [])) - len(reviewed)
+        if unseen > 0:
+            print(f"読ませなかった写真: {unseen}枚（未解析のまま残します）")
+
+    not_composition = list(current.get('not_composition_photos') or [])
+    for photo in reviewed:
+        url = photo['photo_url']
+        if url in used_photo_urls or url in not_composition or url in unreadable:
             continue
         not_composition.append(url)
 
@@ -187,15 +244,23 @@ def main():
             "places": len(places),
             "composition_photos": sum(len(entry.get('source_photos') or []) for entry in places),
             "not_composition_photos": len(not_composition),
+            "unreadable_photos": len(unreadable),
         },
         "places": places,
         "not_composition_photos": not_composition,
     }
+    if unreadable:
+        payload["unreadable_photos"] = sorted(
+            unreadable.values(), key=lambda entry: entry['photo_url']
+        )
 
     print("=== 成分表データを更新 ===")
     print(f"成分表のある施設: {payload['stats']['places']}件")
     print(f"成分表の写真: {payload['stats']['composition_photos']}枚")
     print(f"成分表ではなかった写真: {payload['stats']['not_composition_photos']}枚")
+    if unreadable:
+        stuck = sum(1 for e in unreadable.values() if e['attempts'] >= MAX_READ_ATTEMPTS)
+        print(f"読めなかった写真: {len(unreadable)}枚（うち{stuck}枚は試行上限に到達し、以後は対象外）")
 
     if args.dry_run:
         print("--dry-run のため書き込みませんでした。")

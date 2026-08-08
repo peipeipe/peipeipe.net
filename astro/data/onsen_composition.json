@@ -747,6 +747,11 @@
           "mg_kg": 83.5
         },
         {
+          "name": "臭化物イオン",
+          "symbol": "Br-",
+          "mg_kg": 0.3
+        },
+        {
           "name": "硫化水素イオン",
           "symbol": "HS-",
           "mg_kg": 18.0
@@ -823,7 +828,10 @@
       "analyzed_on": "2018-10-13",
       "analyzer": "環境未来株式会社",
       "analyzer_registration": "長野県第6号",
-      "notes": "還元系温泉認定書も掲示（男湯湯口 ORP -146mV / pH 8.43 / 62.6℃）",
+      "notes": "還元系温泉認定書も掲示（男湯湯口 ORP -146mV / pH 8.43 / 62.6℃）。掲示の陰イオン計542.4mg/kgは、印字されている各行の合計538.5mg/kgと3.9mg/kg合わない。mg・ミリバル・ミリバル%の3系統いずれも同じ約1.86%（0.23ミリバル）ぶん不足しており、分析書側の不整合とみられる（当量から逆算すると水酸化物イオン相当だが、pH8.5では量的にありえない）。溶存物質・成分総計は掲示の陰イオン計を使って計算されている。",
+      "validation_exceptions": [
+        "陰イオン計"
+      ],
       "source_photos": [
         "https://fastly.4sqi.net/img/general/500x300/41463109_Ct6QYpmg6HY9_4cny4Cm0hhoICQhsv69DCLKHpLohfc.jpg",
         "https://fastly.4sqi.net/img/general/500x300/41463109_7cfoqnDhNkUlBmNGhdTwK8GgFvZ9SFINd2D3F7sIq1s.jpg"

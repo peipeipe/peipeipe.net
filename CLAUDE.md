@@ -51,15 +51,23 @@ python3 scripts/generate_visited_mountains.py   # if mountain data also needs up
 
 Never commit the export ZIP — it contains location data. If using the manual `Update Strava Activities From Export` workflow, only point `export_zip_url` at a short-lived URL.
 
-### Onsen composition data (manual, Claude-in-the-loop)
+### Onsen composition data
 
-`astro/data/onsen_composition.json` holds hot spring analysis sheets (温泉分析書 / 温泉成分等掲示表) transcribed from the Foursquare check-in photos in `astro/data/onsen_places.json`. There is no OCR service and no API key involved — the reading step happens inside a Claude Code session, driven by `.claude/commands/onsen-composition.md` (run `/onsen-composition`).
+`astro/data/onsen_composition.json` holds hot spring analysis sheets (温泉分析書 / 温泉成分等掲示表) transcribed from the Foursquare check-in photos in `astro/data/onsen_places.json`. The pipeline is three stages, and only the middle one — reading the images — has two interchangeable implementations:
 
 ```sh
-python3 scripts/prepare_onsen_composition.py   # 未解析写真を original 解像度で取得＋選別用シート生成
-# → Claude が .cache/onsen_photos/ の画像を読んで extracted.json を書く
-python3 scripts/merge_onsen_composition.py     # astro/data/onsen_composition.json に反映
+python3 scripts/prepare_onsen_composition.py       # 未解析写真を original 解像度で取得＋選別用シート生成
+python3 scripts/extract_onsen_composition.py       # Gemini に読ませて extracted.json を書く（要 GEMINI_API_KEY）
+#   または: Claude Code のセッションで画像を読んで extracted.json を手書きする（/onsen-composition）
+python3 scripts/merge_onsen_composition.py         # astro/data/onsen_composition.json に反映
+python3 scripts/validate_onsen_composition.py      # 合計と泉質の整合を検算
 ```
+
+`.github/workflows/update-onsen-composition.yml` runs the automated path on a schedule and opens a **pull request** rather than pushing — the transcription can be wrong, so a human confirms. Two things make a daily unattended run safe. It bails out early if a previous `onsen-composition/*` pull request is still open, because until that merges the committed data still lists those photos as unanalyzed and the run would rebuild the same PR every day. And failures are split into two kinds, because the two wrong answers are not equally bad. Anything at the HTTP level — including the 400 `API_KEY_INVALID` that an expired key returns — aborts the whole run without writing anything, so the workflow fails loudly and no state moves. Only failures in a 200 response (safety block, unparseable JSON, truncation) are attributed to the photo: those come back as `failed_photos`, and `merge_onsen_composition.py` records them under `unreadable_photos` with an attempt counter instead of filing them as `not_composition_photos`. After `MAX_READ_ATTEMPTS` (3) tries `prepare_onsen_composition.py` stops offering that photo, so a corrupt image is not retried forever; `--all` picks them back up. Erring toward "abort" is deliberate — retiring a readable sheet loses it permanently, while aborting too often just fails a workflow run. The Claude-in-the-loop path (`.claude/commands/onsen-composition.md`, run `/onsen-composition`) is still the tool for anything the automated one flags: it can crop and magnify a glared corner and reason about what a sheet *must* say, which a single API call cannot.
+
+**Why validation matters more than it looks.** Analysis sheets are massively redundant — every ion total is also the sum of its rows, 溶存物質 = 陽イオン計 + 陰イオン計 + 非解離成分計, and 成分総計 = 溶存物質 + 溶存ガス成分計. `validate_onsen_composition.py` exploits that: a misread digit breaks the arithmetic and gets caught. It also checks the 泉質 name against the composition itself (硫黄泉 needs 総硫黄 ≥ 2mg/kg, 単純温泉 needs 溶存物質 < 1000mg/kg, and 低張性/中性/高温泉 etc. follow from 溶存物質・pH・泉温 under 鉱泉分析法指針). That second check exists because transcription errors cluster on text fields where glare hides the print, and those are exactly the ones arithmetic cannot catch. Entries failing either check are dropped to `confidence: low` with the reason appended to `notes`.
+
+Rarely the *posting itself* does not add up (a printing error on the sheet). Record those as `validation_exceptions: ["陰イオン計"]` on the entry, with the evidence written into `notes` — the validator then stays quiet about that one label. Never use it to silence a suspected misreading.
 
 Photo URLs are converted from Foursquare's `500x300` variant to `original` before download — the resized version is too small to read. Everything under `.cache/` is gitignored working data; only `astro/data/onsen_composition.json` gets committed. Photos that turn out not to be analysis sheets are recorded in `not_composition_photos` so the next run skips them, which is what makes the batch incremental. Re-visiting a venue and re-reading part of its posting is fine: `merge_onsen_composition.py` merges per field on `fsq_id`, so previously read values survive.
 

@@ -96,7 +96,21 @@ python3 scripts/merge_onsen_composition.py
 `extracted.json` に出てこなかった写真は「成分表ではなかった写真」として記録され、
 次回の `prepare_onsen_composition.py` の対象から外れます。
 
-## 6. 確認する
+## 6. 検算する
+
+```sh
+python3 scripts/validate_onsen_composition.py
+```
+
+合計の足し算（陽イオン計・陰イオン計・非解離成分計・溶存物質・成分総計）と、
+泉質名が成分値と矛盾していないかを機械的に確かめます。`[NG]` が出たら
+その施設の写真を読み直してください。数値の読み違いはほぼここで捕まります。
+
+掲示そのものが自分の合計と合っていないと確認できた場合だけ、その施設に
+`"validation_exceptions": ["陰イオン計"]` を足し、根拠を `notes` に書きます。
+読み違いの疑いを黙らせるために使ってはいけません。
+
+## 7. 確認する
 
 ```sh
 cd astro

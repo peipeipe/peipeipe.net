@@ -22,6 +22,8 @@ import sys
 import requests
 from PIL import Image, ImageDraw, ImageFont
 
+from merge_onsen_composition import MAX_READ_ATTEMPTS
+
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 ASTRO_DIR = os.path.join(BASE_DIR, 'astro')
 ONSEN_JSON = os.path.join(ASTRO_DIR, 'data', 'onsen_places.json')
@@ -69,7 +71,12 @@ def load_json(path, fallback):
 
 
 def analyzed_photo_urls():
-    """解析済み（成分表だった／成分表でなかった、どちらも）の写真URL集合。"""
+    """今回の対象から外す写真URL集合。
+
+    成分表だった／成分表でなかった、どちらも解析済みとして外す。加えて、書き起こしを
+    MAX_READ_ATTEMPTS 回試しても読めなかった写真も外す（壊れた画像などを毎回
+    ダウンロードして叩き続けないため）。--all を付ければまとめて拾い直せる。
+    """
     data = load_json(COMPOSITION_JSON, None)
     if not data:
         return set()
@@ -78,6 +85,9 @@ def analyzed_photo_urls():
     for entry in data.get('places') or []:
         for url in entry.get('source_photos') or []:
             analyzed.add(url)
+    for entry in data.get('unreadable_photos') or []:
+        if entry.get('attempts', 0) >= MAX_READ_ATTEMPTS and entry.get('photo_url'):
+            analyzed.add(entry['photo_url'])
     return analyzed
 
 
