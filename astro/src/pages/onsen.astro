@@ -63,10 +63,11 @@ const treatmentEntries = (entry: OnsenComposition) =>
     (item) => item.value && typeof item.value.applied === "boolean",
   );
 
+// 写真の読み取り精度と、ネット由来なら出典の一次性。どちらもデータの確からしさを指す
 const confidenceLabel: Record<string, string> = {
   high: "",
-  medium: "読み取り精度: 中",
-  low: "読み取り精度: 低",
+  medium: "確度: 中",
+  low: "確度: 低",
 };
 
 // --- pH × 成分総計の散布図（配置の計算は lib/composition.ts 側） ---
@@ -194,8 +195,8 @@ const scatterGroups = [...new Map(plotted.map((point) => [point.group.key, point
         <div>
           <h2>温泉成分表</h2>
           <p>
-            チェックイン写真に写っていた温泉分析書・成分掲示表を読み取ってまとめたものです。数値は掲示の記載そのままで、
-            単位は mg/kg に揃えています。
+            チェックイン写真に写っていた温泉分析書・成分掲示表と、施設や自治体がネットで公開している分析書・泉質情報を
+            まとめたものです。数値は出典の記載そのままで、単位は mg/kg に揃えています。出典は各施設の備考に書いています。
           </p>
         </div>
         <dl class="composition-stats" aria-label="成分表の統計">

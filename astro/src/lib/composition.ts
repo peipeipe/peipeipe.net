@@ -199,12 +199,12 @@ export const SCATTER_CHART = {
   bottom: 46,
 };
 
-/** 287.9mg/kg の別所温泉が枠の外に出ないよう、下限は実データより少し低く取る */
-const PH_DOMAIN = [5.5, 9.5];
-const TOTAL_DOMAIN = [250, 20000];
+/** 上下端（pH9.9・182.5mg/kg の京王高尾山温泉、16850mg/kg の松代荘）が枠の外に出ない範囲 */
+const PH_DOMAIN = [5.5, 10.2];
+const TOTAL_DOMAIN = [150, 20000];
 
-export const SCATTER_PH_TICKS = [6, 7, 8, 9];
-export const SCATTER_TOTAL_TICKS = [300, 1000, 3000, 10000];
+export const SCATTER_PH_TICKS = [6, 7, 8, 9, 10];
+export const SCATTER_TOTAL_TICKS = [200, 1000, 3000, 10000];
 
 export const scatterPlotWidth = SCATTER_CHART.width - SCATTER_CHART.left - SCATTER_CHART.right;
 export const scatterPlotHeight = SCATTER_CHART.height - SCATTER_CHART.top - SCATTER_CHART.bottom;
