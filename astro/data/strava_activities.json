@@ -1,5 +1,23 @@
 [
   {
+    "id": 19648228285,
+    "name": "Morning Walk",
+    "sport_type": "Walk",
+    "distance": 2235.6,
+    "moving_time": 1936,
+    "elapsed_time": 2624,
+    "total_elevation_gain": 107.0,
+    "start_date": "2026-08-08T01:45:48Z",
+    "start_date_local": "2026-08-08T10:45:48Z",
+    "start_latlng": [
+      36.412356,
+      138.439398
+    ],
+    "average_speed": 1.155,
+    "max_speed": 2.36,
+    "summary_polyline": "exf}Ee}}kYHRZd@N\\LPFN`@b@HZTNT@Z`@VPNV@HLPH\\FJT@DBPFNh@HJpA`A^`@LBHPh@XALCAAEb@Jb@\\n@^LP`@jABFlBbAb@PTDRLGn@Of@O^EA?Bb@oAJy@h@yALm@EIDGHq@JgB?_@Bg@Ay@IGLCCW@WRmAGkA@e@WcBB_@CMU]F]?KEOBAEBGW_@ZYP_@Jy@NiAMk@Mw@WG@CvBGn@Cr@Mv@?^MjAC`AIj@C|@ANMH?@DEBHAf@ED]OECAGMEEECE@ECCYIGKCKSCg@WKQEQKUKK_@OKUSQI[IOe@WIQMGI?EEIMF@G?Ug@YUEE?IYc@M]IIG]SQg@Ya@a@OUGC"
+  },
+  {
     "id": 19625991693,
     "name": "夕方のトレイルランニング",
     "sport_type": "TrailRun",
