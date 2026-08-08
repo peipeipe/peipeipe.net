@@ -1,5 +1,30 @@
 [
   {
+    "name": "池の平湿原",
+    "user_comment": "",
+    "date": "2026-08-08",
+    "lat": 36.41130351618204,
+    "lng": 138.43707957371777,
+    "address": "湯の丸高原池の平, 東御市, 長野県",
+    "foursquare_url": "https://foursquare.com/v/4e83cc7e29c2cfe7238b0165",
+    "photos": [
+      "https://fastly.4sqi.net/img/general/500x300/41463109_aA2QcpiVak_DOx5S-aR1f01CEIHkcyl6cI7frfYoUug.jpg",
+      "https://fastly.4sqi.net/img/general/500x300/41463109_ioJNHtS-ob9p-dxeIE509binpkrul76_9j73gRJaefM.jpg"
+    ],
+    "categories": [
+      "ハイキングコース"
+    ],
+    "category_group": "other",
+    "category_label": "その他",
+    "category_emoji": "📍",
+    "category_color": "#607d8b",
+    "data_source": "foursquare_checkin",
+    "fsq_id": "4e83cc7e29c2cfe7238b0165",
+    "checkin_count": 3,
+    "first_checkin_at": "2023-10-21T23:27:20+00:00",
+    "last_checkin_at": "2026-08-08T01:42:41+00:00"
+  },
+  {
     "name": "別所温泉 あいそめの湯",
     "user_comment": "",
     "date": "2026-08-07",
@@ -1092,31 +1117,6 @@
     "checkin_count": 6,
     "first_checkin_at": "2024-08-16T11:05:27+00:00",
     "last_checkin_at": "2026-06-14T10:20:38+00:00"
-  },
-  {
-    "name": "池の平湿原",
-    "user_comment": "",
-    "date": "2026-06-14",
-    "lat": 36.41130351618204,
-    "lng": 138.43707957371777,
-    "address": "湯の丸高原池の平, 東御市, 長野県",
-    "foursquare_url": "https://foursquare.com/v/4e83cc7e29c2cfe7238b0165",
-    "photos": [
-      "https://fastly.4sqi.net/img/general/500x300/41463109_aA2QcpiVak_DOx5S-aR1f01CEIHkcyl6cI7frfYoUug.jpg",
-      "https://fastly.4sqi.net/img/general/500x300/41463109_ioJNHtS-ob9p-dxeIE509binpkrul76_9j73gRJaefM.jpg"
-    ],
-    "categories": [
-      "ハイキングコース"
-    ],
-    "category_group": "other",
-    "category_label": "その他",
-    "category_emoji": "📍",
-    "category_color": "#607d8b",
-    "data_source": "foursquare_checkin",
-    "fsq_id": "4e83cc7e29c2cfe7238b0165",
-    "checkin_count": 2,
-    "first_checkin_at": "2023-10-21T23:27:20+00:00",
-    "last_checkin_at": "2026-06-14T06:29:22+00:00"
   },
   {
     "name": "gmoアスリーツパーク湯の丸",
@@ -2279,8 +2279,8 @@
     "name": "六番湯 目洗の湯",
     "user_comment": "",
     "date": "2026-04-26",
-    "lat": 36.7346563900094,
-    "lng": 138.43285175442315,
+    "lat": 36.734029,
+    "lng": 138.434495,
     "address": "平穏, 山ノ内町, 長野県, 381-0401",
     "foursquare_url": "https://foursquare.com/v/4d0dab7d873e6a313a335bd6",
     "photos": [
@@ -4746,12 +4746,12 @@
       "https://fastly.4sqi.net/img/general/500x300/41463109_a2Uoc-xkpiSuSmcitCmrhA-ayTfG2YsesgI58pU2HUA.jpg"
     ],
     "categories": [
-      "和食店"
+      "Japanese Restaurant"
     ],
-    "category_group": "other",
-    "category_label": "その他",
-    "category_emoji": "📍",
-    "category_color": "#607d8b",
+    "category_group": "food",
+    "category_label": "食事",
+    "category_emoji": "🍜",
+    "category_color": "#e67e22",
     "data_source": "foursquare_checkin",
     "fsq_id": "4e9573847ee66177236271f8",
     "checkin_count": 1,
@@ -36977,8 +36977,8 @@
     "name": "JR Shin-Ōsaka Station (JR 新大阪駅)",
     "user_comment": "",
     "date": "2017-10-15",
-    "lat": 34.73361250742612,
-    "lng": 135.50149414405968,
+    "lat": 34.733516654414366,
+    "lng": 135.50107067774118,
     "address": "淀川区西中島5-16-1, 大阪市, 大阪府, 532-0011",
     "foursquare_url": "https://foursquare.com/v/4b6180a5f964a520e2152ae3",
     "photos": [
@@ -50218,8 +50218,8 @@
     "name": "Odawara Station (小田原駅)",
     "user_comment": "",
     "date": "2013-01-03",
-    "lat": 35.25652446673239,
-    "lng": 139.15557163678568,
+    "lat": 35.256234631050816,
+    "lng": 139.1556160950846,
     "address": "栄町1/城山1, 小田原市, 神奈川県",
     "foursquare_url": "https://foursquare.com/v/4b5edbfaf964a520439b29e3",
     "photos": [],
