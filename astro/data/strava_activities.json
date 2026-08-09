@@ -1,5 +1,41 @@
 [
   {
+    "id": 19662199344,
+    "name": "鉢盛山登山マラソン",
+    "sport_type": "TrailRun",
+    "distance": 35631.7,
+    "moving_time": 14574,
+    "elapsed_time": 15127,
+    "total_elevation_gain": 1606.0,
+    "start_date": "2026-08-08T21:30:03Z",
+    "start_date_local": "2026-08-09T06:30:03Z",
+    "start_latlng": [
+      36.128833,
+      137.867362
+    ],
+    "average_speed": 2.356,
+    "max_speed": 5.36,
+    "summary_polyline": "elo{E_fnhYh@w@[u@a@OuClC~G|YlA|Dx@nFf@bNbAxFk@|IJfBlBtDrAdI`BdAx@~ChAfC|CjM`GtQjHbLtJzJbFjGbOdO|KfInBvD|@v@lH`LxAlA`DfAGp@qA\\Ap@nB|BbAbCnCxBvH`JlIpErGCrAYdAd@FfDmB|RJxBUfDDhAyA`DiAXp@pAW`Cw@xAG`AX`AoCvD|D\\vBrF`A~ABh@QHuBuB_@GnAhDmAtDx@Sj@VJhBj@nBSnCt@lFi@z@n@Jr@m@z@^r@lC]`DdBlBlAlEFxBc@hDCnCwCfCtBbC~@bG~@v@ZvAChAgAn@@lDb@Dv@wA|A_Av@iEQeFb@oCnAgBx@d@`@rBtBnHMpCHf@t@~AfBtAnBhLnEnEv@`Bp@xC`CjCjAfCtDnB^dEv@XbAgAlAYj@@rAjAv@k@vIpId@`B\\jEeD~D?\\bA^Zn@c@jF`AbEdBt@^n@U\\q@WMRtErCjCzCbADxG~AvBvAA\\uBi@mDLtAR~Bv@zAzAtBdE`CI|AnAS\\kAs@{@PYvCe@TaB_Ey@e@kAmBk@_@sBXwAM]RSh@JVl@o@nD\\nBpFXbCr@bAa@`@a@YwAwEqAcBa@Cw@n@Jb@x@e@ZN`B~Lz@rAlA@Af@wARqA]WScB{G_@][PBh@p@l@f@nFAnAPf@hAx@`BHDj@eEEc@k@s@eEaAw@[Pz@h@AlE`AtD|@PvA_@d@l@d@|Gm@k@Ef@M@Ui@UOSPCv@_A[E`@OEu@tAy@vCs@Vy@bASf@g@@a@hAQEOn@a@NA\\}@BE`@UNB^u@I?h@]IAl@WIUl@KNi@RU?Uz@]IG^c@LWrA_@\\OM@V]LElBd@dCfBzD\\Fp@bAFbB|@hCtAdAhDr@rBxBxBRnAbDbCvCP|Cc@KA\\k@CZ~@O`@bAf@q@fA?h@\\jDd@~AApDThAEl@h@dA?lDZ\\m@~By@p@k@`Bj@_Bv@g@h@eC[c@VuC}@kBScGsmBcdNOGDyB`AkEOmDiAUCe@}@Qk@u@_hDm_@NLAQm@Mbv@[rG_AnBkBMuByAiE`@_C]oCkBwEgAwFJwLm@kH_@q@{BmAYoAlAyPoDeBO[fBaNWoBE{CvBuIjAwCvAuTkCa@oFkBwJyA{Aj@iHfHQZXpAc@n@"
+  },
+  {
+    "id": 19662189991,
+    "name": "朝のトレイルランニング",
+    "sport_type": "TrailRun",
+    "distance": 1842.7,
+    "moving_time": 647,
+    "elapsed_time": 693,
+    "total_elevation_gain": 22.0,
+    "start_date": "2026-08-08T20:48:02Z",
+    "start_date_local": "2026-08-09T05:48:02Z",
+    "start_latlng": [
+      36.128883,
+      137.867468
+    ],
+    "average_speed": 2.848,
+    "max_speed": 3.725,
+    "summary_polyline": "olo{EsfnhYr@c@@OYg@SQULgCtBEL?DzA~FVpAN^DZ|@bDh@bCXx@b@jBb@lA\\|ANb@ZhCb@~ENjHUsGGcAGe@i@cFWyAYcA{@}BQ{@Ei@m@oBMo@aA{DKo@_BsGASDO`@WBG"
+  },
+  {
     "id": 19648228285,
     "name": "Morning Walk",
     "sport_type": "Walk",

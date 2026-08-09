@@ -1315,5 +1315,27 @@
     ],
     "first_visit": "2026-08-02",
     "last_visit": "2026-08-02"
+  },
+  {
+    "name": "鉢盛山",
+    "lat": 36.086649,
+    "lng": 137.754849,
+    "elevation": 2447,
+    "tags": [
+      "三百名山",
+      "信州百名山"
+    ],
+    "visit_count": 1,
+    "activities": [
+      {
+        "id": 19662199344,
+        "name": "鉢盛山登山マラソン",
+        "date": "2026-08-09",
+        "sport_type": "TrailRun",
+        "distance_km": 35.6
+      }
+    ],
+    "first_visit": "2026-08-09",
+    "last_visit": "2026-08-09"
   }
 ]
