@@ -1,9 +1,10 @@
 {
-  "generated_on": "2026-08-08",
+  "generated_on": "2026-08-09",
   "stats": {
     "places": 65,
     "composition_photos": 17,
-    "not_composition_photos": 95
+    "not_composition_photos": 97,
+    "unreadable_photos": 0
   },
   "places": [
     {
@@ -3209,6 +3210,8 @@
     "https://fastly.4sqi.net/img/general/500x300/41463109_LCF2sfbuZtxmJUt2zyPDq5uKjMS7S9ahm5ktDEoG-Yg.jpg",
     "https://fastly.4sqi.net/img/general/500x300/41463109_DcaPh7xwKMB08k4222PGSS8xMMzBPcGUSpNRo8FjW7U.jpg",
     "https://fastly.4sqi.net/img/general/500x300/41463109_Wq9EEzgpnxAuUejt7GauCtgr6C-eHEM5_6CSuqKYLYQ.jpg",
-    "https://fastly.4sqi.net/img/general/500x300/41463109_moIiX5GlF0YMllbHk-Y6yA0C9MU2o3rGSrlvxGOYxpo.jpg"
+    "https://fastly.4sqi.net/img/general/500x300/41463109_moIiX5GlF0YMllbHk-Y6yA0C9MU2o3rGSrlvxGOYxpo.jpg",
+    "https://fastly.4sqi.net/img/general/500x300/41463109_4GT1uPwlyGSCo_jkEicv7rMCXAz6-1ofMEzWh2aJ5aY.jpg",
+    "https://fastly.4sqi.net/img/general/500x300/41463109_7lqM2fOXDB8zpjsHzAFz6bQQVwKmrJBAdLAJIdrhQ6o.jpg"
   ]
 }
