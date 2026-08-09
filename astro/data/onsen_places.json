@@ -1,5 +1,33 @@
 [
   {
+    "name": "林檎の湯屋 おぶ〜",
+    "user_comment": "",
+    "date": "2026-08-09",
+    "lat": 36.20421362186176,
+    "lng": 137.94836259908013,
+    "address": "石芝3-9-44, 松本市, 長野県, 399-0007",
+    "foursquare_url": "https://foursquare.com/v/4b9ae7eff964a520a9e135e3",
+    "photos": [
+      "https://fastly.4sqi.net/img/general/500x300/41463109_4GT1uPwlyGSCo_jkEicv7rMCXAz6-1ofMEzWh2aJ5aY.jpg",
+      "https://fastly.4sqi.net/img/general/500x300/41463109_7lqM2fOXDB8zpjsHzAFz6bQQVwKmrJBAdLAJIdrhQ6o.jpg",
+      "https://fastly.4sqi.net/img/general/500x300/41463109_OCWww4E_362lQTZAf0PKxi4epA_BB33VQOexD6x4RIc.jpg",
+      "https://fastly.4sqi.net/img/general/500x300/41463109_wg6sNMfrtxQhTTQlFo2sh2Hmjv1A7cd4gOF-ZRivV_E.jpg",
+      "https://fastly.4sqi.net/img/general/500x300/41463109_6c1Gw-USWizTqekYF75GKL6l_kk2zolQoqxnPAaoP4A.jpg"
+    ],
+    "categories": [
+      "温泉"
+    ],
+    "category_group": "onsen",
+    "category_label": "温泉・サウナ",
+    "category_emoji": "♨️",
+    "category_color": "#ff7a59",
+    "data_source": "foursquare_checkin",
+    "fsq_id": "4b9ae7eff964a520a9e135e3",
+    "checkin_count": 4,
+    "first_checkin_at": "2024-12-22T03:40:26+00:00",
+    "last_checkin_at": "2026-08-09T07:09:31+00:00"
+  },
+  {
     "name": "別所温泉 あいそめの湯",
     "user_comment": "",
     "date": "2026-08-07",
@@ -789,32 +817,6 @@
     "checkin_count": 3,
     "first_checkin_at": "2025-06-07T09:33:33+00:00",
     "last_checkin_at": "2026-01-25T10:57:50+00:00"
-  },
-  {
-    "name": "林檎の湯屋 おぶ〜",
-    "user_comment": "",
-    "date": "2026-01-18",
-    "lat": 36.20421362186176,
-    "lng": 137.94836259908013,
-    "address": "石芝3-9-44, 松本市, 長野県, 399-0007",
-    "foursquare_url": "https://foursquare.com/v/4b9ae7eff964a520a9e135e3",
-    "photos": [
-      "https://fastly.4sqi.net/img/general/500x300/41463109_OCWww4E_362lQTZAf0PKxi4epA_BB33VQOexD6x4RIc.jpg",
-      "https://fastly.4sqi.net/img/general/500x300/41463109_wg6sNMfrtxQhTTQlFo2sh2Hmjv1A7cd4gOF-ZRivV_E.jpg",
-      "https://fastly.4sqi.net/img/general/500x300/41463109_6c1Gw-USWizTqekYF75GKL6l_kk2zolQoqxnPAaoP4A.jpg"
-    ],
-    "categories": [
-      "温泉"
-    ],
-    "category_group": "onsen",
-    "category_label": "温泉・サウナ",
-    "category_emoji": "♨️",
-    "category_color": "#ff7a59",
-    "data_source": "foursquare_checkin",
-    "fsq_id": "4b9ae7eff964a520a9e135e3",
-    "checkin_count": 3,
-    "first_checkin_at": "2024-12-22T03:40:26+00:00",
-    "last_checkin_at": "2026-01-18T05:01:30+00:00"
   },
   {
     "name": "間山温泉公園 ぽんぽこの湯",
