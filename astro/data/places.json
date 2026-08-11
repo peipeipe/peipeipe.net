@@ -1,5 +1,31 @@
 [
   {
+    "name": "Uu Ueda",
+    "user_comment": "",
+    "date": "2026-08-11",
+    "lat": 36.404385,
+    "lng": 138.272,
+    "address": "上田市, 長野県, 386-0002",
+    "foursquare_url": "https://foursquare.com/v/6908a2a5852b2f2861a0f47c",
+    "photos": [
+      "https://fastly.4sqi.net/img/general/500x300/41463109_tplpljOqvChHTqVVmQr46qFHEv3Gz-EkMm2Wt2PSs-s.jpg",
+      "https://fastly.4sqi.net/img/general/500x300/41463109_iQOQ6vVLZKbIVdP07ALAjPUxWGEKvOB73SZlV4t2Jn8.jpg",
+      "https://fastly.4sqi.net/img/general/500x300/41463109_YQEcYYVIpy5Qao4U5Wbxvad60pjRJtorzhh1S3TbioM.jpg"
+    ],
+    "categories": [
+      "サウナ"
+    ],
+    "category_group": "onsen",
+    "category_label": "温泉・サウナ",
+    "category_emoji": "♨️",
+    "category_color": "#ff7a59",
+    "data_source": "foursquare_checkin",
+    "fsq_id": "6908a2a5852b2f2861a0f47c",
+    "checkin_count": 3,
+    "first_checkin_at": "2026-05-10T03:22:11+00:00",
+    "last_checkin_at": "2026-08-11T10:03:46+00:00"
+  },
+  {
     "name": "林檎の湯屋 おぶ〜",
     "user_comment": "",
     "date": "2026-08-09",
@@ -950,31 +976,6 @@
     "checkin_count": 2,
     "first_checkin_at": "2025-08-04T22:20:01+00:00",
     "last_checkin_at": "2026-06-22T22:20:46+00:00"
-  },
-  {
-    "name": "Uu Ueda",
-    "user_comment": "",
-    "date": "2026-06-21",
-    "lat": 36.404385,
-    "lng": 138.272,
-    "address": "上田市, 長野県, 386-0002",
-    "foursquare_url": "https://foursquare.com/v/6908a2a5852b2f2861a0f47c",
-    "photos": [
-      "https://fastly.4sqi.net/img/general/500x300/41463109_iQOQ6vVLZKbIVdP07ALAjPUxWGEKvOB73SZlV4t2Jn8.jpg",
-      "https://fastly.4sqi.net/img/general/500x300/41463109_YQEcYYVIpy5Qao4U5Wbxvad60pjRJtorzhh1S3TbioM.jpg"
-    ],
-    "categories": [
-      "サウナ"
-    ],
-    "category_group": "onsen",
-    "category_label": "温泉・サウナ",
-    "category_emoji": "♨️",
-    "category_color": "#ff7a59",
-    "data_source": "foursquare_checkin",
-    "fsq_id": "6908a2a5852b2f2861a0f47c",
-    "checkin_count": 2,
-    "first_checkin_at": "2026-05-10T03:22:11+00:00",
-    "last_checkin_at": "2026-06-21T07:54:04+00:00"
   },
   {
     "name": "MEL's",
@@ -4748,7 +4749,7 @@
     "foursquare_url": "https://foursquare.com/v/5fdc587655f8881f410a3a7b",
     "photos": [],
     "categories": [
-      "ジム"
+      "Gym"
     ],
     "category_group": "other",
     "category_label": "その他",
