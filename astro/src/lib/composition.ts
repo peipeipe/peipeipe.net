@@ -169,6 +169,7 @@ export function qualityGroup(entry: OnsenComposition): QualityGroup {
 export type ScatterPoint = {
   fsqId: string;
   name: string;
+  quality: string;
   ph: number;
   total: number;
   group: QualityGroup;
@@ -182,6 +183,7 @@ export function scatterPoints(entries: OnsenComposition[] = getOnsenCompositions
     .map((entry) => ({
       fsqId: entry.fsq_id,
       name: entry.name,
+      quality: entry.spring_quality || "",
       ph: entry.ph as number,
       total: entry.total_ingredients_mg_kg as number,
       group: qualityGroup(entry),
@@ -219,10 +221,11 @@ export const totalToY = (total: number) => {
   return SCATTER_CHART.top + scatterPlotHeight - ratio * scatterPlotHeight;
 };
 
-const LABEL_FONT_SIZE = 12;
-const LABEL_ASCENT = 9;
+// global.css の .scatter-label と揃えること（幅の見積もりがこの値に依存している）
+const LABEL_FONT_SIZE = 10;
+const LABEL_ASCENT = 7;
 const LABEL_DESCENT = 3;
-const LABEL_GAP = 3;
+const LABEL_GAP = 6;
 const DOT_RADIUS = 6;
 
 /** 括弧書きは図では読み切れないので落とす（「コタン温泉 (コタン温泉 露天風呂)」→「コタン温泉」） */
@@ -260,55 +263,39 @@ function labelRect(cx: number, baseline: number, width: number, anchor: Anchor):
 }
 
 /**
- * 点ごとに候補位置を近い順に試し、既に置いたラベル・全ての点・枠の外と
- * 重ならない場所を選ぶ。全滅した場合は重なりが最小の候補へ逃がす。
+ * ラベルの候補位置。どれも点のすぐ隣に限っている：離れた場所へ逃がすと
+ * 引き出し線を引いてもどの点の名前なのか読み取れないため、
+ * 置き場所がなければラベル自体を出さず（showLabel: false）、
+ * 名前はホバー / フォーカスのツールチップと下の成分表カードに任せる。
  */
-const CANDIDATES: { anchor: Anchor; dx: number; dy: number }[] = [];
-for (const [dy, rank] of [
-  [-12, 0],
-  [16, 0],
-  [4, 1],
-  [-25, 2],
-  [29, 2],
-  [-16, 3],
-  [21, 3],
-  [-38, 4],
-  [42, 4],
-  [-29, 5],
-  [34, 5],
-  [-51, 6],
-  [55, 6],
-  [-42, 7],
-  [47, 7],
-  [-64, 8],
-  [68, 8],
-  [-77, 9],
-  [81, 9],
-] as [number, number][]) {
-  const horizontals: { anchor: Anchor; dx: number }[] =
-    rank % 2 === 1 || Math.abs(dy) < 12
-      ? [
-          { anchor: "start", dx: DOT_RADIUS + 4 },
-          { anchor: "end", dx: -(DOT_RADIUS + 4) },
-        ]
-      : [
-          { anchor: "middle", dx: 0 },
-          { anchor: "start", dx: DOT_RADIUS + 4 },
-          { anchor: "end", dx: -(DOT_RADIUS + 4) },
-        ];
-  for (const horizontal of horizontals) {
-    CANDIDATES.push({ anchor: horizontal.anchor, dx: horizontal.dx, dy });
-  }
-}
+const SIDE_DX = DOT_RADIUS + 4;
+const CANDIDATES: { anchor: Anchor; dx: number; dy: number }[] = [
+  // 真上・真下（点が文字列の中央に来るので、長い名前でも取り違えにくい）
+  { anchor: "middle", dx: 0, dy: -12 },
+  { anchor: "start", dx: SIDE_DX, dy: -12 },
+  { anchor: "end", dx: -SIDE_DX, dy: -12 },
+  { anchor: "middle", dx: 0, dy: 16 },
+  { anchor: "start", dx: SIDE_DX, dy: 16 },
+  { anchor: "end", dx: -SIDE_DX, dy: 16 },
+  // 真横
+  { anchor: "start", dx: SIDE_DX, dy: 4 },
+  { anchor: "end", dx: -SIDE_DX, dy: 4 },
+  // 斜め。ここまで離すと引き出し線なしで読ませられる限界
+  { anchor: "start", dx: SIDE_DX, dy: -16 },
+  { anchor: "end", dx: -SIDE_DX, dy: -16 },
+  { anchor: "start", dx: SIDE_DX, dy: 21 },
+  { anchor: "end", dx: -SIDE_DX, dy: 21 },
+];
 
 export type ScatterLayoutPoint = ScatterPoint & {
   x: number;
   y: number;
   label: string;
+  /** 重ならずに置ける場所が見つかった点だけ、図の中に名前を出す */
+  showLabel: boolean;
   labelX: number;
   labelY: number;
   anchor: Anchor;
-  leader: { x1: number; y1: number; x2: number; y2: number } | null;
 };
 
 export function layoutScatterPoints(
@@ -369,7 +356,11 @@ export function layoutScatterPoints(
 
       let cost = outside * 100;
       for (const other of placed) cost += overlapArea(rect, other);
-      for (const dot of dotRects) cost += overlapArea(rect, dot);
+      // 自分の点だけは対象外。すぐ横に置くと余白ぶんは必ず触れるので、
+      // ここを数えると自分の点から 25px 以上離れた場所しか「衝突なし」にならない
+      dotRects.forEach((dot, dotIndex) => {
+        if (dotIndex !== index) cost += overlapArea(rect, dot);
+      });
 
       if (cost === 0) {
         best = { candidate, rect, cost };
@@ -379,30 +370,19 @@ export function layoutScatterPoints(
     }
 
     const chosen = best!;
-    placed.push(chosen.rect);
-
-    const labelX = item.x + chosen.candidate.dx;
-    const labelY = item.y + chosen.candidate.dy;
-    const distance = Math.hypot(labelX - item.x, labelY - LABEL_ASCENT / 2 - item.y);
+    const showLabel = chosen.cost === 0;
+    // 描かないラベルは場所を占有させない（後続の点の置き場所を減らさないため）
+    if (showLabel) placed.push(chosen.rect);
 
     results[index] = {
       ...item.point,
       x: item.x,
       y: item.y,
       label: item.label,
-      labelX,
-      labelY,
+      showLabel,
+      labelX: item.x + chosen.candidate.dx,
+      labelY: item.y + chosen.candidate.dy,
       anchor: chosen.candidate.anchor,
-      // 点から離して置いたものは、どの点のラベルか分かるよう引き出し線でつなぐ
-      leader:
-        distance > 26
-          ? {
-              x1: item.x,
-              y1: item.y,
-              x2: labelX,
-              y2: labelY - (chosen.candidate.dy < 0 ? -LABEL_DESCENT : LABEL_ASCENT / 2),
-            }
-          : null,
     };
   }
 

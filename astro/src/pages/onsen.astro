@@ -241,6 +241,7 @@ const scatterGroups = [...new Map(plotted.map((point) => [point.group.key, point
           <figcaption>
             <strong>pH と成分総計</strong>
             <span>右へ行くほどアルカリ性、上へ行くほど濃い温泉です（縦軸は対数）。</span>
+            <span>点にカーソルを合わせる（タップする）と施設名、クリックで下の成分表へ移動します。</span>
             <span class="scatter-hint">図は横にスワイプできます。</span>
           </figcaption>
 
@@ -253,7 +254,7 @@ const scatterGroups = [...new Map(plotted.map((point) => [point.group.key, point
             ))}
           </ul>
 
-          <div class="scatter-wrap">
+          <div class="scatter-wrap" id="scatter-wrap">
             <svg
               class="scatter-chart"
               viewBox={`0 0 ${CHART.width} ${CHART.height}`}
@@ -299,36 +300,48 @@ const scatterGroups = [...new Map(plotted.map((point) => [point.group.key, point
                 mg/kg
               </text>
 
-              {/* 引き出し線 → 点 → ラベルの順に描いて、後ろの点がラベルを隠さないようにする */}
+              {/* ラベル → 点の順に描く。点（＝リンク）を最前面に置いて、
+                  ラベルが当たり判定を食わないようにする */}
               {plotted.map((point) =>
-                point.leader ? (
-                  <line
-                    class="scatter-leader"
-                    x1={point.leader.x1}
-                    y1={point.leader.y1}
-                    x2={point.leader.x2}
-                    y2={point.leader.y2}
-                  />
+                point.showLabel ? (
+                  <text class="scatter-label" x={point.labelX} y={point.labelY} text-anchor={point.anchor}>
+                    {point.label}
+                  </text>
                 ) : null,
               )}
 
               {plotted.map((point) => (
-                <circle class={`scatter-dot quality-${point.group.key}`} cx={point.x} cy={point.y} r="6" />
-              ))}
-
-              {plotted.map((point) => (
-                <text class="scatter-label" x={point.labelX} y={point.labelY} text-anchor={point.anchor}>
-                  {point.label}
-                </text>
+                <a
+                  class="scatter-point"
+                  href={`#composition-${point.fsqId}`}
+                  data-name={point.name}
+                  data-quality={point.quality}
+                  data-ph={`pH ${point.ph}`}
+                  data-total={`成分総計 ${formatMgKg(point.total)}`}
+                  aria-label={`${point.name}／${point.quality}／pH ${point.ph}／成分総計 ${formatMgKg(point.total)}`}
+                >
+                  {/* 指やマウスで狙える大きさの透明な当たり判定（見た目の点は 6px） */}
+                  <circle class="scatter-hit" cx={point.x} cy={point.y} r="14" />
+                  <circle class={`scatter-ring quality-${point.group.key}`} cx={point.x} cy={point.y} r="10" />
+                  <circle class={`scatter-dot quality-${point.group.key}`} cx={point.x} cy={point.y} r="6" />
+                </a>
               ))}
             </svg>
+          </div>
+
+          {/* 横スクロールする .scatter-wrap の中に置くと切れるので、図の枠側に重ねる */}
+          <div class="scatter-tooltip" hidden>
+            <strong class="scatter-tooltip-name"></strong>
+            <span class="scatter-tooltip-quality"></span>
+            <span class="scatter-tooltip-values"></span>
           </div>
         </figure>
       </div>
 
       <div class="composition-items">
         {compositions.map((entry) => (
-          <details class="composition-item">
+          /* 散布図の点からリンクで飛んでくる先 */
+          <details class="composition-item" id={`composition-${entry.fsq_id}`}>
             <summary>
               <div class="composition-item-head">
                 <h3>{entry.name}</h3>
@@ -704,6 +717,87 @@ const scatterGroups = [...new Map(plotted.map((point) => [point.group.key, point
       });
     }
 
+    // --- 散布図：点にカーソル/フォーカスで施設名、クリックで下の成分表へ ---
+    function initScatterChart() {
+      const figure = document.querySelector(".composition-chart");
+      const wrap = document.getElementById("scatter-wrap");
+      const tooltip = figure && figure.querySelector(".scatter-tooltip");
+      if (!figure || !wrap || !tooltip) return;
+
+      const nameEl = tooltip.querySelector(".scatter-tooltip-name");
+      const qualityEl = tooltip.querySelector(".scatter-tooltip-quality");
+      const valuesEl = tooltip.querySelector(".scatter-tooltip-values");
+      let activePoint = null;
+
+      function position(point) {
+        const dot = point.querySelector(".scatter-dot");
+        const dotBox = dot.getBoundingClientRect();
+        const figureBox = figure.getBoundingClientRect();
+        const wrapBox = wrap.getBoundingClientRect();
+        const cx = dotBox.left + dotBox.width / 2 - figureBox.left;
+        const cy = dotBox.top + dotBox.height / 2 - figureBox.top;
+
+        // 図の見えている範囲からはみ出さないよう左右を寄せる
+        const half = tooltip.offsetWidth / 2;
+        const min = wrapBox.left - figureBox.left + half;
+        const max = wrapBox.right - figureBox.left - half;
+        const below = cy - tooltip.offsetHeight - 14 < 0;
+
+        tooltip.classList.toggle("is-below", below);
+        tooltip.style.left = `${Math.min(Math.max(cx, min), Math.max(min, max))}px`;
+        tooltip.style.top = `${below ? cy + 16 : cy - 14}px`;
+      }
+
+      function hideTooltip() {
+        activePoint = null;
+        tooltip.hidden = true;
+        wrap.querySelectorAll(".scatter-point.is-active").forEach((item) => item.classList.remove("is-active"));
+      }
+
+      function showTooltip(point) {
+        if (activePoint && activePoint !== point) activePoint.classList.remove("is-active");
+        activePoint = point;
+        point.classList.add("is-active");
+        nameEl.textContent = point.dataset.name || "";
+        qualityEl.textContent = point.dataset.quality || "";
+        qualityEl.hidden = !point.dataset.quality;
+        valuesEl.textContent = [point.dataset.ph, point.dataset.total].filter(Boolean).join("　");
+        tooltip.hidden = false;
+        position(point);
+      }
+
+      wrap.querySelectorAll(".scatter-point").forEach((point) => {
+        point.addEventListener("pointerenter", () => showTooltip(point));
+        point.addEventListener("pointerleave", () => {
+          if (activePoint === point) hideTooltip();
+        });
+        point.addEventListener("focus", () => showTooltip(point));
+        point.addEventListener("blur", () => {
+          if (activePoint === point) hideTooltip();
+        });
+        // 同じ点を続けて押すと hashchange が起きないので、ここでも開く処理を呼ぶ
+        point.addEventListener("click", () => {
+          hideTooltip();
+          window.setTimeout(revealCompositionTarget, 0);
+        });
+      });
+
+      wrap.addEventListener("scroll", () => activePoint && position(activePoint), { passive: true });
+      window.addEventListener("resize", () => activePoint && position(activePoint));
+    }
+
+    // 散布図から飛んできた #composition-<fsq_id> を開いて見せる
+    function revealCompositionTarget() {
+      const id = decodeURIComponent((location.hash || "").slice(1));
+      if (!id.startsWith("composition-")) return;
+      const target = document.getElementById(id);
+      if (!target) return;
+      document.querySelectorAll(".composition-item.is-target").forEach((item) => item.classList.remove("is-target"));
+      target.open = true;
+      target.classList.add("is-target");
+      target.scrollIntoView({ behavior: "smooth", block: "center" });
+    }
+
     function escapeHtml(value) {
       return String(value == null ? "" : value).replace(/[&<>"']/g, (character) => ({
         "&": "&amp;",
@@ -730,6 +824,9 @@ const scatterGroups = [...new Map(plotted.map((point) => [point.group.key, point
 
     document.addEventListener("DOMContentLoaded", () => {
       initLightbox();
+      initScatterChart();
+      revealCompositionTarget();
+      window.addEventListener("hashchange", revealCompositionTarget);
       const search = document.getElementById("onsen-search");
       search.addEventListener("input", (event) => {
         window.clearTimeout(searchTimer);

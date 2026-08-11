@@ -1673,6 +1673,8 @@ html[data-theme="dark"] {
 .composition-chart {
   /* グリッドアイテムの自動最小サイズも同じ理由で潰しておく */
   min-width: 0;
+  /* ツールチップの位置決めの基準。図の枠からはみ出して重ねるので .scatter-wrap 側には置かない */
+  position: relative;
   margin: 0;
   border: 1px solid var(--color-border-soft);
   border-radius: 10px;
@@ -1769,17 +1771,13 @@ html[data-theme="dark"] {
 
 .scatter-label {
   fill: var(--color-muted);
-  font-size: 12px;
-  /* グリッド線や引き出し線の上を通っても読めるよう、地色で縁取りしてから塗る */
+  /* lib/composition.ts の LABEL_FONT_SIZE と揃える */
+  font-size: 10px;
+  /* グリッド線の上を通っても読めるよう、地色で縁取りしてから塗る */
   paint-order: stroke;
   stroke: var(--color-surface);
   stroke-width: 3px;
   stroke-linejoin: round;
-}
-
-.scatter-leader {
-  stroke: var(--color-border-soft);
-  stroke-width: 1;
 }
 
 .scatter-dot {
@@ -1787,13 +1785,90 @@ html[data-theme="dark"] {
   stroke-width: 1.5;
 }
 
-.scatter-dot.quality-simple { fill: var(--quality-simple); }
-.scatter-dot.quality-chloride { fill: var(--quality-chloride); }
-.scatter-dot.quality-bicarbonate { fill: var(--quality-bicarbonate); }
-.scatter-dot.quality-sulfate { fill: var(--quality-sulfate); }
-.scatter-dot.quality-sulfur { fill: var(--quality-sulfur); }
-.scatter-dot.quality-iron { fill: var(--quality-iron); }
-.scatter-dot.quality-other { fill: var(--quality-other); }
+.scatter-dot.quality-simple,
+.scatter-ring.quality-simple { fill: var(--quality-simple); }
+.scatter-dot.quality-chloride,
+.scatter-ring.quality-chloride { fill: var(--quality-chloride); }
+.scatter-dot.quality-bicarbonate,
+.scatter-ring.quality-bicarbonate { fill: var(--quality-bicarbonate); }
+.scatter-dot.quality-sulfate,
+.scatter-ring.quality-sulfate { fill: var(--quality-sulfate); }
+.scatter-dot.quality-sulfur,
+.scatter-ring.quality-sulfur { fill: var(--quality-sulfur); }
+.scatter-dot.quality-iron,
+.scatter-ring.quality-iron { fill: var(--quality-iron); }
+.scatter-dot.quality-other,
+.scatter-ring.quality-other { fill: var(--quality-other); }
+
+/* 名前を出していない点も拾えるよう、点そのものをリンク＋当たり判定にする */
+.scatter-point {
+  cursor: pointer;
+}
+
+.scatter-hit {
+  fill: transparent;
+}
+
+/* 触れている点に色の淡いハローを出す（ツールチップとどの点の話か対応させる） */
+.scatter-ring {
+  opacity: 0;
+  transition: opacity 0.12s ease-out;
+}
+
+.scatter-point:hover .scatter-ring,
+.scatter-point:focus-visible .scatter-ring,
+.scatter-point.is-active .scatter-ring {
+  opacity: 0.28;
+}
+
+.scatter-point:focus {
+  outline: none;
+}
+
+.scatter-point:focus-visible .scatter-dot {
+  stroke: var(--map-accent);
+  stroke-width: 2.5;
+}
+
+.scatter-tooltip {
+  position: absolute;
+  z-index: 4;
+  display: grid;
+  gap: 1px;
+  max-width: 260px;
+  border: 1px solid var(--color-border-soft);
+  border-radius: 8px;
+  background: var(--color-surface);
+  box-shadow: 0 6px 18px rgba(15, 23, 42, 0.16);
+  padding: 7px 9px;
+  /* 点の真上に出す。上端で切れるときだけ JS が .is-below を付けて下側へ回す */
+  transform: translate(-50%, -100%);
+  pointer-events: none;
+  font-size: 12px;
+  line-height: 1.45;
+}
+
+.scatter-tooltip[hidden] {
+  display: none;
+}
+
+.scatter-tooltip.is-below {
+  transform: translate(-50%, 0);
+}
+
+.scatter-tooltip-name {
+  color: var(--color-heading);
+  font-size: 12.5px;
+}
+
+.scatter-tooltip-quality {
+  color: var(--color-muted);
+}
+
+.scatter-tooltip-values {
+  color: var(--color-subtle);
+  font-variant-numeric: tabular-nums;
+}
 
 .composition-items {
   display: grid;
@@ -1810,6 +1885,13 @@ html[data-theme="dark"] {
 
 .composition-item[open] {
   border-color: var(--color-border);
+}
+
+/* 散布図の点から飛んできた施設。どのカードに着地したのか分かるようにする */
+.composition-item.is-target {
+  border-color: var(--map-accent);
+  box-shadow: 0 0 0 1px rgba(252, 76, 2, 0.22);
+  scroll-margin-top: 16px;
 }
 
 .composition-item > summary {
