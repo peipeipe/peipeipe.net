@@ -4,26 +4,46 @@ Script to enhance Amazon affiliate links in markdown files.
 Replaces simple [text](amazon_url) markdown links with rich krb-amzlt-box cards.
 No PA-API credentials required.
 
-Usage in blog post - just write a standard markdown link:
+Usage in blog post - write a standard markdown link:
   [商品名](https://amzn.to/xxx)
   or
   [商品名](https://www.amazon.co.jp/dp/XXXXXXXXXX)
 
-The link text becomes the product title.
+…or just drop the bare URL on a line of its own:
+  https://amzn.to/xxx
+
+The link text becomes the product title. For a bare URL there is no link text,
+so the title comes from astro/data/books.json (by ASIN) or, failing that, from
+the Amazon product page itself.
 Image URL is constructed from the ASIN.
 affiliate tag is appended if not already present.
 """
 
+import json
 import os
 import re
 import sys
 import requests
 import html
 from pathlib import Path
-from typing import Optional, List, Tuple
+from typing import Dict, Optional, List, Tuple
 
 PARTNER_TAG = os.environ.get('AMAZON_PARTNER_TAG', 'peipeipe-22')
 GENERIC_AMAZON_LINK_TEXTS = {'Amazon', 'Amazon.co.jpで詳細を見る'}
+DEFAULT_LINK_TEXT = 'Amazon.co.jpで詳細を見る'
+BOOKS_JSON_PATH = Path(__file__).parent.parent / 'astro' / 'data' / 'books.json'
+REQUEST_HEADERS = {
+    'User-Agent': (
+        'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 '
+        '(KHTML, like Gecko) Chrome/120.0 Safari/537.36'
+    ),
+    'Accept-Language': 'ja,en;q=0.8',
+}
+
+# A line holding nothing but an Amazon URL — the way the book posts are written.
+BARE_AMAZON_URL_LINE_PATTERN = re.compile(
+    r'^[ \t]*<?(https?://(?:www\.)?(?:amazon\.co\.jp|amzn\.to|amzn\.asia|a\.co)/[^\s<>]+?)>?[ \t]*$'
+)
 
 # Regex patterns to extract ASIN from full Amazon URLs
 AMAZON_ASIN_PATTERNS = [
@@ -41,22 +61,90 @@ LEGACY_IMAGE_LINK_BEFORE_CARD_PATTERN = re.compile(
 )
 
 
+_page_cache: Dict[str, Optional[requests.Response]] = {}
+_book_titles: Optional[Dict[str, str]] = None
+
+
+def fetch_amazon_page(url: str) -> Optional[requests.Response]:
+    """GET an Amazon URL following redirects. Cached, so each URL is fetched once."""
+    if url in _page_cache:
+        return _page_cache[url]
+
+    try:
+        response = requests.get(url, allow_redirects=True, timeout=15, headers=REQUEST_HEADERS)
+    except Exception as e:
+        print(f"  Warning: Could not fetch {url}: {e}", file=sys.stderr)
+        response = None
+
+    _page_cache[url] = response
+    return response
+
+
 def resolve_short_url(url: str) -> Optional[str]:
     """Follow redirects to resolve amzn.to short URLs to full Amazon URL."""
+    response = fetch_amazon_page(url)
+    return response.url if response is not None else None
+
+
+def load_book_titles() -> Dict[str, str]:
+    """Map ASIN -> title from the Booklog-generated book data. Cached."""
+    global _book_titles
+    if _book_titles is not None:
+        return _book_titles
+
     try:
-        headers = {'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36'}
-        response = requests.get(url, allow_redirects=True, timeout=10, headers=headers)
-        return response.url
+        data = json.loads(BOOKS_JSON_PATH.read_text(encoding='utf-8'))
+        _book_titles = {
+            book['asin'].upper(): book['title']
+            for book in data.get('books', [])
+            if book.get('asin') and book.get('title')
+        }
     except Exception as e:
-        print(f"  Warning: Could not resolve short URL {url}: {e}", file=sys.stderr)
+        print(f"  Warning: Could not read {BOOKS_JSON_PATH}: {e}", file=sys.stderr)
+        _book_titles = {}
+
+    return _book_titles
+
+
+def extract_title_from_page(page_html: str) -> Optional[str]:
+    """Pull the product title out of an Amazon product page."""
+    patterns = [
+        r'id="productTitle"[^>]*>([^<]+)<',
+        r'<meta\s+property="og:title"\s+content="([^"]+)"',
+    ]
+    for pattern in patterns:
+        match = re.search(pattern, page_html, re.IGNORECASE)
+        if match:
+            title = html.unescape(match.group(1)).strip()
+            if title:
+                return title
+
+    return None
+
+
+def resolve_product_title(url: str, asin: str) -> Optional[str]:
+    """Find a title for a bare URL: book data first, then the product page."""
+    title = load_book_titles().get(asin.upper())
+    if title:
+        return title
+
+    response = fetch_amazon_page(url)
+    if response is None or not response.ok:
         return None
+
+    return extract_title_from_page(response.text)
+
+
+def is_short_url(url: str) -> bool:
+    """True for Amazon's URL shorteners, which hide the ASIN behind a redirect."""
+    return any(host in url for host in ('amzn.to', 'amzn.asia', 'a.co/'))
 
 
 def extract_asin(url: str) -> Optional[str]:
-    """Extract ASIN from an Amazon URL (full or amzn.to short)."""
+    """Extract ASIN from an Amazon URL (full or shortened)."""
     # Resolve short URLs first
     target_url = url
-    if 'amzn.to' in url:
+    if is_short_url(url):
         resolved = resolve_short_url(url)
         if resolved:
             target_url = resolved
@@ -70,8 +158,8 @@ def extract_asin(url: str) -> Optional[str]:
 
 
 def build_affiliate_url(original_url: str, asin: str) -> str:
-    """Return affiliate URL. Keep amzn.to as-is; add tag to amazon.co.jp URLs."""
-    if 'amzn.to' in original_url:
+    """Return affiliate URL. Keep short URLs as-is; add tag to amazon.co.jp URLs."""
+    if is_short_url(original_url):
         return original_url
     # Strip existing tag parameter and add ours
     base = re.sub(r'[?&]tag=[^&]+', '', f"https://www.amazon.co.jp/dp/{asin}")
@@ -129,6 +217,46 @@ def find_simple_amazon_links(content: str) -> List[Tuple[str, str, str]]:
     return links
 
 
+def find_bare_amazon_url_lines(content: str) -> List[Tuple[int, str]]:
+    """Find lines that are nothing but an Amazon URL.
+
+    Returns list of (line_index, url) tuples. Markdown links and URLs sitting
+    inside a rendered card never match, because those lines hold more than a URL.
+    """
+    return [
+        (index, match.group(1))
+        for index, line in enumerate(content.split('\n'))
+        if (match := BARE_AMAZON_URL_LINE_PATTERN.match(line))
+    ]
+
+
+def enhance_bare_amazon_urls(content: str, processed_asins: set) -> Tuple[str, int]:
+    """Replace standalone Amazon URL lines with rich cards."""
+    bare_urls = find_bare_amazon_url_lines(content)
+    if not bare_urls:
+        return content, 0
+
+    lines = content.split('\n')
+    enhanced_count = 0
+
+    for index, url in bare_urls:
+        asin = extract_asin(url)
+        if not asin:
+            print(f"  Skipped (no ASIN): {url}")
+            continue
+        if asin in processed_asins:
+            print(f"  Skipped duplicate ASIN {asin}")
+            continue
+
+        processed_asins.add(asin)
+        title = resolve_product_title(url, asin) or DEFAULT_LINK_TEXT
+        lines[index] = create_krb_html(title, asin, build_affiliate_url(url, asin))
+        enhanced_count += 1
+        print(f"  ✓ {title[:60]} (bare URL)")
+
+    return '\n'.join(lines), enhanced_count
+
+
 def remove_legacy_image_links_before_cards(content: str) -> Tuple[str, int]:
     """Remove old Hatena image Amazon links when a rich card already follows."""
     new_content, removed_count = LEGACY_IMAGE_LINK_BEFORE_CARD_PATTERN.subn('', content)
@@ -178,7 +306,8 @@ def process_file(file_path: Path) -> bool:
     new_content, removed_legacy_count = remove_legacy_image_links_before_cards(content)
     new_content, removed_generic_card_count = remove_duplicate_generic_amazon_cards(new_content)
     links = find_simple_amazon_links(new_content)
-    if not links:
+    bare_urls = find_bare_amazon_url_lines(new_content)
+    if not links and not bare_urls:
         if removed_legacy_count or removed_generic_card_count:
             try:
                 file_path.write_text(new_content, encoding='utf-8')
@@ -193,7 +322,10 @@ def process_file(file_path: Path) -> bool:
             return True
         return False
 
-    print(f"Processing {file_path.name} — {len(links)} link(s) found")
+    print(
+        f"Processing {file_path.name} — "
+        f"{len(links)} link(s), {len(bare_urls)} bare URL(s) found"
+    )
     if removed_legacy_count:
         print(f"  Removed {removed_legacy_count} legacy image link(s)")
     if removed_generic_card_count:
@@ -218,6 +350,10 @@ def process_file(file_path: Path) -> bool:
         new_content = new_content.replace(full_match, rich_html, 1)
         modified = True
         print(f"  ✓ {link_text[:60]}")
+
+    new_content, enhanced_bare_count = enhance_bare_amazon_urls(new_content, processed_asins)
+    if enhanced_bare_count:
+        modified = True
 
     if modified:
         new_content, additional_removed_count = remove_legacy_image_links_before_cards(new_content)

@@ -12,8 +12,12 @@ from pathlib import Path
 sys.path.insert(0, str(Path(__file__).parent))
 
 from enhance_amazon_links import (
+    enhance_bare_amazon_urls,
     extract_asin,
+    extract_title_from_page,
+    find_bare_amazon_url_lines,
     find_simple_amazon_links,
+    load_book_titles,
     remove_duplicate_generic_amazon_cards,
     remove_legacy_image_links_before_cards,
 )
@@ -113,6 +117,130 @@ Already enhanced (should be skipped):
     
     print()
     return True
+
+
+def test_bare_url_detection():
+    """Test detection of standalone Amazon URL lines."""
+    print("=" * 60)
+    print("Testing Bare URL Detection")
+    print("=" * 60)
+
+    test_content = """---
+title: "Test"
+---
+
+https://amzn.to/4qaqMGv
+
+  https://www.amazon.co.jp/dp/B084MCR9KG
+
+<https://amzn.asia/d/abcdef>
+
+Markdown link (not bare):
+[Product](https://amzn.to/3VFbQSJ)
+
+Inline in prose (not bare): 詳しくは https://amzn.to/9999999 を見てください
+
+Already a card (not bare):
+<div class="krb-amzlt-box"><a href="https://amzn.to/3VFbQSJ">Product</a></div>
+
+Not Amazon:
+https://example.com/dp/B084MCR9KG
+"""
+
+    found = find_bare_amazon_url_lines(test_content)
+    expected = [
+        'https://amzn.to/4qaqMGv',
+        'https://www.amazon.co.jp/dp/B084MCR9KG',
+        'https://amzn.asia/d/abcdef',
+    ]
+
+    if [url for _, url in found] != expected:
+        print(f"✗ FAIL: Expected {expected}")
+        print(f"  Got: {[url for _, url in found]}")
+        return False
+
+    print(f"✓ PASS: Found {len(found)} bare URL(s), skipped links/cards/prose")
+    print()
+    return True
+
+
+def test_bare_url_enhancement():
+    """Test that a bare URL line becomes a card with a cover image and title."""
+    print("=" * 60)
+    print("Testing Bare URL Enhancement")
+    print("=" * 60)
+
+    book_titles = load_book_titles()
+    if not book_titles:
+        print("✗ FAIL: No book titles loaded from books.json")
+        return False
+
+    # Use real book data so the title resolves without touching the network.
+    asin, title = next(iter(book_titles.items()))
+    content = f"""今月読んだ本。
+
+https://www.amazon.co.jp/dp/{asin}
+
+> 引用
+
+https://www.amazon.co.jp/dp/{asin}
+"""
+
+    enhanced, count = enhance_bare_amazon_urls(content, set())
+
+    if count != 1:
+        print(f"✗ FAIL: Expected 1 enhanced URL (second is a duplicate ASIN), got {count}")
+        return False
+
+    if f'https://images-na.ssl-images-amazon.com/images/P/{asin}.09.LZZZZZZZ' not in enhanced:
+        print("✗ FAIL: Cover image URL missing from the card")
+        return False
+
+    if f'>{title}</a>' not in enhanced:
+        print(f"✗ FAIL: Title '{title}' missing from the card")
+        return False
+
+    if '> 引用' not in enhanced:
+        print("✗ FAIL: Surrounding content was damaged")
+        return False
+
+    print(f"✓ PASS: Bare URL became a card — {title[:40]}")
+    print()
+    return True
+
+
+def test_page_title_extraction():
+    """Test pulling a product title out of Amazon product page HTML."""
+    print("=" * 60)
+    print("Testing Product Page Title Extraction")
+    print("=" * 60)
+
+    cases = [
+        (
+            '<span id="productTitle" class="a-size-large">  沖縄から貧困がなくならない本当の理由  </span>',
+            '沖縄から貧困がなくならない本当の理由',
+        ),
+        (
+            '<meta property="og:title" content="Product &amp; Co." />',
+            'Product & Co.',
+        ),
+        ('<html><body>No title here</body></html>', None),
+    ]
+
+    passed = 0
+    failed = 0
+
+    for page_html, expected in cases:
+        result = extract_title_from_page(page_html)
+        if result == expected:
+            print(f"✓ PASS: {expected!r}")
+            passed += 1
+        else:
+            print(f"✗ FAIL: Expected {expected!r}, got {result!r}")
+            failed += 1
+
+    print(f"\nResults: {passed} passed, {failed} failed\n")
+    return failed == 0
 
 
 def test_duplicate_generic_card_cleanup():
@@ -258,6 +386,9 @@ def main():
     
     results.append(("ASIN Extraction", test_asin_extraction()))
     results.append(("Link Detection", test_link_detection()))
+    results.append(("Bare URL Detection", test_bare_url_detection()))
+    results.append(("Bare URL Enhancement", test_bare_url_enhancement()))
+    results.append(("Product Page Title Extraction", test_page_title_extraction()))
     results.append(("Legacy Image Cleanup", test_legacy_image_link_cleanup()))
     results.append(("Duplicate Generic Card Cleanup", test_duplicate_generic_card_cleanup()))
     results.append(("HTML Escaping", test_html_escaping()))
