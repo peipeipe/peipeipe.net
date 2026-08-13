@@ -66,7 +66,7 @@
     "tags": [
       "信州百名山"
     ],
-    "visit_count": 17,
+    "visit_count": 18,
     "activities": [
       {
         "id": 18889400226,
@@ -181,6 +181,13 @@
         "distance_km": 11.1
       },
       {
+        "id": 12697286594,
+        "name": "Morning Trail Run",
+        "date": "2024-10-20",
+        "sport_type": "TrailRun",
+        "distance_km": 12.9
+      },
+      {
         "id": 12528565251,
         "name": "Morning Trail Run",
         "date": "2024-09-29",
@@ -209,6 +216,25 @@
     ],
     "first_visit": "2024-10-06",
     "last_visit": "2024-10-06"
+  },
+  {
+    "name": "虚空蔵山",
+    "lat": 36.430097,
+    "lng": 138.221517,
+    "elevation": 1077,
+    "tags": [],
+    "visit_count": 1,
+    "activities": [
+      {
+        "id": 12697286594,
+        "name": "Morning Trail Run",
+        "date": "2024-10-20",
+        "sport_type": "TrailRun",
+        "distance_km": 12.9
+      }
+    ],
+    "first_visit": "2024-10-20",
+    "last_visit": "2024-10-20"
   },
   {
     "name": "霧ヶ峰",
