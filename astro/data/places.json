@@ -1,5 +1,30 @@
 [
   {
+    "name": "室賀温泉ささらの湯",
+    "user_comment": "湯質最高であった",
+    "date": "2026-08-13",
+    "lat": 36.40982342953276,
+    "lng": 138.14814289553146,
+    "address": "上室賀1232-1, 上田市, 長野県, 386-1541",
+    "foursquare_url": "https://foursquare.com/v/4b67b29ff964a520335b2be3",
+    "photos": [
+      "https://fastly.4sqi.net/img/general/500x300/41463109__OSfCiR0OmAVs738j7YGk5K049eSrgP3a-ySU8bB_OU.jpg",
+      "https://fastly.4sqi.net/img/general/500x300/41463109_nBG-RlfAoknCphLg1w9SqE07bPNMpvEiimJLZhHlmBU.jpg"
+    ],
+    "categories": [
+      "温泉"
+    ],
+    "category_group": "onsen",
+    "category_label": "温泉・サウナ",
+    "category_emoji": "♨️",
+    "category_color": "#ff7a59",
+    "data_source": "foursquare_checkin",
+    "fsq_id": "4b67b29ff964a520335b2be3",
+    "checkin_count": 8,
+    "first_checkin_at": "2024-09-28T08:36:15+00:00",
+    "last_checkin_at": "2026-08-13T10:38:31+00:00"
+  },
+  {
     "name": "Uu Ueda",
     "user_comment": "",
     "date": "2026-08-11",
@@ -2018,31 +2043,6 @@
     "checkin_count": 1,
     "first_checkin_at": "2026-05-17T02:47:57+00:00",
     "last_checkin_at": "2026-05-17T02:47:57+00:00"
-  },
-  {
-    "name": "室賀温泉ささらの湯",
-    "user_comment": "湯質最高であった",
-    "date": "2026-05-16",
-    "lat": 36.40982342953276,
-    "lng": 138.14814289553146,
-    "address": "上室賀1232-1, 上田市, 長野県, 386-1541",
-    "foursquare_url": "https://foursquare.com/v/4b67b29ff964a520335b2be3",
-    "photos": [
-      "https://fastly.4sqi.net/img/general/500x300/41463109__OSfCiR0OmAVs738j7YGk5K049eSrgP3a-ySU8bB_OU.jpg",
-      "https://fastly.4sqi.net/img/general/500x300/41463109_nBG-RlfAoknCphLg1w9SqE07bPNMpvEiimJLZhHlmBU.jpg"
-    ],
-    "categories": [
-      "温泉"
-    ],
-    "category_group": "onsen",
-    "category_label": "温泉・サウナ",
-    "category_emoji": "♨️",
-    "category_color": "#ff7a59",
-    "data_source": "foursquare_checkin",
-    "fsq_id": "4b67b29ff964a520335b2be3",
-    "checkin_count": 7,
-    "first_checkin_at": "2024-09-28T08:36:15+00:00",
-    "last_checkin_at": "2026-05-16T21:02:28+00:00"
   },
   {
     "name": "マサラキッチン",
@@ -4727,7 +4727,7 @@
     "foursquare_url": "https://foursquare.com/v/4c8495397683b71347fa14b9",
     "photos": [],
     "categories": [
-      "サービスエリア"
+      "Rest Area"
     ],
     "category_group": "other",
     "category_label": "その他",
