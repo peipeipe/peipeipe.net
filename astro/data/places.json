@@ -1,5 +1,35 @@
 [
   {
+    "name": "びんぐし湯さん館",
+    "user_comment": "",
+    "date": "2026-08-14",
+    "lat": 36.442019002493254,
+    "lng": 138.1677539633173,
+    "address": "大字網掛2002-4, 埴科郡, 長野県, 389-0604",
+    "foursquare_url": "https://foursquare.com/v/4c6f79c29c6d6dcbfed4cf7a",
+    "photos": [
+      "https://fastly.4sqi.net/img/general/500x300/41463109_xpu7wgihYKZDn-RMgyBtQaxtH2PLNTRYk5QEEeAwUDE.jpg",
+      "https://fastly.4sqi.net/img/general/500x300/41463109_CQ9Bn6H67f1QO33gtyvFeSrQMJh4b9pwzp2gS5f0H3I.jpg",
+      "https://fastly.4sqi.net/img/general/500x300/41463109_2Sy0RSu5J-QWKROjV-js_R_a0mXJM46VDSrrE1XwQWc.jpg",
+      "https://fastly.4sqi.net/img/general/500x300/41463109_AwyLMUO0XvHD0juIcp6oAAUF0e4fZIY9LaasAQqypjU.jpg",
+      "https://fastly.4sqi.net/img/general/500x300/41463109_9xntp0VfM6c4v_Pu5wWxS7M8TFQUOI0AiVdUge2Vv5U.jpg",
+      "https://fastly.4sqi.net/img/general/500x300/41463109_rcpetPMmMXlqa6B1Nd5XEpglyR7jyLq7X8UdtiahHtU.jpg",
+      "https://fastly.4sqi.net/img/general/500x300/41463109_moIiX5GlF0YMllbHk-Y6yA0C9MU2o3rGSrlvxGOYxpo.jpg"
+    ],
+    "categories": [
+      "スパ"
+    ],
+    "category_group": "onsen",
+    "category_label": "温泉・サウナ",
+    "category_emoji": "♨️",
+    "category_color": "#ff7a59",
+    "data_source": "foursquare_checkin",
+    "fsq_id": "4c6f79c29c6d6dcbfed4cf7a",
+    "checkin_count": 11,
+    "first_checkin_at": "2024-10-13T06:18:22+00:00",
+    "last_checkin_at": "2026-08-14T04:08:05+00:00"
+  },
+  {
     "name": "室賀温泉ささらの湯",
     "user_comment": "湯質最高であった",
     "date": "2026-08-13",
@@ -2424,35 +2454,6 @@
     "last_checkin_at": "2026-04-20T05:00:27+00:00"
   },
   {
-    "name": "びんぐし湯さん館",
-    "user_comment": "",
-    "date": "2026-04-20",
-    "lat": 36.442019002493254,
-    "lng": 138.1677539633173,
-    "address": "大字網掛2002-4, 埴科郡, 長野県, 389-0604",
-    "foursquare_url": "https://foursquare.com/v/4c6f79c29c6d6dcbfed4cf7a",
-    "photos": [
-      "https://fastly.4sqi.net/img/general/500x300/41463109_CQ9Bn6H67f1QO33gtyvFeSrQMJh4b9pwzp2gS5f0H3I.jpg",
-      "https://fastly.4sqi.net/img/general/500x300/41463109_2Sy0RSu5J-QWKROjV-js_R_a0mXJM46VDSrrE1XwQWc.jpg",
-      "https://fastly.4sqi.net/img/general/500x300/41463109_AwyLMUO0XvHD0juIcp6oAAUF0e4fZIY9LaasAQqypjU.jpg",
-      "https://fastly.4sqi.net/img/general/500x300/41463109_9xntp0VfM6c4v_Pu5wWxS7M8TFQUOI0AiVdUge2Vv5U.jpg",
-      "https://fastly.4sqi.net/img/general/500x300/41463109_rcpetPMmMXlqa6B1Nd5XEpglyR7jyLq7X8UdtiahHtU.jpg",
-      "https://fastly.4sqi.net/img/general/500x300/41463109_moIiX5GlF0YMllbHk-Y6yA0C9MU2o3rGSrlvxGOYxpo.jpg"
-    ],
-    "categories": [
-      "スパ"
-    ],
-    "category_group": "onsen",
-    "category_label": "温泉・サウナ",
-    "category_emoji": "♨️",
-    "category_color": "#ff7a59",
-    "data_source": "foursquare_checkin",
-    "fsq_id": "4c6f79c29c6d6dcbfed4cf7a",
-    "checkin_count": 10,
-    "first_checkin_at": "2024-10-13T06:18:22+00:00",
-    "last_checkin_at": "2026-04-20T02:25:33+00:00"
-  },
-  {
     "name": "ホットプラザ浅間 足湯",
     "user_comment": "",
     "date": "2026-04-12",
@@ -4705,7 +4706,7 @@
       "https://fastly.4sqi.net/img/general/500x300/41463109_qNLA_aLFssFXVtDUUfHaWOwfDsHmdcohMADOQFWj6E0.jpg"
     ],
     "categories": [
-      "サッカー場"
+      "Soccer Field"
     ],
     "category_group": "other",
     "category_label": "その他",
@@ -6967,8 +6968,8 @@
     "name": "JR Yokohama Station (JR 横浜駅)",
     "user_comment": "",
     "date": "2025-06-14",
-    "lat": 35.46603080742791,
-    "lng": 139.6221713516616,
+    "lat": 35.46578167601866,
+    "lng": 139.62203690138512,
     "address": "西区高島2-16-1, 横浜市, 神奈川県, 220-0011",
     "foursquare_url": "https://foursquare.com/v/4d95a92a744f3704c825a557",
     "photos": [],
@@ -28112,8 +28113,8 @@
     "name": "Grand Lisboa Hotel and Casino (新葡京酒店賭場)",
     "user_comment": "",
     "date": "2019-11-29",
-    "lat": 22.190383979394298,
-    "lng": 113.54334200481637,
+    "lat": 22.190721558250317,
+    "lng": 113.5434453294403,
     "address": "Avenida de Lisboa, Freguesia da Sé, 澳门, Municipality of Macau, 中国",
     "foursquare_url": "https://foursquare.com/v/4b5980b0f964a5205b8a28e3",
     "photos": [
@@ -42695,8 +42696,8 @@
     "name": "Kanda Station (神田駅)",
     "user_comment": "",
     "date": "2015-08-24",
-    "lat": 35.692006220612946,
-    "lng": 139.7708813225728,
+    "lat": 35.69209922574714,
+    "lng": 139.77107102576832,
     "address": "鍛冶町2/神田須田町1, 千代田区, 東京都",
     "foursquare_url": "https://foursquare.com/v/4b19f962f964a520afe623e3",
     "photos": [],
