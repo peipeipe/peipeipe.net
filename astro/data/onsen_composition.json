@@ -1,12 +1,145 @@
 {
-  "generated_on": "2026-08-11",
+  "generated_on": "2026-08-14",
   "stats": {
     "places": 66,
-    "composition_photos": 18,
+    "composition_photos": 19,
     "not_composition_photos": 97,
     "unreadable_photos": 0
   },
   "places": [
+    {
+      "fsq_id": "4c6f79c29c6d6dcbfed4cf7a",
+      "name": "びんぐし湯さん館",
+      "address": "大字網掛2002-4, 埴科郡, 長野県, 389-0604",
+      "checkin_date": "2026-08-14",
+      "confidence": "high",
+      "spring_name": "坂城町上平島温泉井",
+      "spring_quality": "アルカリ性単純硫黄温泉",
+      "spring_quality_class": "低張性アルカリ性高温泉",
+      "source_temp_c": 43.8,
+      "ph": 8.8,
+      "dissolved_solids_mg_kg": 474.4,
+      "total_ingredients_mg_kg": 474.4,
+      "cations": [
+        {
+          "name": "リチウムイオン",
+          "symbol": "Li+",
+          "mg_kg": 0.1
+        },
+        {
+          "name": "ナトリウムイオン",
+          "symbol": "Na+",
+          "mg_kg": 91.8
+        },
+        {
+          "name": "カリウムイオン",
+          "symbol": "K+",
+          "mg_kg": 1.8
+        },
+        {
+          "name": "アンモニウムイオン",
+          "symbol": "NH4+",
+          "mg_kg": 0.6
+        },
+        {
+          "name": "マグネシウムイオン",
+          "symbol": "Mg2+",
+          "mg_kg": 0.3
+        },
+        {
+          "name": "カルシウムイオン",
+          "symbol": "Ca2+",
+          "mg_kg": 45.9
+        },
+        {
+          "name": "ストロンチウムイオン",
+          "symbol": "Sr2+",
+          "mg_kg": 0.5
+        }
+      ],
+      "cations_total_mg_kg": 141.0,
+      "anions": [
+        {
+          "name": "フッ化物イオン",
+          "symbol": "F-",
+          "mg_kg": 0.9
+        },
+        {
+          "name": "塩化物イオン",
+          "symbol": "Cl-",
+          "mg_kg": 77.3
+        },
+        {
+          "name": "ヨウ化物イオン",
+          "symbol": "I-",
+          "mg_kg": 1.2
+        },
+        {
+          "name": "硫化水素イオン",
+          "symbol": "HS-",
+          "mg_kg": 2.2
+        },
+        {
+          "name": "硫酸イオン",
+          "symbol": "SO42-",
+          "mg_kg": 185.2
+        },
+        {
+          "name": "炭酸水素イオン",
+          "symbol": "HCO3-",
+          "mg_kg": 17.2
+        },
+        {
+          "name": "炭酸イオン",
+          "symbol": "CO32-",
+          "mg_kg": 6.6
+        }
+      ],
+      "anions_total_mg_kg": 290.6,
+      "undissociated": [
+        {
+          "name": "メタケイ酸",
+          "symbol": "H2SiO3",
+          "mg_kg": 39.4
+        },
+        {
+          "name": "メタホウ酸",
+          "symbol": "HBO2",
+          "mg_kg": 3.4
+        }
+      ],
+      "undissociated_total_mg_kg": 42.8,
+      "dissolved_gas": [
+        {
+          "name": "遊離硫化水素",
+          "symbol": "H2S",
+          "mg_kg": 0.04
+        }
+      ],
+      "dissolved_gas_total_mg_kg": 0.04,
+      "contraindications": [
+        "皮膚又は粘膜の過敏な人",
+        "高齢者の皮膚乾燥症"
+      ],
+      "analyzed_on": "2018-05-21",
+      "analyzer": "(株)信濃公害研究所",
+      "analyzer_registration": "長野県第10号",
+      "notes": "適応症および温泉の利用状況（加水・加温等）の項目は画像で見切れているため省略しました。",
+      "source_photos": [
+        "https://fastly.4sqi.net/img/general/500x300/41463109_xpu7wgihYKZDn-RMgyBtQaxtH2PLNTRYk5QEEeAwUDE.jpg"
+      ]
+    },
+    {
+      "fsq_id": "4b67b29ff964a520335b2be3",
+      "name": "室賀温泉ささらの湯",
+      "address": "上室賀1232-1, 上田市, 長野県, 386-1541",
+      "checkin_date": "2026-05-16",
+      "confidence": "medium",
+      "spring_quality": "単純硫黄温泉",
+      "spring_quality_class": "アルカリ性低張性高温泉",
+      "source_temp_c": 50.7,
+      "notes": "ネット公開情報から作成（現地掲示は未確認）。出典: 上田市公式サイト「室賀温泉ささらの湯の温泉の御案内」 http://www.city.ueda.nagano.jp/nosei/tanoshimu/onsen/sasara/goannai/index.html"
+    },
     {
       "fsq_id": "6908a2a5852b2f2861a0f47c",
       "name": "Uu Ueda",
@@ -1868,17 +2001,6 @@
       ]
     },
     {
-      "fsq_id": "4b67b29ff964a520335b2be3",
-      "name": "室賀温泉ささらの湯",
-      "address": "上室賀1232-1, 上田市, 長野県, 386-1541",
-      "checkin_date": "2026-05-16",
-      "confidence": "medium",
-      "spring_quality": "単純硫黄温泉",
-      "spring_quality_class": "アルカリ性低張性高温泉",
-      "source_temp_c": 50.7,
-      "notes": "ネット公開情報から作成（現地掲示は未確認）。出典: 上田市公式サイト「室賀温泉ささらの湯の温泉の御案内」 http://www.city.ueda.nagano.jp/nosei/tanoshimu/onsen/sasara/goannai/index.html"
-    },
-    {
       "fsq_id": "4d954d3e577cba7a3afb7779",
       "name": "扉温泉 桧の湯",
       "address": "入山辺8967-4-28 (山辺地区農業生活改善センター), 松本市, 長野県, 390-0222",
@@ -2190,18 +2312,6 @@
         }
       ],
       "notes": "ネット公開情報から作成（現地掲示は未確認）。渋温泉の外湯めぐりの結願湯。淡褐色で微鉄味・塩味。成分は主要なものだけが紹介されており、全項目ではないので各イオン計は入れていない。出典: 温泉の杜・はしご湯のすすめなどの温泉紹介サイト"
-    },
-    {
-      "fsq_id": "4c6f79c29c6d6dcbfed4cf7a",
-      "name": "びんぐし湯さん館",
-      "address": "大字網掛2002-4, 埴科郡, 長野県, 389-0604",
-      "checkin_date": "2026-04-20",
-      "confidence": "medium",
-      "spring_name": "坂城町上平島温泉",
-      "spring_quality": "アルカリ性単純硫黄温泉",
-      "spring_quality_class": "低張性アルカリ性高温泉",
-      "source_temp_c": 43.8,
-      "notes": "ネット公開情報から作成（現地掲示は未確認）。内風呂の薬湯源泉口で飲泉できる（飲用の適応症は糖尿病・痛風・便秘、禁忌症は下痢）。出典: びんぐし湯さん館公式サイト https://yusankan.co.jp/facility/"
     },
     {
       "fsq_id": "58d73357ecb67e3da564f1a0",
