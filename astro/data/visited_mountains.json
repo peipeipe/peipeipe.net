@@ -66,8 +66,15 @@
     "tags": [
       "信州百名山"
     ],
-    "visit_count": 18,
+    "visit_count": 19,
     "activities": [
+      {
+        "id": 19733441684,
+        "name": "父を太郎山に連れて行ってみる",
+        "date": "2026-08-14",
+        "sport_type": "TrailRun",
+        "distance_km": 10.4
+      },
       {
         "id": 18889400226,
         "name": "夕方のトレイルランニング",
@@ -196,7 +203,7 @@
       }
     ],
     "first_visit": "2024-09-29",
-    "last_visit": "2026-06-12"
+    "last_visit": "2026-08-14"
   },
   {
     "name": "丸山",
