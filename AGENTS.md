@@ -27,3 +27,5 @@ Commit history uses short imperative summaries such as `Fix duplicated Amazon li
 ## Security & Configuration Tips
 
 Do not commit credentials, webhook URLs, Cloudflare tokens, Strava secrets, or local virtual environments. Production deploys go through Cloudflare Pages; GitHub Pages/Jekyll rollback state is historical and should not be reintroduced without an explicit rollback plan.
+
+Run `gh` commands outside the sandbox from the outset. Sandboxed GitHub API access can fail and cause misleading authentication errors even when the local `gh` credentials are valid.
