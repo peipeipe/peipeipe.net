@@ -55,8 +55,17 @@ jobs:
             echo "changed=false" >> "$GITHUB_OUTPUT"
           else
             git commit -m "Update OSM peaks"
-            git push
-            echo "changed=true" >> "$GITHUB_OUTPUT"
+            for attempt in 1 2 3; do
+              git pull --rebase --autostash origin "$GITHUB_REF_NAME"
+              if git push; then
+                echo "changed=true" >> "$GITHUB_OUTPUT"
+                exit 0
+              fi
+              echo "Push failed; retrying after remote update (attempt $attempt/3)"
+              sleep $((attempt * 5))
+            done
+            echo "Failed to push OSM peak updates after 3 attempts"
+            exit 1
           fi
 
       - name: Trigger Cloudflare Pages deploy
