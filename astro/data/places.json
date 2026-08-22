@@ -1,5 +1,31 @@
 [
   {
+    "name": "ココラデ 上田店",
+    "user_comment": "",
+    "date": "2026-08-22",
+    "lat": 36.40781257145037,
+    "lng": 138.23530798956446,
+    "address": "常磐城3-12-47, 上田市, 長野県, 386-0027",
+    "foursquare_url": "https://foursquare.com/v/5e1a809012959c000881db06",
+    "photos": [
+      "https://fastly.4sqi.net/img/general/500x300/41463109_2R29K6_jsjUQirc7LBcvygWrKsq4Y1VjMnW1NIBrcZc.jpg",
+      "https://fastly.4sqi.net/img/general/500x300/41463109_Or0qLn1AUx1X1yIG5GYH3l52da3c57OlaNCZQzEKuPU.jpg",
+      "https://fastly.4sqi.net/img/general/500x300/41463109_RioZZm6J5tYP0yDnCVAvbt9_UKbAzsdTVzoXhhzUccg.jpg"
+    ],
+    "categories": [
+      "パン屋"
+    ],
+    "category_group": "cafe",
+    "category_label": "カフェ",
+    "category_emoji": "☕",
+    "category_color": "#8d6e63",
+    "data_source": "foursquare_checkin",
+    "fsq_id": "5e1a809012959c000881db06",
+    "checkin_count": 3,
+    "first_checkin_at": "2025-08-16T01:07:48+00:00",
+    "last_checkin_at": "2026-08-22T00:37:24+00:00"
+  },
+  {
     "name": "マサラキッチン",
     "user_comment": "",
     "date": "2026-08-21",
@@ -979,31 +1005,6 @@
     "checkin_count": 1,
     "first_checkin_at": "2026-06-29T05:50:28+00:00",
     "last_checkin_at": "2026-06-29T05:50:28+00:00"
-  },
-  {
-    "name": "ココラデ 上田店",
-    "user_comment": "",
-    "date": "2026-06-29",
-    "lat": 36.40781257145037,
-    "lng": 138.23530798956446,
-    "address": "常磐城3-12-47, 上田市, 長野県, 386-0027",
-    "foursquare_url": "https://foursquare.com/v/5e1a809012959c000881db06",
-    "photos": [
-      "https://fastly.4sqi.net/img/general/500x300/41463109_Or0qLn1AUx1X1yIG5GYH3l52da3c57OlaNCZQzEKuPU.jpg",
-      "https://fastly.4sqi.net/img/general/500x300/41463109_RioZZm6J5tYP0yDnCVAvbt9_UKbAzsdTVzoXhhzUccg.jpg"
-    ],
-    "categories": [
-      "パン屋"
-    ],
-    "category_group": "cafe",
-    "category_label": "カフェ",
-    "category_emoji": "☕",
-    "category_color": "#8d6e63",
-    "data_source": "foursquare_checkin",
-    "fsq_id": "5e1a809012959c000881db06",
-    "checkin_count": 2,
-    "first_checkin_at": "2025-08-16T01:07:48+00:00",
-    "last_checkin_at": "2026-06-29T03:20:48+00:00"
   },
   {
     "name": "麓庵 かつ玄",
@@ -4680,7 +4681,7 @@
       "https://fastly.4sqi.net/img/general/500x300/41463109_UNMvXoIUSXzvMtJ787TU8oBrw315PJff0ThnqkHIE4w.jpg"
     ],
     "categories": [
-      "ラーメン屋"
+      "Ramen Restaurant"
     ],
     "category_group": "food",
     "category_label": "食事",
@@ -18152,8 +18153,8 @@
     "name": "Kansai International Airport (KIX) (関西国際空港)",
     "user_comment": "",
     "date": "2023-02-27",
-    "lat": 34.43581164362259,
-    "lng": 135.2442730867208,
+    "lat": 34.43550105267178,
+    "lng": 135.24352235982013,
     "address": "泉州空港北1, 泉佐野市, 大阪府, 549-0001",
     "foursquare_url": "https://foursquare.com/v/4b2696c0f964a520fa7d24e3",
     "photos": [
@@ -20255,8 +20256,8 @@
     "name": "Ōmiya Station (大宮駅)",
     "user_comment": "初上陸（マジ）",
     "date": "2022-09-21",
-    "lat": 35.90632675938582,
-    "lng": 139.62398895033752,
+    "lat": 35.906132500002215,
+    "lng": 139.62400886953785,
     "address": "大宮区錦町, さいたま市, 埼玉県, 330-0853",
     "foursquare_url": "https://foursquare.com/v/4b3dd6ddf964a520089725e3",
     "photos": [],
@@ -31444,8 +31445,8 @@
     "name": "Kashiwa Station (柏駅)",
     "user_comment": "",
     "date": "2019-05-26",
-    "lat": 35.86188672556183,
-    "lng": 139.97067321010647,
+    "lat": 35.86215683915895,
+    "lng": 139.97065818340857,
     "address": "柏1/末広町1, 柏市, 千葉県",
     "foursquare_url": "https://foursquare.com/v/4b544f41f964a52022b727e3",
     "photos": [],
