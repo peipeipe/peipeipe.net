@@ -1,5 +1,31 @@
 [
   {
+    "name": "灯湯すずらん",
+    "user_comment": "良い！繁忙期1100円",
+    "date": "2026-08-23",
+    "lat": 36.103984,
+    "lng": 138.237538,
+    "address": "3419-84 北山, 茅野市, 長野県, 391-0301",
+    "foursquare_url": "https://foursquare.com/v/6a5201f2ab33386ede670728",
+    "photos": [
+      "https://fastly.4sqi.net/img/general/500x300/41463109_nClbEfjF2Oyg96DEAFD45pwBmtITiBJWvGih5B0qYZw.jpg",
+      "https://fastly.4sqi.net/img/general/500x300/41463109_9lXeEYrD_X7tA2MhTotj9O5WiQiuPZAD1cMhRXjXyfQ.jpg",
+      "https://fastly.4sqi.net/img/general/500x300/41463109_uO26q6Rhs82XBaXRp1z_wCs925oNM_AP3IZXUdQSGa8.jpg"
+    ],
+    "categories": [
+      "温泉"
+    ],
+    "category_group": "onsen",
+    "category_label": "温泉・サウナ",
+    "category_emoji": "♨️",
+    "category_color": "#ff7a59",
+    "data_source": "foursquare_checkin",
+    "fsq_id": "6a5201f2ab33386ede670728",
+    "checkin_count": 1,
+    "first_checkin_at": "2026-08-23T06:21:41+00:00",
+    "last_checkin_at": "2026-08-23T06:21:41+00:00"
+  },
+  {
     "name": "びんぐし湯さん館",
     "user_comment": "",
     "date": "2026-08-14",
