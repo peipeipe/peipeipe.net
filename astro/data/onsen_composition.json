@@ -1,12 +1,139 @@
 {
-  "generated_on": "2026-08-14",
+  "generated_on": "2026-08-23",
   "stats": {
-    "places": 66,
-    "composition_photos": 19,
-    "not_composition_photos": 97,
+    "places": 67,
+    "composition_photos": 20,
+    "not_composition_photos": 99,
     "unreadable_photos": 0
   },
   "places": [
+    {
+      "fsq_id": "6a5201f2ab33386ede670728",
+      "name": "灯湯すずらん",
+      "address": "3419-84 北山, 茅野市, 長野県, 391-0301",
+      "checkin_date": "2026-08-23",
+      "confidence": "high",
+      "spring_name": "白樺湖温泉2号",
+      "spring_quality": "アルカリ性単純温泉",
+      "spring_quality_class": "低張性アルカリ性低温泉",
+      "source_temp_c": 31.8,
+      "ph": 8.6,
+      "ph_lab": 8.71,
+      "yield_l_min": 31.6,
+      "evaporation_residue_mg_kg": 437.0,
+      "dissolved_solids_mg_kg": 495.4,
+      "total_ingredients_mg_kg": 495.4,
+      "cations": [
+        {
+          "name": "リチウムイオン",
+          "symbol": "Li+",
+          "mg_kg": 0.04
+        },
+        {
+          "name": "ナトリウムイオン",
+          "symbol": "Na+",
+          "mg_kg": 131.8
+        },
+        {
+          "name": "カリウムイオン",
+          "symbol": "K+",
+          "mg_kg": 3.8
+        },
+        {
+          "name": "アンモニウムイオン",
+          "symbol": "NH4+",
+          "mg_kg": 0.03
+        },
+        {
+          "name": "マグネシウムイオン",
+          "symbol": "Mg2+",
+          "mg_kg": 0.9
+        },
+        {
+          "name": "カルシウムイオン",
+          "symbol": "Ca2+",
+          "mg_kg": 7.8
+        },
+        {
+          "name": "ストロンチウムイオン",
+          "symbol": "Sr2+",
+          "mg_kg": 0.09
+        },
+        {
+          "name": "アルミニウムイオン",
+          "symbol": "Al3+",
+          "mg_kg": 0.01
+        }
+      ],
+      "cations_total_mg_kg": 144.5,
+      "anions": [
+        {
+          "name": "フッ化物イオン",
+          "symbol": "F-",
+          "mg_kg": 0.3
+        },
+        {
+          "name": "塩化物イオン",
+          "symbol": "Cl-",
+          "mg_kg": 98.7
+        },
+        {
+          "name": "臭化物イオン",
+          "symbol": "Br-",
+          "mg_kg": 0.4
+        },
+        {
+          "name": "ヨウ化物イオン",
+          "symbol": "I-",
+          "mg_kg": 0.08
+        },
+        {
+          "name": "硫化水素イオン",
+          "symbol": "HS-",
+          "mg_kg": 0.02
+        },
+        {
+          "name": "硫酸イオン",
+          "symbol": "SO42-",
+          "mg_kg": 71.7
+        },
+        {
+          "name": "リン酸水素イオン",
+          "symbol": "HPO42-",
+          "mg_kg": 0.04
+        },
+        {
+          "name": "炭酸水素イオン",
+          "symbol": "HCO3-",
+          "mg_kg": 113.4
+        },
+        {
+          "name": "炭酸イオン",
+          "symbol": "CO32-",
+          "mg_kg": 6.0
+        }
+      ],
+      "anions_total_mg_kg": 290.6,
+      "undissociated": [
+        {
+          "name": "メタケイ酸",
+          "symbol": "H2SiO3",
+          "mg_kg": 58.0
+        },
+        {
+          "name": "メタホウ酸",
+          "symbol": "HBO2",
+          "mg_kg": 2.3
+        }
+      ],
+      "undissociated_total_mg_kg": 60.3,
+      "analyzed_on": "2018-01-25",
+      "analyzer": "一般社団法人 長野県薬剤師会",
+      "analyzer_registration": "長野県第2号",
+      "source_photos": [
+        "https://fastly.4sqi.net/img/general/500x300/41463109_9lXeEYrD_X7tA2MhTotj9O5WiQiuPZAD1cMhRXjXyfQ.jpg"
+      ]
+    },
     {
       "fsq_id": "4c6f79c29c6d6dcbfed4cf7a",
       "name": "びんぐし湯さん館",
@@ -3414,6 +3541,8 @@
     "https://fastly.4sqi.net/img/general/500x300/41463109_Wq9EEzgpnxAuUejt7GauCtgr6C-eHEM5_6CSuqKYLYQ.jpg",
     "https://fastly.4sqi.net/img/general/500x300/41463109_moIiX5GlF0YMllbHk-Y6yA0C9MU2o3rGSrlvxGOYxpo.jpg",
     "https://fastly.4sqi.net/img/general/500x300/41463109_4GT1uPwlyGSCo_jkEicv7rMCXAz6-1ofMEzWh2aJ5aY.jpg",
-    "https://fastly.4sqi.net/img/general/500x300/41463109_7lqM2fOXDB8zpjsHzAFz6bQQVwKmrJBAdLAJIdrhQ6o.jpg"
+    "https://fastly.4sqi.net/img/general/500x300/41463109_7lqM2fOXDB8zpjsHzAFz6bQQVwKmrJBAdLAJIdrhQ6o.jpg",
+    "https://fastly.4sqi.net/img/general/500x300/41463109_nClbEfjF2Oyg96DEAFD45pwBmtITiBJWvGih5B0qYZw.jpg",
+    "https://fastly.4sqi.net/img/general/500x300/41463109_uO26q6Rhs82XBaXRp1z_wCs925oNM_AP3IZXUdQSGa8.jpg"
   ]
 }
