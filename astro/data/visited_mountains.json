@@ -1384,5 +1384,27 @@
     ],
     "first_visit": "2026-08-09",
     "last_visit": "2026-08-09"
+  },
+  {
+    "name": "蓼科山",
+    "lat": 36.103729,
+    "lng": 138.295071,
+    "elevation": 2531,
+    "tags": [
+      "百名山",
+      "信州百名山"
+    ],
+    "visit_count": 1,
+    "activities": [
+      {
+        "id": 19856755569,
+        "name": "7合目駐車場から蓼科山",
+        "date": "2026-08-23",
+        "sport_type": "TrailRun",
+        "distance_km": 5.0
+      }
+    ],
+    "first_visit": "2026-08-23",
+    "last_visit": "2026-08-23"
   }
 ]
