@@ -1,5 +1,23 @@
 [
   {
+    "id": 19886074566,
+    "name": "朝のランニング",
+    "sport_type": "Run",
+    "distance": 10532.8,
+    "moving_time": 3461,
+    "elapsed_time": 4112,
+    "total_elevation_gain": 55.0,
+    "start_date": "2026-08-24T23:28:39Z",
+    "start_date_local": "2026-08-25T08:28:39Z",
+    "start_latlng": [
+      36.391626,
+      138.243175
+    ],
+    "average_speed": 3.043,
+    "max_speed": 3.72,
+    "summary_polyline": "y`c}EmjwjY]l@]x@Wb@E@EG_@}AIAKJg@iAa@q@o@{@MIY]QKO?UPwAdCu@dAWb@e@dB_DxHiFpNsDlIyBtEA\\BLdAjALV?Ba@XcBr@s@b@w@h@m@l@}@bA_@l@YTUZc@`@g@bA?ZQBUNQZk@x@e@hAc@x@IXCTD`@`@dCP~ADr@ZhB@f@LbBr@|ENrBf@~CRbAN\\Oc@KCa@DcANc@JsDn@g@Lg@LSXCl@Bl@A|@EHMBGTOfDUxBOr@Wz@Sf@_@n@Y^cAz@m@n@[j@k@rA[rDHfABJHNTBh@[BDCHe@l@y@vAqCvGa@hAWfAIHmCaB{GsEaHmFa@a@AKVkCBk@Iq@@eAASc@yFFc@HGH?n@Rd@T`@ILMXw@LQz@eCt@oD|@aFt@gD^qBdCwLp@{EVsE?{@F}@FGh@QlBw@tAu@t@g@\\WxAuAjA{ApC}EbAmAvH{JzAyBjBwCvF}Jz@cBp@eBFi@Nm@b@gAf@aBB]ACwDkBMMEa@JWTc@Je@Dg@Z_BHsAPm@\\y@v@oAPg@Xg@jAgB\\a@bBsAPCH@d@h@fCzB`@TLCxF_OrAuElAmDfAqCbBuD`DwF`@m@pAyB`AsArA{BzB_E^w@TOpAbAjBbAz@h@bAt@vBlAlFtDd@TdAXBJB|@ENURgBr@eAd@_@JcAf@s@f@cA`AoClDoAzAOVLV`BjBP`@K^Sd@e@fAw@rAQb@_AlCWbA_BzD"
+  },
+  {
     "id": 19858755677,
     "name": "朝のランニング",
     "sport_type": "Run",
