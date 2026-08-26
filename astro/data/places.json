@@ -1,5 +1,77 @@
 [
   {
+    "name": "玉喜亭",
+    "user_comment": "",
+    "date": "2026-08-26",
+    "lat": 35.479709,
+    "lng": 138.784498,
+    "address": "松山1388, 富士吉田市, 山梨県, 403-0016",
+    "foursquare_url": "https://foursquare.com/v/4c09e39d340720a11caa8593",
+    "photos": [
+      "https://fastly.4sqi.net/img/general/500x300/41463109_Pjm8Q0hbc7z_5k-7wNm0wL-bqeUKu8JQQIsNtX44k6Y.jpg"
+    ],
+    "categories": [
+      "うどん屋"
+    ],
+    "category_group": "food",
+    "category_label": "食事",
+    "category_emoji": "🍜",
+    "category_color": "#e67e22",
+    "data_source": "foursquare_checkin",
+    "fsq_id": "4c09e39d340720a11caa8593",
+    "checkin_count": 1,
+    "first_checkin_at": "2026-08-26T04:47:16+00:00",
+    "last_checkin_at": "2026-08-26T04:47:16+00:00"
+  },
+  {
+    "name": "中ノ茶屋",
+    "user_comment": "",
+    "date": "2026-08-26",
+    "lat": 35.441276553278165,
+    "lng": 138.76989413310142,
+    "address": "上吉田5601-1, 富士吉田市, 山梨県, 403-0005",
+    "foursquare_url": "https://foursquare.com/v/4db9115d8154ce84dc205133",
+    "photos": [
+      "https://fastly.4sqi.net/img/general/500x300/41463109_FuwEk2AxIPq2wSZ1mAWzkZELFibXt1buMLLuvMhmbz0.jpg"
+    ],
+    "categories": [
+      "和食店"
+    ],
+    "category_group": "other",
+    "category_label": "その他",
+    "category_emoji": "📍",
+    "category_color": "#607d8b",
+    "data_source": "foursquare_checkin",
+    "fsq_id": "4db9115d8154ce84dc205133",
+    "checkin_count": 1,
+    "first_checkin_at": "2026-08-26T03:54:17+00:00",
+    "last_checkin_at": "2026-08-26T03:54:17+00:00"
+  },
+  {
+    "name": "佐藤小屋",
+    "user_comment": "",
+    "date": "2026-08-26",
+    "lat": 35.38899752433876,
+    "lng": 138.74801985936833,
+    "address": "富士山吉田口5合目, 富士吉田市, 山梨県, 403-0005",
+    "foursquare_url": "https://foursquare.com/v/4c0af097ffb8c9b64f886c61",
+    "photos": [
+      "https://fastly.4sqi.net/img/general/500x300/41463109_pr7D-AHJA8GsLLmdrt-9mqszmZ-Uo-PqVutV4g5jUjs.jpg"
+    ],
+    "categories": [
+      "山小屋"
+    ],
+    "category_group": "outdoors",
+    "category_label": "自然・公園",
+    "category_emoji": "🌿",
+    "category_color": "#2e7d32",
+    "data_source": "foursquare_checkin",
+    "fsq_id": "4c0af097ffb8c9b64f886c61",
+    "checkin_count": 1,
+    "first_checkin_at": "2026-08-26T02:22:09+00:00",
+    "last_checkin_at": "2026-08-26T02:22:09+00:00"
+  },
+  {
     "name": "灯湯すずらん",
     "user_comment": "良い！繁忙期1100円",
     "date": "2026-08-23",
@@ -24,6 +96,28 @@
     "checkin_count": 1,
     "first_checkin_at": "2026-08-23T06:21:41+00:00",
     "last_checkin_at": "2026-08-23T06:21:41+00:00"
+  },
+  {
+    "name": "蓼科山荘",
+    "user_comment": "",
+    "date": "2026-08-22",
+    "lat": 36.10731714848254,
+    "lng": 138.29842234076352,
+    "address": "北山, 茅野市, 長野県, 391-0301",
+    "foursquare_url": "https://foursquare.com/v/501349b8e4b0c3be9729073c",
+    "photos": [],
+    "categories": [
+      "スキーロッジ"
+    ],
+    "category_group": "outdoors",
+    "category_label": "自然・公園",
+    "category_emoji": "🌿",
+    "category_color": "#2e7d32",
+    "data_source": "foursquare_checkin",
+    "fsq_id": "501349b8e4b0c3be9729073c",
+    "checkin_count": 1,
+    "first_checkin_at": "2026-08-22T21:21:23+00:00",
+    "last_checkin_at": "2026-08-22T21:21:23+00:00"
   },
   {
     "name": "ココラデ 上田店",
@@ -1425,7 +1519,7 @@
     "date": "2026-06-13",
     "lat": 36.433307,
     "lng": 138.387176,
-    "address": "",
+    "address": "真田町本原, 上田市, 長野県",
     "foursquare_url": "https://foursquare.com/v/4dfd479762846d918b976158",
     "photos": [
       "https://fastly.4sqi.net/img/general/500x300/41463109_y2cZgbJosTmiUTHuhpWFT6JChVvw8GduNwyCi-uKBWE.jpg",
@@ -1433,12 +1527,12 @@
       "https://fastly.4sqi.net/img/general/500x300/41463109_1w5K0hInt3J6RtMf7TA2AGP2IoMpu3Vf5UZSXkSqi6I.jpg"
     ],
     "categories": [
-      "ハイキングコース"
+      "山岳"
     ],
-    "category_group": "other",
-    "category_label": "その他",
-    "category_emoji": "📍",
-    "category_color": "#607d8b",
+    "category_group": "outdoors",
+    "category_label": "自然・公園",
+    "category_emoji": "🌿",
+    "category_color": "#2e7d32",
     "data_source": "foursquare_checkin",
     "fsq_id": "4dfd479762846d918b976158",
     "checkin_count": 3,
@@ -4614,7 +4708,7 @@
       "https://fastly.4sqi.net/img/general/500x300/41463109_I3HTYwofMAEojRSeFSDdiYmhbH0L8Yc05D3bBqgOVv8.jpg"
     ],
     "categories": [
-      "麺類店"
+      "Noodle Restaurant"
     ],
     "category_group": "food",
     "category_label": "食事",
@@ -4627,7 +4721,7 @@
     "last_checkin_at": "2025-11-28T04:32:28+00:00"
   },
   {
-    "name": "JR 池袋駅",
+    "name": "JR Ikebukuro Station (JR 池袋駅)",
     "user_comment": "",
     "date": "2025-11-24",
     "lat": 35.72989137150322,
@@ -4636,7 +4730,7 @@
     "foursquare_url": "https://foursquare.com/v/4b678b3bf964a52090542be3",
     "photos": [],
     "categories": [
-      "鉄道駅"
+      "Rail Station"
     ],
     "category_group": "transport",
     "category_label": "交通",
@@ -4649,7 +4743,7 @@
     "last_checkin_at": "2025-11-24T09:30:02+00:00"
   },
   {
-    "name": "つくば市役所",
+    "name": "Tsukuba City Hall (つくば市役所)",
     "user_comment": "",
     "date": "2025-11-22",
     "lat": 36.083489789319934,
@@ -4658,7 +4752,7 @@
     "foursquare_url": "https://foursquare.com/v/4becf209bac3c9b673b4fde9",
     "photos": [],
     "categories": [
-      "市役所"
+      "City Hall"
     ],
     "category_group": "other",
     "category_label": "その他",
@@ -30562,8 +30656,8 @@
     "name": "Ichi-Ban-Kan (中華食堂 一番館)",
     "user_comment": "",
     "date": "2019-07-06",
-    "lat": 35.7070831881655,
-    "lng": 139.66566335183379,
+    "lat": 35.707122,
+    "lng": 139.66561,
     "address": "中野5-65-11 (中野サンモール 筑紫ビル 2F-3F), 中野, 東京都, 164-0001",
     "foursquare_url": "https://foursquare.com/v/530df47b498ec1a99c59ce3d",
     "photos": [
