@@ -1,12 +1,129 @@
 {
-  "generated_on": "2026-08-23",
+  "generated_on": "2026-08-28",
   "stats": {
     "places": 67,
-    "composition_photos": 20,
+    "composition_photos": 21,
     "not_composition_photos": 99,
     "unreadable_photos": 0
   },
   "places": [
+    {
+      "fsq_id": "4e3e04b5483b04e17a9ef103",
+      "name": "真田温泉 ふれあいさなだ館",
+      "address": "真田町長7369-1, 上田市, 長野県, 386-2201",
+      "checkin_date": "2026-08-27",
+      "confidence": "high",
+      "spring_name": "真田温泉",
+      "spring_quality": "アルカリ性単純温泉",
+      "spring_quality_class": "低張性アルカリ性温泉",
+      "source_temp_c": 37.5,
+      "ph": 8.8,
+      "ph_lab": 8.86,
+      "evaporation_residue_mg_kg": 780.0,
+      "dissolved_solids_mg_kg": 804.7,
+      "total_ingredients_mg_kg": 804.7,
+      "cations": [
+        {
+          "name": "リチウムイオン",
+          "symbol": "Li+",
+          "mg_kg": 0.4
+        },
+        {
+          "name": "ナトリウムイオン",
+          "symbol": "Na+",
+          "mg_kg": 237.4
+        },
+        {
+          "name": "カリウムイオン",
+          "symbol": "K+",
+          "mg_kg": 1.0
+        },
+        {
+          "name": "マグネシウムイオン",
+          "symbol": "Mg2+",
+          "mg_kg": 0.09
+        },
+        {
+          "name": "カルシウムイオン",
+          "symbol": "Ca2+",
+          "mg_kg": 32.5
+        },
+        {
+          "name": "ストロンチウムイオン",
+          "symbol": "Sr2+",
+          "mg_kg": 0.9
+        },
+        {
+          "name": "アルミニウムイオン",
+          "symbol": "Al3+",
+          "mg_kg": 0.01
+        }
+      ],
+      "cations_total_mg_kg": 272.3,
+      "anions": [
+        {
+          "name": "ふっ化物イオン",
+          "symbol": "F-",
+          "mg_kg": 2.9
+        },
+        {
+          "name": "塩化物イオン",
+          "symbol": "Cl-",
+          "mg_kg": 295.8
+        },
+        {
+          "name": "臭化物イオン",
+          "symbol": "Br-",
+          "mg_kg": 1.2
+        },
+        {
+          "name": "よう化物イオン",
+          "symbol": "I-",
+          "mg_kg": 0.5
+        },
+        {
+          "name": "硫化水素イオン",
+          "symbol": "HS-",
+          "mg_kg": 0.4
+        },
+        {
+          "name": "硫酸イオン",
+          "symbol": "SO42-",
+          "mg_kg": 130.4
+        },
+        {
+          "name": "炭酸水素イオン",
+          "symbol": "HCO3-",
+          "mg_kg": 14.8
+        },
+        {
+          "name": "炭酸イオン",
+          "symbol": "CO32-",
+          "mg_kg": 16.8
+        }
+      ],
+      "anions_total_mg_kg": 462.8,
+      "undissociated": [
+        {
+          "name": "メタけい酸",
+          "symbol": "H2SiO3",
+          "mg_kg": 28.1
+        },
+        {
+          "name": "メタほう酸",
+          "symbol": "HBO2",
+          "mg_kg": 41.5
+        }
+      ],
+      "undissociated_total_mg_kg": 69.6,
+      "analyzed_on": "2019-08-08",
+      "analyzer": "一般社団法人 上田薬剤師会",
+      "analyzer_registration": "長野県第7号",
+      "notes": "ネット公開情報から作成（現地掲示は未確認）。出典: 一般財団法人上田市地域振興事業団 https://www.ueda-rpc.or.jp/facility/fureaisanadakan.html",
+      "source_photos": [
+        "https://fastly.4sqi.net/img/general/500x300/41463109_FyuRufsKuiKrpKC6C37VsqJzV_PI5PfHHQztak8kQaE.jpg"
+      ]
+    },
     {
       "fsq_id": "6a5201f2ab33386ede670728",
       "name": "灯湯すずらん",
@@ -2771,18 +2888,6 @@
       "ph": 8.6,
       "evaporation_residue_mg_kg": 245,
       "notes": "ネット公開情報から作成（現地掲示は未確認）。出典: Wikipedia・ニフティ温泉などの温泉紹介サイト"
-    },
-    {
-      "fsq_id": "4e3e04b5483b04e17a9ef103",
-      "name": "真田温泉 ふれあいさなだ館",
-      "address": "真田町長7369-1, 上田市, 長野県, 386-2201",
-      "checkin_date": "2025-07-27",
-      "confidence": "medium",
-      "spring_name": "真田温泉",
-      "spring_quality": "アルカリ性単純温泉",
-      "spring_quality_class": "アルカリ性低張性温泉",
-      "source_temp_c": 38.0,
-      "notes": "ネット公開情報から作成（現地掲示は未確認）。出典: 一般財団法人上田市地域振興事業団 https://www.ueda-rpc.or.jp/facility/fureaisanadakan.html"
     },
     {
       "fsq_id": "4e5def8ca809fd79d2916f94",
