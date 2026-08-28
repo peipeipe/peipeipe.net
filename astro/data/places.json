@@ -1,5 +1,30 @@
 [
   {
+    "name": "真田温泉 ふれあいさなだ館",
+    "user_comment": "プールも利用",
+    "date": "2026-08-27",
+    "lat": 36.44294471932977,
+    "lng": 138.30737163392524,
+    "address": "真田町長7369-1, 上田市, 長野県, 386-2201",
+    "foursquare_url": "https://foursquare.com/v/4e3e04b5483b04e17a9ef103",
+    "photos": [
+      "https://fastly.4sqi.net/img/general/500x300/41463109_FyuRufsKuiKrpKC6C37VsqJzV_PI5PfHHQztak8kQaE.jpg",
+      "https://fastly.4sqi.net/img/general/500x300/41463109_a_xR3WFEz-xwtyZiZZu8i7tMXmC_5OqLk-uEeJ5ozDg.jpg"
+    ],
+    "categories": [
+      "温泉"
+    ],
+    "category_group": "onsen",
+    "category_label": "温泉・サウナ",
+    "category_emoji": "♨️",
+    "category_color": "#ff7a59",
+    "data_source": "foursquare_checkin",
+    "fsq_id": "4e3e04b5483b04e17a9ef103",
+    "checkin_count": 4,
+    "first_checkin_at": "2024-09-15T03:35:44+00:00",
+    "last_checkin_at": "2026-08-27T02:45:39+00:00"
+  },
+  {
     "name": "玉喜亭",
     "user_comment": "",
     "date": "2026-08-26",
@@ -4684,12 +4709,12 @@
       "https://fastly.4sqi.net/img/general/500x300/41463109_PFhd2Do3_n4MKdDGO6Ic61nGbiixrgcQI8qwD4_K70A.jpg"
     ],
     "categories": [
-      "居酒屋"
+      "Sake Bar"
     ],
-    "category_group": "food",
-    "category_label": "食事",
-    "category_emoji": "🍜",
-    "category_color": "#e67e22",
+    "category_group": "bar",
+    "category_label": "酒場",
+    "category_emoji": "🍺",
+    "category_color": "#7e57c2",
     "data_source": "foursquare_checkin",
     "fsq_id": "58c3caf1409f5601c6071979",
     "checkin_count": 1,
@@ -6305,30 +6330,6 @@
     "checkin_count": 1,
     "first_checkin_at": "2025-07-27T05:50:34+00:00",
     "last_checkin_at": "2025-07-27T05:50:34+00:00"
-  },
-  {
-    "name": "真田温泉 ふれあいさなだ館",
-    "user_comment": "",
-    "date": "2025-07-27",
-    "lat": 36.44294471932977,
-    "lng": 138.30737163392524,
-    "address": "真田町長7369-1, 上田市, 長野県, 386-2201",
-    "foursquare_url": "https://foursquare.com/v/4e3e04b5483b04e17a9ef103",
-    "photos": [
-      "https://fastly.4sqi.net/img/general/500x300/41463109_a_xR3WFEz-xwtyZiZZu8i7tMXmC_5OqLk-uEeJ5ozDg.jpg"
-    ],
-    "categories": [
-      "Hot Spring"
-    ],
-    "category_group": "onsen",
-    "category_label": "温泉・サウナ",
-    "category_emoji": "♨️",
-    "category_color": "#ff7a59",
-    "data_source": "foursquare_checkin",
-    "fsq_id": "4e3e04b5483b04e17a9ef103",
-    "checkin_count": 3,
-    "first_checkin_at": "2024-09-15T03:35:44+00:00",
-    "last_checkin_at": "2025-07-27T04:52:20+00:00"
   },
   {
     "name": "Duck Sugaike (菅平レジャーセンター ダック菅池)",
@@ -37148,8 +37149,8 @@
     "name": "Ōsaka Station (大阪駅)",
     "user_comment": "",
     "date": "2017-10-15",
-    "lat": 34.702424001629595,
-    "lng": 135.4957224423005,
+    "lat": 34.70223722899334,
+    "lng": 135.49578687525118,
     "address": "北区梅田3-1-1, 大阪市, 大阪府, 530-0001",
     "foursquare_url": "https://foursquare.com/v/4b3ae51bf964a520956f25e3",
     "photos": [
@@ -41359,8 +41360,8 @@
     "name": "Kita-Senju Station (北千住駅)",
     "user_comment": "常磐線ホームの懐かしさ。今でもたまに間違えて行く。",
     "date": "2016-03-14",
-    "lat": 35.749332203270605,
-    "lng": 139.80521747610368,
+    "lat": 35.74963305167833,
+    "lng": 139.80515753535727,
     "address": "千住旭町/千住2, 足立区, 東京都",
     "foursquare_url": "https://foursquare.com/v/4b396b34f964a5204f5c25e3",
     "photos": [],
@@ -49155,8 +49156,8 @@
     "name": "Oji Station (王子駅)",
     "user_comment": "",
     "date": "2013-03-18",
-    "lat": 35.75306886724501,
-    "lng": 139.73774747827096,
+    "lat": 35.75324154057848,
+    "lng": 139.7374630834346,
     "address": "王子1-3-23, 北区, 東京都, 114-0002",
     "foursquare_url": "https://foursquare.com/v/4b5648e6f964a520400928e3",
     "photos": [],

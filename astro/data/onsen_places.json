@@ -1,5 +1,30 @@
 [
   {
+    "name": "真田温泉 ふれあいさなだ館",
+    "user_comment": "プールも利用",
+    "date": "2026-08-27",
+    "lat": 36.44294471932977,
+    "lng": 138.30737163392524,
+    "address": "真田町長7369-1, 上田市, 長野県, 386-2201",
+    "foursquare_url": "https://foursquare.com/v/4e3e04b5483b04e17a9ef103",
+    "photos": [
+      "https://fastly.4sqi.net/img/general/500x300/41463109_FyuRufsKuiKrpKC6C37VsqJzV_PI5PfHHQztak8kQaE.jpg",
+      "https://fastly.4sqi.net/img/general/500x300/41463109_a_xR3WFEz-xwtyZiZZu8i7tMXmC_5OqLk-uEeJ5ozDg.jpg"
+    ],
+    "categories": [
+      "温泉"
+    ],
+    "category_group": "onsen",
+    "category_label": "温泉・サウナ",
+    "category_emoji": "♨️",
+    "category_color": "#ff7a59",
+    "data_source": "foursquare_checkin",
+    "fsq_id": "4e3e04b5483b04e17a9ef103",
+    "checkin_count": 4,
+    "first_checkin_at": "2024-09-15T03:35:44+00:00",
+    "last_checkin_at": "2026-08-27T02:45:39+00:00"
+  },
+  {
     "name": "灯湯すずらん",
     "user_comment": "良い！繁忙期1100円",
     "date": "2026-08-23",
@@ -1123,30 +1148,6 @@
     "checkin_count": 1,
     "first_checkin_at": "2025-08-02T07:37:52+00:00",
     "last_checkin_at": "2025-08-02T07:37:52+00:00"
-  },
-  {
-    "name": "真田温泉 ふれあいさなだ館",
-    "user_comment": "",
-    "date": "2025-07-27",
-    "lat": 36.44294471932977,
-    "lng": 138.30737163392524,
-    "address": "真田町長7369-1, 上田市, 長野県, 386-2201",
-    "foursquare_url": "https://foursquare.com/v/4e3e04b5483b04e17a9ef103",
-    "photos": [
-      "https://fastly.4sqi.net/img/general/500x300/41463109_a_xR3WFEz-xwtyZiZZu8i7tMXmC_5OqLk-uEeJ5ozDg.jpg"
-    ],
-    "categories": [
-      "Hot Spring"
-    ],
-    "category_group": "onsen",
-    "category_label": "温泉・サウナ",
-    "category_emoji": "♨️",
-    "category_color": "#ff7a59",
-    "data_source": "foursquare_checkin",
-    "fsq_id": "4e3e04b5483b04e17a9ef103",
-    "checkin_count": 3,
-    "first_checkin_at": "2024-09-15T03:35:44+00:00",
-    "last_checkin_at": "2025-07-27T04:52:20+00:00"
   },
   {
     "name": "和田宿温泉 ふれあいの湯",
