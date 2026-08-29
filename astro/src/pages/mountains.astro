@@ -13,6 +13,7 @@ const cartoBasemapsApiKey = import.meta.env.PUBLIC_CARTO_BASEMAPS_API_KEY?.trim(
   title="訪問済み山リスト"
   description="Strava の軌跡から山頂付近を通過したアクティビティを自動判定して集計した山リストです。"
   canonicalPath="/mountains/"
+  leaflet={false}
 >
   <section class="map-app mountains-map-app">
     <header class="map-app-header">
@@ -92,13 +93,16 @@ const cartoBasemapsApiKey = import.meta.env.PUBLIC_CARTO_BASEMAPS_API_KEY?.trim(
     </div>
   </section>
 
-  <script is:inline>
+  <script>
+    import * as maplibregl from "maplibre-gl";
+    import "maplibre-gl/dist/maplibre-gl.css";
+
     const DATA_URL = "/mountains-data.json";
+    const MARKER_SOURCE_ID = "visited-mountains";
+    const MARKER_LAYER_ID = "visited-mountain-markers";
     let mountainData = [];
     let currentElevationTier = "all";
     let map;
-    let markerLayer;
-    let latestBounds = null;
 
     function colorForElevation(elevation) {
       if (elevation >= 2500) return "#dc2626";
@@ -115,39 +119,39 @@ const cartoBasemapsApiKey = import.meta.env.PUBLIC_CARTO_BASEMAPS_API_KEY?.trim(
 
     function fitMountains(data) {
       if (!data.length || !map) return;
-      const bounds = L.latLngBounds(data.map((mountain) => [mountain.lat, mountain.lng]));
-      if (!bounds.isValid()) return;
-      latestBounds = bounds;
-      map.fitBounds(bounds, { padding: [42, 42], maxZoom: 12 });
+      const bounds = data.reduce(
+        (result, mountain) => result.extend([mountain.lng, mountain.lat]),
+        new maplibregl.LngLatBounds(),
+      );
+      map.fitBounds(bounds, { padding: 42, maxZoom: 12 });
+    }
+
+    function mountainFeatureCollection(data) {
+      return {
+        type: "FeatureCollection",
+        features: data.map((mountain) => ({
+          type: "Feature",
+          geometry: {
+            type: "Point",
+            coordinates: [mountain.lng, mountain.lat],
+          },
+          properties: {
+            name: mountain.name,
+            elevation: mountain.elevation,
+            visitCount: mountain.visit_count,
+            firstVisit: mountain.first_visit,
+            lastVisit: mountain.last_visit,
+            tags: (mountain.tags || []).join("・"),
+          },
+        })),
+      };
     }
 
     function renderMarkers(data) {
       if (!map) return;
-      if (markerLayer) markerLayer.clearLayers();
-      markerLayer = L.layerGroup().addTo(map);
-
-      data.forEach((mountain) => {
-        const marker = L.circleMarker([mountain.lat, mountain.lng], {
-          radius: 9,
-          fillColor: colorForElevation(mountain.elevation),
-          color: "#fff",
-          weight: 2,
-          opacity: 1,
-          fillOpacity: 0.9,
-        }).addTo(markerLayer);
-
-        const popupTags = (mountain.tags || []).length
-          ? `${(mountain.tags || []).map((tag) => escapeHtml(tag)).join("・")}<br>`
-          : "";
-        marker.bindPopup(`
-          <strong style="font-size:15px">${escapeHtml(mountain.name)}</strong><br>
-          ${popupTags}
-          ${mountain.elevation.toLocaleString()}m / ${mountain.visit_count}回訪問<br>
-          初回: ${escapeHtml(mountain.first_visit)}<br>
-          最新: ${escapeHtml(mountain.last_visit)}
-        `);
-      });
-
+      const source = map.getSource(MARKER_SOURCE_ID);
+      if (!source) return;
+      source.setData(mountainFeatureCollection(data));
       fitMountains(data);
     }
 
@@ -204,7 +208,6 @@ const cartoBasemapsApiKey = import.meta.env.PUBLIC_CARTO_BASEMAPS_API_KEY?.trim(
           button.classList.add("active");
           currentElevationTier = button.dataset.elevationTier || "all";
           render();
-          if (latestBounds) map.fitBounds(latestBounds, { padding: [42, 42], maxZoom: 12 });
         });
       });
     }
@@ -228,39 +231,105 @@ const cartoBasemapsApiKey = import.meta.env.PUBLIC_CARTO_BASEMAPS_API_KEY?.trim(
       render();
     }
 
+    function setupMountainLayer() {
+      map.addSource(MARKER_SOURCE_ID, {
+        type: "geojson",
+        data: mountainFeatureCollection([]),
+      });
+      map.addLayer({
+        id: MARKER_LAYER_ID,
+        type: "circle",
+        source: MARKER_SOURCE_ID,
+        paint: {
+          "circle-radius": 9,
+          "circle-color": [
+            "step",
+            ["get", "elevation"],
+            colorForElevation(0),
+            1500,
+            colorForElevation(1500),
+            2000,
+            colorForElevation(2000),
+            2500,
+            colorForElevation(2500),
+          ],
+          "circle-stroke-color": "#fff",
+          "circle-stroke-width": 2,
+          "circle-opacity": 0.9,
+        },
+      });
+
+      map.on("click", MARKER_LAYER_ID, (event) => {
+        const feature = event.features?.[0];
+        if (!feature) return;
+        const properties = feature.properties || {};
+        const popupTags = properties.tags ? `${escapeHtml(properties.tags)}<br>` : "";
+        new maplibregl.Popup({ maxWidth: "270px" })
+          .setLngLat(feature.geometry.coordinates)
+          .setHTML(`
+            <strong style="font-size:15px">${escapeHtml(properties.name)}</strong><br>
+            ${popupTags}
+            ${Number(properties.elevation).toLocaleString()}m / ${Number(properties.visitCount).toLocaleString()}回訪問<br>
+            初回: ${escapeHtml(properties.firstVisit)}<br>
+            最新: ${escapeHtml(properties.lastVisit)}
+          `)
+          .addTo(map);
+      });
+      map.on("mouseenter", MARKER_LAYER_ID, () => {
+        map.getCanvas().style.cursor = "pointer";
+      });
+      map.on("mouseleave", MARKER_LAYER_ID, () => {
+        map.getCanvas().style.cursor = "";
+      });
+    }
+
     document.addEventListener("DOMContentLoaded", () => {
       setupControls();
       const mapElement = document.getElementById("mountains-map");
       const cartoApiKey = mapElement?.dataset.cartoBasemapsApiKey || "";
-      map = L.map(mapElement, {
-        scrollWheelZoom: false,
-        zoomControl: true,
-        preferCanvas: true,
-      }).setView([36.2, 138.0], 7);
-
-      map.on("focus", () => map.scrollWheelZoom.enable());
-      map.on("blur", () => map.scrollWheelZoom.disable());
-
-      const basemap = cartoApiKey
-        ? L.tileLayer(
-            `https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png?key=${encodeURIComponent(cartoApiKey)}`,
-            {
-              attribution:
-                '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> &copy; <a href="https://carto.com/attributions">CARTO</a>',
-              subdomains: "abcd",
-              maxZoom: 19,
+      const style = cartoApiKey
+        ? `https://basemaps.cartocdn.com/gl/voyager-gl-style/style.json?key=${encodeURIComponent(cartoApiKey)}`
+        : {
+            version: 8,
+            sources: {
+              "openstreetmap-raster": {
+                type: "raster",
+                tiles: ["https://tile.openstreetmap.org/{z}/{x}/{y}.png"],
+                tileSize: 256,
+                attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
+              },
             },
-          )
-        : L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
-            attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
-            maxZoom: 19,
-          });
-      basemap.addTo(map);
+            layers: [{ id: "openstreetmap", type: "raster", source: "openstreetmap-raster" }],
+          };
 
-      requestAnimationFrame(() => map.invalidateSize());
-      loadData().catch((error) => {
-        console.error(error);
-        document.getElementById("mountains-map-loading").textContent = "データの読み込みに失敗しました";
+      map = new maplibregl.Map({
+        container: mapElement,
+        style,
+        center: [138.0, 36.2],
+        zoom: 7,
+        scrollZoom: false,
+        attributionControl: false,
+      });
+      map.addControl(new maplibregl.NavigationControl(), "top-left");
+      map.addControl(
+        new maplibregl.AttributionControl({
+          compact: false,
+          customAttribution: cartoApiKey
+            ? '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>, &copy; <a href="https://carto.com/attributions">CARTO</a>'
+            : undefined,
+        }),
+      );
+
+      const canvas = map.getCanvas();
+      canvas.addEventListener("focus", () => map.scrollZoom.enable());
+      canvas.addEventListener("blur", () => map.scrollZoom.disable());
+
+      map.on("load", () => {
+        setupMountainLayer();
+        loadData().catch((error) => {
+          console.error(error);
+          document.getElementById("mountains-map-loading").textContent = "データの読み込みに失敗しました";
+        });
       });
     });
   </script>
