@@ -5,6 +5,7 @@ import { formatDate, formatDistance, formatDuration, getActivities, summarizeAct
 const activities = getActivities();
 const stats = summarizeActivities(activities);
 const recentActivities = activities.slice(0, 30);
+const cartoBasemapsApiKey = import.meta.env.PUBLIC_CARTO_BASEMAPS_API_KEY?.trim() ?? "";
 ---
 
 <MapLayout title="アクティビティマップ" canonicalPath="/activity/" heat>
@@ -51,7 +52,7 @@ const recentActivities = activities.slice(0, 30);
           <button class="map-expand-button" type="button" data-map-expand aria-pressed="false">拡大</button>
         </div>
         <div class="map-canvas-wrap">
-          <div id="activity-map" class="map-canvas"></div>
+          <div id="activity-map" class="map-canvas" data-carto-basemaps-api-key={cartoBasemapsApiKey}></div>
           <div class="map-loading" id="activity-map-loading">読み込み中...</div>
         </div>
       </section>
@@ -319,7 +320,9 @@ const recentActivities = activities.slice(0, 30);
 
     document.addEventListener("DOMContentLoaded", () => {
       setupControls();
-      map = L.map("activity-map", {
+      const mapElement = document.getElementById("activity-map");
+      const cartoApiKey = mapElement?.dataset.cartoBasemapsApiKey || "";
+      map = L.map(mapElement, {
         scrollWheelZoom: false,
         zoomControl: true,
         preferCanvas: true,
@@ -328,10 +331,20 @@ const recentActivities = activities.slice(0, 30);
       map.on("focus", () => map.scrollWheelZoom.enable());
       map.on("blur", () => map.scrollWheelZoom.disable());
 
-      const cartoLayer = L.tileLayer("https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png", {
-        attribution:
-          '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> &copy; <a href="https://carto.com/attributions">CARTO</a>',
-        subdomains: "abcd",
+      const cartoLayer = cartoApiKey
+        ? L.tileLayer(
+            `https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png?key=${encodeURIComponent(cartoApiKey)}`,
+            {
+              attribution:
+                '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> &copy; <a href="https://carto.com/attributions">CARTO</a>',
+              subdomains: "abcd",
+              maxZoom: 19,
+            },
+          )
+        : null;
+
+      const openStreetMapLayer = L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
+        attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
         maxZoom: 19,
       });
 
@@ -350,16 +363,15 @@ const recentActivities = activities.slice(0, 30);
         }),
       ]);
 
-      cartoLayer.addTo(map);
+      const baseLayers = {
+        "OpenStreetMap": openStreetMapLayer,
+        "地理院地図（陰影）": gsiShadedLayer,
+      };
+      if (cartoLayer) baseLayers["CARTO Voyager"] = cartoLayer;
+
+      (cartoLayer || openStreetMapLayer).addTo(map);
       L.control
-        .layers(
-          {
-            "CARTO Voyager": cartoLayer,
-            "地理院地図（陰影）": gsiShadedLayer,
-          },
-          null,
-          { collapsed: false },
-        )
+        .layers(baseLayers, null, { collapsed: false })
         .addTo(map);
 
       requestAnimationFrame(() => map.invalidateSize());

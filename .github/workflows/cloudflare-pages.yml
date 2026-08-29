@@ -49,6 +49,8 @@ jobs:
         run: npm ci
 
       - name: Build Astro
+        env:
+          PUBLIC_CARTO_BASEMAPS_API_KEY: ${{ secrets.CARTO_BASEMAPS_API_KEY }}
         run: npm run build
 
       - name: Verify generated output

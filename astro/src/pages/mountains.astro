@@ -6,6 +6,7 @@ const mountains = getMountainsByLatestVisit();
 const stats = summarizeMountains(mountains);
 const highestElevation = stats.highest ? stats.highest.elevation.toLocaleString() : "0";
 const latestVisit = stats.latest?.last_visit || "";
+const cartoBasemapsApiKey = import.meta.env.PUBLIC_CARTO_BASEMAPS_API_KEY?.trim() ?? "";
 ---
 
 <MapLayout
@@ -54,7 +55,7 @@ const latestVisit = stats.latest?.last_visit || "";
           </div>
         </div>
         <div class="map-canvas-wrap">
-          <div id="mountains-map" class="map-canvas"></div>
+          <div id="mountains-map" class="map-canvas" data-carto-basemaps-api-key={cartoBasemapsApiKey}></div>
           <div class="map-loading" id="mountains-map-loading">読み込み中...</div>
         </div>
       </section>
@@ -229,7 +230,9 @@ const latestVisit = stats.latest?.last_visit || "";
 
     document.addEventListener("DOMContentLoaded", () => {
       setupControls();
-      map = L.map("mountains-map", {
+      const mapElement = document.getElementById("mountains-map");
+      const cartoApiKey = mapElement?.dataset.cartoBasemapsApiKey || "";
+      map = L.map(mapElement, {
         scrollWheelZoom: false,
         zoomControl: true,
         preferCanvas: true,
@@ -238,12 +241,21 @@ const latestVisit = stats.latest?.last_visit || "";
       map.on("focus", () => map.scrollWheelZoom.enable());
       map.on("blur", () => map.scrollWheelZoom.disable());
 
-      L.tileLayer("https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png", {
-        attribution:
-          '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> &copy; <a href="https://carto.com/attributions">CARTO</a>',
-        subdomains: "abcd",
-        maxZoom: 19,
-      }).addTo(map);
+      const basemap = cartoApiKey
+        ? L.tileLayer(
+            `https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png?key=${encodeURIComponent(cartoApiKey)}`,
+            {
+              attribution:
+                '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> &copy; <a href="https://carto.com/attributions">CARTO</a>',
+              subdomains: "abcd",
+              maxZoom: 19,
+            },
+          )
+        : L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
+            attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
+            maxZoom: 19,
+          });
+      basemap.addTo(map);
 
       requestAnimationFrame(() => map.invalidateSize());
       loadData().catch((error) => {
