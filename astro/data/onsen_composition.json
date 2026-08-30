@@ -1,12 +1,145 @@
 {
-  "generated_on": "2026-08-28",
+  "generated_on": "2026-08-30",
   "stats": {
-    "places": 67,
-    "composition_photos": 21,
-    "not_composition_photos": 99,
+    "places": 68,
+    "composition_photos": 22,
+    "not_composition_photos": 100,
     "unreadable_photos": 0
   },
   "places": [
+    {
+      "fsq_id": "4bca97e30687ef3bb274dccc",
+      "name": "八峰の湯",
+      "address": "豊里5918-2, 小海町, 長野県, 384-1103",
+      "checkin_date": "2026-08-30",
+      "confidence": "high",
+      "spring_name": "松原湖高原カラマツの湯",
+      "spring_quality": "ナトリウム・マグネシウム・カルシウムー炭酸水素塩温泉",
+      "spring_quality_class": "低張性中性高温泉",
+      "source_temp_c": 47.5,
+      "ph": 6.9,
+      "ph_lab": 7.31,
+      "evaporation_residue_mg_kg": 1151.0,
+      "dissolved_solids_mg_kg": 1781.0,
+      "total_ingredients_mg_kg": 2062.0,
+      "cations": [
+        {
+          "name": "リチウムイオン",
+          "symbol": "Li+",
+          "mg_kg": 0.1
+        },
+        {
+          "name": "ナトリウムイオン",
+          "symbol": "Na+",
+          "mg_kg": 175.1
+        },
+        {
+          "name": "カリウムイオン",
+          "symbol": "K+",
+          "mg_kg": 49.5
+        },
+        {
+          "name": "マグネシウムイオン",
+          "symbol": "Mg2+",
+          "mg_kg": 73.2
+        },
+        {
+          "name": "カルシウムイオン",
+          "symbol": "Ca2+",
+          "mg_kg": 99.7
+        },
+        {
+          "name": "ストロンチウムイオン",
+          "symbol": "Sr2+",
+          "mg_kg": 0.8
+        },
+        {
+          "name": "バリウムイオン",
+          "symbol": "Ba2+",
+          "mg_kg": 0.4
+        },
+        {
+          "name": "マンガンイオン",
+          "symbol": "Mn2+",
+          "mg_kg": 0.2
+        },
+        {
+          "name": "鉄(II)イオン",
+          "symbol": "Fe2+",
+          "mg_kg": 1.7
+        }
+      ],
+      "cations_total_mg_kg": 400.7,
+      "anions": [
+        {
+          "name": "ふっ化物イオン",
+          "symbol": "F-",
+          "mg_kg": 0.07
+        },
+        {
+          "name": "塩化物イオン",
+          "symbol": "Cl-",
+          "mg_kg": 125.0
+        },
+        {
+          "name": "臭化物イオン",
+          "symbol": "Br-",
+          "mg_kg": 0.5
+        },
+        {
+          "name": "よう化物イオン",
+          "symbol": "I-",
+          "mg_kg": 0.1
+        },
+        {
+          "name": "硫化水素イオン",
+          "symbol": "HS-",
+          "mg_kg": 0.07
+        },
+        {
+          "name": "硫酸イオン",
+          "symbol": "SO42-",
+          "mg_kg": 1.97
+        },
+        {
+          "name": "炭酸水素イオン",
+          "symbol": "HCO3-",
+          "mg_kg": 1001.0
+        }
+      ],
+      "anions_total_mg_kg": 1128.0,
+      "undissociated": [
+        {
+          "name": "メタけい酸",
+          "symbol": "H2SiO3",
+          "mg_kg": 228.4
+        },
+        {
+          "name": "メタほう酸",
+          "symbol": "HBO2",
+          "mg_kg": 23.7
+        }
+      ],
+      "undissociated_total_mg_kg": 252.1,
+      "dissolved_gas": [
+        {
+          "name": "遊離二酸化炭素",
+          "symbol": "CO2",
+          "mg_kg": 280.5
+        },
+        {
+          "name": "遊離硫化水素",
+          "symbol": "H2S",
+          "mg_kg": 0.1
+        }
+      ],
+      "dissolved_gas_total_mg_kg": 280.6,
+      "analyzed_on": "2021-11-26",
+      "analyzer": "一般社団法人 上田薬剤師会",
+      "source_photos": [
+        "https://fastly.4sqi.net/img/general/500x300/41463109_uzjFe2DiGxqEmZa9yC_bb9pxlXX66fGZdP9NwyXt_FY.jpg"
+      ]
+    },
     {
       "fsq_id": "4e3e04b5483b04e17a9ef103",
       "name": "真田温泉 ふれあいさなだ館",
@@ -3648,6 +3781,7 @@
     "https://fastly.4sqi.net/img/general/500x300/41463109_4GT1uPwlyGSCo_jkEicv7rMCXAz6-1ofMEzWh2aJ5aY.jpg",
     "https://fastly.4sqi.net/img/general/500x300/41463109_7lqM2fOXDB8zpjsHzAFz6bQQVwKmrJBAdLAJIdrhQ6o.jpg",
     "https://fastly.4sqi.net/img/general/500x300/41463109_nClbEfjF2Oyg96DEAFD45pwBmtITiBJWvGih5B0qYZw.jpg",
-    "https://fastly.4sqi.net/img/general/500x300/41463109_uO26q6Rhs82XBaXRp1z_wCs925oNM_AP3IZXUdQSGa8.jpg"
+    "https://fastly.4sqi.net/img/general/500x300/41463109_uO26q6Rhs82XBaXRp1z_wCs925oNM_AP3IZXUdQSGa8.jpg",
+    "https://fastly.4sqi.net/img/general/500x300/41463109_5QLShyA-MM5neI9v7V7XIOP88k2mFUHjakD0k_Efnc4.jpg"
   ]
 }
