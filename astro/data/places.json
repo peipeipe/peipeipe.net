@@ -1,5 +1,54 @@
 [
   {
+    "name": "八峰の湯",
+    "user_comment": "綺麗で良い。サウナ暑め。",
+    "date": "2026-08-30",
+    "lat": 36.05897041322469,
+    "lng": 138.44028587701632,
+    "address": "豊里5918-2, 小海町, 長野県, 384-1103",
+    "foursquare_url": "https://foursquare.com/v/4bca97e30687ef3bb274dccc",
+    "photos": [
+      "https://fastly.4sqi.net/img/general/500x300/41463109_uzjFe2DiGxqEmZa9yC_bb9pxlXX66fGZdP9NwyXt_FY.jpg",
+      "https://fastly.4sqi.net/img/general/500x300/41463109_5QLShyA-MM5neI9v7V7XIOP88k2mFUHjakD0k_Efnc4.jpg"
+    ],
+    "categories": [
+      "温泉"
+    ],
+    "category_group": "onsen",
+    "category_label": "温泉・サウナ",
+    "category_emoji": "♨️",
+    "category_color": "#ff7a59",
+    "data_source": "foursquare_checkin",
+    "fsq_id": "4bca97e30687ef3bb274dccc",
+    "checkin_count": 1,
+    "first_checkin_at": "2026-08-30T06:25:43+00:00",
+    "last_checkin_at": "2026-08-30T06:25:43+00:00"
+  },
+  {
+    "name": "シャトレーゼ YATSUDOKI TERRACE 小海",
+    "user_comment": "",
+    "date": "2026-08-30",
+    "lat": 36.054748,
+    "lng": 138.450605,
+    "address": "豊里5009-1, 小海町, 長野県, 384-1103",
+    "foursquare_url": "https://foursquare.com/v/61172f3446bf3914915a84d5",
+    "photos": [
+      "https://fastly.4sqi.net/img/general/500x300/41463109_UToayBqjEgfVv3NV8se17gkKutPmTr62R1KRp5nteao.jpg"
+    ],
+    "categories": [
+      "洋菓子店"
+    ],
+    "category_group": "other",
+    "category_label": "その他",
+    "category_emoji": "📍",
+    "category_color": "#607d8b",
+    "data_source": "foursquare_checkin",
+    "fsq_id": "61172f3446bf3914915a84d5",
+    "checkin_count": 1,
+    "first_checkin_at": "2026-08-30T03:50:05+00:00",
+    "last_checkin_at": "2026-08-30T03:50:05+00:00"
+  },
+  {
     "name": "真田温泉 ふれあいさなだ館",
     "user_comment": "プールも利用",
     "date": "2026-08-27",
@@ -4650,7 +4699,7 @@
     "last_checkin_at": "2025-12-01T08:19:12+00:00"
   },
   {
-    "name": "ルヴァン 信州上田店",
+    "name": "Levain (ルヴァン 信州上田店)",
     "user_comment": "",
     "date": "2025-11-30",
     "lat": 36.40557601183078,
@@ -4661,7 +4710,7 @@
       "https://fastly.4sqi.net/img/general/500x300/41463109_UP6NPWe_uHWfsXme6l3y5jU-zbgF1RiRpITZ7QAuY6E.jpg"
     ],
     "categories": [
-      "パン屋"
+      "Bakery"
     ],
     "category_group": "cafe",
     "category_label": "カフェ",
@@ -4674,7 +4723,7 @@
     "last_checkin_at": "2025-11-30T01:03:45+00:00"
   },
   {
-    "name": "岡崎酒造",
+    "name": "Okazaki Sake Brewery (岡崎酒造)",
     "user_comment": "",
     "date": "2025-11-30",
     "lat": 36.40544433424739,
@@ -4685,12 +4734,12 @@
       "https://fastly.4sqi.net/img/general/500x300/41463109_8q3BNN3qaYAcd6F4fuvnthHa6NeEVJ6CSotXAB9t2Wc.jpg"
     ],
     "categories": [
-      "醸造所"
+      "Brewery"
     ],
-    "category_group": "other",
-    "category_label": "その他",
-    "category_emoji": "📍",
-    "category_color": "#607d8b",
+    "category_group": "bar",
+    "category_label": "酒場",
+    "category_emoji": "🍺",
+    "category_color": "#7e57c2",
     "data_source": "foursquare_checkin",
     "fsq_id": "4dba35e55da389d2c2371e7a",
     "checkin_count": 1,
@@ -5929,8 +5978,8 @@
     "name": "JR Tokyo Station (JR 東京駅)",
     "user_comment": "",
     "date": "2025-08-17",
-    "lat": 35.68130839279344,
-    "lng": 139.7668328014357,
+    "lat": 35.68115461254,
+    "lng": 139.76700252427702,
     "address": "丸の内1-9-1, 千代田区, 東京都, 100-6505",
     "foursquare_url": "https://foursquare.com/v/4be4f932d4f7c9b61df92420",
     "photos": [],
@@ -10542,7 +10591,7 @@
     "date": "2024-09-21",
     "lat": 36.64139736964984,
     "lng": 138.1888554497378,
-    "address": "栗田992, 長野市, 長野県, 380-0921",
+    "address": "栗田992 (長野駅), 長野市, 長野県, 380-0921",
     "foursquare_url": "https://foursquare.com/v/517cf6aa498e362159e9c0dc",
     "photos": [],
     "categories": [
@@ -37173,8 +37222,8 @@
     "name": "JR Shin-Ōsaka Station (JR 新大阪駅)",
     "user_comment": "",
     "date": "2017-10-15",
-    "lat": 34.73353009864847,
-    "lng": 135.50170587864903,
+    "lat": 34.73369799690267,
+    "lng": 135.50154937907803,
     "address": "淀川区西中島5-16-1, 大阪市, 大阪府, 532-0011",
     "foursquare_url": "https://foursquare.com/v/4b6180a5f964a520e2152ae3",
     "photos": [

@@ -1,5 +1,30 @@
 [
   {
+    "name": "八峰の湯",
+    "user_comment": "綺麗で良い。サウナ暑め。",
+    "date": "2026-08-30",
+    "lat": 36.05897041322469,
+    "lng": 138.44028587701632,
+    "address": "豊里5918-2, 小海町, 長野県, 384-1103",
+    "foursquare_url": "https://foursquare.com/v/4bca97e30687ef3bb274dccc",
+    "photos": [
+      "https://fastly.4sqi.net/img/general/500x300/41463109_uzjFe2DiGxqEmZa9yC_bb9pxlXX66fGZdP9NwyXt_FY.jpg",
+      "https://fastly.4sqi.net/img/general/500x300/41463109_5QLShyA-MM5neI9v7V7XIOP88k2mFUHjakD0k_Efnc4.jpg"
+    ],
+    "categories": [
+      "温泉"
+    ],
+    "category_group": "onsen",
+    "category_label": "温泉・サウナ",
+    "category_emoji": "♨️",
+    "category_color": "#ff7a59",
+    "data_source": "foursquare_checkin",
+    "fsq_id": "4bca97e30687ef3bb274dccc",
+    "checkin_count": 1,
+    "first_checkin_at": "2026-08-30T06:25:43+00:00",
+    "last_checkin_at": "2026-08-30T06:25:43+00:00"
+  },
+  {
     "name": "真田温泉 ふれあいさなだ館",
     "user_comment": "プールも利用",
     "date": "2026-08-27",
