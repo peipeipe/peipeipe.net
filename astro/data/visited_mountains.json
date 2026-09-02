@@ -66,8 +66,15 @@
     "tags": [
       "信州百名山"
     ],
-    "visit_count": 20,
+    "visit_count": 21,
     "activities": [
+      {
+        "id": 20000420653,
+        "name": "ランチタイム トレイルランニング",
+        "date": "2026-09-02",
+        "sport_type": "TrailRun",
+        "distance_km": 10.0
+      },
       {
         "id": 19934879697,
         "name": "Evening Trail Run",
@@ -210,7 +217,7 @@
       }
     ],
     "first_visit": "2024-09-29",
-    "last_visit": "2026-08-28"
+    "last_visit": "2026-09-02"
   },
   {
     "name": "丸山",
@@ -237,8 +244,15 @@
     "lng": 138.221517,
     "elevation": 1077,
     "tags": [],
-    "visit_count": 1,
+    "visit_count": 2,
     "activities": [
+      {
+        "id": 20000420653,
+        "name": "ランチタイム トレイルランニング",
+        "date": "2026-09-02",
+        "sport_type": "TrailRun",
+        "distance_km": 10.0
+      },
       {
         "id": 12697286594,
         "name": "Morning Trail Run",
@@ -248,7 +262,7 @@
       }
     ],
     "first_visit": "2024-10-20",
-    "last_visit": "2024-10-20"
+    "last_visit": "2026-09-02"
   },
   {
     "name": "霧ヶ峰",
