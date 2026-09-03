@@ -73,18 +73,13 @@ jobs:
 
       - name: Merge into composition data
         if: steps.prepare.outputs.found == 'true'
-        run: python scripts/merge_onsen_composition.py
+        run: |
+          cp astro/data/onsen_composition.json .cache/onsen_photos/before-merge.json
+          python scripts/merge_onsen_composition.py
 
       - name: Verify totals add up
         if: steps.prepare.outputs.found == 'true'
-        run: |
-          python scripts/validate_onsen_composition.py | tee validation.txt
-          {
-            echo '## 温泉成分表の検算'
-            echo '```'
-            cat validation.txt
-            echo '```'
-          } >> "$GITHUB_STEP_SUMMARY"
+        run: python scripts/validate_onsen_composition.py | tee validation.txt
 
       - name: Open pull request
         if: steps.prepare.outputs.found == 'true'
@@ -99,30 +94,21 @@ jobs:
           branch="onsen-composition/$(date +%Y%m%d-%H%M%S)"
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
+
+          python scripts/generate_onsen_composition_pr.py \
+            --before .cache/onsen_photos/before-merge.json \
+            --after astro/data/onsen_composition.json \
+            --validation validation.txt
+
+          cat pr-body.md >> "$GITHUB_STEP_SUMMARY"
+
           git checkout -b "$branch"
           git add astro/data/onsen_composition.json
           git commit -m "温泉成分表を自動書き起こしで更新"
           git push origin "$branch"
 
-          {
-            echo '`scripts/extract_onsen_composition.py` が新しいチェックイン写真から'
-            echo '温泉分析書を読み取りました。マージ前に次を確認してください。'
-            echo
-            echo '- `confidence` が `low` / `medium` のエントリ'
-            echo '- 泉質・源泉名・登録分析機関など、検算で守れない文字項目'
-            echo '- 反射や見切れについて `notes` に書かれている断り書き'
-            echo
-            echo '## 検算結果'
-            echo '```'
-            cat validation.txt
-            echo '```'
-            echo
-            echo '読み直しが必要なら、ローカルで `/onsen-composition` を実行して'
-            echo '該当施設だけ人の目で読み替えられます。'
-          } > pr-body.md
-
           gh pr create \
-            --title "温泉成分表の更新" \
+            --title "$(cat pr-title.txt)" \
             --body-file pr-body.md \
             --base "${GITHUB_REF_NAME:-master}" \
             --head "$branch"
