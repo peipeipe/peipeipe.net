@@ -1924,6 +1924,13 @@ html[data-theme="dark"] {
   line-height: 1.35;
 }
 
+.composition-spring-name {
+  margin: 0.2rem 0 0;
+  color: var(--color-subtle);
+  font-size: 0.82rem;
+  font-weight: 700;
+}
+
 .composition-quality {
   margin: 3px 0 0;
   color: var(--map-accent);

@@ -27,6 +27,10 @@ DEFAULT_ONSEN_CATEGORY_IDS = ",".join([
     SAUNA_CATEGORY_ID,
 ])
 
+# チェックインコメントに「成分表: 源泉A / 源泉B」と書くと、写真解析へ補助情報として渡す。
+# 通常コメントと混同しないよう行頭のマーカーだけを認識する。
+COMPOSITION_HINT_PATTERN = re.compile(r"^成分表[：:]\s*(.+)$", re.MULTILINE)
+
 
 # カテゴリ未設定・誤分類の施設向け（チェックイン履歴内のみ）
 ONSEN_VENUE_NAME_PATTERN = re.compile(
@@ -347,12 +351,26 @@ def extract_checkin_shout(checkin):
     return shout.strip()
 
 
+def extract_composition_hint(shout):
+    """「成分表: ...」形式のチェックインコメントから解析ヒントを取り出す。"""
+    if not shout:
+        return ""
+    match = COMPOSITION_HINT_PATTERN.search(shout)
+    return match.group(1).strip() if match else ""
+
+
 def update_user_comment(place, shout, is_latest):
     """最新の shout を優先し、なければ過去チェックインから補完する"""
     if not shout:
         return
     if is_latest or not place.get('user_comment'):
         place['user_comment'] = shout
+
+
+def update_composition_hint(place, shout, is_latest):
+    hint = extract_composition_hint(shout)
+    if hint and (is_latest or not place.get('composition_hint')):
+        place['composition_hint'] = hint
 
 
 def merge_photo_urls(existing, new_urls, limit, prepend=False):
@@ -430,6 +448,8 @@ def merge_place(existing, fresh, photo_limit):
 
     if not merged.get('user_comment'):
         merged['user_comment'] = existing.get('user_comment', '') or fresh.get('user_comment', '')
+    if not merged.get('composition_hint'):
+        merged['composition_hint'] = existing.get('composition_hint', '') or fresh.get('composition_hint', '')
 
     if existing.get('name_override'):
         merged['name_override'] = existing['name_override']
@@ -513,6 +533,7 @@ def build_places_from_checkins(checkins, category_ids, onsen_only=False):
                     prepend=False,
                 )
             update_user_comment(existing, checkin_shout, is_latest)
+            update_composition_hint(existing, checkin_shout, is_latest)
             if visited_iso and visited_iso < existing.get('first_checkin_at', visited_iso):
                 existing['first_checkin_at'] = visited_iso
             continue
@@ -541,6 +562,9 @@ def build_places_from_checkins(checkins, category_ids, onsen_only=False):
             "first_checkin_at": visited_iso,
             "last_checkin_at": visited_iso,
         }
+        composition_hint = extract_composition_hint(checkin_shout)
+        if composition_hint:
+            places[venue_id]['composition_hint'] = composition_hint
 
     return sorted(
         places.values(),

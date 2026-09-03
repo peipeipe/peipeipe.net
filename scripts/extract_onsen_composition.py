@@ -12,7 +12,7 @@ prepare_onsen_composition.py / merge_onsen_composition.py はそのまま使う�
 
 施設（fsq_id）ごとに、その施設の未解析写真をまとめて1リクエストで送る。掲示内容
 決定通知書・温泉分析書・別表が別々の写真に分かれていることがあり、まとめて見せた
-ほうが1施設ぶんのデータとして組み立てられるため。成分表が1枚も写っていなければ
+うえで源泉ごとのデータとして組み立てるため。成分表が1枚も写っていなければ
 その施設は extracted.json に出てこないので、merge 側が「成分表ではなかった写真」
 として記録する。
 
@@ -49,13 +49,18 @@ PROMPT = """あなたは日本の温泉分析書を読み取る担当者です�
 
 同じ温泉施設「{place_name}」で撮影された写真を {count} 枚渡します。各画像の直前に
 「写真 #N」と番号を書いてあります。この番号をそのまま photo_indexes に使ってください。
+チェックイン時に「成分表: …」として指定されたヒントも参考情報として渡します。写真の記載と矛盾する場合は必ず写真を
+優先してください。
+
+チェックインの成分表ヒント: {composition_hint}
 
 まず、温泉分析書・温泉成分等掲示表・温泉の掲示内容決定通知書・温泉分析書別表など、
 分析値や泉質が読み取れる掲示が写っている写真だけを選んでください。施設の外観・料金表・
 のれん・食事・源泉名だけの看板などは対象外です。対象が1枚も無ければ
 {{"is_composition": false}} だけを返してください。
 
-対象がある場合は、その施設1件ぶんのデータとして統合して返してください。守ること:
+対象がある場合は、同じ源泉の分析書・別表だけを1件に統合し、源泉ごとに springs の別要素で
+返してください。異なる源泉名、泉質、分析日、成分値の分析書を混ぜてはいけません。守ること:
 
 - 数値の単位は mg/kg に統一する。分析書が g/kg 表記なら 1000 倍する。
 - 掲示に書かれていない項目は省く。推測で埋めない。
@@ -75,40 +80,42 @@ PROMPT = """あなたは日本の温泉分析書を読み取る担当者です�
 
 {{
   "is_composition": true,
-  "photo_indexes": [1],
-  "confidence": "high",
-  "spring_name": "4号源泉",
-  "spring_quality": "アルカリ性単純硫黄温泉",
-  "spring_quality_class": "低張性アルカリ性高温泉",
-  "source_temp_c": 50.4,
-  "use_temp_c": 42.0,
-  "ph": 8.86,
-  "ph_lab": 8.5,
-  "yield_l_min": 60.2,
-  "evaporation_residue_mg_kg": 283.0,
-  "dissolved_solids_mg_kg": 287.8,
-  "total_ingredients_mg_kg": 287.9,
-  "cations": [{{"name": "ナトリウムイオン", "symbol": "Na+", "mg_kg": 70.3}}],
-  "cations_total_mg_kg": 84.1,
-  "anions": [{{"name": "硫酸イオン", "symbol": "SO42-", "mg_kg": 82.0}}],
-  "anions_total_mg_kg": 155.7,
-  "undissociated": [{{"name": "メタケイ酸", "symbol": "H2SiO3", "mg_kg": 46.2}}],
-  "undissociated_total_mg_kg": 48.0,
-  "dissolved_gas": [{{"name": "遊離硫化水素", "symbol": "H2S", "mg_kg": 0.1}}],
-  "dissolved_gas_total_mg_kg": 0.1,
-  "treatment": {{
-    "kasui": {{"applied": false, "reason": "加水はしていません。"}},
-    "kaon": {{"applied": true, "reason": "…"}},
-    "junkan": {{"applied": true, "reason": "…"}},
-    "shodoku": {{"applied": true, "reason": "…"}},
-    "nyuyokuzai": {{"applied": false, "reason": "…"}}
-  }},
-  "indications": ["自律神経不安定症", "不眠症", "うつ状態"],
-  "contraindications": [],
-  "analyzed_on": "2024-06-07",
-  "analyzer": "一般社団法人 上田薬剤師会",
-  "analyzer_registration": "長野県第7号",
-  "notes": "反射で源泉名が読めなかった"
+  "springs": [{{
+    "photo_indexes": [1],
+    "confidence": "high",
+    "spring_name": "4号源泉",
+    "spring_quality": "アルカリ性単純硫黄温泉",
+    "spring_quality_class": "低張性アルカリ性高温泉",
+    "source_temp_c": 50.4,
+    "use_temp_c": 42.0,
+    "ph": 8.86,
+    "ph_lab": 8.5,
+    "yield_l_min": 60.2,
+    "evaporation_residue_mg_kg": 283.0,
+    "dissolved_solids_mg_kg": 287.8,
+    "total_ingredients_mg_kg": 287.9,
+    "cations": [{{"name": "ナトリウムイオン", "symbol": "Na+", "mg_kg": 70.3}}],
+    "cations_total_mg_kg": 84.1,
+    "anions": [{{"name": "硫酸イオン", "symbol": "SO42-", "mg_kg": 82.0}}],
+    "anions_total_mg_kg": 155.7,
+    "undissociated": [{{"name": "メタケイ酸", "symbol": "H2SiO3", "mg_kg": 46.2}}],
+    "undissociated_total_mg_kg": 48.0,
+    "dissolved_gas": [{{"name": "遊離硫化水素", "symbol": "H2S", "mg_kg": 0.1}}],
+    "dissolved_gas_total_mg_kg": 0.1,
+    "treatment": {{
+      "kasui": {{"applied": false, "reason": "加水はしていません。"}},
+      "kaon": {{"applied": true, "reason": "…"}},
+      "junkan": {{"applied": true, "reason": "…"}},
+      "shodoku": {{"applied": true, "reason": "…"}},
+      "nyuyokuzai": {{"applied": false, "reason": "…"}}
+    }},
+    "indications": ["自律神経不安定症", "不眠症", "うつ状態"],
+    "contraindications": [],
+    "analyzed_on": "2024-06-07",
+    "analyzer": "一般社団法人 上田薬剤師会",
+    "analyzer_registration": "長野県第7号",
+    "notes": "反射で源泉名が読めなかった"
+  }}]
 }}
 """
 
@@ -161,13 +168,22 @@ def group_by_place(photos):
         fsq_id = photo.get('fsq_id', '')
         if fsq_id not in index_by_fsq:
             index_by_fsq[fsq_id] = len(groups)
-            groups.append({'fsq_id': fsq_id, 'name': photo.get('place_name', ''), 'photos': []})
+            groups.append({
+                'fsq_id': fsq_id,
+                'name': photo.get('place_name', ''),
+                'composition_hint': photo.get('composition_hint', ''),
+                'photos': [],
+            })
         groups[index_by_fsq[fsq_id]]['photos'].append(photo)
     return groups
 
 
 def build_parts(group):
-    parts = [{"text": PROMPT.format(place_name=group['name'], count=len(group['photos']))}]
+    parts = [{"text": PROMPT.format(
+        place_name=group['name'],
+        count=len(group['photos']),
+        composition_hint=group.get('composition_hint') or '（なし）',
+    )}]
     for photo in group['photos']:
         with open(photo['file'], 'rb') as f:
             encoded = base64.b64encode(f.read()).decode('ascii')
@@ -257,16 +273,16 @@ def parse_response(body):
         raise ContentError(f"応答をJSONとして読めません: {exc}") from exc
 
 
-def clean_entry(result, group):
-    """API の応答を extracted.json のエントリ形式に整える。"""
+def clean_spring(raw, group):
+    """API の源泉1件を extracted.json の形式に整える。"""
     valid_indexes = {photo['index'] for photo in group['photos']}
-    indexes = [i for i in (result.get('photo_indexes') or []) if i in valid_indexes]
+    indexes = [i for i in (raw.get('photo_indexes') or []) if i in valid_indexes]
     if not indexes:
         # 番号を返してこなかった場合は、その施設の写真すべてを出典として扱う
         indexes = sorted(valid_indexes)
 
     entry = {'photo_indexes': indexes}
-    for key, value in result.items():
+    for key, value in raw.items():
         if key not in ALLOWED_KEYS:
             continue
         if value is None or value == [] or value == {} or value == '':
@@ -275,6 +291,14 @@ def clean_entry(result, group):
 
     entry.setdefault('confidence', 'medium')
     return entry
+
+
+def clean_springs(result, group):
+    """複数源泉形式を採用し、旧来の単一源泉応答も受け入れる。"""
+    raw_springs = result.get('springs')
+    if not isinstance(raw_springs, list):
+        raw_springs = [result]
+    return [clean_spring(raw, group) for raw in raw_springs if isinstance(raw, dict)]
 
 
 def apply_validation(entry, label):
@@ -362,20 +386,27 @@ def main():
             skipped += 1
             print(f"{head} → 成分表なし")
         else:
-            entry = clean_entry(result, group)
-            quality = entry.get('spring_quality') or '泉質不明'
-            print(f"{head} → {quality}（confidence: {entry.get('confidence')}）")
-            if apply_validation(entry, group['name']):
-                flagged += 1
-            places.append(entry)
+            springs = clean_springs(result, group)
+            if not springs:
+                skipped += 1
+                print(f"{head} → 成分表なし")
+                continue
+            for spring in springs:
+                quality = spring.get('spring_quality') or '泉質不明'
+                spring_name = spring.get('spring_name') or '源泉名不明'
+                print(f"{head} → {spring_name}: {quality}（confidence: {spring.get('confidence')}）")
+                if apply_validation(spring, f"{group['name']} / {spring_name}"):
+                    flagged += 1
+            places.append({'springs': springs})
 
         if position < len(groups):
             time.sleep(SLEEP_BETWEEN_CALLS)
 
     failed = len(failed_photos)
-    print(f"成分表あり: {len(places)}施設 / 成分表なし: {skipped}施設 / 読めなかった写真: {failed}枚")
+    spring_count = sum(len(place['springs']) for place in places)
+    print(f"成分表あり: {len(places)}施設・{spring_count}源泉 / 成分表なし: {skipped}施設 / 読めなかった写真: {failed}枚")
     if flagged:
-        print(f"うち検算が合わなかったもの: {flagged}施設（confidence: low）")
+        print(f"うち検算が合わなかったもの: {flagged}源泉（confidence: low）")
 
     payload = {"places": places, "processed_photo_indexes": sorted(set(processed_indexes))}
     if failed_photos:

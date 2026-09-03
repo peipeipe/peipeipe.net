@@ -83,8 +83,12 @@ def analyzed_photo_urls():
 
     analyzed = set(data.get('not_composition_photos') or [])
     for entry in data.get('places') or []:
-        for url in entry.get('source_photos') or []:
-            analyzed.add(url)
+        springs = entry.get('springs')
+        if not isinstance(springs, list):
+            springs = [entry]
+        for spring in springs:
+            for url in spring.get('source_photos') or []:
+                analyzed.add(url)
     for entry in data.get('unreadable_photos') or []:
         if entry.get('attempts', 0) >= MAX_READ_ATTEMPTS and entry.get('photo_url'):
             analyzed.add(entry['photo_url'])
@@ -99,6 +103,7 @@ def collect_targets(places, skip_urls):
                 continue
             targets.append({
                 "place_name": place.get('name', ''),
+                "composition_hint": place.get('composition_hint', ''),
                 "fsq_id": place.get('fsq_id', ''),
                 "date": place.get('date', ''),
                 "address": place.get('address', ''),

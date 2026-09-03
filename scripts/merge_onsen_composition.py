@@ -37,11 +37,15 @@ OUTPUT_JSON = os.path.join(ASTRO_DIR, 'data', 'onsen_composition.json')
 MAX_READ_ATTEMPTS = 3
 
 # 施設ごとに保持するキーの並び（出力の見やすさのため固定）
-FIELD_ORDER = [
+PLACE_FIELD_ORDER = [
     "fsq_id",
     "name",
     "address",
     "checkin_date",
+    "springs",
+]
+
+SPRING_FIELD_ORDER = [
     "confidence",
     "spring_name",
     "spring_quality",
@@ -85,8 +89,31 @@ def photo_lookup(manifest):
     return {photo['index']: photo for photo in manifest.get('photos', [])}
 
 
+def order_spring(spring):
+    ordered = {key: spring[key] for key in SPRING_FIELD_ORDER if key in spring}
+    for key, value in spring.items():
+        if key not in ordered:
+            ordered[key] = value
+    return ordered
+
+
+def normalize_place(entry):
+    """旧来の平坦な施設レコードも places[].springs[] 形式へ寄せる。"""
+    springs = entry.get('springs')
+    if isinstance(springs, list):
+        normalized_springs = [order_spring(spring) for spring in springs if isinstance(spring, dict)]
+    else:
+        spring = {key: value for key, value in entry.items() if key not in PLACE_FIELD_ORDER}
+        normalized_springs = [order_spring(spring)] if spring else []
+
+    place = {key: entry[key] for key in PLACE_FIELD_ORDER if key in entry and key != 'springs'}
+    place['springs'] = normalized_springs
+    return place
+
+
 def order_fields(entry):
-    ordered = {key: entry[key] for key in FIELD_ORDER if key in entry}
+    entry = normalize_place(entry)
+    ordered = {key: entry[key] for key in PLACE_FIELD_ORDER if key in entry}
     for key, value in entry.items():
         if key not in ordered:
             ordered[key] = value
@@ -99,23 +126,40 @@ def build_entries(extracted, photos_by_index):
     used_photo_urls = set()
 
     for raw in extracted.get('places', []):
-        indexes = raw.get('photo_indexes') or []
-        photos = [photos_by_index[i] for i in indexes if i in photos_by_index]
-        missing = [i for i in indexes if i not in photos_by_index]
+        raw_springs = raw.get('springs') if isinstance(raw.get('springs'), list) else [raw]
+        all_indexes = [
+            index
+            for spring in raw_springs
+            if isinstance(spring, dict)
+            for index in (spring.get('photo_indexes') or [])
+        ]
+        photos = [photos_by_index[i] for i in all_indexes if i in photos_by_index]
+        missing = [i for i in all_indexes if i not in photos_by_index]
         if missing:
             print(f"[Warn] manifest に無い photo_index: {missing}", file=sys.stderr)
         if not photos:
-            print(f"[Warn] 写真を解決できないエントリをスキップ: {indexes}", file=sys.stderr)
+            print(f"[Warn] 写真を解決できないエントリをスキップ: {all_indexes}", file=sys.stderr)
             continue
 
-        entry = {key: value for key, value in raw.items() if key != 'photo_indexes'}
+        springs = []
+        for raw_spring in raw_springs:
+            indexes = raw_spring.get('photo_indexes') or []
+            spring_photos = [photos_by_index[i] for i in indexes if i in photos_by_index]
+            if not spring_photos:
+                continue
+            spring = {key: value for key, value in raw_spring.items() if key != 'photo_indexes'}
+            spring['source_photos'] = [photo['photo_url'] for photo in spring_photos]
+            used_photo_urls.update(spring['source_photos'])
+            springs.append(order_spring(spring))
+
+        if not springs:
+            continue
+
+        entry = {'springs': springs}
         entry['fsq_id'] = photos[0].get('fsq_id', '')
         entry['name'] = photos[0].get('place_name', '')
         entry['address'] = photos[0].get('address', '')
         entry['checkin_date'] = photos[0].get('date', '')
-        entry['source_photos'] = [photo['photo_url'] for photo in photos]
-        used_photo_urls.update(entry['source_photos'])
-
         entries.append(order_fields(entry))
 
     return entries, used_photo_urls
@@ -128,17 +172,49 @@ def merge_places(existing, incoming):
     一部だけ読み直したときに、前回読み取った成分値まで失われないようにするため。
     項目を消したいときは astro/data/onsen_composition.json を直接編集する。
     """
-    by_id = {entry.get('fsq_id'): entry for entry in existing}
+    by_id = {entry.get('fsq_id'): normalize_place(entry) for entry in existing}
+
+    def merge_springs(current_springs, new_springs):
+        merged = [order_spring(spring) for spring in current_springs]
+        for spring in new_springs:
+            incoming_photos = set(spring.get('source_photos') or [])
+            incoming_name = (spring.get('spring_name') or '').strip()
+            match = next((
+                index for index, current in enumerate(merged)
+                if (
+                    incoming_name
+                    and incoming_name == (current.get('spring_name') or '').strip()
+                ) or (
+                    incoming_photos.intersection(current.get('source_photos') or [])
+                    and (
+                        not incoming_name
+                        or not (current.get('spring_name') or '').strip()
+                    )
+                )
+            ), None)
+            if match is None and len(merged) == 1 and not incoming_name:
+                match = 0
+            if match is None:
+                merged.append(order_spring(spring))
+                continue
+
+            current = merged[match]
+            photos = current.get('source_photos', []) + [
+                url for url in spring.get('source_photos', [])
+                if url not in current.get('source_photos', [])
+            ]
+            merged[match] = order_spring({**current, **spring, 'source_photos': photos})
+        return merged
 
     for entry in incoming:
         fsq_id = entry.get('fsq_id')
         current = by_id.get(fsq_id)
         if current:
-            photos = current.get('source_photos', []) + [
-                url for url in entry.get('source_photos', [])
-                if url not in current.get('source_photos', [])
-            ]
-            entry = {**current, **entry, 'source_photos': photos}
+            entry = {
+                **current,
+                **entry,
+                'springs': merge_springs(current.get('springs', []), entry.get('springs', [])),
+            }
         by_id[fsq_id] = order_fields(entry)
 
     return list(by_id.values())
@@ -242,7 +318,13 @@ def main():
         "generated_on": date.today().isoformat(),
         "stats": {
             "places": len(places),
-            "composition_photos": sum(len(entry.get('source_photos') or []) for entry in places),
+            "springs": sum(len(entry.get('springs') or []) for entry in places),
+            "composition_photos": len({
+                url
+                for entry in places
+                for spring in entry.get('springs') or []
+                for url in spring.get('source_photos') or []
+            }),
             "not_composition_photos": len(not_composition),
             "unreadable_photos": len(unreadable),
         },
@@ -256,6 +338,7 @@ def main():
 
     print("=== 成分表データを更新 ===")
     print(f"成分表のある施設: {payload['stats']['places']}件")
+    print(f"収録源泉: {payload['stats']['springs']}件")
     print(f"成分表の写真: {payload['stats']['composition_photos']}枚")
     print(f"成分表ではなかった写真: {payload['stats']['not_composition_photos']}枚")
     if unreadable:
