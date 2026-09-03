@@ -1,6 +1,6 @@
 import unittest
 
-from extract_onsen_composition import clean_springs
+from extract_onsen_composition import PROMPT, clean_springs
 from fetch_foursquare_checkins import extract_composition_hint, merge_place
 from merge_onsen_composition import build_entries, merge_places, normalize_place
 
@@ -107,6 +107,11 @@ class MultiSpringCompositionTest(unittest.TestCase):
         merged = merge_place(existing, fresh, photo_limit=None)
 
         self.assertEqual(merged["composition_hint"], "第一源泉 / 第二源泉")
+
+    def test_prompt_distinguishes_analysis_completion_from_document_date(self):
+        self.assertIn('analyzed_on は「分析終了年月日」', PROMPT)
+        self.assertIn("分析書右上の発行日・作成日", PROMPT)
+        self.assertIn("調査及び試験年月日", PROMPT)
 
 
 if __name__ == "__main__":
