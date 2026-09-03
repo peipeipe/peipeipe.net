@@ -180,13 +180,12 @@ export function summarizeCompositions(entries: OnsenComposition[] = getOnsenComp
   };
 }
 
-/** 「単純温泉」「ナトリウム－塩化物温泉」など、泉質名でまとめたカウント */
+/** 散布図と同じ主系統でまとめた泉質のカウント */
 export function qualityBreakdown(entries: OnsenComposition[] = getOnsenCompositions()) {
   const counts = new Map<string, number>();
   entries.forEach((entry) => {
-    const quality = entry.spring_quality;
-    if (!quality) return;
-    counts.set(quality, (counts.get(quality) || 0) + 1);
+    const group = qualityGroup(entry);
+    counts.set(group.label, (counts.get(group.label) || 0) + 1);
   });
 
   return [...counts.entries()]
@@ -199,17 +198,62 @@ export type QualityGroup = {
   label: string;
 };
 
-/** 散布図の色分け用に、泉質名をおおまかな系統へ寄せる */
+export type QualityModifier = QualityGroup;
+
+const SPECIAL_SIMPLE_GROUPS: { needle: string; group: QualityGroup }[] = [
+  { needle: "単純二酸化炭素", group: { key: "carbon-dioxide", label: "二酸化炭素泉" } },
+  { needle: "単純鉄", group: { key: "iron", label: "鉄泉" } },
+  { needle: "単純酸性", group: { key: "acid", label: "酸性泉" } },
+  { needle: "単純よう素", group: { key: "iodine", label: "よう素泉" } },
+  { needle: "単純硫黄", group: { key: "sulfur", label: "硫黄泉" } },
+  { needle: "単純弱放射能", group: { key: "radioactive", label: "放射能泉" } },
+  { needle: "単純放射能", group: { key: "radioactive", label: "放射能泉" } },
+];
+
+const ANION_GROUPS: { needle: string; group: QualityGroup }[] = [
+  { needle: "塩化物", group: { key: "chloride", label: "塩化物泉" } },
+  { needle: "炭酸水素塩", group: { key: "bicarbonate", label: "炭酸水素塩泉" } },
+  { needle: "硫酸塩", group: { key: "sulfate", label: "硫酸塩泉" } },
+];
+
+/**
+ * 散布図の色分け用に泉質名を主系統へ寄せる。
+ * 複合塩類泉は、泉質名に mval% の多い順で書かれた陰イオンのうち
+ * 最初のものを主系統とする。特殊成分は qualityModifiers で別に示す。
+ */
 export function qualityGroup(entry: OnsenComposition): QualityGroup {
   const quality = entry.spring_quality || "";
 
-  if (quality.includes("硫黄")) return { key: "sulfur", label: "硫黄泉" };
-  if (quality.includes("鉄")) return { key: "iron", label: "鉄泉" };
+  const specialSimple = SPECIAL_SIMPLE_GROUPS.find(({ needle }) => quality.includes(needle));
+  if (specialSimple) return specialSimple.group;
+
+  const primaryAnion = ANION_GROUPS
+    .map((item) => ({ ...item, index: quality.indexOf(item.needle) }))
+    .filter((item) => item.index >= 0)
+    .sort((a, b) => a.index - b.index)[0];
+  if (primaryAnion) return primaryAnion.group;
+
   if (quality.includes("単純温泉")) return { key: "simple", label: "単純温泉" };
-  if (quality.includes("塩化物")) return { key: "chloride", label: "塩化物泉" };
-  if (quality.includes("炭酸水素塩")) return { key: "bicarbonate", label: "炭酸水素塩泉" };
-  if (quality.includes("硫酸塩")) return { key: "sulfate", label: "硫酸塩泉" };
   return { key: "other", label: "その他" };
+}
+
+/** 主系統とは別に見せる「含硫黄」などの特殊成分 */
+export function qualityModifiers(entry: OnsenComposition): QualityModifier[] {
+  const quality = entry.spring_quality || "";
+  const modifiers: { needle: string; modifier: QualityModifier }[] = [
+    { needle: "含硫黄", modifier: { key: "sulfur", label: "含硫黄" } },
+    { needle: "含二酸化炭素", modifier: { key: "carbon-dioxide", label: "含二酸化炭素" } },
+    { needle: "含放射能", modifier: { key: "radioactive", label: "含放射能" } },
+    { needle: "含弱放射能", modifier: { key: "radioactive", label: "含弱放射能" } },
+    { needle: "含鉄", modifier: { key: "iron", label: "含鉄" } },
+    { needle: "含よう素", modifier: { key: "iodine", label: "含よう素" } },
+  ];
+
+  const result = modifiers
+    .filter(({ needle }) => quality.includes(needle))
+    .map(({ modifier }) => modifier);
+  if (/^酸性(?:・|－|-)/.test(quality)) result.unshift({ key: "acid", label: "酸性" });
+  return [...new Map(result.map((modifier) => [modifier.key, modifier])).values()];
 }
 
 export type ScatterPoint = {
@@ -220,6 +264,7 @@ export type ScatterPoint = {
   ph: number;
   total: number;
   group: QualityGroup;
+  modifiers: QualityModifier[];
 };
 
 export function scatterPoints(entries: OnsenComposition[] = getOnsenCompositions()): ScatterPoint[] {
@@ -239,6 +284,7 @@ export function scatterPoints(entries: OnsenComposition[] = getOnsenCompositions
       ph: entry.ph as number,
       total: entry.total_ingredients_mg_kg as number,
       group: qualityGroup(entry),
+      modifiers: qualityModifiers(entry),
     }));
 }
 

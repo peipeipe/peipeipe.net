@@ -82,6 +82,9 @@ const totalTicks = SCATTER_TOTAL_TICKS;
 
 const plotted = layoutScatterPoints(scatterPoints(compositions));
 const scatterGroups = [...new Map(plotted.map((point) => [point.group.key, point.group])).values()];
+const scatterModifiers = [
+  ...new Map(plotted.flatMap((point) => point.modifiers).map((modifier) => [modifier.key, modifier])).values(),
+];
 ---
 
 <MapLayout
@@ -233,7 +236,7 @@ const scatterGroups = [...new Map(plotted.map((point) => [point.group.key, point
       </header>
 
       {qualities.length > 0 && (
-        <ul class="composition-qualities" aria-label="泉質の内訳">
+        <ul class="composition-qualities" aria-label="泉質の主系統別内訳">
           {qualities.map((item) => (
             <li>
               <span>{item.quality}</span>
@@ -257,6 +260,12 @@ const scatterGroups = [...new Map(plotted.map((point) => [point.group.key, point
               <li>
                 <span class={`scatter-swatch quality-${group.key}`} aria-hidden="true"></span>
                 {group.label}
+              </li>
+            ))}
+            {scatterModifiers.map((modifier) => (
+              <li>
+                <span class={`scatter-modifier-swatch modifier-${modifier.key}`} aria-hidden="true"></span>
+                外周: {modifier.label}
               </li>
             ))}
           </ul>
@@ -329,7 +338,15 @@ const scatterGroups = [...new Map(plotted.map((point) => [point.group.key, point
                 >
                   {/* 指やマウスで狙える大きさの透明な当たり判定（見た目の点は 6px） */}
                   <circle class="scatter-hit" cx={point.x} cy={point.y} r="14" />
-                  <circle class={`scatter-ring quality-${point.group.key}`} cx={point.x} cy={point.y} r="10" />
+                  <circle class={`scatter-ring quality-${point.group.key}`} cx={point.x} cy={point.y} r="12" />
+                  {point.modifiers.map((modifier, index) => (
+                    <circle
+                      class={`scatter-modifier-ring modifier-${modifier.key}`}
+                      cx={point.x}
+                      cy={point.y}
+                      r={8.5 + index * 3}
+                    />
+                  ))}
                   <circle class={`scatter-dot quality-${point.group.key}`} cx={point.x} cy={point.y} r="6" />
                 </a>
               ))}

@@ -1648,6 +1648,10 @@ body.photo-lightbox-open {
   --quality-sulfate: #c2a02a;
   --quality-sulfur: #8e6bbf;
   --quality-iron: #b5651d;
+  --quality-carbon-dioxide: #2d8f65;
+  --quality-acid: #b54775;
+  --quality-iodine: #2878b8;
+  --quality-radioactive: #65752b;
   --quality-other: #9aa0a8;
 }
 
@@ -1658,6 +1662,10 @@ html[data-theme="dark"] {
   --quality-sulfate: #d8ba4a;
   --quality-sulfur: #a98adb;
   --quality-iron: #cf8241;
+  --quality-carbon-dioxide: #52b58b;
+  --quality-acid: #d06b98;
+  --quality-iodine: #55a1df;
+  --quality-radioactive: #9aaa54;
   --quality-other: #8b929b;
 }
 
@@ -1742,7 +1750,20 @@ html[data-theme="dark"] {
 .scatter-swatch.quality-sulfate { background: var(--quality-sulfate); }
 .scatter-swatch.quality-sulfur { background: var(--quality-sulfur); }
 .scatter-swatch.quality-iron { background: var(--quality-iron); }
+.scatter-swatch.quality-carbon-dioxide { background: var(--quality-carbon-dioxide); }
+.scatter-swatch.quality-acid { background: var(--quality-acid); }
+.scatter-swatch.quality-iodine { background: var(--quality-iodine); }
+.scatter-swatch.quality-radioactive { background: var(--quality-radioactive); }
 .scatter-swatch.quality-other { background: var(--quality-other); }
+
+.scatter-modifier-swatch {
+  display: inline-block;
+  width: 11px;
+  height: 11px;
+  border: 2px solid;
+  border-radius: 50%;
+  background: transparent;
+}
 
 .scatter-wrap {
   overflow-x: auto;
@@ -1797,8 +1818,29 @@ html[data-theme="dark"] {
 .scatter-ring.quality-sulfur { fill: var(--quality-sulfur); }
 .scatter-dot.quality-iron,
 .scatter-ring.quality-iron { fill: var(--quality-iron); }
+.scatter-dot.quality-carbon-dioxide,
+.scatter-ring.quality-carbon-dioxide { fill: var(--quality-carbon-dioxide); }
+.scatter-dot.quality-acid,
+.scatter-ring.quality-acid { fill: var(--quality-acid); }
+.scatter-dot.quality-iodine,
+.scatter-ring.quality-iodine { fill: var(--quality-iodine); }
+.scatter-dot.quality-radioactive,
+.scatter-ring.quality-radioactive { fill: var(--quality-radioactive); }
 .scatter-dot.quality-other,
 .scatter-ring.quality-other { fill: var(--quality-other); }
+
+.scatter-modifier-ring {
+  fill: none;
+  stroke-width: 2;
+  pointer-events: none;
+}
+
+.modifier-sulfur { border-color: var(--quality-sulfur); stroke: var(--quality-sulfur); }
+.modifier-carbon-dioxide { border-color: var(--quality-carbon-dioxide); stroke: var(--quality-carbon-dioxide); }
+.modifier-acid { border-color: var(--quality-acid); stroke: var(--quality-acid); }
+.modifier-iron { border-color: var(--quality-iron); stroke: var(--quality-iron); }
+.modifier-iodine { border-color: var(--quality-iodine); stroke: var(--quality-iodine); }
+.modifier-radioactive { border-color: var(--quality-radioactive); stroke: var(--quality-radioactive); }
 
 /* 名前を出していない点も拾えるよう、点そのものをリンク＋当たり判定にする */
 .scatter-point {
