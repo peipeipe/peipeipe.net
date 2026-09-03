@@ -18,7 +18,7 @@ import {
   totalToY,
   TREATMENT_LABELS,
   type CompositionIngredient,
-  type OnsenComposition,
+  type OnsenSpring,
 } from "@/lib/composition";
 
 const places = getOnsenPlaces();
@@ -39,14 +39,14 @@ const googleMapsUrl = (place: CheckinPlace) => {
 };
 
 // 掲示から拾えた指標だけをバッジにする
-const compositionBadges = (entry: OnsenComposition) =>
+const compositionBadges = (entry: OnsenSpring) =>
   [
     typeof entry.source_temp_c === "number" ? `源泉 ${formatTemp(entry.source_temp_c)}` : "",
     typeof entry.ph === "number" ? `pH ${entry.ph}` : "",
     typeof entry.total_ingredients_mg_kg === "number" ? `成分総計 ${formatMgKg(entry.total_ingredients_mg_kg)}` : "",
   ].filter(Boolean);
 
-const ingredientGroups = (entry: OnsenComposition) =>
+const ingredientGroups = (entry: OnsenSpring) =>
   [
     { label: "陽イオン", items: entry.cations, total: entry.cations_total_mg_kg },
     { label: "陰イオン", items: entry.anions, total: entry.anions_total_mg_kg },
@@ -58,7 +58,7 @@ const ingredientGroups = (entry: OnsenComposition) =>
     total?: number | null;
   }[];
 
-const treatmentEntries = (entry: OnsenComposition) =>
+const treatmentEntries = (entry: OnsenSpring) =>
   TREATMENT_LABELS.map(({ key, label }) => ({ label, value: entry.treatment?.[key] })).filter(
     (item) => item.value && typeof item.value.applied === "boolean",
   );
@@ -69,6 +69,9 @@ const confidenceLabel: Record<string, string> = {
   medium: "確度: 中",
   low: "確度: 低",
 };
+
+const joinedQualities = (springs: OnsenSpring[]) =>
+  [...new Set(springs.map((spring) => spring.spring_quality).filter(Boolean))].join("／");
 
 // --- pH × 成分総計の散布図（配置の計算は lib/composition.ts 側） ---
 const CHART = SCATTER_CHART;
@@ -163,7 +166,7 @@ const scatterGroups = [...new Map(plotted.map((point) => [point.group.key, point
                     {place.fsq_id && compositionMap.has(place.fsq_id) && (
                       <p class="checkin-item-quality">
                         <span class="quality-mark">分析書</span>
-                        <span class="quality-text">{compositionMap.get(place.fsq_id)!.spring_quality}</span>
+                        <span class="quality-text">{joinedQualities(compositionMap.get(place.fsq_id)!)}</span>
                       </p>
                     )}
                     <p class="checkin-item-address">{place.address}</p>
@@ -202,6 +205,10 @@ const scatterGroups = [...new Map(plotted.map((point) => [point.group.key, point
         <dl class="composition-stats" aria-label="成分表の統計">
           <div>
             <dt>施設</dt>
+            <dd>{compositionStats.placeCount}</dd>
+          </div>
+          <div>
+            <dt>源泉</dt>
             <dd>{compositionStats.count}</dd>
           </div>
           {compositionStats.hottest && (
@@ -313,7 +320,7 @@ const scatterGroups = [...new Map(plotted.map((point) => [point.group.key, point
               {plotted.map((point) => (
                 <a
                   class="scatter-point"
-                  href={`#composition-${point.fsqId}`}
+                  href={`#${point.anchorId}`}
                   data-name={point.name}
                   data-quality={point.quality}
                   data-ph={`pH ${point.ph}`}
@@ -341,10 +348,18 @@ const scatterGroups = [...new Map(plotted.map((point) => [point.group.key, point
       <div class="composition-items">
         {compositions.map((entry) => (
           /* 散布図の点からリンクで飛んでくる先 */
-          <details class="composition-item" id={`composition-${entry.fsq_id}`}>
+          <details
+            class="composition-item"
+            id={entry.spring_index === 0
+              ? `composition-${entry.fsq_id}`
+              : `composition-${entry.fsq_id}-spring-${entry.spring_index + 1}`}
+          >
             <summary>
               <div class="composition-item-head">
                 <h3>{entry.name}</h3>
+                {entry.spring_count > 1 && entry.spring_name && (
+                  <p class="composition-spring-name">{entry.spring_name}</p>
+                )}
                 <p class="composition-quality">{entry.spring_quality}</p>
                 {entry.spring_quality_class && <p class="composition-quality-class">{entry.spring_quality_class}</p>}
               </div>

@@ -9,7 +9,9 @@
 
 入力は .cache/onsen_web/web_entries.json（--input で変更可）:
 
-    {"places": [{"fsq_id": "...", "spring_quality": "...", ...}, ...]}
+    {"places": [{"fsq_id": "...", "springs": [{"spring_quality": "...", ...}]}]}
+
+旧来の平坦な1源泉形式も引き続き受け入れる。
 
 name / address / checkin_date は astro/data/onsen_places.json から補完するので
 書かなくてよい。fsq_id の代わりに name_match（onsen_places.json 上の施設名）でも
@@ -103,7 +105,13 @@ def main():
     payload['places'] = places
     stats = dict(current.get('stats') or {})
     stats['places'] = len(places)
-    stats['composition_photos'] = sum(len(entry.get('source_photos') or []) for entry in places)
+    stats['springs'] = sum(len(entry.get('springs') or []) for entry in places)
+    stats['composition_photos'] = len({
+        url
+        for entry in places
+        for spring in entry.get('springs') or []
+        for url in spring.get('source_photos') or []
+    })
     payload['stats'] = stats
 
     added = [entry for entry in entries if entry['fsq_id'] not in known_ids]

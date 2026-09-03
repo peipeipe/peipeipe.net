@@ -4,6 +4,7 @@ import places from "../../data/places.json";
 export type CheckinPlace = {
   name: string;
   user_comment?: string;
+  composition_hint?: string;
   date?: string;
   lat?: number | null;
   lng?: number | null;

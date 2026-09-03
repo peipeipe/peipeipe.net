@@ -4,7 +4,8 @@
     "places": 68,
     "composition_photos": 22,
     "not_composition_photos": 100,
-    "unreadable_photos": 0
+    "unreadable_photos": 0,
+    "springs": 68
   },
   "places": [
     {
@@ -12,132 +13,136 @@
       "name": "八峰の湯",
       "address": "豊里5918-2, 小海町, 長野県, 384-1103",
       "checkin_date": "2026-08-30",
-      "confidence": "high",
-      "spring_name": "松原湖高原カラマツの湯",
-      "spring_quality": "ナトリウム・マグネシウム・カルシウムー炭酸水素塩温泉",
-      "spring_quality_class": "低張性中性高温泉",
-      "source_temp_c": 47.5,
-      "ph": 6.9,
-      "ph_lab": 7.31,
-      "evaporation_residue_mg_kg": 1151.0,
-      "dissolved_solids_mg_kg": 1781.0,
-      "total_ingredients_mg_kg": 2062.0,
-      "cations": [
+      "springs": [
         {
-          "name": "リチウムイオン",
-          "symbol": "Li+",
-          "mg_kg": 0.1
-        },
-        {
-          "name": "ナトリウムイオン",
-          "symbol": "Na+",
-          "mg_kg": 175.1
-        },
-        {
-          "name": "カリウムイオン",
-          "symbol": "K+",
-          "mg_kg": 49.5
-        },
-        {
-          "name": "マグネシウムイオン",
-          "symbol": "Mg2+",
-          "mg_kg": 73.2
-        },
-        {
-          "name": "カルシウムイオン",
-          "symbol": "Ca2+",
-          "mg_kg": 99.7
-        },
-        {
-          "name": "ストロンチウムイオン",
-          "symbol": "Sr2+",
-          "mg_kg": 0.8
-        },
-        {
-          "name": "バリウムイオン",
-          "symbol": "Ba2+",
-          "mg_kg": 0.4
-        },
-        {
-          "name": "マンガンイオン",
-          "symbol": "Mn2+",
-          "mg_kg": 0.2
-        },
-        {
-          "name": "鉄(II)イオン",
-          "symbol": "Fe2+",
-          "mg_kg": 1.7
+          "confidence": "high",
+          "spring_name": "松原湖高原カラマツの湯",
+          "spring_quality": "ナトリウム・マグネシウム・カルシウムー炭酸水素塩温泉",
+          "spring_quality_class": "低張性中性高温泉",
+          "source_temp_c": 47.5,
+          "ph": 6.9,
+          "ph_lab": 7.31,
+          "evaporation_residue_mg_kg": 1151.0,
+          "dissolved_solids_mg_kg": 1781.0,
+          "total_ingredients_mg_kg": 2062.0,
+          "cations": [
+            {
+              "name": "リチウムイオン",
+              "symbol": "Li+",
+              "mg_kg": 0.1
+            },
+            {
+              "name": "ナトリウムイオン",
+              "symbol": "Na+",
+              "mg_kg": 175.1
+            },
+            {
+              "name": "カリウムイオン",
+              "symbol": "K+",
+              "mg_kg": 49.5
+            },
+            {
+              "name": "マグネシウムイオン",
+              "symbol": "Mg2+",
+              "mg_kg": 73.2
+            },
+            {
+              "name": "カルシウムイオン",
+              "symbol": "Ca2+",
+              "mg_kg": 99.7
+            },
+            {
+              "name": "ストロンチウムイオン",
+              "symbol": "Sr2+",
+              "mg_kg": 0.8
+            },
+            {
+              "name": "バリウムイオン",
+              "symbol": "Ba2+",
+              "mg_kg": 0.4
+            },
+            {
+              "name": "マンガンイオン",
+              "symbol": "Mn2+",
+              "mg_kg": 0.2
+            },
+            {
+              "name": "鉄(II)イオン",
+              "symbol": "Fe2+",
+              "mg_kg": 1.7
+            }
+          ],
+          "cations_total_mg_kg": 400.7,
+          "anions": [
+            {
+              "name": "ふっ化物イオン",
+              "symbol": "F-",
+              "mg_kg": 0.07
+            },
+            {
+              "name": "塩化物イオン",
+              "symbol": "Cl-",
+              "mg_kg": 125.0
+            },
+            {
+              "name": "臭化物イオン",
+              "symbol": "Br-",
+              "mg_kg": 0.5
+            },
+            {
+              "name": "よう化物イオン",
+              "symbol": "I-",
+              "mg_kg": 0.1
+            },
+            {
+              "name": "硫化水素イオン",
+              "symbol": "HS-",
+              "mg_kg": 0.07
+            },
+            {
+              "name": "硫酸イオン",
+              "symbol": "SO42-",
+              "mg_kg": 1.97
+            },
+            {
+              "name": "炭酸水素イオン",
+              "symbol": "HCO3-",
+              "mg_kg": 1001.0
+            }
+          ],
+          "anions_total_mg_kg": 1128.0,
+          "undissociated": [
+            {
+              "name": "メタけい酸",
+              "symbol": "H2SiO3",
+              "mg_kg": 228.4
+            },
+            {
+              "name": "メタほう酸",
+              "symbol": "HBO2",
+              "mg_kg": 23.7
+            }
+          ],
+          "undissociated_total_mg_kg": 252.1,
+          "dissolved_gas": [
+            {
+              "name": "遊離二酸化炭素",
+              "symbol": "CO2",
+              "mg_kg": 280.5
+            },
+            {
+              "name": "遊離硫化水素",
+              "symbol": "H2S",
+              "mg_kg": 0.1
+            }
+          ],
+          "dissolved_gas_total_mg_kg": 280.6,
+          "analyzed_on": "2021-11-26",
+          "analyzer": "一般社団法人 上田薬剤師会",
+          "source_photos": [
+            "https://fastly.4sqi.net/img/general/500x300/41463109_uzjFe2DiGxqEmZa9yC_bb9pxlXX66fGZdP9NwyXt_FY.jpg"
+          ]
         }
-      ],
-      "cations_total_mg_kg": 400.7,
-      "anions": [
-        {
-          "name": "ふっ化物イオン",
-          "symbol": "F-",
-          "mg_kg": 0.07
-        },
-        {
-          "name": "塩化物イオン",
-          "symbol": "Cl-",
-          "mg_kg": 125.0
-        },
-        {
-          "name": "臭化物イオン",
-          "symbol": "Br-",
-          "mg_kg": 0.5
-        },
-        {
-          "name": "よう化物イオン",
-          "symbol": "I-",
-          "mg_kg": 0.1
-        },
-        {
-          "name": "硫化水素イオン",
-          "symbol": "HS-",
-          "mg_kg": 0.07
-        },
-        {
-          "name": "硫酸イオン",
-          "symbol": "SO42-",
-          "mg_kg": 1.97
-        },
-        {
-          "name": "炭酸水素イオン",
-          "symbol": "HCO3-",
-          "mg_kg": 1001.0
-        }
-      ],
-      "anions_total_mg_kg": 1128.0,
-      "undissociated": [
-        {
-          "name": "メタけい酸",
-          "symbol": "H2SiO3",
-          "mg_kg": 228.4
-        },
-        {
-          "name": "メタほう酸",
-          "symbol": "HBO2",
-          "mg_kg": 23.7
-        }
-      ],
-      "undissociated_total_mg_kg": 252.1,
-      "dissolved_gas": [
-        {
-          "name": "遊離二酸化炭素",
-          "symbol": "CO2",
-          "mg_kg": 280.5
-        },
-        {
-          "name": "遊離硫化水素",
-          "symbol": "H2S",
-          "mg_kg": 0.1
-        }
-      ],
-      "dissolved_gas_total_mg_kg": 280.6,
-      "analyzed_on": "2021-11-26",
-      "analyzer": "一般社団法人 上田薬剤師会",
-      "source_photos": [
-        "https://fastly.4sqi.net/img/general/500x300/41463109_uzjFe2DiGxqEmZa9yC_bb9pxlXX66fGZdP9NwyXt_FY.jpg"
       ]
     },
     {
@@ -145,116 +150,120 @@
       "name": "真田温泉 ふれあいさなだ館",
       "address": "真田町長7369-1, 上田市, 長野県, 386-2201",
       "checkin_date": "2026-08-27",
-      "confidence": "high",
-      "spring_name": "真田温泉",
-      "spring_quality": "アルカリ性単純温泉",
-      "spring_quality_class": "低張性アルカリ性温泉",
-      "source_temp_c": 37.5,
-      "ph": 8.8,
-      "ph_lab": 8.86,
-      "evaporation_residue_mg_kg": 780.0,
-      "dissolved_solids_mg_kg": 804.7,
-      "total_ingredients_mg_kg": 804.7,
-      "cations": [
+      "springs": [
         {
-          "name": "リチウムイオン",
-          "symbol": "Li+",
-          "mg_kg": 0.4
-        },
-        {
-          "name": "ナトリウムイオン",
-          "symbol": "Na+",
-          "mg_kg": 237.4
-        },
-        {
-          "name": "カリウムイオン",
-          "symbol": "K+",
-          "mg_kg": 1.0
-        },
-        {
-          "name": "マグネシウムイオン",
-          "symbol": "Mg2+",
-          "mg_kg": 0.09
-        },
-        {
-          "name": "カルシウムイオン",
-          "symbol": "Ca2+",
-          "mg_kg": 32.5
-        },
-        {
-          "name": "ストロンチウムイオン",
-          "symbol": "Sr2+",
-          "mg_kg": 0.9
-        },
-        {
-          "name": "アルミニウムイオン",
-          "symbol": "Al3+",
-          "mg_kg": 0.01
+          "confidence": "high",
+          "spring_name": "真田温泉",
+          "spring_quality": "アルカリ性単純温泉",
+          "spring_quality_class": "低張性アルカリ性温泉",
+          "source_temp_c": 37.5,
+          "ph": 8.8,
+          "ph_lab": 8.86,
+          "evaporation_residue_mg_kg": 780.0,
+          "dissolved_solids_mg_kg": 804.7,
+          "total_ingredients_mg_kg": 804.7,
+          "cations": [
+            {
+              "name": "リチウムイオン",
+              "symbol": "Li+",
+              "mg_kg": 0.4
+            },
+            {
+              "name": "ナトリウムイオン",
+              "symbol": "Na+",
+              "mg_kg": 237.4
+            },
+            {
+              "name": "カリウムイオン",
+              "symbol": "K+",
+              "mg_kg": 1.0
+            },
+            {
+              "name": "マグネシウムイオン",
+              "symbol": "Mg2+",
+              "mg_kg": 0.09
+            },
+            {
+              "name": "カルシウムイオン",
+              "symbol": "Ca2+",
+              "mg_kg": 32.5
+            },
+            {
+              "name": "ストロンチウムイオン",
+              "symbol": "Sr2+",
+              "mg_kg": 0.9
+            },
+            {
+              "name": "アルミニウムイオン",
+              "symbol": "Al3+",
+              "mg_kg": 0.01
+            }
+          ],
+          "cations_total_mg_kg": 272.3,
+          "anions": [
+            {
+              "name": "ふっ化物イオン",
+              "symbol": "F-",
+              "mg_kg": 2.9
+            },
+            {
+              "name": "塩化物イオン",
+              "symbol": "Cl-",
+              "mg_kg": 295.8
+            },
+            {
+              "name": "臭化物イオン",
+              "symbol": "Br-",
+              "mg_kg": 1.2
+            },
+            {
+              "name": "よう化物イオン",
+              "symbol": "I-",
+              "mg_kg": 0.5
+            },
+            {
+              "name": "硫化水素イオン",
+              "symbol": "HS-",
+              "mg_kg": 0.4
+            },
+            {
+              "name": "硫酸イオン",
+              "symbol": "SO42-",
+              "mg_kg": 130.4
+            },
+            {
+              "name": "炭酸水素イオン",
+              "symbol": "HCO3-",
+              "mg_kg": 14.8
+            },
+            {
+              "name": "炭酸イオン",
+              "symbol": "CO32-",
+              "mg_kg": 16.8
+            }
+          ],
+          "anions_total_mg_kg": 462.8,
+          "undissociated": [
+            {
+              "name": "メタけい酸",
+              "symbol": "H2SiO3",
+              "mg_kg": 28.1
+            },
+            {
+              "name": "メタほう酸",
+              "symbol": "HBO2",
+              "mg_kg": 41.5
+            }
+          ],
+          "undissociated_total_mg_kg": 69.6,
+          "analyzed_on": "2019-08-08",
+          "analyzer": "一般社団法人 上田薬剤師会",
+          "analyzer_registration": "長野県第7号",
+          "notes": "ネット公開情報から作成（現地掲示は未確認）。出典: 一般財団法人上田市地域振興事業団 https://www.ueda-rpc.or.jp/facility/fureaisanadakan.html",
+          "source_photos": [
+            "https://fastly.4sqi.net/img/general/500x300/41463109_FyuRufsKuiKrpKC6C37VsqJzV_PI5PfHHQztak8kQaE.jpg"
+          ]
         }
-      ],
-      "cations_total_mg_kg": 272.3,
-      "anions": [
-        {
-          "name": "ふっ化物イオン",
-          "symbol": "F-",
-          "mg_kg": 2.9
-        },
-        {
-          "name": "塩化物イオン",
-          "symbol": "Cl-",
-          "mg_kg": 295.8
-        },
-        {
-          "name": "臭化物イオン",
-          "symbol": "Br-",
-          "mg_kg": 1.2
-        },
-        {
-          "name": "よう化物イオン",
-          "symbol": "I-",
-          "mg_kg": 0.5
-        },
-        {
-          "name": "硫化水素イオン",
-          "symbol": "HS-",
-          "mg_kg": 0.4
-        },
-        {
-          "name": "硫酸イオン",
-          "symbol": "SO42-",
-          "mg_kg": 130.4
-        },
-        {
-          "name": "炭酸水素イオン",
-          "symbol": "HCO3-",
-          "mg_kg": 14.8
-        },
-        {
-          "name": "炭酸イオン",
-          "symbol": "CO32-",
-          "mg_kg": 16.8
-        }
-      ],
-      "anions_total_mg_kg": 462.8,
-      "undissociated": [
-        {
-          "name": "メタけい酸",
-          "symbol": "H2SiO3",
-          "mg_kg": 28.1
-        },
-        {
-          "name": "メタほう酸",
-          "symbol": "HBO2",
-          "mg_kg": 41.5
-        }
-      ],
-      "undissociated_total_mg_kg": 69.6,
-      "analyzed_on": "2019-08-08",
-      "analyzer": "一般社団法人 上田薬剤師会",
-      "analyzer_registration": "長野県第7号",
-      "notes": "ネット公開情報から作成（現地掲示は未確認）。出典: 一般財団法人上田市地域振興事業団 https://www.ueda-rpc.or.jp/facility/fureaisanadakan.html",
-      "source_photos": [
-        "https://fastly.4sqi.net/img/general/500x300/41463109_FyuRufsKuiKrpKC6C37VsqJzV_PI5PfHHQztak8kQaE.jpg"
       ]
     },
     {
@@ -262,126 +271,130 @@
       "name": "灯湯すずらん",
       "address": "3419-84 北山, 茅野市, 長野県, 391-0301",
       "checkin_date": "2026-08-23",
-      "confidence": "high",
-      "spring_name": "白樺湖温泉2号",
-      "spring_quality": "アルカリ性単純温泉",
-      "spring_quality_class": "低張性アルカリ性低温泉",
-      "source_temp_c": 31.8,
-      "ph": 8.6,
-      "ph_lab": 8.71,
-      "yield_l_min": 31.6,
-      "evaporation_residue_mg_kg": 437.0,
-      "dissolved_solids_mg_kg": 495.4,
-      "total_ingredients_mg_kg": 495.4,
-      "cations": [
+      "springs": [
         {
-          "name": "リチウムイオン",
-          "symbol": "Li+",
-          "mg_kg": 0.04
-        },
-        {
-          "name": "ナトリウムイオン",
-          "symbol": "Na+",
-          "mg_kg": 131.8
-        },
-        {
-          "name": "カリウムイオン",
-          "symbol": "K+",
-          "mg_kg": 3.8
-        },
-        {
-          "name": "アンモニウムイオン",
-          "symbol": "NH4+",
-          "mg_kg": 0.03
-        },
-        {
-          "name": "マグネシウムイオン",
-          "symbol": "Mg2+",
-          "mg_kg": 0.9
-        },
-        {
-          "name": "カルシウムイオン",
-          "symbol": "Ca2+",
-          "mg_kg": 7.8
-        },
-        {
-          "name": "ストロンチウムイオン",
-          "symbol": "Sr2+",
-          "mg_kg": 0.09
-        },
-        {
-          "name": "アルミニウムイオン",
-          "symbol": "Al3+",
-          "mg_kg": 0.01
+          "confidence": "high",
+          "spring_name": "白樺湖温泉2号",
+          "spring_quality": "アルカリ性単純温泉",
+          "spring_quality_class": "低張性アルカリ性低温泉",
+          "source_temp_c": 31.8,
+          "ph": 8.6,
+          "ph_lab": 8.71,
+          "yield_l_min": 31.6,
+          "evaporation_residue_mg_kg": 437.0,
+          "dissolved_solids_mg_kg": 495.4,
+          "total_ingredients_mg_kg": 495.4,
+          "cations": [
+            {
+              "name": "リチウムイオン",
+              "symbol": "Li+",
+              "mg_kg": 0.04
+            },
+            {
+              "name": "ナトリウムイオン",
+              "symbol": "Na+",
+              "mg_kg": 131.8
+            },
+            {
+              "name": "カリウムイオン",
+              "symbol": "K+",
+              "mg_kg": 3.8
+            },
+            {
+              "name": "アンモニウムイオン",
+              "symbol": "NH4+",
+              "mg_kg": 0.03
+            },
+            {
+              "name": "マグネシウムイオン",
+              "symbol": "Mg2+",
+              "mg_kg": 0.9
+            },
+            {
+              "name": "カルシウムイオン",
+              "symbol": "Ca2+",
+              "mg_kg": 7.8
+            },
+            {
+              "name": "ストロンチウムイオン",
+              "symbol": "Sr2+",
+              "mg_kg": 0.09
+            },
+            {
+              "name": "アルミニウムイオン",
+              "symbol": "Al3+",
+              "mg_kg": 0.01
+            }
+          ],
+          "cations_total_mg_kg": 144.5,
+          "anions": [
+            {
+              "name": "フッ化物イオン",
+              "symbol": "F-",
+              "mg_kg": 0.3
+            },
+            {
+              "name": "塩化物イオン",
+              "symbol": "Cl-",
+              "mg_kg": 98.7
+            },
+            {
+              "name": "臭化物イオン",
+              "symbol": "Br-",
+              "mg_kg": 0.4
+            },
+            {
+              "name": "ヨウ化物イオン",
+              "symbol": "I-",
+              "mg_kg": 0.08
+            },
+            {
+              "name": "硫化水素イオン",
+              "symbol": "HS-",
+              "mg_kg": 0.02
+            },
+            {
+              "name": "硫酸イオン",
+              "symbol": "SO42-",
+              "mg_kg": 71.7
+            },
+            {
+              "name": "リン酸水素イオン",
+              "symbol": "HPO42-",
+              "mg_kg": 0.04
+            },
+            {
+              "name": "炭酸水素イオン",
+              "symbol": "HCO3-",
+              "mg_kg": 113.4
+            },
+            {
+              "name": "炭酸イオン",
+              "symbol": "CO32-",
+              "mg_kg": 6.0
+            }
+          ],
+          "anions_total_mg_kg": 290.6,
+          "undissociated": [
+            {
+              "name": "メタケイ酸",
+              "symbol": "H2SiO3",
+              "mg_kg": 58.0
+            },
+            {
+              "name": "メタホウ酸",
+              "symbol": "HBO2",
+              "mg_kg": 2.3
+            }
+          ],
+          "undissociated_total_mg_kg": 60.3,
+          "analyzed_on": "2018-01-25",
+          "analyzer": "一般社団法人 長野県薬剤師会",
+          "analyzer_registration": "長野県第2号",
+          "source_photos": [
+            "https://fastly.4sqi.net/img/general/500x300/41463109_9lXeEYrD_X7tA2MhTotj9O5WiQiuPZAD1cMhRXjXyfQ.jpg"
+          ]
         }
-      ],
-      "cations_total_mg_kg": 144.5,
-      "anions": [
-        {
-          "name": "フッ化物イオン",
-          "symbol": "F-",
-          "mg_kg": 0.3
-        },
-        {
-          "name": "塩化物イオン",
-          "symbol": "Cl-",
-          "mg_kg": 98.7
-        },
-        {
-          "name": "臭化物イオン",
-          "symbol": "Br-",
-          "mg_kg": 0.4
-        },
-        {
-          "name": "ヨウ化物イオン",
-          "symbol": "I-",
-          "mg_kg": 0.08
-        },
-        {
-          "name": "硫化水素イオン",
-          "symbol": "HS-",
-          "mg_kg": 0.02
-        },
-        {
-          "name": "硫酸イオン",
-          "symbol": "SO42-",
-          "mg_kg": 71.7
-        },
-        {
-          "name": "リン酸水素イオン",
-          "symbol": "HPO42-",
-          "mg_kg": 0.04
-        },
-        {
-          "name": "炭酸水素イオン",
-          "symbol": "HCO3-",
-          "mg_kg": 113.4
-        },
-        {
-          "name": "炭酸イオン",
-          "symbol": "CO32-",
-          "mg_kg": 6.0
-        }
-      ],
-      "anions_total_mg_kg": 290.6,
-      "undissociated": [
-        {
-          "name": "メタケイ酸",
-          "symbol": "H2SiO3",
-          "mg_kg": 58.0
-        },
-        {
-          "name": "メタホウ酸",
-          "symbol": "HBO2",
-          "mg_kg": 2.3
-        }
-      ],
-      "undissociated_total_mg_kg": 60.3,
-      "analyzed_on": "2018-01-25",
-      "analyzer": "一般社団法人 長野県薬剤師会",
-      "analyzer_registration": "長野県第2号",
-      "source_photos": [
-        "https://fastly.4sqi.net/img/general/500x300/41463109_9lXeEYrD_X7tA2MhTotj9O5WiQiuPZAD1cMhRXjXyfQ.jpg"
       ]
     },
     {
@@ -389,121 +402,125 @@
       "name": "びんぐし湯さん館",
       "address": "大字網掛2002-4, 埴科郡, 長野県, 389-0604",
       "checkin_date": "2026-08-14",
-      "confidence": "high",
-      "spring_name": "坂城町上平島温泉井",
-      "spring_quality": "アルカリ性単純硫黄温泉",
-      "spring_quality_class": "低張性アルカリ性高温泉",
-      "source_temp_c": 43.8,
-      "ph": 8.8,
-      "dissolved_solids_mg_kg": 474.4,
-      "total_ingredients_mg_kg": 474.4,
-      "cations": [
+      "springs": [
         {
-          "name": "リチウムイオン",
-          "symbol": "Li+",
-          "mg_kg": 0.1
-        },
-        {
-          "name": "ナトリウムイオン",
-          "symbol": "Na+",
-          "mg_kg": 91.8
-        },
-        {
-          "name": "カリウムイオン",
-          "symbol": "K+",
-          "mg_kg": 1.8
-        },
-        {
-          "name": "アンモニウムイオン",
-          "symbol": "NH4+",
-          "mg_kg": 0.6
-        },
-        {
-          "name": "マグネシウムイオン",
-          "symbol": "Mg2+",
-          "mg_kg": 0.3
-        },
-        {
-          "name": "カルシウムイオン",
-          "symbol": "Ca2+",
-          "mg_kg": 45.9
-        },
-        {
-          "name": "ストロンチウムイオン",
-          "symbol": "Sr2+",
-          "mg_kg": 0.5
+          "confidence": "high",
+          "spring_name": "坂城町上平島温泉井",
+          "spring_quality": "アルカリ性単純硫黄温泉",
+          "spring_quality_class": "低張性アルカリ性高温泉",
+          "source_temp_c": 43.8,
+          "ph": 8.8,
+          "dissolved_solids_mg_kg": 474.4,
+          "total_ingredients_mg_kg": 474.4,
+          "cations": [
+            {
+              "name": "リチウムイオン",
+              "symbol": "Li+",
+              "mg_kg": 0.1
+            },
+            {
+              "name": "ナトリウムイオン",
+              "symbol": "Na+",
+              "mg_kg": 91.8
+            },
+            {
+              "name": "カリウムイオン",
+              "symbol": "K+",
+              "mg_kg": 1.8
+            },
+            {
+              "name": "アンモニウムイオン",
+              "symbol": "NH4+",
+              "mg_kg": 0.6
+            },
+            {
+              "name": "マグネシウムイオン",
+              "symbol": "Mg2+",
+              "mg_kg": 0.3
+            },
+            {
+              "name": "カルシウムイオン",
+              "symbol": "Ca2+",
+              "mg_kg": 45.9
+            },
+            {
+              "name": "ストロンチウムイオン",
+              "symbol": "Sr2+",
+              "mg_kg": 0.5
+            }
+          ],
+          "cations_total_mg_kg": 141.0,
+          "anions": [
+            {
+              "name": "フッ化物イオン",
+              "symbol": "F-",
+              "mg_kg": 0.9
+            },
+            {
+              "name": "塩化物イオン",
+              "symbol": "Cl-",
+              "mg_kg": 77.3
+            },
+            {
+              "name": "ヨウ化物イオン",
+              "symbol": "I-",
+              "mg_kg": 1.2
+            },
+            {
+              "name": "硫化水素イオン",
+              "symbol": "HS-",
+              "mg_kg": 2.2
+            },
+            {
+              "name": "硫酸イオン",
+              "symbol": "SO42-",
+              "mg_kg": 185.2
+            },
+            {
+              "name": "炭酸水素イオン",
+              "symbol": "HCO3-",
+              "mg_kg": 17.2
+            },
+            {
+              "name": "炭酸イオン",
+              "symbol": "CO32-",
+              "mg_kg": 6.6
+            }
+          ],
+          "anions_total_mg_kg": 290.6,
+          "undissociated": [
+            {
+              "name": "メタケイ酸",
+              "symbol": "H2SiO3",
+              "mg_kg": 39.4
+            },
+            {
+              "name": "メタホウ酸",
+              "symbol": "HBO2",
+              "mg_kg": 3.4
+            }
+          ],
+          "undissociated_total_mg_kg": 42.8,
+          "dissolved_gas": [
+            {
+              "name": "遊離硫化水素",
+              "symbol": "H2S",
+              "mg_kg": 0.04
+            }
+          ],
+          "dissolved_gas_total_mg_kg": 0.04,
+          "contraindications": [
+            "皮膚又は粘膜の過敏な人",
+            "高齢者の皮膚乾燥症"
+          ],
+          "analyzed_on": "2018-05-21",
+          "analyzer": "(株)信濃公害研究所",
+          "analyzer_registration": "長野県第10号",
+          "notes": "適応症および温泉の利用状況（加水・加温等）の項目は画像で見切れているため省略しました。",
+          "source_photos": [
+            "https://fastly.4sqi.net/img/general/500x300/41463109_xpu7wgihYKZDn-RMgyBtQaxtH2PLNTRYk5QEEeAwUDE.jpg"
+          ]
         }
-      ],
-      "cations_total_mg_kg": 141.0,
-      "anions": [
-        {
-          "name": "フッ化物イオン",
-          "symbol": "F-",
-          "mg_kg": 0.9
-        },
-        {
-          "name": "塩化物イオン",
-          "symbol": "Cl-",
-          "mg_kg": 77.3
-        },
-        {
-          "name": "ヨウ化物イオン",
-          "symbol": "I-",
-          "mg_kg": 1.2
-        },
-        {
-          "name": "硫化水素イオン",
-          "symbol": "HS-",
-          "mg_kg": 2.2
-        },
-        {
-          "name": "硫酸イオン",
-          "symbol": "SO42-",
-          "mg_kg": 185.2
-        },
-        {
-          "name": "炭酸水素イオン",
-          "symbol": "HCO3-",
-          "mg_kg": 17.2
-        },
-        {
-          "name": "炭酸イオン",
-          "symbol": "CO32-",
-          "mg_kg": 6.6
-        }
-      ],
-      "anions_total_mg_kg": 290.6,
-      "undissociated": [
-        {
-          "name": "メタケイ酸",
-          "symbol": "H2SiO3",
-          "mg_kg": 39.4
-        },
-        {
-          "name": "メタホウ酸",
-          "symbol": "HBO2",
-          "mg_kg": 3.4
-        }
-      ],
-      "undissociated_total_mg_kg": 42.8,
-      "dissolved_gas": [
-        {
-          "name": "遊離硫化水素",
-          "symbol": "H2S",
-          "mg_kg": 0.04
-        }
-      ],
-      "dissolved_gas_total_mg_kg": 0.04,
-      "contraindications": [
-        "皮膚又は粘膜の過敏な人",
-        "高齢者の皮膚乾燥症"
-      ],
-      "analyzed_on": "2018-05-21",
-      "analyzer": "(株)信濃公害研究所",
-      "analyzer_registration": "長野県第10号",
-      "notes": "適応症および温泉の利用状況（加水・加温等）の項目は画像で見切れているため省略しました。",
-      "source_photos": [
-        "https://fastly.4sqi.net/img/general/500x300/41463109_xpu7wgihYKZDn-RMgyBtQaxtH2PLNTRYk5QEEeAwUDE.jpg"
       ]
     },
     {
@@ -511,102 +528,110 @@
       "name": "室賀温泉ささらの湯",
       "address": "上室賀1232-1, 上田市, 長野県, 386-1541",
       "checkin_date": "2026-05-16",
-      "confidence": "medium",
-      "spring_quality": "単純硫黄温泉",
-      "spring_quality_class": "アルカリ性低張性高温泉",
-      "source_temp_c": 50.7,
-      "notes": "ネット公開情報から作成（現地掲示は未確認）。出典: 上田市公式サイト「室賀温泉ささらの湯の温泉の御案内」 http://www.city.ueda.nagano.jp/nosei/tanoshimu/onsen/sasara/goannai/index.html"
+      "springs": [
+        {
+          "confidence": "medium",
+          "spring_quality": "単純硫黄温泉",
+          "spring_quality_class": "アルカリ性低張性高温泉",
+          "source_temp_c": 50.7,
+          "notes": "ネット公開情報から作成（現地掲示は未確認）。出典: 上田市公式サイト「室賀温泉ささらの湯の温泉の御案内」 http://www.city.ueda.nagano.jp/nosei/tanoshimu/onsen/sasara/goannai/index.html"
+        }
+      ]
     },
     {
       "fsq_id": "6908a2a5852b2f2861a0f47c",
       "name": "Uu Ueda",
       "address": "上田市, 長野県, 386-0002",
       "checkin_date": "2026-08-11",
-      "confidence": "high",
-      "spring_quality": "低張性中性冷鉱泉",
-      "source_temp_c": 15.7,
-      "ph": 6.9,
-      "ph_lab": 7.04,
-      "evaporation_residue_mg_kg": 408.0,
-      "dissolved_solids_mg_kg": 469.3,
-      "total_ingredients_mg_kg": 495.1,
-      "cations": [
+      "springs": [
         {
-          "name": "ナトリウムイオン",
-          "symbol": "Na+",
-          "mg_kg": 17.2
-        },
-        {
-          "name": "カリウムイオン",
-          "symbol": "K+",
-          "mg_kg": 0.4
-        },
-        {
-          "name": "マグネシウムイオン",
-          "symbol": "Mg2+",
-          "mg_kg": 31.8
-        },
-        {
-          "name": "カルシウムイオン",
-          "symbol": "Ca2+",
-          "mg_kg": 43.7
+          "confidence": "high",
+          "spring_quality": "低張性中性冷鉱泉",
+          "source_temp_c": 15.7,
+          "ph": 6.9,
+          "ph_lab": 7.04,
+          "evaporation_residue_mg_kg": 408.0,
+          "dissolved_solids_mg_kg": 469.3,
+          "total_ingredients_mg_kg": 495.1,
+          "cations": [
+            {
+              "name": "ナトリウムイオン",
+              "symbol": "Na+",
+              "mg_kg": 17.2
+            },
+            {
+              "name": "カリウムイオン",
+              "symbol": "K+",
+              "mg_kg": 0.4
+            },
+            {
+              "name": "マグネシウムイオン",
+              "symbol": "Mg2+",
+              "mg_kg": 31.8
+            },
+            {
+              "name": "カルシウムイオン",
+              "symbol": "Ca2+",
+              "mg_kg": 43.7
+            }
+          ],
+          "cations_total_mg_kg": 93.1,
+          "anions": [
+            {
+              "name": "フッ化物イオン",
+              "symbol": "F-",
+              "mg_kg": 0.1
+            },
+            {
+              "name": "塩素イオン",
+              "symbol": "Cl-",
+              "mg_kg": 39.6
+            },
+            {
+              "name": "硝酸イオン",
+              "symbol": "NO3-",
+              "mg_kg": 7.6
+            },
+            {
+              "name": "硫酸イオン",
+              "symbol": "SO42-",
+              "mg_kg": 62.5
+            },
+            {
+              "name": "リン酸一水素イオン",
+              "symbol": "HPO42-",
+              "mg_kg": 0.5
+            },
+            {
+              "name": "炭酸水素イオン",
+              "symbol": "HCO3-",
+              "mg_kg": 192.6
+            }
+          ],
+          "anions_total_mg_kg": 302.9,
+          "undissociated": [
+            {
+              "name": "メタケイ酸",
+              "symbol": "H2SiO3",
+              "mg_kg": 73.3
+            }
+          ],
+          "undissociated_total_mg_kg": 73.3,
+          "dissolved_gas": [
+            {
+              "name": "遊離二酸化炭素",
+              "symbol": "CO2",
+              "mg_kg": 25.8
+            }
+          ],
+          "dissolved_gas_total_mg_kg": 25.8,
+          "analyzed_on": "2025-01-24",
+          "analyzer": "株式会社信濃公害研究所",
+          "analyzer_registration": "長野県第10号",
+          "source_photos": [
+            "https://fastly.4sqi.net/img/general/500x300/41463109_tplpljOqvChHTqVVmQr46qFHEv3Gz-EkMm2Wt2PSs-s.jpg"
+          ]
         }
-      ],
-      "cations_total_mg_kg": 93.1,
-      "anions": [
-        {
-          "name": "フッ化物イオン",
-          "symbol": "F-",
-          "mg_kg": 0.1
-        },
-        {
-          "name": "塩素イオン",
-          "symbol": "Cl-",
-          "mg_kg": 39.6
-        },
-        {
-          "name": "硝酸イオン",
-          "symbol": "NO3-",
-          "mg_kg": 7.6
-        },
-        {
-          "name": "硫酸イオン",
-          "symbol": "SO42-",
-          "mg_kg": 62.5
-        },
-        {
-          "name": "リン酸一水素イオン",
-          "symbol": "HPO42-",
-          "mg_kg": 0.5
-        },
-        {
-          "name": "炭酸水素イオン",
-          "symbol": "HCO3-",
-          "mg_kg": 192.6
-        }
-      ],
-      "anions_total_mg_kg": 302.9,
-      "undissociated": [
-        {
-          "name": "メタケイ酸",
-          "symbol": "H2SiO3",
-          "mg_kg": 73.3
-        }
-      ],
-      "undissociated_total_mg_kg": 73.3,
-      "dissolved_gas": [
-        {
-          "name": "遊離二酸化炭素",
-          "symbol": "CO2",
-          "mg_kg": 25.8
-        }
-      ],
-      "dissolved_gas_total_mg_kg": 25.8,
-      "analyzed_on": "2025-01-24",
-      "analyzer": "株式会社信濃公害研究所",
-      "analyzer_registration": "長野県第10号",
-      "source_photos": [
-        "https://fastly.4sqi.net/img/general/500x300/41463109_tplpljOqvChHTqVVmQr46qFHEv3Gz-EkMm2Wt2PSs-s.jpg"
       ]
     },
     {
@@ -614,119 +639,123 @@
       "name": "別所温泉 あいそめの湯",
       "address": "別所温泉58, 上田市, 長野県, 386-1431",
       "checkin_date": "2026-08-07",
-      "confidence": "high",
-      "spring_name": "4号源泉",
-      "spring_quality": "アルカリ性単純硫黄温泉",
-      "spring_quality_class": "低張性アルカリ性高温泉",
-      "source_temp_c": 50.4,
-      "use_temp_c": 42.0,
-      "ph": 8.86,
-      "evaporation_residue_mg_kg": 283.0,
-      "dissolved_solids_mg_kg": 287.8,
-      "total_ingredients_mg_kg": 287.9,
-      "cations": [
+      "springs": [
         {
-          "name": "リチウムイオン",
-          "symbol": "Li+",
-          "mg_kg": 0.04
-        },
-        {
-          "name": "ナトリウムイオン",
-          "symbol": "Na+",
-          "mg_kg": 70.3
-        },
-        {
-          "name": "カリウムイオン",
-          "symbol": "K+",
-          "mg_kg": 0.7
-        },
-        {
-          "name": "アンモニウムイオン",
-          "symbol": "NH4+",
-          "mg_kg": 0.06
-        },
-        {
-          "name": "カルシウムイオン",
-          "symbol": "Ca2+",
-          "mg_kg": 12.9
-        },
-        {
-          "name": "ストロンチウムイオン",
-          "symbol": "Sr2+",
-          "mg_kg": 0.1
-        },
-        {
-          "name": "アルミニウムイオン",
-          "symbol": "Al3+",
-          "mg_kg": 0.02
+          "confidence": "high",
+          "spring_name": "4号源泉",
+          "spring_quality": "アルカリ性単純硫黄温泉",
+          "spring_quality_class": "低張性アルカリ性高温泉",
+          "source_temp_c": 50.4,
+          "use_temp_c": 42.0,
+          "ph": 8.86,
+          "evaporation_residue_mg_kg": 283.0,
+          "dissolved_solids_mg_kg": 287.8,
+          "total_ingredients_mg_kg": 287.9,
+          "cations": [
+            {
+              "name": "リチウムイオン",
+              "symbol": "Li+",
+              "mg_kg": 0.04
+            },
+            {
+              "name": "ナトリウムイオン",
+              "symbol": "Na+",
+              "mg_kg": 70.3
+            },
+            {
+              "name": "カリウムイオン",
+              "symbol": "K+",
+              "mg_kg": 0.7
+            },
+            {
+              "name": "アンモニウムイオン",
+              "symbol": "NH4+",
+              "mg_kg": 0.06
+            },
+            {
+              "name": "カルシウムイオン",
+              "symbol": "Ca2+",
+              "mg_kg": 12.9
+            },
+            {
+              "name": "ストロンチウムイオン",
+              "symbol": "Sr2+",
+              "mg_kg": 0.1
+            },
+            {
+              "name": "アルミニウムイオン",
+              "symbol": "Al3+",
+              "mg_kg": 0.02
+            }
+          ],
+          "cations_total_mg_kg": 84.1,
+          "anions": [
+            {
+              "name": "フッ化物イオン",
+              "symbol": "F-",
+              "mg_kg": 0.7
+            },
+            {
+              "name": "塩化物イオン",
+              "symbol": "Cl-",
+              "mg_kg": 42.4
+            },
+            {
+              "name": "臭化物イオン",
+              "symbol": "Br-",
+              "mg_kg": 0.2
+            },
+            {
+              "name": "硫化水素イオン",
+              "symbol": "HS-",
+              "mg_kg": 7.3
+            },
+            {
+              "name": "硫酸イオン",
+              "symbol": "SO42-",
+              "mg_kg": 82.0
+            },
+            {
+              "name": "炭酸水素イオン",
+              "symbol": "HCO3-",
+              "mg_kg": 12.3
+            },
+            {
+              "name": "炭酸イオン",
+              "symbol": "CO32-",
+              "mg_kg": 10.8
+            }
+          ],
+          "anions_total_mg_kg": 155.7,
+          "undissociated": [
+            {
+              "name": "メタケイ酸",
+              "symbol": "H2SiO3",
+              "mg_kg": 46.2
+            },
+            {
+              "name": "メタホウ酸",
+              "symbol": "HBO2",
+              "mg_kg": 1.8
+            }
+          ],
+          "undissociated_total_mg_kg": 48.0,
+          "dissolved_gas": [
+            {
+              "name": "遊離硫化水素",
+              "symbol": "H2S",
+              "mg_kg": 0.1
+            }
+          ],
+          "dissolved_gas_total_mg_kg": 0.1,
+          "analyzed_on": "2024-06-07",
+          "analyzer": "一般社団法人 上田薬剤師会",
+          "analyzer_registration": "長野県第7号",
+          "notes": "掲示は温泉地名「別所温泉」、湧出地は長野県上田市別所温泉湯川1698番地4。掲示右側の適応症・禁忌症・加水等の欄は写真の画角から外れていて読み取れず。",
+          "source_photos": [
+            "https://fastly.4sqi.net/img/general/500x300/41463109_EBAbU6immgM3yveg5y3S2HX4d1YVOXRbhmdqM20BGbo.jpg"
+          ]
         }
-      ],
-      "cations_total_mg_kg": 84.1,
-      "anions": [
-        {
-          "name": "フッ化物イオン",
-          "symbol": "F-",
-          "mg_kg": 0.7
-        },
-        {
-          "name": "塩化物イオン",
-          "symbol": "Cl-",
-          "mg_kg": 42.4
-        },
-        {
-          "name": "臭化物イオン",
-          "symbol": "Br-",
-          "mg_kg": 0.2
-        },
-        {
-          "name": "硫化水素イオン",
-          "symbol": "HS-",
-          "mg_kg": 7.3
-        },
-        {
-          "name": "硫酸イオン",
-          "symbol": "SO42-",
-          "mg_kg": 82.0
-        },
-        {
-          "name": "炭酸水素イオン",
-          "symbol": "HCO3-",
-          "mg_kg": 12.3
-        },
-        {
-          "name": "炭酸イオン",
-          "symbol": "CO32-",
-          "mg_kg": 10.8
-        }
-      ],
-      "anions_total_mg_kg": 155.7,
-      "undissociated": [
-        {
-          "name": "メタケイ酸",
-          "symbol": "H2SiO3",
-          "mg_kg": 46.2
-        },
-        {
-          "name": "メタホウ酸",
-          "symbol": "HBO2",
-          "mg_kg": 1.8
-        }
-      ],
-      "undissociated_total_mg_kg": 48.0,
-      "dissolved_gas": [
-        {
-          "name": "遊離硫化水素",
-          "symbol": "H2S",
-          "mg_kg": 0.1
-        }
-      ],
-      "dissolved_gas_total_mg_kg": 0.1,
-      "analyzed_on": "2024-06-07",
-      "analyzer": "一般社団法人 上田薬剤師会",
-      "analyzer_registration": "長野県第7号",
-      "notes": "掲示は温泉地名「別所温泉」、湧出地は長野県上田市別所温泉湯川1698番地4。掲示右側の適応症・禁忌症・加水等の欄は写真の画角から外れていて読み取れず。",
-      "source_photos": [
-        "https://fastly.4sqi.net/img/general/500x300/41463109_EBAbU6immgM3yveg5y3S2HX4d1YVOXRbhmdqM20BGbo.jpg"
       ]
     },
     {
@@ -734,121 +763,125 @@
       "name": "万葉超音波温泉",
       "address": "磯部1125, 千曲市, 長野県, 389-0806",
       "checkin_date": "2026-06-25",
-      "confidence": "high",
-      "spring_name": "翠明荘3号泉",
-      "spring_quality": "アルカリ性単純硫黄温泉",
-      "spring_quality_class": "低張性アルカリ性高温泉",
-      "source_temp_c": 46.2,
-      "ph": 8.8,
-      "ph_lab": 8.39,
-      "evaporation_residue_mg_kg": 440,
-      "dissolved_solids_mg_kg": 466.6,
-      "total_ingredients_mg_kg": 466.8,
-      "cations": [
+      "springs": [
         {
-          "name": "リチウムイオン",
-          "symbol": "Li+",
-          "mg_kg": 0.1
-        },
-        {
-          "name": "ナトリウムイオン",
-          "symbol": "Na+",
-          "mg_kg": 126.5
-        },
-        {
-          "name": "カリウムイオン",
-          "symbol": "K+",
-          "mg_kg": 2.4
-        },
-        {
-          "name": "マグネシウムイオン",
-          "symbol": "Mg2+",
-          "mg_kg": 0.1
-        },
-        {
-          "name": "カルシウムイオン",
-          "symbol": "Ca2+",
-          "mg_kg": 15.5
-        },
-        {
-          "name": "ストロンチウムイオン",
-          "symbol": "Sr2+",
-          "mg_kg": 0.1
-        },
-        {
-          "name": "マンガンイオン",
-          "symbol": "Mn2+",
-          "mg_kg": 0.02
+          "confidence": "high",
+          "spring_name": "翠明荘3号泉",
+          "spring_quality": "アルカリ性単純硫黄温泉",
+          "spring_quality_class": "低張性アルカリ性高温泉",
+          "source_temp_c": 46.2,
+          "ph": 8.8,
+          "ph_lab": 8.39,
+          "evaporation_residue_mg_kg": 440,
+          "dissolved_solids_mg_kg": 466.6,
+          "total_ingredients_mg_kg": 466.8,
+          "cations": [
+            {
+              "name": "リチウムイオン",
+              "symbol": "Li+",
+              "mg_kg": 0.1
+            },
+            {
+              "name": "ナトリウムイオン",
+              "symbol": "Na+",
+              "mg_kg": 126.5
+            },
+            {
+              "name": "カリウムイオン",
+              "symbol": "K+",
+              "mg_kg": 2.4
+            },
+            {
+              "name": "マグネシウムイオン",
+              "symbol": "Mg2+",
+              "mg_kg": 0.1
+            },
+            {
+              "name": "カルシウムイオン",
+              "symbol": "Ca2+",
+              "mg_kg": 15.5
+            },
+            {
+              "name": "ストロンチウムイオン",
+              "symbol": "Sr2+",
+              "mg_kg": 0.1
+            },
+            {
+              "name": "マンガンイオン",
+              "symbol": "Mn2+",
+              "mg_kg": 0.02
+            }
+          ],
+          "cations_total_mg_kg": 144.7,
+          "anions": [
+            {
+              "name": "フッ化物イオン",
+              "symbol": "F-",
+              "mg_kg": 1.0
+            },
+            {
+              "name": "塩化物イオン",
+              "symbol": "Cl-",
+              "mg_kg": 128.6
+            },
+            {
+              "name": "臭化物イオン",
+              "symbol": "Br-",
+              "mg_kg": 0.4
+            },
+            {
+              "name": "硫化水素イオン",
+              "symbol": "HS-",
+              "mg_kg": 8.4
+            },
+            {
+              "name": "硫酸イオン",
+              "symbol": "SO42-",
+              "mg_kg": 62.7
+            },
+            {
+              "name": "炭酸水素イオン",
+              "symbol": "HCO3-",
+              "mg_kg": 49.3
+            },
+            {
+              "name": "炭酸イオン",
+              "symbol": "CO32-",
+              "mg_kg": 8.4
+            }
+          ],
+          "anions_total_mg_kg": 258.9,
+          "undissociated": [
+            {
+              "name": "メタけい酸",
+              "symbol": "H2SiO3",
+              "mg_kg": 58.3
+            },
+            {
+              "name": "メタほう酸",
+              "symbol": "HBO2",
+              "mg_kg": 4.7
+            }
+          ],
+          "undissociated_total_mg_kg": 63.0,
+          "dissolved_gas": [
+            {
+              "name": "遊離硫化水素",
+              "symbol": "H2S",
+              "mg_kg": 0.2
+            }
+          ],
+          "dissolved_gas_total_mg_kg": 0.2,
+          "indications": [],
+          "contraindications": [],
+          "analyzed_on": "2021-07-02",
+          "analyzer": "上田薬剤師会 検査センター",
+          "analyzer_registration": "長野県第7号",
+          "notes": "掘削動力揚湯（ボアホールポンプ）。知覚的試験は「ほとんど無色澄明、強硫黄味・硫化水素臭」",
+          "source_photos": [
+            "https://fastly.4sqi.net/img/general/500x300/41463109_ppqd7Rk5sq5LLZr9l4Qyqx7bZvYoBjLNcA3gjzylhEc.jpg"
+          ]
         }
-      ],
-      "cations_total_mg_kg": 144.7,
-      "anions": [
-        {
-          "name": "フッ化物イオン",
-          "symbol": "F-",
-          "mg_kg": 1.0
-        },
-        {
-          "name": "塩化物イオン",
-          "symbol": "Cl-",
-          "mg_kg": 128.6
-        },
-        {
-          "name": "臭化物イオン",
-          "symbol": "Br-",
-          "mg_kg": 0.4
-        },
-        {
-          "name": "硫化水素イオン",
-          "symbol": "HS-",
-          "mg_kg": 8.4
-        },
-        {
-          "name": "硫酸イオン",
-          "symbol": "SO42-",
-          "mg_kg": 62.7
-        },
-        {
-          "name": "炭酸水素イオン",
-          "symbol": "HCO3-",
-          "mg_kg": 49.3
-        },
-        {
-          "name": "炭酸イオン",
-          "symbol": "CO32-",
-          "mg_kg": 8.4
-        }
-      ],
-      "anions_total_mg_kg": 258.9,
-      "undissociated": [
-        {
-          "name": "メタけい酸",
-          "symbol": "H2SiO3",
-          "mg_kg": 58.3
-        },
-        {
-          "name": "メタほう酸",
-          "symbol": "HBO2",
-          "mg_kg": 4.7
-        }
-      ],
-      "undissociated_total_mg_kg": 63.0,
-      "dissolved_gas": [
-        {
-          "name": "遊離硫化水素",
-          "symbol": "H2S",
-          "mg_kg": 0.2
-        }
-      ],
-      "dissolved_gas_total_mg_kg": 0.2,
-      "indications": [],
-      "contraindications": [],
-      "analyzed_on": "2021-07-02",
-      "analyzer": "上田薬剤師会 検査センター",
-      "analyzer_registration": "長野県第7号",
-      "notes": "掘削動力揚湯（ボアホールポンプ）。知覚的試験は「ほとんど無色澄明、強硫黄味・硫化水素臭」",
-      "source_photos": [
-        "https://fastly.4sqi.net/img/general/500x300/41463109_ppqd7Rk5sq5LLZr9l4Qyqx7bZvYoBjLNcA3gjzylhEc.jpg"
       ]
     },
     {
@@ -856,134 +889,138 @@
       "name": "アルペンブリックスパ 日帰り温泉",
       "address": "池ノ平2413−11, 妙高市, 新潟県, 949-2112",
       "checkin_date": "2026-08-02",
-      "confidence": "high",
-      "spring_quality": "単純温泉",
-      "spring_quality_class": "低張性弱アルカリ性高温泉",
-      "source_temp_c": 70.1,
-      "use_temp_c": 41.0,
-      "ph": 7.7,
-      "dissolved_solids_mg_kg": 705.5,
-      "total_ingredients_mg_kg": 713.6,
-      "cations": [
+      "springs": [
         {
-          "name": "ナトリウムイオン",
-          "symbol": "Na+",
-          "mg_kg": 23.5
-        },
-        {
-          "name": "カリウムイオン",
-          "symbol": "K+",
-          "mg_kg": 5.0
-        },
-        {
-          "name": "アンモニウムイオン",
-          "symbol": "NH4+",
-          "mg_kg": 18.8
-        },
-        {
-          "name": "マグネシウムイオン",
-          "symbol": "Mg2+",
-          "mg_kg": 26.2
-        },
-        {
-          "name": "カルシウムイオン",
-          "symbol": "Ca2+",
-          "mg_kg": 66.4
-        },
-        {
-          "name": "ストロンチウムイオン",
-          "symbol": "Sr2+",
-          "mg_kg": 0.3
-        },
-        {
-          "name": "マンガンイオン",
-          "symbol": "Mn2+",
-          "mg_kg": 0.6
+          "confidence": "high",
+          "spring_quality": "単純温泉",
+          "spring_quality_class": "低張性弱アルカリ性高温泉",
+          "source_temp_c": 70.1,
+          "use_temp_c": 41.0,
+          "ph": 7.7,
+          "dissolved_solids_mg_kg": 705.5,
+          "total_ingredients_mg_kg": 713.6,
+          "cations": [
+            {
+              "name": "ナトリウムイオン",
+              "symbol": "Na+",
+              "mg_kg": 23.5
+            },
+            {
+              "name": "カリウムイオン",
+              "symbol": "K+",
+              "mg_kg": 5.0
+            },
+            {
+              "name": "アンモニウムイオン",
+              "symbol": "NH4+",
+              "mg_kg": 18.8
+            },
+            {
+              "name": "マグネシウムイオン",
+              "symbol": "Mg2+",
+              "mg_kg": 26.2
+            },
+            {
+              "name": "カルシウムイオン",
+              "symbol": "Ca2+",
+              "mg_kg": 66.4
+            },
+            {
+              "name": "ストロンチウムイオン",
+              "symbol": "Sr2+",
+              "mg_kg": 0.3
+            },
+            {
+              "name": "マンガンイオン",
+              "symbol": "Mn2+",
+              "mg_kg": 0.6
+            }
+          ],
+          "cations_total_mg_kg": 140.8,
+          "anions": [
+            {
+              "name": "硫酸イオン",
+              "symbol": "SO42-",
+              "mg_kg": 173.4
+            },
+            {
+              "name": "リン酸水素イオン",
+              "symbol": "HPO42-",
+              "mg_kg": 0.2
+            },
+            {
+              "name": "チオ硫酸イオン",
+              "symbol": "S2O32-",
+              "mg_kg": 0.9
+            },
+            {
+              "name": "炭酸水素イオン",
+              "symbol": "HCO3-",
+              "mg_kg": 242.1
+            },
+            {
+              "name": "炭酸イオン",
+              "symbol": "CO32-",
+              "mg_kg": 0.9
+            }
+          ],
+          "anions_total_mg_kg": 417.5,
+          "undissociated": [
+            {
+              "name": "メタケイ酸",
+              "symbol": "H2SiO3",
+              "mg_kg": 139.9
+            },
+            {
+              "name": "メタホウ酸",
+              "symbol": "HBO2",
+              "mg_kg": 7.3
+            }
+          ],
+          "undissociated_total_mg_kg": 147.2,
+          "dissolved_gas": [
+            {
+              "name": "遊離二酸化炭素",
+              "symbol": "CO2",
+              "mg_kg": 8.1
+            }
+          ],
+          "dissolved_gas_total_mg_kg": 8.1,
+          "treatment": {
+            "kasui": {
+              "applied": false,
+              "reason": "水は加えておりません。"
+            },
+            "kaon": {
+              "applied": true,
+              "reason": "貯湯槽を有する為、衛生管理の目的と入浴に適した温度に保つ為、加温しています。"
+            },
+            "junkan": {
+              "applied": true,
+              "reason": "衛生管理の為、循環濾過装置を使用しています。"
+            },
+            "shodoku": {
+              "applied": true,
+              "reason": "衛生管理の為、塩素系薬剤を使用しております。"
+            },
+            "nyuyokuzai": {
+              "applied": true,
+              "reason": "源泉の色・臭いを体感できるように拘泥を加えております。（露天風呂）"
+            }
+          },
+          "indications": [
+            "自律神経不安定症",
+            "不眠症",
+            "うつ状態"
+          ],
+          "analyzed_on": "2024-09-12",
+          "analyzer": "一般財団法人 上越環境科学センター",
+          "analyzer_registration": "新潟県（登）環企第6号",
+          "notes": "掲示は妙高温泉土地株式会社。源泉は新潟県妙高市大字関山字妙高山国有林31にほ林班湧出、ろ過後60.5℃。源泉名の欄は照明の反射で読み取れなかったため未記載。飲用不可。",
+          "source_photos": [
+            "https://fastly.4sqi.net/img/general/500x300/41463109_4U644mS_-lF3Q84wb-hq59q6YZKyGHFStFP6tguSnSo.jpg"
+          ]
         }
-      ],
-      "cations_total_mg_kg": 140.8,
-      "anions": [
-        {
-          "name": "硫酸イオン",
-          "symbol": "SO42-",
-          "mg_kg": 173.4
-        },
-        {
-          "name": "リン酸水素イオン",
-          "symbol": "HPO42-",
-          "mg_kg": 0.2
-        },
-        {
-          "name": "チオ硫酸イオン",
-          "symbol": "S2O32-",
-          "mg_kg": 0.9
-        },
-        {
-          "name": "炭酸水素イオン",
-          "symbol": "HCO3-",
-          "mg_kg": 242.1
-        },
-        {
-          "name": "炭酸イオン",
-          "symbol": "CO32-",
-          "mg_kg": 0.9
-        }
-      ],
-      "anions_total_mg_kg": 417.5,
-      "undissociated": [
-        {
-          "name": "メタケイ酸",
-          "symbol": "H2SiO3",
-          "mg_kg": 139.9
-        },
-        {
-          "name": "メタホウ酸",
-          "symbol": "HBO2",
-          "mg_kg": 7.3
-        }
-      ],
-      "undissociated_total_mg_kg": 147.2,
-      "dissolved_gas": [
-        {
-          "name": "遊離二酸化炭素",
-          "symbol": "CO2",
-          "mg_kg": 8.1
-        }
-      ],
-      "dissolved_gas_total_mg_kg": 8.1,
-      "treatment": {
-        "kasui": {
-          "applied": false,
-          "reason": "水は加えておりません。"
-        },
-        "kaon": {
-          "applied": true,
-          "reason": "貯湯槽を有する為、衛生管理の目的と入浴に適した温度に保つ為、加温しています。"
-        },
-        "junkan": {
-          "applied": true,
-          "reason": "衛生管理の為、循環濾過装置を使用しています。"
-        },
-        "shodoku": {
-          "applied": true,
-          "reason": "衛生管理の為、塩素系薬剤を使用しております。"
-        },
-        "nyuyokuzai": {
-          "applied": true,
-          "reason": "源泉の色・臭いを体感できるように拘泥を加えております。（露天風呂）"
-        }
-      },
-      "indications": [
-        "自律神経不安定症",
-        "不眠症",
-        "うつ状態"
-      ],
-      "analyzed_on": "2024-09-12",
-      "analyzer": "一般財団法人 上越環境科学センター",
-      "analyzer_registration": "新潟県（登）環企第6号",
-      "notes": "掲示は妙高温泉土地株式会社。源泉は新潟県妙高市大字関山字妙高山国有林31にほ林班湧出、ろ過後60.5℃。源泉名の欄は照明の反射で読み取れなかったため未記載。飲用不可。",
-      "source_photos": [
-        "https://fastly.4sqi.net/img/general/500x300/41463109_4U644mS_-lF3Q84wb-hq59q6YZKyGHFStFP6tguSnSo.jpg"
       ]
     },
     {
@@ -991,152 +1028,156 @@
       "name": "湯けむり屋敷 薬師の湯",
       "address": "平2811-41, 大町市, 長野県, 398-0001",
       "checkin_date": "2026-07-26",
-      "confidence": "high",
-      "spring_name": "新第2源泉、平成の湯源泉、元湯一号源泉、高瀬源泉との混合泉",
-      "spring_quality": "単純温泉",
-      "spring_quality_class": "低張性弱アルカリ性高温泉",
-      "source_temp_c": 64.6,
-      "use_temp_c": 42.0,
-      "ph": 7.6,
-      "ph_lab": 7.53,
-      "evaporation_residue_mg_kg": 595,
-      "dissolved_solids_mg_kg": 693.4,
-      "total_ingredients_mg_kg": 706.0,
-      "cations": [
+      "springs": [
         {
-          "name": "リチウムイオン",
-          "symbol": "Li+",
-          "mg_kg": 0.7
-        },
-        {
-          "name": "ナトリウムイオン",
-          "symbol": "Na+",
-          "mg_kg": 148.5
-        },
-        {
-          "name": "カリウムイオン",
-          "symbol": "K+",
-          "mg_kg": 9.0
-        },
-        {
-          "name": "マグネシウムイオン",
-          "symbol": "Mg2+",
-          "mg_kg": 0.1
-        },
-        {
-          "name": "カルシウムイオン",
-          "symbol": "Ca2+",
-          "mg_kg": 18.2
-        },
-        {
-          "name": "ストロンチウムイオン",
-          "symbol": "Sr2+",
-          "mg_kg": 0.1
-        },
-        {
-          "name": "アルミニウムイオン",
-          "symbol": "Al3+",
-          "mg_kg": 0.02
+          "confidence": "high",
+          "spring_name": "新第2源泉、平成の湯源泉、元湯一号源泉、高瀬源泉との混合泉",
+          "spring_quality": "単純温泉",
+          "spring_quality_class": "低張性弱アルカリ性高温泉",
+          "source_temp_c": 64.6,
+          "use_temp_c": 42.0,
+          "ph": 7.6,
+          "ph_lab": 7.53,
+          "evaporation_residue_mg_kg": 595,
+          "dissolved_solids_mg_kg": 693.4,
+          "total_ingredients_mg_kg": 706.0,
+          "cations": [
+            {
+              "name": "リチウムイオン",
+              "symbol": "Li+",
+              "mg_kg": 0.7
+            },
+            {
+              "name": "ナトリウムイオン",
+              "symbol": "Na+",
+              "mg_kg": 148.5
+            },
+            {
+              "name": "カリウムイオン",
+              "symbol": "K+",
+              "mg_kg": 9.0
+            },
+            {
+              "name": "マグネシウムイオン",
+              "symbol": "Mg2+",
+              "mg_kg": 0.1
+            },
+            {
+              "name": "カルシウムイオン",
+              "symbol": "Ca2+",
+              "mg_kg": 18.2
+            },
+            {
+              "name": "ストロンチウムイオン",
+              "symbol": "Sr2+",
+              "mg_kg": 0.1
+            },
+            {
+              "name": "アルミニウムイオン",
+              "symbol": "Al3+",
+              "mg_kg": 0.02
+            }
+          ],
+          "cations_total_mg_kg": 176.6,
+          "anions": [
+            {
+              "name": "フッ化物イオン",
+              "symbol": "F-",
+              "mg_kg": 8.0
+            },
+            {
+              "name": "塩化物イオン",
+              "symbol": "Cl-",
+              "mg_kg": 162.3
+            },
+            {
+              "name": "臭化物イオン",
+              "symbol": "Br-",
+              "mg_kg": 0.3
+            },
+            {
+              "name": "亜硝酸イオン",
+              "symbol": "NO2-",
+              "mg_kg": 0.1
+            },
+            {
+              "name": "硝酸イオン",
+              "symbol": "NO3-",
+              "mg_kg": 0.1
+            },
+            {
+              "name": "硫酸イオン",
+              "symbol": "SO42-",
+              "mg_kg": 13.5
+            },
+            {
+              "name": "炭酸水素イオン",
+              "symbol": "HCO3-",
+              "mg_kg": 154.7
+            }
+          ],
+          "anions_total_mg_kg": 339.0,
+          "undissociated": [
+            {
+              "name": "メタケイ酸",
+              "symbol": "H2SiO3",
+              "mg_kg": 174.4
+            },
+            {
+              "name": "メタホウ酸",
+              "symbol": "HBO2",
+              "mg_kg": 3.3
+            },
+            {
+              "name": "メタ亜ヒ酸",
+              "symbol": "HAsO2",
+              "mg_kg": 0.1
+            }
+          ],
+          "undissociated_total_mg_kg": 177.8,
+          "dissolved_gas": [
+            {
+              "name": "遊離二酸化炭素",
+              "symbol": "CO2",
+              "mg_kg": 12.6
+            }
+          ],
+          "dissolved_gas_total_mg_kg": 12.6,
+          "treatment": {
+            "kasui": {
+              "applied": true,
+              "reason": "源泉温度が高いため、加水しています。"
+            },
+            "kaon": {
+              "applied": true,
+              "reason": "気温の低い期間のみ一部浴槽で、加温しています。"
+            },
+            "junkan": {
+              "applied": true,
+              "reason": "衛生管理のため、一部浴槽で循環ろ過装置を使用しています。"
+            },
+            "shodoku": {
+              "applied": true,
+              "reason": "衛生管理のため、塩素系薬剤を使用しています。"
+            },
+            "nyuyokuzai": {
+              "applied": true,
+              "reason": "リラクゼーション効果を高め、より快適な温泉効果を提供するため、「村上商会湯の素」、「重曹」及び「食塩」を一部浴槽で使用しています。"
+            }
+          },
+          "indications": [
+            "自律神経不安定症",
+            "不眠症",
+            "うつ状態"
+          ],
+          "analyzed_on": "2025-04-23",
+          "analyzer": "一般社団法人 長野県薬剤師会",
+          "analyzer_registration": "長野県第2号",
+          "notes": "掲示内容決定通知書・温泉分析書・温泉分析書別表（浴用）の3点セット。届出者は大町温泉郷不動産開発株式会社、分析申請者は大町市温泉開発株式会社。採水地は大町市平2811-56（貯湯槽3号採取口）。禁忌症・適応症決定年月日は令和7年6月20日。",
+          "source_photos": [
+            "https://fastly.4sqi.net/img/general/500x300/41463109_eo_pN2TdlWhAcYHKPL-kZaH0AXiSPSallE6Ic_-T82M.jpg"
+          ]
         }
-      ],
-      "cations_total_mg_kg": 176.6,
-      "anions": [
-        {
-          "name": "フッ化物イオン",
-          "symbol": "F-",
-          "mg_kg": 8.0
-        },
-        {
-          "name": "塩化物イオン",
-          "symbol": "Cl-",
-          "mg_kg": 162.3
-        },
-        {
-          "name": "臭化物イオン",
-          "symbol": "Br-",
-          "mg_kg": 0.3
-        },
-        {
-          "name": "亜硝酸イオン",
-          "symbol": "NO2-",
-          "mg_kg": 0.1
-        },
-        {
-          "name": "硝酸イオン",
-          "symbol": "NO3-",
-          "mg_kg": 0.1
-        },
-        {
-          "name": "硫酸イオン",
-          "symbol": "SO42-",
-          "mg_kg": 13.5
-        },
-        {
-          "name": "炭酸水素イオン",
-          "symbol": "HCO3-",
-          "mg_kg": 154.7
-        }
-      ],
-      "anions_total_mg_kg": 339.0,
-      "undissociated": [
-        {
-          "name": "メタケイ酸",
-          "symbol": "H2SiO3",
-          "mg_kg": 174.4
-        },
-        {
-          "name": "メタホウ酸",
-          "symbol": "HBO2",
-          "mg_kg": 3.3
-        },
-        {
-          "name": "メタ亜ヒ酸",
-          "symbol": "HAsO2",
-          "mg_kg": 0.1
-        }
-      ],
-      "undissociated_total_mg_kg": 177.8,
-      "dissolved_gas": [
-        {
-          "name": "遊離二酸化炭素",
-          "symbol": "CO2",
-          "mg_kg": 12.6
-        }
-      ],
-      "dissolved_gas_total_mg_kg": 12.6,
-      "treatment": {
-        "kasui": {
-          "applied": true,
-          "reason": "源泉温度が高いため、加水しています。"
-        },
-        "kaon": {
-          "applied": true,
-          "reason": "気温の低い期間のみ一部浴槽で、加温しています。"
-        },
-        "junkan": {
-          "applied": true,
-          "reason": "衛生管理のため、一部浴槽で循環ろ過装置を使用しています。"
-        },
-        "shodoku": {
-          "applied": true,
-          "reason": "衛生管理のため、塩素系薬剤を使用しています。"
-        },
-        "nyuyokuzai": {
-          "applied": true,
-          "reason": "リラクゼーション効果を高め、より快適な温泉効果を提供するため、「村上商会湯の素」、「重曹」及び「食塩」を一部浴槽で使用しています。"
-        }
-      },
-      "indications": [
-        "自律神経不安定症",
-        "不眠症",
-        "うつ状態"
-      ],
-      "analyzed_on": "2025-04-23",
-      "analyzer": "一般社団法人 長野県薬剤師会",
-      "analyzer_registration": "長野県第2号",
-      "notes": "掲示内容決定通知書・温泉分析書・温泉分析書別表（浴用）の3点セット。届出者は大町温泉郷不動産開発株式会社、分析申請者は大町市温泉開発株式会社。採水地は大町市平2811-56（貯湯槽3号採取口）。禁忌症・適応症決定年月日は令和7年6月20日。",
-      "source_photos": [
-        "https://fastly.4sqi.net/img/general/500x300/41463109_eo_pN2TdlWhAcYHKPL-kZaH0AXiSPSallE6Ic_-T82M.jpg"
       ]
     },
     {
@@ -1144,148 +1185,152 @@
       "name": "ゆーぷる木崎湖",
       "address": "平10639-1, 大町市, 長野県, 398-0001",
       "checkin_date": "2026-07-25",
-      "confidence": "high",
-      "spring_name": "新第2源泉、平成の湯源泉、元湯一号、高瀬の湯との混合泉",
-      "spring_quality": "単純温泉",
-      "spring_quality_class": "低張性中性高温泉",
-      "source_temp_c": 47.0,
-      "use_temp_c": 42.0,
-      "ph": 7.1,
-      "ph_lab": 7.17,
-      "evaporation_residue_mg_kg": 583,
-      "dissolved_solids_mg_kg": 689.6,
-      "total_ingredients_mg_kg": 713.4,
-      "cations": [
+      "springs": [
         {
-          "name": "リチウムイオン",
-          "symbol": "Li+",
-          "mg_kg": 0.8
-        },
-        {
-          "name": "ナトリウムイオン",
-          "symbol": "Na+",
-          "mg_kg": 146.5
-        },
-        {
-          "name": "カリウムイオン",
-          "symbol": "K+",
-          "mg_kg": 8.9
-        },
-        {
-          "name": "マグネシウムイオン",
-          "symbol": "Mg2+",
-          "mg_kg": 0.1
-        },
-        {
-          "name": "カルシウムイオン",
-          "symbol": "Ca2+",
-          "mg_kg": 17.6
-        },
-        {
-          "name": "ストロンチウムイオン",
-          "symbol": "Sr2+",
-          "mg_kg": 0.1
-        },
-        {
-          "name": "アルミニウムイオン",
-          "symbol": "Al3+",
-          "mg_kg": 0.02
-        },
-        {
-          "name": "マンガンイオン",
-          "symbol": "Mn2+",
-          "mg_kg": 0.03
+          "confidence": "high",
+          "spring_name": "新第2源泉、平成の湯源泉、元湯一号、高瀬の湯との混合泉",
+          "spring_quality": "単純温泉",
+          "spring_quality_class": "低張性中性高温泉",
+          "source_temp_c": 47.0,
+          "use_temp_c": 42.0,
+          "ph": 7.1,
+          "ph_lab": 7.17,
+          "evaporation_residue_mg_kg": 583,
+          "dissolved_solids_mg_kg": 689.6,
+          "total_ingredients_mg_kg": 713.4,
+          "cations": [
+            {
+              "name": "リチウムイオン",
+              "symbol": "Li+",
+              "mg_kg": 0.8
+            },
+            {
+              "name": "ナトリウムイオン",
+              "symbol": "Na+",
+              "mg_kg": 146.5
+            },
+            {
+              "name": "カリウムイオン",
+              "symbol": "K+",
+              "mg_kg": 8.9
+            },
+            {
+              "name": "マグネシウムイオン",
+              "symbol": "Mg2+",
+              "mg_kg": 0.1
+            },
+            {
+              "name": "カルシウムイオン",
+              "symbol": "Ca2+",
+              "mg_kg": 17.6
+            },
+            {
+              "name": "ストロンチウムイオン",
+              "symbol": "Sr2+",
+              "mg_kg": 0.1
+            },
+            {
+              "name": "アルミニウムイオン",
+              "symbol": "Al3+",
+              "mg_kg": 0.02
+            },
+            {
+              "name": "マンガンイオン",
+              "symbol": "Mn2+",
+              "mg_kg": 0.03
+            }
+          ],
+          "cations_total_mg_kg": 174.0,
+          "anions": [
+            {
+              "name": "フッ化物イオン",
+              "symbol": "F-",
+              "mg_kg": 7.9
+            },
+            {
+              "name": "塩化物イオン",
+              "symbol": "Cl-",
+              "mg_kg": 164.7
+            },
+            {
+              "name": "臭化物イオン",
+              "symbol": "Br-",
+              "mg_kg": 0.3
+            },
+            {
+              "name": "硝酸イオン",
+              "symbol": "NO3-",
+              "mg_kg": 0.3
+            },
+            {
+              "name": "硫酸イオン",
+              "symbol": "SO42-",
+              "mg_kg": 13.0
+            },
+            {
+              "name": "炭酸水素イオン",
+              "symbol": "HCO3-",
+              "mg_kg": 152.0
+            }
+          ],
+          "anions_total_mg_kg": 338.2,
+          "undissociated": [
+            {
+              "name": "メタケイ酸",
+              "symbol": "H2SiO3",
+              "mg_kg": 174.0
+            },
+            {
+              "name": "メタホウ酸",
+              "symbol": "HBO2",
+              "mg_kg": 3.2
+            },
+            {
+              "name": "メタ亜ヒ酸",
+              "symbol": "HAsO2",
+              "mg_kg": 0.1
+            }
+          ],
+          "undissociated_total_mg_kg": 177.3,
+          "dissolved_gas": [
+            {
+              "name": "遊離二酸化炭素",
+              "symbol": "CO2",
+              "mg_kg": 23.8
+            }
+          ],
+          "dissolved_gas_total_mg_kg": 23.8,
+          "treatment": {
+            "kasui": {
+              "applied": true,
+              "reason": "源泉温度が高いので、加水しています。"
+            },
+            "kaon": {
+              "applied": true,
+              "reason": "入浴に適した温度に保つため、加温しています。"
+            },
+            "junkan": {
+              "applied": true,
+              "reason": "衛生管理のため、循環ろ過装置を使用しています。"
+            },
+            "shodoku": {
+              "applied": true,
+              "reason": "衛生管理のため、塩素系薬剤を使用しています。"
+            }
+          },
+          "indications": [
+            "自律神経不安定症",
+            "不眠症",
+            "うつ状態"
+          ],
+          "contraindications": [],
+          "analyzed_on": "2025-04-23",
+          "analyzer": "長野県薬剤師会",
+          "analyzer_registration": "長野県第2号",
+          "source_photos": [
+            "https://fastly.4sqi.net/img/general/500x300/41463109_upbzMkXVV-LBv8AQmalIGM48quCGinxDpoHPbob5wCY.jpg"
+          ]
         }
-      ],
-      "cations_total_mg_kg": 174.0,
-      "anions": [
-        {
-          "name": "フッ化物イオン",
-          "symbol": "F-",
-          "mg_kg": 7.9
-        },
-        {
-          "name": "塩化物イオン",
-          "symbol": "Cl-",
-          "mg_kg": 164.7
-        },
-        {
-          "name": "臭化物イオン",
-          "symbol": "Br-",
-          "mg_kg": 0.3
-        },
-        {
-          "name": "硝酸イオン",
-          "symbol": "NO3-",
-          "mg_kg": 0.3
-        },
-        {
-          "name": "硫酸イオン",
-          "symbol": "SO42-",
-          "mg_kg": 13.0
-        },
-        {
-          "name": "炭酸水素イオン",
-          "symbol": "HCO3-",
-          "mg_kg": 152.0
-        }
-      ],
-      "anions_total_mg_kg": 338.2,
-      "undissociated": [
-        {
-          "name": "メタケイ酸",
-          "symbol": "H2SiO3",
-          "mg_kg": 174.0
-        },
-        {
-          "name": "メタホウ酸",
-          "symbol": "HBO2",
-          "mg_kg": 3.2
-        },
-        {
-          "name": "メタ亜ヒ酸",
-          "symbol": "HAsO2",
-          "mg_kg": 0.1
-        }
-      ],
-      "undissociated_total_mg_kg": 177.3,
-      "dissolved_gas": [
-        {
-          "name": "遊離二酸化炭素",
-          "symbol": "CO2",
-          "mg_kg": 23.8
-        }
-      ],
-      "dissolved_gas_total_mg_kg": 23.8,
-      "treatment": {
-        "kasui": {
-          "applied": true,
-          "reason": "源泉温度が高いので、加水しています。"
-        },
-        "kaon": {
-          "applied": true,
-          "reason": "入浴に適した温度に保つため、加温しています。"
-        },
-        "junkan": {
-          "applied": true,
-          "reason": "衛生管理のため、循環ろ過装置を使用しています。"
-        },
-        "shodoku": {
-          "applied": true,
-          "reason": "衛生管理のため、塩素系薬剤を使用しています。"
-        }
-      },
-      "indications": [
-        "自律神経不安定症",
-        "不眠症",
-        "うつ状態"
-      ],
-      "contraindications": [],
-      "analyzed_on": "2025-04-23",
-      "analyzer": "長野県薬剤師会",
-      "analyzer_registration": "長野県第2号",
-      "source_photos": [
-        "https://fastly.4sqi.net/img/general/500x300/41463109_upbzMkXVV-LBv8AQmalIGM48quCGinxDpoHPbob5wCY.jpg"
       ]
     },
     {
@@ -1293,151 +1338,155 @@
       "name": "ふるさとの湯",
       "address": "豊郷8734, 野沢温泉村, 長野県, 389-2502",
       "checkin_date": "2026-07-19",
-      "confidence": "medium",
-      "spring_name": "竹伸し、御嶽及び大欅の混合泉",
-      "spring_quality": "アルカリ性単純硫黄温泉",
-      "spring_quality_class": "低張性アルカリ性高温泉",
-      "source_temp_c": 69.7,
-      "use_temp_c": 40.0,
-      "ph": 8.5,
-      "ph_lab": 8.27,
-      "yield_l_min": 60.2,
-      "evaporation_residue_mg_kg": 861.8,
-      "dissolved_solids_mg_kg": 917,
-      "total_ingredients_mg_kg": 917,
-      "cations": [
+      "springs": [
         {
-          "name": "ナトリウムイオン",
-          "symbol": "Na+",
-          "mg_kg": 179.2
-        },
-        {
-          "name": "カリウムイオン",
-          "symbol": "K+",
-          "mg_kg": 5.4
-        },
-        {
-          "name": "アンモニウムイオン",
-          "symbol": "NH4+",
-          "mg_kg": 0.9
-        },
-        {
-          "name": "マグネシウムイオン",
-          "symbol": "Mg2+",
-          "mg_kg": 0.1
-        },
-        {
-          "name": "カルシウムイオン",
-          "symbol": "Ca2+",
-          "mg_kg": 66.7
-        },
-        {
-          "name": "ストロンチウムイオン",
-          "symbol": "Sr2+",
-          "mg_kg": 0.3
+          "confidence": "medium",
+          "spring_name": "竹伸し、御嶽及び大欅の混合泉",
+          "spring_quality": "アルカリ性単純硫黄温泉",
+          "spring_quality_class": "低張性アルカリ性高温泉",
+          "source_temp_c": 69.7,
+          "use_temp_c": 40.0,
+          "ph": 8.5,
+          "ph_lab": 8.27,
+          "yield_l_min": 60.2,
+          "evaporation_residue_mg_kg": 861.8,
+          "dissolved_solids_mg_kg": 917,
+          "total_ingredients_mg_kg": 917,
+          "cations": [
+            {
+              "name": "ナトリウムイオン",
+              "symbol": "Na+",
+              "mg_kg": 179.2
+            },
+            {
+              "name": "カリウムイオン",
+              "symbol": "K+",
+              "mg_kg": 5.4
+            },
+            {
+              "name": "アンモニウムイオン",
+              "symbol": "NH4+",
+              "mg_kg": 0.9
+            },
+            {
+              "name": "マグネシウムイオン",
+              "symbol": "Mg2+",
+              "mg_kg": 0.1
+            },
+            {
+              "name": "カルシウムイオン",
+              "symbol": "Ca2+",
+              "mg_kg": 66.7
+            },
+            {
+              "name": "ストロンチウムイオン",
+              "symbol": "Sr2+",
+              "mg_kg": 0.3
+            }
+          ],
+          "cations_total_mg_kg": 252.6,
+          "anions": [
+            {
+              "name": "フッ化物イオン",
+              "symbol": "F-",
+              "mg_kg": 1.1
+            },
+            {
+              "name": "塩化物イオン",
+              "symbol": "Cl-",
+              "mg_kg": 83.5
+            },
+            {
+              "name": "臭化物イオン",
+              "symbol": "Br-",
+              "mg_kg": 0.3
+            },
+            {
+              "name": "硫化水素イオン",
+              "symbol": "HS-",
+              "mg_kg": 18.0
+            },
+            {
+              "name": "硫酸イオン",
+              "symbol": "SO42-",
+              "mg_kg": 389.0
+            },
+            {
+              "name": "炭酸水素イオン",
+              "symbol": "HCO3-",
+              "mg_kg": 26.2
+            },
+            {
+              "name": "炭酸イオン",
+              "symbol": "CO32-",
+              "mg_kg": 20.4
+            }
+          ],
+          "anions_total_mg_kg": 542.4,
+          "undissociated": [
+            {
+              "name": "メタケイ酸",
+              "symbol": "H2SiO3",
+              "mg_kg": 115.2
+            },
+            {
+              "name": "メタホウ酸",
+              "symbol": "HBO2",
+              "mg_kg": 6.9
+            }
+          ],
+          "undissociated_total_mg_kg": 122.1,
+          "dissolved_gas": [
+            {
+              "name": "遊離硫化水素",
+              "symbol": "H2S",
+              "mg_kg": 0.6
+            }
+          ],
+          "dissolved_gas_total_mg_kg": 0.6,
+          "treatment": {
+            "kasui": {
+              "applied": true,
+              "reason": "適温にするため"
+            },
+            "kaon": {
+              "applied": false,
+              "reason": ""
+            },
+            "junkan": {
+              "applied": false,
+              "reason": ""
+            },
+            "shodoku": {
+              "applied": false,
+              "reason": ""
+            }
+          },
+          "indications": [
+            "自律神経不安定症",
+            "不眠症",
+            "うつ状態",
+            "アトピー性皮膚炎",
+            "尋常性乾癬",
+            "慢性湿疹",
+            "表皮化膿症"
+          ],
+          "contraindications": [
+            "皮膚又は粘膜の過敏な人",
+            "高齢者の皮膚乾燥症"
+          ],
+          "analyzed_on": "2018-10-13",
+          "analyzer": "環境未来株式会社",
+          "analyzer_registration": "長野県第6号",
+          "notes": "還元系温泉認定書も掲示（男湯湯口 ORP -146mV / pH 8.43 / 62.6℃）。掲示の陰イオン計542.4mg/kgは、印字されている各行の合計538.5mg/kgと3.9mg/kg合わない。mg・ミリバル・ミリバル%の3系統いずれも同じ約1.86%（0.23ミリバル）ぶん不足しており、分析書側の不整合とみられる（当量から逆算すると水酸化物イオン相当だが、pH8.5では量的にありえない）。溶存物質・成分総計は掲示の陰イオン計を使って計算されている。",
+          "validation_exceptions": [
+            "陰イオン計"
+          ],
+          "source_photos": [
+            "https://fastly.4sqi.net/img/general/500x300/41463109_Ct6QYpmg6HY9_4cny4Cm0hhoICQhsv69DCLKHpLohfc.jpg",
+            "https://fastly.4sqi.net/img/general/500x300/41463109_7cfoqnDhNkUlBmNGhdTwK8GgFvZ9SFINd2D3F7sIq1s.jpg"
+          ]
         }
-      ],
-      "cations_total_mg_kg": 252.6,
-      "anions": [
-        {
-          "name": "フッ化物イオン",
-          "symbol": "F-",
-          "mg_kg": 1.1
-        },
-        {
-          "name": "塩化物イオン",
-          "symbol": "Cl-",
-          "mg_kg": 83.5
-        },
-        {
-          "name": "臭化物イオン",
-          "symbol": "Br-",
-          "mg_kg": 0.3
-        },
-        {
-          "name": "硫化水素イオン",
-          "symbol": "HS-",
-          "mg_kg": 18.0
-        },
-        {
-          "name": "硫酸イオン",
-          "symbol": "SO42-",
-          "mg_kg": 389.0
-        },
-        {
-          "name": "炭酸水素イオン",
-          "symbol": "HCO3-",
-          "mg_kg": 26.2
-        },
-        {
-          "name": "炭酸イオン",
-          "symbol": "CO32-",
-          "mg_kg": 20.4
-        }
-      ],
-      "anions_total_mg_kg": 542.4,
-      "undissociated": [
-        {
-          "name": "メタケイ酸",
-          "symbol": "H2SiO3",
-          "mg_kg": 115.2
-        },
-        {
-          "name": "メタホウ酸",
-          "symbol": "HBO2",
-          "mg_kg": 6.9
-        }
-      ],
-      "undissociated_total_mg_kg": 122.1,
-      "dissolved_gas": [
-        {
-          "name": "遊離硫化水素",
-          "symbol": "H2S",
-          "mg_kg": 0.6
-        }
-      ],
-      "dissolved_gas_total_mg_kg": 0.6,
-      "treatment": {
-        "kasui": {
-          "applied": true,
-          "reason": "適温にするため"
-        },
-        "kaon": {
-          "applied": false,
-          "reason": ""
-        },
-        "junkan": {
-          "applied": false,
-          "reason": ""
-        },
-        "shodoku": {
-          "applied": false,
-          "reason": ""
-        }
-      },
-      "indications": [
-        "自律神経不安定症",
-        "不眠症",
-        "うつ状態",
-        "アトピー性皮膚炎",
-        "尋常性乾癬",
-        "慢性湿疹",
-        "表皮化膿症"
-      ],
-      "contraindications": [
-        "皮膚又は粘膜の過敏な人",
-        "高齢者の皮膚乾燥症"
-      ],
-      "analyzed_on": "2018-10-13",
-      "analyzer": "環境未来株式会社",
-      "analyzer_registration": "長野県第6号",
-      "notes": "還元系温泉認定書も掲示（男湯湯口 ORP -146mV / pH 8.43 / 62.6℃）。掲示の陰イオン計542.4mg/kgは、印字されている各行の合計538.5mg/kgと3.9mg/kg合わない。mg・ミリバル・ミリバル%の3系統いずれも同じ約1.86%（0.23ミリバル）ぶん不足しており、分析書側の不整合とみられる（当量から逆算すると水酸化物イオン相当だが、pH8.5では量的にありえない）。溶存物質・成分総計は掲示の陰イオン計を使って計算されている。",
-      "validation_exceptions": [
-        "陰イオン計"
-      ],
-      "source_photos": [
-        "https://fastly.4sqi.net/img/general/500x300/41463109_Ct6QYpmg6HY9_4cny4Cm0hhoICQhsv69DCLKHpLohfc.jpg",
-        "https://fastly.4sqi.net/img/general/500x300/41463109_7cfoqnDhNkUlBmNGhdTwK8GgFvZ9SFINd2D3F7sIq1s.jpg"
       ]
     },
     {
@@ -1445,131 +1494,135 @@
       "name": "おぶせ温泉穴観音の湯",
       "address": "雁田1194, 小布施町, 長野県, 381-0211",
       "checkin_date": "2026-07-12",
-      "confidence": "high",
-      "spring_name": "おぶせ温泉",
-      "spring_quality": "含硫黄－カルシウム・ナトリウム－塩化物温泉",
-      "spring_quality_class": "低張性弱アルカリ性高温泉",
-      "source_temp_c": 44.1,
-      "use_temp_c": 44.1,
-      "ph": 8.37,
-      "evaporation_residue_mg_kg": 3144,
-      "dissolved_solids_mg_kg": 3471,
-      "total_ingredients_mg_kg": 3473,
-      "cations": [
+      "springs": [
         {
-          "name": "リチウムイオン",
-          "symbol": "Li+",
-          "mg_kg": 0.2
-        },
-        {
-          "name": "ナトリウムイオン",
-          "symbol": "Na+",
-          "mg_kg": 386.3
-        },
-        {
-          "name": "カリウムイオン",
-          "symbol": "K+",
-          "mg_kg": 11.6
-        },
-        {
-          "name": "アンモニウムイオン",
-          "symbol": "NH4+",
-          "mg_kg": 0.1
-        },
-        {
-          "name": "マグネシウムイオン",
-          "symbol": "Mg2+",
-          "mg_kg": 0.6
-        },
-        {
-          "name": "カルシウムイオン",
-          "symbol": "Ca2+",
-          "mg_kg": 799.5
-        },
-        {
-          "name": "ストロンチウムイオン",
-          "symbol": "Sr2+",
-          "mg_kg": 2.6
+          "confidence": "high",
+          "spring_name": "おぶせ温泉",
+          "spring_quality": "含硫黄－カルシウム・ナトリウム－塩化物温泉",
+          "spring_quality_class": "低張性弱アルカリ性高温泉",
+          "source_temp_c": 44.1,
+          "use_temp_c": 44.1,
+          "ph": 8.37,
+          "evaporation_residue_mg_kg": 3144,
+          "dissolved_solids_mg_kg": 3471,
+          "total_ingredients_mg_kg": 3473,
+          "cations": [
+            {
+              "name": "リチウムイオン",
+              "symbol": "Li+",
+              "mg_kg": 0.2
+            },
+            {
+              "name": "ナトリウムイオン",
+              "symbol": "Na+",
+              "mg_kg": 386.3
+            },
+            {
+              "name": "カリウムイオン",
+              "symbol": "K+",
+              "mg_kg": 11.6
+            },
+            {
+              "name": "アンモニウムイオン",
+              "symbol": "NH4+",
+              "mg_kg": 0.1
+            },
+            {
+              "name": "マグネシウムイオン",
+              "symbol": "Mg2+",
+              "mg_kg": 0.6
+            },
+            {
+              "name": "カルシウムイオン",
+              "symbol": "Ca2+",
+              "mg_kg": 799.5
+            },
+            {
+              "name": "ストロンチウムイオン",
+              "symbol": "Sr2+",
+              "mg_kg": 2.6
+            }
+          ],
+          "cations_total_mg_kg": 1201.0,
+          "anions": [
+            {
+              "name": "フッ化物イオン",
+              "symbol": "F-",
+              "mg_kg": 0.7
+            },
+            {
+              "name": "塩化物イオン",
+              "symbol": "Cl-",
+              "mg_kg": 1773.0
+            },
+            {
+              "name": "臭化物イオン",
+              "symbol": "Br-",
+              "mg_kg": 5.5
+            },
+            {
+              "name": "ヨウ化物イオン",
+              "symbol": "I-",
+              "mg_kg": 1.7
+            },
+            {
+              "name": "硫化水素イオン",
+              "symbol": "HS-",
+              "mg_kg": 38.7
+            },
+            {
+              "name": "チオ硫酸イオン",
+              "symbol": "S2O32-",
+              "mg_kg": 3.7
+            },
+            {
+              "name": "硫酸イオン",
+              "symbol": "SO42-",
+              "mg_kg": 321.0
+            },
+            {
+              "name": "炭酸水素イオン",
+              "symbol": "HCO3-",
+              "mg_kg": 70.2
+            },
+            {
+              "name": "炭酸イオン",
+              "symbol": "CO32-",
+              "mg_kg": 1.9
+            }
+          ],
+          "anions_total_mg_kg": 2216.0,
+          "undissociated": [
+            {
+              "name": "メタケイ酸",
+              "symbol": "H2SiO3",
+              "mg_kg": 39.0
+            },
+            {
+              "name": "メタホウ酸",
+              "symbol": "HBO2",
+              "mg_kg": 15.0
+            }
+          ],
+          "undissociated_total_mg_kg": 54.0,
+          "dissolved_gas": [
+            {
+              "name": "遊離硫化水素",
+              "symbol": "H2S",
+              "mg_kg": 1.7
+            }
+          ],
+          "dissolved_gas_total_mg_kg": 1.7,
+          "indications": [],
+          "contraindications": [],
+          "analyzed_on": "2024-06-21",
+          "analyzer": "長野市薬剤師会",
+          "analyzer_registration": "長野県第8号",
+          "notes": "総ヒ素 0.038 mg/kg。掲示上の泉質表記は「硫黄泉」",
+          "source_photos": [
+            "https://fastly.4sqi.net/img/general/500x300/41463109_WRGd8l8iFaaIDcyF-sqDcpHnXwQyW-crqJ1DJ9rdV3c.jpg"
+          ]
         }
-      ],
-      "cations_total_mg_kg": 1201.0,
-      "anions": [
-        {
-          "name": "フッ化物イオン",
-          "symbol": "F-",
-          "mg_kg": 0.7
-        },
-        {
-          "name": "塩化物イオン",
-          "symbol": "Cl-",
-          "mg_kg": 1773.0
-        },
-        {
-          "name": "臭化物イオン",
-          "symbol": "Br-",
-          "mg_kg": 5.5
-        },
-        {
-          "name": "ヨウ化物イオン",
-          "symbol": "I-",
-          "mg_kg": 1.7
-        },
-        {
-          "name": "硫化水素イオン",
-          "symbol": "HS-",
-          "mg_kg": 38.7
-        },
-        {
-          "name": "チオ硫酸イオン",
-          "symbol": "S2O32-",
-          "mg_kg": 3.7
-        },
-        {
-          "name": "硫酸イオン",
-          "symbol": "SO42-",
-          "mg_kg": 321.0
-        },
-        {
-          "name": "炭酸水素イオン",
-          "symbol": "HCO3-",
-          "mg_kg": 70.2
-        },
-        {
-          "name": "炭酸イオン",
-          "symbol": "CO32-",
-          "mg_kg": 1.9
-        }
-      ],
-      "anions_total_mg_kg": 2216.0,
-      "undissociated": [
-        {
-          "name": "メタケイ酸",
-          "symbol": "H2SiO3",
-          "mg_kg": 39.0
-        },
-        {
-          "name": "メタホウ酸",
-          "symbol": "HBO2",
-          "mg_kg": 15.0
-        }
-      ],
-      "undissociated_total_mg_kg": 54.0,
-      "dissolved_gas": [
-        {
-          "name": "遊離硫化水素",
-          "symbol": "H2S",
-          "mg_kg": 1.7
-        }
-      ],
-      "dissolved_gas_total_mg_kg": 1.7,
-      "indications": [],
-      "contraindications": [],
-      "analyzed_on": "2024-06-21",
-      "analyzer": "長野市薬剤師会",
-      "analyzer_registration": "長野県第8号",
-      "notes": "総ヒ素 0.038 mg/kg。掲示上の泉質表記は「硫黄泉」",
-      "source_photos": [
-        "https://fastly.4sqi.net/img/general/500x300/41463109_WRGd8l8iFaaIDcyF-sqDcpHnXwQyW-crqJ1DJ9rdV3c.jpg"
       ]
     },
     {
@@ -1577,116 +1630,120 @@
       "name": "天狗温泉浅間山荘",
       "address": "甲又4766-2, 小諸市, 長野県, 384-0801",
       "checkin_date": "2026-07-11",
-      "confidence": "high",
-      "spring_name": "天狗温泉",
-      "spring_quality": "単純鉄(II)冷鉱泉［炭酸水素塩型］",
-      "spring_quality_class": "低張性弱酸性冷鉱泉",
-      "source_temp_c": 8.4,
-      "ph": 5.9,
-      "ph_lab": 5.77,
-      "yield_l_min": 47.6,
-      "evaporation_residue_mg_kg": 322,
-      "dissolved_solids_mg_kg": 515.7,
-      "total_ingredients_mg_kg": 1260,
-      "cations": [
+      "springs": [
         {
-          "name": "ナトリウムイオン",
-          "symbol": "Na+",
-          "mg_kg": 8.4
-        },
-        {
-          "name": "カリウムイオン",
-          "symbol": "K+",
-          "mg_kg": 2.2
-        },
-        {
-          "name": "マグネシウムイオン",
-          "symbol": "Mg2+",
-          "mg_kg": 9.6
-        },
-        {
-          "name": "カルシウムイオン",
-          "symbol": "Ca2+",
-          "mg_kg": 40.1
-        },
-        {
-          "name": "ストロンチウムイオン",
-          "symbol": "Sr2+",
-          "mg_kg": 0.1
-        },
-        {
-          "name": "マンガンイオン",
-          "symbol": "Mn2+",
-          "mg_kg": 0.8
-        },
-        {
-          "name": "鉄(II)イオン",
-          "symbol": "Fe2+",
-          "mg_kg": 48.0
+          "confidence": "high",
+          "spring_name": "天狗温泉",
+          "spring_quality": "単純鉄(II)冷鉱泉［炭酸水素塩型］",
+          "spring_quality_class": "低張性弱酸性冷鉱泉",
+          "source_temp_c": 8.4,
+          "ph": 5.9,
+          "ph_lab": 5.77,
+          "yield_l_min": 47.6,
+          "evaporation_residue_mg_kg": 322,
+          "dissolved_solids_mg_kg": 515.7,
+          "total_ingredients_mg_kg": 1260,
+          "cations": [
+            {
+              "name": "ナトリウムイオン",
+              "symbol": "Na+",
+              "mg_kg": 8.4
+            },
+            {
+              "name": "カリウムイオン",
+              "symbol": "K+",
+              "mg_kg": 2.2
+            },
+            {
+              "name": "マグネシウムイオン",
+              "symbol": "Mg2+",
+              "mg_kg": 9.6
+            },
+            {
+              "name": "カルシウムイオン",
+              "symbol": "Ca2+",
+              "mg_kg": 40.1
+            },
+            {
+              "name": "ストロンチウムイオン",
+              "symbol": "Sr2+",
+              "mg_kg": 0.1
+            },
+            {
+              "name": "マンガンイオン",
+              "symbol": "Mn2+",
+              "mg_kg": 0.8
+            },
+            {
+              "name": "鉄(II)イオン",
+              "symbol": "Fe2+",
+              "mg_kg": 48.0
+            }
+          ],
+          "cations_total_mg_kg": 109.2,
+          "anions": [
+            {
+              "name": "フッ化物イオン",
+              "symbol": "F-",
+              "mg_kg": 0.07
+            },
+            {
+              "name": "塩化物イオン",
+              "symbol": "Cl-",
+              "mg_kg": 1.4
+            },
+            {
+              "name": "硫酸イオン",
+              "symbol": "SO42-",
+              "mg_kg": 0.3
+            },
+            {
+              "name": "リン酸二水素イオン",
+              "symbol": "H2PO4-",
+              "mg_kg": 0.3
+            },
+            {
+              "name": "炭酸水素イオン",
+              "symbol": "HCO3-",
+              "mg_kg": 298.4
+            }
+          ],
+          "anions_total_mg_kg": 300.5,
+          "undissociated": [
+            {
+              "name": "メタケイ酸",
+              "symbol": "H2SiO3",
+              "mg_kg": 106.0
+            },
+            {
+              "name": "メタホウ酸",
+              "symbol": "HBO2",
+              "mg_kg": 0.03
+            }
+          ],
+          "undissociated_total_mg_kg": 106.0,
+          "dissolved_gas": [
+            {
+              "name": "遊離二酸化炭素",
+              "symbol": "CO2",
+              "mg_kg": 743.6
+            },
+            {
+              "name": "遊離硫化水素",
+              "symbol": "H2S",
+              "mg_kg": 0.2
+            }
+          ],
+          "dissolved_gas_total_mg_kg": 743.8,
+          "indications": [],
+          "contraindications": [],
+          "analyzed_on": "2017-11-10",
+          "analyzer": "上田薬剤師会 検査センター",
+          "notes": "自然湧出。知覚的試験は「ほとんど無色澄明、強鉄味、炭酸味、微硫化水素臭」、翌日には黄濁",
+          "source_photos": [
+            "https://fastly.4sqi.net/img/general/500x300/41463109_ZhXHv12MhH3qIy6WjkGuNfu55q523XZcdOk4MALbdMw.jpg"
+          ]
         }
-      ],
-      "cations_total_mg_kg": 109.2,
-      "anions": [
-        {
-          "name": "フッ化物イオン",
-          "symbol": "F-",
-          "mg_kg": 0.07
-        },
-        {
-          "name": "塩化物イオン",
-          "symbol": "Cl-",
-          "mg_kg": 1.4
-        },
-        {
-          "name": "硫酸イオン",
-          "symbol": "SO42-",
-          "mg_kg": 0.3
-        },
-        {
-          "name": "リン酸二水素イオン",
-          "symbol": "H2PO4-",
-          "mg_kg": 0.3
-        },
-        {
-          "name": "炭酸水素イオン",
-          "symbol": "HCO3-",
-          "mg_kg": 298.4
-        }
-      ],
-      "anions_total_mg_kg": 300.5,
-      "undissociated": [
-        {
-          "name": "メタケイ酸",
-          "symbol": "H2SiO3",
-          "mg_kg": 106.0
-        },
-        {
-          "name": "メタホウ酸",
-          "symbol": "HBO2",
-          "mg_kg": 0.03
-        }
-      ],
-      "undissociated_total_mg_kg": 106.0,
-      "dissolved_gas": [
-        {
-          "name": "遊離二酸化炭素",
-          "symbol": "CO2",
-          "mg_kg": 743.6
-        },
-        {
-          "name": "遊離硫化水素",
-          "symbol": "H2S",
-          "mg_kg": 0.2
-        }
-      ],
-      "dissolved_gas_total_mg_kg": 743.8,
-      "indications": [],
-      "contraindications": [],
-      "analyzed_on": "2017-11-10",
-      "analyzer": "上田薬剤師会 検査センター",
-      "notes": "自然湧出。知覚的試験は「ほとんど無色澄明、強鉄味、炭酸味、微硫化水素臭」、翌日には黄濁",
-      "source_photos": [
-        "https://fastly.4sqi.net/img/general/500x300/41463109_ZhXHv12MhH3qIy6WjkGuNfu55q523XZcdOk4MALbdMw.jpg"
       ]
     },
     {
@@ -1694,177 +1751,185 @@
       "name": "野沢温泉 麻釜",
       "address": "豊郷, 野沢温泉村, 長野県, 389-2502",
       "checkin_date": "2026-07-10",
-      "confidence": "low",
-      "spring_name": "麻釜",
-      "spring_quality": "含硫黄－ナトリウム・カルシウム－硫酸塩泉",
-      "source_temp_c": 77.0,
-      "ph": 8.8,
-      "total_ingredients_mg_kg": 1059,
-      "notes": "ネット公開情報から作成（現地掲示は未確認）。野沢温泉の源泉地で、麻釜の湯・中尾の湯など複数の外湯へ配湯している（毎分約500L）。総硫黄はおよそ5mg/kg。入浴施設ではなく源泉そのもの。出典: Wikipedia「野沢温泉」ほか"
+      "springs": [
+        {
+          "confidence": "low",
+          "spring_name": "麻釜",
+          "spring_quality": "含硫黄－ナトリウム・カルシウム－硫酸塩泉",
+          "source_temp_c": 77.0,
+          "ph": 8.8,
+          "total_ingredients_mg_kg": 1059,
+          "notes": "ネット公開情報から作成（現地掲示は未確認）。野沢温泉の源泉地で、麻釜の湯・中尾の湯など複数の外湯へ配湯している（毎分約500L）。総硫黄はおよそ5mg/kg。入浴施設ではなく源泉そのもの。出典: Wikipedia「野沢温泉」ほか"
+        }
+      ]
     },
     {
       "fsq_id": "4c76043ac219224b1a47a428",
       "name": "つつじの湯",
       "address": "田代930, 嬬恋村, 群馬県, 377-1614",
       "checkin_date": "2026-07-05",
-      "confidence": "high",
-      "spring_name": "嬬恋高原温泉 つつじの湯",
-      "spring_quality": "ナトリウム・カルシウム－炭酸水素塩・塩化物温泉",
-      "spring_quality_class": "中性低張性温泉",
-      "source_temp_c": 38.5,
-      "use_temp_c": 41.0,
-      "ph": 7.36,
-      "yield_l_min": 210,
-      "evaporation_residue_mg_kg": 1450,
-      "total_ingredients_mg_kg": 1940,
-      "cations": [
+      "springs": [
         {
-          "name": "ナトリウムイオン",
-          "symbol": "Na+",
-          "mg_kg": 350
-        },
-        {
-          "name": "カリウムイオン",
-          "symbol": "K+",
-          "mg_kg": 39.6
-        },
-        {
-          "name": "マグネシウムイオン",
-          "symbol": "Mg2+",
-          "mg_kg": 49.5
-        },
-        {
-          "name": "カルシウムイオン",
-          "symbol": "Ca2+",
-          "mg_kg": 110
-        },
-        {
-          "name": "鉄(II)イオン",
-          "symbol": "Fe2+",
-          "mg_kg": 1.76
-        },
-        {
-          "name": "マンガンイオン",
-          "symbol": "Mn2+",
-          "mg_kg": 1.01
-        },
-        {
-          "name": "アルミニウムイオン",
-          "symbol": "Al3+",
-          "mg_kg": 0.11
-        },
-        {
-          "name": "ストロンチウムイオン",
-          "symbol": "Sr2+",
-          "mg_kg": 0.69
+          "confidence": "high",
+          "spring_name": "嬬恋高原温泉 つつじの湯",
+          "spring_quality": "ナトリウム・カルシウム－炭酸水素塩・塩化物温泉",
+          "spring_quality_class": "中性低張性温泉",
+          "source_temp_c": 38.5,
+          "use_temp_c": 41.0,
+          "ph": 7.36,
+          "yield_l_min": 210,
+          "evaporation_residue_mg_kg": 1450,
+          "total_ingredients_mg_kg": 1940,
+          "cations": [
+            {
+              "name": "ナトリウムイオン",
+              "symbol": "Na+",
+              "mg_kg": 350
+            },
+            {
+              "name": "カリウムイオン",
+              "symbol": "K+",
+              "mg_kg": 39.6
+            },
+            {
+              "name": "マグネシウムイオン",
+              "symbol": "Mg2+",
+              "mg_kg": 49.5
+            },
+            {
+              "name": "カルシウムイオン",
+              "symbol": "Ca2+",
+              "mg_kg": 110
+            },
+            {
+              "name": "鉄(II)イオン",
+              "symbol": "Fe2+",
+              "mg_kg": 1.76
+            },
+            {
+              "name": "マンガンイオン",
+              "symbol": "Mn2+",
+              "mg_kg": 1.01
+            },
+            {
+              "name": "アルミニウムイオン",
+              "symbol": "Al3+",
+              "mg_kg": 0.11
+            },
+            {
+              "name": "ストロンチウムイオン",
+              "symbol": "Sr2+",
+              "mg_kg": 0.69
+            }
+          ],
+          "cations_total_mg_kg": 553,
+          "anions": [
+            {
+              "name": "フッ素イオン",
+              "symbol": "F-",
+              "mg_kg": 0.3
+            },
+            {
+              "name": "塩素イオン",
+              "symbol": "Cl-",
+              "mg_kg": 447
+            },
+            {
+              "name": "硫酸イオン",
+              "symbol": "SO42-",
+              "mg_kg": 1.6
+            },
+            {
+              "name": "炭酸水素イオン",
+              "symbol": "HCO3-",
+              "mg_kg": 783
+            },
+            {
+              "name": "炭酸イオン",
+              "symbol": "CO32-",
+              "mg_kg": 0.5
+            },
+            {
+              "name": "臭素イオン",
+              "symbol": "Br-",
+              "mg_kg": 1.7
+            }
+          ],
+          "anions_total_mg_kg": 1235,
+          "undissociated": [
+            {
+              "name": "メタけい酸",
+              "symbol": "H2SiO3",
+              "mg_kg": 113
+            },
+            {
+              "name": "メタほう酸",
+              "symbol": "HBO2",
+              "mg_kg": 0.7
+            }
+          ],
+          "undissociated_total_mg_kg": 114,
+          "dissolved_gas": [
+            {
+              "name": "遊離二酸化炭素",
+              "symbol": "CO2",
+              "mg_kg": 42.7
+            },
+            {
+              "name": "遊離硫化水素",
+              "symbol": "H2S",
+              "mg_kg": 0.0
+            }
+          ],
+          "dissolved_gas_total_mg_kg": 42.7,
+          "treatment": {
+            "kasui": {
+              "applied": false,
+              "reason": "加水していません。"
+            },
+            "kaon": {
+              "applied": true,
+              "reason": "入浴に適した温度に保つために加温しています。"
+            },
+            "junkan": {
+              "applied": true,
+              "reason": "浴槽の入れ替え時に昇温のため、循環をしております。"
+            },
+            "shodoku": {
+              "applied": true,
+              "reason": "群馬県公衆浴場条例の基準を満たすため塩素系薬剤による消毒を行っております。"
+            }
+          },
+          "indications": [
+            "神経痛",
+            "筋肉痛",
+            "関節痛",
+            "五十肩",
+            "痔疾",
+            "運動麻痺",
+            "関節のこわばり",
+            "うちみ",
+            "くじき",
+            "慢性消化器病",
+            "冷え性",
+            "病後回復期",
+            "疲労回復",
+            "健康増進",
+            "切り傷",
+            "やけど",
+            "慢性皮膚病",
+            "虚弱児童",
+            "慢性婦人病"
+          ],
+          "contraindications": [],
+          "analyzed_on": "2006-08-07",
+          "analyzer": "群馬県薬剤師会",
+          "analyzer_registration": "群馬県第2号",
+          "notes": "掲示表の泉質説明では「炭酸水素塩泉＝美肌の湯」「塩化物泉＝保湿効果が高くよく温まる」と紹介。スケール付着防止剤（ポリアクリル酸ナトリウム）を使用",
+          "source_photos": [
+            "https://fastly.4sqi.net/img/general/500x300/41463109_wV7rgObv08GHHc1fQKI-SHerl6VVM_RjHmZPyjZgtR4.jpg"
+          ]
         }
-      ],
-      "cations_total_mg_kg": 553,
-      "anions": [
-        {
-          "name": "フッ素イオン",
-          "symbol": "F-",
-          "mg_kg": 0.3
-        },
-        {
-          "name": "塩素イオン",
-          "symbol": "Cl-",
-          "mg_kg": 447
-        },
-        {
-          "name": "硫酸イオン",
-          "symbol": "SO42-",
-          "mg_kg": 1.6
-        },
-        {
-          "name": "炭酸水素イオン",
-          "symbol": "HCO3-",
-          "mg_kg": 783
-        },
-        {
-          "name": "炭酸イオン",
-          "symbol": "CO32-",
-          "mg_kg": 0.5
-        },
-        {
-          "name": "臭素イオン",
-          "symbol": "Br-",
-          "mg_kg": 1.7
-        }
-      ],
-      "anions_total_mg_kg": 1235,
-      "undissociated": [
-        {
-          "name": "メタけい酸",
-          "symbol": "H2SiO3",
-          "mg_kg": 113
-        },
-        {
-          "name": "メタほう酸",
-          "symbol": "HBO2",
-          "mg_kg": 0.7
-        }
-      ],
-      "undissociated_total_mg_kg": 114,
-      "dissolved_gas": [
-        {
-          "name": "遊離二酸化炭素",
-          "symbol": "CO2",
-          "mg_kg": 42.7
-        },
-        {
-          "name": "遊離硫化水素",
-          "symbol": "H2S",
-          "mg_kg": 0.0
-        }
-      ],
-      "dissolved_gas_total_mg_kg": 42.7,
-      "treatment": {
-        "kasui": {
-          "applied": false,
-          "reason": "加水していません。"
-        },
-        "kaon": {
-          "applied": true,
-          "reason": "入浴に適した温度に保つために加温しています。"
-        },
-        "junkan": {
-          "applied": true,
-          "reason": "浴槽の入れ替え時に昇温のため、循環をしております。"
-        },
-        "shodoku": {
-          "applied": true,
-          "reason": "群馬県公衆浴場条例の基準を満たすため塩素系薬剤による消毒を行っております。"
-        }
-      },
-      "indications": [
-        "神経痛",
-        "筋肉痛",
-        "関節痛",
-        "五十肩",
-        "痔疾",
-        "運動麻痺",
-        "関節のこわばり",
-        "うちみ",
-        "くじき",
-        "慢性消化器病",
-        "冷え性",
-        "病後回復期",
-        "疲労回復",
-        "健康増進",
-        "切り傷",
-        "やけど",
-        "慢性皮膚病",
-        "虚弱児童",
-        "慢性婦人病"
-      ],
-      "contraindications": [],
-      "analyzed_on": "2006-08-07",
-      "analyzer": "群馬県薬剤師会",
-      "analyzer_registration": "群馬県第2号",
-      "notes": "掲示表の泉質説明では「炭酸水素塩泉＝美肌の湯」「塩化物泉＝保湿効果が高くよく温まる」と紹介。スケール付着防止剤（ポリアクリル酸ナトリウム）を使用",
-      "source_photos": [
-        "https://fastly.4sqi.net/img/general/500x300/41463109_wV7rgObv08GHHc1fQKI-SHerl6VVM_RjHmZPyjZgtR4.jpg"
       ]
     },
     {
@@ -1872,194 +1937,202 @@
       "name": "THE SPA 西新井",
       "address": "西新井栄町1-17-10 (ウェルネスタウン西新井 3F-4F), 足立区, 東京都, 123-0843",
       "checkin_date": "2026-07-03",
-      "confidence": "low",
-      "spring_name": "大師の湯",
-      "spring_quality": "ナトリウム－塩化物強塩温泉",
-      "source_temp_c": 45.5,
-      "ph": 7.2,
-      "yield_l_min": 460,
-      "cations": [
+      "springs": [
         {
-          "name": "ナトリウムイオン",
-          "symbol": "Na+",
-          "mg_kg": 9855
+          "confidence": "low",
+          "spring_name": "大師の湯",
+          "spring_quality": "ナトリウム－塩化物強塩温泉",
+          "source_temp_c": 45.5,
+          "ph": 7.2,
+          "yield_l_min": 460,
+          "cations": [
+            {
+              "name": "ナトリウムイオン",
+              "symbol": "Na+",
+              "mg_kg": 9855
+            }
+          ],
+          "anions": [
+            {
+              "name": "塩化物イオン",
+              "symbol": "Cl-",
+              "mg_kg": 19050
+            }
+          ],
+          "notes": "ネット公開情報から作成（現地掲示は未確認）。地下1500mから湧出する黄色透明の強塩泉（塩分5%以上）。紹介サイトによって泉質名が「ナトリウム－塩化物強塩温泉」と「ナトリウム－塩化物・炭酸水素塩温泉」に割れている。成分はナトリウムイオンと塩化物イオンだけが公表されており全項目ではない。出典: spa-tokyo.net・東京近郊日帰り温泉サーチ"
         }
-      ],
-      "anions": [
-        {
-          "name": "塩化物イオン",
-          "symbol": "Cl-",
-          "mg_kg": 19050
-        }
-      ],
-      "notes": "ネット公開情報から作成（現地掲示は未確認）。地下1500mから湧出する黄色透明の強塩泉（塩分5%以上）。紹介サイトによって泉質名が「ナトリウム－塩化物強塩温泉」と「ナトリウム－塩化物・炭酸水素塩温泉」に割れている。成分はナトリウムイオンと塩化物イオンだけが公表されており全項目ではない。出典: spa-tokyo.net・東京近郊日帰り温泉サーチ"
+      ]
     },
     {
       "fsq_id": "6a1075c6f4446c63a65bf819",
       "name": "黄金の湯松代荘",
       "address": "松代町東条3541, 長野市, 長野県",
       "checkin_date": "2026-06-29",
-      "confidence": "high",
-      "spring_name": "新3号泉",
-      "spring_quality": "ナトリウム・カルシウム－塩化物温泉",
-      "spring_quality_class": "高張性中性高温泉",
-      "source_temp_c": 43.8,
-      "ph": 6.7,
-      "ph_lab": 6.61,
-      "evaporation_residue_mg_kg": 15500,
-      "dissolved_solids_mg_kg": 16130,
-      "total_ingredients_mg_kg": 16850,
-      "cations": [
+      "springs": [
         {
-          "name": "リチウムイオン",
-          "symbol": "Li+",
-          "mg_kg": 6.0
-        },
-        {
-          "name": "ナトリウムイオン",
-          "symbol": "Na+",
-          "mg_kg": 3546
-        },
-        {
-          "name": "カリウムイオン",
-          "symbol": "K+",
-          "mg_kg": 451.5
-        },
-        {
-          "name": "アンモニウムイオン",
-          "symbol": "NH4+",
-          "mg_kg": 0.6
-        },
-        {
-          "name": "マグネシウムイオン",
-          "symbol": "Mg2+",
-          "mg_kg": 287.1
-        },
-        {
-          "name": "カルシウムイオン",
-          "symbol": "Ca2+",
-          "mg_kg": 1140
-        },
-        {
-          "name": "ストロンチウムイオン",
-          "symbol": "Sr2+",
-          "mg_kg": 14.7
-        },
-        {
-          "name": "バリウムイオン",
-          "symbol": "Ba2+",
-          "mg_kg": 0.3
-        },
-        {
-          "name": "アルミニウムイオン",
-          "symbol": "Al3+",
-          "mg_kg": 0.1
-        },
-        {
-          "name": "マンガンイオン",
-          "symbol": "Mn2+",
-          "mg_kg": 2.0
-        },
-        {
-          "name": "鉄(II)イオン",
-          "symbol": "Fe2+",
-          "mg_kg": 19.5
-        },
-        {
-          "name": "銅イオン",
-          "symbol": "Cu2+",
-          "mg_kg": 0.3
+          "confidence": "high",
+          "spring_name": "新3号泉",
+          "spring_quality": "ナトリウム・カルシウム－塩化物温泉",
+          "spring_quality_class": "高張性中性高温泉",
+          "source_temp_c": 43.8,
+          "ph": 6.7,
+          "ph_lab": 6.61,
+          "evaporation_residue_mg_kg": 15500,
+          "dissolved_solids_mg_kg": 16130,
+          "total_ingredients_mg_kg": 16850,
+          "cations": [
+            {
+              "name": "リチウムイオン",
+              "symbol": "Li+",
+              "mg_kg": 6.0
+            },
+            {
+              "name": "ナトリウムイオン",
+              "symbol": "Na+",
+              "mg_kg": 3546
+            },
+            {
+              "name": "カリウムイオン",
+              "symbol": "K+",
+              "mg_kg": 451.5
+            },
+            {
+              "name": "アンモニウムイオン",
+              "symbol": "NH4+",
+              "mg_kg": 0.6
+            },
+            {
+              "name": "マグネシウムイオン",
+              "symbol": "Mg2+",
+              "mg_kg": 287.1
+            },
+            {
+              "name": "カルシウムイオン",
+              "symbol": "Ca2+",
+              "mg_kg": 1140
+            },
+            {
+              "name": "ストロンチウムイオン",
+              "symbol": "Sr2+",
+              "mg_kg": 14.7
+            },
+            {
+              "name": "バリウムイオン",
+              "symbol": "Ba2+",
+              "mg_kg": 0.3
+            },
+            {
+              "name": "アルミニウムイオン",
+              "symbol": "Al3+",
+              "mg_kg": 0.1
+            },
+            {
+              "name": "マンガンイオン",
+              "symbol": "Mn2+",
+              "mg_kg": 2.0
+            },
+            {
+              "name": "鉄(II)イオン",
+              "symbol": "Fe2+",
+              "mg_kg": 19.5
+            },
+            {
+              "name": "銅イオン",
+              "symbol": "Cu2+",
+              "mg_kg": 0.3
+            }
+          ],
+          "cations_total_mg_kg": 5468,
+          "anions": [
+            {
+              "name": "フッ化物イオン",
+              "symbol": "F-",
+              "mg_kg": 0.6
+            },
+            {
+              "name": "塩化物イオン",
+              "symbol": "Cl-",
+              "mg_kg": 7002
+            },
+            {
+              "name": "臭化物イオン",
+              "symbol": "Br-",
+              "mg_kg": 14.9
+            },
+            {
+              "name": "ヨウ化物イオン",
+              "symbol": "I-",
+              "mg_kg": 7.5
+            },
+            {
+              "name": "亜硝酸イオン",
+              "symbol": "NO2-",
+              "mg_kg": 0.04
+            },
+            {
+              "name": "硫化水素イオン",
+              "symbol": "HS-",
+              "mg_kg": 0.02
+            },
+            {
+              "name": "硫酸イオン",
+              "symbol": "SO42-",
+              "mg_kg": 307.3
+            },
+            {
+              "name": "炭酸水素イオン",
+              "symbol": "HCO3-",
+              "mg_kg": 2150
+            }
+          ],
+          "anions_total_mg_kg": 9482,
+          "undissociated": [
+            {
+              "name": "メタケイ酸",
+              "symbol": "H2SiO3",
+              "mg_kg": 179.1
+            },
+            {
+              "name": "メタホウ酸",
+              "symbol": "HBO2",
+              "mg_kg": 1000
+            },
+            {
+              "name": "メタ亜ヒ酸",
+              "symbol": "HAsO2",
+              "mg_kg": 0.5
+            }
+          ],
+          "undissociated_total_mg_kg": 1180,
+          "dissolved_gas": [
+            {
+              "name": "遊離二酸化炭素",
+              "symbol": "CO2",
+              "mg_kg": 716.5
+            },
+            {
+              "name": "遊離硫化水素",
+              "symbol": "H2S",
+              "mg_kg": 0.05
+            }
+          ],
+          "dissolved_gas_total_mg_kg": 716.6,
+          "indications": [
+            "きりきず",
+            "うつ状態",
+            "末梢循環障害",
+            "冷え症",
+            "皮膚乾燥症"
+          ],
+          "contraindications": [],
+          "analyzed_on": "2019-04-19",
+          "analyzer": "長野県薬剤師会",
+          "analyzer_registration": "長野県第2号",
+          "notes": "採水地は松代荘露天風呂湯口。知覚的試験は「ほとんど無色澄明、鹹味・鉄味・炭酸味、二酸化炭素の噴出を認める」",
+          "source_photos": [
+            "https://fastly.4sqi.net/img/general/500x300/41463109_KrVoGW9vbowUnnN-ZF0iLCxrXYJr0OovsUnXgCkTeDM.jpg"
+          ]
         }
-      ],
-      "cations_total_mg_kg": 5468,
-      "anions": [
-        {
-          "name": "フッ化物イオン",
-          "symbol": "F-",
-          "mg_kg": 0.6
-        },
-        {
-          "name": "塩化物イオン",
-          "symbol": "Cl-",
-          "mg_kg": 7002
-        },
-        {
-          "name": "臭化物イオン",
-          "symbol": "Br-",
-          "mg_kg": 14.9
-        },
-        {
-          "name": "ヨウ化物イオン",
-          "symbol": "I-",
-          "mg_kg": 7.5
-        },
-        {
-          "name": "亜硝酸イオン",
-          "symbol": "NO2-",
-          "mg_kg": 0.04
-        },
-        {
-          "name": "硫化水素イオン",
-          "symbol": "HS-",
-          "mg_kg": 0.02
-        },
-        {
-          "name": "硫酸イオン",
-          "symbol": "SO42-",
-          "mg_kg": 307.3
-        },
-        {
-          "name": "炭酸水素イオン",
-          "symbol": "HCO3-",
-          "mg_kg": 2150
-        }
-      ],
-      "anions_total_mg_kg": 9482,
-      "undissociated": [
-        {
-          "name": "メタケイ酸",
-          "symbol": "H2SiO3",
-          "mg_kg": 179.1
-        },
-        {
-          "name": "メタホウ酸",
-          "symbol": "HBO2",
-          "mg_kg": 1000
-        },
-        {
-          "name": "メタ亜ヒ酸",
-          "symbol": "HAsO2",
-          "mg_kg": 0.5
-        }
-      ],
-      "undissociated_total_mg_kg": 1180,
-      "dissolved_gas": [
-        {
-          "name": "遊離二酸化炭素",
-          "symbol": "CO2",
-          "mg_kg": 716.5
-        },
-        {
-          "name": "遊離硫化水素",
-          "symbol": "H2S",
-          "mg_kg": 0.05
-        }
-      ],
-      "dissolved_gas_total_mg_kg": 716.6,
-      "indications": [
-        "きりきず",
-        "うつ状態",
-        "末梢循環障害",
-        "冷え症",
-        "皮膚乾燥症"
-      ],
-      "contraindications": [],
-      "analyzed_on": "2019-04-19",
-      "analyzer": "長野県薬剤師会",
-      "analyzer_registration": "長野県第2号",
-      "notes": "採水地は松代荘露天風呂湯口。知覚的試験は「ほとんど無色澄明、鹹味・鉄味・炭酸味、二酸化炭素の噴出を認める」",
-      "source_photos": [
-        "https://fastly.4sqi.net/img/general/500x300/41463109_KrVoGW9vbowUnnN-ZF0iLCxrXYJr0OovsUnXgCkTeDM.jpg"
       ]
     },
     {
@@ -2067,22 +2140,26 @@
       "name": "ホットプラザ浅間",
       "address": "浅間温泉3-16-3, 松本市, 長野県, 390-0303",
       "checkin_date": "2026-06-28",
-      "confidence": "high",
-      "spring_name": "第2,4号源泉、山田源泉、大下源泉、東北源泉の混合泉",
-      "spring_quality": "アルカリ性単純温泉",
-      "spring_quality_class": "低張性アルカリ性高温泉",
-      "indications": [
-        "自律神経不安定症",
-        "うつ状態",
-        "不眠症"
-      ],
-      "contraindications": [],
-      "analyzed_on": "2016-05-27",
-      "analyzer": "長野県薬剤師会",
-      "analyzer_registration": "長野県第2号",
-      "notes": "掲示は温泉分析書別表（浴用）のみで、成分値の記載なし。採水地は松本市浅間温泉3丁目670-3（温泉中央分湯場分湯槽）",
-      "source_photos": [
-        "https://fastly.4sqi.net/img/general/500x300/41463109_xPFm_erCuuUfXAtV5eZsRiy8uMA2vSotS28Hl5meTEc.jpg"
+      "springs": [
+        {
+          "confidence": "high",
+          "spring_name": "第2,4号源泉、山田源泉、大下源泉、東北源泉の混合泉",
+          "spring_quality": "アルカリ性単純温泉",
+          "spring_quality_class": "低張性アルカリ性高温泉",
+          "indications": [
+            "自律神経不安定症",
+            "うつ状態",
+            "不眠症"
+          ],
+          "contraindications": [],
+          "analyzed_on": "2016-05-27",
+          "analyzer": "長野県薬剤師会",
+          "analyzer_registration": "長野県第2号",
+          "notes": "掲示は温泉分析書別表（浴用）のみで、成分値の記載なし。採水地は松本市浅間温泉3丁目670-3（温泉中央分湯場分湯槽）",
+          "source_photos": [
+            "https://fastly.4sqi.net/img/general/500x300/41463109_xPFm_erCuuUfXAtV5eZsRiy8uMA2vSotS28Hl5meTEc.jpg"
+          ]
+        }
       ]
     },
     {
@@ -2090,157 +2167,165 @@
       "name": "青木村 くつろぎの湯",
       "address": "大字田沢3244-1, 小県郡青木村, 長野県, 386-1601",
       "checkin_date": "2026-06-20",
-      "confidence": "low",
-      "spring_name": "田沢温泉第2・3号泉混合泉",
-      "spring_quality": "単純温泉",
-      "spring_quality_class": "低張性弱アルカリ性温泉",
-      "source_temp_c": 38.3,
-      "ph": 8.2,
-      "notes": "ネット公開情報から作成（現地掲示は未確認）。無色透明で微硫化水素臭。田沢温泉から引湯している村営の日帰り施設。出典: ゆこゆこ・ニフティ温泉などの温泉紹介サイト"
+      "springs": [
+        {
+          "confidence": "low",
+          "spring_name": "田沢温泉第2・3号泉混合泉",
+          "spring_quality": "単純温泉",
+          "spring_quality_class": "低張性弱アルカリ性温泉",
+          "source_temp_c": 38.3,
+          "ph": 8.2,
+          "notes": "ネット公開情報から作成（現地掲示は未確認）。無色透明で微硫化水素臭。田沢温泉から引湯している村営の日帰り施設。出典: ゆこゆこ・ニフティ温泉などの温泉紹介サイト"
+        }
+      ]
     },
     {
       "fsq_id": "4b7786f5f964a520ef9f2ee3",
       "name": "湯楽里館",
       "address": "和3875, 東御市, 長野県, 389-0505",
       "checkin_date": "2026-06-14",
-      "confidence": "high",
-      "spring_name": "みづほ温泉",
-      "spring_quality": "ナトリウム－塩化物・炭酸水素塩泉",
-      "spring_quality_class": "弱アルカリ性低張性高温泉",
-      "source_temp_c": 53.9,
-      "use_temp_c": 31.9,
-      "ph": 8.31,
-      "ph_lab": 8.38,
-      "yield_l_min": 50.4,
-      "evaporation_residue_mg_kg": 886,
-      "dissolved_solids_mg_kg": 976,
-      "total_ingredients_mg_kg": 997,
-      "cations": [
+      "springs": [
         {
-          "name": "ナトリウムイオン",
-          "symbol": "Na+",
-          "mg_kg": 242.5
-        },
-        {
-          "name": "カリウムイオン",
-          "symbol": "K+",
-          "mg_kg": 5.6
-        },
-        {
-          "name": "アンモニウムイオン",
-          "symbol": "NH4+",
-          "mg_kg": 1.0
-        },
-        {
-          "name": "マグネシウムイオン",
-          "symbol": "Mg2+",
-          "mg_kg": 0.6
-        },
-        {
-          "name": "カルシウムイオン",
-          "symbol": "Ca2+",
-          "mg_kg": 7.4
-        },
-        {
-          "name": "バリウムイオン",
-          "symbol": "Ba2+",
-          "mg_kg": 0.1
-        },
-        {
-          "name": "鉄(II)イオン",
-          "symbol": "Fe2+",
-          "mg_kg": 0.1
+          "confidence": "high",
+          "spring_name": "みづほ温泉",
+          "spring_quality": "ナトリウム－塩化物・炭酸水素塩泉",
+          "spring_quality_class": "弱アルカリ性低張性高温泉",
+          "source_temp_c": 53.9,
+          "use_temp_c": 31.9,
+          "ph": 8.31,
+          "ph_lab": 8.38,
+          "yield_l_min": 50.4,
+          "evaporation_residue_mg_kg": 886,
+          "dissolved_solids_mg_kg": 976,
+          "total_ingredients_mg_kg": 997,
+          "cations": [
+            {
+              "name": "ナトリウムイオン",
+              "symbol": "Na+",
+              "mg_kg": 242.5
+            },
+            {
+              "name": "カリウムイオン",
+              "symbol": "K+",
+              "mg_kg": 5.6
+            },
+            {
+              "name": "アンモニウムイオン",
+              "symbol": "NH4+",
+              "mg_kg": 1.0
+            },
+            {
+              "name": "マグネシウムイオン",
+              "symbol": "Mg2+",
+              "mg_kg": 0.6
+            },
+            {
+              "name": "カルシウムイオン",
+              "symbol": "Ca2+",
+              "mg_kg": 7.4
+            },
+            {
+              "name": "バリウムイオン",
+              "symbol": "Ba2+",
+              "mg_kg": 0.1
+            },
+            {
+              "name": "鉄(II)イオン",
+              "symbol": "Fe2+",
+              "mg_kg": 0.1
+            }
+          ],
+          "cations_total_mg_kg": 257.3,
+          "anions": [
+            {
+              "name": "ふっ素イオン",
+              "symbol": "F-",
+              "mg_kg": 0.4
+            },
+            {
+              "name": "塩素イオン",
+              "symbol": "Cl-",
+              "mg_kg": 282.2
+            },
+            {
+              "name": "臭素イオン",
+              "symbol": "Br-",
+              "mg_kg": 0.8
+            },
+            {
+              "name": "よう素イオン",
+              "symbol": "I-",
+              "mg_kg": 0.6
+            },
+            {
+              "name": "硝酸イオン",
+              "symbol": "NO3-",
+              "mg_kg": 0.9
+            },
+            {
+              "name": "硫化水素イオン",
+              "symbol": "HS-",
+              "mg_kg": 0.1
+            },
+            {
+              "name": "硫酸イオン",
+              "symbol": "SO42-",
+              "mg_kg": 1.2
+            },
+            {
+              "name": "りん酸水素イオン",
+              "symbol": "H2PO4-",
+              "mg_kg": 0.2
+            },
+            {
+              "name": "炭酸水素イオン",
+              "symbol": "HCO3-",
+              "mg_kg": 335.6
+            },
+            {
+              "name": "炭酸イオン",
+              "symbol": "CO32-",
+              "mg_kg": 21.0
+            }
+          ],
+          "anions_total_mg_kg": 643.0,
+          "undissociated": [
+            {
+              "name": "メタけい酸",
+              "symbol": "H2SiO3",
+              "mg_kg": 50.5
+            },
+            {
+              "name": "メタほう酸",
+              "symbol": "HBO2",
+              "mg_kg": 25.6
+            }
+          ],
+          "undissociated_total_mg_kg": 76.1,
+          "dissolved_gas": [
+            {
+              "name": "遊離二酸化炭素",
+              "symbol": "CO2",
+              "mg_kg": 21.0
+            }
+          ],
+          "dissolved_gas_total_mg_kg": 21.0,
+          "indications": [
+            "きりきず",
+            "末梢循環障害",
+            "冷え性",
+            "うつ状態",
+            "皮膚乾燥症"
+          ],
+          "contraindications": [],
+          "analyzed_on": "2024-04-10",
+          "analyzer": "株式会社科学技術開発センター",
+          "analyzer_registration": "長野県第3号",
+          "notes": "動力揚湯。電気伝導率 0.130 S/m。施設取入口では pH 8.22 / 31.9℃",
+          "source_photos": [
+            "https://fastly.4sqi.net/img/general/500x300/41463109__7fZeQ5AxG93l0ZdcbpNIPHjUtja6246iJXN9qXTowM.jpg"
+          ]
         }
-      ],
-      "cations_total_mg_kg": 257.3,
-      "anions": [
-        {
-          "name": "ふっ素イオン",
-          "symbol": "F-",
-          "mg_kg": 0.4
-        },
-        {
-          "name": "塩素イオン",
-          "symbol": "Cl-",
-          "mg_kg": 282.2
-        },
-        {
-          "name": "臭素イオン",
-          "symbol": "Br-",
-          "mg_kg": 0.8
-        },
-        {
-          "name": "よう素イオン",
-          "symbol": "I-",
-          "mg_kg": 0.6
-        },
-        {
-          "name": "硝酸イオン",
-          "symbol": "NO3-",
-          "mg_kg": 0.9
-        },
-        {
-          "name": "硫化水素イオン",
-          "symbol": "HS-",
-          "mg_kg": 0.1
-        },
-        {
-          "name": "硫酸イオン",
-          "symbol": "SO42-",
-          "mg_kg": 1.2
-        },
-        {
-          "name": "りん酸水素イオン",
-          "symbol": "H2PO4-",
-          "mg_kg": 0.2
-        },
-        {
-          "name": "炭酸水素イオン",
-          "symbol": "HCO3-",
-          "mg_kg": 335.6
-        },
-        {
-          "name": "炭酸イオン",
-          "symbol": "CO32-",
-          "mg_kg": 21.0
-        }
-      ],
-      "anions_total_mg_kg": 643.0,
-      "undissociated": [
-        {
-          "name": "メタけい酸",
-          "symbol": "H2SiO3",
-          "mg_kg": 50.5
-        },
-        {
-          "name": "メタほう酸",
-          "symbol": "HBO2",
-          "mg_kg": 25.6
-        }
-      ],
-      "undissociated_total_mg_kg": 76.1,
-      "dissolved_gas": [
-        {
-          "name": "遊離二酸化炭素",
-          "symbol": "CO2",
-          "mg_kg": 21.0
-        }
-      ],
-      "dissolved_gas_total_mg_kg": 21.0,
-      "indications": [
-        "きりきず",
-        "末梢循環障害",
-        "冷え性",
-        "うつ状態",
-        "皮膚乾燥症"
-      ],
-      "contraindications": [],
-      "analyzed_on": "2024-04-10",
-      "analyzer": "株式会社科学技術開発センター",
-      "analyzer_registration": "長野県第3号",
-      "notes": "動力揚湯。電気伝導率 0.130 S/m。施設取入口では pH 8.22 / 31.9℃",
-      "source_photos": [
-        "https://fastly.4sqi.net/img/general/500x300/41463109__7fZeQ5AxG93l0ZdcbpNIPHjUtja6246iJXN9qXTowM.jpg"
       ]
     },
     {
@@ -2248,133 +2333,145 @@
       "name": "カラコロの足湯",
       "address": "上山田温泉2-9-1, 千曲市, 長野県, 389-0821",
       "checkin_date": "2026-06-13",
-      "confidence": "low",
-      "spring_quality": "アルカリ性単純硫黄温泉",
-      "source_temp_c": 44.0,
-      "notes": "ネット公開情報から作成（現地掲示は未確認）。戸倉上山田温泉の源泉かけ流しの足湯。出典: るるぶ&more.・ニフティ温泉などの温泉紹介サイト"
+      "springs": [
+        {
+          "confidence": "low",
+          "spring_quality": "アルカリ性単純硫黄温泉",
+          "source_temp_c": 44.0,
+          "notes": "ネット公開情報から作成（現地掲示は未確認）。戸倉上山田温泉の源泉かけ流しの足湯。出典: るるぶ&more.・ニフティ温泉などの温泉紹介サイト"
+        }
+      ]
     },
     {
       "fsq_id": "502337f6e4b08284b9af42b0",
       "name": "天照石温熱浴 みゆき野癒",
       "address": "蓮269, 飯山市, 長野県, 389-2256",
       "checkin_date": "2026-05-31",
-      "confidence": "low",
-      "spring_quality": "含よう素－カルシウム・ナトリウム－塩化物泉",
-      "spring_quality_class": "高張性中性高温泉",
-      "source_temp_c": 48.2,
-      "ph": 7.0,
-      "yield_l_min": 80,
-      "notes": "ネット公開情報から作成（現地掲示は未確認）。茶褐色で強い塩味とよう素の匂い。天照石を使った温熱浴（岩盤浴）を併設。出典: ニフティ温泉・スーパー銭湯全国検索などの温泉紹介サイト"
+      "springs": [
+        {
+          "confidence": "low",
+          "spring_quality": "含よう素－カルシウム・ナトリウム－塩化物泉",
+          "spring_quality_class": "高張性中性高温泉",
+          "source_temp_c": 48.2,
+          "ph": 7.0,
+          "yield_l_min": 80,
+          "notes": "ネット公開情報から作成（現地掲示は未確認）。茶褐色で強い塩味とよう素の匂い。天照石を使った温熱浴（岩盤浴）を併設。出典: ニフティ温泉・スーパー銭湯全国検索などの温泉紹介サイト"
+        }
+      ]
     },
     {
       "fsq_id": "4cf3806e88de3704e63d7f2b",
       "name": "白糸の湯",
       "address": "里山辺85-1, 松本市, 長野県, 390-0221",
       "checkin_date": "2026-05-30",
-      "confidence": "high",
-      "spring_name": "第2、第3、第4、第5源泉の混合泉",
-      "spring_quality": "アルカリ性単純温泉",
-      "spring_quality_class": "低張性アルカリ性高温泉",
-      "source_temp_c": 42.4,
-      "ph": 8.7,
-      "ph_lab": 8.82,
-      "evaporation_residue_mg_kg": 418,
-      "dissolved_solids_mg_kg": 439.8,
-      "total_ingredients_mg_kg": 439.8,
-      "cations": [
+      "springs": [
         {
-          "name": "リチウムイオン",
-          "symbol": "Li+",
-          "mg_kg": 0.04
-        },
-        {
-          "name": "ナトリウムイオン",
-          "symbol": "Na+",
-          "mg_kg": 89.7
-        },
-        {
-          "name": "カリウムイオン",
-          "symbol": "K+",
-          "mg_kg": 1.1
-        },
-        {
-          "name": "カルシウムイオン",
-          "symbol": "Ca2+",
-          "mg_kg": 32.3
-        },
-        {
-          "name": "ストロンチウムイオン",
-          "symbol": "Sr2+",
-          "mg_kg": 0.2
-        },
-        {
-          "name": "アルミニウムイオン",
-          "symbol": "Al3+",
-          "mg_kg": 0.01
+          "confidence": "high",
+          "spring_name": "第2、第3、第4、第5源泉の混合泉",
+          "spring_quality": "アルカリ性単純温泉",
+          "spring_quality_class": "低張性アルカリ性高温泉",
+          "source_temp_c": 42.4,
+          "ph": 8.7,
+          "ph_lab": 8.82,
+          "evaporation_residue_mg_kg": 418,
+          "dissolved_solids_mg_kg": 439.8,
+          "total_ingredients_mg_kg": 439.8,
+          "cations": [
+            {
+              "name": "リチウムイオン",
+              "symbol": "Li+",
+              "mg_kg": 0.04
+            },
+            {
+              "name": "ナトリウムイオン",
+              "symbol": "Na+",
+              "mg_kg": 89.7
+            },
+            {
+              "name": "カリウムイオン",
+              "symbol": "K+",
+              "mg_kg": 1.1
+            },
+            {
+              "name": "カルシウムイオン",
+              "symbol": "Ca2+",
+              "mg_kg": 32.3
+            },
+            {
+              "name": "ストロンチウムイオン",
+              "symbol": "Sr2+",
+              "mg_kg": 0.2
+            },
+            {
+              "name": "アルミニウムイオン",
+              "symbol": "Al3+",
+              "mg_kg": 0.01
+            }
+          ],
+          "cations_total_mg_kg": 123.4,
+          "anions": [
+            {
+              "name": "フッ化物イオン",
+              "symbol": "F-",
+              "mg_kg": 1.3
+            },
+            {
+              "name": "塩化物イオン",
+              "symbol": "Cl-",
+              "mg_kg": 28.5
+            },
+            {
+              "name": "臭化物イオン",
+              "symbol": "Br-",
+              "mg_kg": 0.1
+            },
+            {
+              "name": "チオ硫酸イオン",
+              "symbol": "S2O32-",
+              "mg_kg": 0.3
+            },
+            {
+              "name": "硫酸イオン",
+              "symbol": "SO42-",
+              "mg_kg": 210.3
+            },
+            {
+              "name": "炭酸水素イオン",
+              "symbol": "HCO3-",
+              "mg_kg": 30.2
+            },
+            {
+              "name": "炭酸イオン",
+              "symbol": "CO32-",
+              "mg_kg": 2.4
+            }
+          ],
+          "anions_total_mg_kg": 273.1,
+          "undissociated": [
+            {
+              "name": "メタケイ酸",
+              "symbol": "H2SiO3",
+              "mg_kg": 42.5
+            },
+            {
+              "name": "メタホウ酸",
+              "symbol": "HBO2",
+              "mg_kg": 0.8
+            }
+          ],
+          "undissociated_total_mg_kg": 43.3,
+          "dissolved_gas": [],
+          "dissolved_gas_total_mg_kg": 0,
+          "indications": [],
+          "contraindications": [],
+          "analyzed_on": "2023-04-27",
+          "analyzer": "長野県薬剤師会",
+          "analyzer_registration": "長野県第2号",
+          "notes": "採水地は松本市大字里山辺129番地（配湯所内混合泉採取口）。総ヒ素 0.004 mg/kg",
+          "source_photos": [
+            "https://fastly.4sqi.net/img/general/500x300/41463109_SlS0-vIUbrWCl5IrHel1KbaY20USuTdWcq9M6zd5VIQ.jpg"
+          ]
         }
-      ],
-      "cations_total_mg_kg": 123.4,
-      "anions": [
-        {
-          "name": "フッ化物イオン",
-          "symbol": "F-",
-          "mg_kg": 1.3
-        },
-        {
-          "name": "塩化物イオン",
-          "symbol": "Cl-",
-          "mg_kg": 28.5
-        },
-        {
-          "name": "臭化物イオン",
-          "symbol": "Br-",
-          "mg_kg": 0.1
-        },
-        {
-          "name": "チオ硫酸イオン",
-          "symbol": "S2O32-",
-          "mg_kg": 0.3
-        },
-        {
-          "name": "硫酸イオン",
-          "symbol": "SO42-",
-          "mg_kg": 210.3
-        },
-        {
-          "name": "炭酸水素イオン",
-          "symbol": "HCO3-",
-          "mg_kg": 30.2
-        },
-        {
-          "name": "炭酸イオン",
-          "symbol": "CO32-",
-          "mg_kg": 2.4
-        }
-      ],
-      "anions_total_mg_kg": 273.1,
-      "undissociated": [
-        {
-          "name": "メタケイ酸",
-          "symbol": "H2SiO3",
-          "mg_kg": 42.5
-        },
-        {
-          "name": "メタホウ酸",
-          "symbol": "HBO2",
-          "mg_kg": 0.8
-        }
-      ],
-      "undissociated_total_mg_kg": 43.3,
-      "dissolved_gas": [],
-      "dissolved_gas_total_mg_kg": 0,
-      "indications": [],
-      "contraindications": [],
-      "analyzed_on": "2023-04-27",
-      "analyzer": "長野県薬剤師会",
-      "analyzer_registration": "長野県第2号",
-      "notes": "採水地は松本市大字里山辺129番地（配湯所内混合泉採取口）。総ヒ素 0.004 mg/kg",
-      "source_photos": [
-        "https://fastly.4sqi.net/img/general/500x300/41463109_SlS0-vIUbrWCl5IrHel1KbaY20USuTdWcq9M6zd5VIQ.jpg"
       ]
     },
     {
@@ -2382,111 +2479,115 @@
       "name": "扉温泉 桧の湯",
       "address": "入山辺8967-4-28 (山辺地区農業生活改善センター), 松本市, 長野県, 390-0222",
       "checkin_date": "2026-05-04",
-      "confidence": "high",
-      "spring_name": "扉温泉 桧の湯",
-      "spring_quality": "アルカリ性単純温泉",
-      "spring_quality_class": "低張性アルカリ性温泉",
-      "source_temp_c": 41.5,
-      "ph": 9.2,
-      "ph_lab": 9.18,
-      "yield_l_min": 312,
-      "evaporation_residue_mg_kg": 656,
-      "dissolved_solids_mg_kg": 670.7,
-      "total_ingredients_mg_kg": 670.7,
-      "cations": [
+      "springs": [
         {
-          "name": "リチウムイオン",
-          "symbol": "Li+",
-          "mg_kg": 0.03
-        },
-        {
-          "name": "ナトリウムイオン",
-          "symbol": "Na+",
-          "mg_kg": 103.5
-        },
-        {
-          "name": "カリウムイオン",
-          "symbol": "K+",
-          "mg_kg": 1.8
-        },
-        {
-          "name": "カルシウムイオン",
-          "symbol": "Ca2+",
-          "mg_kg": 90.9
-        },
-        {
-          "name": "ストロンチウムイオン",
-          "symbol": "Sr2+",
-          "mg_kg": 0.5
+          "confidence": "high",
+          "spring_name": "扉温泉 桧の湯",
+          "spring_quality": "アルカリ性単純温泉",
+          "spring_quality_class": "低張性アルカリ性温泉",
+          "source_temp_c": 41.5,
+          "ph": 9.2,
+          "ph_lab": 9.18,
+          "yield_l_min": 312,
+          "evaporation_residue_mg_kg": 656,
+          "dissolved_solids_mg_kg": 670.7,
+          "total_ingredients_mg_kg": 670.7,
+          "cations": [
+            {
+              "name": "リチウムイオン",
+              "symbol": "Li+",
+              "mg_kg": 0.03
+            },
+            {
+              "name": "ナトリウムイオン",
+              "symbol": "Na+",
+              "mg_kg": 103.5
+            },
+            {
+              "name": "カリウムイオン",
+              "symbol": "K+",
+              "mg_kg": 1.8
+            },
+            {
+              "name": "カルシウムイオン",
+              "symbol": "Ca2+",
+              "mg_kg": 90.9
+            },
+            {
+              "name": "ストロンチウムイオン",
+              "symbol": "Sr2+",
+              "mg_kg": 0.5
+            }
+          ],
+          "cations_total_mg_kg": 196.7,
+          "anions": [
+            {
+              "name": "フッ化物イオン",
+              "symbol": "F-",
+              "mg_kg": 0.7
+            },
+            {
+              "name": "塩化物イオン",
+              "symbol": "Cl-",
+              "mg_kg": 8.1
+            },
+            {
+              "name": "臭化物イオン",
+              "symbol": "Br-",
+              "mg_kg": 0.05
+            },
+            {
+              "name": "水酸化物イオン",
+              "symbol": "OH-",
+              "mg_kg": 0.3
+            },
+            {
+              "name": "硫化水素イオン",
+              "symbol": "HS-",
+              "mg_kg": 0.3
+            },
+            {
+              "name": "硫酸イオン",
+              "symbol": "SO42-",
+              "mg_kg": 403.1
+            },
+            {
+              "name": "炭酸水素イオン",
+              "symbol": "HCO3-",
+              "mg_kg": 4.9
+            },
+            {
+              "name": "炭酸イオン",
+              "symbol": "CO32-",
+              "mg_kg": 7.8
+            },
+            {
+              "name": "メタホウ酸イオン",
+              "symbol": "BO2-",
+              "mg_kg": 0.4
+            }
+          ],
+          "anions_total_mg_kg": 425.6,
+          "undissociated": [
+            {
+              "name": "メタケイ酸",
+              "symbol": "H2SiO3",
+              "mg_kg": 48.3
+            }
+          ],
+          "undissociated_total_mg_kg": 48.3,
+          "dissolved_gas": [],
+          "dissolved_gas_total_mg_kg": 0,
+          "indications": [],
+          "contraindications": [],
+          "analyzed_on": "2022-01-19",
+          "analyzer": "長野県薬剤師会",
+          "analyzer_registration": "長野県第2号",
+          "notes": "掘削による自噴。現場フロート形面積流量計の読みは312L/分。総ヒ素 0.005 mg/kg",
+          "source_photos": [
+            "https://fastly.4sqi.net/img/general/500x300/41463109_4kozC08uLgOjQwRypGeNWEBlJBI1eDj26-eZsgUw_uY.jpg"
+          ]
         }
-      ],
-      "cations_total_mg_kg": 196.7,
-      "anions": [
-        {
-          "name": "フッ化物イオン",
-          "symbol": "F-",
-          "mg_kg": 0.7
-        },
-        {
-          "name": "塩化物イオン",
-          "symbol": "Cl-",
-          "mg_kg": 8.1
-        },
-        {
-          "name": "臭化物イオン",
-          "symbol": "Br-",
-          "mg_kg": 0.05
-        },
-        {
-          "name": "水酸化物イオン",
-          "symbol": "OH-",
-          "mg_kg": 0.3
-        },
-        {
-          "name": "硫化水素イオン",
-          "symbol": "HS-",
-          "mg_kg": 0.3
-        },
-        {
-          "name": "硫酸イオン",
-          "symbol": "SO42-",
-          "mg_kg": 403.1
-        },
-        {
-          "name": "炭酸水素イオン",
-          "symbol": "HCO3-",
-          "mg_kg": 4.9
-        },
-        {
-          "name": "炭酸イオン",
-          "symbol": "CO32-",
-          "mg_kg": 7.8
-        },
-        {
-          "name": "メタホウ酸イオン",
-          "symbol": "BO2-",
-          "mg_kg": 0.4
-        }
-      ],
-      "anions_total_mg_kg": 425.6,
-      "undissociated": [
-        {
-          "name": "メタケイ酸",
-          "symbol": "H2SiO3",
-          "mg_kg": 48.3
-        }
-      ],
-      "undissociated_total_mg_kg": 48.3,
-      "dissolved_gas": [],
-      "dissolved_gas_total_mg_kg": 0,
-      "indications": [],
-      "contraindications": [],
-      "analyzed_on": "2022-01-19",
-      "analyzer": "長野県薬剤師会",
-      "analyzer_registration": "長野県第2号",
-      "notes": "掘削による自噴。現場フロート形面積流量計の読みは312L/分。総ヒ素 0.005 mg/kg",
-      "source_photos": [
-        "https://fastly.4sqi.net/img/general/500x300/41463109_4kozC08uLgOjQwRypGeNWEBlJBI1eDj26-eZsgUw_uY.jpg"
       ]
     },
     {
@@ -2494,149 +2595,157 @@
       "name": "むれ温泉 天狗の館",
       "address": "川上2755-345, 飯綱町, 長野県, 389-1226",
       "checkin_date": "2026-05-02",
-      "confidence": "medium",
-      "spring_quality": "ナトリウム・カルシウム－塩化物・炭酸水素塩冷鉱泉",
-      "treatment": {
-        "kaon": {
-          "applied": true
-        },
-        "junkan": {
-          "applied": true,
-          "reason": "循環式"
+      "springs": [
+        {
+          "confidence": "medium",
+          "spring_quality": "ナトリウム・カルシウム－塩化物・炭酸水素塩冷鉱泉",
+          "treatment": {
+            "kaon": {
+              "applied": true
+            },
+            "junkan": {
+              "applied": true,
+              "reason": "循環式"
+            }
+          },
+          "notes": "ネット公開情報から作成（現地掲示は未確認）。源泉温度は公式サイトが25.2℃、温泉紹介サイトが21.6℃としており食い違うため入れていない（冷鉱泉の区分は25℃未満）。出典: むれ温泉 天狗の館公式サイト https://tengunoyakata.com/onsen"
         }
-      },
-      "notes": "ネット公開情報から作成（現地掲示は未確認）。源泉温度は公式サイトが25.2℃、温泉紹介サイトが21.6℃としており食い違うため入れていない（冷鉱泉の区分は25℃未満）。出典: むれ温泉 天狗の館公式サイト https://tengunoyakata.com/onsen"
+      ]
     },
     {
       "fsq_id": "4d0dab7d873e6a313a335bd6",
       "name": "六番湯 目洗の湯",
       "address": "平穏, 山ノ内町, 長野県, 381-0401",
       "checkin_date": "2026-04-26",
-      "confidence": "high",
-      "spring_name": "目洗いの湯、ガニ沢の湯の混合泉",
-      "spring_quality": "ナトリウム・カルシウム－硫酸塩・塩化物温泉",
-      "spring_quality_class": "低張性中性高温泉",
-      "source_temp_c": 50.6,
-      "ph": 7.4,
-      "ph_lab": 7.51,
-      "evaporation_residue_mg_kg": 1072,
-      "dissolved_solids_mg_kg": 1090,
-      "total_ingredients_mg_kg": 1097,
-      "cations": [
+      "springs": [
         {
-          "name": "リチウムイオン",
-          "symbol": "Li+",
-          "mg_kg": 0.5
-        },
-        {
-          "name": "ナトリウムイオン",
-          "symbol": "Na+",
-          "mg_kg": 183.2
-        },
-        {
-          "name": "カリウムイオン",
-          "symbol": "K+",
-          "mg_kg": 15.7
-        },
-        {
-          "name": "マグネシウムイオン",
-          "symbol": "Mg2+",
-          "mg_kg": 4.1
-        },
-        {
-          "name": "カルシウムイオン",
-          "symbol": "Ca2+",
-          "mg_kg": 110.1
-        },
-        {
-          "name": "ストロンチウムイオン",
-          "symbol": "Sr2+",
-          "mg_kg": 0.5
-        },
-        {
-          "name": "アルミニウムイオン",
-          "symbol": "Al3+",
-          "mg_kg": 0.03
-        },
-        {
-          "name": "マンガンイオン",
-          "symbol": "Mn2+",
-          "mg_kg": 0.07
+          "confidence": "high",
+          "spring_name": "目洗いの湯、ガニ沢の湯の混合泉",
+          "spring_quality": "ナトリウム・カルシウム－硫酸塩・塩化物温泉",
+          "spring_quality_class": "低張性中性高温泉",
+          "source_temp_c": 50.6,
+          "ph": 7.4,
+          "ph_lab": 7.51,
+          "evaporation_residue_mg_kg": 1072,
+          "dissolved_solids_mg_kg": 1090,
+          "total_ingredients_mg_kg": 1097,
+          "cations": [
+            {
+              "name": "リチウムイオン",
+              "symbol": "Li+",
+              "mg_kg": 0.5
+            },
+            {
+              "name": "ナトリウムイオン",
+              "symbol": "Na+",
+              "mg_kg": 183.2
+            },
+            {
+              "name": "カリウムイオン",
+              "symbol": "K+",
+              "mg_kg": 15.7
+            },
+            {
+              "name": "マグネシウムイオン",
+              "symbol": "Mg2+",
+              "mg_kg": 4.1
+            },
+            {
+              "name": "カルシウムイオン",
+              "symbol": "Ca2+",
+              "mg_kg": 110.1
+            },
+            {
+              "name": "ストロンチウムイオン",
+              "symbol": "Sr2+",
+              "mg_kg": 0.5
+            },
+            {
+              "name": "アルミニウムイオン",
+              "symbol": "Al3+",
+              "mg_kg": 0.03
+            },
+            {
+              "name": "マンガンイオン",
+              "symbol": "Mn2+",
+              "mg_kg": 0.07
+            }
+          ],
+          "cations_total_mg_kg": 314.2,
+          "anions": [
+            {
+              "name": "ふっ化物イオン",
+              "symbol": "F-",
+              "mg_kg": 1.0
+            },
+            {
+              "name": "塩化物イオン",
+              "symbol": "Cl-",
+              "mg_kg": 222.0
+            },
+            {
+              "name": "臭化物イオン",
+              "symbol": "Br-",
+              "mg_kg": 1.3
+            },
+            {
+              "name": "硝酸イオン",
+              "symbol": "NO3-",
+              "mg_kg": 0.1
+            },
+            {
+              "name": "硫酸イオン",
+              "symbol": "SO42-",
+              "mg_kg": 350.0
+            },
+            {
+              "name": "りん酸一水素イオン",
+              "symbol": "HPO42-",
+              "mg_kg": 0.6
+            },
+            {
+              "name": "炭酸水素イオン",
+              "symbol": "HCO3-",
+              "mg_kg": 37.3
+            }
+          ],
+          "anions_total_mg_kg": 612.3,
+          "undissociated": [
+            {
+              "name": "メタけい酸",
+              "symbol": "H2SiO3",
+              "mg_kg": 129.3
+            },
+            {
+              "name": "メタほう酸",
+              "symbol": "HBO2",
+              "mg_kg": 33.6
+            },
+            {
+              "name": "メタ亜ひ酸",
+              "symbol": "HAsO2",
+              "mg_kg": 0.7
+            }
+          ],
+          "undissociated_total_mg_kg": 163.6,
+          "dissolved_gas": [
+            {
+              "name": "遊離二酸化炭素",
+              "symbol": "CO2",
+              "mg_kg": 6.4
+            }
+          ],
+          "dissolved_gas_total_mg_kg": 6.4,
+          "indications": [],
+          "contraindications": [],
+          "analyzed_on": "2016-06-10",
+          "analyzer": "上田薬剤師会 検査センター",
+          "analyzer_registration": "長野県第7号",
+          "notes": "自然湧出。採水地は渋温泉 六番湯 目洗いの湯の浴槽湯口",
+          "source_photos": [
+            "https://fastly.4sqi.net/img/general/500x300/41463109_PafyUbdHmpbjOgRl-KPpvLiqMkzionJS4FM8AUqDMYg.jpg"
+          ]
         }
-      ],
-      "cations_total_mg_kg": 314.2,
-      "anions": [
-        {
-          "name": "ふっ化物イオン",
-          "symbol": "F-",
-          "mg_kg": 1.0
-        },
-        {
-          "name": "塩化物イオン",
-          "symbol": "Cl-",
-          "mg_kg": 222.0
-        },
-        {
-          "name": "臭化物イオン",
-          "symbol": "Br-",
-          "mg_kg": 1.3
-        },
-        {
-          "name": "硝酸イオン",
-          "symbol": "NO3-",
-          "mg_kg": 0.1
-        },
-        {
-          "name": "硫酸イオン",
-          "symbol": "SO42-",
-          "mg_kg": 350.0
-        },
-        {
-          "name": "りん酸一水素イオン",
-          "symbol": "HPO42-",
-          "mg_kg": 0.6
-        },
-        {
-          "name": "炭酸水素イオン",
-          "symbol": "HCO3-",
-          "mg_kg": 37.3
-        }
-      ],
-      "anions_total_mg_kg": 612.3,
-      "undissociated": [
-        {
-          "name": "メタけい酸",
-          "symbol": "H2SiO3",
-          "mg_kg": 129.3
-        },
-        {
-          "name": "メタほう酸",
-          "symbol": "HBO2",
-          "mg_kg": 33.6
-        },
-        {
-          "name": "メタ亜ひ酸",
-          "symbol": "HAsO2",
-          "mg_kg": 0.7
-        }
-      ],
-      "undissociated_total_mg_kg": 163.6,
-      "dissolved_gas": [
-        {
-          "name": "遊離二酸化炭素",
-          "symbol": "CO2",
-          "mg_kg": 6.4
-        }
-      ],
-      "dissolved_gas_total_mg_kg": 6.4,
-      "indications": [],
-      "contraindications": [],
-      "analyzed_on": "2016-06-10",
-      "analyzer": "上田薬剤師会 検査センター",
-      "analyzer_registration": "長野県第7号",
-      "notes": "自然湧出。採水地は渋温泉 六番湯 目洗いの湯の浴槽湯口",
-      "source_photos": [
-        "https://fastly.4sqi.net/img/general/500x300/41463109_PafyUbdHmpbjOgRl-KPpvLiqMkzionJS4FM8AUqDMYg.jpg"
       ]
     },
     {
@@ -2644,946 +2753,1082 @@
       "name": "九番湯 渋大湯",
       "address": "平穏, 山ノ内町, 長野県, 381-0401",
       "checkin_date": "2026-04-26",
-      "confidence": "low",
-      "spring_name": "渋大湯",
-      "spring_quality": "ナトリウム・カルシウム－硫酸塩・塩化物泉",
-      "spring_quality_class": "低張性弱酸性高温泉",
-      "source_temp_c": 59.6,
-      "use_temp_c": 43.2,
-      "ph": 4.5,
-      "dissolved_solids_mg_kg": 1857.2,
-      "cations": [
+      "springs": [
         {
-          "name": "ナトリウムイオン",
-          "symbol": "Na+",
-          "mg_kg": 227.0
-        },
-        {
-          "name": "カルシウムイオン",
-          "symbol": "Ca2+",
-          "mg_kg": 112.1
-        },
-        {
-          "name": "マグネシウムイオン",
-          "symbol": "Mg2+",
-          "mg_kg": 8.1
+          "confidence": "low",
+          "spring_name": "渋大湯",
+          "spring_quality": "ナトリウム・カルシウム－硫酸塩・塩化物泉",
+          "spring_quality_class": "低張性弱酸性高温泉",
+          "source_temp_c": 59.6,
+          "use_temp_c": 43.2,
+          "ph": 4.5,
+          "dissolved_solids_mg_kg": 1857.2,
+          "cations": [
+            {
+              "name": "ナトリウムイオン",
+              "symbol": "Na+",
+              "mg_kg": 227.0
+            },
+            {
+              "name": "カルシウムイオン",
+              "symbol": "Ca2+",
+              "mg_kg": 112.1
+            },
+            {
+              "name": "マグネシウムイオン",
+              "symbol": "Mg2+",
+              "mg_kg": 8.1
+            }
+          ],
+          "anions": [
+            {
+              "name": "塩化物イオン",
+              "symbol": "Cl-",
+              "mg_kg": 280.4
+            },
+            {
+              "name": "硫酸イオン",
+              "symbol": "SO42-",
+              "mg_kg": 409.4
+            }
+          ],
+          "undissociated": [
+            {
+              "name": "メタけい酸",
+              "symbol": "H2SiO3",
+              "mg_kg": 136.4
+            }
+          ],
+          "notes": "ネット公開情報から作成（現地掲示は未確認）。渋温泉の外湯めぐりの結願湯。淡褐色で微鉄味・塩味。成分は主要なものだけが紹介されており、全項目ではないので各イオン計は入れていない。出典: 温泉の杜・はしご湯のすすめなどの温泉紹介サイト"
         }
-      ],
-      "anions": [
-        {
-          "name": "塩化物イオン",
-          "symbol": "Cl-",
-          "mg_kg": 280.4
-        },
-        {
-          "name": "硫酸イオン",
-          "symbol": "SO42-",
-          "mg_kg": 409.4
-        }
-      ],
-      "undissociated": [
-        {
-          "name": "メタけい酸",
-          "symbol": "H2SiO3",
-          "mg_kg": 136.4
-        }
-      ],
-      "notes": "ネット公開情報から作成（現地掲示は未確認）。渋温泉の外湯めぐりの結願湯。淡褐色で微鉄味・塩味。成分は主要なものだけが紹介されており、全項目ではないので各イオン計は入れていない。出典: 温泉の杜・はしご湯のすすめなどの温泉紹介サイト"
+      ]
     },
     {
       "fsq_id": "58d73357ecb67e3da564f1a0",
       "name": "川中島温泉 テルメDOME",
       "address": "川中島町今井1780-1, 長野市, 長野県, 381-2226",
       "checkin_date": "2026-04-05",
-      "confidence": "high",
-      "spring_name": "川中島温泉",
-      "spring_quality": "含よう素－ナトリウム・カルシウム－塩化物温泉",
-      "spring_quality_class": "低張性中性高温泉",
-      "source_temp_c": 45.3,
-      "ph": 7.0,
-      "ph_lab": 7.21,
-      "yield_l_min": 500,
-      "evaporation_residue_mg_kg": 6770,
-      "dissolved_solids_mg_kg": 5608,
-      "total_ingredients_mg_kg": 5648,
-      "cations": [
+      "springs": [
         {
-          "name": "リチウムイオン",
-          "symbol": "Li+",
-          "mg_kg": 0.8
-        },
-        {
-          "name": "ナトリウムイオン",
-          "symbol": "Na+",
-          "mg_kg": 1262
-        },
-        {
-          "name": "カリウムイオン",
-          "symbol": "K+",
-          "mg_kg": 78.1
-        },
-        {
-          "name": "アンモニウムイオン",
-          "symbol": "NH4+",
-          "mg_kg": 1.2
-        },
-        {
-          "name": "マグネシウムイオン",
-          "symbol": "Mg2+",
-          "mg_kg": 156.5
-        },
-        {
-          "name": "カルシウムイオン",
-          "symbol": "Ca2+",
-          "mg_kg": 476.7
-        },
-        {
-          "name": "ストロンチウムイオン",
-          "symbol": "Sr2+",
-          "mg_kg": 4.8
-        },
-        {
-          "name": "バリウムイオン",
-          "symbol": "Ba2+",
-          "mg_kg": 0.3
-        },
-        {
-          "name": "アルミニウムイオン",
-          "symbol": "Al3+",
-          "mg_kg": 0.2
-        },
-        {
-          "name": "マンガンイオン",
-          "symbol": "Mn2+",
-          "mg_kg": 0.3
-        },
-        {
-          "name": "鉄(II)イオン",
-          "symbol": "Fe2+",
-          "mg_kg": 4.6
+          "confidence": "high",
+          "spring_name": "川中島温泉",
+          "spring_quality": "含よう素－ナトリウム・カルシウム－塩化物温泉",
+          "spring_quality_class": "低張性中性高温泉",
+          "source_temp_c": 45.3,
+          "ph": 7.0,
+          "ph_lab": 7.21,
+          "yield_l_min": 500,
+          "evaporation_residue_mg_kg": 6770,
+          "dissolved_solids_mg_kg": 5608,
+          "total_ingredients_mg_kg": 5648,
+          "cations": [
+            {
+              "name": "リチウムイオン",
+              "symbol": "Li+",
+              "mg_kg": 0.8
+            },
+            {
+              "name": "ナトリウムイオン",
+              "symbol": "Na+",
+              "mg_kg": 1262
+            },
+            {
+              "name": "カリウムイオン",
+              "symbol": "K+",
+              "mg_kg": 78.1
+            },
+            {
+              "name": "アンモニウムイオン",
+              "symbol": "NH4+",
+              "mg_kg": 1.2
+            },
+            {
+              "name": "マグネシウムイオン",
+              "symbol": "Mg2+",
+              "mg_kg": 156.5
+            },
+            {
+              "name": "カルシウムイオン",
+              "symbol": "Ca2+",
+              "mg_kg": 476.7
+            },
+            {
+              "name": "ストロンチウムイオン",
+              "symbol": "Sr2+",
+              "mg_kg": 4.8
+            },
+            {
+              "name": "バリウムイオン",
+              "symbol": "Ba2+",
+              "mg_kg": 0.3
+            },
+            {
+              "name": "アルミニウムイオン",
+              "symbol": "Al3+",
+              "mg_kg": 0.2
+            },
+            {
+              "name": "マンガンイオン",
+              "symbol": "Mn2+",
+              "mg_kg": 0.3
+            },
+            {
+              "name": "鉄(II)イオン",
+              "symbol": "Fe2+",
+              "mg_kg": 4.6
+            }
+          ],
+          "cations_total_mg_kg": 1985,
+          "anions": [
+            {
+              "name": "ふっ化物イオン",
+              "symbol": "F-",
+              "mg_kg": 3.6
+            },
+            {
+              "name": "塩化物イオン",
+              "symbol": "Cl-",
+              "mg_kg": 3246
+            },
+            {
+              "name": "臭化物イオン",
+              "symbol": "Br-",
+              "mg_kg": 20.0
+            },
+            {
+              "name": "よう化物イオン",
+              "symbol": "I-",
+              "mg_kg": 15.4
+            },
+            {
+              "name": "硫酸イオン",
+              "symbol": "SO42-",
+              "mg_kg": 19.8
+            },
+            {
+              "name": "炭酸水素イオン",
+              "symbol": "HCO3-",
+              "mg_kg": 183.1
+            }
+          ],
+          "anions_total_mg_kg": 3488,
+          "undissociated": [
+            {
+              "name": "メタけい酸",
+              "symbol": "H2SiO3",
+              "mg_kg": 82.4
+            },
+            {
+              "name": "メタほう酸",
+              "symbol": "HBO2",
+              "mg_kg": 52.6
+            }
+          ],
+          "undissociated_total_mg_kg": 135.0,
+          "dissolved_gas": [
+            {
+              "name": "遊離二酸化炭素",
+              "symbol": "CO2",
+              "mg_kg": 40.2
+            }
+          ],
+          "dissolved_gas_total_mg_kg": 40.2,
+          "indications": [
+            "きりきず",
+            "末梢循環障害",
+            "冷え性",
+            "うつ状態",
+            "皮膚乾燥症"
+          ],
+          "contraindications": [],
+          "analyzed_on": "2015-10-07",
+          "analyzer": "一般社団法人 長野市薬剤師会 検査センター",
+          "analyzer_registration": "長野県第8号",
+          "notes": "ネット公開情報から作成（現地掲示は未確認）。施設が公開している温泉分析書PDF（本表・別表）を読み取ったもの。湧出地は長野市川中島町今井字薬師堂1785-5、地下1250mからの掘削動力揚湯。泉質別禁忌症は該当なし。出典: 川中島温泉テルメDOME公式サイト https://www.kawanakajimaonsen.com/spring-quality-and-benefits/"
         }
-      ],
-      "cations_total_mg_kg": 1985,
-      "anions": [
-        {
-          "name": "ふっ化物イオン",
-          "symbol": "F-",
-          "mg_kg": 3.6
-        },
-        {
-          "name": "塩化物イオン",
-          "symbol": "Cl-",
-          "mg_kg": 3246
-        },
-        {
-          "name": "臭化物イオン",
-          "symbol": "Br-",
-          "mg_kg": 20.0
-        },
-        {
-          "name": "よう化物イオン",
-          "symbol": "I-",
-          "mg_kg": 15.4
-        },
-        {
-          "name": "硫酸イオン",
-          "symbol": "SO42-",
-          "mg_kg": 19.8
-        },
-        {
-          "name": "炭酸水素イオン",
-          "symbol": "HCO3-",
-          "mg_kg": 183.1
-        }
-      ],
-      "anions_total_mg_kg": 3488,
-      "undissociated": [
-        {
-          "name": "メタけい酸",
-          "symbol": "H2SiO3",
-          "mg_kg": 82.4
-        },
-        {
-          "name": "メタほう酸",
-          "symbol": "HBO2",
-          "mg_kg": 52.6
-        }
-      ],
-      "undissociated_total_mg_kg": 135.0,
-      "dissolved_gas": [
-        {
-          "name": "遊離二酸化炭素",
-          "symbol": "CO2",
-          "mg_kg": 40.2
-        }
-      ],
-      "dissolved_gas_total_mg_kg": 40.2,
-      "indications": [
-        "きりきず",
-        "末梢循環障害",
-        "冷え性",
-        "うつ状態",
-        "皮膚乾燥症"
-      ],
-      "contraindications": [],
-      "analyzed_on": "2015-10-07",
-      "analyzer": "一般社団法人 長野市薬剤師会 検査センター",
-      "analyzer_registration": "長野県第8号",
-      "notes": "ネット公開情報から作成（現地掲示は未確認）。施設が公開している温泉分析書PDF（本表・別表）を読み取ったもの。湧出地は長野市川中島町今井字薬師堂1785-5、地下1250mからの掘削動力揚湯。泉質別禁忌症は該当なし。出典: 川中島温泉テルメDOME公式サイト https://www.kawanakajimaonsen.com/spring-quality-and-benefits/"
+      ]
     },
     {
       "fsq_id": "4e3cf020d4c058f9dbfebf98",
       "name": "天然温泉 久松湯",
       "address": "桜台4-32-15, 練馬区, 東京都, 176-0002",
       "checkin_date": "2026-02-28",
-      "confidence": "low",
-      "spring_quality": "ナトリウム－塩化物強塩温泉",
-      "spring_quality_class": "高張性中性温泉",
-      "notes": "ネット公開情報から作成（現地掲示は未確認）。地下1500mから掘削した自家源泉。出典: 練馬区浴場組合・温泉紹介サイト"
+      "springs": [
+        {
+          "confidence": "low",
+          "spring_quality": "ナトリウム－塩化物強塩温泉",
+          "spring_quality_class": "高張性中性温泉",
+          "notes": "ネット公開情報から作成（現地掲示は未確認）。地下1500mから掘削した自家源泉。出典: 練馬区浴場組合・温泉紹介サイト"
+        }
+      ]
     },
     {
       "fsq_id": "57021142498e9aea0876118f",
       "name": "千人風呂",
       "address": "湖岸通り4-1-9 (浴場棟), 諏訪市, 長野県, 392-0027",
       "checkin_date": "2026-02-01",
-      "confidence": "low",
-      "spring_quality": "単純温泉",
-      "spring_quality_class": "低張性弱アルカリ性高温泉",
-      "source_temp_c": 63.0,
-      "ph": 8.28,
-      "notes": "ネット公開情報から作成（現地掲示は未確認）。上諏訪温泉。国指定重要文化財の片倉館にある深さ1.1mの立ち湯。出典: 片倉館公式サイト・温泉手帖などの紹介ページ"
+      "springs": [
+        {
+          "confidence": "low",
+          "spring_quality": "単純温泉",
+          "spring_quality_class": "低張性弱アルカリ性高温泉",
+          "source_temp_c": 63.0,
+          "ph": 8.28,
+          "notes": "ネット公開情報から作成（現地掲示は未確認）。上諏訪温泉。国指定重要文化財の片倉館にある深さ1.1mの立ち湯。出典: 片倉館公式サイト・温泉手帖などの紹介ページ"
+        }
+      ]
     },
     {
       "fsq_id": "4b5a8a0cf964a52067ca28e3",
       "name": "地蔵温泉 十福の湯",
       "address": "真田町傍陽9097-70, 上田市, 長野県, 386-2203",
       "checkin_date": "2026-01-25",
-      "confidence": "medium",
-      "spring_quality": "アルカリ性単純温泉",
-      "source_temp_c": 38.1,
-      "ph": 9.4,
-      "yield_l_min": 355,
-      "notes": "ネット公開情報から作成（現地掲示は未確認）。標高975mの地蔵峠にある。大露天風呂は源泉かけ流しと循環の併用。出典: 十福の湯公式サイト https://zippuku.net/spring"
+      "springs": [
+        {
+          "confidence": "medium",
+          "spring_quality": "アルカリ性単純温泉",
+          "source_temp_c": 38.1,
+          "ph": 9.4,
+          "yield_l_min": 355,
+          "notes": "ネット公開情報から作成（現地掲示は未確認）。標高975mの地蔵峠にある。大露天風呂は源泉かけ流しと循環の併用。出典: 十福の湯公式サイト https://zippuku.net/spring"
+        }
+      ]
     },
     {
       "fsq_id": "4b6e6b7bf964a520c6bc2ce3",
       "name": "間山温泉公園 ぽんぽこの湯",
       "address": "間山956, 中野市, 長野県, 383-0033",
       "checkin_date": "2026-01-10",
-      "confidence": "low",
-      "spring_quality": "ナトリウム・カルシウム－塩化物泉",
-      "ph": 8.7,
-      "notes": "ネット公開情報から作成（現地掲示は未確認）。出典: ニフティ温泉・信州シルクロードなどの温泉紹介サイト"
+      "springs": [
+        {
+          "confidence": "low",
+          "spring_quality": "ナトリウム・カルシウム－塩化物泉",
+          "ph": 8.7,
+          "notes": "ネット公開情報から作成（現地掲示は未確認）。出典: ニフティ温泉・信州シルクロードなどの温泉紹介サイト"
+        }
+      ]
     },
     {
       "fsq_id": "4ba715a8f964a520fb7f39e3",
       "name": "あぐりの湯 こもろ",
       "address": "大久保1145-1, 小諸市, 長野県, 384-0071",
       "checkin_date": "2025-12-30",
-      "confidence": "low",
-      "spring_quality": "ナトリウム－塩化物泉",
-      "source_temp_c": 32.6,
-      "ph": 7.8,
-      "notes": "ネット公開情報から作成（現地掲示は未確認）。混合泉。わずかに塩味とぬるぬる感がある。出典: ニフティ温泉・スーパー銭湯全国検索などの温泉紹介サイト"
+      "springs": [
+        {
+          "confidence": "low",
+          "spring_quality": "ナトリウム－塩化物泉",
+          "source_temp_c": 32.6,
+          "ph": 7.8,
+          "notes": "ネット公開情報から作成（現地掲示は未確認）。混合泉。わずかに塩味とぬるぬる感がある。出典: ニフティ温泉・スーパー銭湯全国検索などの温泉紹介サイト"
+        }
+      ]
     },
     {
       "fsq_id": "548d261f498e0c4238f61048",
       "name": "白馬八方温泉 八方の湯",
       "address": "北城5695, 白馬村, 長野県",
       "checkin_date": "2025-12-29",
-      "confidence": "low",
-      "spring_quality": "アルカリ性単純温泉",
-      "source_temp_c": 49.7,
-      "ph": 11.2,
-      "ph_lab": 11.6,
-      "notes": "ネット公開情報から作成（現地掲示は未確認）。日本でもトップクラスの強アルカリ性。高濃度の溶存水素を含むとされる。出典: ニフティ温泉・山と温泉のきろくなどの紹介ページ"
+      "springs": [
+        {
+          "confidence": "low",
+          "spring_quality": "アルカリ性単純温泉",
+          "source_temp_c": 49.7,
+          "ph": 11.2,
+          "ph_lab": 11.6,
+          "notes": "ネット公開情報から作成（現地掲示は未確認）。日本でもトップクラスの強アルカリ性。高濃度の溶存水素を含むとされる。出典: ニフティ温泉・山と温泉のきろくなどの紹介ページ"
+        }
+      ]
     },
     {
       "fsq_id": "4d3a9ad1979ea143176a92fc",
       "name": "布施温泉",
       "address": "布施1228, 佐久市, 長野県, 384-2203",
       "checkin_date": "2025-10-19",
-      "confidence": "low",
-      "spring_quality": "ナトリウム－塩化物温泉",
-      "spring_quality_class": "弱アルカリ性低張性高温泉",
-      "source_temp_c": 47.3,
-      "yield_l_min": 86.5,
-      "notes": "ネット公開情報から作成（現地掲示は未確認）。出典: Wikipedia「布施温泉」ほか"
+      "springs": [
+        {
+          "confidence": "low",
+          "spring_quality": "ナトリウム－塩化物温泉",
+          "spring_quality_class": "弱アルカリ性低張性高温泉",
+          "source_temp_c": 47.3,
+          "yield_l_min": 86.5,
+          "notes": "ネット公開情報から作成（現地掲示は未確認）。出典: Wikipedia「布施温泉」ほか"
+        }
+      ]
     },
     {
       "fsq_id": "4c5fa46f3986e21e16a9924f",
       "name": "立科温泉 権現の湯",
       "address": "大字山部363-2, 立科町, 長野県, 384-2307",
       "checkin_date": "2025-10-18",
-      "confidence": "low",
-      "spring_quality": "ナトリウム・カルシウム－塩化物・硫酸塩温泉",
-      "spring_quality_class": "弱アルカリ性等張性温泉",
-      "notes": "ネット公開情報から作成（現地掲示は未確認）。出典: るるぶ&more.・佐久広域連合などの紹介ページ"
+      "springs": [
+        {
+          "confidence": "low",
+          "spring_quality": "ナトリウム・カルシウム－塩化物・硫酸塩温泉",
+          "spring_quality_class": "弱アルカリ性等張性温泉",
+          "notes": "ネット公開情報から作成（現地掲示は未確認）。出典: るるぶ&more.・佐久広域連合などの紹介ページ"
+        }
+      ]
     },
     {
       "fsq_id": "57f1f65d498e28af9a8c09ce",
       "name": "安曇野 しゃくなげの湯",
       "address": "穂高有明7726-4, 安曇野市, 長野県, 399-8301",
       "checkin_date": "2025-09-28",
-      "confidence": "medium",
-      "spring_quality": "アルカリ性単純温泉",
-      "spring_quality_class": "アルカリ性低張性高温泉",
-      "source_temp_c": 69.3,
-      "ph": 8.6,
-      "dissolved_solids_mg_kg": 469.6,
-      "indications": [
-        "自律神経不安定症",
-        "不眠症",
-        "うつ状態"
-      ],
-      "notes": "ネット公開情報から作成（現地掲示は未確認）。出典: 安曇野しゃくなげの湯公式サイト https://syakunagenoyu.info/onsen/"
+      "springs": [
+        {
+          "confidence": "medium",
+          "spring_quality": "アルカリ性単純温泉",
+          "spring_quality_class": "アルカリ性低張性高温泉",
+          "source_temp_c": 69.3,
+          "ph": 8.6,
+          "dissolved_solids_mg_kg": 469.6,
+          "indications": [
+            "自律神経不安定症",
+            "不眠症",
+            "うつ状態"
+          ],
+          "notes": "ネット公開情報から作成（現地掲示は未確認）。出典: 安曇野しゃくなげの湯公式サイト https://syakunagenoyu.info/onsen/"
+        }
+      ]
     },
     {
       "fsq_id": "5a169ef4a9e402247b524f90",
       "name": "コトリの湯",
       "address": "松代町東条2832, 長野市, 長野県, 381-1221",
       "checkin_date": "2025-09-23",
-      "confidence": "medium",
-      "spring_name": "皆神温泉（松代城下温泉の運び湯とのブレンド）",
-      "spring_quality": "ナトリウム・カルシウム－塩化物・炭酸水素塩冷鉱泉",
-      "source_temp_c": 18.3,
-      "ph": 6.9,
-      "indications": [
-        "きりきず",
-        "末梢循環障害",
-        "冷え性",
-        "うつ状態",
-        "皮膚乾燥症"
-      ],
-      "notes": "ネット公開情報から作成（現地掲示は未確認）。敷地内の自家源泉（皆神温泉）に松代町内の松代城下温泉の運び湯をブレンドしている。メタホウ酸・炭酸水素イオンが比較的多く、ほんのり茶色味を帯びる。pHと源泉温度は温泉紹介サイトの掲載値。出典: コトリの湯公式サイト https://kotorinoyu.jp/news/archives/2320"
+      "springs": [
+        {
+          "confidence": "medium",
+          "spring_name": "皆神温泉（松代城下温泉の運び湯とのブレンド）",
+          "spring_quality": "ナトリウム・カルシウム－塩化物・炭酸水素塩冷鉱泉",
+          "source_temp_c": 18.3,
+          "ph": 6.9,
+          "indications": [
+            "きりきず",
+            "末梢循環障害",
+            "冷え性",
+            "うつ状態",
+            "皮膚乾燥症"
+          ],
+          "notes": "ネット公開情報から作成（現地掲示は未確認）。敷地内の自家源泉（皆神温泉）に松代町内の松代城下温泉の運び湯をブレンドしている。メタホウ酸・炭酸水素イオンが比較的多く、ほんのり茶色味を帯びる。pHと源泉温度は温泉紹介サイトの掲載値。出典: コトリの湯公式サイト https://kotorinoyu.jp/news/archives/2320"
+        }
+      ]
     },
     {
       "fsq_id": "6586a7e4aa3d9747a443dcbc",
       "name": "湖天の湯",
       "address": "北佐久郡立科町, 長野県, 384-2309",
       "checkin_date": "2025-09-21",
-      "confidence": "medium",
-      "spring_name": "樽ヶ沢温泉",
-      "spring_quality": "カルシウム・ナトリウム－硫酸塩泉",
-      "source_temp_c": 52.3,
-      "yield_l_min": 144,
-      "indications": [
-        "きりきず",
-        "うつ状態",
-        "末梢循環障害",
-        "冷え性",
-        "皮膚乾燥症"
-      ],
-      "notes": "ネット公開情報から作成（現地掲示は未確認）。湧出地は長野県北佐久郡立科町大字八ヶ野字樽ヶ沢1492番。微黄白濁を呈し、苦味・鉄味を有す。飲泉不可。出典: 白樺リゾート池の平ホテル公式サイト https://www.shirakabaresort.jp/ikenotaira-hotel/hot-spring/"
+      "springs": [
+        {
+          "confidence": "medium",
+          "spring_name": "樽ヶ沢温泉",
+          "spring_quality": "カルシウム・ナトリウム－硫酸塩泉",
+          "source_temp_c": 52.3,
+          "yield_l_min": 144,
+          "indications": [
+            "きりきず",
+            "うつ状態",
+            "末梢循環障害",
+            "冷え性",
+            "皮膚乾燥症"
+          ],
+          "notes": "ネット公開情報から作成（現地掲示は未確認）。湧出地は長野県北佐久郡立科町大字八ヶ野字樽ヶ沢1492番。微黄白濁を呈し、苦味・鉄味を有す。飲泉不可。出典: 白樺リゾート池の平ホテル公式サイト https://www.shirakabaresort.jp/ikenotaira-hotel/hot-spring/"
+        }
+      ]
     },
     {
       "fsq_id": "4bc9613c68f976b0d6535d83",
       "name": "Komakusa no Yu (こまくさの湯)",
       "address": "赤穂759-4, 駒ヶ根市, 長野県, 399-4117",
       "checkin_date": "2025-08-15",
-      "confidence": "medium",
-      "spring_name": "早太郎温泉",
-      "spring_quality": "アルカリ性単純温泉",
-      "source_temp_c": 28.8,
-      "notes": "ネット公開情報から作成（現地掲示は未確認）。pHは温泉紹介サイトが9.11、源泉温度は公式が28.8℃・紹介サイトが30.8℃と食い違うため公式の値のみ入れた。出典: こまくさの湯公式サイト https://komakusanoyu.com/spasauna/"
+      "springs": [
+        {
+          "confidence": "medium",
+          "spring_name": "早太郎温泉",
+          "spring_quality": "アルカリ性単純温泉",
+          "source_temp_c": 28.8,
+          "notes": "ネット公開情報から作成（現地掲示は未確認）。pHは温泉紹介サイトが9.11、源泉温度は公式が28.8℃・紹介サイトが30.8℃と食い違うため公式の値のみ入れた。出典: こまくさの湯公式サイト https://komakusanoyu.com/spasauna/"
+        }
+      ]
     },
     {
       "fsq_id": "4bee4c2d2c082d7fec4e3042",
       "name": "Miharashi no Yu (みはらしの湯)",
       "address": "西箕輪3480-1 (みはらしファーム), 伊那市, 長野県, 399-4501",
       "checkin_date": "2025-08-14",
-      "confidence": "low",
-      "spring_name": "羽広温泉",
-      "spring_quality": "単純温泉",
-      "spring_quality_class": "弱アルカリ性低張性温泉",
-      "notes": "ネット公開情報から作成（現地掲示は未確認）。出典: るるぶ&more.・とっておき信州などの紹介ページ"
+      "springs": [
+        {
+          "confidence": "low",
+          "spring_name": "羽広温泉",
+          "spring_quality": "単純温泉",
+          "spring_quality_class": "弱アルカリ性低張性温泉",
+          "notes": "ネット公開情報から作成（現地掲示は未確認）。出典: るるぶ&more.・とっておき信州などの紹介ページ"
+        }
+      ]
     },
     {
       "fsq_id": "4c41ae84cc410f471381ab61",
       "name": "Romanetto (岡谷健康福祉施設 ロマネット)",
       "address": "長地権現町4-1-24, 岡谷市, 長野県, 394-0081",
       "checkin_date": "2025-08-10",
-      "confidence": "low",
-      "spring_quality": "単純温泉",
-      "spring_quality_class": "弱アルカリ性低張性高温泉",
-      "source_temp_c": 45.5,
-      "notes": "ネット公開情報から作成（現地掲示は未確認）。出典: 湯まっぷ・シン・温泉に行こうなどの温泉紹介サイト"
+      "springs": [
+        {
+          "confidence": "low",
+          "spring_quality": "単純温泉",
+          "spring_quality_class": "弱アルカリ性低張性高温泉",
+          "source_temp_c": 45.5,
+          "notes": "ネット公開情報から作成（現地掲示は未確認）。出典: 湯まっぷ・シン・温泉に行こうなどの温泉紹介サイト"
+        }
+      ]
     },
     {
       "fsq_id": "4bdbcbd02a3a0f47e6cfb0b6",
       "name": "いいやま湯滝温泉",
       "address": "上境1898-1, 飯山市, 長野県, 389-2602",
       "checkin_date": "2025-08-02",
-      "confidence": "low",
-      "spring_quality": "アルカリ性単純温泉",
-      "spring_quality_class": "低張性アルカリ性温泉",
-      "source_temp_c": 37.5,
-      "ph": 8.6,
-      "evaporation_residue_mg_kg": 245,
-      "notes": "ネット公開情報から作成（現地掲示は未確認）。出典: Wikipedia・ニフティ温泉などの温泉紹介サイト"
+      "springs": [
+        {
+          "confidence": "low",
+          "spring_quality": "アルカリ性単純温泉",
+          "spring_quality_class": "低張性アルカリ性温泉",
+          "source_temp_c": 37.5,
+          "ph": 8.6,
+          "evaporation_residue_mg_kg": 245,
+          "notes": "ネット公開情報から作成（現地掲示は未確認）。出典: Wikipedia・ニフティ温泉などの温泉紹介サイト"
+        }
+      ]
     },
     {
       "fsq_id": "4e5def8ca809fd79d2916f94",
       "name": "和田宿温泉 ふれあいの湯",
       "address": "和田4329, 長和町, 長野県, 386-0701",
       "checkin_date": "2025-07-06",
-      "confidence": "high",
-      "spring_name": "小日影の湯 1号泉",
-      "spring_quality": "カルシウム・ナトリウム－硫酸塩温泉",
-      "spring_quality_class": "弱アルカリ性低張性低温泉",
-      "source_temp_c": 28.6,
-      "use_temp_c": 41.0,
-      "ph": 8.3,
-      "evaporation_residue_mg_kg": 2279,
-      "dissolved_solids_mg_kg": 2178,
-      "total_ingredients_mg_kg": 2178,
-      "cations": [
+      "springs": [
         {
-          "name": "リチウムイオン",
-          "symbol": "Li+",
-          "mg_kg": 0.07
-        },
-        {
-          "name": "ナトリウムイオン",
-          "symbol": "Na+",
-          "mg_kg": 159.8
-        },
-        {
-          "name": "カリウムイオン",
-          "symbol": "K+",
-          "mg_kg": 2.8
-        },
-        {
-          "name": "マグネシウムイオン",
-          "symbol": "Mg2+",
-          "mg_kg": 3.1
-        },
-        {
-          "name": "カルシウムイオン",
-          "symbol": "Ca2+",
-          "mg_kg": 480.3
-        },
-        {
-          "name": "ストロンチウムイオン",
-          "symbol": "Sr2+",
-          "mg_kg": 2.3
-        },
-        {
-          "name": "アルミニウムイオン",
-          "symbol": "Al3+",
-          "mg_kg": 0.03
-        },
-        {
-          "name": "マンガンイオン",
-          "symbol": "Mn2+",
-          "mg_kg": 0.8
-        },
-        {
-          "name": "鉄(II)イオン",
-          "symbol": "Fe2+",
-          "mg_kg": 0.3
+          "confidence": "high",
+          "spring_name": "小日影の湯 1号泉",
+          "spring_quality": "カルシウム・ナトリウム－硫酸塩温泉",
+          "spring_quality_class": "弱アルカリ性低張性低温泉",
+          "source_temp_c": 28.6,
+          "use_temp_c": 41.0,
+          "ph": 8.3,
+          "evaporation_residue_mg_kg": 2279,
+          "dissolved_solids_mg_kg": 2178,
+          "total_ingredients_mg_kg": 2178,
+          "cations": [
+            {
+              "name": "リチウムイオン",
+              "symbol": "Li+",
+              "mg_kg": 0.07
+            },
+            {
+              "name": "ナトリウムイオン",
+              "symbol": "Na+",
+              "mg_kg": 159.8
+            },
+            {
+              "name": "カリウムイオン",
+              "symbol": "K+",
+              "mg_kg": 2.8
+            },
+            {
+              "name": "マグネシウムイオン",
+              "symbol": "Mg2+",
+              "mg_kg": 3.1
+            },
+            {
+              "name": "カルシウムイオン",
+              "symbol": "Ca2+",
+              "mg_kg": 480.3
+            },
+            {
+              "name": "ストロンチウムイオン",
+              "symbol": "Sr2+",
+              "mg_kg": 2.3
+            },
+            {
+              "name": "アルミニウムイオン",
+              "symbol": "Al3+",
+              "mg_kg": 0.03
+            },
+            {
+              "name": "マンガンイオン",
+              "symbol": "Mn2+",
+              "mg_kg": 0.8
+            },
+            {
+              "name": "鉄(II)イオン",
+              "symbol": "Fe2+",
+              "mg_kg": 0.3
+            }
+          ],
+          "cations_total_mg_kg": 649.4,
+          "anions": [
+            {
+              "name": "フッ素イオン",
+              "symbol": "F-",
+              "mg_kg": 1.7
+            },
+            {
+              "name": "塩素イオン",
+              "symbol": "Cl-",
+              "mg_kg": 61.9
+            },
+            {
+              "name": "硫酸イオン",
+              "symbol": "SO42-",
+              "mg_kg": 1425
+            },
+            {
+              "name": "炭酸水素イオン",
+              "symbol": "HCO3-",
+              "mg_kg": 6.1
+            },
+            {
+              "name": "炭酸イオン",
+              "symbol": "CO32-",
+              "mg_kg": 6.0
+            }
+          ],
+          "anions_total_mg_kg": 1500.7,
+          "undissociated": [
+            {
+              "name": "メタケイ酸",
+              "symbol": "H2SiO3",
+              "mg_kg": 25.1
+            },
+            {
+              "name": "メタホウ酸",
+              "symbol": "HBO2",
+              "mg_kg": 2.6
+            }
+          ],
+          "undissociated_total_mg_kg": 27.7,
+          "dissolved_gas": [],
+          "dissolved_gas_total_mg_kg": 0,
+          "analyzed_on": "2012-06-05",
+          "analyzer": "社団法人 長野県薬剤師会",
+          "analyzer_registration": "長野県第2号",
+          "notes": "ネット公開情報から作成（現地掲示は未確認）。施設が公開している温泉成分分析表PDFを読み取ったもの。温泉地名は和田宿温泉、湧出地は長野県小県郡長和町和田字小日影4376番2。陽イオン計・陰イオン計・非解離成分計は掲示に記載がないため各成分の合計を入れた。掲示の成分総計は「2178g/kg」と単位が誤植されている（正しくは mg/kg）。出典: 長和町振興公社 https://nagawamachi.com/fureai/efficacy/"
         }
-      ],
-      "cations_total_mg_kg": 649.4,
-      "anions": [
-        {
-          "name": "フッ素イオン",
-          "symbol": "F-",
-          "mg_kg": 1.7
-        },
-        {
-          "name": "塩素イオン",
-          "symbol": "Cl-",
-          "mg_kg": 61.9
-        },
-        {
-          "name": "硫酸イオン",
-          "symbol": "SO42-",
-          "mg_kg": 1425
-        },
-        {
-          "name": "炭酸水素イオン",
-          "symbol": "HCO3-",
-          "mg_kg": 6.1
-        },
-        {
-          "name": "炭酸イオン",
-          "symbol": "CO32-",
-          "mg_kg": 6.0
-        }
-      ],
-      "anions_total_mg_kg": 1500.7,
-      "undissociated": [
-        {
-          "name": "メタケイ酸",
-          "symbol": "H2SiO3",
-          "mg_kg": 25.1
-        },
-        {
-          "name": "メタホウ酸",
-          "symbol": "HBO2",
-          "mg_kg": 2.6
-        }
-      ],
-      "undissociated_total_mg_kg": 27.7,
-      "dissolved_gas": [],
-      "dissolved_gas_total_mg_kg": 0,
-      "analyzed_on": "2012-06-05",
-      "analyzer": "社団法人 長野県薬剤師会",
-      "analyzer_registration": "長野県第2号",
-      "notes": "ネット公開情報から作成（現地掲示は未確認）。施設が公開している温泉成分分析表PDFを読み取ったもの。温泉地名は和田宿温泉、湧出地は長野県小県郡長和町和田字小日影4376番2。陽イオン計・陰イオン計・非解離成分計は掲示に記載がないため各成分の合計を入れた。掲示の成分総計は「2178g/kg」と単位が誤植されている（正しくは mg/kg）。出典: 長和町振興公社 https://nagawamachi.com/fureai/efficacy/"
+      ]
     },
     {
       "fsq_id": "4bd4174ecaff9521de30d6f0",
       "name": "原村八ヶ岳温泉ふれあいセンター もみの湯",
       "address": "原山17217-1729, 原村, 長野県, 391-0115",
       "checkin_date": "2025-06-29",
-      "confidence": "low",
-      "spring_quality": "ナトリウム－硫酸塩・塩化物泉",
-      "source_temp_c": 54.9,
-      "ph": 7.63,
-      "notes": "ネット公開情報から作成（現地掲示は未確認）。地下1300mから湧出。緑褐色の湯。出典: 諏訪観光連盟・るるぶ&more.などの紹介ページ"
+      "springs": [
+        {
+          "confidence": "low",
+          "spring_quality": "ナトリウム－硫酸塩・塩化物泉",
+          "source_temp_c": 54.9,
+          "ph": 7.63,
+          "notes": "ネット公開情報から作成（現地掲示は未確認）。地下1300mから湧出。緑褐色の湯。出典: 諏訪観光連盟・るるぶ&more.などの紹介ページ"
+        }
+      ]
     },
     {
       "fsq_id": "4ba72172f964a5203d8239e3",
       "name": "八峯苑 鹿の湯",
       "address": "境12067, 富士見町, 長野県, 399-0101",
       "checkin_date": "2025-06-01",
-      "confidence": "medium",
-      "spring_name": "富士見高原温泉「鹿の湯」",
-      "spring_quality": "ナトリウム－硫酸塩・塩化物温泉",
-      "source_temp_c": 39.5,
-      "treatment": {
-        "junkan": {
-          "applied": true,
-          "reason": "ろ過機を使用"
-        },
-        "shodoku": {
-          "applied": true,
-          "reason": "源泉タンクおよびろ過機通過時に定量塩素を注入"
+      "springs": [
+        {
+          "confidence": "medium",
+          "spring_name": "富士見高原温泉「鹿の湯」",
+          "spring_quality": "ナトリウム－硫酸塩・塩化物温泉",
+          "source_temp_c": 39.5,
+          "treatment": {
+            "junkan": {
+              "applied": true,
+              "reason": "ろ過機を使用"
+            },
+            "shodoku": {
+              "applied": true,
+              "reason": "源泉タンクおよびろ過機通過時に定量塩素を注入"
+            }
+          },
+          "notes": "ネット公開情報から作成（現地掲示は未確認）。地下1400〜1800mから湧出。刻々と色が変わる「翠の湯」として知られる。出典: ホテル八峯苑 鹿の湯公式サイト https://happoen.jp/day-onsen/"
         }
-      },
-      "notes": "ネット公開情報から作成（現地掲示は未確認）。地下1400〜1800mから湧出。刻々と色が変わる「翠の湯」として知られる。出典: ホテル八峯苑 鹿の湯公式サイト https://happoen.jp/day-onsen/"
+      ]
     },
     {
       "fsq_id": "4c30299c452620a141d61e0f",
       "name": "まめじま湯ったり苑",
       "address": "大豆島1641, 長野市, 長野県, 381-0022",
       "checkin_date": "2025-04-20",
-      "confidence": "medium",
-      "spring_name": "大豆島温泉",
-      "spring_quality": "ナトリウム・カルシウム－塩化物温泉",
-      "spring_quality_class": "弱アルカリ性低張性高温泉",
-      "source_temp_c": 48.8,
-      "ph": 7.9,
-      "yield_l_min": 370,
-      "notes": "ネット公開情報から作成（現地掲示は未確認）。無色透明。pHは温泉紹介サイトの掲載値。出典: まめじま湯ったり苑公式サイト https://www.yuttarien.com/mamejima/guide/"
+      "springs": [
+        {
+          "confidence": "medium",
+          "spring_name": "大豆島温泉",
+          "spring_quality": "ナトリウム・カルシウム－塩化物温泉",
+          "spring_quality_class": "弱アルカリ性低張性高温泉",
+          "source_temp_c": 48.8,
+          "ph": 7.9,
+          "yield_l_min": 370,
+          "notes": "ネット公開情報から作成（現地掲示は未確認）。無色透明。pHは温泉紹介サイトの掲載値。出典: まめじま湯ったり苑公式サイト https://www.yuttarien.com/mamejima/guide/"
+        }
+      ]
     },
     {
       "fsq_id": "584fe5a094c6906fd283b7da",
       "name": "平尾温泉 みはらしの湯",
       "address": "下平尾2682, 佐久市, 長野県, 385-0003",
       "checkin_date": "2025-04-05",
-      "confidence": "high",
-      "spring_name": "平尾温泉（平尾源泉）",
-      "spring_quality": "ナトリウム－塩化物・炭酸水素塩冷鉱泉",
-      "spring_quality_class": "低張性中性冷鉱泉",
-      "source_temp_c": 20.6,
-      "ph": 6.9,
-      "ph_lab": 6.99,
-      "evaporation_residue_mg_kg": 2492,
-      "dissolved_solids_mg_kg": 2878,
-      "total_ingredients_mg_kg": 2977,
-      "cations": [
+      "springs": [
         {
-          "name": "リチウムイオン",
-          "symbol": "Li+",
-          "mg_kg": 0.3
-        },
-        {
-          "name": "ナトリウムイオン",
-          "symbol": "Na+",
-          "mg_kg": 842.9
-        },
-        {
-          "name": "カリウムイオン",
-          "symbol": "K+",
-          "mg_kg": 13.2
-        },
-        {
-          "name": "アンモニウムイオン",
-          "symbol": "NH4+",
-          "mg_kg": 1.8
-        },
-        {
-          "name": "マグネシウムイオン",
-          "symbol": "Mg2+",
-          "mg_kg": 27.3
-        },
-        {
-          "name": "カルシウムイオン",
-          "symbol": "Ca2+",
-          "mg_kg": 42.2
-        },
-        {
-          "name": "ストロンチウムイオン",
-          "symbol": "Sr2+",
-          "mg_kg": 0.9
-        },
-        {
-          "name": "アルミニウムイオン",
-          "symbol": "Al3+",
-          "mg_kg": 0.3
-        },
-        {
-          "name": "鉄(II)イオン",
-          "symbol": "Fe2+",
-          "mg_kg": 0.8
+          "confidence": "high",
+          "spring_name": "平尾温泉（平尾源泉）",
+          "spring_quality": "ナトリウム－塩化物・炭酸水素塩冷鉱泉",
+          "spring_quality_class": "低張性中性冷鉱泉",
+          "source_temp_c": 20.6,
+          "ph": 6.9,
+          "ph_lab": 6.99,
+          "evaporation_residue_mg_kg": 2492,
+          "dissolved_solids_mg_kg": 2878,
+          "total_ingredients_mg_kg": 2977,
+          "cations": [
+            {
+              "name": "リチウムイオン",
+              "symbol": "Li+",
+              "mg_kg": 0.3
+            },
+            {
+              "name": "ナトリウムイオン",
+              "symbol": "Na+",
+              "mg_kg": 842.9
+            },
+            {
+              "name": "カリウムイオン",
+              "symbol": "K+",
+              "mg_kg": 13.2
+            },
+            {
+              "name": "アンモニウムイオン",
+              "symbol": "NH4+",
+              "mg_kg": 1.8
+            },
+            {
+              "name": "マグネシウムイオン",
+              "symbol": "Mg2+",
+              "mg_kg": 27.3
+            },
+            {
+              "name": "カルシウムイオン",
+              "symbol": "Ca2+",
+              "mg_kg": 42.2
+            },
+            {
+              "name": "ストロンチウムイオン",
+              "symbol": "Sr2+",
+              "mg_kg": 0.9
+            },
+            {
+              "name": "アルミニウムイオン",
+              "symbol": "Al3+",
+              "mg_kg": 0.3
+            },
+            {
+              "name": "鉄(II)イオン",
+              "symbol": "Fe2+",
+              "mg_kg": 0.8
+            }
+          ],
+          "cations_total_mg_kg": 929.7,
+          "anions": [
+            {
+              "name": "ふっ化物イオン",
+              "symbol": "F-",
+              "mg_kg": 0.3
+            },
+            {
+              "name": "塩化物イオン",
+              "symbol": "Cl-",
+              "mg_kg": 1071
+            },
+            {
+              "name": "臭化物イオン",
+              "symbol": "Br-",
+              "mg_kg": 3.8
+            },
+            {
+              "name": "よう化物イオン",
+              "symbol": "I-",
+              "mg_kg": 0.9
+            },
+            {
+              "name": "硫酸イオン",
+              "symbol": "SO42-",
+              "mg_kg": 118.2
+            },
+            {
+              "name": "炭酸水素イオン",
+              "symbol": "HCO3-",
+              "mg_kg": 607.3
+            },
+            {
+              "name": "炭酸イオン",
+              "symbol": "CO32-",
+              "mg_kg": 0.4
+            }
+          ],
+          "anions_total_mg_kg": 1802,
+          "undissociated": [
+            {
+              "name": "メタけい酸",
+              "symbol": "H2SiO3",
+              "mg_kg": 86.6
+            },
+            {
+              "name": "メタほう酸",
+              "symbol": "HBO2",
+              "mg_kg": 59.9
+            }
+          ],
+          "undissociated_total_mg_kg": 146.5,
+          "dissolved_gas": [
+            {
+              "name": "遊離二酸化炭素",
+              "symbol": "CO2",
+              "mg_kg": 98.5
+            }
+          ],
+          "dissolved_gas_total_mg_kg": 98.5,
+          "analyzed_on": "2016-10-28",
+          "analyzer": "株式会社エオネックス",
+          "analyzer_registration": "石川県第3号",
+          "notes": "ネット公開情報から作成（現地掲示は未確認）。施設が公開している温泉分析書PDF（第A1602098号）を読み取ったもの。この分析は源泉そのものではなく、平尾温泉水1に対して佐久市水道水9の割合で加水された浴用水が対象。源泉（平尾源泉・佐久市下平尾2560-2）自体の泉質は含鉄－ナトリウム－塩化物温泉（分析書第A1500521号）。出典: 平尾温泉みはらしの湯公式サイト https://www.hiraoonsen.jp/"
         }
-      ],
-      "cations_total_mg_kg": 929.7,
-      "anions": [
-        {
-          "name": "ふっ化物イオン",
-          "symbol": "F-",
-          "mg_kg": 0.3
-        },
-        {
-          "name": "塩化物イオン",
-          "symbol": "Cl-",
-          "mg_kg": 1071
-        },
-        {
-          "name": "臭化物イオン",
-          "symbol": "Br-",
-          "mg_kg": 3.8
-        },
-        {
-          "name": "よう化物イオン",
-          "symbol": "I-",
-          "mg_kg": 0.9
-        },
-        {
-          "name": "硫酸イオン",
-          "symbol": "SO42-",
-          "mg_kg": 118.2
-        },
-        {
-          "name": "炭酸水素イオン",
-          "symbol": "HCO3-",
-          "mg_kg": 607.3
-        },
-        {
-          "name": "炭酸イオン",
-          "symbol": "CO32-",
-          "mg_kg": 0.4
-        }
-      ],
-      "anions_total_mg_kg": 1802,
-      "undissociated": [
-        {
-          "name": "メタけい酸",
-          "symbol": "H2SiO3",
-          "mg_kg": 86.6
-        },
-        {
-          "name": "メタほう酸",
-          "symbol": "HBO2",
-          "mg_kg": 59.9
-        }
-      ],
-      "undissociated_total_mg_kg": 146.5,
-      "dissolved_gas": [
-        {
-          "name": "遊離二酸化炭素",
-          "symbol": "CO2",
-          "mg_kg": 98.5
-        }
-      ],
-      "dissolved_gas_total_mg_kg": 98.5,
-      "analyzed_on": "2016-10-28",
-      "analyzer": "株式会社エオネックス",
-      "analyzer_registration": "石川県第3号",
-      "notes": "ネット公開情報から作成（現地掲示は未確認）。施設が公開している温泉分析書PDF（第A1602098号）を読み取ったもの。この分析は源泉そのものではなく、平尾温泉水1に対して佐久市水道水9の割合で加水された浴用水が対象。源泉（平尾源泉・佐久市下平尾2560-2）自体の泉質は含鉄－ナトリウム－塩化物温泉（分析書第A1500521号）。出典: 平尾温泉みはらしの湯公式サイト https://www.hiraoonsen.jp/"
+      ]
     },
     {
       "fsq_id": "4c0706d33cbed13a28e20bc0",
       "name": "Zuisho (湯の華銭湯 瑞祥 松本館)",
       "address": "渚1-7-1, 松本市, 長野県, 390-0841",
       "checkin_date": "2025-02-16",
-      "confidence": "low",
-      "spring_quality": "ナトリウム－塩化物泉",
-      "notes": "ネット公開情報から作成（現地掲示は未確認）。無色透明で保温効果が高い。出典: ニフティ温泉・ゆこゆこなどの温泉紹介サイト"
+      "springs": [
+        {
+          "confidence": "low",
+          "spring_quality": "ナトリウム－塩化物泉",
+          "notes": "ネット公開情報から作成（現地掲示は未確認）。無色透明で保温効果が高い。出典: ニフティ温泉・ゆこゆこなどの温泉紹介サイト"
+        }
+      ]
     },
     {
       "fsq_id": "4c95bb4a72dd224b44a9a691",
       "name": "Oshiba no Yu (大芝の湯)",
       "address": "2358-5, 南箕輪村, 長野県, 399-4511",
       "checkin_date": "2025-01-26",
-      "confidence": "low",
-      "spring_quality": "単純温泉",
-      "spring_quality_class": "弱アルカリ性低張性高温泉",
-      "source_temp_c": 43.7,
-      "ph": 8.0,
-      "yield_l_min": 277,
-      "dissolved_solids_mg_kg": 827.3,
-      "notes": "ネット公開情報から作成（現地掲示は未確認）。メタケイ酸を豊富に含む。出典: 道の駅 信州大芝高原公式サイト・長野伊那谷観光局"
+      "springs": [
+        {
+          "confidence": "low",
+          "spring_quality": "単純温泉",
+          "spring_quality_class": "弱アルカリ性低張性高温泉",
+          "source_temp_c": 43.7,
+          "ph": 8.0,
+          "yield_l_min": 277,
+          "dissolved_solids_mg_kg": 827.3,
+          "notes": "ネット公開情報から作成（現地掲示は未確認）。メタケイ酸を豊富に含む。出典: 道の駅 信州大芝高原公式サイト・長野伊那谷観光局"
+        }
+      ]
     },
     {
       "fsq_id": "59cf6d2cd78f0b10d9b3a8e4",
       "name": "御とめ湯り",
       "address": "土湯温泉町字見附32-1, 福島市, 福島県, 960-2157",
       "checkin_date": "2025-01-05",
-      "confidence": "medium",
-      "spring_quality": "アルカリ性単純温泉",
-      "yield_l_min": 50,
-      "notes": "ネット公開情報から作成（現地掲示は未確認）。土湯温泉の共同源泉を使い、泉質を損なわない最低限の温度調整加水のみ。出典: 御とめ湯り公式サイト https://otomeyuri-spa.com/spa/index.html"
+      "springs": [
+        {
+          "confidence": "medium",
+          "spring_quality": "アルカリ性単純温泉",
+          "yield_l_min": 50,
+          "notes": "ネット公開情報から作成（現地掲示は未確認）。土湯温泉の共同源泉を使い、泉質を損なわない最低限の温度調整加水のみ。出典: 御とめ湯り公式サイト https://otomeyuri-spa.com/spa/index.html"
+        }
+      ]
     },
     {
       "fsq_id": "4e605adfaeb7360314025a85",
       "name": "まだらおの湯",
       "address": "永江8156-649, 中野市, 長野県, 389-2104",
       "checkin_date": "2024-12-25",
-      "confidence": "low",
-      "spring_quality": "アルカリ性単純温泉",
-      "source_temp_c": 34.8,
-      "ph": 8.53,
-      "notes": "ネット公開情報から作成（現地掲示は未確認）。斑尾高原の中腹にある。ぬるぬるとした肌触り。出典: ニフティ温泉・とっておき信州などの温泉紹介サイト"
+      "springs": [
+        {
+          "confidence": "low",
+          "spring_quality": "アルカリ性単純温泉",
+          "source_temp_c": 34.8,
+          "ph": 8.53,
+          "notes": "ネット公開情報から作成（現地掲示は未確認）。斑尾高原の中腹にある。ぬるぬるとした肌触り。出典: ニフティ温泉・とっておき信州などの温泉紹介サイト"
+        }
+      ]
     },
     {
       "fsq_id": "4b679ef2f964a52022582be3",
       "name": "湯の華銭湯瑞祥 上山田本館",
       "address": "上山田温泉2-18-8, 千曲市, 長野県, 389-0821",
       "checkin_date": "2024-11-24",
-      "confidence": "medium",
-      "spring_name": "千曲温泉1号〜4号源泉および中央源泉の混合泉（内風呂）",
-      "spring_quality": "アルカリ性単純硫黄温泉",
-      "spring_quality_class": "低張性アルカリ性高温泉",
-      "source_temp_c": 45.5,
-      "ph": 8.5,
-      "treatment": {
-        "kasui": {
-          "applied": false
-        },
-        "kaon": {
-          "applied": true,
-          "reason": "入浴に適した温度にするため熱交換器で加温"
-        },
-        "junkan": {
-          "applied": false
-        },
-        "shodoku": {
-          "applied": false
+      "springs": [
+        {
+          "confidence": "medium",
+          "spring_name": "千曲温泉1号〜4号源泉および中央源泉の混合泉（内風呂）",
+          "spring_quality": "アルカリ性単純硫黄温泉",
+          "spring_quality_class": "低張性アルカリ性高温泉",
+          "source_temp_c": 45.5,
+          "ph": 8.5,
+          "treatment": {
+            "kasui": {
+              "applied": false
+            },
+            "kaon": {
+              "applied": true,
+              "reason": "入浴に適した温度にするため熱交換器で加温"
+            },
+            "junkan": {
+              "applied": false
+            },
+            "shodoku": {
+              "applied": false
+            }
+          },
+          "indications": [
+            "アトピー性皮膚炎",
+            "尋常性乾癬",
+            "慢性湿疹",
+            "表皮化膿症",
+            "自律神経不安定症",
+            "不眠症",
+            "うつ状態"
+          ],
+          "contraindications": [
+            "皮膚または粘膜の過敏な人",
+            "高齢者の皮膚乾燥症"
+          ],
+          "notes": "ネット公開情報から作成（現地掲示は未確認）。内風呂のデータ。pHは8.5〜8.68と幅で公表されており下限を入れた。露天風呂は城山1号〜3号源泉の混合泉で単純硫黄温泉（弱アルカリ性低張性高温泉）、pH8.3〜8.35、源泉44.8℃。壺湯・寝湯・ささら湯のみ内風呂と露天の源泉を混合して循環濾過・薬剤使用。飲泉は中止。出典: 湯の華銭湯 瑞祥 上山田本館公式サイト https://zuisho.com/spa.html"
         }
-      },
-      "indications": [
-        "アトピー性皮膚炎",
-        "尋常性乾癬",
-        "慢性湿疹",
-        "表皮化膿症",
-        "自律神経不安定症",
-        "不眠症",
-        "うつ状態"
-      ],
-      "contraindications": [
-        "皮膚または粘膜の過敏な人",
-        "高齢者の皮膚乾燥症"
-      ],
-      "notes": "ネット公開情報から作成（現地掲示は未確認）。内風呂のデータ。pHは8.5〜8.68と幅で公表されており下限を入れた。露天風呂は城山1号〜3号源泉の混合泉で単純硫黄温泉（弱アルカリ性低張性高温泉）、pH8.3〜8.35、源泉44.8℃。壺湯・寝湯・ささら湯のみ内風呂と露天の源泉を混合して循環濾過・薬剤使用。飲泉は中止。出典: 湯の華銭湯 瑞祥 上山田本館公式サイト https://zuisho.com/spa.html"
+      ]
     },
     {
       "fsq_id": "4b83ac02f964a5206b0c31e3",
       "name": "大師湯",
       "address": "別所温泉1652-1, 上田市, 長野県, 386-1431",
       "checkin_date": "2024-11-22",
-      "confidence": "low",
-      "spring_name": "別所温泉 3号源泉",
-      "spring_quality": "単純硫黄温泉",
-      "source_temp_c": 44.0,
-      "ph": 8.6,
-      "notes": "ネット公開情報から作成（現地掲示は未確認）。別所温泉の共同浴場。3号源泉を使用。出典: 温泉新選組・長野大学温泉同好会などの温泉紹介サイト"
+      "springs": [
+        {
+          "confidence": "low",
+          "spring_name": "別所温泉 3号源泉",
+          "spring_quality": "単純硫黄温泉",
+          "source_temp_c": 44.0,
+          "ph": 8.6,
+          "notes": "ネット公開情報から作成（現地掲示は未確認）。別所温泉の共同浴場。3号源泉を使用。出典: 温泉新選組・長野大学温泉同好会などの温泉紹介サイト"
+        }
+      ]
     },
     {
       "fsq_id": "4b4d86e6f964a5209bd326e3",
       "name": "石湯",
       "address": "別所温泉1641-1, 上田市, 長野県, 386-1431",
       "checkin_date": "2024-11-06",
-      "confidence": "low",
-      "spring_name": "別所温泉 3号源泉",
-      "spring_quality": "単純硫黄温泉",
-      "notes": "ネット公開情報から作成（現地掲示は未確認）。別所温泉の共同浴場。3号源泉の完全かけ流し。出典: 別所温泉財産区・温泉紹介サイト https://www.besshoonsen-zaisanku.com/bath/"
+      "springs": [
+        {
+          "confidence": "low",
+          "spring_name": "別所温泉 3号源泉",
+          "spring_quality": "単純硫黄温泉",
+          "notes": "ネット公開情報から作成（現地掲示は未確認）。別所温泉の共同浴場。3号源泉の完全かけ流し。出典: 別所温泉財産区・温泉紹介サイト https://www.besshoonsen-zaisanku.com/bath/"
+        }
+      ]
     },
     {
       "fsq_id": "4c64f3395e61d13ae6bfba85",
       "name": "すわっこランド",
       "address": "豊田732, 諏訪市, 長野県, 392-0016",
       "checkin_date": "2024-11-04",
-      "confidence": "low",
-      "spring_quality": "単純温泉",
-      "ph": 8.3,
-      "notes": "ネット公開情報から作成（現地掲示は未確認）。上諏訪温泉を使用。出典: すわっこランド公式サイト・ニフティ温泉"
+      "springs": [
+        {
+          "confidence": "low",
+          "spring_quality": "単純温泉",
+          "ph": 8.3,
+          "notes": "ネット公開情報から作成（現地掲示は未確認）。上諏訪温泉を使用。出典: すわっこランド公式サイト・ニフティ温泉"
+        }
+      ]
     },
     {
       "fsq_id": "4d8ec8773bfef04d0456a186",
       "name": "千古温泉",
       "address": "真田町長6395, 上田市, 長野県, 386-2201",
       "checkin_date": "2024-10-20",
-      "confidence": "low",
-      "spring_quality": "単純硫黄冷鉱泉",
-      "source_temp_c": 24.4,
-      "ph": 8.6,
-      "notes": "ネット公開情報から作成（現地掲示は未確認）。マンガンを含み、浴槽の底に触れると手足が一時的に黒くなる。出典: 長野県公式ブログ「じょうしょう気流」ほか"
+      "springs": [
+        {
+          "confidence": "low",
+          "spring_quality": "単純硫黄冷鉱泉",
+          "source_temp_c": 24.4,
+          "ph": 8.6,
+          "notes": "ネット公開情報から作成（現地掲示は未確認）。マンガンを含み、浴槽の底に触れると手足が一時的に黒くなる。出典: 長野県公式ブログ「じょうしょう気流」ほか"
+        }
+      ]
     },
     {
       "fsq_id": "4bee99982c082d7f3b943042",
       "name": "Oyu (大湯)",
       "address": "別所温泉215, 上田市, 長野県, 386-1431",
       "checkin_date": "2024-08-31",
-      "confidence": "low",
-      "spring_name": "別所温泉 4号源泉",
-      "spring_quality": "アルカリ性単純硫黄温泉",
-      "spring_quality_class": "低張性アルカリ性高温泉",
-      "source_temp_c": 50.6,
-      "ph_lab": 8.92,
-      "evaporation_residue_mg_kg": 288,
-      "total_ingredients_mg_kg": 307,
-      "analyzed_on": "2014-06-18",
-      "analyzer": "一般社団法人 上田薬剤師協会 検査センター",
-      "notes": "ネット公開情報から作成（現地掲示は未確認）。別所温泉の共同浴場。かけ流しと循環ろ過の併用。数値は別所温泉財産区が公開している4号源泉の温泉分析書（平成26年）によるもので、大湯の浴槽そのものの掲示ではない。出典: 別所温泉財産区 https://www.besshoonsen-zaisanku.com/bath/bunseki.html"
+      "springs": [
+        {
+          "confidence": "low",
+          "spring_name": "別所温泉 4号源泉",
+          "spring_quality": "アルカリ性単純硫黄温泉",
+          "spring_quality_class": "低張性アルカリ性高温泉",
+          "source_temp_c": 50.6,
+          "ph_lab": 8.92,
+          "evaporation_residue_mg_kg": 288,
+          "total_ingredients_mg_kg": 307,
+          "analyzed_on": "2014-06-18",
+          "analyzer": "一般社団法人 上田薬剤師協会 検査センター",
+          "notes": "ネット公開情報から作成（現地掲示は未確認）。別所温泉の共同浴場。かけ流しと循環ろ過の併用。数値は別所温泉財産区が公開している4号源泉の温泉分析書（平成26年）によるもので、大湯の浴槽そのものの掲示ではない。出典: 別所温泉財産区 https://www.besshoonsen-zaisanku.com/bath/bunseki.html"
+        }
+      ]
     },
     {
       "fsq_id": "57d00a3c498e9107fc648e09",
       "name": "Ryūsenji-no-Yu (竜泉寺の湯 草加谷塚店)",
       "address": "谷塚上町476, 草加市, 埼玉県, 340-0024",
       "checkin_date": "2024-08-10",
-      "confidence": "low",
-      "spring_name": "草加竜泉寺温泉",
-      "spring_quality": "ナトリウム－塩化物温泉",
-      "source_temp_c": 19.1,
-      "ph": 7.5,
-      "yield_l_min": 300,
-      "total_ingredients_mg_kg": 1143,
-      "notes": "ネット公開情報から作成（現地掲示は未確認）。濁りのある茶褐色の湯。出典: spa-tokyo.net・ニフティ温泉"
+      "springs": [
+        {
+          "confidence": "low",
+          "spring_name": "草加竜泉寺温泉",
+          "spring_quality": "ナトリウム－塩化物温泉",
+          "source_temp_c": 19.1,
+          "ph": 7.5,
+          "yield_l_min": 300,
+          "total_ingredients_mg_kg": 1143,
+          "notes": "ネット公開情報から作成（現地掲示は未確認）。濁りのある茶褐色の湯。出典: spa-tokyo.net・ニフティ温泉"
+        }
+      ]
     },
     {
       "fsq_id": "4c133fb77f7f2d7f7cd4de68",
       "name": "コタン温泉 (コタン温泉 露天風呂)",
       "address": "屈斜路古丹, 弟子屈町, 北海道, 088-3341",
       "checkin_date": "2024-07-02",
-      "confidence": "medium",
-      "spring_quality": "ナトリウム－炭酸水素塩泉",
-      "spring_quality_class": "中性低張性高温泉",
-      "source_temp_c": 69.6,
-      "ph": 6.8,
-      "ph_lab": 6.65,
-      "evaporation_residue_mg_kg": 782,
-      "dissolved_solids_mg_kg": 1046,
-      "total_ingredients_mg_kg": 1280,
-      "cations": [
+      "springs": [
         {
-          "name": "ナトリウムイオン",
-          "symbol": "Na+",
-          "mg_kg": 151.4
-        },
-        {
-          "name": "カリウムイオン",
-          "symbol": "K+",
-          "mg_kg": 7.1
-        },
-        {
-          "name": "マグネシウムイオン",
-          "symbol": "Mg2+",
-          "mg_kg": 8.9
-        },
-        {
-          "name": "カルシウムイオン",
-          "symbol": "Ca2+",
-          "mg_kg": 31.1
-        },
-        {
-          "name": "鉄(II)イオン",
-          "symbol": "Fe2+",
-          "mg_kg": 1.6
-        },
-        {
-          "name": "アンモニウムイオン",
-          "symbol": "NH4+",
-          "mg_kg": 0.3
+          "confidence": "medium",
+          "spring_quality": "ナトリウム－炭酸水素塩泉",
+          "spring_quality_class": "中性低張性高温泉",
+          "source_temp_c": 69.6,
+          "ph": 6.8,
+          "ph_lab": 6.65,
+          "evaporation_residue_mg_kg": 782,
+          "dissolved_solids_mg_kg": 1046,
+          "total_ingredients_mg_kg": 1280,
+          "cations": [
+            {
+              "name": "ナトリウムイオン",
+              "symbol": "Na+",
+              "mg_kg": 151.4
+            },
+            {
+              "name": "カリウムイオン",
+              "symbol": "K+",
+              "mg_kg": 7.1
+            },
+            {
+              "name": "マグネシウムイオン",
+              "symbol": "Mg2+",
+              "mg_kg": 8.9
+            },
+            {
+              "name": "カルシウムイオン",
+              "symbol": "Ca2+",
+              "mg_kg": 31.1
+            },
+            {
+              "name": "鉄(II)イオン",
+              "symbol": "Fe2+",
+              "mg_kg": 1.6
+            },
+            {
+              "name": "アンモニウムイオン",
+              "symbol": "NH4+",
+              "mg_kg": 0.3
+            }
+          ],
+          "cations_total_mg_kg": 199.8,
+          "anions": [
+            {
+              "name": "ふっ化物イオン",
+              "symbol": "F-",
+              "mg_kg": 0.9
+            },
+            {
+              "name": "塩化物イオン",
+              "symbol": "Cl-",
+              "mg_kg": 46.0
+            },
+            {
+              "name": "硫化水素イオン",
+              "symbol": "HS-",
+              "mg_kg": 0.2
+            },
+            {
+              "name": "硫酸イオン",
+              "symbol": "SO42-",
+              "mg_kg": 1.2
+            },
+            {
+              "name": "炭酸水素イオン",
+              "symbol": "HCO3-",
+              "mg_kg": 488.6
+            },
+            {
+              "name": "炭酸イオン",
+              "symbol": "CO32-",
+              "mg_kg": 0.2
+            },
+            {
+              "name": "りん酸イオン",
+              "symbol": "HPO42-",
+              "mg_kg": 0.4
+            }
+          ],
+          "anions_total_mg_kg": 537.5,
+          "undissociated": [
+            {
+              "name": "メタけい酸",
+              "symbol": "H2SiO3",
+              "mg_kg": 286.9
+            },
+            {
+              "name": "メタほう酸",
+              "symbol": "HBO2",
+              "mg_kg": 21.9
+            }
+          ],
+          "undissociated_total_mg_kg": 308.8,
+          "dissolved_gas": [
+            {
+              "name": "遊離二酸化炭素",
+              "symbol": "CO2",
+              "mg_kg": 234.0
+            },
+            {
+              "name": "遊離硫化水素",
+              "symbol": "H2S",
+              "mg_kg": 0.2
+            }
+          ],
+          "dissolved_gas_total_mg_kg": 234.3,
+          "indications": [],
+          "contraindications": [],
+          "analyzed_on": "2016-07-21",
+          "analyzer": "株式会社第一岸本鉱泉検査センター",
+          "analyzer_registration": "北海道第12号",
+          "notes": "写真の解像度が低く、数値の読み取り精度は低め。マンガンイオンは判読できず除外。動力揚湯、電気伝導率 0.69 S/m。泉温は写真から59.6℃と読んでいたが、pH・溶存物質1046mg/kg・成分総計1280mg/kg・メタけい酸286.9mg/kgが一致する同じ分析書を引くネット上の複数の記事が69.6℃としており、そちらに直した（同じ源泉を使う「屈斜路湖物語 丸木舟」の掲載値とも一致）。出典: るるぶ&more.・北海道源泉マニアの入湯レポほか",
+          "source_photos": [
+            "https://fastly.4sqi.net/img/general/500x300/41463109_UR3zveXZgXC4R8Ml7ByO1637jdUKAMCXb7sqg7hEFBE.jpg"
+          ]
         }
-      ],
-      "cations_total_mg_kg": 199.8,
-      "anions": [
-        {
-          "name": "ふっ化物イオン",
-          "symbol": "F-",
-          "mg_kg": 0.9
-        },
-        {
-          "name": "塩化物イオン",
-          "symbol": "Cl-",
-          "mg_kg": 46.0
-        },
-        {
-          "name": "硫化水素イオン",
-          "symbol": "HS-",
-          "mg_kg": 0.2
-        },
-        {
-          "name": "硫酸イオン",
-          "symbol": "SO42-",
-          "mg_kg": 1.2
-        },
-        {
-          "name": "炭酸水素イオン",
-          "symbol": "HCO3-",
-          "mg_kg": 488.6
-        },
-        {
-          "name": "炭酸イオン",
-          "symbol": "CO32-",
-          "mg_kg": 0.2
-        },
-        {
-          "name": "りん酸イオン",
-          "symbol": "HPO42-",
-          "mg_kg": 0.4
-        }
-      ],
-      "anions_total_mg_kg": 537.5,
-      "undissociated": [
-        {
-          "name": "メタけい酸",
-          "symbol": "H2SiO3",
-          "mg_kg": 286.9
-        },
-        {
-          "name": "メタほう酸",
-          "symbol": "HBO2",
-          "mg_kg": 21.9
-        }
-      ],
-      "undissociated_total_mg_kg": 308.8,
-      "dissolved_gas": [
-        {
-          "name": "遊離二酸化炭素",
-          "symbol": "CO2",
-          "mg_kg": 234.0
-        },
-        {
-          "name": "遊離硫化水素",
-          "symbol": "H2S",
-          "mg_kg": 0.2
-        }
-      ],
-      "dissolved_gas_total_mg_kg": 234.3,
-      "indications": [],
-      "contraindications": [],
-      "analyzed_on": "2016-07-21",
-      "analyzer": "株式会社第一岸本鉱泉検査センター",
-      "analyzer_registration": "北海道第12号",
-      "notes": "写真の解像度が低く、数値の読み取り精度は低め。マンガンイオンは判読できず除外。動力揚湯、電気伝導率 0.69 S/m。泉温は写真から59.6℃と読んでいたが、pH・溶存物質1046mg/kg・成分総計1280mg/kg・メタけい酸286.9mg/kgが一致する同じ分析書を引くネット上の複数の記事が69.6℃としており、そちらに直した（同じ源泉を使う「屈斜路湖物語 丸木舟」の掲載値とも一致）。出典: るるぶ&more.・北海道源泉マニアの入湯レポほか",
-      "source_photos": [
-        "https://fastly.4sqi.net/img/general/500x300/41463109_UR3zveXZgXC4R8Ml7ByO1637jdUKAMCXb7sqg7hEFBE.jpg"
       ]
     },
     {
@@ -3591,95 +3836,123 @@
       "name": "Gokurakuyu (極楽湯 和光店)",
       "address": "白子1-7-6, 和光市, 埼玉県, 351-0101",
       "checkin_date": "2024-03-20",
-      "confidence": "low",
-      "spring_name": "和光温泉 自然の湯",
-      "spring_quality": "ナトリウム－塩化物温泉",
-      "spring_quality_class": "弱アルカリ性高張性温泉",
-      "source_temp_c": 40.6,
-      "ph": 7.8,
-      "yield_l_min": 417,
-      "total_ingredients_mg_kg": 10440,
-      "notes": "ネット公開情報から作成（現地掲示は未確認）。地下1000m付近から汲み上げる琥珀色に近い黒湯。汲み上げは毎分160L。出典: spa-tokyo.net・温泉の杜"
+      "springs": [
+        {
+          "confidence": "low",
+          "spring_name": "和光温泉 自然の湯",
+          "spring_quality": "ナトリウム－塩化物温泉",
+          "spring_quality_class": "弱アルカリ性高張性温泉",
+          "source_temp_c": 40.6,
+          "ph": 7.8,
+          "yield_l_min": 417,
+          "total_ingredients_mg_kg": 10440,
+          "notes": "ネット公開情報から作成（現地掲示は未確認）。地下1000m付近から汲み上げる琥珀色に近い黒湯。汲み上げは毎分160L。出典: spa-tokyo.net・温泉の杜"
+        }
+      ]
     },
     {
       "fsq_id": "4b5d0319f964a520e04e29e3",
       "name": "天然温泉 七福の湯 戸田店",
       "address": "喜沢南1-4-56, 戸田市, 埼玉県, 335-0014",
       "checkin_date": "2023-10-14",
-      "confidence": "low",
-      "spring_name": "七福の湯 戸田温泉",
-      "spring_quality": "ナトリウム－塩化物温泉",
-      "source_temp_c": 40.5,
-      "ph": 7.9,
-      "yield_l_min": 320,
-      "total_ingredients_mg_kg": 8504,
-      "notes": "ネット公開情報から作成（現地掲示は未確認）。掘削1400mの動力揚湯。紹介サイトは「弱アルカリ性低張性温泉」と書くが、成分総計8504mg/kgは等張性の範囲にあたるため浸透圧の区分は入れていない。出典: ジョルダン温泉特集・ニフティ温泉"
+      "springs": [
+        {
+          "confidence": "low",
+          "spring_name": "七福の湯 戸田温泉",
+          "spring_quality": "ナトリウム－塩化物温泉",
+          "source_temp_c": 40.5,
+          "ph": 7.9,
+          "yield_l_min": 320,
+          "total_ingredients_mg_kg": 8504,
+          "notes": "ネット公開情報から作成（現地掲示は未確認）。掘削1400mの動力揚湯。紹介サイトは「弱アルカリ性低張性温泉」と書くが、成分総計8504mg/kgは等張性の範囲にあたるため浸透圧の区分は入れていない。出典: ジョルダン温泉特集・ニフティ温泉"
+        }
+      ]
     },
     {
       "fsq_id": "50e22807e4b08361d2c57f45",
       "name": "Keio Takaosan Onsen Gokurakuyu (京王高尾山温泉 極楽湯)",
       "address": "高尾町2229-7, 八王子市, 東京都, 193-0844",
       "checkin_date": "2023-07-01",
-      "confidence": "low",
-      "spring_name": "京王高尾山温泉",
-      "spring_quality": "アルカリ性単純温泉",
-      "source_temp_c": 26.2,
-      "ph": 9.9,
-      "total_ingredients_mg_kg": 182.5,
-      "notes": "ネット公開情報から作成（現地掲示は未確認）。地下約1000mから汲み上げ。2015年10月開業。出典: Wikipedia「京王高尾山温泉」・spa-tokyo.net"
+      "springs": [
+        {
+          "confidence": "low",
+          "spring_name": "京王高尾山温泉",
+          "spring_quality": "アルカリ性単純温泉",
+          "source_temp_c": 26.2,
+          "ph": 9.9,
+          "total_ingredients_mg_kg": 182.5,
+          "notes": "ネット公開情報から作成（現地掲示は未確認）。地下約1000mから汲み上げ。2015年10月開業。出典: Wikipedia「京王高尾山温泉」・spa-tokyo.net"
+        }
+      ]
     },
     {
       "fsq_id": "57370f03498edc94a01e7313",
       "name": "SPA HERBS 美楽温泉",
       "address": "北区植竹町1-816-8, さいたま市, 埼玉県, 331-0813",
       "checkin_date": "2023-05-20",
-      "confidence": "low",
-      "spring_name": "美楽温泉",
-      "spring_quality": "アルカリ性単純温泉",
-      "source_temp_c": 25.0,
-      "yield_l_min": 261,
-      "total_ingredients_mg_kg": 194.2,
-      "treatment": {
-        "kaon": {
-          "applied": true
-        },
-        "junkan": {
-          "applied": true
+      "springs": [
+        {
+          "confidence": "low",
+          "spring_name": "美楽温泉",
+          "spring_quality": "アルカリ性単純温泉",
+          "source_temp_c": 25.0,
+          "yield_l_min": 261,
+          "total_ingredients_mg_kg": 194.2,
+          "treatment": {
+            "kaon": {
+              "applied": true
+            },
+            "junkan": {
+              "applied": true
+            }
+          },
+          "notes": "ネット公開情報から作成（現地掲示は未確認）。掘削1100m。無色透明。pHは出典により8.3と8.5に割れているため入れていない。出典: spa-tokyo.net・ジョルダン温泉特集"
         }
-      },
-      "notes": "ネット公開情報から作成（現地掲示は未確認）。掘削1100m。無色透明。pHは出典により8.3と8.5に割れているため入れていない。出典: spa-tokyo.net・ジョルダン温泉特集"
+      ]
     },
     {
       "fsq_id": "4bdabeff2a3a0f4789d5abb6",
       "name": "湯田中駅前温泉 楓の湯",
       "address": "平穏3227-1 (湯田中駅前), 山ノ内町, 長野県, 381-0401",
       "checkin_date": "2023-03-19",
-      "confidence": "low",
-      "spring_quality": "ナトリウム－塩化物・硫酸塩温泉",
-      "spring_quality_class": "低張性弱アルカリ性高温泉",
-      "source_temp_c": 93.3,
-      "notes": "ネット公開情報から作成（現地掲示は未確認）。出典: るるぶ&more.・ニフティ温泉などの温泉紹介サイト"
+      "springs": [
+        {
+          "confidence": "low",
+          "spring_quality": "ナトリウム－塩化物・硫酸塩温泉",
+          "spring_quality_class": "低張性弱アルカリ性高温泉",
+          "source_temp_c": 93.3,
+          "notes": "ネット公開情報から作成（現地掲示は未確認）。出典: るるぶ&more.・ニフティ温泉などの温泉紹介サイト"
+        }
+      ]
     },
     {
       "fsq_id": "4b9b5a79f964a520220236e3",
       "name": "Karuizawa Sengataki Onsen (軽井沢千ヶ滝温泉)",
       "address": "千ヶ滝温泉, 軽井沢町, 長野県, 389-0198",
       "checkin_date": "2023-02-19",
-      "confidence": "low",
-      "spring_quality": "ナトリウム－炭酸水素塩・塩化物温泉",
-      "notes": "ネット公開情報から作成（現地掲示は未確認）。出典: スーパー銭湯全国検索ほかの紹介ページ"
+      "springs": [
+        {
+          "confidence": "low",
+          "spring_quality": "ナトリウム－炭酸水素塩・塩化物温泉",
+          "notes": "ネット公開情報から作成（現地掲示は未確認）。出典: スーパー銭湯全国検索ほかの紹介ページ"
+        }
+      ]
     },
     {
       "fsq_id": "4e44bc0b62e1b6355ab05df5",
       "name": "遠見乃湯",
       "address": "夜間瀬6995, 山ノ内町, 長野県, 381-0405",
       "checkin_date": "2020-03-01",
-      "confidence": "low",
-      "spring_quality": "単純温泉",
-      "spring_quality_class": "低張性弱アルカリ性高温泉",
-      "source_temp_c": 55.3,
-      "ph": 7.5,
-      "notes": "ネット公開情報から作成（現地掲示は未確認）。よませ温泉の外湯。成分総計はおよそ0.87g/kgとされるが概数のため入れていない。出典: Wikipedia「よませ温泉」・マルタケエビスほか"
+      "springs": [
+        {
+          "confidence": "low",
+          "spring_quality": "単純温泉",
+          "spring_quality_class": "低張性弱アルカリ性高温泉",
+          "source_temp_c": 55.3,
+          "ph": 7.5,
+          "notes": "ネット公開情報から作成（現地掲示は未確認）。よませ温泉の外湯。成分総計はおよそ0.87g/kgとされるが概数のため入れていない。出典: Wikipedia「よませ温泉」・マルタケエビスほか"
+        }
+      ]
     }
   ],
   "not_composition_photos": [

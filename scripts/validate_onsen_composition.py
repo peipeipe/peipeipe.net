@@ -250,8 +250,21 @@ def describe(issues):
     return '、'.join(f"{label} {reason}" for label, reason in issues)
 
 
-def entry_label(entry, index):
-    return entry.get('name') or entry.get('spring_name') or f"photo_indexes={entry.get('photo_indexes') or index}"
+def entry_label(place, spring, index):
+    place_name = place.get('name') or f"place={index}"
+    spring_name = spring.get('spring_name')
+    return f"{place_name} / {spring_name}" if spring_name else place_name
+
+
+def iter_springs(places):
+    """新しい複数源泉形式と旧来の平坦形式をどちらも検算する。"""
+    for index, place in enumerate(places):
+        springs = place.get('springs')
+        if not isinstance(springs, list):
+            springs = [place]
+        for spring in springs:
+            if isinstance(spring, dict):
+                yield index, place, spring
 
 
 def main():
@@ -285,9 +298,11 @@ def main():
     flagged = 0
     skipped = 0
     known = 0
-    for index, entry in enumerate(places):
+    spring_count = 0
+    for index, place, entry in iter_springs(places):
+        spring_count += 1
         issues = check_entry(entry)
-        label = entry_label(entry, index)
+        label = entry_label(place, entry, index)
         if issues:
             flagged += 1
             print(f"[NG] {label}: {describe(issues)}")
@@ -297,8 +312,11 @@ def main():
             known += 1
             print(f"[既知] {label}: {'、'.join(entry['validation_exceptions'])}（掲示側の不整合として登録済み）")
 
-    checked = len(places) - skipped
-    print(f"検算できた施設: {checked}件 / 成分値なし: {skipped}件 / ズレあり: {flagged}件 / 既知の不整合: {known}件")
+    checked = spring_count - skipped
+    print(
+        f"検算できた源泉: {checked}件 / 成分値なし: {skipped}件 / "
+        f"ズレあり: {flagged}件 / 既知の不整合: {known}件"
+    )
 
     if flagged and args.strict:
         sys.exit(1)

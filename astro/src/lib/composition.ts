@@ -11,11 +11,7 @@ export type CompositionTreatment = {
   reason?: string;
 };
 
-export type OnsenComposition = {
-  fsq_id: string;
-  name: string;
-  address?: string;
-  checkin_date?: string;
+export type OnsenSpring = {
   confidence?: "high" | "medium" | "low";
   spring_name?: string;
   spring_quality?: string;
@@ -46,14 +42,33 @@ export type OnsenComposition = {
   source_photos?: string[];
 };
 
+export type OnsenCompositionPlace = {
+  fsq_id: string;
+  name: string;
+  address?: string;
+  checkin_date?: string;
+  springs: OnsenSpring[];
+};
+
+/** 集計・散布図向けに施設情報を付けて平坦化した源泉 */
+export type OnsenComposition = OnsenSpring & {
+  fsq_id: string;
+  name: string;
+  address?: string;
+  checkin_date?: string;
+  spring_index: number;
+  spring_count: number;
+};
+
 type CompositionData = {
   generated_on?: string;
   stats?: {
     places?: number;
+    springs?: number;
     composition_photos?: number;
     not_composition_photos?: number;
   };
-  places?: OnsenComposition[];
+  places?: unknown[];
   not_composition_photos?: string[];
 };
 
@@ -68,15 +83,44 @@ export const TREATMENT_LABELS: { key: string; label: string }[] = [
 const data = compositionData as CompositionData;
 
 export function getOnsenCompositions(): OnsenComposition[] {
-  return data.places || [];
+  return getOnsenCompositionPlaces().flatMap((place) =>
+    place.springs.map((spring, spring_index) => ({
+      ...spring,
+      fsq_id: place.fsq_id,
+      name: place.name,
+      address: place.address,
+      checkin_date: place.checkin_date,
+      spring_index,
+      spring_count: place.springs.length,
+    })),
+  );
 }
 
-export function getCompositionMap(): Map<string, OnsenComposition> {
-  return new Map(
-    getOnsenCompositions()
-      .filter((entry) => entry.fsq_id)
-      .map((entry) => [entry.fsq_id, entry]),
-  );
+export function getOnsenCompositionPlaces(): OnsenCompositionPlace[] {
+  return (data.places || []).map((raw) => {
+    const entry = raw as unknown as Record<string, unknown>;
+    const springs = Array.isArray(entry.springs)
+      ? (entry.springs as OnsenSpring[])
+      : [Object.fromEntries(
+          Object.entries(entry).filter(([key]) => !["fsq_id", "name", "address", "checkin_date"].includes(key)),
+        ) as OnsenSpring];
+    return {
+      fsq_id: String(entry.fsq_id || ""),
+      name: String(entry.name || ""),
+      ...(entry.address ? { address: String(entry.address) } : {}),
+      ...(entry.checkin_date ? { checkin_date: String(entry.checkin_date) } : {}),
+      springs,
+    };
+  });
+}
+
+export function getCompositionMap(): Map<string, OnsenComposition[]> {
+  const result = new Map<string, OnsenComposition[]>();
+  getOnsenCompositions().forEach((entry) => {
+    if (!entry.fsq_id) return;
+    result.set(entry.fsq_id, [...(result.get(entry.fsq_id) || []), entry]);
+  });
+  return result;
 }
 
 /** 一覧のバッジや検索インデックス向けに、施設ごとの要約だけを返す */
@@ -86,14 +130,15 @@ export function compositionSummaryByFsqId() {
     { quality?: string; qualityClass?: string; ph?: number | null; sourceTemp?: number | null; total?: number | null }
   > = {};
 
-  getOnsenCompositions().forEach((entry) => {
-    if (!entry.fsq_id) return;
-    summary[entry.fsq_id] = {
-      quality: entry.spring_quality,
-      qualityClass: entry.spring_quality_class,
-      ph: entry.ph ?? null,
-      sourceTemp: entry.source_temp_c ?? null,
-      total: entry.total_ingredients_mg_kg ?? null,
+  getCompositionMap().forEach((entries, fsqId) => {
+    const unique = (values: (string | undefined)[]) => [...new Set(values.filter(Boolean))].join("／");
+    const first = entries[0];
+    summary[fsqId] = {
+      quality: unique(entries.map((entry) => entry.spring_quality)),
+      qualityClass: unique(entries.map((entry) => entry.spring_quality_class)),
+      ph: first?.ph ?? null,
+      sourceTemp: first?.source_temp_c ?? null,
+      total: first?.total_ingredients_mg_kg ?? null,
     };
   });
 
@@ -126,7 +171,8 @@ export function summarizeCompositions(entries: OnsenComposition[] = getOnsenComp
 
   return {
     count: entries.length,
-    photos: entries.reduce((sum, entry) => sum + (entry.source_photos?.length || 0), 0),
+    placeCount: new Set(entries.map((entry) => entry.fsq_id)).size,
+    photos: new Set(entries.flatMap((entry) => entry.source_photos || [])).size,
     mostAlkaline,
     richest,
     hottest,
@@ -168,6 +214,7 @@ export function qualityGroup(entry: OnsenComposition): QualityGroup {
 
 export type ScatterPoint = {
   fsqId: string;
+  anchorId: string;
   name: string;
   quality: string;
   ph: number;
@@ -182,7 +229,12 @@ export function scatterPoints(entries: OnsenComposition[] = getOnsenCompositions
     )
     .map((entry) => ({
       fsqId: entry.fsq_id,
-      name: entry.name,
+      anchorId: entry.spring_index === 0
+        ? `composition-${entry.fsq_id}`
+        : `composition-${entry.fsq_id}-spring-${entry.spring_index + 1}`,
+      name: entry.spring_count > 1 && entry.spring_name
+        ? `${entry.name} / ${entry.spring_name}`
+        : entry.name,
       quality: entry.spring_quality || "",
       ph: entry.ph as number,
       total: entry.total_ingredients_mg_kg as number,
