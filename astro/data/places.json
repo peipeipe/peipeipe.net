@@ -1,5 +1,55 @@
 [
   {
+    "name": "別所温泉 あいそめの湯",
+    "user_comment": "",
+    "date": "2026-09-04",
+    "lat": 36.353516129807986,
+    "lng": 138.16289191889751,
+    "address": "別所温泉58, 上田市, 長野県, 386-1431",
+    "foursquare_url": "https://foursquare.com/v/4b83b4caf964a520a30d31e3",
+    "photos": [
+      "https://fastly.4sqi.net/img/general/500x300/41463109_EBAbU6immgM3yveg5y3S2HX4d1YVOXRbhmdqM20BGbo.jpg",
+      "https://fastly.4sqi.net/img/general/500x300/41463109_LCF2sfbuZtxmJUt2zyPDq5uKjMS7S9ahm5ktDEoG-Yg.jpg"
+    ],
+    "categories": [
+      "温泉"
+    ],
+    "category_group": "onsen",
+    "category_label": "温泉・サウナ",
+    "category_emoji": "♨️",
+    "category_color": "#ff7a59",
+    "data_source": "foursquare_checkin",
+    "fsq_id": "4b83b4caf964a520a30d31e3",
+    "checkin_count": 13,
+    "first_checkin_at": "2024-07-21T08:39:38+00:00",
+    "last_checkin_at": "2026-09-04T12:16:52+00:00",
+    "composition_hint": ""
+  },
+  {
+    "name": "草笛上田店",
+    "user_comment": "",
+    "date": "2026-09-04",
+    "lat": 36.39667905682601,
+    "lng": 138.26243472913066,
+    "address": "常田3-2-30, 上田市, 長野県, 386-0018",
+    "foursquare_url": "https://foursquare.com/v/4b67a5bef964a52067592be3",
+    "photos": [
+      "https://fastly.4sqi.net/img/general/500x300/41463109_xNjckl4BQLtfpJPqFrb6fZE6X-2DWMJx3M4PfutCElo.jpg"
+    ],
+    "categories": [
+      "蕎麦屋"
+    ],
+    "category_group": "other",
+    "category_label": "その他",
+    "category_emoji": "📍",
+    "category_color": "#607d8b",
+    "data_source": "foursquare_checkin",
+    "fsq_id": "4b67a5bef964a52067592be3",
+    "checkin_count": 1,
+    "first_checkin_at": "2026-09-04T03:17:42+00:00",
+    "last_checkin_at": "2026-09-04T03:17:42+00:00"
+  },
+  {
     "name": "ナポリの食卓長野南バイパス店",
     "user_comment": "",
     "date": "2026-09-01",
@@ -562,32 +612,6 @@
     "checkin_count": 3,
     "first_checkin_at": "2023-10-21T23:27:20+00:00",
     "last_checkin_at": "2026-08-08T01:42:41+00:00",
-    "composition_hint": ""
-  },
-  {
-    "name": "別所温泉 あいそめの湯",
-    "user_comment": "",
-    "date": "2026-08-07",
-    "lat": 36.353516129807986,
-    "lng": 138.16289191889751,
-    "address": "別所温泉58, 上田市, 長野県, 386-1431",
-    "foursquare_url": "https://foursquare.com/v/4b83b4caf964a520a30d31e3",
-    "photos": [
-      "https://fastly.4sqi.net/img/general/500x300/41463109_EBAbU6immgM3yveg5y3S2HX4d1YVOXRbhmdqM20BGbo.jpg",
-      "https://fastly.4sqi.net/img/general/500x300/41463109_LCF2sfbuZtxmJUt2zyPDq5uKjMS7S9ahm5ktDEoG-Yg.jpg"
-    ],
-    "categories": [
-      "温泉"
-    ],
-    "category_group": "onsen",
-    "category_label": "温泉・サウナ",
-    "category_emoji": "♨️",
-    "category_color": "#ff7a59",
-    "data_source": "foursquare_checkin",
-    "fsq_id": "4b83b4caf964a520a30d31e3",
-    "checkin_count": 12,
-    "first_checkin_at": "2024-07-21T08:39:38+00:00",
-    "last_checkin_at": "2026-08-07T12:45:36+00:00",
     "composition_hint": ""
   },
   {
@@ -4897,7 +4921,7 @@
     "composition_hint": ""
   },
   {
-    "name": "バー・ブロッサム",
+    "name": "Bar Blossom (バー・ブロッサム)",
     "user_comment": "",
     "date": "2025-12-06",
     "lat": 35.67268529030414,
@@ -4906,7 +4930,7 @@
     "foursquare_url": "https://foursquare.com/v/4b9b975ff964a520f71136e3",
     "photos": [],
     "categories": [
-      "カクテルバー"
+      "Cocktail Bar"
     ],
     "category_group": "bar",
     "category_label": "酒場",
@@ -4920,7 +4944,7 @@
     "composition_hint": ""
   },
   {
-    "name": "鮨 一新",
+    "name": "Sushi Isshin (鮨 一新)",
     "user_comment": "",
     "date": "2025-12-06",
     "lat": 35.67258918945737,
@@ -4932,7 +4956,7 @@
       "https://fastly.4sqi.net/img/general/500x300/41463109_ZjjFb79YALMhY5HPHtAOEwyksa8dII_miBL5iQHrygQ.jpg"
     ],
     "categories": [
-      "寿司屋"
+      "Sushi Restaurant"
     ],
     "category_group": "food",
     "category_label": "食事",
@@ -23033,8 +23057,8 @@
     "name": "JR Shinagawa Station (JR 品川駅)",
     "user_comment": "たまには逆方向でイングレスしながら帰る",
     "date": "2022-05-05",
-    "lat": 35.628825137528494,
-    "lng": 139.73856075524353,
+    "lat": 35.628227829322746,
+    "lng": 139.73855077631734,
     "address": "高輪3-26-27, 港区, 東京都, 108-0074",
     "foursquare_url": "https://foursquare.com/v/4ec0d5979911a2ec5c6cdda6",
     "photos": [],
@@ -28557,8 +28581,8 @@
     "name": "Kawasaki Station (川崎駅)",
     "user_comment": "No urgent need",
     "date": "2020-03-14",
-    "lat": 35.53136229599591,
-    "lng": 139.69676878434228,
+    "lat": 35.531507369483,
+    "lng": 139.69717763313614,
     "address": "川崎区駅前本町26-1, 川崎市, 神奈川県, 210-0007",
     "foursquare_url": "https://foursquare.com/v/4b274cf5f964a520bf8524e3",
     "photos": [],
@@ -40956,8 +40980,8 @@
     "name": "Keio Shinjuku Station (KO01) (京王 新宿駅)",
     "user_comment": "",
     "date": "2017-02-09",
-    "lat": 35.690500978407655,
-    "lng": 139.69894768185674,
+    "lat": 35.69025307519657,
+    "lng": 139.6991820303056,
     "address": "西新宿1-1-4, 新宿区, 東京都, 160-0023",
     "foursquare_url": "https://foursquare.com/v/4b5bab10f964a520e00e29e3",
     "photos": [],

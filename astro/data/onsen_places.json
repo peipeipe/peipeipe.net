@@ -1,5 +1,31 @@
 [
   {
+    "name": "別所温泉 あいそめの湯",
+    "user_comment": "",
+    "date": "2026-09-04",
+    "lat": 36.353516129807986,
+    "lng": 138.16289191889751,
+    "address": "別所温泉58, 上田市, 長野県, 386-1431",
+    "foursquare_url": "https://foursquare.com/v/4b83b4caf964a520a30d31e3",
+    "photos": [
+      "https://fastly.4sqi.net/img/general/500x300/41463109_EBAbU6immgM3yveg5y3S2HX4d1YVOXRbhmdqM20BGbo.jpg",
+      "https://fastly.4sqi.net/img/general/500x300/41463109_LCF2sfbuZtxmJUt2zyPDq5uKjMS7S9ahm5ktDEoG-Yg.jpg"
+    ],
+    "categories": [
+      "温泉"
+    ],
+    "category_group": "onsen",
+    "category_label": "温泉・サウナ",
+    "category_emoji": "♨️",
+    "category_color": "#ff7a59",
+    "data_source": "foursquare_checkin",
+    "fsq_id": "4b83b4caf964a520a30d31e3",
+    "checkin_count": 13,
+    "first_checkin_at": "2024-07-21T08:39:38+00:00",
+    "last_checkin_at": "2026-09-04T12:16:52+00:00",
+    "composition_hint": ""
+  },
+  {
     "name": "裾花峡温泉 うるおい館 (うるおい館)",
     "user_comment": "長野じゃめずらしい茶褐色、広め、サウナ二つ。",
     "composition_hint": "裾花峡温泉 / 保玉湯乃華温泉",
@@ -215,32 +241,6 @@
     "checkin_count": 4,
     "first_checkin_at": "2024-12-22T03:40:26+00:00",
     "last_checkin_at": "2026-08-09T07:09:31+00:00",
-    "composition_hint": ""
-  },
-  {
-    "name": "別所温泉 あいそめの湯",
-    "user_comment": "",
-    "date": "2026-08-07",
-    "lat": 36.353516129807986,
-    "lng": 138.16289191889751,
-    "address": "別所温泉58, 上田市, 長野県, 386-1431",
-    "foursquare_url": "https://foursquare.com/v/4b83b4caf964a520a30d31e3",
-    "photos": [
-      "https://fastly.4sqi.net/img/general/500x300/41463109_EBAbU6immgM3yveg5y3S2HX4d1YVOXRbhmdqM20BGbo.jpg",
-      "https://fastly.4sqi.net/img/general/500x300/41463109_LCF2sfbuZtxmJUt2zyPDq5uKjMS7S9ahm5ktDEoG-Yg.jpg"
-    ],
-    "categories": [
-      "温泉"
-    ],
-    "category_group": "onsen",
-    "category_label": "温泉・サウナ",
-    "category_emoji": "♨️",
-    "category_color": "#ff7a59",
-    "data_source": "foursquare_checkin",
-    "fsq_id": "4b83b4caf964a520a30d31e3",
-    "checkin_count": 12,
-    "first_checkin_at": "2024-07-21T08:39:38+00:00",
-    "last_checkin_at": "2026-08-07T12:45:36+00:00",
     "composition_hint": ""
   },
   {
