@@ -1,5 +1,23 @@
 [
   {
+    "id": 20055531351,
+    "name": "信越五岳後半試走",
+    "sport_type": "TrailRun",
+    "distance": 51013.1,
+    "moving_time": 26058,
+    "elapsed_time": 30120,
+    "total_elevation_gain": 2203.0,
+    "start_date": "2026-09-05T19:49:33Z",
+    "start_date_local": "2026-09-06T04:49:33Z",
+    "start_latlng": [
+      36.828136,
+      138.162262
+    ],
+    "average_speed": 1.958,
+    "max_speed": 5.967,
+    "summary_polyline": "y~w_FcygjYs@tByEpD|ArE}Bx@cArL{AlC}@sD}BiAcCdBTnCqGrGqFU_C~BfCT~DvPbIhApEnCxBqFbAJYvB`BpIsAvBy@`DoFmE}CNuEnFuAfCu@nFwAhAaBdF`BlEsE`F`@nEiBbCtD]|@_ELvDqA`BAbBlBzD}LlBLpFwBp@cBlOfEzIvFDJrEaBdC}@jJaDcCb@lEoCaA_B`HsBdCiFnCaJwB{GrKJhCfCxAK~GuElDUnI_EvK_ApUj@~J}ArD^nDrL`MfD`LqBQCpFkFrGCjH_E|Ay@w@_A|CmBSeEyDcB\\uCoEaEp@}CeEiA?uCrEkBh@]pD_At@]vGuEbIkN_DB|FwAhBwGZiDnCyAu@gBvNeDjHkMdCg@|FeGnUoFdGfPlXlKtEoBhA`@|J_AjAk@{AwAzAt@hDzMbJhBiBlDpAlIPfAvA?vAbDQpDmFj@zAa@lEvEKnIuEVqEpFsMnFgEjC_HpAAjB_CjC{GpDmCrCmHfRyLvFnBbFCbE`CxDGrBtGdEnFnLLzBsBrFrCd@}@}CgId@{F`EwInH}HhDrKVpIfIoLr@jNrF}MW}BkDgECkM|@aLhEwHtBsAxEhBdFiBnFFRwCpAqBUcBbAiIaAiCsBgArAy@g@i@pAs@IeB`JuE|CxDxUdBnAnABpCrCz@nGCbKoCbN~AKyAxI_AxQz@~CjERxId@Zy@`@tAl@UbBdAtAvBY`@fBlDqCr@x@z@aAj@`AdAc@b@{GzA_Ah@n@|DmCf@n@i@|CzAfEfHaBxUiC|HzB|P|BpOmArFwE`QsBmE`@kAvHLxAgFxDqAjDzBNeBxBrCu@t@t@_AzLmBHMz@aBmCuAZaA~B[rG|AvBrExB`BZtCrKnBjCpP`MtM`N`JqM|EcLzAdE~EnE|BvJaD~O{B|EhIzD`Kp@e@bFr@nD?lIrCxHrMfIrYzEvBvBtJjDjDvD`Rz@pGhKWhAnDjC|SGbAgAwALt@XnCqC?sCtPuGnFmMWcJiAuB]_FkJ{FhFiD~GQtIeJ~BsG{AiDImCaESyHmFsHp@qEcDoMd@_MkKuFc@iQ}LcAoCnBkJvC_C@mEvAaHqAuIl@gEqGiLNmBuBOiGkHDsD{GVlAsEwCkJg@kDnDsLgEcIkA_A_@mHhAuE|MsRbB`@`@vAoA~KpAzDlLkIxA_DN{FfEeDpI~AnGgBhNiWdDgOjBaDvD\\|CxFVdEmGzN_BhIm@dUeCxYTdMrDpGFvKiE|NwExG`@nAqAtChB_@mGfJj@p@hDeDyCnIy@Tj@dAq@LfA`AdF{CdFfEbIdCfBdCrEaFtHzB`CnCtEmCKbNqDdT"
+  },
+  {
     "id": 20040920416,
     "name": "ランチタイム ウォーキング",
     "sport_type": "Walk",

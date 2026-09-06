@@ -1427,5 +1427,62 @@
     ],
     "first_visit": "2026-08-23",
     "last_visit": "2026-08-23"
+  },
+  {
+    "name": "丸山",
+    "lat": 36.768898,
+    "lng": 138.07959,
+    "elevation": 1278,
+    "tags": [],
+    "visit_count": 1,
+    "activities": [
+      {
+        "id": 20055531351,
+        "name": "信越五岳後半試走",
+        "date": "2026-09-06",
+        "sport_type": "TrailRun",
+        "distance_km": 51.0
+      }
+    ],
+    "first_visit": "2026-09-06",
+    "last_visit": "2026-09-06"
+  },
+  {
+    "name": "瑪瑙山",
+    "lat": 36.746414,
+    "lng": 138.120778,
+    "elevation": 1748,
+    "tags": [],
+    "visit_count": 1,
+    "activities": [
+      {
+        "id": 20055531351,
+        "name": "信越五岳後半試走",
+        "date": "2026-09-06",
+        "sport_type": "TrailRun",
+        "distance_km": 51.0
+      }
+    ],
+    "first_visit": "2026-09-06",
+    "last_visit": "2026-09-06"
+  },
+  {
+    "name": "怪無山",
+    "lat": 36.746121,
+    "lng": 138.102048,
+    "elevation": 1549,
+    "tags": [],
+    "visit_count": 1,
+    "activities": [
+      {
+        "id": 20055531351,
+        "name": "信越五岳後半試走",
+        "date": "2026-09-06",
+        "sport_type": "TrailRun",
+        "distance_km": 51.0
+      }
+    ],
+    "first_visit": "2026-09-06",
+    "last_visit": "2026-09-06"
   }
 ]
