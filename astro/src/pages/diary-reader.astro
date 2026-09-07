@@ -1,0 +1,282 @@
+---
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import { datePartsInTokyo, formatEntryDate, getDiaryEntries } from "@/lib/content";
+
+const entries = (await getDiaryEntries()).map((entry) => ({
+  ...entry,
+  dateId: formatEntryDate(entry.date),
+  html: addLazyLoading(entry.html),
+}));
+
+const months = [];
+
+for (const entry of entries) {
+  const parts = datePartsInTokyo(entry.date);
+  const key = `${parts.year}-${parts.month}`;
+  const lastMonth = months.at(-1);
+
+  if (lastMonth?.key === key) {
+    lastMonth.entries.push(entry);
+  } else {
+    months.push({
+      key,
+      year: parts.year,
+      label: `${parts.year}年${Number(parts.month)}月`,
+      shortLabel: `${Number(parts.month)}月`,
+      entries: [entry],
+    });
+  }
+}
+
+const years = [];
+
+for (const month of months) {
+  const lastYear = years.at(-1);
+  if (lastYear?.year === month.year) {
+    lastYear.months.push(month);
+  } else {
+    years.push({ year: month.year, months: [month] });
+  }
+}
+
+function addLazyLoading(html) {
+  return html.replace(/<img\b(?![^>]*\bloading=)/g, '<img loading="lazy" decoding="async"');
+}
+---
+
+<BaseLayout
+  title="日記リーダー"
+  description="日記を時系列で続けて読むためのページ"
+  robots="noindex, nofollow"
+  analytics={false}
+  wide={true}
+>
+  <header class="reader-header">
+    <h1>日記リーダー</h1>
+    <p>{entries.length}件の日記を新しい順に表示しています。</p>
+  </header>
+
+  <div class="reader-layout">
+    <nav class="reader-nav" aria-label="年月から日記へ移動">
+      <p class="reader-nav-title">年月</p>
+      {years.map((year) => (
+        <div class="reader-nav-year">
+          <a href={`#year-${year.year}`}>{year.year}年</a>
+          <div class="reader-nav-months">
+            {year.months.map((month) => (
+              <a href={`#month-${month.key}`}>{month.shortLabel}</a>
+            ))}
+          </div>
+        </div>
+      ))}
+    </nav>
+
+    <div class="reader-content">
+      {years.map((year) => (
+        <section class="reader-year" aria-labelledby={`year-${year.year}`}>
+          <h2 id={`year-${year.year}`}>{year.year}年</h2>
+          {year.months.map((month) => (
+            <section class="reader-month" aria-labelledby={`month-${month.key}`}>
+              <h3 id={`month-${month.key}`}>{month.label}</h3>
+              {month.entries.map((entry) => (
+                <article class="diary-entry diary-reader-entry" id={`entry-${entry.dateId}`}>
+                  <header class="diary-header reader-entry-header">
+                    <h4 class="diary-date">
+                      <a href={entry.url}>{entry.title}</a>
+                    </h4>
+                  </header>
+                  <div class="diary-content" set:html={entry.html} />
+                </article>
+              ))}
+            </section>
+          ))}
+        </section>
+      ))}
+    </div>
+  </div>
+
+  <div class="diary-lightbox" id="diary-lightbox" role="dialog" aria-modal="true" aria-hidden="true">
+    <button type="button" class="diary-lightbox-close" aria-label="閉じる">✕</button>
+    <img src="" alt="" />
+  </div>
+
+  <script is:inline>
+    (() => {
+      const contents = document.querySelectorAll(".diary-content");
+      const lightbox = document.getElementById("diary-lightbox");
+      if (!contents.length || !lightbox) return;
+
+      document.body.classList.add("js-diary");
+      const lightboxImage = lightbox.querySelector("img");
+      const closeButton = lightbox.querySelector(".diary-lightbox-close");
+
+      const closeLightbox = () => {
+        lightbox.classList.remove("open");
+        lightbox.setAttribute("aria-hidden", "true");
+        document.body.classList.remove("diary-lightbox-open");
+        lightboxImage.src = "";
+      };
+
+      contents.forEach((content) => {
+        let currentBlock;
+        Array.from(content.children).forEach((element) => {
+          if (element.tagName === "H2") {
+            currentBlock = document.createElement("div");
+            currentBlock.className = "diary-block";
+            content.insertBefore(currentBlock, element);
+          }
+          if (currentBlock) currentBlock.appendChild(element);
+        });
+
+        content.querySelectorAll("img").forEach((image) => {
+          if (image.closest(".link-card-media") || image.closest(".krb-amzlt-image")) return;
+          image.classList.add("diary-content-image");
+          image.addEventListener("click", () => {
+            lightboxImage.src = image.currentSrc || image.src;
+            lightboxImage.alt = image.alt || "";
+            lightbox.classList.add("open");
+            lightbox.setAttribute("aria-hidden", "false");
+            document.body.classList.add("diary-lightbox-open");
+          });
+        });
+      });
+
+      lightbox.addEventListener("click", (event) => {
+        if (event.target === lightbox || event.target === closeButton || event.target === lightboxImage) {
+          closeLightbox();
+        }
+      });
+      document.addEventListener("keydown", (event) => {
+        if (event.key === "Escape" && lightbox.classList.contains("open")) closeLightbox();
+      });
+    })();
+  </script>
+
+  <style>
+    .reader-header {
+      width: 100%;
+      max-width: 1038px;
+      margin: 0 auto 28px;
+    }
+
+    .reader-header h1 {
+      margin-bottom: 6px;
+    }
+
+    .reader-header p {
+      margin: 0;
+      color: var(--color-muted);
+    }
+
+    .reader-layout {
+      display: grid;
+      grid-template-columns: minmax(150px, 190px) minmax(0, 800px);
+      gap: 48px;
+      align-items: start;
+      justify-content: center;
+    }
+
+    .reader-nav {
+      position: sticky;
+      top: 20px;
+      max-height: calc(100vh - 40px);
+      overflow-y: auto;
+      border: 1px solid var(--color-border-soft);
+      border-radius: 8px;
+      background: var(--color-surface-muted);
+      padding: 14px;
+      font-size: 14px;
+    }
+
+    .reader-nav-title {
+      margin: 0 0 10px;
+      font-weight: bold;
+    }
+
+    .reader-nav-year + .reader-nav-year {
+      margin-top: 12px;
+    }
+
+    .reader-nav-year > a {
+      font-weight: bold;
+    }
+
+    .reader-nav-months {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 5px 10px;
+      margin-top: 5px;
+    }
+
+    .reader-content {
+      min-width: 0;
+    }
+
+    .reader-year > h2,
+    .reader-month > h3 {
+      scroll-margin-top: 20px;
+    }
+
+    .reader-year > h2 {
+      margin: 0 0 24px;
+      border-bottom: 2px solid var(--color-border);
+      padding-bottom: 8px;
+    }
+
+    .reader-year + .reader-year {
+      margin-top: 64px;
+    }
+
+    .reader-month > h3 {
+      margin: 40px 0 0;
+      color: var(--color-muted);
+    }
+
+    .reader-month > h3:first-child {
+      margin-top: 0;
+    }
+
+    .diary-reader-entry {
+      max-width: none;
+      scroll-margin-top: 20px;
+      border-bottom: 1px solid var(--color-border-soft);
+      padding: 30px 0 38px;
+    }
+
+    .reader-entry-header {
+      margin-bottom: 18px;
+      padding-bottom: 12px;
+    }
+
+    .reader-entry-header h4 {
+      margin: 0;
+      font-size: 1.5em;
+    }
+
+    @media (max-width: 760px) {
+      .reader-layout {
+        display: block;
+      }
+
+      .reader-nav {
+        position: static;
+        max-height: none;
+        margin-bottom: 36px;
+      }
+
+      .reader-nav-year {
+        display: flex;
+        gap: 12px;
+        align-items: baseline;
+      }
+
+      .reader-nav-months {
+        margin-top: 0;
+      }
+
+      .reader-entry-header h4 {
+        font-size: 1.3em;
+      }
+    }
+  </style>
+</BaseLayout>

@@ -4,6 +4,7 @@ import sitemap from "@astrojs/sitemap";
 const excludedSitemapPaths = new Set([
   "/cloudflare-preview/",
   "/diary-post/",
+  "/diary-reader/",
   "/places/",
   "/search/",
 ]);
