@@ -1,12 +1,33 @@
 ---
 import BaseLayout from "@/layouts/BaseLayout.astro";
+import { formatDistance, formatDuration, getActivities } from "@/lib/activity";
+import { getOnsenPlaces } from "@/lib/checkins";
 import { datePartsInTokyo, formatEntryDate, getDiaryEntries } from "@/lib/content";
 
-const entries = (await getDiaryEntries()).map((entry) => ({
-  ...entry,
-  dateId: formatEntryDate(entry.date),
-  html: addLazyLoading(entry.html),
-}));
+const activities = getActivities();
+const onsenPlaces = getOnsenPlaces();
+const activitiesByDate = groupByDate(activities, (activity) => dateIdInTokyo(activity.start_date));
+const onsenByDate = groupByDate(onsenPlaces, (place) => place.date || "");
+
+const diaryEntries = await getDiaryEntries();
+const diaryByDate = new Map(diaryEntries.map((entry) => [formatEntryDate(entry.date), entry]));
+const dateIds = [...new Set([...diaryByDate.keys(), ...activitiesByDate.keys(), ...onsenByDate.keys()])]
+  .sort((a, b) => b.localeCompare(a));
+
+const entries = dateIds.map((dateId) => {
+  const diary = diaryByDate.get(dateId);
+  const date = diary?.date || dateFromId(dateId);
+  return {
+    date,
+    dateId,
+    title: diary?.title || formatTimelineDate(date),
+    url: diary?.url || "",
+    html: diary ? addLazyLoading(diary.html) : "",
+    hasDiary: Boolean(diary),
+    activities: activitiesByDate.get(dateId) || [],
+    onsenPlaces: onsenByDate.get(dateId) || [],
+  };
+});
 
 const months = [];
 
@@ -42,6 +63,53 @@ for (const month of months) {
 function addLazyLoading(html) {
   return html.replace(/<img\b(?![^>]*\bloading=)/g, '<img loading="lazy" decoding="async"');
 }
+
+function dateIdInTokyo(value) {
+  if (!value) return "";
+  const date = new Date(value);
+  return Number.isNaN(date.getTime()) ? "" : formatEntryDate(date);
+}
+
+function dateFromId(dateId) {
+  const [year, month, day] = dateId.split("-").map(Number);
+  return new Date(year, month - 1, day, 12);
+}
+
+function formatTimelineDate(date) {
+  return new Intl.DateTimeFormat("ja-JP", {
+    year: "numeric",
+    month: "2-digit",
+    day: "2-digit",
+    weekday: "short",
+    timeZone: "Asia/Tokyo",
+  }).format(date);
+}
+
+function groupByDate(items, getDate) {
+  const grouped = new Map();
+  for (const item of items) {
+    const date = getDate(item);
+    if (!date) continue;
+    grouped.set(date, [...(grouped.get(date) || []), item]);
+  }
+  return grouped;
+}
+
+const activityIcon = (type) => ({
+  run: "🏃",
+  ride: "🚴",
+  walk: "🚶",
+  swim: "🏊",
+  other: "●",
+})[type] || "●";
+
+const activityLabel = (type) => ({
+  run: "Run",
+  ride: "Ride",
+  walk: "Walk",
+  swim: "Swim",
+  other: "Activity",
+})[type] || "Activity";
 ---
 
 <BaseLayout
@@ -52,19 +120,33 @@ function addLazyLoading(html) {
   wide={true}
 >
   <header class="reader-header">
-    <h1>日記リーダー</h1>
-    <p>{entries.length}件の日記を新しい順に表示しています。</p>
+    <div>
+      <p class="reader-eyebrow">PERSONAL LOG</p>
+      <h1>日記リーダー</h1>
+      <p>日記、移動、温泉を{entries.length}日分のタイムラインで新しい順に表示しています。</p>
+    </div>
+    <div class="reader-header-actions">
+      <div class="reader-summary" aria-label="収録している記録">
+        <a href="/diary/"><strong>{diaryEntries.length}</strong><span>日記</span></a>
+        <a href="/activity/"><strong>{activities.length}</strong><span>Activity</span></a>
+        <a href="/onsen/"><strong>{onsenPlaces.length}</strong><span>温泉</span></a>
+      </div>
+      <button class="reader-log-toggle" type="button" data-log-toggle aria-pressed="false">
+        <span class="reader-log-toggle-mark" aria-hidden="true"></span>
+        <span data-log-toggle-label>日記のない日も表示</span>
+      </button>
+    </div>
   </header>
 
   <div class="reader-layout">
     <nav class="reader-nav" aria-label="年月から日記へ移動">
       <p class="reader-nav-title">年月</p>
       {years.map((year) => (
-        <div class="reader-nav-year">
+        <div class="reader-nav-year" data-nav-year={year.year}>
           <a href={`#year-${year.year}`}>{year.year}年</a>
           <div class="reader-nav-months">
             {year.months.map((month) => (
-              <a href={`#month-${month.key}`}>{month.shortLabel}</a>
+              <a href={`#month-${month.key}`} data-nav-month={month.key}>{month.shortLabel}</a>
             ))}
           </div>
         </div>
@@ -73,19 +155,55 @@ function addLazyLoading(html) {
 
     <div class="reader-content">
       {years.map((year) => (
-        <section class="reader-year" aria-labelledby={`year-${year.year}`}>
+        <section class="reader-year" aria-labelledby={`year-${year.year}`} data-reader-year={year.year}>
           <h2 id={`year-${year.year}`}>{year.year}年</h2>
           {year.months.map((month) => (
-            <section class="reader-month" aria-labelledby={`month-${month.key}`}>
+            <section class="reader-month" aria-labelledby={`month-${month.key}`} data-reader-month={month.key}>
               <h3 id={`month-${month.key}`}>{month.label}</h3>
               {month.entries.map((entry) => (
-                <article class="diary-entry diary-reader-entry" id={`entry-${entry.dateId}`}>
+                <article class:list={["diary-entry", "diary-reader-entry", { "reader-entry-without-diary": !entry.hasDiary }]} id={`entry-${entry.dateId}`}>
                   <header class="diary-header reader-entry-header">
                     <h4 class="diary-date">
-                      <a href={entry.url}>{entry.title}</a>
+                      {entry.url ? <a href={entry.url}>{entry.title}</a> : entry.title}
                     </h4>
+                    {!entry.hasDiary && <span class="reader-entry-label">ACTIVITY LOG</span>}
                   </header>
-                  <div class="diary-content" set:html={entry.html} />
+                  <div class:list={["reader-day-layout", { "has-day-records": entry.activities.length || entry.onsenPlaces.length, "has-diary": entry.hasDiary }]}>
+                    {entry.hasDiary && <div class="diary-content" set:html={entry.html} />}
+                    {(entry.activities.length > 0 || entry.onsenPlaces.length > 0) && (
+                      <aside class="day-records" aria-label={`${entry.title}の行動記録`}>
+                        <p class="day-records-title">この日の記録</p>
+                        {entry.activities.map((activity) => (
+                          <a class="day-record day-record-activity" href="/activity/">
+                            <span class="day-record-icon" aria-hidden="true">{activityIcon(activity.type_class)}</span>
+                            <span class="day-record-body">
+                              <span class="day-record-kind">{activityLabel(activity.type_class)}</span>
+                              <strong>{activity.name}</strong>
+                              <span class="day-record-meta">
+                                {formatDistance(activity.distance)} · {formatDuration(activity.moving_time)}
+                                {activity.total_elevation_gain > 0 && ` · ${Math.round(activity.total_elevation_gain)}m up`}
+                              </span>
+                            </span>
+                          </a>
+                        ))}
+                        {entry.onsenPlaces.map((place) => (
+                          <a class="day-record day-record-onsen" href="/onsen/">
+                            {place.photos?.[0] ? (
+                              <img class="day-record-photo" src={place.photos[0]} alt="" loading="lazy" />
+                            ) : (
+                              <span class="day-record-icon" aria-hidden="true">♨️</span>
+                            )}
+                            <span class="day-record-body">
+                              <span class="day-record-kind">Onsen check-in</span>
+                              <strong>{place.name}</strong>
+                              {place.user_comment && <span class="day-record-comment">{place.user_comment}</span>}
+                              {place.address && <span class="day-record-meta">{place.address}</span>}
+                            </span>
+                          </a>
+                        ))}
+                      </aside>
+                    )}
+                  </div>
                 </article>
               ))}
             </section>
@@ -94,6 +212,57 @@ function addLazyLoading(html) {
       ))}
     </div>
   </div>
+
+  <script is:inline>
+    (() => {
+      const storageKey = "diary-reader-show-activity-log";
+      const toggle = document.querySelector("[data-log-toggle]");
+      const label = document.querySelector("[data-log-toggle-label]");
+      if (!toggle || !label) return;
+
+      let showActivityLog = true;
+      try {
+        showActivityLog = localStorage.getItem(storageKey) !== "false";
+      } catch {}
+
+      const update = () => {
+        document.querySelectorAll(".reader-entry-without-diary").forEach((entry) => {
+          entry.hidden = !showActivityLog;
+        });
+
+        document.querySelectorAll("[data-reader-month]").forEach((month) => {
+          const hasVisibleEntry = Array.from(month.querySelectorAll(".diary-reader-entry"))
+            .some((entry) => !entry.hidden);
+          month.hidden = !hasVisibleEntry;
+          const monthKey = month.dataset.readerMonth;
+          const navLink = document.querySelector(`[data-nav-month="${monthKey}"]`);
+          if (navLink) navLink.hidden = !hasVisibleEntry;
+        });
+
+        document.querySelectorAll("[data-reader-year]").forEach((year) => {
+          const hasVisibleMonth = Array.from(year.querySelectorAll(".reader-month"))
+            .some((month) => !month.hidden);
+          year.hidden = !hasVisibleMonth;
+          const yearKey = year.dataset.readerYear;
+          const navYear = document.querySelector(`[data-nav-year="${yearKey}"]`);
+          if (navYear) navYear.hidden = !hasVisibleMonth;
+        });
+
+        toggle.setAttribute("aria-pressed", String(showActivityLog));
+        label.textContent = "日記のない日も表示";
+      };
+
+      toggle.addEventListener("click", () => {
+        showActivityLog = !showActivityLog;
+        try {
+          localStorage.setItem(storageKey, String(showActivityLog));
+        } catch {}
+        update();
+      });
+
+      update();
+    })();
+  </script>
 
   <div class="diary-lightbox" id="diary-lightbox" role="dialog" aria-modal="true" aria-hidden="true">
     <button type="button" class="diary-lightbox-close" aria-label="閉じる">✕</button>
@@ -155,12 +324,16 @@ function addLazyLoading(html) {
   <style>
     .reader-header {
       width: 100%;
-      max-width: 1038px;
+      max-width: 1158px;
       margin: 0 auto 28px;
+      display: flex;
+      align-items: end;
+      justify-content: space-between;
+      gap: 28px;
     }
 
     .reader-header h1 {
-      margin-bottom: 6px;
+      margin: 0 0 6px;
     }
 
     .reader-header p {
@@ -168,9 +341,112 @@ function addLazyLoading(html) {
       color: var(--color-muted);
     }
 
+    .reader-header .reader-eyebrow {
+      margin-bottom: 3px;
+      color: #df633f;
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: 0.16em;
+    }
+
+    .reader-summary {
+      display: flex;
+      flex: none;
+      overflow: hidden;
+      border: 1px solid var(--color-border-soft);
+      border-radius: 10px;
+      background: var(--color-surface-muted);
+    }
+
+    .reader-header-actions {
+      display: grid;
+      justify-items: end;
+      gap: 9px;
+    }
+
+    .reader-log-toggle {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      border: 0;
+      background: transparent;
+      padding: 2px;
+      color: var(--color-muted);
+      font: inherit;
+      font-size: 12px;
+      cursor: pointer;
+    }
+
+    .reader-log-toggle-mark {
+      position: relative;
+      width: 28px;
+      height: 16px;
+      border: 1px solid var(--color-border);
+      border-radius: 999px;
+      background: var(--color-surface-muted);
+      transition: background-color 0.15s ease;
+    }
+
+    .reader-log-toggle-mark::after {
+      position: absolute;
+      top: 2px;
+      left: 2px;
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: var(--color-muted);
+      content: "";
+      transition: transform 0.15s ease, background-color 0.15s ease;
+    }
+
+    .reader-log-toggle[aria-pressed="true"] .reader-log-toggle-mark {
+      border-color: #4776d0;
+      background: #4776d0;
+    }
+
+    .reader-log-toggle[aria-pressed="true"] .reader-log-toggle-mark::after {
+      background: #fff;
+      transform: translateX(12px);
+    }
+
+    .reader-log-toggle:focus-visible {
+      outline: 2px solid #4776d0;
+      outline-offset: 3px;
+      border-radius: 3px;
+    }
+
+    .reader-summary a {
+      min-width: 78px;
+      padding: 10px 13px;
+      color: inherit;
+      text-align: center;
+      text-decoration: none;
+    }
+
+    .reader-summary a + a {
+      border-left: 1px solid var(--color-border-soft);
+    }
+
+    .reader-summary strong,
+    .reader-summary span {
+      display: block;
+    }
+
+    .reader-summary strong {
+      font-size: 17px;
+      line-height: 1.2;
+    }
+
+    .reader-summary span {
+      margin-top: 2px;
+      color: var(--color-muted);
+      font-size: 10px;
+      letter-spacing: 0.04em;
+    }
+
     .reader-layout {
       display: grid;
-      grid-template-columns: minmax(150px, 190px) minmax(0, 800px);
+      grid-template-columns: minmax(150px, 190px) minmax(0, 920px);
       gap: 48px;
       align-items: start;
       justify-content: center;
@@ -244,6 +520,10 @@ function addLazyLoading(html) {
     }
 
     .reader-entry-header {
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      gap: 16px;
       margin-bottom: 18px;
       padding-bottom: 12px;
     }
@@ -253,7 +533,158 @@ function addLazyLoading(html) {
       font-size: 1.5em;
     }
 
+    .reader-entry-label {
+      flex: none;
+      color: var(--color-muted);
+      font-size: 10px;
+      font-weight: 800;
+      letter-spacing: 0.12em;
+    }
+
+    .reader-entry-without-diary {
+      padding-top: 20px;
+      padding-bottom: 24px;
+    }
+
+    .reader-entry-without-diary .reader-entry-header {
+      margin-bottom: 12px;
+    }
+
+    .reader-day-layout.has-day-records.has-diary {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) 240px;
+      gap: 34px;
+      align-items: start;
+    }
+
+    .day-records {
+      position: relative;
+      display: grid;
+      gap: 10px;
+      margin-top: 3px;
+      padding-left: 18px;
+      border-left: 1px solid var(--color-border-soft);
+    }
+
+    .reader-day-layout:not(.has-diary) .day-records {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      padding-left: 0;
+      border-left: 0;
+    }
+
+    .reader-day-layout:not(.has-diary) .day-records-title {
+      grid-column: 1 / -1;
+    }
+
+    .day-records-title {
+      margin: 0 0 1px;
+      color: var(--color-muted);
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+    }
+
+    .day-record {
+      display: flex;
+      gap: 10px;
+      min-width: 0;
+      border: 1px solid var(--color-border-soft);
+      border-radius: 9px;
+      background: var(--color-surface-muted);
+      padding: 10px;
+      color: inherit;
+      text-decoration: none;
+      transition: border-color 0.15s ease, transform 0.15s ease;
+    }
+
+    .day-record:hover {
+      border-color: var(--color-border);
+      transform: translateY(-1px);
+    }
+
+    .day-record-icon,
+    .day-record-photo {
+      flex: 0 0 38px;
+      width: 38px;
+      height: 38px;
+      border-radius: 8px;
+    }
+
+    .day-record-icon {
+      display: grid;
+      place-items: center;
+      background: color-mix(in srgb, #4776d0 12%, transparent);
+      font-size: 18px;
+    }
+
+    .day-record-onsen .day-record-icon {
+      background: color-mix(in srgb, #df633f 13%, transparent);
+    }
+
+    .day-record-photo {
+      object-fit: cover;
+    }
+
+    .day-record-body {
+      display: block;
+      min-width: 0;
+    }
+
+    .day-record-kind,
+    .day-record-meta,
+    .day-record-comment {
+      display: block;
+    }
+
+    .day-record-kind {
+      margin-bottom: 2px;
+      color: #4776d0;
+      font-size: 10px;
+      font-weight: 800;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+    }
+
+    .day-record-onsen .day-record-kind {
+      color: #df633f;
+    }
+
+    .day-record strong {
+      display: block;
+      overflow-wrap: anywhere;
+      font-size: 13px;
+      line-height: 1.4;
+    }
+
+    .day-record-meta,
+    .day-record-comment {
+      margin-top: 4px;
+      color: var(--color-muted);
+      font-size: 11px;
+      line-height: 1.45;
+    }
+
+    .day-record-comment {
+      display: -webkit-box;
+      overflow: hidden;
+      -webkit-box-orient: vertical;
+      -webkit-line-clamp: 2;
+    }
+
     @media (max-width: 760px) {
+      .reader-header {
+        display: block;
+      }
+
+      .reader-summary {
+        width: fit-content;
+      }
+
+      .reader-header-actions {
+        justify-items: start;
+        margin-top: 18px;
+      }
+
       .reader-layout {
         display: block;
       }
@@ -276,6 +707,24 @@ function addLazyLoading(html) {
 
       .reader-entry-header h4 {
         font-size: 1.3em;
+      }
+
+      .reader-day-layout.has-day-records.has-diary {
+        display: flex;
+        flex-direction: column;
+        gap: 24px;
+      }
+
+      .reader-day-layout.has-diary .day-records {
+        width: 100%;
+        box-sizing: border-box;
+        padding: 16px 0 0;
+        border-top: 1px solid var(--color-border-soft);
+        border-left: 0;
+      }
+
+      .reader-day-layout:not(.has-diary) .day-records {
+        grid-template-columns: minmax(0, 1fr);
       }
     }
   </style>
