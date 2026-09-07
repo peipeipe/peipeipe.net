@@ -2,20 +2,121 @@
 import BaseLayout from "@/layouts/BaseLayout.astro";
 ---
 
-<BaseLayout title="404 - Page not found" canonicalPath="/404.html">
-  <article class="post not-found">
-    <h1>404 - Page not found</h1>
-    <p>
-      Sorry, we can't find that page that you're looking for. You can try again by going
-      <a href="/">back to the homepage</a>.
+<BaseLayout
+  title="ページが見つかりません"
+  description="お探しのページは見つかりませんでした。"
+  canonicalPath="/404.html"
+  robots="noindex"
+>
+  <section class="not-found" aria-labelledby="not-found-title">
+    <p class="error-code" aria-hidden="true">404</p>
+    <h1 id="not-found-title">ページが見つかりません</h1>
+    <p class="message">
+      URLが間違っているか、ページが移動・削除された可能性があります。
     </p>
-    <a href="/">
-      <img
-        src="/images/404.webp"
-        alt="Constructocat by https://github.com/jasoncostello"
-        width="400"
-        height="400"
-      />
-    </a>
-  </article>
+
+    <div class="actions">
+      <a class="primary-action" href="/">トップへ戻る</a>
+      <a class="secondary-action" href="/search">サイト内を検索</a>
+    </div>
+
+    <nav class="shortcuts" aria-label="主要なページ">
+      <a href="/diary/">Diary</a>
+      <a href="/books/">Books</a>
+      <a href="/onsen/">Onsen</a>
+      <a href="/mountains/">Mountains</a>
+    </nav>
+  </section>
 </BaseLayout>
+
+<style>
+  .not-found {
+    max-width: 620px;
+    margin: 5vh auto 9vh;
+    padding: 48px 24px;
+    text-align: center;
+  }
+
+  .error-code {
+    margin: 0;
+    color: var(--color-border-strong);
+    font-size: clamp(72px, 18vw, 132px);
+    font-weight: 700;
+    letter-spacing: -0.08em;
+    line-height: 0.8;
+  }
+
+  .not-found h1 {
+    margin: 34px 0 12px;
+    font-size: clamp(26px, 6vw, 36px);
+    line-height: 1.4;
+  }
+
+  .message {
+    margin: 0 auto;
+    color: var(--color-muted);
+    font-size: 16px;
+    line-height: 1.8;
+  }
+
+  .actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    justify-content: center;
+    margin-top: 32px;
+  }
+
+  .actions a {
+    min-width: 160px;
+    border: 1px solid var(--color-border-strong);
+    border-radius: 6px;
+    padding: 11px 20px;
+    font-size: 16px;
+    font-weight: 600;
+  }
+
+  .actions a:hover {
+    text-decoration: none;
+  }
+
+  .primary-action {
+    border-color: var(--color-heading);
+    background: var(--color-heading);
+    color: var(--color-bg);
+  }
+
+  .primary-action:hover {
+    filter: brightness(0.9);
+  }
+
+  .secondary-action:hover {
+    background: var(--color-surface-muted);
+  }
+
+  .shortcuts {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px 20px;
+    justify-content: center;
+    margin-top: 42px;
+    padding-top: 20px;
+    border-top: 1px solid var(--color-border-soft);
+    font-size: 15px;
+  }
+
+  @media (max-width: 480px) {
+    .not-found {
+      margin-top: 0;
+      padding: 28px 10px 48px;
+    }
+
+    .actions {
+      flex-direction: column;
+    }
+
+    .actions a {
+      width: 100%;
+    }
+  }
+</style>
