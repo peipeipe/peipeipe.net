@@ -1,5 +1,27 @@
 [
   {
+    "name": "アクアプラザ上田",
+    "user_comment": "",
+    "date": "2026-09-08",
+    "lat": 36.41002128104719,
+    "lng": 138.2210966641209,
+    "address": "上塩尻623, 上田市, 長野県, 386-0042",
+    "foursquare_url": "https://foursquare.com/v/4c9476b538dd8cfa2a6bc962",
+    "photos": [],
+    "categories": [
+      "遊泳用プール"
+    ],
+    "category_group": "other",
+    "category_label": "その他",
+    "category_emoji": "📍",
+    "category_color": "#607d8b",
+    "data_source": "foursquare_checkin",
+    "fsq_id": "4c9476b538dd8cfa2a6bc962",
+    "checkin_count": 1,
+    "first_checkin_at": "2026-09-08T01:53:20+00:00",
+    "last_checkin_at": "2026-09-08T01:53:20+00:00"
+  },
+  {
     "name": "戸隠神告げ温泉",
     "user_comment": "湯船は一つ、鍵のかかるロッカーはゆうりょ",
     "date": "2026-09-06",
@@ -4902,7 +4924,7 @@
     "composition_hint": ""
   },
   {
-    "name": "信州スカイパーク",
+    "name": "Shinshu Skypark (信州スカイパーク)",
     "user_comment": "",
     "date": "2025-12-06",
     "lat": 36.17674969046192,
@@ -4913,7 +4935,7 @@
       "https://fastly.4sqi.net/img/general/500x300/41463109_0QFmxLeWyQ3Zd8jArZpxenXtAd4Zg0p2WXLwmrR6rjQ.jpg"
     ],
     "categories": [
-      "公園"
+      "Park"
     ],
     "category_group": "outdoors",
     "category_label": "自然・公園",
@@ -43255,8 +43277,8 @@
     "name": "Suidobashi Station (水道橋駅)",
     "user_comment": "ライバーやばい",
     "date": "2016-03-31",
-    "lat": 35.70206412779163,
-    "lng": 139.7544742889687,
+    "lat": 35.702165713341614,
+    "lng": 139.75420977704397,
     "address": "神田三崎町2/後楽1, 千代田区, 東京都",
     "foursquare_url": "https://foursquare.com/v/4b595505f964a520528528e3",
     "photos": [],
