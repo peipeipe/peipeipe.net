@@ -227,7 +227,8 @@ The old Japanese/percent-encoded filenames were normalized to English slugs on `
    - `update-strava-activities.yml`: updates `astro/data/strava_activities.json` and `astro/data/visited_mountains.json`.
    - `update-onsen-checkins.yml`: updates `astro/data/onsen_places.json` and `astro/data/places.json`.
    - `enhance-amazon-links.yml`: updates `astro/content/posts/**/*.md`.
-   - `convert-images-to-webp.yml`: updates `astro/public/images/` and Markdown references.
+   - 投稿画像はブラウザ内でWebP化（標準Canvas、非対応時はWebAssembly）し、アップロード後は再圧縮しない。
+   - `convert-images-to-webp.yml`: `astro/public/images/` に直接追加されたJPEGをWebPに変換し、Markdown参照を更新する。WebPのみの投稿では起動しない。
    - If any workflow commits successfully but does not trigger `.github/workflows/cloudflare-pages.yml`, adjust the deploy workflow path filters.
 
 3. Decide whether to fully disable GitHub Pages in repository settings.

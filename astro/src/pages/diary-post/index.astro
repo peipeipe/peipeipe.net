@@ -934,6 +934,7 @@
 <div class="toast-container" id="toast-container" aria-live="polite" aria-atomic="false"></div>
 
 <script>
+  import { writeWebpBlob } from "../../lib/upload-webp";
   /* ════════════════════════════════════════════
      State
   ════════════════════════════════════════════ */
@@ -1160,12 +1161,9 @@
      Image Processing
   ════════════════════════════════════════════ */
   const IMAGE_MAX_DIMENSION = 1920;
-  const IMAGE_OUTPUT_QUALITY = 0.85;
   const IMAGE_PRIMARY_MIME = 'image/webp';
-  const IMAGE_FALLBACK_MIME = 'image/jpeg';
   const IMAGE_EXT_BY_MIME = {
     [IMAGE_PRIMARY_MIME]: 'webp',
-    [IMAGE_FALLBACK_MIME]: 'jpg',
   };
 
   async function processImageFiles(files) {
@@ -1182,8 +1180,7 @@
 
     try {
       for (const file of imageFiles) {
-        // WebP非対応ブラウザ(iOS Safari等)はJPEGにフォールバックする。
-        // push後に convert-images-to-webp.yml がWebP化するので警告は出さない。
+        // 標準のWebP書き出しが非対応の場合も、ブラウザ内でWebP化する。
         const upload = await createImageUpload(file);
         state.imageUploads.push(upload);
       }
@@ -1214,8 +1211,7 @@
         canvas.width  = Math.round(width  * ratio);
         canvas.height = Math.round(height * ratio);
         canvas.getContext('2d').drawImage(img, 0, 0, canvas.width, canvas.height);
-        writeCanvasBlob(canvas, IMAGE_PRIMARY_MIME)
-          .catch(() => writeCanvasBlob(canvas, IMAGE_FALLBACK_MIME))
+        writeWebpBlob(canvas)
           .then(({ blob, mime }) => {
             const reader = new FileReader();
             reader.onload = () => {
@@ -1243,18 +1239,6 @@
       };
       img.onerror = () => { URL.revokeObjectURL(url); reject(new Error('画像デコード失敗')); };
       img.src = url;
-    });
-  }
-
-  function writeCanvasBlob(canvas, mime) {
-    return new Promise((resolve, reject) => {
-      canvas.toBlob(blob => {
-        if (!blob || blob.type !== mime) {
-          reject(new Error(`${mime} conversion failed`));
-          return;
-        }
-        resolve({ blob, mime });
-      }, mime, IMAGE_OUTPUT_QUALITY);
     });
   }
 
