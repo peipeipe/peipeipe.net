@@ -1,6 +1,8 @@
 import { getDiaryEntries, getPosts, formatEntryDate } from "@/lib/content";
+import { getOnsenPlaces } from "@/lib/checkins";
+import { getCompositionMap } from "@/lib/composition";
 
-export type SearchKind = "all" | "post" | "diary";
+export type SearchKind = "all" | "post" | "diary" | "onsen";
 
 export interface SearchItem {
   kind: Exclude<SearchKind, "all">;
@@ -16,6 +18,7 @@ export interface SearchIndex {
   stats: {
     posts: number;
     diary: number;
+    onsen: number;
     total: number;
   };
   items: SearchItem[];
@@ -23,6 +26,8 @@ export interface SearchIndex {
 
 export async function buildSearchIndex(): Promise<SearchIndex> {
   const [posts, diaryEntries] = await Promise.all([getPosts(), getDiaryEntries()]);
+  const onsenPlaces = getOnsenPlaces();
+  const compositionMap = getCompositionMap();
 
   const items = [
     ...posts.map((entry) => ({
@@ -41,6 +46,24 @@ export async function buildSearchIndex(): Promise<SearchIndex> {
       excerpt: entry.excerpt,
       plainText: htmlToPlainText(entry.html),
     })),
+    ...onsenPlaces.map((place) => {
+      const springs = compositionMap.get(place.fsq_id || "") || [];
+      const excerpt = [place.address, place.user_comment].filter(Boolean).join(" / ");
+      return {
+        kind: "onsen" as const,
+        title: place.name,
+        url: `/onsen/?q=${encodeURIComponent(place.name)}`,
+        date: place.date || "",
+        excerpt,
+        plainText: [
+          "温泉 サウナ Onsen",
+          place.name,
+          excerpt,
+          ...(place.categories || []),
+          ...springs.flatMap((spring) => [spring.spring_quality, spring.spring_quality_class]),
+        ].filter(Boolean).join(" "),
+      };
+    }),
   ].sort((a, b) => b.date.localeCompare(a.date));
 
   return {
@@ -48,6 +71,7 @@ export async function buildSearchIndex(): Promise<SearchIndex> {
     stats: {
       posts: posts.length,
       diary: diaryEntries.length,
+      onsen: onsenPlaces.length,
       total: items.length,
     },
     items,

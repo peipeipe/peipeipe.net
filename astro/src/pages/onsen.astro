@@ -860,6 +860,8 @@ const scatterModifiers = [
       revealCompositionTarget();
       window.addEventListener("hashchange", revealCompositionTarget);
       const search = document.getElementById("onsen-search");
+      search.value = new URLSearchParams(window.location.search).get("q") || "";
+      currentSearch = search.value.trim().toLowerCase();
       search.addEventListener("input", (event) => {
         window.clearTimeout(searchTimer);
         searchTimer = window.setTimeout(() => {
