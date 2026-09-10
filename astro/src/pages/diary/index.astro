@@ -37,7 +37,8 @@ function getImageSrcs(html) {
 }
 
 function getPhotoItems(entry) {
-  return entry.imageSrcs.map((src) => ({
+  // 日記は末尾に追記されるため、後から追加した画像を先に表示する。
+  return [...entry.imageSrcs].reverse().map((src) => ({
     src,
     title: entry.title,
     url: entry.url,
