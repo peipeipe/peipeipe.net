@@ -1,5 +1,29 @@
 [
   {
+    "name": "萬in on玲",
+    "user_comment": "",
+    "date": "2026-09-11",
+    "lat": 36.64407070311554,
+    "lng": 138.20066393098196,
+    "address": "鶴賀七瀬中町４８, 長野市, 長野県, 380-0904",
+    "foursquare_url": "https://foursquare.com/v/63c4c5dff8808c13a21c19af",
+    "photos": [
+      "https://fastly.4sqi.net/img/general/500x300/41463109_1_pMGQOJoJ5DlZSO9pe3lheF65Ez8xDwIcN_HqDp-tE.jpg"
+    ],
+    "categories": [
+      "和食店"
+    ],
+    "category_group": "other",
+    "category_label": "その他",
+    "category_emoji": "📍",
+    "category_color": "#607d8b",
+    "data_source": "foursquare_checkin",
+    "fsq_id": "63c4c5dff8808c13a21c19af",
+    "checkin_count": 1,
+    "first_checkin_at": "2026-09-11T02:43:07+00:00",
+    "last_checkin_at": "2026-09-11T02:43:07+00:00"
+  },
+  {
     "name": "別所温泉 あいそめの湯",
     "user_comment": "",
     "date": "2026-09-10",
@@ -4888,7 +4912,7 @@
       "https://fastly.4sqi.net/img/general/500x300/41463109_V7Jv7Q-lkTz9P0YGe9yosbUCWh0Wu0jCuZy_8_dtV8g.jpg"
     ],
     "categories": [
-      "ラーメン屋"
+      "Ramen Restaurant"
     ],
     "category_group": "food",
     "category_label": "食事",
@@ -11465,7 +11489,7 @@
     "date": "2024-08-25",
     "lat": 43.058624,
     "lng": 141.349404,
-    "address": "中央区南1条西5丁目, 札幌市, 北海道, 060-0061",
+    "address": "中央区南1条西5-20 (郵政互助会ビル B1F), 札幌市, 北海道, 060-0061",
     "foursquare_url": "https://foursquare.com/v/4e2e3bb0fa7614797dd7b1d9",
     "photos": [
       "https://fastly.4sqi.net/img/general/500x300/41463109_tWqS7zQOmVKXnvR3oN9-6Gb-H3NyCjWmvlP6eiSfrpk.jpg"
@@ -12863,8 +12887,8 @@
     "name": "Tachikawa Station (立川駅)",
     "user_comment": "",
     "date": "2024-05-25",
-    "lat": 35.697981802573885,
-    "lng": 139.4138200249374,
+    "lat": 35.697911606789866,
+    "lng": 139.4140780469743,
     "address": "曙町2-1-1, 立川市, 東京都, 190-0012",
     "foursquare_url": "https://foursquare.com/v/4b094a7cf964a5204a1523e3",
     "photos": [],
@@ -19253,8 +19277,8 @@
     "name": "Kansai International Airport (KIX) (関西国際空港)",
     "user_comment": "",
     "date": "2023-02-27",
-    "lat": 34.43532643116695,
-    "lng": 135.2438885665472,
+    "lat": 34.43555603211326,
+    "lng": 135.24412202484405,
     "address": "泉州空港北1, 泉佐野市, 大阪府, 549-0001",
     "foursquare_url": "https://foursquare.com/v/4b2696c0f964a520fa7d24e3",
     "photos": [
@@ -21446,8 +21470,8 @@
     "name": "Ōmiya Station (大宮駅)",
     "user_comment": "初上陸（マジ）",
     "date": "2022-09-21",
-    "lat": 35.906298056537196,
-    "lng": 139.6239690311439,
+    "lat": 35.90616487504617,
+    "lng": 139.6234112964581,
     "address": "大宮区錦町, さいたま市, 埼玉県, 330-0853",
     "foursquare_url": "https://foursquare.com/v/4b3dd6ddf964a520089725e3",
     "photos": [],
@@ -38947,8 +38971,8 @@
     "name": "Ōsaka Station (大阪駅)",
     "user_comment": "",
     "date": "2017-10-15",
-    "lat": 34.702461243792115,
-    "lng": 135.49595256038705,
+    "lat": 34.70224028215441,
+    "lng": 135.4954094835105,
     "address": "北区梅田3-1-1, 大阪市, 大阪府, 530-0001",
     "foursquare_url": "https://foursquare.com/v/4b3ae51bf964a520956f25e3",
     "photos": [
@@ -52811,8 +52835,8 @@
     "name": "Odawara Station (小田原駅)",
     "user_comment": "",
     "date": "2013-01-03",
-    "lat": 35.25597948835868,
-    "lng": 139.1556803126884,
+    "lat": 35.25633045748796,
+    "lng": 139.15557163678568,
     "address": "栄町1/城山1, 小田原市, 神奈川県",
     "foursquare_url": "https://foursquare.com/v/4b5edbfaf964a520439b29e3",
     "photos": [],
