@@ -1,5 +1,78 @@
 [
   {
+    "name": "双葉SA (上り)",
+    "user_comment": "with Reiji",
+    "date": "2026-09-12",
+    "lat": 35.678978,
+    "lng": 138.512476,
+    "address": "龍地2395 (中央自動車道), 甲斐市, 山梨県, 400-0104",
+    "foursquare_url": "https://foursquare.com/v/4b65332df964a5209fe82ae3",
+    "photos": [
+      "https://fastly.4sqi.net/img/general/500x300/41463109_g1SQwGhVOFm4YtNKK_i5x-G33SvPJ4Ih54rknl7eac4.jpg"
+    ],
+    "categories": [
+      "サービスエリア"
+    ],
+    "category_group": "other",
+    "category_label": "その他",
+    "category_emoji": "📍",
+    "category_color": "#607d8b",
+    "data_source": "foursquare_checkin",
+    "fsq_id": "4b65332df964a5209fe82ae3",
+    "checkin_count": 2,
+    "first_checkin_at": "2018-07-08T06:06:33+00:00",
+    "last_checkin_at": "2026-09-12T09:14:18+00:00",
+    "composition_hint": ""
+  },
+  {
+    "name": "国立天文台 野辺山宇宙電波観測所",
+    "user_comment": "",
+    "date": "2026-09-12",
+    "lat": 35.94009164753092,
+    "lng": 138.46828888846002,
+    "address": "野辺山462-2, 南牧村, 長野県, 384-1305",
+    "foursquare_url": "https://foursquare.com/v/4b5e3a80f964a520ea8429e3",
+    "photos": [
+      "https://fastly.4sqi.net/img/general/500x300/41463109_2vHv-WmVFfIIGmva3CSJ7BOXXgNM0C7BBAzCLrqPgLI.jpg"
+    ],
+    "categories": [
+      "試験・観測所"
+    ],
+    "category_group": "outdoors",
+    "category_label": "自然・公園",
+    "category_emoji": "🌿",
+    "category_color": "#2e7d32",
+    "data_source": "foursquare_checkin",
+    "fsq_id": "4b5e3a80f964a520ea8429e3",
+    "checkin_count": 1,
+    "first_checkin_at": "2026-09-12T07:59:26+00:00",
+    "last_checkin_at": "2026-09-12T07:59:26+00:00"
+  },
+  {
+    "name": "いたりあ食堂 坊乃家",
+    "user_comment": "AIメニュー",
+    "date": "2026-09-12",
+    "lat": 36.40514703880976,
+    "lng": 138.2374927702821,
+    "address": "常磐城3-7-2, 上田市, 長野県, 386-0027",
+    "foursquare_url": "https://foursquare.com/v/4dddc183d4c01aeee8ef2ccb",
+    "photos": [
+      "https://fastly.4sqi.net/img/general/500x300/41463109_FGzOJotUfXL3NP4DsObuhN7QR1-4nQ4mNujzEoCC3Uw.jpg"
+    ],
+    "categories": [
+      "イタリア料理店"
+    ],
+    "category_group": "food",
+    "category_label": "食事",
+    "category_emoji": "🍜",
+    "category_color": "#e67e22",
+    "data_source": "foursquare_checkin",
+    "fsq_id": "4dddc183d4c01aeee8ef2ccb",
+    "checkin_count": 1,
+    "first_checkin_at": "2026-09-12T03:18:54+00:00",
+    "last_checkin_at": "2026-09-12T03:18:54+00:00"
+  },
+  {
     "name": "萬in on玲",
     "user_comment": "",
     "date": "2026-09-11",
@@ -21,7 +94,8 @@
     "fsq_id": "63c4c5dff8808c13a21c19af",
     "checkin_count": 1,
     "first_checkin_at": "2026-09-11T02:43:07+00:00",
-    "last_checkin_at": "2026-09-11T02:43:07+00:00"
+    "last_checkin_at": "2026-09-11T02:43:07+00:00",
+    "composition_hint": ""
   },
   {
     "name": "別所温泉 あいそめの湯",
@@ -4878,7 +4952,7 @@
     "composition_hint": ""
   },
   {
-    "name": "サイゼリヤ 松本中央店",
+    "name": "Saizeriya (サイゼリヤ 松本中央店)",
     "user_comment": "",
     "date": "2025-12-07",
     "lat": 36.23272078191027,
@@ -4887,7 +4961,7 @@
     "foursquare_url": "https://foursquare.com/v/4bee721635dc0f47d9d53f5b",
     "photos": [],
     "categories": [
-      "イタリア料理店"
+      "Italian Restaurant"
     ],
     "category_group": "food",
     "category_label": "食事",
@@ -10734,8 +10808,8 @@
     "name": "Ginza (銀座)",
     "user_comment": "",
     "date": "2024-10-17",
-    "lat": 35.67212650080707,
-    "lng": 139.76545007753583,
+    "lat": 35.67203355743894,
+    "lng": 139.7651455830962,
     "address": "中央区, 東京都",
     "foursquare_url": "https://foursquare.com/v/4dee450cd22deb0316f26bd1",
     "photos": [],
@@ -21470,8 +21544,8 @@
     "name": "Ōmiya Station (大宮駅)",
     "user_comment": "初上陸（マジ）",
     "date": "2022-09-21",
-    "lat": 35.90616487504617,
-    "lng": 139.6234112964581,
+    "lat": 35.90653421921595,
+    "lng": 139.62424292064654,
     "address": "大宮区錦町, さいたま市, 埼玉県, 330-0853",
     "foursquare_url": "https://foursquare.com/v/4b3dd6ddf964a520089725e3",
     "photos": [],
@@ -28655,8 +28729,8 @@
     "name": "Kawasaki Station (川崎駅)",
     "user_comment": "No urgent need",
     "date": "2020-03-14",
-    "lat": 35.531374402730606,
-    "lng": 139.69697320838594,
+    "lat": 35.531546495854926,
+    "lng": 139.69716267520366,
     "address": "川崎区駅前本町26-1, 川崎市, 神奈川県, 210-0007",
     "foursquare_url": "https://foursquare.com/v/4b274cf5f964a520bf8524e3",
     "photos": [],
@@ -37018,29 +37092,6 @@
     "composition_hint": ""
   },
   {
-    "name": "Futaba SA for Tokyo (双葉SA (上り))",
-    "user_comment": "with Reiji",
-    "date": "2018-07-08",
-    "lat": 35.678978,
-    "lng": 138.512476,
-    "address": "龍地2395 (中央自動車道), 甲斐市, 山梨県, 400-0104",
-    "foursquare_url": "https://foursquare.com/v/4b65332df964a5209fe82ae3",
-    "photos": [],
-    "categories": [
-      "Rest Area"
-    ],
-    "category_group": "other",
-    "category_label": "その他",
-    "category_emoji": "📍",
-    "category_color": "#607d8b",
-    "data_source": "foursquare_checkin",
-    "fsq_id": "4b65332df964a5209fe82ae3",
-    "checkin_count": 1,
-    "first_checkin_at": "2018-07-08T06:06:33+00:00",
-    "last_checkin_at": "2018-07-08T06:06:33+00:00",
-    "composition_hint": ""
-  },
-  {
     "name": "綿半ホームエイド 長坂店",
     "user_comment": "",
     "date": "2018-07-07",
@@ -38971,8 +39022,8 @@
     "name": "Ōsaka Station (大阪駅)",
     "user_comment": "",
     "date": "2017-10-15",
-    "lat": 34.70224028215441,
-    "lng": 135.4954094835105,
+    "lat": 34.70253577411346,
+    "lng": 135.49598937938543,
     "address": "北区梅田3-1-1, 大阪市, 大阪府, 530-0001",
     "foursquare_url": "https://foursquare.com/v/4b3ae51bf964a520956f25e3",
     "photos": [
