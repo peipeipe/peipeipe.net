@@ -1,5 +1,51 @@
 [
   {
+    "name": "ペンギンベーカリー上田しおだ野店",
+    "user_comment": "",
+    "date": "2026-09-14",
+    "lat": 36.384221,
+    "lng": 138.212336,
+    "address": "上田市, 長野県, 386-1103",
+    "foursquare_url": "https://foursquare.com/v/6a5ad4025bea561dc9bd23c6",
+    "photos": [
+      "https://fastly.4sqi.net/img/general/500x300/41463109_WApiLYHQa282wZ9vWxwI8g3A-Gj6_e5zA5g890MsprQ.jpg"
+    ],
+    "categories": [
+      "パン屋"
+    ],
+    "category_group": "cafe",
+    "category_label": "カフェ",
+    "category_emoji": "☕",
+    "category_color": "#8d6e63",
+    "data_source": "foursquare_checkin",
+    "fsq_id": "6a5ad4025bea561dc9bd23c6",
+    "checkin_count": 1,
+    "first_checkin_at": "2026-09-14T02:48:56+00:00",
+    "last_checkin_at": "2026-09-14T02:48:56+00:00"
+  },
+  {
+    "name": "法住寺 虚空蔵堂",
+    "user_comment": "",
+    "date": "2026-09-14",
+    "lat": 36.30351971351309,
+    "lng": 138.1954633632874,
+    "address": "東内, 上田市, 長野県",
+    "foursquare_url": "https://foursquare.com/v/566b5421498e3f6623a0ee49",
+    "photos": [],
+    "categories": [
+      "仏教寺院"
+    ],
+    "category_group": "culture",
+    "category_label": "文化・娯楽",
+    "category_emoji": "🎭",
+    "category_color": "#5c6bc0",
+    "data_source": "foursquare_checkin",
+    "fsq_id": "566b5421498e3f6623a0ee49",
+    "checkin_count": 1,
+    "first_checkin_at": "2026-09-14T02:11:32+00:00",
+    "last_checkin_at": "2026-09-14T02:11:32+00:00"
+  },
+  {
     "name": "双葉SA(下り) フードコート",
     "user_comment": "",
     "date": "2026-09-13",
@@ -11,17 +57,18 @@
       "https://fastly.4sqi.net/img/general/500x300/41463109_2Ycb7p3zFzY4Vr2MZEpvpY7a_ICC5BlegwdEM2u7QVg.jpg"
     ],
     "categories": [
-      "Food Court"
+      "フードコート"
     ],
-    "category_group": "food",
-    "category_label": "食事",
-    "category_emoji": "🍜",
-    "category_color": "#e67e22",
+    "category_group": "other",
+    "category_label": "その他",
+    "category_emoji": "📍",
+    "category_color": "#607d8b",
     "data_source": "foursquare_checkin",
     "fsq_id": "561b56a4498e8f457f4ff00f",
     "checkin_count": 1,
     "first_checkin_at": "2026-09-13T07:51:53+00:00",
-    "last_checkin_at": "2026-09-13T07:51:53+00:00"
+    "last_checkin_at": "2026-09-13T07:51:53+00:00",
+    "composition_hint": ""
   },
   {
     "name": "いずみの湯",
@@ -33,7 +80,7 @@
     "foursquare_url": "https://foursquare.com/v/4e21476a88774a43b7685449",
     "photos": [],
     "categories": [
-      "Hot Spring"
+      "温泉"
     ],
     "category_group": "onsen",
     "category_label": "温泉・サウナ",
@@ -43,10 +90,11 @@
     "fsq_id": "4e21476a88774a43b7685449",
     "checkin_count": 1,
     "first_checkin_at": "2026-09-13T06:08:01+00:00",
-    "last_checkin_at": "2026-09-13T06:08:01+00:00"
+    "last_checkin_at": "2026-09-13T06:08:01+00:00",
+    "composition_hint": ""
   },
   {
-    "name": "Miharashi (富士山みはらし)",
+    "name": "富士山みはらし",
     "user_comment": "",
     "date": "2026-09-13",
     "lat": 35.39441622541898,
@@ -57,20 +105,21 @@
       "https://fastly.4sqi.net/img/general/500x300/41463109_TXg36u64HdzPRO2cHOrxCVI9_P85jkHcfs-C7xmUX_Y.jpg"
     ],
     "categories": [
-      "Japanese Restaurant"
+      "和食店"
     ],
-    "category_group": "food",
-    "category_label": "食事",
-    "category_emoji": "🍜",
-    "category_color": "#e67e22",
+    "category_group": "outdoors",
+    "category_label": "自然・公園",
+    "category_emoji": "🌿",
+    "category_color": "#2e7d32",
     "data_source": "foursquare_checkin",
     "fsq_id": "4d26ba996e27a143bd420824",
     "checkin_count": 1,
     "first_checkin_at": "2026-09-13T02:30:30+00:00",
-    "last_checkin_at": "2026-09-13T02:30:30+00:00"
+    "last_checkin_at": "2026-09-13T02:30:30+00:00",
+    "composition_hint": ""
   },
   {
-    "name": "Futaba SA for Tokyo (双葉SA (上り))",
+    "name": "双葉SA (上り)",
     "user_comment": "with Reiji",
     "date": "2026-09-12",
     "lat": 35.678978,
@@ -81,7 +130,7 @@
       "https://fastly.4sqi.net/img/general/500x300/41463109_g1SQwGhVOFm4YtNKK_i5x-G33SvPJ4Ih54rknl7eac4.jpg"
     ],
     "categories": [
-      "Rest Area"
+      "サービスエリア"
     ],
     "category_group": "other",
     "category_label": "その他",
@@ -106,7 +155,7 @@
       "https://fastly.4sqi.net/img/general/500x300/41463109_2vHv-WmVFfIIGmva3CSJ7BOXXgNM0C7BBAzCLrqPgLI.jpg"
     ],
     "categories": [
-      "Research Station"
+      "試験・観測所"
     ],
     "category_group": "outdoors",
     "category_label": "自然・公園",
@@ -131,7 +180,7 @@
       "https://fastly.4sqi.net/img/general/500x300/41463109_FGzOJotUfXL3NP4DsObuhN7QR1-4nQ4mNujzEoCC3Uw.jpg"
     ],
     "categories": [
-      "Italian Restaurant"
+      "イタリア料理店"
     ],
     "category_group": "food",
     "category_label": "食事",
@@ -156,12 +205,12 @@
       "https://fastly.4sqi.net/img/general/500x300/41463109_1_pMGQOJoJ5DlZSO9pe3lheF65Ez8xDwIcN_HqDp-tE.jpg"
     ],
     "categories": [
-      "Japanese Restaurant"
+      "和食店"
     ],
-    "category_group": "food",
-    "category_label": "食事",
-    "category_emoji": "🍜",
-    "category_color": "#e67e22",
+    "category_group": "other",
+    "category_label": "その他",
+    "category_emoji": "📍",
+    "category_color": "#607d8b",
     "data_source": "foursquare_checkin",
     "fsq_id": "63c4c5dff8808c13a21c19af",
     "checkin_count": 1,
@@ -182,7 +231,7 @@
       "https://fastly.4sqi.net/img/general/500x300/41463109_LCF2sfbuZtxmJUt2zyPDq5uKjMS7S9ahm5ktDEoG-Yg.jpg"
     ],
     "categories": [
-      "Hot Spring"
+      "温泉"
     ],
     "category_group": "onsen",
     "category_label": "温泉・サウナ",
@@ -205,7 +254,7 @@
     "foursquare_url": "https://foursquare.com/v/4c9476b538dd8cfa2a6bc962",
     "photos": [],
     "categories": [
-      "Swimming Pool"
+      "遊泳用プール"
     ],
     "category_group": "other",
     "category_label": "その他",
@@ -230,7 +279,7 @@
       "https://fastly.4sqi.net/img/general/500x300/41463109_oj-VcJgs6tTqGKOIinNdXwO9aU4XJG9f_zGxHjRemZM.jpg"
     ],
     "categories": [
-      "Hot Spring"
+      "温泉"
     ],
     "category_group": "onsen",
     "category_label": "温泉・サウナ",
@@ -256,7 +305,7 @@
       "https://fastly.4sqi.net/img/general/500x300/41463109_hUnoQALa_so1ZMugrLJRRpdMg4Y_2WFjo4r24g2DycA.jpg"
     ],
     "categories": [
-      "Shrine"
+      "神社"
     ],
     "category_group": "culture",
     "category_label": "文化・娯楽",
@@ -281,12 +330,12 @@
       "https://fastly.4sqi.net/img/general/500x300/41463109_xNjckl4BQLtfpJPqFrb6fZE6X-2DWMJx3M4PfutCElo.jpg"
     ],
     "categories": [
-      "Soba Restaurant"
+      "蕎麦屋"
     ],
-    "category_group": "food",
-    "category_label": "食事",
-    "category_emoji": "🍜",
-    "category_color": "#e67e22",
+    "category_group": "other",
+    "category_label": "その他",
+    "category_emoji": "📍",
+    "category_color": "#607d8b",
     "data_source": "foursquare_checkin",
     "fsq_id": "4b67a5bef964a52067592be3",
     "checkin_count": 1,
@@ -304,7 +353,7 @@
     "foursquare_url": "https://foursquare.com/v/5236ce4611d2cb48e649af60",
     "photos": [],
     "categories": [
-      "Italian Restaurant"
+      "イタリア料理店"
     ],
     "category_group": "food",
     "category_label": "食事",
@@ -318,7 +367,7 @@
     "composition_hint": ""
   },
   {
-    "name": "裾花峡温泉 うるおい館 (うるおい館)",
+    "name": "うるおい館",
     "user_comment": "長野じゃめずらしい茶褐色、広め、サウナ二つ。",
     "date": "2026-09-01",
     "lat": 36.65408955848814,
@@ -330,12 +379,12 @@
       "https://fastly.4sqi.net/img/general/500x300/41463109_4U-Esj-1a7iJpYCUUe9i39-XvveXNH1ZelW37ou89hg.jpg"
     ],
     "categories": [
-      "Hotel"
+      "ホテル"
     ],
-    "category_group": "onsen",
-    "category_label": "温泉・サウナ",
-    "category_emoji": "♨️",
-    "category_color": "#ff7a59",
+    "category_group": "travel",
+    "category_label": "旅行・宿",
+    "category_emoji": "🏨",
+    "category_color": "#26a69a",
     "data_source": "foursquare_checkin",
     "fsq_id": "4c02897710baef3b05016bbd",
     "checkin_count": 1,
@@ -355,7 +404,7 @@
       "https://fastly.4sqi.net/img/general/500x300/41463109_3jy3OOZKCdTkmf-8wmdPN8pXmj-CA7NIrqp5JWt8DHI.jpg"
     ],
     "categories": [
-      "Ramen Restaurant"
+      "ラーメン屋"
     ],
     "category_group": "food",
     "category_label": "食事",
@@ -369,7 +418,7 @@
     "composition_hint": ""
   },
   {
-    "name": "Yahho no Yu (八峰の湯)",
+    "name": "八峰の湯",
     "user_comment": "綺麗で良い。サウナ暑め。",
     "date": "2026-08-30",
     "lat": 36.05897041322469,
@@ -381,7 +430,7 @@
       "https://fastly.4sqi.net/img/general/500x300/41463109_5QLShyA-MM5neI9v7V7XIOP88k2mFUHjakD0k_Efnc4.jpg"
     ],
     "categories": [
-      "Hot Spring"
+      "温泉"
     ],
     "category_group": "onsen",
     "category_label": "温泉・サウナ",
@@ -406,12 +455,12 @@
       "https://fastly.4sqi.net/img/general/500x300/41463109_UToayBqjEgfVv3NV8se17gkKutPmTr62R1KRp5nteao.jpg"
     ],
     "categories": [
-      "Pastry Shop"
+      "洋菓子店"
     ],
-    "category_group": "shop",
-    "category_label": "買い物",
-    "category_emoji": "🛍️",
-    "category_color": "#ec407a",
+    "category_group": "other",
+    "category_label": "その他",
+    "category_emoji": "📍",
+    "category_color": "#607d8b",
     "data_source": "foursquare_checkin",
     "fsq_id": "61172f3446bf3914915a84d5",
     "checkin_count": 1,
@@ -432,7 +481,7 @@
       "https://fastly.4sqi.net/img/general/500x300/41463109_a_xR3WFEz-xwtyZiZZu8i7tMXmC_5OqLk-uEeJ5ozDg.jpg"
     ],
     "categories": [
-      "Hot Spring"
+      "温泉"
     ],
     "category_group": "onsen",
     "category_label": "温泉・サウナ",
@@ -446,7 +495,7 @@
     "composition_hint": ""
   },
   {
-    "name": "Tamakitei (玉喜亭)",
+    "name": "玉喜亭",
     "user_comment": "",
     "date": "2026-08-26",
     "lat": 35.479709,
@@ -457,7 +506,7 @@
       "https://fastly.4sqi.net/img/general/500x300/41463109_Pjm8Q0hbc7z_5k-7wNm0wL-bqeUKu8JQQIsNtX44k6Y.jpg"
     ],
     "categories": [
-      "Udon Restaurant"
+      "うどん屋"
     ],
     "category_group": "food",
     "category_label": "食事",
@@ -482,12 +531,12 @@
       "https://fastly.4sqi.net/img/general/500x300/41463109_FuwEk2AxIPq2wSZ1mAWzkZELFibXt1buMLLuvMhmbz0.jpg"
     ],
     "categories": [
-      "Japanese Restaurant"
+      "和食店"
     ],
-    "category_group": "food",
-    "category_label": "食事",
-    "category_emoji": "🍜",
-    "category_color": "#e67e22",
+    "category_group": "other",
+    "category_label": "その他",
+    "category_emoji": "📍",
+    "category_color": "#607d8b",
     "data_source": "foursquare_checkin",
     "fsq_id": "4db9115d8154ce84dc205133",
     "checkin_count": 1,
@@ -496,7 +545,7 @@
     "composition_hint": ""
   },
   {
-    "name": "Sato-goya (佐藤小屋)",
+    "name": "佐藤小屋",
     "user_comment": "",
     "date": "2026-08-26",
     "lat": 35.38899752433876,
@@ -507,7 +556,7 @@
       "https://fastly.4sqi.net/img/general/500x300/41463109_pr7D-AHJA8GsLLmdrt-9mqszmZ-Uo-PqVutV4g5jUjs.jpg"
     ],
     "categories": [
-      "Mountain Hut"
+      "山小屋"
     ],
     "category_group": "outdoors",
     "category_label": "自然・公園",
@@ -534,7 +583,7 @@
       "https://fastly.4sqi.net/img/general/500x300/41463109_uO26q6Rhs82XBaXRp1z_wCs925oNM_AP3IZXUdQSGa8.jpg"
     ],
     "categories": [
-      "Hot Spring"
+      "温泉"
     ],
     "category_group": "onsen",
     "category_label": "温泉・サウナ",
@@ -557,7 +606,7 @@
     "foursquare_url": "https://foursquare.com/v/501349b8e4b0c3be9729073c",
     "photos": [],
     "categories": [
-      "Ski Lodge"
+      "スキーロッジ"
     ],
     "category_group": "outdoors",
     "category_label": "自然・公園",
@@ -584,7 +633,7 @@
       "https://fastly.4sqi.net/img/general/500x300/41463109_RioZZm6J5tYP0yDnCVAvbt9_UKbAzsdTVzoXhhzUccg.jpg"
     ],
     "categories": [
-      "Bakery"
+      "パン屋"
     ],
     "category_group": "cafe",
     "category_label": "カフェ",
@@ -610,7 +659,7 @@
       "https://fastly.4sqi.net/img/general/500x300/41463109_cJh4Ob8lGG7XIJHeeRToQTX24-BT6LFgPJ6WhH3YO1w.jpg"
     ],
     "categories": [
-      "Indian Restaurant"
+      "インド料理店"
     ],
     "category_group": "food",
     "category_label": "食事",
@@ -633,7 +682,7 @@
     "foursquare_url": "https://foursquare.com/v/67921cf36f127e6b5501b2bc",
     "photos": [],
     "categories": [
-      "Convenience Store"
+      "コンビニ"
     ],
     "category_group": "shop",
     "category_label": "買い物",
@@ -656,7 +705,7 @@
     "foursquare_url": "https://foursquare.com/v/4d8560e9e83fa14372df79a1",
     "photos": [],
     "categories": [
-      "Historic and Protected Site"
+      "史跡と保護遺跡"
     ],
     "category_group": "outdoors",
     "category_label": "自然・公園",
@@ -670,7 +719,7 @@
     "composition_hint": ""
   },
   {
-    "name": "Yamaokaya (ラーメン山岡家)",
+    "name": "ラーメン山岡家",
     "user_comment": "",
     "date": "2026-08-15",
     "lat": 36.6420906988927,
@@ -682,7 +731,7 @@
       "https://fastly.4sqi.net/img/general/500x300/41463109_04r04_QY0qtjYV8gGNcauFa6gdtc66_pOY9oPx7beLw.jpg"
     ],
     "categories": [
-      "Ramen Restaurant"
+      "ラーメン屋"
     ],
     "category_group": "food",
     "category_label": "食事",
@@ -713,7 +762,7 @@
       "https://fastly.4sqi.net/img/general/500x300/41463109_moIiX5GlF0YMllbHk-Y6yA0C9MU2o3rGSrlvxGOYxpo.jpg"
     ],
     "categories": [
-      "Spa"
+      "スパ"
     ],
     "category_group": "onsen",
     "category_label": "温泉・サウナ",
@@ -739,7 +788,7 @@
       "https://fastly.4sqi.net/img/general/500x300/41463109_nBG-RlfAoknCphLg1w9SqE07bPNMpvEiimJLZhHlmBU.jpg"
     ],
     "categories": [
-      "Hot Spring"
+      "温泉"
     ],
     "category_group": "onsen",
     "category_label": "温泉・サウナ",
@@ -766,7 +815,7 @@
       "https://fastly.4sqi.net/img/general/500x300/41463109_YQEcYYVIpy5Qao4U5Wbxvad60pjRJtorzhh1S3TbioM.jpg"
     ],
     "categories": [
-      "Sauna"
+      "サウナ"
     ],
     "category_group": "onsen",
     "category_label": "温泉・サウナ",
@@ -795,7 +844,7 @@
       "https://fastly.4sqi.net/img/general/500x300/41463109_6c1Gw-USWizTqekYF75GKL6l_kk2zolQoqxnPAaoP4A.jpg"
     ],
     "categories": [
-      "Hot Spring"
+      "温泉"
     ],
     "category_group": "onsen",
     "category_label": "温泉・サウナ",
@@ -820,7 +869,7 @@
       "https://fastly.4sqi.net/img/general/500x300/41463109_plHFAzLVIkz6madpi-DVVn76nKxgmO_dzzzUM8O22QQ.jpg"
     ],
     "categories": [
-      "Town Hall"
+      "町役場"
     ],
     "category_group": "other",
     "category_label": "その他",
@@ -846,12 +895,12 @@
       "https://fastly.4sqi.net/img/general/500x300/41463109_ioJNHtS-ob9p-dxeIE509binpkrul76_9j73gRJaefM.jpg"
     ],
     "categories": [
-      "Hiking Trail"
+      "ハイキングコース"
     ],
-    "category_group": "outdoors",
-    "category_label": "自然・公園",
-    "category_emoji": "🌿",
-    "category_color": "#2e7d32",
+    "category_group": "other",
+    "category_label": "その他",
+    "category_emoji": "📍",
+    "category_color": "#607d8b",
     "data_source": "foursquare_checkin",
     "fsq_id": "4e83cc7e29c2cfe7238b0165",
     "checkin_count": 3,
@@ -869,12 +918,12 @@
     "foursquare_url": "https://foursquare.com/v/4c74a591604a370492b58049",
     "photos": [],
     "categories": [
-      "Donburi Restaurant"
+      "どんぶり屋"
     ],
-    "category_group": "food",
-    "category_label": "食事",
-    "category_emoji": "🍜",
-    "category_color": "#e67e22",
+    "category_group": "other",
+    "category_label": "その他",
+    "category_emoji": "📍",
+    "category_color": "#607d8b",
     "data_source": "foursquare_checkin",
     "fsq_id": "4c74a591604a370492b58049",
     "checkin_count": 4,
@@ -897,7 +946,7 @@
       "https://fastly.4sqi.net/img/general/500x300/41463109_mc4pqveJa7iDe7-MELyxqz67X3zE67HPUAFkY3bW4FU.jpg"
     ],
     "categories": [
-      "Hot Spring"
+      "温泉"
     ],
     "category_group": "onsen",
     "category_label": "温泉・サウナ",
@@ -923,7 +972,7 @@
       "https://fastly.4sqi.net/img/general/500x300/41463109_4U644mS_-lF3Q84wb-hq59q6YZKyGHFStFP6tguSnSo.jpg"
     ],
     "categories": [
-      "Spa"
+      "スパ"
     ],
     "category_group": "onsen",
     "category_label": "温泉・サウナ",
@@ -937,7 +986,7 @@
     "composition_hint": ""
   },
   {
-    "name": "Myoko-Kogen Station (妙高高原駅)",
+    "name": "妙高高原駅",
     "user_comment": "",
     "date": "2026-08-02",
     "lat": 36.87226811528997,
@@ -948,7 +997,7 @@
       "https://fastly.4sqi.net/img/general/500x300/41463109_3zq_Cw8nj9l4-Dn8iHiPxN6IscVKue3uXEIyCCNMUmI.jpg"
     ],
     "categories": [
-      "Rail Station"
+      "鉄道駅"
     ],
     "category_group": "transport",
     "category_label": "交通",
@@ -962,7 +1011,7 @@
     "composition_hint": ""
   },
   {
-    "name": "Yakushi no Yu (湯けむり屋敷 薬師の湯)",
+    "name": "湯けむり屋敷 薬師の湯",
     "user_comment": "新館と休館あり。新館のみ入った。薄め。ニフティ温泉割引あり",
     "date": "2026-07-26",
     "lat": 36.526835,
@@ -974,7 +1023,7 @@
       "https://fastly.4sqi.net/img/general/500x300/41463109_eo_pN2TdlWhAcYHKPL-kZaH0AXiSPSallE6Ic_-T82M.jpg"
     ],
     "categories": [
-      "Hot Spring"
+      "温泉"
     ],
     "category_group": "onsen",
     "category_label": "温泉・サウナ",
@@ -999,7 +1048,7 @@
       "https://fastly.4sqi.net/img/general/500x300/41463109_v5H-zONhCegQms_I3zHvnxp-hUM0jSCPUmM23fDB1Gg.jpg"
     ],
     "categories": [
-      "Mountain Hut"
+      "山小屋"
     ],
     "category_group": "outdoors",
     "category_label": "自然・公園",
@@ -1025,12 +1074,12 @@
       "https://fastly.4sqi.net/img/general/500x300/41463109_iyDUF-bTTkF2yWkdPgxCm9h1aseJ7T4r15kc5qCUEDk.jpg"
     ],
     "categories": [
-      "Sake Bar"
+      "居酒屋"
     ],
-    "category_group": "bar",
-    "category_label": "酒場",
-    "category_emoji": "🍺",
-    "category_color": "#7e57c2",
+    "category_group": "food",
+    "category_label": "食事",
+    "category_emoji": "🍜",
+    "category_color": "#e67e22",
     "data_source": "foursquare_checkin",
     "fsq_id": "540a9859498e234757a82110",
     "checkin_count": 2,
@@ -1052,7 +1101,7 @@
       "https://fastly.4sqi.net/img/general/500x300/41463109_Z_egmbl1hPG44ftsMjMS2cOPzYzzUZ0QFAzpdbJD_iY.jpg"
     ],
     "categories": [
-      "Hot Spring"
+      "温泉"
     ],
     "category_group": "onsen",
     "category_label": "温泉・サウナ",
@@ -1079,7 +1128,7 @@
       "https://fastly.4sqi.net/img/general/500x300/41463109_TjAQ-IDIs8UYf3iGnc_u2pArulZ5HIHMC7V2SDTyXIg.jpg"
     ],
     "categories": [
-      "Stadium"
+      "競技場"
     ],
     "category_group": "other",
     "category_label": "その他",
@@ -1102,12 +1151,12 @@
     "foursquare_url": "https://foursquare.com/v/4fc54566e4b079c69e9dcdfc",
     "photos": [],
     "categories": [
-      "Donburi Restaurant"
+      "どんぶり屋"
     ],
-    "category_group": "food",
-    "category_label": "食事",
-    "category_emoji": "🍜",
-    "category_color": "#e67e22",
+    "category_group": "other",
+    "category_label": "その他",
+    "category_emoji": "📍",
+    "category_color": "#607d8b",
     "data_source": "foursquare_checkin",
     "fsq_id": "4fc54566e4b079c69e9dcdfc",
     "checkin_count": 3,
@@ -1125,7 +1174,7 @@
     "foursquare_url": "https://foursquare.com/v/51dc8b8c498edc1985a20ae2",
     "photos": [],
     "categories": [
-      "Supermarket"
+      "スーパーマーケット"
     ],
     "category_group": "shop",
     "category_label": "買い物",
@@ -1150,7 +1199,7 @@
       "https://fastly.4sqi.net/img/general/500x300/41463109_ugUUw-nOH_3CmAVafMRPlTBG1ZniV8eQspDmW8CAOuQ.jpg"
     ],
     "categories": [
-      "Restaurant"
+      "レストラン"
     ],
     "category_group": "food",
     "category_label": "食事",
@@ -1164,7 +1213,7 @@
     "composition_hint": ""
   },
   {
-    "name": "Furusato no Yu (ふるさとの湯)",
+    "name": "ふるさとの湯",
     "user_comment": "やはり良い！！",
     "date": "2026-07-19",
     "lat": 36.924654774926644,
@@ -1178,7 +1227,7 @@
       "https://fastly.4sqi.net/img/general/500x300/41463109_7cfoqnDhNkUlBmNGhdTwK8GgFvZ9SFINd2D3F7sIq1s.jpg"
     ],
     "categories": [
-      "Hot Spring"
+      "温泉"
     ],
     "category_group": "onsen",
     "category_label": "温泉・サウナ",
@@ -1203,7 +1252,7 @@
       "https://fastly.4sqi.net/img/general/500x300/41463109_WRGd8l8iFaaIDcyF-sqDcpHnXwQyW-crqJ1DJ9rdV3c.jpg"
     ],
     "categories": [
-      "Hot Spring"
+      "温泉"
     ],
     "category_group": "onsen",
     "category_label": "温泉・サウナ",
@@ -1226,7 +1275,7 @@
     "foursquare_url": "https://foursquare.com/v/4c415989d7fad13ac58107da",
     "photos": [],
     "categories": [
-      "Park"
+      "公園"
     ],
     "category_group": "outdoors",
     "category_label": "自然・公園",
@@ -1240,7 +1289,7 @@
     "composition_hint": ""
   },
   {
-    "name": "Obuse Highway Oasis (小布施ハイウェイオアシス)",
+    "name": "小布施ハイウェイオアシス",
     "user_comment": "",
     "date": "2026-07-11",
     "lat": 36.68904512445337,
@@ -1249,12 +1298,12 @@
     "foursquare_url": "https://foursquare.com/v/4b5e4cedf964a520718829e3",
     "photos": [],
     "categories": [
-      "Rest Area"
+      "サービスエリア"
     ],
-    "category_group": "transport",
-    "category_label": "交通",
-    "category_emoji": "🚉",
-    "category_color": "#546e7a",
+    "category_group": "other",
+    "category_label": "その他",
+    "category_emoji": "📍",
+    "category_color": "#607d8b",
     "data_source": "foursquare_checkin",
     "fsq_id": "4b5e4cedf964a520718829e3",
     "checkin_count": 1,
@@ -1275,7 +1324,7 @@
       "https://fastly.4sqi.net/img/general/500x300/41463109_hnMYc0kv8FNuWCDl_0zPzR6r42pWOjjTEnoIGnZcIzc.jpg"
     ],
     "categories": [
-      "Ramen Restaurant"
+      "ラーメン屋"
     ],
     "category_group": "food",
     "category_label": "食事",
@@ -1301,7 +1350,7 @@
       "https://fastly.4sqi.net/img/general/500x300/41463109_ZhXHv12MhH3qIy6WjkGuNfu55q523XZcdOk4MALbdMw.jpg"
     ],
     "categories": [
-      "Hotel"
+      "ホテル"
     ],
     "category_group": "onsen",
     "category_label": "温泉・サウナ",
@@ -1327,7 +1376,7 @@
       "https://fastly.4sqi.net/img/general/500x300/41463109_QGLLQGTNf3_0A87pUbrIFn4hoX07ScpJBho_7AbLiqk.jpg"
     ],
     "categories": [
-      "Government Building"
+      "行政施設"
     ],
     "category_group": "outdoors",
     "category_label": "自然・公園",
@@ -1352,7 +1401,7 @@
       "https://fastly.4sqi.net/img/general/500x300/41463109_EvStZXFlLHfBnIg24jZBgv6an3bMfpWceDBs3POi7Uo.jpg"
     ],
     "categories": [
-      "Rest Area"
+      "サービスエリア"
     ],
     "category_group": "outdoors",
     "category_label": "自然・公園",
@@ -1377,7 +1426,7 @@
       "https://fastly.4sqi.net/img/general/500x300/41463109_Y_cT9IZhcJut8HLNtNQQPoHeYVAitp4P3eHfvkM8Ax8.jpg"
     ],
     "categories": [
-      "Restaurant"
+      "レストラン"
     ],
     "category_group": "food",
     "category_label": "食事",
@@ -1402,7 +1451,7 @@
       "https://fastly.4sqi.net/img/general/500x300/41463109_Jec4fju9elLBuafJTo9vO01fVpAKsY65XtnA0hVtNbw.jpg"
     ],
     "categories": [
-      "Hot Spring"
+      "温泉"
     ],
     "category_group": "onsen",
     "category_label": "温泉・サウナ",
@@ -1428,7 +1477,7 @@
       "https://fastly.4sqi.net/img/general/500x300/41463109_TKRzl85N0PukYEanaK6qANpipDxGVBkBkJ9g6Fi3f7g.jpg"
     ],
     "categories": [
-      "Hot Spring"
+      "温泉"
     ],
     "category_group": "onsen",
     "category_label": "温泉・サウナ",
@@ -1442,7 +1491,7 @@
     "composition_hint": ""
   },
   {
-    "name": "Tempura Miya (天丼と生蕎麦 天ぷら宮 上野駅前店)",
+    "name": "天丼と生蕎麦 天ぷら宮 上野駅前店",
     "user_comment": "",
     "date": "2026-07-04",
     "lat": 35.711321,
@@ -1451,7 +1500,7 @@
     "foursquare_url": "https://foursquare.com/v/64feccf686db875a26e3f6ab",
     "photos": [],
     "categories": [
-      "Tempura Restaurant"
+      "天ぷら料理店"
     ],
     "category_group": "food",
     "category_label": "食事",
@@ -1476,7 +1525,7 @@
       "https://fastly.4sqi.net/img/general/500x300/41463109_AZeQRzq-KOk14oRWsPjpYiD514HZVRnfgjym_TKIfJI.jpg"
     ],
     "categories": [
-      "Spa"
+      "スパ"
     ],
     "category_group": "onsen",
     "category_label": "温泉・サウナ",
@@ -1501,12 +1550,12 @@
       "https://fastly.4sqi.net/img/general/500x300/41463109_mHVU3Eka795CdkfQo6tXsJNk0lQpWBs9mOUsMWr6Jgo.jpg"
     ],
     "categories": [
-      "Sake Bar"
+      "居酒屋"
     ],
-    "category_group": "bar",
-    "category_label": "酒場",
-    "category_emoji": "🍺",
-    "category_color": "#7e57c2",
+    "category_group": "food",
+    "category_label": "食事",
+    "category_emoji": "🍜",
+    "category_color": "#e67e22",
     "data_source": "foursquare_checkin",
     "fsq_id": "58661f2f4bc2f1753bbef604",
     "checkin_count": 1,
@@ -1526,7 +1575,7 @@
       "https://fastly.4sqi.net/img/general/500x300/41463109_8JGJ03UYYMp9jscyla7gszkKkDvRcuIDiSbEXa5Iom8.jpg"
     ],
     "categories": [
-      "Bistro"
+      "ビストロ"
     ],
     "category_group": "food",
     "category_label": "食事",
@@ -1552,7 +1601,7 @@
       "https://fastly.4sqi.net/img/general/500x300/41463109_0MDqj2zftZp6rZjQf2PT7urxdB0Y__LCY_i_cbA8IcE.jpg"
     ],
     "categories": [
-      "Ramen Restaurant"
+      "ラーメン屋"
     ],
     "category_group": "food",
     "category_label": "食事",
@@ -1579,7 +1628,7 @@
       "https://fastly.4sqi.net/img/general/500x300/41463109_uUONscfATyY5iEClsW0Vi8vY_wmqXCB_iwjZI914njo.jpg"
     ],
     "categories": [
-      "Hot Spring"
+      "温泉"
     ],
     "category_group": "onsen",
     "category_label": "温泉・サウナ",
@@ -1604,12 +1653,12 @@
       "https://fastly.4sqi.net/img/general/500x300/41463109_y4YB3z05Bnq5mdG-kInyTaawXT9yga9Zv-trkZ1n148.jpg"
     ],
     "categories": [
-      "Tonkatsu Restaurant"
+      "とんかつ屋"
     ],
-    "category_group": "food",
-    "category_label": "食事",
-    "category_emoji": "🍜",
-    "category_color": "#e67e22",
+    "category_group": "other",
+    "category_label": "その他",
+    "category_emoji": "📍",
+    "category_color": "#607d8b",
     "data_source": "foursquare_checkin",
     "fsq_id": "4d1983746d1037045ff247bd",
     "checkin_count": 1,
@@ -1618,7 +1667,7 @@
     "composition_hint": ""
   },
   {
-    "name": "CAFE REST GARAGE (カフェレスト ガレージ)",
+    "name": "カフェレスト ガレージ",
     "user_comment": "",
     "date": "2026-06-28",
     "lat": 36.25744367298996,
@@ -1629,7 +1678,7 @@
       "https://fastly.4sqi.net/img/general/500x300/41463109_QYnRrBv9iKAAs8e0dmHYDc-YetjcYWUOIcjo-Q3AoI8.jpg"
     ],
     "categories": [
-      "Café"
+      "カフェ"
     ],
     "category_group": "cafe",
     "category_label": "カフェ",
@@ -1643,7 +1692,7 @@
     "composition_hint": ""
   },
   {
-    "name": "Hot Plaza Asama (ホットプラザ浅間)",
+    "name": "ホットプラザ浅間",
     "user_comment": "",
     "date": "2026-06-28",
     "lat": 36.26284539322397,
@@ -1654,7 +1703,7 @@
       "https://fastly.4sqi.net/img/general/500x300/41463109_xPFm_erCuuUfXAtV5eZsRiy8uMA2vSotS28Hl5meTEc.jpg"
     ],
     "categories": [
-      "Hot Spring"
+      "温泉"
     ],
     "category_group": "onsen",
     "category_label": "温泉・サウナ",
@@ -1679,7 +1728,7 @@
       "https://fastly.4sqi.net/img/general/500x300/41463109_7XJhIFeg56v1apNgV15M0IM9hijnotY3klpfVrO47K0.jpg"
     ],
     "categories": [
-      "Historic and Protected Site"
+      "史跡と保護遺跡"
     ],
     "category_group": "outdoors",
     "category_label": "自然・公園",
@@ -1705,7 +1754,7 @@
       "https://fastly.4sqi.net/img/general/500x300/41463109_Cx4cIwvic1yFEiHZ4zTzZqaSbrrNpOPeQiKz40xlZVE.jpg"
     ],
     "categories": [
-      "Bakery"
+      "パン屋"
     ],
     "category_group": "cafe",
     "category_label": "カフェ",
@@ -1730,7 +1779,7 @@
       "https://fastly.4sqi.net/img/general/500x300/41463109_xAh8JjMByOxzqtle__il3hqnGSvt1AFD8vdylxwVRHs.jpg"
     ],
     "categories": [
-      "Japanese Curry Restaurant"
+      "カレーライス店"
     ],
     "category_group": "food",
     "category_label": "食事",
@@ -1757,7 +1806,7 @@
       "https://fastly.4sqi.net/img/general/500x300/41463109_yvfdfgP5zLnBTOGeFNb32OTHrsKH5a5KDGjPuNRDIxM.jpg"
     ],
     "categories": [
-      "Field"
+      "野原"
     ],
     "category_group": "other",
     "category_label": "その他",
@@ -1780,7 +1829,7 @@
     "foursquare_url": "https://foursquare.com/v/4c53d201479fc9287b1d1c92",
     "photos": [],
     "categories": [
-      "Farm"
+      "農場"
     ],
     "category_group": "other",
     "category_label": "その他",
@@ -1803,7 +1852,7 @@
     "foursquare_url": "https://foursquare.com/v/57d492e8cd1076ef279268cb",
     "photos": [],
     "categories": [
-      "Parking"
+      "駐車場"
     ],
     "category_group": "outdoors",
     "category_label": "自然・公園",
@@ -1828,7 +1877,7 @@
       "https://fastly.4sqi.net/img/general/500x300/41463109_xW_zl5ZEIqI2XXxa4c8TWQkheRewZhetNjOA6Ifi1eQ.jpg"
     ],
     "categories": [
-      "Restaurant"
+      "レストラン"
     ],
     "category_group": "food",
     "category_label": "食事",
@@ -1853,7 +1902,7 @@
       "https://fastly.4sqi.net/img/general/500x300/41463109_a1vDkCfgiTai7sV6xHDTFyLLBYKbLHFgWRbLVkjTruo.jpg"
     ],
     "categories": [
-      "Spa"
+      "スパ"
     ],
     "category_group": "onsen",
     "category_label": "温泉・サウナ",
@@ -1878,7 +1927,7 @@
       "https://fastly.4sqi.net/img/general/500x300/41463109_5B7qA8gmkFGXiPqIOwAOiEjlavU5qhnuQE3qP98K2IA.jpg"
     ],
     "categories": [
-      "Ramen Restaurant"
+      "ラーメン屋"
     ],
     "category_group": "food",
     "category_label": "食事",
@@ -1907,7 +1956,7 @@
       "https://fastly.4sqi.net/img/general/500x300/41463109_VWczFtKQ37dfaQRmlCkE813fGWeHGX-b5em1N-XktCE.jpg"
     ],
     "categories": [
-      "Hot Spring"
+      "温泉"
     ],
     "category_group": "onsen",
     "category_label": "温泉・サウナ",
@@ -1934,7 +1983,7 @@
       "https://fastly.4sqi.net/img/general/500x300/41463109_HbcQh3mJb1jZxmC7fbQeOaTSmFP-MCP8hFVn4FZFbD4.jpg"
     ],
     "categories": [
-      "Sports and Recreation"
+      "スポーツとレクリエーション"
     ],
     "category_group": "other",
     "category_label": "その他",
@@ -1957,7 +2006,7 @@
     "foursquare_url": "https://foursquare.com/v/4f76b030e4b0294fd36b8940",
     "photos": [],
     "categories": [
-      "Hotel"
+      "ホテル"
     ],
     "category_group": "travel",
     "category_label": "旅行・宿",
@@ -1982,7 +2031,7 @@
       "https://fastly.4sqi.net/img/general/500x300/41463109__kxQNPRQ8DTNNPSYTTnPM6Dq92wZCxC9qeDj4Fmd3D8.jpg"
     ],
     "categories": [
-      "Hotel"
+      "ホテル"
     ],
     "category_group": "travel",
     "category_label": "旅行・宿",
@@ -2009,7 +2058,7 @@
       "https://fastly.4sqi.net/img/general/500x300/41463109_1w5K0hInt3J6RtMf7TA2AGP2IoMpu3Vf5UZSXkSqi6I.jpg"
     ],
     "categories": [
-      "Mountain"
+      "山岳"
     ],
     "category_group": "outdoors",
     "category_label": "自然・公園",
@@ -2032,7 +2081,7 @@
     "foursquare_url": "https://foursquare.com/v/4f0f9d364fc6884ee587a56f",
     "photos": [],
     "categories": [
-      "Mountain"
+      "山岳"
     ],
     "category_group": "outdoors",
     "category_label": "自然・公園",
@@ -2057,7 +2106,7 @@
       "https://fastly.4sqi.net/img/general/500x300/41463109_erXZKfLgM1QnNFAYODvBaDYwVCvea3aSb86COaiG1G0.jpg"
     ],
     "categories": [
-      "Ramen Restaurant"
+      "ラーメン屋"
     ],
     "category_group": "food",
     "category_label": "食事",
@@ -2084,7 +2133,7 @@
       "https://fastly.4sqi.net/img/general/500x300/41463109_n7QwLjTUeqgaK6DJnyXE2xuZI_Bpcl2R4Jj2q7l3sV0.jpg"
     ],
     "categories": [
-      "Hot Spring"
+      "温泉"
     ],
     "category_group": "onsen",
     "category_label": "温泉・サウナ",
@@ -2109,12 +2158,12 @@
       "https://fastly.4sqi.net/img/general/500x300/41463109_MK3w1P36K053ZwqGNOLSqs2rBKDljeOkfnKEtrlGWWE.jpg"
     ],
     "categories": [
-      "Tonkatsu Restaurant"
+      "とんかつ屋"
     ],
-    "category_group": "food",
-    "category_label": "食事",
-    "category_emoji": "🍜",
-    "category_color": "#e67e22",
+    "category_group": "other",
+    "category_label": "その他",
+    "category_emoji": "📍",
+    "category_color": "#607d8b",
     "data_source": "foursquare_checkin",
     "fsq_id": "4d6cc3e4cb7a8cfa3a625479",
     "checkin_count": 1,
@@ -2132,7 +2181,7 @@
     "foursquare_url": "https://foursquare.com/v/4e88f7ecd3e39d6f4e8999a2",
     "photos": [],
     "categories": [
-      "Hospital"
+      "病院"
     ],
     "category_group": "outdoors",
     "category_label": "自然・公園",
@@ -2146,7 +2195,7 @@
     "composition_hint": ""
   },
   {
-    "name": "Asahi Station (朝陽駅)",
+    "name": "朝陽駅",
     "user_comment": "",
     "date": "2026-06-10",
     "lat": 36.666151296160564,
@@ -2157,7 +2206,7 @@
       "https://fastly.4sqi.net/img/general/500x300/41463109_o9OsGCNy5hi45sBRT1rU-GRTEI2vLnw9HCuW2JKCVNQ.jpg"
     ],
     "categories": [
-      "Rail Station"
+      "鉄道駅"
     ],
     "category_group": "transport",
     "category_label": "交通",
@@ -2171,7 +2220,7 @@
     "composition_hint": ""
   },
   {
-    "name": "JR Nagano Station (JR 長野駅)",
+    "name": "JR 長野駅",
     "user_comment": "",
     "date": "2026-06-10",
     "lat": 36.64301286326485,
@@ -2180,7 +2229,7 @@
     "foursquare_url": "https://foursquare.com/v/513c401ae4b02357e4d44d8c",
     "photos": [],
     "categories": [
-      "Rail Station"
+      "鉄道駅"
     ],
     "category_group": "transport",
     "category_label": "交通",
@@ -2194,7 +2243,7 @@
     "composition_hint": ""
   },
   {
-    "name": "Ikushima Tarushima Shrine (生島足島神社)",
+    "name": "生島足島神社",
     "user_comment": "",
     "date": "2026-06-07",
     "lat": 36.360896286553476,
@@ -2205,7 +2254,7 @@
       "https://fastly.4sqi.net/img/general/500x300/41463109_MCQjbkFBwYgwjcXkkFfws0-CSxo9-xjB10zgMn8bz3Y.jpg"
     ],
     "categories": [
-      "Shrine"
+      "神社"
     ],
     "category_group": "culture",
     "category_label": "文化・娯楽",
@@ -2231,7 +2280,7 @@
       "https://fastly.4sqi.net/img/general/500x300/41463109_XGAr8jo4ToeYMjT0mK9SC6nnKUmebtrVsLCI_i9cDi8.jpg"
     ],
     "categories": [
-      "Café"
+      "カフェ"
     ],
     "category_group": "cafe",
     "category_label": "カフェ",
@@ -2245,7 +2294,7 @@
     "composition_hint": ""
   },
   {
-    "name": "Sukiya (すき家 117号飯山店)",
+    "name": "すき家 117号飯山店",
     "user_comment": "",
     "date": "2026-06-06",
     "lat": 36.830038849484815,
@@ -2256,12 +2305,12 @@
       "https://fastly.4sqi.net/img/general/500x300/41463109_SU5iruDgjZkqJ6o4RPUmahwP1jymqtMcPf9dKvWpDBk.jpg"
     ],
     "categories": [
-      "Donburi Restaurant"
+      "どんぶり屋"
     ],
-    "category_group": "food",
-    "category_label": "食事",
-    "category_emoji": "🍜",
-    "category_color": "#e67e22",
+    "category_group": "outdoors",
+    "category_label": "自然・公園",
+    "category_emoji": "🌿",
+    "category_color": "#2e7d32",
     "data_source": "foursquare_checkin",
     "fsq_id": "51ad9321498ee4c6a7798b91",
     "checkin_count": 1,
@@ -2270,7 +2319,7 @@
     "composition_hint": ""
   },
   {
-    "name": "CoCo Ichibanya (CoCo壱番屋 上田中央東店)",
+    "name": "CoCo壱番屋 上田中央東店",
     "user_comment": "",
     "date": "2026-06-05",
     "lat": 36.403550222359875,
@@ -2283,7 +2332,7 @@
       "https://fastly.4sqi.net/img/general/500x300/41463109_zcI4c5y_sGVKpqpnoVnb5GEE4KT6-vDf1PQMdGJ_Oq4.jpg"
     ],
     "categories": [
-      "Japanese Curry Restaurant"
+      "カレーライス店"
     ],
     "category_group": "food",
     "category_label": "食事",
@@ -2297,7 +2346,7 @@
     "composition_hint": ""
   },
   {
-    "name": "ANYTIME FITNESS (エニタイムフィットネス 上田店)",
+    "name": "エニタイムフィットネス 上田店",
     "user_comment": "",
     "date": "2026-06-01",
     "lat": 36.40414901266051,
@@ -2309,7 +2358,7 @@
       "https://fastly.4sqi.net/img/general/500x300/41463109_JLfPCSw9xG9RwXu8zQWHN6V4u4BkZ06o9zHBr_HcqPQ.jpg"
     ],
     "categories": [
-      "Gym and Studio"
+      "ジムとスタジオ"
     ],
     "category_group": "other",
     "category_label": "その他",
@@ -2332,7 +2381,7 @@
     "foursquare_url": "https://foursquare.com/v/502337f6e4b08284b9af42b0",
     "photos": [],
     "categories": [
-      "Spa"
+      "スパ"
     ],
     "category_group": "onsen",
     "category_label": "温泉・サウナ",
@@ -2355,7 +2404,7 @@
     "foursquare_url": "https://foursquare.com/v/59ec007926659b07be5bbd81",
     "photos": [],
     "categories": [
-      "Government Building"
+      "行政施設"
     ],
     "category_group": "other",
     "category_label": "その他",
@@ -2378,7 +2427,7 @@
     "foursquare_url": "https://foursquare.com/v/51b40a20498eaf138a60f71b",
     "photos": [],
     "categories": [
-      "Park"
+      "公園"
     ],
     "category_group": "outdoors",
     "category_label": "自然・公園",
@@ -2404,12 +2453,12 @@
       "https://fastly.4sqi.net/img/general/500x300/41463109_msYOxfEJ1WEBp8mqMIop6cLW49IW8fzwjP3gsemDugo.jpg"
     ],
     "categories": [
-      "Unagi Restaurant"
+      "うなぎ屋"
     ],
-    "category_group": "food",
-    "category_label": "食事",
-    "category_emoji": "🍜",
-    "category_color": "#e67e22",
+    "category_group": "other",
+    "category_label": "その他",
+    "category_emoji": "📍",
+    "category_color": "#607d8b",
     "data_source": "foursquare_checkin",
     "fsq_id": "53df6ebf498e478b05c0c86c",
     "checkin_count": 2,
@@ -2418,7 +2467,7 @@
     "composition_hint": ""
   },
   {
-    "name": "Takeya miso kaikan (タケヤ味噌会館)",
+    "name": "タケヤ味噌会館",
     "user_comment": "",
     "date": "2026-05-30",
     "lat": 36.05399574663118,
@@ -2429,7 +2478,7 @@
       "https://fastly.4sqi.net/img/general/500x300/41463109_f6nYGfhB0zLpsW1fIBMgUMylNvc1Aoh8DAo7M_OuQ8Q.jpg"
     ],
     "categories": [
-      "Museum"
+      "博物館"
     ],
     "category_group": "culture",
     "category_label": "文化・娯楽",
@@ -2454,7 +2503,7 @@
       "https://fastly.4sqi.net/img/general/500x300/41463109_bKr3t4-e0Rs0Kk9-Qnqz1JKUcEf1CPpjGrBWxYOcpUo.jpg"
     ],
     "categories": [
-      "Boat Launch"
+      "ボート発着場"
     ],
     "category_group": "outdoors",
     "category_label": "自然・公園",
@@ -2479,7 +2528,7 @@
       "https://fastly.4sqi.net/img/general/500x300/41463109_QdWxLJLuoRBH-p33DqcaS2JsHFIXf8K5znc2Vv1pWw4.jpg"
     ],
     "categories": [
-      "Park"
+      "公園"
     ],
     "category_group": "outdoors",
     "category_label": "自然・公園",
@@ -2505,7 +2554,7 @@
       "https://fastly.4sqi.net/img/general/500x300/41463109_VaFQFzItIsB6XUg-sTmwC8sUtDcvJcZEJq3mgFWgBf8.jpg"
     ],
     "categories": [
-      "Hot Spring"
+      "温泉"
     ],
     "category_group": "onsen",
     "category_label": "温泉・サウナ",
@@ -2528,7 +2577,7 @@
     "foursquare_url": "https://foursquare.com/v/4eb3576b5c5c5a531f1dc403",
     "photos": [],
     "categories": [
-      "Lake"
+      "湖沼"
     ],
     "category_group": "outdoors",
     "category_label": "自然・公園",
@@ -2542,7 +2591,7 @@
     "composition_hint": ""
   },
   {
-    "name": "Hotto Motto (ほっともっと)",
+    "name": "ほっともっと",
     "user_comment": "",
     "date": "2026-05-27",
     "lat": 36.40739765890388,
@@ -2551,7 +2600,7 @@
     "foursquare_url": "https://foursquare.com/v/52105a8a11d2ed7fb79b6d7a",
     "photos": [],
     "categories": [
-      "Deli"
+      "デリ"
     ],
     "category_group": "other",
     "category_label": "その他",
@@ -2576,7 +2625,7 @@
       "https://fastly.4sqi.net/img/general/500x300/41463109_w3ZQjMk352wR02wjJPFFddah_Ag_h_Xkt5tfO0HIZeY.jpg"
     ],
     "categories": [
-      "Bridge"
+      "橋"
     ],
     "category_group": "other",
     "category_label": "その他",
@@ -2599,7 +2648,7 @@
     "foursquare_url": "https://foursquare.com/v/64c635d4ec67e91c4e8fa317",
     "photos": [],
     "categories": [
-      "Gym"
+      "ジム"
     ],
     "category_group": "other",
     "category_label": "その他",
@@ -2613,7 +2662,7 @@
     "composition_hint": ""
   },
   {
-    "name": "Musashiya (武蔵家)",
+    "name": "武蔵家",
     "user_comment": "",
     "date": "2026-05-23",
     "lat": 35.749518,
@@ -2624,7 +2673,7 @@
       "https://fastly.4sqi.net/img/general/500x300/41463109_9nOZzyZtvWatwLzoDYT99KVYIckoG66o_RFByCTGQWg.jpg"
     ],
     "categories": [
-      "Ramen Restaurant"
+      "ラーメン屋"
     ],
     "category_group": "food",
     "category_label": "食事",
@@ -2638,7 +2687,7 @@
     "composition_hint": ""
   },
   {
-    "name": "Arakawa Bridge (荒川橋梁)",
+    "name": "荒川橋梁",
     "user_comment": "",
     "date": "2026-05-22",
     "lat": 35.75706,
@@ -2649,7 +2698,7 @@
       "https://fastly.4sqi.net/img/general/500x300/41463109_jbWohQ7iAXrLS0AY4CRX30r1Up3Q6Ornv4pNg4l5M_g.jpg"
     ],
     "categories": [
-      "Bridge"
+      "橋"
     ],
     "category_group": "outdoors",
     "category_label": "自然・公園",
@@ -2663,7 +2712,7 @@
     "composition_hint": ""
   },
   {
-    "name": "Hulic Hall (ヒューリック ホール)",
+    "name": "ヒューリック ホール",
     "user_comment": "",
     "date": "2026-05-21",
     "lat": 35.697695093884946,
@@ -2672,7 +2721,7 @@
     "foursquare_url": "https://foursquare.com/v/5192018a2fc6103965c32393",
     "photos": [],
     "categories": [
-      "Event Space"
+      "イベントスペース"
     ],
     "category_group": "other",
     "category_label": "その他",
@@ -2695,7 +2744,7 @@
     "foursquare_url": "https://foursquare.com/v/4c0b088d7e3fc928b4c1f482",
     "photos": [],
     "categories": [
-      "Mountain"
+      "山岳"
     ],
     "category_group": "outdoors",
     "category_label": "自然・公園",
@@ -2718,7 +2767,7 @@
     "foursquare_url": "https://foursquare.com/v/5018416ee4b0450cfcb473be",
     "photos": [],
     "categories": [
-      "Bridge"
+      "橋"
     ],
     "category_group": "other",
     "category_label": "その他",
@@ -2732,7 +2781,7 @@
     "composition_hint": ""
   },
   {
-    "name": "Burger King (バーガーキング 上田常田店)",
+    "name": "バーガーキング 上田常田店",
     "user_comment": "",
     "date": "2026-05-18",
     "lat": 36.394138,
@@ -2743,12 +2792,12 @@
       "https://fastly.4sqi.net/img/general/500x300/41463109_Jlm2zhBf3zbOqs3TdUUZ5vvwp5sDEKL4mr5_Dxiehzs.jpg"
     ],
     "categories": [
-      "Fast Food Restaurant"
+      "ファーストフード店"
     ],
-    "category_group": "food",
-    "category_label": "食事",
-    "category_emoji": "🍜",
-    "category_color": "#e67e22",
+    "category_group": "bar",
+    "category_label": "酒場",
+    "category_emoji": "🍺",
+    "category_color": "#7e57c2",
     "data_source": "foursquare_checkin",
     "fsq_id": "693f778870335b3014141309",
     "checkin_count": 3,
@@ -2766,7 +2815,7 @@
     "foursquare_url": "https://foursquare.com/v/4e0b1024d4c091ae45d7f85f",
     "photos": [],
     "categories": [
-      "Korean Restaurant"
+      "韓国料理店"
     ],
     "category_group": "food",
     "category_label": "食事",
@@ -2791,7 +2840,7 @@
       "https://fastly.4sqi.net/img/general/500x300/41463109_Cy5m1N4bK7AvY44U1qsz1xAzM9buKbIyRGePmas34dE.jpg"
     ],
     "categories": [
-      "Buddhist Temple"
+      "仏教寺院"
     ],
     "category_group": "culture",
     "category_label": "文化・娯楽",
@@ -2814,7 +2863,7 @@
     "foursquare_url": "https://foursquare.com/v/59be2c51ee628b65b3b4dc03",
     "photos": [],
     "categories": [
-      "Monument"
+      "モニュメント"
     ],
     "category_group": "onsen",
     "category_label": "温泉・サウナ",
@@ -2839,7 +2888,7 @@
       "https://fastly.4sqi.net/img/general/500x300/41463109_fjQ76jGVdRe9dRuLnk6_aghzGdNiZA5yvyg4-2EQN3w.jpg"
     ],
     "categories": [
-      "Track Stadium"
+      "陸上競技場"
     ],
     "category_group": "outdoors",
     "category_label": "自然・公園",
@@ -2864,12 +2913,12 @@
       "https://fastly.4sqi.net/img/general/500x300/41463109_R5e6mBOOiS0hOUP-zFZDDptrmYw1OHUDxrFjjSQi45Q.jpg"
     ],
     "categories": [
-      "Food and Beverage Retail"
+      "飲食小売"
     ],
-    "category_group": "food",
-    "category_label": "食事",
-    "category_emoji": "🍜",
-    "category_color": "#e67e22",
+    "category_group": "shop",
+    "category_label": "買い物",
+    "category_emoji": "🛍️",
+    "category_color": "#ec407a",
     "data_source": "foursquare_checkin",
     "fsq_id": "4dc4d2937d8b14fb461b7df4",
     "checkin_count": 1,
@@ -2878,7 +2927,7 @@
     "composition_hint": ""
   },
   {
-    "name": "SWEET Co. Azumino (スイートあづみ野)",
+    "name": "スイートあづみ野",
     "user_comment": "",
     "date": "2026-05-06",
     "lat": 36.32473157489553,
@@ -2889,7 +2938,7 @@
       "https://fastly.4sqi.net/img/general/500x300/41463109_lmYM7142xvcL-bQFoO6siR3cq5kriuD-jnDnQAfQBqs.jpg"
     ],
     "categories": [
-      "Bakery"
+      "パン屋"
     ],
     "category_group": "cafe",
     "category_label": "カフェ",
@@ -2914,7 +2963,7 @@
       "https://fastly.4sqi.net/img/general/500x300/41463109_4kozC08uLgOjQwRypGeNWEBlJBI1eDj26-eZsgUw_uY.jpg"
     ],
     "categories": [
-      "Hot Spring"
+      "温泉"
     ],
     "category_group": "onsen",
     "category_label": "温泉・サウナ",
@@ -2939,7 +2988,7 @@
       "https://fastly.4sqi.net/img/general/500x300/41463109_Azf-WrJ8-TPNHO6Flhw6quv6AP9PNE1_EBOKAEcL0AQ.jpg"
     ],
     "categories": [
-      "Ramen Restaurant"
+      "ラーメン屋"
     ],
     "category_group": "food",
     "category_label": "食事",
@@ -2964,7 +3013,7 @@
       "https://fastly.4sqi.net/img/general/500x300/41463109_hg3X_vVxq0r7sEYg0U_uWFBtCvw0RzcacAeULoq3A9Y.jpg"
     ],
     "categories": [
-      "Teishoku Restaurant"
+      "定食屋"
     ],
     "category_group": "food",
     "category_label": "食事",
@@ -2989,7 +3038,7 @@
       "https://fastly.4sqi.net/img/general/500x300/41463109_JHMWbQ21aKLLDq9uRSbKc87QzaTyqsaUnY54w4XxD_A.jpg"
     ],
     "categories": [
-      "Hot Spring"
+      "温泉"
     ],
     "category_group": "onsen",
     "category_label": "温泉・サウナ",
@@ -3012,12 +3061,12 @@
     "foursquare_url": "https://foursquare.com/v/68942294e176337195221f3d",
     "photos": [],
     "categories": [
-      "Shopping Mall"
+      "ショッピングモール"
     ],
-    "category_group": "shop",
-    "category_label": "買い物",
-    "category_emoji": "🛍️",
-    "category_color": "#ec407a",
+    "category_group": "other",
+    "category_label": "その他",
+    "category_emoji": "📍",
+    "category_color": "#607d8b",
     "data_source": "foursquare_checkin",
     "fsq_id": "68942294e176337195221f3d",
     "checkin_count": 1,
@@ -3026,7 +3075,7 @@
     "composition_hint": ""
   },
   {
-    "name": "Jigokudani Snow Monkey Park (地獄谷野猿公苑)",
+    "name": "地獄谷野猿公苑",
     "user_comment": "",
     "date": "2026-04-27",
     "lat": 36.732969909769565,
@@ -3037,12 +3086,12 @@
       "https://fastly.4sqi.net/img/general/500x300/41463109_mNyJjXGkj1UDDgN2KAl_cwJxdbQjo8iHlbWVGvz76UM.jpg"
     ],
     "categories": [
-      "Nature Preserve"
+      "自然保護地区"
     ],
-    "category_group": "outdoors",
-    "category_label": "自然・公園",
-    "category_emoji": "🌿",
-    "category_color": "#2e7d32",
+    "category_group": "other",
+    "category_label": "その他",
+    "category_emoji": "📍",
+    "category_color": "#607d8b",
     "data_source": "foursquare_checkin",
     "fsq_id": "4b7605b0f964a52032372ee3",
     "checkin_count": 1,
@@ -3062,7 +3111,7 @@
       "https://fastly.4sqi.net/img/general/500x300/41463109_238m_sbEaweXTi0ouP3w0R8l0P32bdPT7nPns3LMXII.jpg"
     ],
     "categories": [
-      "Inn"
+      "宿屋"
     ],
     "category_group": "travel",
     "category_label": "旅行・宿",
@@ -3087,7 +3136,7 @@
       "https://fastly.4sqi.net/img/general/500x300/41463109_PafyUbdHmpbjOgRl-KPpvLiqMkzionJS4FM8AUqDMYg.jpg"
     ],
     "categories": [
-      "Hot Spring"
+      "温泉"
     ],
     "category_group": "onsen",
     "category_label": "温泉・サウナ",
@@ -3112,7 +3161,7 @@
       "https://fastly.4sqi.net/img/general/500x300/41463109_-DxTDRXMwmbbHDhI8pG0tgS8jKnQhFx7wjNSNwIeEt4.jpg"
     ],
     "categories": [
-      "Hot Spring"
+      "温泉"
     ],
     "category_group": "onsen",
     "category_label": "温泉・サウナ",
@@ -3138,7 +3187,7 @@
       "https://fastly.4sqi.net/img/general/500x300/41463109_gPg_pbpx7cdTtr54XWvLOsDV_WQJgatNkaYzLWiu_JY.jpg"
     ],
     "categories": [
-      "Teishoku Restaurant"
+      "定食屋"
     ],
     "category_group": "food",
     "category_label": "食事",
@@ -3161,12 +3210,12 @@
     "foursquare_url": "https://foursquare.com/v/4b91dc1af964a52019dc33e3",
     "photos": [],
     "categories": [
-      "Music Venue"
+      "音楽関係"
     ],
-    "category_group": "culture",
-    "category_label": "文化・娯楽",
-    "category_emoji": "🎭",
-    "category_color": "#5c6bc0",
+    "category_group": "other",
+    "category_label": "その他",
+    "category_emoji": "📍",
+    "category_color": "#607d8b",
     "data_source": "foursquare_checkin",
     "fsq_id": "4b91dc1af964a52019dc33e3",
     "checkin_count": 1,
@@ -3184,7 +3233,7 @@
     "foursquare_url": "https://foursquare.com/v/5d4d8d0223367000080506cf",
     "photos": [],
     "categories": [
-      "Spa"
+      "スパ"
     ],
     "category_group": "onsen",
     "category_label": "温泉・サウナ",
@@ -3207,7 +3256,7 @@
     "foursquare_url": "https://foursquare.com/v/4e487c7eb61c03d0cd27e40f",
     "photos": [],
     "categories": [
-      "Historic and Protected Site"
+      "史跡と保護遺跡"
     ],
     "category_group": "other",
     "category_label": "その他",
@@ -3232,7 +3281,7 @@
       "https://fastly.4sqi.net/img/general/500x300/41463109_st9c6f8xr07eiJZ7hru0sZqZGtWI1BqqTuGZeqgvhP4.jpg"
     ],
     "categories": [
-      "Library"
+      "図書館"
     ],
     "category_group": "other",
     "category_label": "その他",
@@ -3255,7 +3304,7 @@
     "foursquare_url": "https://foursquare.com/v/4bdd2993f219c9b6f0211210",
     "photos": [],
     "categories": [
-      "Supermarket"
+      "スーパーマーケット"
     ],
     "category_group": "shop",
     "category_label": "買い物",
@@ -3278,7 +3327,7 @@
     "foursquare_url": "https://foursquare.com/v/58d73357ecb67e3da564f1a0",
     "photos": [],
     "categories": [
-      "Hot Spring"
+      "温泉"
     ],
     "category_group": "onsen",
     "category_label": "温泉・サウナ",
@@ -3301,7 +3350,7 @@
     "foursquare_url": "https://foursquare.com/v/4c01c444716bc9b66b79bc55",
     "photos": [],
     "categories": [
-      "Sporting Goods Retail"
+      "スポーツ用品小売"
     ],
     "category_group": "other",
     "category_label": "その他",
@@ -3315,7 +3364,7 @@
     "composition_hint": ""
   },
   {
-    "name": "Minami Nagano Sports Park (南長野運動公園)",
+    "name": "南長野運動公園",
     "user_comment": "",
     "date": "2026-04-04",
     "lat": 36.58035375672964,
@@ -3324,7 +3373,7 @@
     "foursquare_url": "https://foursquare.com/v/4da50c4fa86ed93def2fc8da",
     "photos": [],
     "categories": [
-      "Park"
+      "公園"
     ],
     "category_group": "outdoors",
     "category_label": "自然・公園",
@@ -3349,7 +3398,7 @@
       "https://fastly.4sqi.net/img/general/500x300/41463109_kHJxDmPSvr5alUFvXMAdCcuf3Jf9hEKMF2qyBkmOSI0.jpg"
     ],
     "categories": [
-      "Used Bookstore"
+      "古本屋"
     ],
     "category_group": "culture",
     "category_label": "文化・娯楽",
@@ -3363,7 +3412,7 @@
     "composition_hint": ""
   },
   {
-    "name": "TOHO Cinemas (TOHOシネマズ上田)",
+    "name": "TOHOシネマズ上田",
     "user_comment": "国宝",
     "date": "2026-04-04",
     "lat": 36.3997749741023,
@@ -3375,7 +3424,7 @@
       "https://fastly.4sqi.net/img/general/500x300/41463109_0IXWStrQunEkgdeStZ86pGjhfWDNLSSGQq05zortMl4.jpg"
     ],
     "categories": [
-      "Movie Theater"
+      "映画館"
     ],
     "category_group": "culture",
     "category_label": "文化・娯楽",
@@ -3389,7 +3438,7 @@
     "composition_hint": ""
   },
   {
-    "name": "Gusto (ガスト 松本元町店)",
+    "name": "ガスト 松本元町店",
     "user_comment": "",
     "date": "2026-04-02",
     "lat": 36.2430207081363,
@@ -3398,7 +3447,7 @@
     "foursquare_url": "https://foursquare.com/v/4bbd3dec8a4fb713b9d83c9d",
     "photos": [],
     "categories": [
-      "Japanese Family Restaurant"
+      "ファミリーレストラン"
     ],
     "category_group": "food",
     "category_label": "食事",
@@ -3412,7 +3461,7 @@
     "composition_hint": ""
   },
   {
-    "name": "Shin-Yokohama Park (新横浜公園)",
+    "name": "新横浜公園",
     "user_comment": "",
     "date": "2026-03-29",
     "lat": 35.512376349381434,
@@ -3421,7 +3470,7 @@
     "foursquare_url": "https://foursquare.com/v/4c0a22b8009a0f47b7e7e8bf",
     "photos": [],
     "categories": [
-      "Park"
+      "公園"
     ],
     "category_group": "outdoors",
     "category_label": "自然・公園",
@@ -3446,7 +3495,7 @@
       "https://fastly.4sqi.net/img/general/500x300/41463109_jIqQNmQiSfCKWGtQ31l0NeWTYeMEIxxLdCsc_fRd-dY.jpg"
     ],
     "categories": [
-      "North Indian Restaurant"
+      "北部インド料理"
     ],
     "category_group": "food",
     "category_label": "食事",
@@ -3460,7 +3509,7 @@
     "composition_hint": ""
   },
   {
-    "name": "Ichinose Quad Lift (一の瀬クワッドリフト)",
+    "name": "一の瀬クワッドリフト",
     "user_comment": "",
     "date": "2026-03-21",
     "lat": 36.738521749876476,
@@ -3471,7 +3520,7 @@
       "https://fastly.4sqi.net/img/general/500x300/41463109_Pf5bffRM0pcvGfSimO6DxTL1eMWCNK-9vjViMwdfY7s.jpg"
     ],
     "categories": [
-      "Ski Chairlift"
+      "スキーリフト"
     ],
     "category_group": "other",
     "category_label": "その他",
@@ -3485,7 +3534,7 @@
     "composition_hint": ""
   },
   {
-    "name": "Shiga Kogen Ski Resort (志賀高原スキー場)",
+    "name": "志賀高原スキー場",
     "user_comment": "雪はあるが、、、",
     "date": "2026-03-20",
     "lat": 36.73241833203871,
@@ -3498,12 +3547,12 @@
       "https://fastly.4sqi.net/img/general/500x300/41463109_xuM_-_Wlz-QJTME-Dhoi8--BCAqsP22IitiKzlCt9Pk.jpg"
     ],
     "categories": [
-      "Ski Resort and Area"
+      "スキー場"
     ],
-    "category_group": "travel",
-    "category_label": "旅行・宿",
-    "category_emoji": "🏨",
-    "category_color": "#26a69a",
+    "category_group": "other",
+    "category_label": "その他",
+    "category_emoji": "📍",
+    "category_color": "#607d8b",
     "data_source": "foursquare_checkin",
     "fsq_id": "4b94b280f964a520d58034e3",
     "checkin_count": 4,
@@ -3523,7 +3572,7 @@
       "https://fastly.4sqi.net/img/general/500x300/41463109_gH8nEren1eSpGUk0c6ce-O9idQgm8Hbwe7FhSplFGeo.jpg"
     ],
     "categories": [
-      "Coffee Shop"
+      "コーヒーショップ"
     ],
     "category_group": "cafe",
     "category_label": "カフェ",
@@ -3548,12 +3597,12 @@
       "https://fastly.4sqi.net/img/general/500x300/41463109_g1QI8sLdd3FsavjFVPFDXxSc-BUKrohFbwLQuZdeoF8.jpg"
     ],
     "categories": [
-      "Unagi Restaurant"
+      "うなぎ屋"
     ],
-    "category_group": "food",
-    "category_label": "食事",
-    "category_emoji": "🍜",
-    "category_color": "#e67e22",
+    "category_group": "other",
+    "category_label": "その他",
+    "category_emoji": "📍",
+    "category_color": "#607d8b",
     "data_source": "foursquare_checkin",
     "fsq_id": "4e463919b0fb93df27069f0a",
     "checkin_count": 1,
@@ -3571,7 +3620,7 @@
     "foursquare_url": "https://foursquare.com/v/4b65ae60f964a52065f92ae3",
     "photos": [],
     "categories": [
-      "Shrine"
+      "神社"
     ],
     "category_group": "culture",
     "category_label": "文化・娯楽",
@@ -3594,7 +3643,7 @@
     "foursquare_url": "https://foursquare.com/v/4c5d24b77f661b8da99b4a1c",
     "photos": [],
     "categories": [
-      "Fried Chicken Joint"
+      "フライドチキン店"
     ],
     "category_group": "other",
     "category_label": "その他",
@@ -3617,7 +3666,7 @@
     "foursquare_url": "https://foursquare.com/v/4b6e671ef964a520ffbb2ce3",
     "photos": [],
     "categories": [
-      "Community Center"
+      "コミュニティセンター"
     ],
     "category_group": "other",
     "category_label": "その他",
@@ -3631,7 +3680,7 @@
     "composition_hint": ""
   },
   {
-    "name": "Shiga Kogen Giant Ski Resort (志賀高原ジャイアントスキー場)",
+    "name": "志賀高原ジャイアントスキー場",
     "user_comment": "",
     "date": "2026-03-08",
     "lat": 36.720680495820865,
@@ -3640,12 +3689,12 @@
     "foursquare_url": "https://foursquare.com/v/4d72fd82946b6dcb70e2457a",
     "photos": [],
     "categories": [
-      "Ski Resort and Area"
+      "スキー場"
     ],
-    "category_group": "travel",
-    "category_label": "旅行・宿",
-    "category_emoji": "🏨",
-    "category_color": "#26a69a",
+    "category_group": "other",
+    "category_label": "その他",
+    "category_emoji": "📍",
+    "category_color": "#607d8b",
     "data_source": "foursquare_checkin",
     "fsq_id": "4d72fd82946b6dcb70e2457a",
     "checkin_count": 1,
@@ -3654,7 +3703,7 @@
     "composition_hint": ""
   },
   {
-    "name": "Hisamatsuyu (天然温泉 久松湯)",
+    "name": "天然温泉 久松湯",
     "user_comment": "",
     "date": "2026-02-28",
     "lat": 35.74143139484988,
@@ -3665,7 +3714,7 @@
       "https://fastly.4sqi.net/img/general/500x300/41463109_rynjBRpP38PaTWmjbqhb0pAHsG6DyPdUeSOd04CHSwE.jpg"
     ],
     "categories": [
-      "Hot Spring"
+      "温泉"
     ],
     "category_group": "onsen",
     "category_label": "温泉・サウナ",
@@ -3679,7 +3728,7 @@
     "composition_hint": ""
   },
   {
-    "name": "Ramen Butayama (ラーメン豚山)",
+    "name": "ラーメン豚山",
     "user_comment": "",
     "date": "2026-02-23",
     "lat": 35.695871,
@@ -3690,7 +3739,7 @@
       "https://fastly.4sqi.net/img/general/500x300/41463109_Xx-CSv_vtykotxXQ6C-xac5Y76GzwQX-1uXYtycZ24Q.jpg"
     ],
     "categories": [
-      "Ramen Restaurant"
+      "ラーメン屋"
     ],
     "category_group": "food",
     "category_label": "食事",
@@ -3704,7 +3753,7 @@
     "composition_hint": ""
   },
   {
-    "name": "Yumoto Station (湯本駅)",
+    "name": "湯本駅",
     "user_comment": "プラットホームに足湯駅",
     "date": "2026-02-22",
     "lat": 37.006272409414386,
@@ -3715,7 +3764,7 @@
       "https://fastly.4sqi.net/img/general/500x300/41463109_BrvpaVUA5Ua6fiKK4ahuH0DgZnIeeAS9Jc3Krgef3mA.jpg"
     ],
     "categories": [
-      "Rail Station"
+      "鉄道駅"
     ],
     "category_group": "transport",
     "category_label": "交通",
@@ -3740,7 +3789,7 @@
       "https://fastly.4sqi.net/img/general/500x300/41463109_l7rt6d2iixJqw4C35IedAObgLlooD3FhkYn2_s_h3CU.jpg"
     ],
     "categories": [
-      "Sports Bar"
+      "スポーツバー"
     ],
     "category_group": "cafe",
     "category_label": "カフェ",
@@ -3766,7 +3815,7 @@
       "https://fastly.4sqi.net/img/general/500x300/41463109_13TGCZOIJN4QPS9efXLKbGvpbbiwHwfcl5Kl7SYhucQ.jpg"
     ],
     "categories": [
-      "Resort"
+      "リゾート"
     ],
     "category_group": "travel",
     "category_label": "旅行・宿",
@@ -3789,7 +3838,7 @@
     "foursquare_url": "https://foursquare.com/v/59a2652f58002c3c1f0a9926",
     "photos": [],
     "categories": [
-      "Bridge"
+      "橋"
     ],
     "category_group": "other",
     "category_label": "その他",
@@ -3814,7 +3863,7 @@
       "https://fastly.4sqi.net/img/general/500x300/41463109_ZhmJcnz54EnlIftVpXIGC1wEC4iJtl7Tkvs8yG-IFWU.jpg"
     ],
     "categories": [
-      "Teishoku Restaurant"
+      "定食屋"
     ],
     "category_group": "food",
     "category_label": "食事",
@@ -3828,7 +3877,7 @@
     "composition_hint": ""
   },
   {
-    "name": "Iwaki Station (いわき駅)",
+    "name": "いわき駅",
     "user_comment": "方言で喋ってる人が多い！",
     "date": "2026-02-21",
     "lat": 37.05806431118885,
@@ -3839,7 +3888,7 @@
       "https://fastly.4sqi.net/img/general/500x300/41463109_LPNj-2ar66EF79lSeqy6BylceZjIwwwdyRPc81st0TA.jpg"
     ],
     "categories": [
-      "Rail Station"
+      "鉄道駅"
     ],
     "category_group": "transport",
     "category_label": "交通",
@@ -3864,7 +3913,7 @@
       "https://fastly.4sqi.net/img/general/500x300/41463109_0RbqyHrGONzX_-fxOA8vqSBeOAgzak0Cu2jJv--jLQM.jpg"
     ],
     "categories": [
-      "Yoshoku Restaurant"
+      "洋食レストラン"
     ],
     "category_group": "food",
     "category_label": "食事",
@@ -3887,7 +3936,7 @@
     "foursquare_url": "https://foursquare.com/v/4c08d14c6071a5933dcddc32",
     "photos": [],
     "categories": [
-      "Shrine"
+      "神社"
     ],
     "category_group": "culture",
     "category_label": "文化・娯楽",
@@ -3912,7 +3961,7 @@
       "https://fastly.4sqi.net/img/general/500x300/41463109_0q5pKm8-GeOF5z10cExkBOUm9zMX2_nSY5A-SrBP1QE.jpg"
     ],
     "categories": [
-      "Shrine"
+      "神社"
     ],
     "category_group": "culture",
     "category_label": "文化・娯楽",
@@ -3935,7 +3984,7 @@
     "foursquare_url": "https://foursquare.com/v/4bde4533e75c0f47ce88c703",
     "photos": [],
     "categories": [
-      "Hiking Trail"
+      "ハイキングコース"
     ],
     "category_group": "outdoors",
     "category_label": "自然・公園",
@@ -3949,7 +3998,7 @@
     "composition_hint": ""
   },
   {
-    "name": "Ario Ueda (アリオ上田)",
+    "name": "アリオ上田",
     "user_comment": "",
     "date": "2026-02-07",
     "lat": 36.399264,
@@ -3960,12 +4009,12 @@
       "https://fastly.4sqi.net/img/general/500x300/41463109_VSJ7ffRDnlC9ZmLEBJnF4jY3i1NorZPk-87VV_nMfzQ.jpg"
     ],
     "categories": [
-      "Shopping Mall"
+      "ショッピングモール"
     ],
-    "category_group": "shop",
-    "category_label": "買い物",
-    "category_emoji": "🛍️",
-    "category_color": "#ec407a",
+    "category_group": "other",
+    "category_label": "その他",
+    "category_emoji": "📍",
+    "category_color": "#607d8b",
     "data_source": "foursquare_checkin",
     "fsq_id": "4d5c85a59c31b60cd615b6ee",
     "checkin_count": 2,
@@ -3986,7 +4035,7 @@
       "https://fastly.4sqi.net/img/general/500x300/41463109_DEQra4v2WNszA6LsMWKueUrYXNr4ItoD1B48IF1VBJI.jpg"
     ],
     "categories": [
-      "Café"
+      "カフェ"
     ],
     "category_group": "cafe",
     "category_label": "カフェ",
@@ -4000,7 +4049,7 @@
     "composition_hint": ""
   },
   {
-    "name": "Nozawa Onsen ski resort (野沢温泉スキー場)",
+    "name": "野沢温泉スキー場",
     "user_comment": "2回目スキー",
     "date": "2026-02-03",
     "lat": 36.920262894677826,
@@ -4011,7 +4060,7 @@
       "https://fastly.4sqi.net/img/general/500x300/41463109_gj3gcwONQa_XJ-ZlzAzuU1Atmok1OdEdmeVWoaSZpn0.jpg"
     ],
     "categories": [
-      "Ski Resort and Area"
+      "スキー場"
     ],
     "category_group": "onsen",
     "category_label": "温泉・サウナ",
@@ -4036,7 +4085,7 @@
       "https://fastly.4sqi.net/img/general/500x300/41463109_MNcXgEiDygDXpMKcfXK4hPmQzsaKI7hmQa64547XflE.jpg"
     ],
     "categories": [
-      "Hot Spring"
+      "温泉"
     ],
     "category_group": "onsen",
     "category_label": "温泉・サウナ",
@@ -4050,7 +4099,7 @@
     "composition_hint": ""
   },
   {
-    "name": "Lake Suwa (諏訪湖)",
+    "name": "諏訪湖",
     "user_comment": "",
     "date": "2026-01-31",
     "lat": 36.04918,
@@ -4062,7 +4111,7 @@
       "https://fastly.4sqi.net/img/general/500x300/41463109_1ILHzypc4TvJlSUjoPfnxqpzk0CzGtc4H6gx3bNBwrQ.jpg"
     ],
     "categories": [
-      "Lake"
+      "湖沼"
     ],
     "category_group": "outdoors",
     "category_label": "自然・公園",
@@ -4087,7 +4136,7 @@
       "https://fastly.4sqi.net/img/general/500x300/41463109_BooUy0kRwT-tew-C5aFK9P_CLWk8TqSJq-bRuoLzM8Q.jpg"
     ],
     "categories": [
-      "Restaurant"
+      "レストラン"
     ],
     "category_group": "food",
     "category_label": "食事",
@@ -4110,7 +4159,7 @@
     "foursquare_url": "https://foursquare.com/v/4c21786434faef3bdb6c586d",
     "photos": [],
     "categories": [
-      "Rest Area"
+      "サービスエリア"
     ],
     "category_group": "outdoors",
     "category_label": "自然・公園",
@@ -4137,7 +4186,7 @@
       "https://fastly.4sqi.net/img/general/500x300/41463109_lFGBtFGk0_V3g75yV5tKZM28EFM4ghe93L9En1mynmg.jpg"
     ],
     "categories": [
-      "Hot Spring"
+      "温泉"
     ],
     "category_group": "onsen",
     "category_label": "温泉・サウナ",
@@ -4160,7 +4209,7 @@
     "foursquare_url": "https://foursquare.com/v/51ce6bd9498e603a95d19fdc",
     "photos": [],
     "categories": [
-      "Other Great Outdoors"
+      "その他の素晴らしいアウトドア"
     ],
     "category_group": "other",
     "category_label": "その他",
@@ -4183,12 +4232,12 @@
     "foursquare_url": "https://foursquare.com/v/4b637a5bf964a520f77c2ae3",
     "photos": [],
     "categories": [
-      "Ski Resort and Area"
+      "スキー場"
     ],
-    "category_group": "travel",
-    "category_label": "旅行・宿",
-    "category_emoji": "🏨",
-    "category_color": "#26a69a",
+    "category_group": "other",
+    "category_label": "その他",
+    "category_emoji": "📍",
+    "category_color": "#607d8b",
     "data_source": "foursquare_checkin",
     "fsq_id": "4b637a5bf964a520f77c2ae3",
     "checkin_count": 1,
@@ -4208,7 +4257,7 @@
       "https://fastly.4sqi.net/img/general/500x300/41463109_VVvre40sDbJb4cyzz9pdEnDMa-LpubaM5-r01Qr6yOA.jpg"
     ],
     "categories": [
-      "Hotel"
+      "ホテル"
     ],
     "category_group": "food",
     "category_label": "食事",
@@ -4235,12 +4284,12 @@
       "https://fastly.4sqi.net/img/general/500x300/41463109_eFbx86HgS9zLdaKZHZu3V7p5AOw4MM-yw7PEpMOmWr8.jpg"
     ],
     "categories": [
-      "Ski Resort and Area"
+      "スキー場"
     ],
-    "category_group": "travel",
-    "category_label": "旅行・宿",
-    "category_emoji": "🏨",
-    "category_color": "#26a69a",
+    "category_group": "other",
+    "category_label": "その他",
+    "category_emoji": "📍",
+    "category_color": "#607d8b",
     "data_source": "foursquare_checkin",
     "fsq_id": "4b6c253ef964a52010262ce3",
     "checkin_count": 3,
@@ -4258,7 +4307,7 @@
     "foursquare_url": "https://foursquare.com/v/592fab2fb1538e0e781555f3",
     "photos": [],
     "categories": [
-      "Hiking Trail"
+      "ハイキングコース"
     ],
     "category_group": "outdoors",
     "category_label": "自然・公園",
@@ -4281,12 +4330,12 @@
     "foursquare_url": "https://foursquare.com/v/4e723b3981dca8eb667d8ac1",
     "photos": [],
     "categories": [
-      "Grocery Store"
+      "食料品店"
     ],
-    "category_group": "shop",
-    "category_label": "買い物",
-    "category_emoji": "🛍️",
-    "category_color": "#ec407a",
+    "category_group": "other",
+    "category_label": "その他",
+    "category_emoji": "📍",
+    "category_color": "#607d8b",
     "data_source": "foursquare_checkin",
     "fsq_id": "4e723b3981dca8eb667d8ac1",
     "checkin_count": 1,
@@ -4304,7 +4353,7 @@
     "foursquare_url": "https://foursquare.com/v/53cb8668498e1f186ebf96bb",
     "photos": [],
     "categories": [
-      "Vintage and Thrift Store"
+      "ヴィンテージとリサイクルショップ"
     ],
     "category_group": "shop",
     "category_label": "買い物",
@@ -4327,12 +4376,12 @@
     "foursquare_url": "https://foursquare.com/v/4dae86e80cb65a8b0d1c76bc",
     "photos": [],
     "categories": [
-      "Imported Food Store"
+      "輸入食品店"
     ],
-    "category_group": "food",
-    "category_label": "食事",
-    "category_emoji": "🍜",
-    "category_color": "#e67e22",
+    "category_group": "cafe",
+    "category_label": "カフェ",
+    "category_emoji": "☕",
+    "category_color": "#8d6e63",
     "data_source": "foursquare_checkin",
     "fsq_id": "4dae86e80cb65a8b0d1c76bc",
     "checkin_count": 1,
@@ -4352,7 +4401,7 @@
       "https://fastly.4sqi.net/img/general/500x300/41463109_RDxTinsUCne8RaKr7SbRcwTJ8CmK6cVKUS21R_sLHTw.jpg"
     ],
     "categories": [
-      "Hotel"
+      "ホテル"
     ],
     "category_group": "travel",
     "category_label": "旅行・宿",
@@ -4377,12 +4426,12 @@
       "https://fastly.4sqi.net/img/general/500x300/41463109_Pqm9L4mngcNzH-JF175tmxKjVZRRYMv9O-g-KqijIf4.jpg"
     ],
     "categories": [
-      "Ski Resort and Area"
+      "スキー場"
     ],
-    "category_group": "travel",
-    "category_label": "旅行・宿",
-    "category_emoji": "🏨",
-    "category_color": "#26a69a",
+    "category_group": "other",
+    "category_label": "その他",
+    "category_emoji": "📍",
+    "category_color": "#607d8b",
     "data_source": "foursquare_checkin",
     "fsq_id": "4b7756a3f964a52048932ee3",
     "checkin_count": 2,
@@ -4400,12 +4449,12 @@
     "foursquare_url": "https://foursquare.com/v/4da96232f7b145b36ff599aa",
     "photos": [],
     "categories": [
-      "Japanese Restaurant"
+      "和食店"
     ],
-    "category_group": "food",
-    "category_label": "食事",
-    "category_emoji": "🍜",
-    "category_color": "#e67e22",
+    "category_group": "outdoors",
+    "category_label": "自然・公園",
+    "category_emoji": "🌿",
+    "category_color": "#2e7d32",
     "data_source": "foursquare_checkin",
     "fsq_id": "4da96232f7b145b36ff599aa",
     "checkin_count": 1,
@@ -4423,7 +4472,7 @@
     "foursquare_url": "https://foursquare.com/v/4b6e6b7bf964a520c6bc2ce3",
     "photos": [],
     "categories": [
-      "Hot Spring"
+      "温泉"
     ],
     "category_group": "onsen",
     "category_label": "温泉・サウナ",
@@ -4450,12 +4499,12 @@
       "https://fastly.4sqi.net/img/general/500x300/41463109_rZmBZPBMywvSQzHM23ktiFxbsbHb9JDGaBSnWr2eS1M.jpg"
     ],
     "categories": [
-      "Ski Resort and Area"
+      "スキー場"
     ],
-    "category_group": "travel",
-    "category_label": "旅行・宿",
-    "category_emoji": "🏨",
-    "category_color": "#26a69a",
+    "category_group": "outdoors",
+    "category_label": "自然・公園",
+    "category_emoji": "🌿",
+    "category_color": "#2e7d32",
     "data_source": "foursquare_checkin",
     "fsq_id": "4d5470dee7f1a1cd4322efa4",
     "checkin_count": 5,
@@ -4464,7 +4513,7 @@
     "composition_hint": ""
   },
   {
-    "name": "Moyan Curry (もうやんカレー)",
+    "name": "もうやんカレー",
     "user_comment": "",
     "date": "2026-01-06",
     "lat": 35.66632431604469,
@@ -4478,7 +4527,7 @@
       "https://fastly.4sqi.net/img/general/500x300/41463109_GRB2DH6IedtwZs-9ynydCpX1O4SVHAaBTtkV7_vVaQo.jpg"
     ],
     "categories": [
-      "Japanese Curry Restaurant"
+      "カレーライス店"
     ],
     "category_group": "food",
     "category_label": "食事",
@@ -4492,7 +4541,7 @@
     "composition_hint": ""
   },
   {
-    "name": "Tsujita (つじ田)",
+    "name": "つじ田",
     "user_comment": "",
     "date": "2026-01-04",
     "lat": 35.731831346003055,
@@ -4503,7 +4552,7 @@
       "https://fastly.4sqi.net/img/general/500x300/41463109_rVMT92TRDtsPUDqF9vpYz4MVatgT854iebuBEbMiHIU.jpg"
     ],
     "categories": [
-      "Ramen Restaurant"
+      "ラーメン屋"
     ],
     "category_group": "food",
     "category_label": "食事",
@@ -4530,7 +4579,7 @@
       "https://fastly.4sqi.net/img/general/500x300/41463109_Bp3rutIVEMF9u5GHaKRZza5q0lYJMQRncSLkyM7noXw.jpg"
     ],
     "categories": [
-      "Hot Spring"
+      "温泉"
     ],
     "category_group": "onsen",
     "category_label": "温泉・サウナ",
@@ -4544,7 +4593,7 @@
     "composition_hint": ""
   },
   {
-    "name": "Otome Station (乙女駅)",
+    "name": "乙女駅",
     "user_comment": "",
     "date": "2025-12-29",
     "lat": 36.31125695638975,
@@ -4555,7 +4604,7 @@
       "https://fastly.4sqi.net/img/general/500x300/41463109_mHWNLsbZ2ybZ2d5AQs7s5XuIUg-TtWRa7aou-Inec7s.jpg"
     ],
     "categories": [
-      "Rail Station"
+      "鉄道駅"
     ],
     "category_group": "transport",
     "category_label": "交通",
@@ -4578,7 +4627,7 @@
     "foursquare_url": "https://foursquare.com/v/548d261f498e0c4238f61048",
     "photos": [],
     "categories": [
-      "Hot Spring"
+      "温泉"
     ],
     "category_group": "onsen",
     "category_label": "温泉・サウナ",
@@ -4592,7 +4641,7 @@
     "composition_hint": ""
   },
   {
-    "name": "Skyline 2 (スカイライン第2ペアリフト)",
+    "name": "スカイライン第2ペアリフト",
     "user_comment": "",
     "date": "2025-12-29",
     "lat": 36.70934138825557,
@@ -4601,7 +4650,7 @@
     "foursquare_url": "https://foursquare.com/v/510c9224e4b0ee657fca44a7",
     "photos": [],
     "categories": [
-      "Ski Chairlift"
+      "スキーリフト"
     ],
     "category_group": "other",
     "category_label": "その他",
@@ -4624,12 +4673,12 @@
     "foursquare_url": "https://foursquare.com/v/4cb9417aa33bb1f759fb86fd",
     "photos": [],
     "categories": [
-      "Café"
+      "カフェ"
     ],
-    "category_group": "other",
-    "category_label": "その他",
-    "category_emoji": "📍",
-    "category_color": "#607d8b",
+    "category_group": "cafe",
+    "category_label": "カフェ",
+    "category_emoji": "☕",
+    "category_color": "#8d6e63",
     "data_source": "foursquare_checkin",
     "fsq_id": "4cb9417aa33bb1f759fb86fd",
     "checkin_count": 1,
@@ -4638,7 +4687,7 @@
     "composition_hint": ""
   },
   {
-    "name": "Happo-one ski resort (白馬八方尾根スキー場)",
+    "name": "白馬八方尾根スキー場",
     "user_comment": "",
     "date": "2025-12-28",
     "lat": 36.70201066143526,
@@ -4649,12 +4698,12 @@
       "https://fastly.4sqi.net/img/general/500x300/41463109_Gy2XISZB62NY0erPCRh2DzQLsu8-kHhjFiMPx3z1nic.jpg"
     ],
     "categories": [
-      "Ski Resort and Area"
+      "スキー場"
     ],
-    "category_group": "travel",
-    "category_label": "旅行・宿",
-    "category_emoji": "🏨",
-    "category_color": "#26a69a",
+    "category_group": "other",
+    "category_label": "その他",
+    "category_emoji": "📍",
+    "category_color": "#607d8b",
     "data_source": "foursquare_checkin",
     "fsq_id": "4b7f9428f964a520313530e3",
     "checkin_count": 1,
@@ -4674,7 +4723,7 @@
       "https://fastly.4sqi.net/img/general/500x300/41463109_-v8PBDlt040Dyoum_hs5dnPkmXxO48DzeEScTnQillg.jpg"
     ],
     "categories": [
-      "Ramen Restaurant"
+      "ラーメン屋"
     ],
     "category_group": "food",
     "category_label": "食事",
@@ -4697,7 +4746,7 @@
     "foursquare_url": "https://foursquare.com/v/50255391e4b073363f5bd6cb",
     "photos": [],
     "categories": [
-      "Track Stadium"
+      "陸上競技場"
     ],
     "category_group": "other",
     "category_label": "その他",
@@ -4711,7 +4760,7 @@
     "composition_hint": ""
   },
   {
-    "name": "Katanaya (手打そば 刀屋)",
+    "name": "手打そば 刀屋",
     "user_comment": "",
     "date": "2025-12-20",
     "lat": 36.398336,
@@ -4722,7 +4771,7 @@
       "https://fastly.4sqi.net/img/general/500x300/41463109_AqeGJoS7ajWKuciwJW-MVuFB24S-5ypJDVaNBgnET5o.jpg"
     ],
     "categories": [
-      "Soba Restaurant"
+      "蕎麦屋"
     ],
     "category_group": "food",
     "category_label": "食事",
@@ -4747,7 +4796,7 @@
       "https://fastly.4sqi.net/img/general/500x300/41463109_o4uDHFPPjy8ZXFFKvIYFgFXOta5JzVbPB0x3UDIGH0E.jpg"
     ],
     "categories": [
-      "Ramen Restaurant"
+      "ラーメン屋"
     ],
     "category_group": "food",
     "category_label": "食事",
@@ -4761,7 +4810,7 @@
     "composition_hint": ""
   },
   {
-    "name": "Mister Donut (ミスタードーナツ 上田しおだ野ショップ)",
+    "name": "ミスタードーナツ 上田しおだ野ショップ",
     "user_comment": "",
     "date": "2025-12-19",
     "lat": 36.38426126340031,
@@ -4770,7 +4819,7 @@
     "foursquare_url": "https://foursquare.com/v/4dbf6adb6e8124d25db68483",
     "photos": [],
     "categories": [
-      "Donut Shop"
+      "ドーナツ店"
     ],
     "category_group": "shop",
     "category_label": "買い物",
@@ -4784,7 +4833,7 @@
     "composition_hint": ""
   },
   {
-    "name": "JR Kanazawa Station (JR 金沢駅)",
+    "name": "JR 金沢駅",
     "user_comment": "",
     "date": "2025-12-15",
     "lat": 36.57812666323115,
@@ -4793,7 +4842,7 @@
     "foursquare_url": "https://foursquare.com/v/5a9a14bedb1d812223e63994",
     "photos": [],
     "categories": [
-      "Rail Station"
+      "鉄道駅"
     ],
     "category_group": "transport",
     "category_label": "交通",
@@ -4816,7 +4865,7 @@
     "foursquare_url": "https://foursquare.com/v/57fb3f49498e8ced1fb844f4",
     "photos": [],
     "categories": [
-      "Shrine"
+      "神社"
     ],
     "category_group": "outdoors",
     "category_label": "自然・公園",
@@ -4839,7 +4888,7 @@
     "foursquare_url": "https://foursquare.com/v/4ba44499f964a520869138e3",
     "photos": [],
     "categories": [
-      "Plaza"
+      "広場"
     ],
     "category_group": "other",
     "category_label": "その他",
@@ -4862,7 +4911,7 @@
     "foursquare_url": "https://foursquare.com/v/6371dfb206da8b5665d0a17b",
     "photos": [],
     "categories": [
-      "Hotel"
+      "ホテル"
     ],
     "category_group": "travel",
     "category_label": "旅行・宿",
@@ -4887,12 +4936,12 @@
       "https://fastly.4sqi.net/img/general/500x300/41463109_AMOSVhJ9RaXckVlnQ4Lt6f2j7Urp3AxwLaLZSgMj1fk.jpg"
     ],
     "categories": [
-      "Tonkatsu Restaurant"
+      "とんかつ屋"
     ],
-    "category_group": "food",
-    "category_label": "食事",
-    "category_emoji": "🍜",
-    "category_color": "#e67e22",
+    "category_group": "other",
+    "category_label": "その他",
+    "category_emoji": "📍",
+    "category_color": "#607d8b",
     "data_source": "foursquare_checkin",
     "fsq_id": "61aca555acc0a95a2793298d",
     "checkin_count": 2,
@@ -4901,7 +4950,7 @@
     "composition_hint": ""
   },
   {
-    "name": "Biblio Baum (百万石ビブリオバウム)",
+    "name": "百万石ビブリオバウム",
     "user_comment": "",
     "date": "2025-12-14",
     "lat": 36.548744,
@@ -4910,7 +4959,7 @@
     "foursquare_url": "https://foursquare.com/v/62c106cd0997de143463e221",
     "photos": [],
     "categories": [
-      "Library"
+      "図書館"
     ],
     "category_group": "other",
     "category_label": "その他",
@@ -4924,7 +4973,7 @@
     "composition_hint": ""
   },
   {
-    "name": "D.T. Suzuki Museum (鈴木大拙館)",
+    "name": "鈴木大拙館",
     "user_comment": "",
     "date": "2025-12-14",
     "lat": 36.55773545644739,
@@ -4935,7 +4984,7 @@
       "https://fastly.4sqi.net/img/general/500x300/41463109_ejNnmo1xLGbIK6E9jiq4FCRMcMg9PM1mzu5C39ttnkI.jpg"
     ],
     "categories": [
-      "Museum"
+      "博物館"
     ],
     "category_group": "culture",
     "category_label": "文化・娯楽",
@@ -27142,8 +27191,8 @@
     "name": "Yokohama Station (横浜駅)",
     "user_comment": "横浜",
     "date": "2021-07-15",
-    "lat": 35.466087159730286,
-    "lng": 139.62238049714625,
+    "lat": 35.46582652265948,
+    "lng": 139.62212653486864,
     "address": "西区高島2/南幸1 (根岸線/京浜東北線/横浜線/東海道線/横須賀線), 横浜市, 神奈川県, 220-0011",
     "foursquare_url": "https://foursquare.com/v/4b07c29cf964a520d8ff22e3",
     "photos": [],
