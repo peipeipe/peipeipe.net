@@ -21,7 +21,8 @@
     "fsq_id": "6a5ad4025bea561dc9bd23c6",
     "checkin_count": 1,
     "first_checkin_at": "2026-09-14T02:48:56+00:00",
-    "last_checkin_at": "2026-09-14T02:48:56+00:00"
+    "last_checkin_at": "2026-09-14T02:48:56+00:00",
+    "composition_hint": ""
   },
   {
     "name": "法住寺 虚空蔵堂",
@@ -43,7 +44,8 @@
     "fsq_id": "566b5421498e3f6623a0ee49",
     "checkin_count": 1,
     "first_checkin_at": "2026-09-14T02:11:32+00:00",
-    "last_checkin_at": "2026-09-14T02:11:32+00:00"
+    "last_checkin_at": "2026-09-14T02:11:32+00:00",
+    "composition_hint": ""
   },
   {
     "name": "双葉SA(下り) フードコート",
@@ -6623,8 +6625,8 @@
     "name": "JR Tokyo Station (JR 東京駅)",
     "user_comment": "",
     "date": "2025-08-17",
-    "lat": 35.68138876963805,
-    "lng": 139.7668278095948,
+    "lat": 35.68126223264101,
+    "lng": 139.7666181526545,
     "address": "丸の内1-9-1, 千代田区, 東京都, 100-6505",
     "foursquare_url": "https://foursquare.com/v/4be4f932d4f7c9b61df92420",
     "photos": [],
@@ -19472,8 +19474,8 @@
     "name": "Kansai International Airport (KIX) (関西国際空港)",
     "user_comment": "",
     "date": "2023-02-27",
-    "lat": 34.43555603211326,
-    "lng": 135.24412202484405,
+    "lat": 34.43505188176652,
+    "lng": 135.24343538614713,
     "address": "泉州空港北1, 泉佐野市, 大阪府, 549-0001",
     "foursquare_url": "https://foursquare.com/v/4b2696c0f964a520fa7d24e3",
     "photos": [
