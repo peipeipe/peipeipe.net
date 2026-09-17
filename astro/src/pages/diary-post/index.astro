@@ -347,7 +347,7 @@
     /* ── Date/Time Bar ── */
     .datetime-bar {
       display: grid;
-      grid-template-columns: 1fr 1fr auto;
+      grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) auto;
       gap: 10px;
       align-items: end;
       padding: 16px 20px;
@@ -679,6 +679,20 @@
       color: var(--text-muted);
     }
 
+    .submit-info:empty { display: none; }
+    .submit-actions { display: flex; gap: 8px; margin-left: auto; }
+
+    @media (max-width: 560px) {
+      .submit-bar { position: fixed; left: 16px; right: 16px; bottom: max(12px, env(safe-area-inset-bottom)); flex-wrap: wrap; padding: 12px; background: rgba(13,17,23,0.96); }
+      .app-wrapper { padding-bottom: 140px; }
+      .nav { padding: 8px 0 14px; }
+      .drop-zone { padding: 14px; }
+      .drop-icon, .drop-title, .drop-sub { display: none; }
+      textarea#content { min-height: 180px; font-size: 16px; }
+      .submit-info, .submit-actions { width: 100%; }
+      .submit-actions > .btn { flex: 1; padding: 13px 12px; }
+    }
+
     .btn-submit {
       padding: 13px 32px;
       font-size: 15px;
@@ -703,7 +717,7 @@
     /* ── Toast ── */
     .toast-container {
       position: fixed;
-      bottom: 24px;
+      bottom: 110px;
       left: 50%;
       transform: translateX(-50%);
       z-index: 999;
@@ -712,6 +726,8 @@
       gap: 8px;
       pointer-events: none;
       width: min(90vw, 400px);
+      max-height: calc(100dvh - 130px);
+      overflow-y: auto;
     }
 
     .toast {
@@ -754,6 +770,18 @@
     .hidden { display: none !important; }
 
     .section-gap { margin-bottom: 12px; }
+
+    .draft-panel { padding: 16px 20px; }
+    .draft-panel summary { font-size: 14px; cursor: pointer; }
+    .draft-panel[open] summary { margin-bottom: 12px; }
+    .draft-panel p { font-size: 13px; color: var(--text-sub); margin-bottom: 10px; }
+    .draft-actions { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 10px; }
+    .draft-panel select {
+      width: 100%; padding: 10px; color: var(--text); background: var(--bg-2);
+      border: 1px solid var(--border); border-radius: var(--radius-sm);
+    }
+    .btn:disabled { opacity: 0.5; cursor: not-allowed; }
+    #draft-status { margin-top: 10px; overflow-wrap: anywhere; }
 
     /* ── Token Badge ── */
     .token-badge {
@@ -852,6 +880,19 @@
     </form>
   </div>
 
+  <details class="glass draft-panel section-gap" id="draft-panel">
+    <summary>下書きを開く</summary>
+    <label for="draft-list">保存した下書き</label>
+    <select id="draft-list"><option value="">「一覧を更新」で下書きを取得</option></select>
+    <div class="draft-actions">
+      <button type="button" class="btn btn-secondary" id="btn-refresh-drafts">一覧を更新</button>
+      <button type="button" class="btn btn-secondary" id="btn-open-draft" disabled>開く</button>
+      <button type="button" class="btn btn-secondary" id="btn-new-draft">新しく書く</button>
+      <button type="button" class="btn btn-danger" id="btn-delete-draft" disabled>削除</button>
+    </div>
+    <p id="draft-status" role="status">下書きを開いていません</p>
+  </details>
+
   <!-- ── Date / Time ── -->
   <div class="glass datetime-bar section-gap">
     <div class="field">
@@ -923,9 +964,12 @@
   <!-- ── Submit ── -->
   <div class="glass submit-bar">
     <span class="submit-info" id="submit-info"></span>
-    <button class="btn btn-primary btn-submit" id="btn-submit" disabled>
-      <span id="submit-label">🚀 投稿する</span>
-    </button>
+    <div class="submit-actions">
+      <button type="button" class="btn btn-secondary" id="btn-save-draft" disabled>下書き保存</button>
+      <button class="btn btn-primary btn-submit" id="btn-submit" disabled>
+        <span id="submit-label">🚀 投稿する</span>
+      </button>
+    </div>
   </div>
 
 </div>
@@ -935,6 +979,7 @@
 
 <script>
   import { writeWebpBlob } from "../../lib/upload-webp";
+  import { DRAFT_DIRECTORY, draftPath, serializeDraft, parseDraft, assertDraftUnchanged } from "../../lib/diary-drafts.mjs";
   /* ════════════════════════════════════════════
      State
   ════════════════════════════════════════════ */
@@ -946,6 +991,8 @@
     imageUploads: [],
     imageProcessing: false,
     processing: false,
+    draft: null,
+    savedText: '',
   };
 
   /* ════════════════════════════════════════════
@@ -980,6 +1027,13 @@
   const tabBtns          = document.querySelectorAll('.tab-btn');
   const tabPanels        = document.querySelectorAll('.tab-panel');
   const toolbarBtns      = document.querySelectorAll('.toolbar-btn');
+  const draftList = $('draft-list');
+  const draftStatus = $('draft-status');
+  const btnSaveDraft = $('btn-save-draft');
+  const btnRefreshDrafts = $('btn-refresh-drafts');
+  const btnOpenDraft = $('btn-open-draft');
+  const btnNewDraft = $('btn-new-draft');
+  const btnDeleteDraft = $('btn-delete-draft');
 
   /* ════════════════════════════════════════════
      LocalStorage
@@ -1167,6 +1221,7 @@
   };
 
   async function processImageFiles(files) {
+    if (state.processing || state.imageProcessing) return;
     const imageFiles = Array.from(files).filter(file => file.type.startsWith('image/'));
     if (imageFiles.length === 0) {
       showToast('error', 'エラー', '画像ファイルを選択してください');
@@ -1398,6 +1453,22 @@
     const hasContent = Boolean(textarea.value.trim() || state.imageUploads.length > 0);
     const ok = state.token && hasContent && !state.processing && !state.imageProcessing;
     btnSubmit.disabled = !ok;
+    const busy = state.processing || state.imageProcessing;
+    btnSaveDraft.disabled = busy || !state.token || !textarea.value.trim() || !inputDate.value || !inputTime.value;
+    btnRefreshDrafts.disabled = busy || !state.token;
+    btnOpenDraft.disabled = busy || !state.token || !draftList.value;
+    btnDeleteDraft.disabled = busy || !state.token || !state.draft;
+    btnNewDraft.disabled = busy;
+    draftList.disabled = busy;
+    // Keep the submitted snapshot stable while saving or publishing.
+    [textarea, inputDate, inputTime, btnNow, btnPickImage, inputToken, btnClear,
+      $('btn-save-settings'), ...toolbarBtns].forEach(el => { el.disabled = state.processing; });
+    if (state.processing) imageList.querySelectorAll('button').forEach(el => { el.disabled = true; });
+    if (state.draft) {
+      draftStatus.textContent = draftSnapshot() === state.savedText
+        ? '下書きを開いています（本文と日時は保存済み）'
+        : '下書きを編集中（本文または日時に未保存の変更があります）';
+    }
 
     if (!state.token) {
       submitInfo.textContent = '⚙ 右上の設定からGitHub Tokenを入力してください';
@@ -1424,9 +1495,10 @@
   }
 
   /** ファイルの現在の内容とSHAを取得（なければ null） */
-  async function getFileInfo(path) {
-    const res = await fetch(`${API}/repos/${REPO_OWNER}/${REPO_NAME}/contents/${path}`, {
+  async function getFileInfo(path, ref = 'master') {
+    const res = await fetch(`${API}/repos/${REPO_OWNER}/${REPO_NAME}/contents/${path}?ref=${encodeURIComponent(ref)}`, {
       headers: ghHeaders(),
+      cache: 'no-store',
     });
     if (res.status === 404) return null;
     if (!res.ok) throw new Error(`ファイル取得失敗 (${res.status}): ${path}`);
@@ -1454,6 +1526,7 @@
 
   async function ghJson(path, options = {}) {
     const res = await fetch(`${API}/repos/${REPO_OWNER}/${REPO_NAME}${path}`, {
+      cache: 'no-store',
       ...options,
       headers: {
         ...ghHeaders(),
@@ -1462,6 +1535,9 @@
     });
     if (!res.ok) {
       const err = await res.json().catch(() => ({}));
+      if (res.status === 409 || res.status === 422) {
+        throw new Error('別の端末で更新・投稿されたか、保存先と競合しています。本文は画面に残っています。本文をコピーしてから一覧を更新し、下書きを開き直してください。');
+      }
       throw new Error(`GitHub APIエラー (${res.status}): ${err.message || path}`);
     }
     return res.json();
@@ -1475,10 +1551,11 @@
     return data.sha;
   }
 
-  async function commitFilesOnce(files, message) {
+  async function commitFilesOnce(files, message, expectedParentSha) {
     const branch = 'master';
     const ref = await ghJson(`/git/ref/heads/${branch}`);
-    const parentSha = ref.object.sha;
+    const parentSha = expectedParentSha || ref.object.sha;
+    if (ref.object.sha !== parentSha) throw new Error('別の更新がありました。内容は保持されています。もう一度投稿してください。');
     const parent = await ghJson(`/git/commits/${parentSha}`);
 
     const tree = [];
@@ -1487,7 +1564,7 @@
         path: file.path,
         mode: '100644',
         type: 'blob',
-        sha: await createBlob(file.content, file.encoding),
+        sha: file.delete ? null : await createBlob(file.content, file.encoding),
       });
     }
 
@@ -1516,6 +1593,123 @@
       }),
     });
   }
+
+  function draftSnapshot() {
+    return JSON.stringify({ date: inputDate.value, time: inputTime.value, text: textarea.value });
+  }
+
+  function hasUnsavedWork() {
+    return state.imageUploads.length > 0 || (state.draft
+      ? draftSnapshot() !== state.savedText : Boolean(textarea.value));
+  }
+
+  function canReplaceEditor() {
+    return !hasUnsavedWork() || confirm('保存していない本文・日時や添付写真を破棄しますか？');
+  }
+
+  async function draftOperation(action) {
+    if (state.processing || state.imageProcessing || !state.token) return;
+    setLoading(true, '下書きを処理中...');
+    validateForm();
+    try {
+      await action();
+    } catch (err) {
+      showToast('error', '下書きの処理に失敗しました', err.message, 9000);
+    } finally {
+      setLoading(false);
+    }
+  }
+
+  async function refreshDrafts() {
+    const res = await fetch(`${API}/repos/${REPO_OWNER}/${REPO_NAME}/contents/${DRAFT_DIRECTORY}?ref=master`, {
+      headers: ghHeaders(), cache: 'no-store',
+    });
+    if (!res.ok && res.status !== 404) throw new Error(`下書き一覧の取得に失敗しました (${res.status})`);
+    const entries = res.status === 404 ? [] : await res.json();
+    const selected = state.draft?.path || draftList.value;
+    draftList.replaceChildren(new Option('下書きを選択してください', ''));
+    const drafts = entries.filter(entry => entry.type === 'file' && /^\d{4}-\d{2}-\d{2}-\d{4}-.+\.json$/.test(entry.name));
+    drafts.sort((a, b) => b.name.localeCompare(a.name));
+    for (const entry of drafts) {
+      const label = `${entry.name.slice(0, 10)} ${entry.name.slice(11, 13)}:${entry.name.slice(13, 15)} · ${entry.name.slice(16, 24)}`;
+      draftList.add(new Option(label, entry.path));
+    }
+    if (drafts.some(entry => entry.path === selected)) draftList.value = selected;
+    if (!drafts.length) draftList.options[0].textContent = '保存した下書きはありません';
+  }
+
+  $('draft-panel').addEventListener('toggle', () => {
+    if ($('draft-panel').open) draftOperation(refreshDrafts);
+  });
+  btnRefreshDrafts.addEventListener('click', () => draftOperation(refreshDrafts));
+  draftList.addEventListener('change', validateForm);
+  [inputDate, inputTime].forEach(el => el.addEventListener('input', validateForm));
+  btnNow.addEventListener('click', validateForm);
+
+  btnSaveDraft.addEventListener('click', () => {
+    if (btnSaveDraft.disabled) return;
+    draftOperation(async () => {
+      const path = state.draft?.path || draftPath(inputDate.value, inputTime.value, crypto.randomUUID());
+      const content = serializeDraft({ date: inputDate.value, time: inputTime.value, text: textarea.value });
+      const result = await ghJson(`/contents/${path}`, {
+        method: 'PUT',
+        body: JSON.stringify({
+          message: `Save diary draft: ${inputDate.value} ${inputTime.value}`,
+          content: utf8ToBase64(content), branch: 'master',
+          ...(state.draft ? { sha: state.draft.sha } : {}),
+        }),
+      });
+      state.draft = { path, sha: result.content.sha };
+      state.savedText = draftSnapshot();
+      showToast('success', '下書き保存しました', '', 2500);
+      try { await refreshDrafts(); } catch { showToast('info', '下書きは保存済みです', '一覧の再取得に失敗しました。「一覧を更新」を押してください。'); }
+    });
+  });
+
+  btnOpenDraft.addEventListener('click', () => {
+    if (btnOpenDraft.disabled || !canReplaceEditor()) return;
+    draftOperation(async () => {
+      const path = draftList.value;
+      const file = await getFileInfo(path);
+      if (!file) throw new Error('この下書きは投稿または削除されています。一覧を更新してください。');
+      const draft = parseDraft(file.content);
+      textarea.value = draft.text;
+      inputDate.value = draft.date;
+      inputTime.value = draft.time;
+      state.draft = { path, sha: file.sha };
+      state.savedText = draftSnapshot();
+      charCount.textContent = textarea.value.length.toLocaleString();
+      resetImages();
+      $('tab-write-btn').click();
+      $('draft-panel').open = false;
+    });
+  });
+
+  btnNewDraft.addEventListener('click', () => {
+    if (btnNewDraft.disabled || !canReplaceEditor()) return;
+    resetAfterSubmit();
+    validateForm();
+  });
+
+  btnDeleteDraft.addEventListener('click', () => {
+    if (btnDeleteDraft.disabled || !confirm('開いている下書きをGitHubから削除しますか？ 編集中の本文と写真は画面に残ります。')) return;
+    draftOperation(async () => {
+      await ghJson(`/contents/${state.draft.path}`, {
+        method: 'DELETE',
+        body: JSON.stringify({ message: 'Delete diary draft', sha: state.draft.sha, branch: 'master' }),
+      });
+      state.draft = null;
+      state.savedText = '';
+      draftStatus.textContent = '下書きを削除しました。編集内容は画面に残っています。';
+      try { await refreshDrafts(); } catch { showToast('info', '下書きは削除済みです', '一覧を更新してください。'); }
+    });
+  });
+
+  window.addEventListener('beforeunload', event => {
+    if (!hasUnsavedWork() && !state.processing) return;
+    event.preventDefault();
+    event.returnValue = '';
+  });
 
   function diaryImagePath(date, time, ext, index, total) {
     const timeStamp = time.replace(':', '');
@@ -1580,6 +1774,13 @@
     try {
       const imageUrls = [];
       const files = [];
+      const head = await ghJson('/git/ref/heads/master');
+      const parentSha = head.object.sha;
+      if (state.draft) {
+        assertDraftUnchanged(state.draft, await getFileInfo(state.draft.path, parentSha));
+        // Publishing and consuming the draft must succeed as one commit.
+        files.push({ path: state.draft.path, delete: true });
+      }
 
       // ── Step 1: 画像パスを決定 ──
       state.imageUploads.forEach((upload, index) => {
@@ -1596,7 +1797,7 @@
       // ── Step 2: 日記ファイルを読み込み ──
       setLoading(true, '📖 日記ファイルを確認中...');
       const diaryPath = `astro/content/diary/${date}.md`;
-      const existing  = await getFileInfo(diaryPath);
+      const existing  = await getFileInfo(diaryPath, parentSha);
 
       // ── Step 3: Markdownを生成して書き込み ──
       setLoading(true, '✍️ 日記を保存中...');
@@ -1611,13 +1812,14 @@
         encoding: 'base64',
       });
 
-      await commitFilesOnce(files, commitMsg);
+      await commitFilesOnce(files, commitMsg, parentSha);
 
       showToast('success', '投稿完了 🎉',
         `${date} ${time} の日記を保存しました。Cloudflare Pagesのビルド後に反映されます。`,
         7000
       );
       resetAfterSubmit();
+      try { await refreshDrafts(); } catch { /* Publishing already succeeded. */ }
 
     } catch (err) {
       console.error(err);
@@ -1637,6 +1839,7 @@
 
   function setLoading(on, label = '🚀 投稿する') {
     state.processing = on;
+    validateForm();
     submitLabel.textContent = on ? label : '🚀 投稿する';
     btnSubmit.disabled = on;
     const existing = $('submit-spinner');
@@ -1647,11 +1850,16 @@
       submitLabel.before(spinner);
     } else if (!on) {
       existing?.remove();
+      renderImageUploads();
       validateForm();
     }
   }
 
   function resetAfterSubmit() {
+    state.draft = null;
+    state.savedText = '';
+    draftStatus.textContent = '下書きを開いていません';
+    draftList.value = '';
     textarea.value = '';
     charCount.textContent = '0';
     resetImages();
