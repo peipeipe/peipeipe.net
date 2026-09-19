@@ -1,5 +1,56 @@
 [
   {
+    "name": "菅平サンホテル",
+    "user_comment": "温泉あり",
+    "date": "2026-09-19",
+    "lat": 36.529066245953295,
+    "lng": 138.33835980102063,
+    "address": "菅平高原菅平1223-1950, 上田市, 長野県, 386-2204",
+    "foursquare_url": "https://foursquare.com/v/4dbbbd9793a08f9274ac67e5",
+    "photos": [
+      "https://fastly.4sqi.net/img/general/500x300/41463109_JFerDCGc-MXk4t-iR1Nz2P0lKRJlFDXzINoSR2XuMZM.jpg",
+      "https://fastly.4sqi.net/img/general/500x300/41463109_7d0fIh5ujkqWFqWqQ6A7B_rRX-5RrL6F1NERysO28VE.jpg"
+    ],
+    "categories": [
+      "ホテル"
+    ],
+    "category_group": "travel",
+    "category_label": "旅行・宿",
+    "category_emoji": "🏨",
+    "category_color": "#26a69a",
+    "data_source": "foursquare_checkin",
+    "fsq_id": "4dbbbd9793a08f9274ac67e5",
+    "checkin_count": 2,
+    "first_checkin_at": "2025-07-12T04:01:46+00:00",
+    "last_checkin_at": "2026-09-19T05:08:26+00:00",
+    "composition_hint": ""
+  },
+  {
+    "name": "峰の原高原クロスカントリー",
+    "user_comment": "帰れたよ",
+    "date": "2026-09-19",
+    "lat": 36.5480176026278,
+    "lng": 138.3538929740119,
+    "address": "大字仁礼峰の原3153-654, 須坂市, 長野県",
+    "foursquare_url": "https://foursquare.com/v/540b9b8b498eadd8be7e9514",
+    "photos": [
+      "https://fastly.4sqi.net/img/general/500x300/41463109_AOb6gmizN8qkXvaEnsRIIoJ-fb7qpbQq9RNVWAmcd4c.jpg"
+    ],
+    "categories": [
+      "スポーツとレクリエーション"
+    ],
+    "category_group": "other",
+    "category_label": "その他",
+    "category_emoji": "📍",
+    "category_color": "#607d8b",
+    "data_source": "foursquare_checkin",
+    "fsq_id": "540b9b8b498eadd8be7e9514",
+    "checkin_count": 2,
+    "first_checkin_at": "2025-07-11T23:25:03+00:00",
+    "last_checkin_at": "2026-09-19T00:13:36+00:00",
+    "composition_hint": ""
+  },
+  {
     "name": "Uu Ueda",
     "user_comment": "",
     "date": "2026-09-18",
@@ -46,7 +97,8 @@
     "fsq_id": "57ab1e63cd10a5003d912067",
     "checkin_count": 1,
     "first_checkin_at": "2026-09-16T09:49:55+00:00",
-    "last_checkin_at": "2026-09-16T09:49:55+00:00"
+    "last_checkin_at": "2026-09-16T09:49:55+00:00",
+    "composition_hint": ""
   },
   {
     "name": "ペンギンベーカリー上田しおだ野店",
@@ -4935,7 +4987,7 @@
     "foursquare_url": "https://foursquare.com/v/6371dfb206da8b5665d0a17b",
     "photos": [],
     "categories": [
-      "ホテル"
+      "Hotel"
     ],
     "category_group": "travel",
     "category_label": "旅行・宿",
@@ -4960,12 +5012,12 @@
       "https://fastly.4sqi.net/img/general/500x300/41463109_AMOSVhJ9RaXckVlnQ4Lt6f2j7Urp3AxwLaLZSgMj1fk.jpg"
     ],
     "categories": [
-      "とんかつ屋"
+      "Tonkatsu Restaurant"
     ],
-    "category_group": "other",
-    "category_label": "その他",
-    "category_emoji": "📍",
-    "category_color": "#607d8b",
+    "category_group": "food",
+    "category_label": "食事",
+    "category_emoji": "🍜",
+    "category_color": "#e67e22",
     "data_source": "foursquare_checkin",
     "fsq_id": "61aca555acc0a95a2793298d",
     "checkin_count": 2,
@@ -7186,56 +7238,6 @@
     "checkin_count": 1,
     "first_checkin_at": "2025-07-12T05:03:51+00:00",
     "last_checkin_at": "2025-07-12T05:03:51+00:00",
-    "composition_hint": ""
-  },
-  {
-    "name": "菅平サンホテル",
-    "user_comment": "",
-    "date": "2025-07-12",
-    "lat": 36.529066245953295,
-    "lng": 138.33835980102063,
-    "address": "菅平高原菅平1223-1950, 上田市, 長野県, 386-2204",
-    "foursquare_url": "https://foursquare.com/v/4dbbbd9793a08f9274ac67e5",
-    "photos": [
-      "https://fastly.4sqi.net/img/general/500x300/41463109_7d0fIh5ujkqWFqWqQ6A7B_rRX-5RrL6F1NERysO28VE.jpg"
-    ],
-    "categories": [
-      "Hotel"
-    ],
-    "category_group": "travel",
-    "category_label": "旅行・宿",
-    "category_emoji": "🏨",
-    "category_color": "#26a69a",
-    "data_source": "foursquare_checkin",
-    "fsq_id": "4dbbbd9793a08f9274ac67e5",
-    "checkin_count": 1,
-    "first_checkin_at": "2025-07-12T04:01:46+00:00",
-    "last_checkin_at": "2025-07-12T04:01:46+00:00",
-    "composition_hint": ""
-  },
-  {
-    "name": "峰の原高原クロスカントリー",
-    "user_comment": "帰れたよ",
-    "date": "2025-07-11",
-    "lat": 36.5480176026278,
-    "lng": 138.3538929740119,
-    "address": "大字仁礼峰の原3153-654, 須坂市, 長野県",
-    "foursquare_url": "https://foursquare.com/v/540b9b8b498eadd8be7e9514",
-    "photos": [
-      "https://fastly.4sqi.net/img/general/500x300/41463109_AOb6gmizN8qkXvaEnsRIIoJ-fb7qpbQq9RNVWAmcd4c.jpg"
-    ],
-    "categories": [
-      "Sports and Recreation"
-    ],
-    "category_group": "other",
-    "category_label": "その他",
-    "category_emoji": "📍",
-    "category_color": "#607d8b",
-    "data_source": "foursquare_checkin",
-    "fsq_id": "540b9b8b498eadd8be7e9514",
-    "checkin_count": 1,
-    "first_checkin_at": "2025-07-11T23:25:03+00:00",
-    "last_checkin_at": "2025-07-11T23:25:03+00:00",
     "composition_hint": ""
   },
   {
@@ -21689,8 +21691,8 @@
     "name": "Ōmiya Station (大宮駅)",
     "user_comment": "初上陸（マジ）",
     "date": "2022-09-21",
-    "lat": 35.90638816461068,
-    "lng": 139.62411344545018,
+    "lat": 35.90660102198511,
+    "lng": 139.62399890993686,
     "address": "大宮区錦町, さいたま市, 埼玉県, 330-0853",
     "foursquare_url": "https://foursquare.com/v/4b3dd6ddf964a520089725e3",
     "photos": [],
@@ -27215,8 +27217,8 @@
     "name": "Yokohama Station (横浜駅)",
     "user_comment": "横浜",
     "date": "2021-07-15",
-    "lat": 35.46582652265948,
-    "lng": 139.62212653486864,
+    "lat": 35.46597692952583,
+    "lng": 139.6223257208761,
     "address": "西区高島2/南幸1 (根岸線/京浜東北線/横浜線/東海道線/横須賀線), 横浜市, 神奈川県, 220-0011",
     "foursquare_url": "https://foursquare.com/v/4b07c29cf964a520d8ff22e3",
     "photos": [],
@@ -28874,8 +28876,8 @@
     "name": "Kawasaki Station (川崎駅)",
     "user_comment": "No urgent need",
     "date": "2020-03-14",
-    "lat": 35.531287686577905,
-    "lng": 139.69684855949478,
+    "lat": 35.531427565359614,
+    "lng": 139.69719757705207,
     "address": "川崎区駅前本町26-1, 川崎市, 神奈川県, 210-0007",
     "foursquare_url": "https://foursquare.com/v/4b274cf5f964a520bf8524e3",
     "photos": [],
