@@ -1,4 +1,5 @@
 ---
+import { buildDayTimeline } from "@/lib/reader-timeline.mjs";
 import BaseLayout from "@/layouts/BaseLayout.astro";
 import { formatDistance, formatDuration, getActivities } from "@/lib/activity";
 import { getPlaces } from "@/lib/checkins";
@@ -22,10 +23,13 @@ const entries = dateIds.map((dateId) => {
     dateId,
     title: diary?.title || formatTimelineDate(date),
     url: diary?.url || "",
-    html: diary ? addLazyLoading(diary.html) : "",
+    records: buildDayTimeline(
+      dateId,
+      diary ? addLazyLoading(diary.html) : "",
+      activitiesByDate.get(dateId) || [],
+      checkinsByDate.get(dateId) || [],
+    ),
     hasDiary: Boolean(diary),
-    activities: activitiesByDate.get(dateId) || [],
-    checkins: checkinsByDate.get(dateId) || [],
   };
 });
 
@@ -71,8 +75,7 @@ function dateIdInTokyo(value) {
 }
 
 function dateFromId(dateId) {
-  const [year, month, day] = dateId.split("-").map(Number);
-  return new Date(year, month - 1, day, 12);
+  return new Date(`${dateId}T12:00:00+09:00`);
 }
 
 function formatTimelineDate(date) {
@@ -123,7 +126,7 @@ const activityLabel = (type) => ({
     <div>
       <p class="reader-eyebrow">PERSONAL LOG</p>
       <h1>日記リーダー</h1>
-      <p>日記、チェックイン、アクティビティを{entries.length}日分のタイムラインで新しい順に表示しています。</p>
+      <p>日記、チェックイン、アクティビティを{entries.length}日分のタイムラインで、日付・時刻とも新しい順に表示しています（日本時間）。</p>
     </div>
     <div class="reader-header-actions">
       <div class="reader-summary" aria-label="収録している記録">
@@ -169,42 +172,49 @@ const activityLabel = (type) => ({
                     {!entry.hasDiary && <span class="reader-entry-label">行動記録</span>}
                   </header>
                   <div class="reader-day-layout">
-                    {entry.hasDiary && <div class="diary-content" set:html={entry.html} />}
-                    {(entry.activities.length > 0 || entry.checkins.length > 0) && (
-                      <div class="diary-content reader-records" aria-label={`${entry.title}の行動記録`}>
-                        {entry.activities.map((activity) => (
+                    {entry.records.map((record) => {
+                      if (record.kind === "diary") {
+                        return <div class="diary-content" data-record-time={record.datetime} set:html={record.value} />;
+                      }
+                      const activity = record.kind === "activity" ? record.value : null;
+                      const place = record.kind === "checkin" ? record.value : null;
+                      return (
+                        <div class="diary-content reader-records" data-record-time={record.datetime}>
                           <section class="diary-block reader-record">
                             <h5 class="reader-record-heading">
-                              <span aria-hidden="true">{activityIcon(activity.type_class)}</span>{" "}
-                              アクティビティ · {activityLabel(activity.type_class)}
+                              {record.datetime ? <time datetime={record.datetime}>{record.time}</time> : record.time}
+                              {" · "}
+                              <span aria-hidden="true">{activity ? activityIcon(activity.type_class) : "📍"}</span>{" "}
+                              {activity ? `アクティビティ · ${activityLabel(activity.type_class)}` : "チェックイン"}
+                              {place?.categories.length > 0 && ` · ${place.categories.join("、")}`}
                             </h5>
-                            <p class="reader-record-name">
-                              <a href={`https://www.strava.com/activities/${activity.id}`}>{activity.name}</a>
-                            </p>
-                            <p class="reader-record-meta">
-                              {formatDistance(activity.distance)} · {formatDuration(activity.moving_time)}
-                              {activity.total_elevation_gain > 0 && ` · 獲得標高 ${Math.round(activity.total_elevation_gain)} m`}
-                            </p>
+                            {activity && (
+                              <>
+                                <p class="reader-record-name">
+                                  <a href={`https://www.strava.com/activities/${activity.id}`}>{activity.name}</a>
+                                </p>
+                                <p class="reader-record-meta">
+                                  {formatDistance(activity.distance)} · {formatDuration(activity.moving_time)}
+                                  {activity.total_elevation_gain > 0 && ` · 獲得標高 ${Math.round(activity.total_elevation_gain)} m`}
+                                </p>
+                              </>
+                            )}
+                            {place && (
+                              <>
+                                <p class="reader-record-name">
+                                  <a href={place.foursquare_url || "/places/"}>{place.name}</a>
+                                </p>
+                                {place.user_comment && <p class="reader-record-comment">{place.user_comment}</p>}
+                                {place.address && <p class="reader-record-meta">{place.address}</p>}
+                                {place.photos.map((photo) => (
+                                  <img src={photo} alt={`${place.name}の写真`} loading="lazy" decoding="async" />
+                                ))}
+                              </>
+                            )}
                           </section>
-                        ))}
-                        {entry.checkins.map((place) => (
-                          <section class="diary-block reader-record">
-                            <h5 class="reader-record-heading">
-                              <span aria-hidden="true">📍</span> チェックイン
-                              {place.categories.length > 0 && ` · ${place.categories.join("、")}`}
-                            </h5>
-                            <p class="reader-record-name">
-                              <a href={place.foursquare_url || "/places/"}>{place.name}</a>
-                            </p>
-                            {place.user_comment && <p class="reader-record-comment">{place.user_comment}</p>}
-                            {place.address && <p class="reader-record-meta">{place.address}</p>}
-                            {place.photos.map((photo) => (
-                              <img src={photo} alt={`${place.name}の写真`} loading="lazy" decoding="async" />
-                            ))}
-                          </section>
-                        ))}
-                      </div>
-                    )}
+                        </div>
+                      );
+                    })}
                   </div>
                 </article>
               ))}
