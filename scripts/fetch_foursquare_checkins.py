@@ -222,7 +222,11 @@ def fetch_checkins(oauth_token, limit=250, max_pages=20):
             'limit': limit,
             'offset': offset,
         }
-        response = requests.get(API_URL, params=params, timeout=20)
+        # 言語未指定による施設名・カテゴリ名の英日切り替わりを防ぐ。
+        # https://docs.foursquare.com/developer/reference/v2-localization
+        response = requests.get(
+            API_URL, params=params, headers={'Accept-Language': 'ja'}, timeout=20,
+        )
         if response.status_code != 200:
             print(f"[Error] Foursquare checkins request failed: HTTP {response.status_code}", file=sys.stderr)
             print(response.text[:1000], file=sys.stderr)
