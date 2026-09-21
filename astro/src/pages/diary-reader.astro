@@ -1,17 +1,17 @@
 ---
 import BaseLayout from "@/layouts/BaseLayout.astro";
 import { formatDistance, formatDuration, getActivities } from "@/lib/activity";
-import { getOnsenPlaces } from "@/lib/checkins";
+import { getPlaces } from "@/lib/checkins";
 import { datePartsInTokyo, formatEntryDate, getDiaryEntries } from "@/lib/content";
 
 const activities = getActivities();
-const onsenPlaces = getOnsenPlaces();
+const checkins = getPlaces();
 const activitiesByDate = groupByDate(activities, (activity) => dateIdInTokyo(activity.start_date));
-const onsenByDate = groupByDate(onsenPlaces, (place) => place.date || "");
+const checkinsByDate = groupByDate(checkins, (place) => dateIdInTokyo(place.last_checkin_at) || place.date || "");
 
 const diaryEntries = await getDiaryEntries();
 const diaryByDate = new Map(diaryEntries.map((entry) => [formatEntryDate(entry.date), entry]));
-const dateIds = [...new Set([...diaryByDate.keys(), ...activitiesByDate.keys(), ...onsenByDate.keys()])]
+const dateIds = [...new Set([...diaryByDate.keys(), ...activitiesByDate.keys(), ...checkinsByDate.keys()])]
   .sort((a, b) => b.localeCompare(a));
 
 const entries = dateIds.map((dateId) => {
@@ -25,7 +25,7 @@ const entries = dateIds.map((dateId) => {
     html: diary ? addLazyLoading(diary.html) : "",
     hasDiary: Boolean(diary),
     activities: activitiesByDate.get(dateId) || [],
-    onsenPlaces: onsenByDate.get(dateId) || [],
+    checkins: checkinsByDate.get(dateId) || [],
   };
 });
 
@@ -114,7 +114,7 @@ const activityLabel = (type) => ({
 
 <BaseLayout
   title="日記リーダー"
-  description="日記を時系列で続けて読むためのページ"
+  description="日記、チェックイン、アクティビティを時系列で続けて読むためのページ"
   robots="noindex, nofollow"
   analytics={false}
   wide={true}
@@ -123,15 +123,15 @@ const activityLabel = (type) => ({
     <div>
       <p class="reader-eyebrow">PERSONAL LOG</p>
       <h1>日記リーダー</h1>
-      <p>日記、移動、温泉を{entries.length}日分のタイムラインで新しい順に表示しています。</p>
+      <p>日記、チェックイン、アクティビティを{entries.length}日分のタイムラインで新しい順に表示しています。</p>
     </div>
     <div class="reader-header-actions">
       <div class="reader-summary" aria-label="収録している記録">
         <a href="/diary/"><strong>{diaryEntries.length}</strong><span>日記</span></a>
-        <a href="/activity/"><strong>{activities.length}</strong><span>Activity</span></a>
-        <a href="/onsen/"><strong>{onsenPlaces.length}</strong><span>温泉</span></a>
+        <a href="/activity/"><strong>{activities.length}</strong><span>アクティビティ</span></a>
+        <a href="/places/"><strong>{checkins.length}</strong><span>チェックイン</span></a>
       </div>
-      <button class="reader-log-toggle" type="button" data-log-toggle aria-pressed="false">
+      <button class="reader-log-toggle" type="button" data-log-toggle aria-pressed="true">
         <span class="reader-log-toggle-mark" aria-hidden="true"></span>
         <span data-log-toggle-label>日記のない日も表示</span>
       </button>
@@ -166,42 +166,44 @@ const activityLabel = (type) => ({
                     <h4 class="diary-date">
                       {entry.url ? <a href={entry.url}>{entry.title}</a> : entry.title}
                     </h4>
-                    {!entry.hasDiary && <span class="reader-entry-label">ACTIVITY LOG</span>}
+                    {!entry.hasDiary && <span class="reader-entry-label">行動記録</span>}
                   </header>
-                  <div class:list={["reader-day-layout", { "has-day-records": entry.activities.length || entry.onsenPlaces.length, "has-diary": entry.hasDiary }]}>
+                  <div class="reader-day-layout">
                     {entry.hasDiary && <div class="diary-content" set:html={entry.html} />}
-                    {(entry.activities.length > 0 || entry.onsenPlaces.length > 0) && (
-                      <aside class="day-records" aria-label={`${entry.title}の行動記録`}>
-                        <p class="day-records-title">この日の記録</p>
+                    {(entry.activities.length > 0 || entry.checkins.length > 0) && (
+                      <div class="diary-content reader-records" aria-label={`${entry.title}の行動記録`}>
                         {entry.activities.map((activity) => (
-                          <a class="day-record day-record-activity" href="/activity/">
-                            <span class="day-record-icon" aria-hidden="true">{activityIcon(activity.type_class)}</span>
-                            <span class="day-record-body">
-                              <span class="day-record-kind">{activityLabel(activity.type_class)}</span>
-                              <strong>{activity.name}</strong>
-                              <span class="day-record-meta">
-                                {formatDistance(activity.distance)} · {formatDuration(activity.moving_time)}
-                                {activity.total_elevation_gain > 0 && ` · ${Math.round(activity.total_elevation_gain)}m up`}
-                              </span>
-                            </span>
-                          </a>
+                          <section class="diary-block reader-record">
+                            <h5 class="reader-record-heading">
+                              <span aria-hidden="true">{activityIcon(activity.type_class)}</span>{" "}
+                              アクティビティ · {activityLabel(activity.type_class)}
+                            </h5>
+                            <p class="reader-record-name">
+                              <a href={`https://www.strava.com/activities/${activity.id}`}>{activity.name}</a>
+                            </p>
+                            <p class="reader-record-meta">
+                              {formatDistance(activity.distance)} · {formatDuration(activity.moving_time)}
+                              {activity.total_elevation_gain > 0 && ` · 獲得標高 ${Math.round(activity.total_elevation_gain)} m`}
+                            </p>
+                          </section>
                         ))}
-                        {entry.onsenPlaces.map((place) => (
-                          <a class="day-record day-record-onsen" href="/onsen/">
-                            {place.photos?.[0] ? (
-                              <img class="day-record-photo" src={place.photos[0]} alt="" loading="lazy" />
-                            ) : (
-                              <span class="day-record-icon" aria-hidden="true">♨️</span>
-                            )}
-                            <span class="day-record-body">
-                              <span class="day-record-kind">Onsen check-in</span>
-                              <strong>{place.name}</strong>
-                              {place.user_comment && <span class="day-record-comment">{place.user_comment}</span>}
-                              {place.address && <span class="day-record-meta">{place.address}</span>}
-                            </span>
-                          </a>
+                        {entry.checkins.map((place) => (
+                          <section class="diary-block reader-record">
+                            <h5 class="reader-record-heading">
+                              <span aria-hidden="true">📍</span> チェックイン
+                              {place.categories.length > 0 && ` · ${place.categories.join("、")}`}
+                            </h5>
+                            <p class="reader-record-name">
+                              <a href={place.foursquare_url || "/places/"}>{place.name}</a>
+                            </p>
+                            {place.user_comment && <p class="reader-record-comment">{place.user_comment}</p>}
+                            {place.address && <p class="reader-record-meta">{place.address}</p>}
+                            {place.photos.map((photo) => (
+                              <img src={photo} alt={`${place.name}の写真`} loading="lazy" decoding="async" />
+                            ))}
+                          </section>
                         ))}
-                      </aside>
+                      </div>
                     )}
                   </div>
                 </article>
@@ -541,134 +543,28 @@ const activityLabel = (type) => ({
       letter-spacing: 0.12em;
     }
 
-    .reader-entry-without-diary {
-      padding-top: 20px;
-      padding-bottom: 24px;
-    }
-
-    .reader-entry-without-diary .reader-entry-header {
-      margin-bottom: 12px;
-    }
-
-    .reader-day-layout.has-day-records.has-diary {
-      display: grid;
-      grid-template-columns: minmax(0, 1fr) 240px;
-      gap: 34px;
-      align-items: start;
-    }
-
-    .day-records {
-      position: relative;
-      display: grid;
-      gap: 10px;
-      margin-top: 3px;
-      padding-left: 18px;
-      border-left: 1px solid var(--color-border-soft);
-    }
-
-    .reader-day-layout:not(.has-diary) .day-records {
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      padding-left: 0;
-      border-left: 0;
-    }
-
-    .reader-day-layout:not(.has-diary) .day-records-title {
-      grid-column: 1 / -1;
-    }
-
-    .day-records-title {
-      margin: 0 0 1px;
+    .reader-record-heading {
+      margin: 0 0 8px;
       color: var(--color-muted);
-      font-size: 11px;
-      font-weight: 800;
-      letter-spacing: 0.08em;
+      font-size: 0.9em;
+      font-weight: bold;
     }
 
-    .day-record {
-      display: flex;
-      gap: 10px;
-      min-width: 0;
-      border: 1px solid var(--color-border-soft);
-      border-radius: 9px;
-      background: var(--color-surface-muted);
-      padding: 10px;
-      color: inherit;
-      text-decoration: none;
-      transition: border-color 0.15s ease, transform 0.15s ease;
+    .reader-record p {
+      margin: 8px 0 0;
     }
 
-    .day-record:hover {
-      border-color: var(--color-border);
-      transform: translateY(-1px);
+    .reader-record-name {
+      font-weight: bold;
     }
 
-    .day-record-icon,
-    .day-record-photo {
-      flex: 0 0 38px;
-      width: 38px;
-      height: 38px;
-      border-radius: 8px;
-    }
-
-    .day-record-icon {
-      display: grid;
-      place-items: center;
-      background: color-mix(in srgb, #4776d0 12%, transparent);
-      font-size: 18px;
-    }
-
-    .day-record-onsen .day-record-icon {
-      background: color-mix(in srgb, #df633f 13%, transparent);
-    }
-
-    .day-record-photo {
-      object-fit: cover;
-    }
-
-    .day-record-body {
-      display: block;
-      min-width: 0;
-    }
-
-    .day-record-kind,
-    .day-record-meta,
-    .day-record-comment {
-      display: block;
-    }
-
-    .day-record-kind {
-      margin-bottom: 2px;
-      color: #4776d0;
-      font-size: 10px;
-      font-weight: 800;
-      letter-spacing: 0.06em;
-      text-transform: uppercase;
-    }
-
-    .day-record-onsen .day-record-kind {
-      color: #df633f;
-    }
-
-    .day-record strong {
-      display: block;
-      overflow-wrap: anywhere;
-      font-size: 13px;
-      line-height: 1.4;
-    }
-
-    .day-record-meta,
-    .day-record-comment {
-      margin-top: 4px;
+    .reader-record-meta {
       color: var(--color-muted);
-      font-size: 11px;
-      line-height: 1.45;
+      font-size: 0.9em;
     }
 
-    .day-record-comment {
-      display: -webkit-box;
-      overflow: hidden;
-      -webkit-box-orient: vertical;
-      -webkit-line-clamp: 2;
+    .reader-record-comment {
+      white-space: pre-wrap;
     }
 
     @media (max-width: 760px) {
@@ -709,23 +605,6 @@ const activityLabel = (type) => ({
         font-size: 1.3em;
       }
 
-      .reader-day-layout.has-day-records.has-diary {
-        display: flex;
-        flex-direction: column;
-        gap: 24px;
-      }
-
-      .reader-day-layout.has-diary .day-records {
-        width: 100%;
-        box-sizing: border-box;
-        padding: 16px 0 0;
-        border-top: 1px solid var(--color-border-soft);
-        border-left: 0;
-      }
-
-      .reader-day-layout:not(.has-diary) .day-records {
-        grid-template-columns: minmax(0, 1fr);
-      }
     }
   </style>
 </BaseLayout>
