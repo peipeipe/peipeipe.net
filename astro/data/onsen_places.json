@@ -1,5 +1,31 @@
 [
   {
+    "name": "真田温泉 ふれあいさなだ館",
+    "user_comment": "w/ 父",
+    "date": "2026-09-21",
+    "lat": 36.44294471932977,
+    "lng": 138.30737163392524,
+    "address": "真田町長7369-1, 上田市, 長野県, 386-2201",
+    "foursquare_url": "https://foursquare.com/v/4e3e04b5483b04e17a9ef103",
+    "photos": [
+      "https://fastly.4sqi.net/img/general/500x300/41463109_FyuRufsKuiKrpKC6C37VsqJzV_PI5PfHHQztak8kQaE.jpg",
+      "https://fastly.4sqi.net/img/general/500x300/41463109_a_xR3WFEz-xwtyZiZZu8i7tMXmC_5OqLk-uEeJ5ozDg.jpg"
+    ],
+    "categories": [
+      "温泉"
+    ],
+    "category_group": "onsen",
+    "category_label": "温泉・サウナ",
+    "category_emoji": "♨️",
+    "category_color": "#ff7a59",
+    "data_source": "foursquare_checkin",
+    "fsq_id": "4e3e04b5483b04e17a9ef103",
+    "checkin_count": 5,
+    "first_checkin_at": "2024-09-15T03:35:44+00:00",
+    "last_checkin_at": "2026-09-21T10:00:41+00:00",
+    "composition_hint": ""
+  },
+  {
     "name": "Uu Ueda",
     "user_comment": "",
     "date": "2026-09-18",
@@ -150,32 +176,6 @@
     "checkin_count": 1,
     "first_checkin_at": "2026-08-30T06:25:43+00:00",
     "last_checkin_at": "2026-08-30T06:25:43+00:00",
-    "composition_hint": ""
-  },
-  {
-    "name": "真田温泉 ふれあいさなだ館",
-    "user_comment": "プールも利用",
-    "date": "2026-08-27",
-    "lat": 36.44294471932977,
-    "lng": 138.30737163392524,
-    "address": "真田町長7369-1, 上田市, 長野県, 386-2201",
-    "foursquare_url": "https://foursquare.com/v/4e3e04b5483b04e17a9ef103",
-    "photos": [
-      "https://fastly.4sqi.net/img/general/500x300/41463109_FyuRufsKuiKrpKC6C37VsqJzV_PI5PfHHQztak8kQaE.jpg",
-      "https://fastly.4sqi.net/img/general/500x300/41463109_a_xR3WFEz-xwtyZiZZu8i7tMXmC_5OqLk-uEeJ5ozDg.jpg"
-    ],
-    "categories": [
-      "温泉"
-    ],
-    "category_group": "onsen",
-    "category_label": "温泉・サウナ",
-    "category_emoji": "♨️",
-    "category_color": "#ff7a59",
-    "data_source": "foursquare_checkin",
-    "fsq_id": "4e3e04b5483b04e17a9ef103",
-    "checkin_count": 4,
-    "first_checkin_at": "2024-09-15T03:35:44+00:00",
-    "last_checkin_at": "2026-08-27T02:45:39+00:00",
     "composition_hint": ""
   },
   {
@@ -1091,7 +1091,7 @@
       "https://fastly.4sqi.net/img/general/500x300/41463109_8io_i2oTaY-Jl-z_f6qMFHnkhnDAb4c61j_308-0oyA.jpg"
     ],
     "categories": [
-      "Hot Spring"
+      "温泉"
     ],
     "category_group": "onsen",
     "category_label": "温泉・サウナ",
@@ -1114,7 +1114,7 @@
     "foursquare_url": "https://foursquare.com/v/4c5fa46f3986e21e16a9924f",
     "photos": [],
     "categories": [
-      "Hot Spring"
+      "温泉"
     ],
     "category_group": "onsen",
     "category_label": "温泉・サウナ",
@@ -1137,7 +1137,7 @@
     "foursquare_url": "https://foursquare.com/v/57f1f65d498e28af9a8c09ce",
     "photos": [],
     "categories": [
-      "Hot Spring"
+      "温泉"
     ],
     "category_group": "onsen",
     "category_label": "温泉・サウナ",
@@ -1162,7 +1162,7 @@
       "https://fastly.4sqi.net/img/general/500x300/41463109_5pXbgwUC6Vz9doKCawbUgRUYOZFZmydvmO8e_1w9eAY.jpg"
     ],
     "categories": [
-      "Hot Spring"
+      "温泉"
     ],
     "category_group": "onsen",
     "category_label": "温泉・サウナ",
@@ -1189,7 +1189,7 @@
       "https://fastly.4sqi.net/img/general/500x300/41463109_1n52IdN-jIQXQaEHnf6Ra2kd0nhHbf-8U500zAnhulw.jpg"
     ],
     "categories": [
-      "Hot Spring"
+      "温泉"
     ],
     "category_group": "onsen",
     "category_label": "温泉・サウナ",
@@ -1203,7 +1203,7 @@
     "composition_hint": ""
   },
   {
-    "name": "Komakusa no Yu (こまくさの湯)",
+    "name": "こまくさの湯",
     "user_comment": "",
     "date": "2025-08-15",
     "lat": 35.74368990572018,
@@ -1214,7 +1214,7 @@
       "https://fastly.4sqi.net/img/general/500x300/41463109_d_zTsW7IAqE69E0qo3dVoD6BIekSUMmqfG2k-x80tVI.jpg"
     ],
     "categories": [
-      "Hot Spring"
+      "温泉"
     ],
     "category_group": "onsen",
     "category_label": "温泉・サウナ",
@@ -1228,7 +1228,7 @@
     "composition_hint": ""
   },
   {
-    "name": "Miharashi no Yu (みはらしの湯)",
+    "name": "みはらしの湯",
     "user_comment": "",
     "date": "2025-08-14",
     "lat": 35.88264760768254,
@@ -1237,7 +1237,7 @@
     "foursquare_url": "https://foursquare.com/v/4bee4c2d2c082d7fec4e3042",
     "photos": [],
     "categories": [
-      "Hot Spring"
+      "温泉"
     ],
     "category_group": "onsen",
     "category_label": "温泉・サウナ",
@@ -1251,7 +1251,7 @@
     "composition_hint": ""
   },
   {
-    "name": "Romanetto (岡谷健康福祉施設 ロマネット)",
+    "name": "岡谷健康福祉施設 ロマネット",
     "user_comment": "",
     "date": "2025-08-10",
     "lat": 36.06207124091374,
@@ -1260,7 +1260,7 @@
     "foursquare_url": "https://foursquare.com/v/4c41ae84cc410f471381ab61",
     "photos": [],
     "categories": [
-      "Spa"
+      "スパ"
     ],
     "category_group": "onsen",
     "category_label": "温泉・サウナ",
@@ -1283,7 +1283,7 @@
     "foursquare_url": "https://foursquare.com/v/4bdbcbd02a3a0f47e6cfb0b6",
     "photos": [],
     "categories": [
-      "Hot Spring"
+      "温泉"
     ],
     "category_group": "onsen",
     "category_label": "温泉・サウナ",
@@ -1308,7 +1308,7 @@
       "https://fastly.4sqi.net/img/general/500x300/41463109_9o-p5A8wYC_ZtN8Nq9Y3vzvjklVSYp6Kn6XuoYV1zH0.jpg"
     ],
     "categories": [
-      "Hot Spring"
+      "温泉"
     ],
     "category_group": "onsen",
     "category_label": "温泉・サウナ",
@@ -1333,7 +1333,7 @@
       "https://fastly.4sqi.net/img/general/500x300/41463109_gZ-_D3II4LOp4DdHzlqX5lpbjTzvHV4_slofCBIHj7s.jpg"
     ],
     "categories": [
-      "Hot Spring"
+      "温泉"
     ],
     "category_group": "onsen",
     "category_label": "温泉・サウナ",
@@ -1347,7 +1347,7 @@
     "composition_hint": ""
   },
   {
-    "name": "Manten no Yu (満天の湯)",
+    "name": "満天の湯",
     "user_comment": "",
     "date": "2025-06-14",
     "lat": 35.46740866913387,
@@ -1356,7 +1356,7 @@
     "foursquare_url": "https://foursquare.com/v/4b71709bf964a520c5462de3",
     "photos": [],
     "categories": [
-      "Hot Spring"
+      "温泉"
     ],
     "category_group": "onsen",
     "category_label": "温泉・サウナ",
@@ -1379,7 +1379,7 @@
     "foursquare_url": "https://foursquare.com/v/4ba72172f964a5203d8239e3",
     "photos": [],
     "categories": [
-      "Hot Spring"
+      "温泉"
     ],
     "category_group": "onsen",
     "category_label": "温泉・サウナ",
@@ -1402,7 +1402,7 @@
     "foursquare_url": "https://foursquare.com/v/4c30299c452620a141d61e0f",
     "photos": [],
     "categories": [
-      "Hot Spring"
+      "温泉"
     ],
     "category_group": "onsen",
     "category_label": "温泉・サウナ",
@@ -1427,7 +1427,7 @@
       "https://fastly.4sqi.net/img/general/500x300/41463109_dgwo1Q95J51sxAZQBA4rmHpdPo17-KwSBjEuAx0Lqog.jpg"
     ],
     "categories": [
-      "Hot Spring"
+      "温泉"
     ],
     "category_group": "onsen",
     "category_label": "温泉・サウナ",
@@ -1452,7 +1452,7 @@
       "https://fastly.4sqi.net/img/general/500x300/41463109_dDRieM4LKH9fnz4RNFlYf6MNDj51htZILRt90khphPU.jpg"
     ],
     "categories": [
-      "Spa"
+      "スパ"
     ],
     "category_group": "onsen",
     "category_label": "温泉・サウナ",
@@ -1466,7 +1466,7 @@
     "composition_hint": ""
   },
   {
-    "name": "Zuisho (湯の華銭湯 瑞祥 松本館)",
+    "name": "湯の華銭湯 瑞祥 松本館",
     "user_comment": "",
     "date": "2025-02-16",
     "lat": 36.23292903081132,
@@ -1475,7 +1475,7 @@
     "foursquare_url": "https://foursquare.com/v/4c0706d33cbed13a28e20bc0",
     "photos": [],
     "categories": [
-      "Hot Spring"
+      "温泉"
     ],
     "category_group": "onsen",
     "category_label": "温泉・サウナ",
@@ -1489,7 +1489,7 @@
     "composition_hint": ""
   },
   {
-    "name": "Oshiba no Yu (大芝の湯)",
+    "name": "大芝の湯",
     "user_comment": "",
     "date": "2025-01-26",
     "lat": 35.886678054514135,
@@ -1500,7 +1500,7 @@
       "https://fastly.4sqi.net/img/general/500x300/41463109_UiSw53tr9iwM-TE4U2R1QZeIEuhdGxBuBJStikiY5jk.jpg"
     ],
     "categories": [
-      "Hot Spring"
+      "温泉"
     ],
     "category_group": "onsen",
     "category_label": "温泉・サウナ",
@@ -1523,7 +1523,7 @@
     "foursquare_url": "https://foursquare.com/v/59cf6d2cd78f0b10d9b3a8e4",
     "photos": [],
     "categories": [
-      "Hot Spring"
+      "温泉"
     ],
     "category_group": "onsen",
     "category_label": "温泉・サウナ",
@@ -1546,7 +1546,7 @@
     "foursquare_url": "https://foursquare.com/v/63a055f28c9dd74753a9859f",
     "photos": [],
     "categories": [
-      "Sauna"
+      "サウナ"
     ],
     "category_group": "onsen",
     "category_label": "温泉・サウナ",
@@ -1569,7 +1569,7 @@
     "foursquare_url": "https://foursquare.com/v/4e605adfaeb7360314025a85",
     "photos": [],
     "categories": [
-      "Spa"
+      "スパ"
     ],
     "category_group": "onsen",
     "category_label": "温泉・サウナ",
@@ -1594,7 +1594,7 @@
       "https://fastly.4sqi.net/img/general/500x300/41463109_I6Eflb9c8I--lB_j0NmYAqvjUAjcLatW-dY3j0QxElY.jpg"
     ],
     "categories": [
-      "Hot Spring"
+      "温泉"
     ],
     "category_group": "onsen",
     "category_label": "温泉・サウナ",
@@ -1617,7 +1617,7 @@
     "foursquare_url": "https://foursquare.com/v/4b83ac02f964a5206b0c31e3",
     "photos": [],
     "categories": [
-      "Hot Spring"
+      "温泉"
     ],
     "category_group": "onsen",
     "category_label": "温泉・サウナ",
@@ -1642,7 +1642,7 @@
       "https://fastly.4sqi.net/img/general/500x300/41463109_EseAs8sFCKykP-os3fH-bHLmnQZq5mHC5s_U5L2m3fQ.jpg"
     ],
     "categories": [
-      "Hot Spring"
+      "温泉"
     ],
     "category_group": "onsen",
     "category_label": "温泉・サウナ",
@@ -1667,7 +1667,7 @@
       "https://fastly.4sqi.net/img/general/500x300/41463109_48hQd0viKBXo1c8lwjWfiCsDXM7mzpIaH92IHvP0D6k.jpg"
     ],
     "categories": [
-      "Spa"
+      "スパ"
     ],
     "category_group": "onsen",
     "category_label": "温泉・サウナ",
@@ -1692,7 +1692,7 @@
       "https://fastly.4sqi.net/img/general/500x300/41463109_vNKpqO4MzsuwkzYrDbi6eTWOLB8tx3oj59Acp3oNsm8.jpg"
     ],
     "categories": [
-      "Hot Spring"
+      "温泉"
     ],
     "category_group": "onsen",
     "category_label": "温泉・サウナ",
@@ -1706,7 +1706,7 @@
     "composition_hint": ""
   },
   {
-    "name": "Oyu (大湯)",
+    "name": "大湯",
     "user_comment": "",
     "date": "2024-08-31",
     "lat": 36.349286766787124,
@@ -1717,7 +1717,7 @@
       "https://fastly.4sqi.net/img/general/500x300/41463109_Iz8kMAm_VnKLTMN6h2qfN3ddjzgaaD3Cfnxj4bKbsao.jpg"
     ],
     "categories": [
-      "Hot Spring"
+      "温泉"
     ],
     "category_group": "onsen",
     "category_label": "温泉・サウナ",
@@ -1740,7 +1740,7 @@
     "foursquare_url": "https://foursquare.com/v/6623807d84601a43525a352b",
     "photos": [],
     "categories": [
-      "Sauna"
+      "サウナ"
     ],
     "category_group": "onsen",
     "category_label": "温泉・サウナ",
@@ -1754,7 +1754,7 @@
     "composition_hint": ""
   },
   {
-    "name": "Ryūsenji-no-Yu (竜泉寺の湯 草加谷塚店)",
+    "name": "竜泉寺の湯 草加谷塚店",
     "user_comment": "芋洗い状態",
     "date": "2024-08-10",
     "lat": 35.81450705710811,
@@ -1763,7 +1763,7 @@
     "foursquare_url": "https://foursquare.com/v/57d00a3c498e9107fc648e09",
     "photos": [],
     "categories": [
-      "Hot Spring"
+      "温泉"
     ],
     "category_group": "onsen",
     "category_label": "温泉・サウナ",
@@ -1777,7 +1777,7 @@
     "composition_hint": ""
   },
   {
-    "name": "Bessho-Onsen Station (別所温泉駅)",
+    "name": "別所温泉駅",
     "user_comment": "",
     "date": "2024-07-21",
     "lat": 36.352991,
@@ -1788,7 +1788,7 @@
       "https://fastly.4sqi.net/img/general/500x300/41463109_kVSELBaymVBqyIJOTC8pjkM15h2Ti94OTBb2sx3HkdI.jpg"
     ],
     "categories": [
-      "Rail Station"
+      "鉄道駅"
     ],
     "category_group": "onsen",
     "category_label": "温泉・サウナ",
@@ -1813,7 +1813,7 @@
       "https://fastly.4sqi.net/img/general/500x300/41463109_BcTGrrBG6vfRo8BCxT0qmvnFzQLJRfSweARMVc3_l-U.jpg"
     ],
     "categories": [
-      "Hot Spring"
+      "温泉"
     ],
     "category_group": "onsen",
     "category_label": "温泉・サウナ",
@@ -1827,7 +1827,7 @@
     "composition_hint": ""
   },
   {
-    "name": "コタン温泉 (コタン温泉 露天風呂)",
+    "name": "コタン温泉 露天風呂",
     "user_comment": "野湯　最高",
     "date": "2024-07-02",
     "lat": 43.56471343357004,
@@ -1839,7 +1839,7 @@
       "https://fastly.4sqi.net/img/general/500x300/41463109_UR3zveXZgXC4R8Ml7ByO1637jdUKAMCXb7sqg7hEFBE.jpg"
     ],
     "categories": [
-      "Hot Spring"
+      "温泉"
     ],
     "category_group": "onsen",
     "category_label": "温泉・サウナ",
@@ -1864,7 +1864,7 @@
       "https://fastly.4sqi.net/img/general/500x300/41463109_r4gT86BS-m4OU47GN0nDjJkdxiZ8R8uWHq5fX4vYso4.jpg"
     ],
     "categories": [
-      "Rest Area"
+      "サービスエリア"
     ],
     "category_group": "onsen",
     "category_label": "温泉・サウナ",
@@ -1887,7 +1887,7 @@
     "foursquare_url": "https://foursquare.com/v/51fc9978498e560e02be28d2",
     "photos": [],
     "categories": [
-      "Hot Spring"
+      "温泉"
     ],
     "category_group": "onsen",
     "category_label": "温泉・サウナ",
@@ -1912,7 +1912,7 @@
       "https://fastly.4sqi.net/img/general/500x300/41463109_d-WvZOqAboUt8xcqEM9v1zcVVWQ04XOpy9Cm7Rja3Ok.jpg"
     ],
     "categories": [
-      "Bath House"
+      "浴場"
     ],
     "category_group": "onsen",
     "category_label": "温泉・サウナ",
@@ -1937,7 +1937,7 @@
       "https://fastly.4sqi.net/img/general/500x300/41463109_D2TwNIg5Fk-1g792qIPGTShW4IayYLjHTZbj-mFHc7M.jpg"
     ],
     "categories": [
-      "Hot Spring"
+      "温泉"
     ],
     "category_group": "onsen",
     "category_label": "温泉・サウナ",
@@ -1951,7 +1951,7 @@
     "composition_hint": ""
   },
   {
-    "name": "Nomekoi no Yu (丹波山温泉 のめこい湯)",
+    "name": "丹波山温泉 のめこい湯",
     "user_comment": "",
     "date": "2024-05-25",
     "lat": 35.788471949146114,
@@ -1962,7 +1962,7 @@
       "https://fastly.4sqi.net/img/general/500x300/41463109_kSCe120ZAuDZnR5lwm-Y_dHshyTHJXuBe2XQTKwiak0.jpg"
     ],
     "categories": [
-      "Hot Spring"
+      "温泉"
     ],
     "category_group": "onsen",
     "category_label": "温泉・サウナ",
@@ -1976,7 +1976,7 @@
     "composition_hint": ""
   },
   {
-    "name": "Moegi no Yu (もえぎの湯)",
+    "name": "もえぎの湯",
     "user_comment": "",
     "date": "2024-05-18",
     "lat": 35.80504460573972,
@@ -1987,7 +1987,7 @@
       "https://fastly.4sqi.net/img/general/500x300/41463109_OL5Lal97BZ6e8YdfJk3RKZGUZe0Vfz27nIDgKa1D3q0.jpg"
     ],
     "categories": [
-      "Hot Spring"
+      "温泉"
     ],
     "category_group": "onsen",
     "category_label": "温泉・サウナ",
@@ -2012,7 +2012,7 @@
       "https://fastly.4sqi.net/img/general/500x300/41463109_jNycFj38XUfjwtqIokJM2_O3QiEorM4nmN5xC8Xlc8Y.jpg"
     ],
     "categories": [
-      "Hot Spring"
+      "温泉"
     ],
     "category_group": "onsen",
     "category_label": "温泉・サウナ",
@@ -2026,7 +2026,7 @@
     "composition_hint": ""
   },
   {
-    "name": "Gokurakuyu (極楽湯 和光店)",
+    "name": "極楽湯 和光店",
     "user_comment": "",
     "date": "2024-03-20",
     "lat": 35.76872775426477,
@@ -2035,7 +2035,7 @@
     "foursquare_url": "https://foursquare.com/v/4b5bf142f964a5203d1e29e3",
     "photos": [],
     "categories": [
-      "Bath House"
+      "浴場"
     ],
     "category_group": "onsen",
     "category_label": "温泉・サウナ",
@@ -2060,7 +2060,7 @@
       "https://fastly.4sqi.net/img/general/500x300/41463109_M2i1Psfj_Ld8x4RJalkGXGuA5wT-W_hQlhVyC6X1gUA.jpg"
     ],
     "categories": [
-      "Hot Spring"
+      "温泉"
     ],
     "category_group": "onsen",
     "category_label": "温泉・サウナ",
@@ -2074,7 +2074,7 @@
     "composition_hint": ""
   },
   {
-    "name": "Karin no Yu (かりんの湯)",
+    "name": "かりんの湯",
     "user_comment": "畑の中にあるおもしろ湯",
     "date": "2024-02-04",
     "lat": 35.79449458658125,
@@ -2086,7 +2086,7 @@
       "https://fastly.4sqi.net/img/general/500x300/41463109_VwU21_da_rUgpa0DOVurePLDREG88TsDlgDcvn4UPtM.jpg"
     ],
     "categories": [
-      "Hot Spring"
+      "温泉"
     ],
     "category_group": "onsen",
     "category_label": "温泉・サウナ",
@@ -2109,7 +2109,7 @@
     "foursquare_url": "https://foursquare.com/v/4ead0f824fc61478cc709686",
     "photos": [],
     "categories": [
-      "Bath House"
+      "浴場"
     ],
     "category_group": "onsen",
     "category_label": "温泉・サウナ",
@@ -2134,7 +2134,7 @@
       "https://fastly.4sqi.net/img/general/500x300/41463109_Uly0GEPpzsEIeU--E2TqbhqoQZHdInuchkro5ZRphHI.jpg"
     ],
     "categories": [
-      "Bath House"
+      "浴場"
     ],
     "category_group": "onsen",
     "category_label": "温泉・サウナ",
@@ -2157,7 +2157,7 @@
     "foursquare_url": "https://foursquare.com/v/4b23b8f9f964a520915824e3",
     "photos": [],
     "categories": [
-      "Spa"
+      "スパ"
     ],
     "category_group": "onsen",
     "category_label": "温泉・サウナ",
@@ -2205,7 +2205,7 @@
     "foursquare_url": "https://foursquare.com/v/4b5ae1cbf964a520a1d828e3",
     "photos": [],
     "categories": [
-      "Bath House"
+      "浴場"
     ],
     "category_group": "onsen",
     "category_label": "温泉・サウナ",
@@ -2231,7 +2231,7 @@
       "https://fastly.4sqi.net/img/general/500x300/41463109_6tm8qDsY14V2psTShqMNJ-g4eLP0VHgackQun34F2fs.jpg"
     ],
     "categories": [
-      "Hot Spring"
+      "温泉"
     ],
     "category_group": "onsen",
     "category_label": "温泉・サウナ",
@@ -2245,7 +2245,7 @@
     "composition_hint": ""
   },
   {
-    "name": "Saya no Yudokoro (前野原温泉 さやの湯処)",
+    "name": "前野原温泉 さやの湯処",
     "user_comment": "",
     "date": "2023-10-06",
     "lat": 35.770796,
@@ -2254,7 +2254,7 @@
     "foursquare_url": "https://foursquare.com/v/4b77bae1f964a52082a82ee3",
     "photos": [],
     "categories": [
-      "Hot Spring"
+      "温泉"
     ],
     "category_group": "onsen",
     "category_label": "温泉・サウナ",
@@ -2277,7 +2277,7 @@
     "foursquare_url": "https://foursquare.com/v/5e0dbe5237b12d0008b7b214",
     "photos": [],
     "categories": [
-      "Bath House"
+      "浴場"
     ],
     "category_group": "onsen",
     "category_label": "温泉・サウナ",
@@ -2291,7 +2291,7 @@
     "composition_hint": ""
   },
   {
-    "name": "Naena no Yu (杉野沢温泉 苗名の湯)",
+    "name": "杉野沢温泉 苗名の湯",
     "user_comment": "",
     "date": "2023-07-29",
     "lat": 36.849897730416025,
@@ -2302,7 +2302,7 @@
       "https://fastly.4sqi.net/img/general/500x300/41463109_yyQ_Otn4go8usc298tP_UaSD-YxFi92wLIMz8I4xckM.jpg"
     ],
     "categories": [
-      "Hot Spring"
+      "温泉"
     ],
     "category_group": "onsen",
     "category_label": "温泉・サウナ",
@@ -2316,7 +2316,7 @@
     "composition_hint": ""
   },
   {
-    "name": "Haginoyu (ひだまりの泉 萩の湯)",
+    "name": "ひだまりの泉 萩の湯",
     "user_comment": "",
     "date": "2023-07-05",
     "lat": 35.7243235,
@@ -2325,7 +2325,7 @@
     "foursquare_url": "https://foursquare.com/v/4c837cb3e602b1f72c22a67a",
     "photos": [],
     "categories": [
-      "Bath House"
+      "浴場"
     ],
     "category_group": "onsen",
     "category_label": "温泉・サウナ",
@@ -2339,7 +2339,7 @@
     "composition_hint": ""
   },
   {
-    "name": "Keio Takaosan Onsen Gokurakuyu (京王高尾山温泉 極楽湯)",
+    "name": "京王高尾山温泉 極楽湯",
     "user_comment": "混み",
     "date": "2023-07-01",
     "lat": 35.63193,
@@ -2348,7 +2348,7 @@
     "foursquare_url": "https://foursquare.com/v/50e22807e4b08361d2c57f45",
     "photos": [],
     "categories": [
-      "Hot Spring"
+      "温泉"
     ],
     "category_group": "onsen",
     "category_label": "温泉・サウナ",
@@ -2371,7 +2371,7 @@
     "foursquare_url": "https://foursquare.com/v/4f9027b0e4b07368275ba6fa",
     "photos": [],
     "categories": [
-      "Bath House"
+      "浴場"
     ],
     "category_group": "onsen",
     "category_label": "温泉・サウナ",
@@ -2394,7 +2394,7 @@
     "foursquare_url": "https://foursquare.com/v/57370f03498edc94a01e7313",
     "photos": [],
     "categories": [
-      "Hot Spring"
+      "温泉"
     ],
     "category_group": "onsen",
     "category_label": "温泉・サウナ",
@@ -2419,7 +2419,7 @@
       "https://fastly.4sqi.net/img/general/500x300/41463109_uE1eNTnHBHoqZEsWU3FcUr5JIDyGpR1Ftm1_4dbk22o.jpg"
     ],
     "categories": [
-      "Sauna"
+      "サウナ"
     ],
     "category_group": "onsen",
     "category_label": "温泉・サウナ",
@@ -2442,7 +2442,7 @@
     "foursquare_url": "https://foursquare.com/v/4b7f4d6af964a520122630e3",
     "photos": [],
     "categories": [
-      "Hot Spring"
+      "温泉"
     ],
     "category_group": "onsen",
     "category_label": "温泉・サウナ",
@@ -2467,7 +2467,7 @@
       "https://fastly.4sqi.net/img/general/500x300/41463109_KtThY0NtlblDoOjmSTm27aS5SErtQfxJEOMDnAqOpX4.jpg"
     ],
     "categories": [
-      "Hot Spring"
+      "温泉"
     ],
     "category_group": "onsen",
     "category_label": "温泉・サウナ",
@@ -2492,7 +2492,7 @@
       "https://fastly.4sqi.net/img/general/500x300/41463109_ERvc40Dra5YgUaFUBu8mYT6n6XpA0g9uoKDcMo8yzuo.jpg"
     ],
     "categories": [
-      "Hot Spring"
+      "温泉"
     ],
     "category_group": "onsen",
     "category_label": "温泉・サウナ",
@@ -2506,7 +2506,7 @@
     "composition_hint": ""
   },
   {
-    "name": "Karuizawa Sengataki Onsen (軽井沢千ヶ滝温泉)",
+    "name": "軽井沢千ヶ滝温泉",
     "user_comment": "",
     "date": "2023-02-19",
     "lat": 36.365879370784086,
@@ -2517,7 +2517,7 @@
       "https://fastly.4sqi.net/img/general/500x300/41463109_WhPbnhHtj8QV3uyaV32P9QPP-bGTzxeS3dXNw6UVQA8.jpg"
     ],
     "categories": [
-      "Hot Spring"
+      "温泉"
     ],
     "category_group": "onsen",
     "category_label": "温泉・サウナ",
@@ -2542,7 +2542,7 @@
       "https://fastly.4sqi.net/img/general/500x300/41463109_-zBkQAJ-SWR4tJRuzw2qRqxtLmTIxa02AtqUCcKXfCs.jpg"
     ],
     "categories": [
-      "Hot Spring"
+      "温泉"
     ],
     "category_group": "onsen",
     "category_label": "温泉・サウナ",
@@ -2556,7 +2556,7 @@
     "composition_hint": ""
   },
   {
-    "name": "Akakura Onsen Ski Resort (赤倉温泉スキー場)",
+    "name": "赤倉温泉スキー場",
     "user_comment": "雪",
     "date": "2023-01-07",
     "lat": 36.89674830853328,
@@ -2568,7 +2568,7 @@
       "https://fastly.4sqi.net/img/general/500x300/41463109_aEqkpG_NSwD1frYjiJj1HRMb05Th7m4Az6Znoddh0_M.jpg"
     ],
     "categories": [
-      "Ski Resort and Area"
+      "スキー場"
     ],
     "category_group": "onsen",
     "category_label": "温泉・サウナ",
@@ -2591,7 +2591,7 @@
     "foursquare_url": "https://foursquare.com/v/5094e610e4b0cb1b317da979",
     "photos": [],
     "categories": [
-      "Bath House"
+      "浴場"
     ],
     "category_group": "onsen",
     "category_label": "温泉・サウナ",
@@ -2614,7 +2614,7 @@
     "foursquare_url": "https://foursquare.com/v/4cbc2262f50e224b0246fdfb",
     "photos": [],
     "categories": [
-      "Bath House"
+      "浴場"
     ],
     "category_group": "onsen",
     "category_label": "温泉・サウナ",
@@ -2637,7 +2637,7 @@
     "foursquare_url": "https://foursquare.com/v/4b9a7742f964a520c0b735e3",
     "photos": [],
     "categories": [
-      "Bath House"
+      "浴場"
     ],
     "category_group": "onsen",
     "category_label": "温泉・サウナ",
@@ -2660,7 +2660,7 @@
     "foursquare_url": "https://foursquare.com/v/4bdabb732a3a0f479dcbabb6",
     "photos": [],
     "categories": [
-      "Spa"
+      "スパ"
     ],
     "category_group": "onsen",
     "category_label": "温泉・サウナ",
@@ -2683,7 +2683,7 @@
     "foursquare_url": "https://foursquare.com/v/60482b61f644874c069b2ffc",
     "photos": [],
     "categories": [
-      "Hot Spring"
+      "温泉"
     ],
     "category_group": "onsen",
     "category_label": "温泉・サウナ",
@@ -2697,7 +2697,7 @@
     "composition_hint": ""
   },
   {
-    "name": "Oasis Sauna Astil (オアシスサウナ アスティル)",
+    "name": "オアシスサウナ アスティル",
     "user_comment": "",
     "date": "2022-05-29",
     "lat": 35.66590762815346,
@@ -2706,7 +2706,7 @@
     "foursquare_url": "https://foursquare.com/v/4b9a6b4cf964a520b3b335e3",
     "photos": [],
     "categories": [
-      "Sauna"
+      "サウナ"
     ],
     "category_group": "onsen",
     "category_label": "温泉・サウナ",
@@ -2731,7 +2731,7 @@
       "https://fastly.4sqi.net/img/general/500x300/41463109_mlBdGxwnUW5UhPrHJ0bQDBBIyCYi7CemKyYovqVa09Q.jpg"
     ],
     "categories": [
-      "Hot Spring"
+      "温泉"
     ],
     "category_group": "onsen",
     "category_label": "温泉・サウナ",
@@ -2754,7 +2754,7 @@
     "foursquare_url": "https://foursquare.com/v/4bee69ecd355a59315dd0a60",
     "photos": [],
     "categories": [
-      "Hot Spring"
+      "温泉"
     ],
     "category_group": "onsen",
     "category_label": "温泉・サウナ",
@@ -2768,7 +2768,7 @@
     "composition_hint": ""
   },
   {
-    "name": "Sensui (富士山溶岩の湯 泉水)",
+    "name": "富士山溶岩の湯 泉水",
     "user_comment": "",
     "date": "2021-11-06",
     "lat": 35.47892585768754,
@@ -2779,7 +2779,7 @@
       "https://fastly.4sqi.net/img/general/500x300/41463109_9g2G53BurMlQ8526WFMrhrH6xdJvfAT0evIJq2ARyho.jpg"
     ],
     "categories": [
-      "Hot Spring"
+      "温泉"
     ],
     "category_group": "onsen",
     "category_label": "温泉・サウナ",
@@ -2802,7 +2802,7 @@
     "foursquare_url": "https://foursquare.com/v/61136900e3985b1cc0b0016f",
     "photos": [],
     "categories": [
-      "Hot Spring"
+      "温泉"
     ],
     "category_group": "onsen",
     "category_label": "温泉・サウナ",
@@ -2825,7 +2825,7 @@
     "foursquare_url": "https://foursquare.com/v/4bdccf16afe8c9b6f1275185",
     "photos": [],
     "categories": [
-      "Hotel"
+      "ホテル"
     ],
     "category_group": "onsen",
     "category_label": "温泉・サウナ",
@@ -2873,7 +2873,7 @@
     "foursquare_url": "https://foursquare.com/v/4ba3579ef964a520283638e3",
     "photos": [],
     "categories": [
-      "Ski Resort and Area"
+      "スキー場"
     ],
     "category_group": "onsen",
     "category_label": "温泉・サウナ",
@@ -2888,7 +2888,7 @@
   },
   {
     "name": "遠見乃湯",
-    "user_comment": "with えりえり",
+    "user_comment": "えりえりと一緒に",
     "date": "2020-03-01",
     "lat": 36.780485574366615,
     "lng": 138.41546059991063,
@@ -2896,7 +2896,7 @@
     "foursquare_url": "https://foursquare.com/v/4e44bc0b62e1b6355ab05df5",
     "photos": [],
     "categories": [
-      "Hot Spring"
+      "温泉"
     ],
     "category_group": "onsen",
     "category_label": "温泉・サウナ",
@@ -2921,7 +2921,7 @@
       "https://fastly.4sqi.net/img/general/500x300/41463109_eohT7Ou0X36l7MiLwC7P_DWzAFY-90HsF_rvhRPcZZY.jpg"
     ],
     "categories": [
-      "Bath House"
+      "浴場"
     ],
     "category_group": "onsen",
     "category_label": "温泉・サウナ",
@@ -2944,7 +2944,7 @@
     "foursquare_url": "https://foursquare.com/v/4ca8284f97c8a1cd0b5e82a5",
     "photos": [],
     "categories": [
-      "Hot Spring"
+      "温泉"
     ],
     "category_group": "onsen",
     "category_label": "温泉・サウナ",
@@ -2992,7 +2992,7 @@
       "https://fastly.4sqi.net/img/general/500x300/41463109_cEEz6oJSCGrWEhxYnvuqaq17W9wvcW7m_F4p-OsExho.jpg"
     ],
     "categories": [
-      "Hot Spring"
+      "温泉"
     ],
     "category_group": "onsen",
     "category_label": "温泉・サウナ",
@@ -3015,7 +3015,7 @@
     "foursquare_url": "https://foursquare.com/v/4cb1380839458cfa27f909a0",
     "photos": [],
     "categories": [
-      "Hot Spring"
+      "温泉"
     ],
     "category_group": "onsen",
     "category_label": "温泉・サウナ",
@@ -3038,7 +3038,7 @@
     "foursquare_url": "https://foursquare.com/v/4b6e60d7f964a520e5ba2ce3",
     "photos": [],
     "categories": [
-      "Hot Spring"
+      "温泉"
     ],
     "category_group": "onsen",
     "category_label": "温泉・サウナ",
@@ -3061,7 +3061,7 @@
     "foursquare_url": "https://foursquare.com/v/4f7f1724e4b0d9edeace96a8",
     "photos": [],
     "categories": [
-      "Hot Spring"
+      "温泉"
     ],
     "category_group": "onsen",
     "category_label": "温泉・サウナ",
@@ -3084,7 +3084,7 @@
     "foursquare_url": "https://foursquare.com/v/4c8b446e6418a143bacde7ce",
     "photos": [],
     "categories": [
-      "Bath House"
+      "浴場"
     ],
     "category_group": "onsen",
     "category_label": "温泉・サウナ",
@@ -3107,7 +3107,7 @@
     "foursquare_url": "https://foursquare.com/v/4eed8f0aa69d8afe6b28136f",
     "photos": [],
     "categories": [
-      "Bath House"
+      "浴場"
     ],
     "category_group": "onsen",
     "category_label": "温泉・サウナ",
