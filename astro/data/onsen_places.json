@@ -129,7 +129,7 @@
     "composition_hint": ""
   },
   {
-    "name": "裾花峡温泉 うるおい館 (うるおい館)",
+    "name": "うるおい館",
     "user_comment": "長野じゃめずらしい茶褐色、広め、サウナ二つ。",
     "date": "2026-09-01",
     "lat": 36.65408955848814,
@@ -141,7 +141,7 @@
       "https://fastly.4sqi.net/img/general/500x300/41463109_4U-Esj-1a7iJpYCUUe9i39-XvveXNH1ZelW37ou89hg.jpg"
     ],
     "categories": [
-      "Hotel"
+      "ホテル"
     ],
     "data_source": "foursquare_checkin",
     "fsq_id": "4c02897710baef3b05016bbd",
