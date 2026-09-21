@@ -1,4 +1,4 @@
-import { categorySummary, getPlaces, summarizePlaces } from "@/lib/checkins";
+import { getPlaces, summarizePlaces } from "@/lib/checkins";
 
 export async function GET() {
   const places = getPlaces();
@@ -19,7 +19,6 @@ export async function GET() {
               }
             : null,
         },
-        categories: categorySummary(places),
         places,
       },
       null,

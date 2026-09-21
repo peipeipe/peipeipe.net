@@ -12,10 +12,6 @@ export type CheckinPlace = {
   foursquare_url?: string;
   photos?: string[];
   categories?: string[];
-  category_group?: string;
-  category_label?: string;
-  category_emoji?: string;
-  category_color?: string;
   data_source?: string;
   fsq_id?: string;
   checkin_count?: number;
@@ -34,10 +30,6 @@ export function normalizePlace(place: CheckinPlace): Required<Pick<CheckinPlace,
     lng: Number.isFinite(place.lng) ? place.lng : null,
     photos: place.photos || [],
     categories: place.categories || [],
-    category_group: place.category_group || "other",
-    category_label: place.category_label || "その他",
-    category_emoji: place.category_emoji || "📍",
-    category_color: place.category_color || "#607d8b",
     checkin_count: place.checkin_count || 1,
   };
 }
@@ -60,23 +52,4 @@ export function summarizePlaces(items: CheckinPlace[]) {
       null,
     ),
   };
-}
-
-export function categorySummary(items: CheckinPlace[]) {
-  const groups = new Map<string, { key: string; label: string; emoji: string; color: string; count: number }>();
-  items.forEach((place) => {
-    const key = place.category_group || "other";
-    if (!groups.has(key)) {
-      groups.set(key, {
-        key,
-        label: place.category_label || "その他",
-        emoji: place.category_emoji || "📍",
-        color: place.category_color || "#607d8b",
-        count: 0,
-      });
-    }
-    groups.get(key)!.count += 1;
-  });
-
-  return [...groups.values()].sort((a, b) => b.count - a.count || a.label.localeCompare(b.label, "ja"));
 }
