@@ -398,8 +398,15 @@
     "lng": 138.400961,
     "elevation": 2101,
     "tags": [],
-    "visit_count": 2,
+    "visit_count": 3,
     "activities": [
+      {
+        "id": 20276470150,
+        "name": "Morning Trail Run",
+        "date": "2026-09-22",
+        "sport_type": "TrailRun",
+        "distance_km": 8.9
+      },
       {
         "id": 18910743520,
         "name": "Morning Trail Run",
@@ -416,7 +423,7 @@
       }
     ],
     "first_visit": "2025-08-12",
-    "last_visit": "2026-06-14"
+    "last_visit": "2026-09-22"
   },
   {
     "name": "烏帽子山",
@@ -426,8 +433,15 @@
     "tags": [
       "信州百名山"
     ],
-    "visit_count": 5,
+    "visit_count": 6,
     "activities": [
+      {
+        "id": 20276470150,
+        "name": "Morning Trail Run",
+        "date": "2026-09-22",
+        "sport_type": "TrailRun",
+        "distance_km": 8.9
+      },
       {
         "id": 18910743520,
         "name": "Morning Trail Run",
@@ -465,7 +479,7 @@
       }
     ],
     "first_visit": "2025-08-12",
-    "last_visit": "2026-06-14"
+    "last_visit": "2026-09-22"
   },
   {
     "name": "将棊頭山",
