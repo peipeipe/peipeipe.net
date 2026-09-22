@@ -1,5 +1,24 @@
 [
   {
+    "name": "湯の丸高原ホテル",
+    "user_comment": "温泉　サウナ",
+    "date": "2026-09-22",
+    "lat": 36.426712434073536,
+    "lng": 138.42015964284283,
+    "address": "新張湯の丸1270, 東御市, 長野県, 389-0501",
+    "foursquare_url": "https://foursquare.com/v/4f76b030e4b0294fd36b8940",
+    "photos": [],
+    "categories": [
+      "ホテル"
+    ],
+    "data_source": "foursquare_checkin",
+    "fsq_id": "4f76b030e4b0294fd36b8940",
+    "checkin_count": 3,
+    "first_checkin_at": "2023-10-21T08:51:27+00:00",
+    "last_checkin_at": "2026-09-22T03:54:35+00:00",
+    "composition_hint": ""
+  },
+  {
     "name": "真田温泉 ふれあいさなだ館",
     "user_comment": "w/ 父",
     "date": "2026-09-21",
@@ -579,25 +598,6 @@
     "checkin_count": 6,
     "first_checkin_at": "2024-08-16T11:05:27+00:00",
     "last_checkin_at": "2026-06-14T10:20:38+00:00",
-    "composition_hint": ""
-  },
-  {
-    "name": "湯の丸高原ホテル",
-    "user_comment": "日帰り温泉サウナ",
-    "date": "2026-06-14",
-    "lat": 36.426712434073536,
-    "lng": 138.42015964284283,
-    "address": "新張湯の丸1270, 東御市, 長野県, 389-0501",
-    "foursquare_url": "https://foursquare.com/v/4f76b030e4b0294fd36b8940",
-    "photos": [],
-    "categories": [
-      "ホテル"
-    ],
-    "data_source": "foursquare_checkin",
-    "fsq_id": "4f76b030e4b0294fd36b8940",
-    "checkin_count": 2,
-    "first_checkin_at": "2023-10-21T08:51:27+00:00",
-    "last_checkin_at": "2026-06-14T04:52:47+00:00",
     "composition_hint": ""
   },
   {

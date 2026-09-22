@@ -1,5 +1,44 @@
 [
   {
+    "name": "レストハウス湯の丸",
+    "user_comment": "",
+    "date": "2026-09-22",
+    "lat": 36.428223,
+    "lng": 138.42043,
+    "address": "新張1270, 東御市, 長野県, 389-0501",
+    "foursquare_url": "https://foursquare.com/v/52c23de4498e635e767f0984",
+    "photos": [
+      "https://fastly.4sqi.net/img/general/500x300/41463109_iT2AqegiFg0aYlzVgPnme8KWzjjWK7B84ggZlzenzv0.jpg"
+    ],
+    "categories": [
+      "レストラン"
+    ],
+    "data_source": "foursquare_checkin",
+    "fsq_id": "52c23de4498e635e767f0984",
+    "checkin_count": 1,
+    "first_checkin_at": "2026-09-22T04:17:48+00:00",
+    "last_checkin_at": "2026-09-22T04:17:48+00:00"
+  },
+  {
+    "name": "湯の丸高原ホテル",
+    "user_comment": "温泉　サウナ",
+    "date": "2026-09-22",
+    "lat": 36.426712434073536,
+    "lng": 138.42015964284283,
+    "address": "新張湯の丸1270, 東御市, 長野県, 389-0501",
+    "foursquare_url": "https://foursquare.com/v/4f76b030e4b0294fd36b8940",
+    "photos": [],
+    "categories": [
+      "ホテル"
+    ],
+    "data_source": "foursquare_checkin",
+    "fsq_id": "4f76b030e4b0294fd36b8940",
+    "checkin_count": 3,
+    "first_checkin_at": "2023-10-21T08:51:27+00:00",
+    "last_checkin_at": "2026-09-22T03:54:35+00:00",
+    "composition_hint": ""
+  },
+  {
     "name": "真田温泉 ふれあいさなだ館",
     "user_comment": "w/ 父",
     "date": "2026-09-21",
@@ -1761,25 +1800,6 @@
     "checkin_count": 4,
     "first_checkin_at": "2023-10-21T08:52:17+00:00",
     "last_checkin_at": "2026-06-14T04:53:01+00:00",
-    "composition_hint": ""
-  },
-  {
-    "name": "湯の丸高原ホテル",
-    "user_comment": "日帰り温泉サウナ",
-    "date": "2026-06-14",
-    "lat": 36.426712434073536,
-    "lng": 138.42015964284283,
-    "address": "新張湯の丸1270, 東御市, 長野県, 389-0501",
-    "foursquare_url": "https://foursquare.com/v/4f76b030e4b0294fd36b8940",
-    "photos": [],
-    "categories": [
-      "ホテル"
-    ],
-    "data_source": "foursquare_checkin",
-    "fsq_id": "4f76b030e4b0294fd36b8940",
-    "checkin_count": 2,
-    "first_checkin_at": "2023-10-21T08:51:27+00:00",
-    "last_checkin_at": "2026-06-14T04:52:47+00:00",
     "composition_hint": ""
   },
   {
@@ -18158,8 +18178,8 @@
     "name": "大宮駅",
     "user_comment": "初上陸（マジ）",
     "date": "2022-09-21",
-    "lat": 35.90660102198511,
-    "lng": 139.62399890993686,
+    "lat": 35.906307736381,
+    "lng": 139.62397401094168,
     "address": "大宮区錦町, さいたま市, 埼玉県, 330-0853",
     "foursquare_url": "https://foursquare.com/v/4b3dd6ddf964a520089725e3",
     "photos": [],
