@@ -393,39 +393,6 @@
     "last_visit": "2025-09-06"
   },
   {
-    "name": "湯ノ丸山",
-    "lat": 36.434743,
-    "lng": 138.400961,
-    "elevation": 2101,
-    "tags": [],
-    "visit_count": 3,
-    "activities": [
-      {
-        "id": 20276470150,
-        "name": "Morning Trail Run",
-        "date": "2026-09-22",
-        "sport_type": "TrailRun",
-        "distance_km": 8.9
-      },
-      {
-        "id": 18910743520,
-        "name": "Morning Trail Run",
-        "date": "2026-06-14",
-        "sport_type": "TrailRun",
-        "distance_km": 8.5
-      },
-      {
-        "id": 15426273017,
-        "name": "Morning Trail Run",
-        "date": "2025-08-12",
-        "sport_type": "TrailRun",
-        "distance_km": 8.6
-      }
-    ],
-    "first_visit": "2025-08-12",
-    "last_visit": "2026-09-22"
-  },
-  {
     "name": "烏帽子山",
     "lat": 36.433365,
     "lng": 138.387139,
@@ -433,8 +400,15 @@
     "tags": [
       "信州百名山"
     ],
-    "visit_count": 6,
+    "visit_count": 7,
     "activities": [
+      {
+        "id": 20292573579,
+        "name": "烏帽子スカイラン試走",
+        "date": "2026-09-23",
+        "sport_type": "TrailRun",
+        "distance_km": 28.4
+      },
       {
         "id": 20276470150,
         "name": "Morning Trail Run",
@@ -469,6 +443,39 @@
         "date": "2025-10-07",
         "sport_type": "TrailRun",
         "distance_km": 23.9
+      },
+      {
+        "id": 15426273017,
+        "name": "Morning Trail Run",
+        "date": "2025-08-12",
+        "sport_type": "TrailRun",
+        "distance_km": 8.6
+      }
+    ],
+    "first_visit": "2025-08-12",
+    "last_visit": "2026-09-23"
+  },
+  {
+    "name": "湯ノ丸山",
+    "lat": 36.434743,
+    "lng": 138.400961,
+    "elevation": 2101,
+    "tags": [],
+    "visit_count": 3,
+    "activities": [
+      {
+        "id": 20276470150,
+        "name": "Morning Trail Run",
+        "date": "2026-09-22",
+        "sport_type": "TrailRun",
+        "distance_km": 8.9
+      },
+      {
+        "id": 18910743520,
+        "name": "Morning Trail Run",
+        "date": "2026-06-14",
+        "sport_type": "TrailRun",
+        "distance_km": 8.5
       },
       {
         "id": 15426273017,
