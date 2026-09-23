@@ -17,7 +17,8 @@
     "fsq_id": "52c23de4498e635e767f0984",
     "checkin_count": 1,
     "first_checkin_at": "2026-09-22T04:17:48+00:00",
-    "last_checkin_at": "2026-09-22T04:17:48+00:00"
+    "last_checkin_at": "2026-09-22T04:17:48+00:00",
+    "composition_hint": ""
   },
   {
     "name": "湯の丸高原ホテル",
@@ -15710,8 +15711,8 @@
     "name": "恵比寿駅",
     "user_comment": "",
     "date": "2023-04-22",
-    "lat": 35.646504016661744,
-    "lng": 139.71023735113857,
+    "lat": 35.64702567559452,
+    "lng": 139.70997802361416,
     "address": "恵比寿南1-5-5, 渋谷区, 東京都, 150-0022",
     "foursquare_url": "https://foursquare.com/v/4b42a9c9f964a5206dd825e3",
     "photos": [],
@@ -42631,8 +42632,8 @@
     "name": "御茶ノ水駅",
     "user_comment": "",
     "date": "2013-05-02",
-    "lat": 35.69973390580162,
-    "lng": 139.76482112352625,
+    "lat": 35.699491504296425,
+    "lng": 139.76527037571051,
     "address": "神田駿河台2-6-1, 千代田区, 東京都",
     "foursquare_url": "https://foursquare.com/v/4b38b418f964a520914f25e3",
     "photos": [],
