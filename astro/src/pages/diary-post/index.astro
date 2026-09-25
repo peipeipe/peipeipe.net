@@ -900,6 +900,27 @@
     <p id="draft-status" role="status">下書きを開いていません</p>
   </details>
 
+  <details class="glass draft-panel section-gap">
+    <summary>投稿済みの日記を編集</summary>
+    <div class="field">
+      <label for="edit-date">日付</label>
+      <input type="date" id="edit-date">
+    </div>
+    <div class="draft-actions">
+      <button type="button" class="btn btn-secondary" id="btn-load-entries">項目を取得</button>
+    </div>
+    <div class="field">
+      <label for="edit-entry">編集する項目</label>
+      <select id="edit-entry"><option value="">日付を選んで取得してください</option></select>
+    </div>
+    <div class="draft-actions">
+      <button type="button" class="btn btn-secondary" id="btn-edit-entry" disabled>編集する</button>
+      <button type="button" class="btn btn-secondary" id="btn-end-edit" disabled>編集を終了</button>
+    </div>
+    <p id="edit-status" role="status"></p>
+  </details>
+  <p id="local-save-status" role="status">本文・日時を自動保存（添付写真を除く）</p>
+
   <!-- ── Date / Time ── -->
   <div class="glass datetime-bar section-gap">
     <div class="field">
@@ -988,6 +1009,7 @@
 <div class="toast-container" id="toast-container" aria-live="polite" aria-atomic="false"></div>
 
 <script>
+  import { diarySections, replaceDiarySection } from "../../lib/diary-edit.mjs";
   import { writeWebpBlob } from "../../lib/upload-webp";
   import { DRAFT_DIRECTORY, draftPath, serializeDraft, parseDraft, assertDraftUnchanged } from "../../lib/diary-drafts.mjs";
   /* ════════════════════════════════════════════
@@ -1003,6 +1025,7 @@
     processing: false,
     draft: null,
     savedText: '',
+    editing: null,
   };
 
   /* ════════════════════════════════════════════
@@ -1470,15 +1493,24 @@
     const ok = state.token && hasContent && !state.processing && !state.imageProcessing;
     btnSubmit.disabled = !ok;
     const busy = state.processing || state.imageProcessing;
-    btnSaveDraft.disabled = busy || !state.token || !textarea.value.trim() || !inputDate.value || !inputTime.value;
+    $('btn-load-entries').disabled = busy || !state.token;
+    $('btn-end-edit').disabled = busy || !state.editing;
+    $('btn-edit-entry').disabled = busy || !state.token || !$('edit-entry').value;
+    $('edit-date').disabled = busy;
+    $('edit-entry').disabled = busy;
+    btnSaveDraft.disabled = Boolean(state.editing) || busy || !state.token || !textarea.value.trim() || !inputDate.value || !inputTime.value;
     btnRefreshDrafts.disabled = busy || !state.token;
     btnOpenDraft.disabled = busy || !state.token || !draftList.value;
     btnDeleteDraft.disabled = busy || !state.token || !state.draft;
     btnNewDraft.disabled = busy;
     draftList.disabled = busy;
     // Keep the submitted snapshot stable while saving or publishing.
-    [textarea, inputDate, inputTime, btnNow, btnPickImage, inputToken, btnClear,
+    [textarea, inputDate, inputTime, btnNow, btnYesterday, btnPickImage, inputToken, btnClear,
       $('btn-save-settings'), ...toolbarBtns].forEach(el => { el.disabled = state.processing; });
+    if (state.editing) [inputDate, inputTime, btnNow, btnYesterday].forEach(el => { el.disabled = true; });
+    $('edit-status').textContent = state.editing ? `${inputDate.value} ${inputTime.value} の投稿を編集中` : '';
+    if (!state.processing) submitLabel.textContent = state.editing ? '変更を保存する' : '🚀 投稿する';
+    saveLocalEditor();
     if (state.processing) imageList.querySelectorAll('button').forEach(el => { el.disabled = true; });
     if (state.draft) {
       draftStatus.textContent = draftSnapshot() === state.savedText
@@ -1610,12 +1642,80 @@
     });
   }
 
+  let localReady = false;
+  let localSaved = false;
+  let emptyEditorSnapshot = draftSnapshot();
+  const LOCAL_EDITOR_KEY = 'diary-editor-v1';
+  let loadedEntries = null;
+
+  function saveLocalEditor() {
+    if (!localReady) return;
+    try {
+      if (draftSnapshot() === emptyEditorSnapshot && !state.editing && !state.draft) {
+        localStorage.removeItem(LOCAL_EDITOR_KEY);
+      } else {
+        localStorage.setItem(LOCAL_EDITOR_KEY, JSON.stringify({
+          version: 1, date: inputDate.value, time: inputTime.value, text: textarea.value,
+          editing: state.editing, draft: state.draft, savedText: state.savedText,
+        }));
+      }
+      localSaved = true;
+      $('local-save-status').textContent = '端末に保存済み（添付写真を除く）';
+    } catch {
+      localSaved = false;
+      $('local-save-status').textContent = '端末への自動保存に失敗しました。画面を閉じる前に本文をコピーしてください。';
+    }
+  }
+
+  $('btn-load-entries').addEventListener('click', () => draftOperation(async () => {
+    const date = $('edit-date').value;
+    if (!date) throw new Error('日付を選んでください。');
+    loadedEntries = null;
+    $('edit-entry').replaceChildren(new Option('項目を選んでください', ''));
+    const file = await getFileInfo(`astro/content/diary/${date}.md`);
+    if (!file) throw new Error('この日の日記はありません。');
+    const sections = diarySections(file.content);
+    loadedEntries = { date, file, sections };
+    sections.forEach((section, index) => {
+      $('edit-entry').add(new Option(`${section.time} — ${section.text.slice(0, 50)}`, String(index)));
+    });
+    if (!sections.length) throw new Error('編集できる時刻付きの項目がありません。');
+  }));
+  $('btn-end-edit').addEventListener('click', () => btnNewDraft.click());
+  $('edit-entry').addEventListener('change', validateForm);
+  $('edit-date').addEventListener('input', () => {
+    loadedEntries = null;
+    $('edit-entry').replaceChildren(new Option('日付を選んで取得してください', ''));
+    validateForm();
+  });
+  $('btn-edit-entry').addEventListener('click', () => {
+    if ($('btn-edit-entry').disabled || !loadedEntries || !canReplaceEditor()) return;
+    const index = Number($('edit-entry').value);
+    const { date, file, sections } = loadedEntries;
+    const section = sections[index];
+    state.draft = null;
+    state.editing = { sha: file.sha, index, date, time: section.time };
+    inputDate.value = date;
+    inputTime.value = section.time;
+    textarea.value = section.text;
+    state.savedText = draftSnapshot();
+    charCount.textContent = textarea.value.length.toLocaleString();
+    draftStatus.textContent = '下書きを開いていません';
+    resetImages();
+    $('tab-write-btn').click();
+    validateForm();
+  });
+  window.addEventListener('pagehide', saveLocalEditor);
+  document.addEventListener('visibilitychange', () => {
+    if (document.visibilityState === 'hidden') saveLocalEditor();
+  });
+
   function draftSnapshot() {
     return JSON.stringify({ date: inputDate.value, time: inputTime.value, text: textarea.value });
   }
 
   function hasUnsavedWork() {
-    return state.imageUploads.length > 0 || (state.draft
+    return state.imageUploads.length > 0 || (state.draft || state.editing
       ? draftSnapshot() !== state.savedText : Boolean(textarea.value));
   }
 
@@ -1690,6 +1790,7 @@
       const file = await getFileInfo(path);
       if (!file) throw new Error('この下書きは投稿または削除されています。一覧を更新してください。');
       const draft = parseDraft(file.content);
+      state.editing = null;
       textarea.value = draft.text;
       inputDate.value = draft.date;
       inputTime.value = draft.time;
@@ -1723,7 +1824,8 @@
   });
 
   window.addEventListener('beforeunload', event => {
-    if (!hasUnsavedWork() && !state.processing) return;
+    saveLocalEditor();
+    if (!state.processing && !state.imageUploads.length && (localSaved || !hasUnsavedWork())) return;
     event.preventDefault();
     event.returnValue = '';
   });
@@ -1738,6 +1840,18 @@
     };
   }
 
+  function buildDiarySection(time, text, imageUrls) {
+    // 新しいセクションを組み立て
+    let newSection = `\n## ${time}\n`;
+    if (text)      newSection += `${text}\n`;
+    imageUrls.forEach((imageUrl, index) => {
+      const altText = imageUrls.length > 1 ? `投稿画像${index + 1}` : '投稿画像';
+      newSection += `![${altText}](${imageUrl})\n`;
+    });
+
+    return newSection;
+  }
+
   /** 日記ファイルのMarkdownを生成・更新 */
   function buildDiaryContent(existingContent, date, time, text, imageUrls) {
     const WEEKDAYS = ['日','月','火','水','木','金','土'];
@@ -1747,13 +1861,7 @@
       return `${y}年${String(m).padStart(2,'0')}月${String(day).padStart(2,'0')}日(${wd})`;
     }
 
-    // 新しいセクションを組み立て
-    let newSection = `\n## ${time}\n`;
-    if (text)      newSection += `${text}\n`;
-    imageUrls.forEach((imageUrl, index) => {
-      const altText = imageUrls.length > 1 ? `投稿画像${index + 1}` : '投稿画像';
-      newSection += `![${altText}](${imageUrl})\n`;
-    });
+    const newSection = buildDiarySection(time, text, imageUrls);
 
     if (existingContent) {
       // 既存ファイルに追記
@@ -1802,6 +1910,11 @@
       // ── Step 1: 画像パスを決定 ──
       state.imageUploads.forEach((upload, index) => {
         const imagePath = diaryImagePath(date, time, upload.ext, index, state.imageUploads.length);
+        if (state.editing) {
+          const suffix = `-${crypto.randomUUID()}.${upload.ext}`;
+          imagePath.repoPath = imagePath.repoPath.replace(/\.[^.]+$/, suffix);
+          imagePath.publicUrl = imagePath.publicUrl.replace(/\.[^.]+$/, suffix);
+        }
         imageUrls.push(imagePath.publicUrl);
 
         files.push({
@@ -1818,11 +1931,14 @@
 
       // ── Step 3: Markdownを生成して書き込み ──
       setLoading(true, '✍️ 日記を保存中...');
-      const newContent = buildDiaryContent(
+      const appendedContent = buildDiaryContent(
         existing?.content ?? null,
         date, time, content, imageUrls
       );
-      const commitMsg = `📝 日記: ${date} ${time}`;
+      const newContent = state.editing
+        ? replaceDiarySection(existing, state.editing, buildDiarySection(time, content, imageUrls))
+        : appendedContent;
+      const commitMsg = `${state.editing ? 'Edit diary' : '📝 日記'}: ${date} ${time}`;
       files.push({
         path: diaryPath,
         content: utf8ToBase64(newContent),
@@ -1857,7 +1973,7 @@
   function setLoading(on, label = '🚀 投稿する') {
     state.processing = on;
     validateForm();
-    submitLabel.textContent = on ? label : '🚀 投稿する';
+    submitLabel.textContent = on ? label : (state.editing ? '変更を保存する' : '🚀 投稿する');
     btnSubmit.disabled = on;
     const existing = $('submit-spinner');
     if (on && !existing) {
@@ -1873,6 +1989,7 @@
   }
 
   function resetAfterSubmit() {
+    state.editing = null;
     state.draft = null;
     state.savedText = '';
     draftStatus.textContent = '下書きを開いていません';
@@ -1881,6 +1998,8 @@
     charCount.textContent = '0';
     resetImages();
     setNow();
+    emptyEditorSnapshot = draftSnapshot();
+    saveLocalEditor();
   }
 
 
@@ -1929,6 +2048,25 @@
   /* ════════════════════════════════════════════
      Init
   ════════════════════════════════════════════ */
+  try {
+    const saved = JSON.parse(localStorage.getItem(LOCAL_EDITOR_KEY) || 'null');
+    if (saved?.version === 1 && typeof saved.text === 'string' &&
+        typeof saved.date === 'string' && typeof saved.time === 'string' &&
+        /^(?:\d{4}-\d{2}-\d{2})?$/.test(saved.date) && /^(?:\d{2}:\d{2})?$/.test(saved.time)) {
+      textarea.value = saved.text;
+      inputDate.value = saved.date;
+      inputTime.value = saved.time;
+      state.editing = saved.editing || null;
+      state.draft = saved.draft || null;
+      state.savedText = saved.savedText || '';
+      charCount.textContent = textarea.value.length.toLocaleString();
+      showToast('info', '前回の入力を復元しました');
+    }
+  } catch {
+    showToast('error', '端末の保存内容を復元できませんでした');
+  }
+  localReady = true;
+  $('edit-date').value = inputDate.value;
   loadSettings();
   validateForm();
 
