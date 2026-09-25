@@ -1,5 +1,41 @@
 [
   {
+    "id": 20321856622,
+    "name": "夕方のランニング",
+    "sport_type": "Run",
+    "distance": 11688.7,
+    "moving_time": 3889,
+    "elapsed_time": 4332,
+    "total_elevation_gain": 44.0,
+    "start_date": "2026-09-25T09:19:42Z",
+    "start_date_local": "2026-09-25T18:19:42Z",
+    "start_latlng": [
+      36.404097,
+      138.238921
+    ],
+    "average_speed": 3.006,
+    "max_speed": 3.8,
+    "summary_polyline": "qde}EgxvjYUNQ^Md@sA|CEDSGIBg@rAa@v@eErEq@jAU@JFABKRc@`@CJBLr@Ll@\\tDxCvFhEf@b@HX?NELkDrFY`@mAtAs@l@{A|@{BhAqAh@EF_@|HQbB_@dCuAzGy@jEgBhIk@hDuA~GKTZ{A@KCCu@bCEJYXa@DsAg@]?CHDz@PpANbDEl@Uv@Q|@GrBGHGbBWfDHr@?ZmA~HSvBSdG?vCH`LGlDM|Bs@dHo@dEy@fDu@hCm@dB{@lBWZKHW`@UNiAKUAOFEXA`@i@pEa@rBs@~Bm@pA[f@{@`AaB~AiElD}DjD_@Xq@Zc@Lw@Ho@?e@MqAg@k@Ia@Hu@l@]^g@^kBz@{B`AqANY`@_@r@cAbAqCzBkB~Ay@x@[h@iApAaApA_HhI_@Zq@`@[LOUQi@_BgGw@mCO{A?c@NGhD[bC]tAKl@KpEe@pAWXOx@q@nCiBrBsBJGN@JKbAeBLc@Ra@Pi@j@kAd@eB^iBjDqO~@kElAcFL_@`@cBFo@Jm@b@wFVkEN@JGFg@@a@AoA`AsOr@yGZaCjAgHvAaKFw@|AsJvA{JFOZKb@CL@_@i@]UACVeBd@mCj@qBF@d@Zb@DVFx@^b@HT?LqAP}@T}A\\}Ad@yCj@gC@[TeALg@DCNB~@NJ?j@Ed@MjAg@RQj@s@bDeHv@yALoAPi@JKVe@h@s@`@_AhByD|F{Md@{@z@kBvCqIpAyCVWDc@jBuCfCqCt@kAtAsC"
+  },
+  {
+    "id": 20320019424,
+    "name": "午後のライド",
+    "sport_type": "Ride",
+    "distance": 51521.4,
+    "moving_time": 7947,
+    "elapsed_time": 8767,
+    "total_elevation_gain": 171.0,
+    "start_date": "2026-09-25T04:12:19Z",
+    "start_date_local": "2026-09-25T13:12:19Z",
+    "start_latlng": [
+      36.391824,
+      138.243498
+    ],
+    "average_speed": 6.483,
+    "max_speed": 10.32,
+    "summary_polyline": "w}b}EodwjYc@v@k@CcBqAe@aCWP}B_Es@i@q@`@_D~E{KjZ_IdQEd@rA|B}CvAiDpCcI`LmCfGi@|Be@zEe@j^i@lGaAnCaDnDk@vAq@|FLv@`@@j@MuDnI}@jEoDtJcCb\\\\rAhBj@lJuBfFFg@pEiC`Ny@f@yJbAaEq@wGlBm@t@_@vAeBvLxA}A\\I`@`@yBhGs[rc@yI`CmClAqIfBe@f@uDfIkYrUqA`BRfA[~As@aA_Cb@mh@hb@gRpJ{AvAqCjATh@vB~@sJgCaF]ePp@U^Cl@sCZeR{FoHsAkIk@mQD{N|@wH~@mEhCwCfEoB|@AZtAhB{CjDiHfSYjBq@z@o@zBc@`@{HlTcFvK_E~GwFbI{NnOmDfF{BpEmBtF_C`LcCnIkAdBa@bAJhEp@vBnAe@g@?IYc@nAuA`@sFLcI~A}UrJsLbHy\\zKuBiAiA?oCp@qA`Aq@NmAjC}AvAwV|QwJxMy@vBiEjPqE`MaId[eE~Ls@\\yKzPoGzHApBSV{FjCcRvQcQhLeC`CMfAt@~Hg@~@eOrFmLbDuCnBcNfFgFrAqGn@kGP_a@gAMn@PxBYLg@O_@oCs@q@aJqBeEwBmBoA_FuEoJeF}[oU{CeB?_@rIsSgIrTja@bYjIpEjFzE`DtB`EfBjIdBZl@PjB|@r@H_@Q_Cl@_@t_@bAnHQnIgAlSmHdCcBjLeDrO_GNgB]qCAaE|B{B~P_LnReRhGsCC{Af@mAtF}GhKmPzAqAJkA~DqLjGsVzEyMpFgS|LoPhVmQrAyAdA}Bt@GvBoApC_@dBp@rAEzXuIjHkD`FgDzTcJrGyApKm@@o@i@yAIgFjAcB`CyHtCcNjAuD~B_FjCeErRiTbKiPpEmJ~KqZp@u@t@wDzFyOx@sAtBqBA]qAyAH[zAs@~D_FrDuBxKqAbMo@pPAnG\\fGbAnUzG~BOH}@V[lRw@vBRhKlCiCoAb@k@xBw@zA{AjQ}I|h@yb@nBa@d@hAz@oAEyAv@sAhZcWpDcItJyB`DyAhKmCdQsY|FuHtBwFzOiOnCyGg@[qAjBoAcARaBuA[LaA]Qd@s@rDu@fGc@lEcB\\yBYGiCGaCR{CbAuD^{As@UuA~Be[`DcJ^uDjCuGvAwBu@Pi@cB\\mDfAcClD_Ep@oBt@wJVmXJmC|@wGfCsG|JuMnCuBvCqAiA_BE_ArHoPrL_\\nNoU^[dAb@"
+  },
+  {
     "id": 20294992522,
     "name": "Evening Run",
     "sport_type": "Run",
