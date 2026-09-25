@@ -12909,8 +12909,8 @@
     "name": "東海道新幹線 東京駅",
     "user_comment": "",
     "date": "2024-01-26",
-    "lat": 35.68097155252545,
-    "lng": 139.76760654185256,
+    "lat": 35.68077713200091,
+    "lng": 139.76784615383215,
     "address": "丸の内1-9-1, 千代田区, 東京都, 100-0005",
     "foursquare_url": "https://foursquare.com/v/4b792714f964a52018ed2ee3",
     "photos": [
@@ -15711,8 +15711,8 @@
     "name": "恵比寿駅",
     "user_comment": "",
     "date": "2023-04-22",
-    "lat": 35.64702567559452,
-    "lng": 139.70997802361416,
+    "lat": 35.64660399333276,
+    "lng": 139.71016254500535,
     "address": "恵比寿南1-5-5, 渋谷区, 東京都, 150-0022",
     "foursquare_url": "https://foursquare.com/v/4b42a9c9f964a5206dd825e3",
     "photos": [],
@@ -17785,12 +17785,12 @@
     "composition_hint": ""
   },
   {
-    "name": "四季香 千里香",
+    "name": "四季香 新大久保店",
     "user_comment": "",
     "date": "2022-11-25",
-    "lat": 35.70147,
-    "lng": 139.698538,
-    "address": "百人町1-17-10 (細野ビル 2階), 新宿区, 東京都, 169-0073",
+    "lat": 35.7015048,
+    "lng": 139.6990225,
+    "address": "百人町1-15-20 (THE V-CITY新大久保 2F), 新宿区, 東京都, 169-0073",
     "foursquare_url": "https://foursquare.com/v/4d089c7900e6b1f75d510ed7",
     "photos": [
       "https://fastly.4sqi.net/img/general/500x300/41463109_NAZ1xFNnML5NPgkTQ3zNhXefxXM1psMWVMyYcSEnPIk.jpg"
@@ -22052,8 +22052,8 @@
     "name": "岡山駅",
     "user_comment": "",
     "date": "2021-09-10",
-    "lat": 34.66630769784681,
-    "lng": 133.9179969050224,
+    "lat": 34.66610609075071,
+    "lng": 133.91798758654076,
     "address": "北区駅元町1-1, 岡山市, 岡山県, 700-0024",
     "foursquare_url": "https://foursquare.com/v/4baa300af964a52094513ae3",
     "photos": [
