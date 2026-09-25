@@ -347,11 +347,18 @@
     /* ── Date/Time Bar ── */
     .datetime-bar {
       display: grid;
-      grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) auto;
+      grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
       gap: 10px;
       align-items: end;
       padding: 16px 20px;
       margin-bottom: 12px;
+    }
+
+    .datetime-actions {
+      grid-column: 1 / -1;
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
     }
 
     .btn-now {
@@ -903,7 +910,10 @@
       <label for="input-time">🕐 時刻</label>
       <input type="time" id="input-time">
     </div>
-    <button class="btn-now" id="btn-now" title="現在時刻を設定">⟳ 今</button>
+    <div class="datetime-actions">
+      <button type="button" class="btn-now" id="btn-now" title="現在時刻を設定">⟳ 今</button>
+      <button type="button" class="btn-now" id="btn-yesterday" title="日本時間の昨日23:55を設定">昨日 23:55</button>
+    </div>
   </div>
 
   <!-- ── Write / Preview Tabs ── -->
@@ -1010,6 +1020,7 @@
   const inputDate        = $('input-date');
   const inputTime        = $('input-time');
   const btnNow           = $('btn-now');
+  const btnYesterday     = $('btn-yesterday');
   const textarea         = $('content');
   const charCount        = $('char-count');
   const previewContent   = $('preview-content');
@@ -1118,6 +1129,11 @@
   }
 
   btnNow.addEventListener('click', setNow);
+  btnYesterday.addEventListener('click', () => {
+    const { date } = toJSTString(new Date(Date.now() - 24 * 60 * 60 * 1000));
+    inputDate.value = date;
+    inputTime.value = '23:55';
+  });
   setNow(); // init
 
   /* ════════════════════════════════════════════
@@ -1645,6 +1661,7 @@
   draftList.addEventListener('change', validateForm);
   [inputDate, inputTime].forEach(el => el.addEventListener('input', validateForm));
   btnNow.addEventListener('click', validateForm);
+  btnYesterday.addEventListener('click', validateForm);
 
   btnSaveDraft.addEventListener('click', () => {
     if (btnSaveDraft.disabled) return;
