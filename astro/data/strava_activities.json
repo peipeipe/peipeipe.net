@@ -1,5 +1,23 @@
 [
   {
+    "id": 20332464903,
+    "name": "長和マウンテントレイルスタート〜大門峠スイーパー",
+    "sport_type": "TrailRun",
+    "distance": 37567.5,
+    "moving_time": 24614,
+    "elapsed_time": 24617,
+    "total_elevation_gain": 1288.0,
+    "start_date": "2026-09-25T23:30:08Z",
+    "start_date_local": "2026-09-26T08:30:08Z",
+    "start_latlng": [
+      36.147538,
+      138.205191
+    ],
+    "average_speed": 1.526,
+    "max_speed": 4.567,
+    "summary_polyline": "aas{EmepjYj@cB~EzCPpGrBrDdDxBvKfErNhClKnDbKzE|B~AG^T]dDdMx@fAnE~@|C`DvHrBnBpBfDd@bEuAvA`BxACg@rDWdHdGgDrH|Aw@}Nw@cEfAoC}EkEqAoDj@iAG}BhAc@V{Bn@e@b@mIvGgLsBcJoC_F|DL|CiBtANbBrAa@`ET`BdEzDv@xDr@h@bAm@lBvB`BSWiD\\cHcBPhAkDbBwRlDsFg@cBfB_G]cEf@o@fDYzBoCaAg@cEp@wGuAm@vJyArAoCH]eCf@mAtBm@\\wF~AcKjAgCUYiCj@yBtA?eCwBsCQcDmBu@UmBcDuHFcDsAeA_AiCeC}AwBmRzKHxNsGeHmHyAoJ]a@Wh@WkBkAuAsHpBQa@l@_CjDwDQo@yA|@HaEe@cCE_Ox@sEOyEfLqOo@cFPaChIiA?{AtAyAdBgGcAgAoBrAkBMZuBWeA}HhA{BKu@qAh@gFc@m@_FlDyDYoCyCWuErEsDqC_@yAoBiEEuArBqCTcEiFeEPoE{B}BpA{@MOlAmA`AsFRaAW\\^Ua@lH@rAkA@y@zDoApEtBxDWhFfF~BOrBuBzCRz@nAm@qAiDQ{BdCcCBiDqEyGMeDqAcDv@cBlCwGNmBgC{@Es@{B}AIiG`HeB`@g@c@GqDoBiH\\_BbFkC\\oAo@aAyI~@cBe@q@dAS~CeBtBwMCi@yApCgCqA}A_@}BoB}BjA}De@w@eG}@eB}CxF}CoDwEhC{CV{AcIjAOqCuChAcEuASbBp@bDiBK}@xCcC_AkBaEsFdD_@Qi@aBcCaBnBeCbAwEaDw@C{BeDpAoD@Q}A`AqEOiAo@s@sBpA}@Ob@uFiACy@{BsCnFqBvAoAaDaAxAsAR_DyCkA~CaCx@sKmJ}N{FGoBzCeAzHXrEaCT_D]iEZ_AdGyEvEE}@yAcIqA}HhA_AiF}Me@eCuHaSeGoCqBqAdE{G_@dHZlAeE`B~AvTzGhBbH|Dn@|V]dI}B]z@nAhD`CTd@fBtD|C~OnFzRzRhDdB|@tBIpClAl@fB~FlMkHhOm@pApC~CfC~Br@tNlJj@HvBcEnHzF|CjAp@xAvCxAhAEXl@jBO~BpAr@dA_A`QqCxCMhAmIvBn@hCbDiAdPj@|K{GtBY~AV|At@|BhBzI~IdJvLl@?dEbElFjH`JzUeBhCd@\\lAyArBvGxDzD~AZbB`BjFdJd@jAx@~D`AjAY`@dAd@x@nCfEJjCtA~DtKdGbIa@r@"
+  },
+  {
     "id": 20321856622,
     "name": "夕方のランニング",
     "sport_type": "Run",
