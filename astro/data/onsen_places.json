@@ -1,5 +1,25 @@
 [
   {
+    "name": "武石温泉 うつくしの湯",
+    "user_comment": "",
+    "date": "2026-09-26",
+    "lat": 36.286588633751414,
+    "lng": 138.22749276527617,
+    "address": "上武石1454-3, 上田市, 長野県, 386-0508",
+    "foursquare_url": "https://foursquare.com/v/4dbb9958f7b1ab37dd49cde9",
+    "photos": [
+      "https://fastly.4sqi.net/img/general/500x300/41463109_dizSOU3hkAVsWeRq7MJUaIGu7mHz4Q5CJJqbmdXCi6M.jpg"
+    ],
+    "categories": [
+      "温泉"
+    ],
+    "data_source": "foursquare_checkin",
+    "fsq_id": "4dbb9958f7b1ab37dd49cde9",
+    "checkin_count": 1,
+    "first_checkin_at": "2026-09-26T08:35:50+00:00",
+    "last_checkin_at": "2026-09-26T08:35:50+00:00"
+  },
+  {
     "name": "湯の丸高原ホテル",
     "user_comment": "温泉　サウナ",
     "date": "2026-09-22",

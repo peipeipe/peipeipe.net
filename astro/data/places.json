@@ -1,5 +1,25 @@
 [
   {
+    "name": "武石温泉 うつくしの湯",
+    "user_comment": "",
+    "date": "2026-09-26",
+    "lat": 36.286588633751414,
+    "lng": 138.22749276527617,
+    "address": "上武石1454-3, 上田市, 長野県, 386-0508",
+    "foursquare_url": "https://foursquare.com/v/4dbb9958f7b1ab37dd49cde9",
+    "photos": [
+      "https://fastly.4sqi.net/img/general/500x300/41463109_dizSOU3hkAVsWeRq7MJUaIGu7mHz4Q5CJJqbmdXCi6M.jpg"
+    ],
+    "categories": [
+      "温泉"
+    ],
+    "data_source": "foursquare_checkin",
+    "fsq_id": "4dbb9958f7b1ab37dd49cde9",
+    "checkin_count": 1,
+    "first_checkin_at": "2026-09-26T08:35:50+00:00",
+    "last_checkin_at": "2026-09-26T08:35:50+00:00"
+  },
+  {
     "name": "レストハウス湯の丸",
     "user_comment": "",
     "date": "2026-09-22",
@@ -16346,8 +16366,8 @@
     "name": "関西国際空港 (KIX)",
     "user_comment": "",
     "date": "2023-02-27",
-    "lat": 34.43520676979223,
-    "lng": 135.24397096345905,
+    "lat": 34.435343287383844,
+    "lng": 135.24359560093436,
     "address": "泉州空港北1, 泉佐野市, 大阪府, 549-0001",
     "foursquare_url": "https://foursquare.com/v/4b2696c0f964a520fa7d24e3",
     "photos": [
@@ -22789,8 +22809,8 @@
     "name": "横浜駅",
     "user_comment": "横浜",
     "date": "2021-07-15",
-    "lat": 35.46597692952583,
-    "lng": 139.6223257208761,
+    "lat": 35.46587188039597,
+    "lng": 139.62251992788202,
     "address": "西区高島2/南幸1 (根岸線/京浜東北線/横浜線/東海道線/横須賀線), 横浜市, 神奈川県, 220-0011",
     "foursquare_url": "https://foursquare.com/v/4b07c29cf964a520d8ff22e3",
     "photos": [],
@@ -24172,8 +24192,8 @@
     "name": "川崎駅",
     "user_comment": "No urgent need",
     "date": "2020-03-14",
-    "lat": 35.53138606807042,
-    "lng": 139.69682362974805,
+    "lat": 35.5313087720272,
+    "lng": 139.69714771727493,
     "address": "川崎区駅前本町26-1, 川崎市, 神奈川県, 210-0007",
     "foursquare_url": "https://foursquare.com/v/4b274cf5f964a520bf8524e3",
     "photos": [],
