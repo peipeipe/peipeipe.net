@@ -1210,8 +1210,15 @@
     "lng": 138.457155,
     "elevation": 2202,
     "tags": [],
-    "visit_count": 1,
+    "visit_count": 2,
     "activities": [
+      {
+        "id": 20345429774,
+        "name": "Lunch Trail Run",
+        "date": "2026-09-27",
+        "sport_type": "TrailRun",
+        "distance_km": 7.1
+      },
       {
         "id": 18914374878,
         "name": "Afternoon Run",
@@ -1221,7 +1228,7 @@
       }
     ],
     "first_visit": "2026-06-14",
-    "last_visit": "2026-06-14"
+    "last_visit": "2026-09-27"
   },
   {
     "name": "東篭ノ登山",
@@ -1505,5 +1512,24 @@
     ],
     "first_visit": "2026-09-06",
     "last_visit": "2026-09-06"
+  },
+  {
+    "name": "高峰山",
+    "lat": 36.3998,
+    "lng": 138.457085,
+    "elevation": 2092,
+    "tags": [],
+    "visit_count": 1,
+    "activities": [
+      {
+        "id": 20345429774,
+        "name": "Lunch Trail Run",
+        "date": "2026-09-27",
+        "sport_type": "TrailRun",
+        "distance_km": 7.1
+      }
+    ],
+    "first_visit": "2026-09-27",
+    "last_visit": "2026-09-27"
   }
 ]
