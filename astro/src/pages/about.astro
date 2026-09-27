@@ -14,5 +14,12 @@ import BaseLayout from "@/layouts/BaseLayout.astro";
       過去WWWでつかまえてというラジオをやっていた。<br />
       <a href="https://www-de-tsukamaete.github.io/" target="_blank" rel="noopener noreferrer">WWWでつかまえて</a>
     </p>
+    {import.meta.env.PUBLIC_READER_ANALYTICS_ENABLED === "true" && (
+      <section>
+        <h2>閲覧状況の集計について</h2>
+        <p>サイト改善のため、閲覧ページ、閲覧回数、IPから推定した国・地域・都市を集計しています。IPアドレスそのものは保存せず、日ごとに変わる識別子へ変換します。識別子は人数や個人を特定するものではありません。</p>
+        <p>集計データは原則30日間保存します。集計結果や閲覧通知は管理者のDiscordにも送信されます。ブラウザのDo Not Track・Global Privacy Controlが有効な場合、この独自集計は行いません。</p>
+      </section>
+    )}
   </article>
 </BaseLayout>

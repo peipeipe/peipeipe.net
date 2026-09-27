@@ -50,6 +50,7 @@ jobs:
 
       - name: Build Astro
         env:
+          PUBLIC_READER_ANALYTICS_ENABLED: ${{ vars.PUBLIC_READER_ANALYTICS_ENABLED }}
           PUBLIC_CARTO_BASEMAPS_API_KEY: ${{ secrets.CARTO_BASEMAPS_API_KEY }}
         run: npm run build
 

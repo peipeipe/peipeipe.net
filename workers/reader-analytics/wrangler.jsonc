@@ -1,0 +1,42 @@
+{
+  "$schema": "./node_modules/wrangler/config-schema.json",
+  "name": "peipeipe-reader-analytics",
+  "main": "worker.mjs",
+  "compatibility_date": "2026-09-27",
+  "compatibility_flags": [
+    "nodejs_compat"
+  ],
+  "workers_dev": false,
+  "routes": [
+    {
+      "pattern": "www.peipeipe.net/_analytics/*",
+      "zone_name": "peipeipe.net"
+    }
+  ],
+  "d1_databases": [
+    {
+      "binding": "DB",
+      "database_name": "peipeipe-reader-analytics",
+      "migrations_dir": "migrations",
+      "database_id": "52944769-53e3-41bd-ae75-4d3dea7ba3cd"
+    }
+  ],
+  "vars": {
+    "SITE_ORIGIN": "https://www.peipeipe.net",
+    "PV_MODE": "daily",
+    "HEAVY_PV": "100",
+    "HEAVY_PAGES": "30"
+  },
+  "triggers": {
+    "crons": [
+      "*/5 * * * *"
+    ]
+  },
+  "observability": {
+    "enabled": true,
+    "logs": {
+      "enabled": true,
+      "invocation_logs": false
+    }
+  }
+}

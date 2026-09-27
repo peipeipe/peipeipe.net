@@ -91,6 +91,9 @@ const structuredData = [websiteJsonLd, ...(Array.isArray(jsonLd) ? jsonLd : json
         })(window,document,'script','dataLayer','GTM-N8NFQ8K');
       </script>
     )}
+    {analytics && !["/404.html", "/cloudflare-preview/"].includes(canonicalPath) && import.meta.env.PUBLIC_READER_ANALYTICS_ENABLED === "true" && (
+      <script is:inline defer src="/reader-analytics.js"></script>
+    )}
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="color-scheme" content="light dark" />
