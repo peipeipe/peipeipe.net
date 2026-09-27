@@ -1,74 +1,205 @@
 {
-  "generated_on": "2026-09-06",
+  "generated_on": "2026-09-21",
   "stats": {
-    "places": 70,
-    "springs": 71,
-    "composition_photos": 25,
-    "not_composition_photos": 100,
+    "places": 71,
+    "springs": 72,
+    "composition_photos": 26,
+    "not_composition_photos": 101,
     "unreadable_photos": 0
   },
   "places": [
     {
-      "fsq_id": "4c823575dc018cfa3cbccc6c",
-      "name": "戸隠神告げ温泉",
-      "address": "戸隠3182, 長野市, 長野県, 381-4101",
-      "checkin_date": "2026-09-06",
+      "fsq_id": "4e3e04b5483b04e17a9ef103",
+      "name": "真田温泉 ふれあいさなだ館",
+      "address": "真田町長7369-1, 上田市, 長野県, 386-2201",
+      "checkin_date": "2026-08-27",
       "springs": [
         {
           "confidence": "high",
-          "spring_name": "戸隠神告げ温泉源泉",
-          "spring_quality": "単純温泉",
-          "spring_quality_class": "低張性弱アルカリ性低温泉",
-          "source_temp_c": 28.2,
-          "ph": 7.8,
-          "ph_lab": 7.97,
-          "yield_l_min": 229.0,
-          "evaporation_residue_mg_kg": 265.0,
-          "dissolved_solids_mg_kg": 371.0,
-          "total_ingredients_mg_kg": 373.0,
+          "spring_name": "真田温泉",
+          "spring_quality": "アルカリ性単純温泉",
+          "spring_quality_class": "低張性アルカリ性温泉",
+          "source_temp_c": 37.5,
+          "ph": 8.8,
+          "ph_lab": 8.86,
+          "evaporation_residue_mg_kg": 780.0,
+          "dissolved_solids_mg_kg": 804.7,
+          "total_ingredients_mg_kg": 804.7,
           "cations": [
+            {
+              "name": "リチウムイオン",
+              "symbol": "Li+",
+              "mg_kg": 0.4
+            },
             {
               "name": "ナトリウムイオン",
               "symbol": "Na+",
-              "mg_kg": 56.8
+              "mg_kg": 237.4
             },
             {
               "name": "カリウムイオン",
               "symbol": "K+",
-              "mg_kg": 4.6
-            },
-            {
-              "name": "アンモニウムイオン",
-              "symbol": "NH4+",
-              "mg_kg": 0.1
+              "mg_kg": 1.0
             },
             {
               "name": "マグネシウムイオン",
               "symbol": "Mg2+",
-              "mg_kg": 3.0
+              "mg_kg": 0.09
             },
             {
               "name": "カルシウムイオン",
               "symbol": "Ca2+",
-              "mg_kg": 7.7
+              "mg_kg": 32.5
             },
             {
-              "name": "鉄(II)イオン",
+              "name": "ストロンチウムイオン",
+              "symbol": "Sr2+",
+              "mg_kg": 0.9
+            },
+            {
+              "name": "アルミニウムイオン",
+              "symbol": "Al3+",
+              "mg_kg": 0.01
+            }
+          ],
+          "cations_total_mg_kg": 272.3,
+          "anions": [
+            {
+              "name": "ふっ化物イオン",
+              "symbol": "F-",
+              "mg_kg": 2.9
+            },
+            {
+              "name": "塩化物イオン",
+              "symbol": "Cl-",
+              "mg_kg": 295.8
+            },
+            {
+              "name": "臭化物イオン",
+              "symbol": "Br-",
+              "mg_kg": 1.2
+            },
+            {
+              "name": "よう化物イオン",
+              "symbol": "I-",
+              "mg_kg": 0.5
+            },
+            {
+              "name": "硫化水素イオン",
+              "symbol": "HS-",
+              "mg_kg": 0.4
+            },
+            {
+              "name": "硫酸イオン",
+              "symbol": "SO42-",
+              "mg_kg": 130.4
+            },
+            {
+              "name": "炭酸水素イオン",
+              "symbol": "HCO3-",
+              "mg_kg": 14.8
+            },
+            {
+              "name": "炭酸イオン",
+              "symbol": "CO32-",
+              "mg_kg": 16.8
+            }
+          ],
+          "anions_total_mg_kg": 462.8,
+          "undissociated": [
+            {
+              "name": "メタけい酸",
+              "symbol": "H2SiO3",
+              "mg_kg": 28.1
+            },
+            {
+              "name": "メタほう酸",
+              "symbol": "HBO2",
+              "mg_kg": 41.5
+            }
+          ],
+          "undissociated_total_mg_kg": 69.6,
+          "analyzed_on": "2019-08-08",
+          "analyzer": "一般社団法人 上田薬剤師会",
+          "analyzer_registration": "長野県第7号",
+          "notes": "ネット公開情報から作成（現地掲示は未確認）。出典: 一般財団法人上田市地域振興事業団 https://www.ueda-rpc.or.jp/facility/fureaisanadakan.html",
+          "source_photos": [
+            "https://fastly.4sqi.net/img/general/500x300/41463109_FyuRufsKuiKrpKC6C37VsqJzV_PI5PfHHQztak8kQaE.jpg"
+          ]
+        }
+      ]
+    },
+    {
+      "fsq_id": "4dbbbd9793a08f9274ac67e5",
+      "name": "菅平サンホテル",
+      "address": "菅平高原菅平1223-1950, 上田市, 長野県, 386-2204",
+      "checkin_date": "2026-09-19",
+      "springs": [
+        {
+          "confidence": "high",
+          "spring_name": "菅平高原温泉 源泉",
+          "spring_quality": "アルカリ性単純温泉",
+          "spring_quality_class": "アルカリ性低張性高温泉",
+          "source_temp_c": 42.7,
+          "ph": 8.59,
+          "evaporation_residue_mg_kg": 396.0,
+          "cations": [
+            {
+              "name": "リチウムイオン",
+              "symbol": "Li+",
+              "mg_kg": 0.06
+            },
+            {
+              "name": "ナトリウムイオン",
+              "symbol": "Na+",
+              "mg_kg": 97.6
+            },
+            {
+              "name": "カリウムイオン",
+              "symbol": "K+",
+              "mg_kg": 1.8
+            },
+            {
+              "name": "マグネシウムイオン",
+              "symbol": "Mg2+",
+              "mg_kg": 0.2
+            },
+            {
+              "name": "カルシウムイオン",
+              "symbol": "Ca2+",
+              "mg_kg": 18.8
+            },
+            {
+              "name": "アルミニウムイオン",
+              "symbol": "Al3+",
+              "mg_kg": 0.4
+            },
+            {
+              "name": "マンガンイオン",
+              "symbol": "Mn2+",
+              "mg_kg": 0.03
+            },
+            {
+              "name": "鉄（II）イオン",
               "symbol": "Fe2+",
+              "mg_kg": 0.4
+            },
+            {
+              "name": "ストロンチウムイオン",
+              "symbol": "Sr2+",
               "mg_kg": 0.2
             }
           ],
-          "cations_total_mg_kg": 72.4,
           "anions": [
             {
-              "name": "ふっ素イオン",
+              "name": "フッ素イオン",
               "symbol": "F-",
-              "mg_kg": 0.2
+              "mg_kg": 3.0
             },
             {
               "name": "塩素イオン",
               "symbol": "Cl-",
-              "mg_kg": 8.3
+              "mg_kg": 38.6
             },
             {
               "name": "臭素イオン",
@@ -76,52 +207,138 @@
               "mg_kg": 0.1
             },
             {
-              "name": "硝酸イオン",
-              "symbol": "NO3-",
+              "name": "硫化水素イオン",
+              "symbol": "HS-",
               "mg_kg": 0.2
             },
             {
               "name": "硫酸イオン",
               "symbol": "SO42-",
-              "mg_kg": 0.6
-            },
-            {
-              "name": "りん酸水素イオン",
-              "symbol": "HPO42-",
-              "mg_kg": 0.4
+              "mg_kg": 152.1
             },
             {
               "name": "炭酸水素イオン",
               "symbol": "HCO3-",
-              "mg_kg": 192.2
-            }
-          ],
-          "anions_total_mg_kg": 202.0,
-          "undissociated": [
-            {
-              "name": "メタけい酸",
-              "symbol": "H2SiO3",
-              "mg_kg": 95.3
+              "mg_kg": 47.0
             },
             {
-              "name": "メタほう酸",
-              "symbol": "HBO2",
-              "mg_kg": 1.5
+              "name": "炭酸イオン",
+              "symbol": "CO32-",
+              "mg_kg": 4.2
             }
           ],
-          "undissociated_total_mg_kg": 96.8,
+          "undissociated": [
+            {
+              "name": "メタケイ酸",
+              "symbol": "H2SiO3",
+              "mg_kg": 40.2
+            },
+            {
+              "name": "メタホウ酸",
+              "symbol": "HBO2",
+              "mg_kg": 7.2
+            }
+          ],
+          "analyzer": "（社）長野県薬剤師会検査センター 第二課長 清水 正",
+          "notes": "右側の一部が枠外に見切れています。「分析年月日」と記載されているため rules に従い analyzed_on は省略しました。",
+          "source_photos": [
+            "https://fastly.4sqi.net/img/general/500x300/41463109_JFerDCGc-MXk4t-iR1Nz2P0lKRJlFDXzINoSR2XuMZM.jpg"
+          ]
+        }
+      ]
+    },
+    {
+      "fsq_id": "6908a2a5852b2f2861a0f47c",
+      "name": "Uu Ueda",
+      "address": "上田市, 長野県, 386-0002",
+      "checkin_date": "2026-08-11",
+      "springs": [
+        {
+          "confidence": "high",
+          "spring_quality": "低張性中性冷鉱泉",
+          "source_temp_c": 15.7,
+          "ph": 6.9,
+          "ph_lab": 7.04,
+          "evaporation_residue_mg_kg": 408.0,
+          "dissolved_solids_mg_kg": 469.3,
+          "total_ingredients_mg_kg": 495.1,
+          "cations": [
+            {
+              "name": "ナトリウムイオン",
+              "symbol": "Na+",
+              "mg_kg": 17.2
+            },
+            {
+              "name": "カリウムイオン",
+              "symbol": "K+",
+              "mg_kg": 0.4
+            },
+            {
+              "name": "マグネシウムイオン",
+              "symbol": "Mg2+",
+              "mg_kg": 31.8
+            },
+            {
+              "name": "カルシウムイオン",
+              "symbol": "Ca2+",
+              "mg_kg": 43.7
+            }
+          ],
+          "cations_total_mg_kg": 93.1,
+          "anions": [
+            {
+              "name": "フッ化物イオン",
+              "symbol": "F-",
+              "mg_kg": 0.1
+            },
+            {
+              "name": "塩素イオン",
+              "symbol": "Cl-",
+              "mg_kg": 39.6
+            },
+            {
+              "name": "硝酸イオン",
+              "symbol": "NO3-",
+              "mg_kg": 7.6
+            },
+            {
+              "name": "硫酸イオン",
+              "symbol": "SO42-",
+              "mg_kg": 62.5
+            },
+            {
+              "name": "リン酸一水素イオン",
+              "symbol": "HPO42-",
+              "mg_kg": 0.5
+            },
+            {
+              "name": "炭酸水素イオン",
+              "symbol": "HCO3-",
+              "mg_kg": 192.6
+            }
+          ],
+          "anions_total_mg_kg": 302.9,
+          "undissociated": [
+            {
+              "name": "メタケイ酸",
+              "symbol": "H2SiO3",
+              "mg_kg": 73.3
+            }
+          ],
+          "undissociated_total_mg_kg": 73.3,
           "dissolved_gas": [
             {
               "name": "遊離二酸化炭素",
               "symbol": "CO2",
-              "mg_kg": 1.8
+              "mg_kg": 25.8
             }
           ],
-          "dissolved_gas_total_mg_kg": 1.8,
-          "analyzed_on": "2026-06-30",
-          "analyzer": "株式会社 科学技術開発センター",
+          "dissolved_gas_total_mg_kg": 25.8,
+          "analyzed_on": "2025-01-24",
+          "analyzer": "株式会社信濃公害研究所",
+          "analyzer_registration": "長野県第10号",
           "source_photos": [
-            "https://fastly.4sqi.net/img/general/500x300/41463109_oj-VcJgs6tTqGKOIinNdXwO9aU4XJG9f_zGxHjRemZM.jpg"
+            "https://fastly.4sqi.net/img/general/500x300/41463109_tplpljOqvChHTqVVmQr46qFHEv3Gz-EkMm2Wt2PSs-s.jpg"
           ]
         }
       ]
@@ -246,6 +463,124 @@
           "notes": "掲示は温泉地名「別所温泉」、湧出地は長野県上田市別所温泉湯川1698番地4。掲示右側の適応症・禁忌症・加水等の欄は写真の画角から外れていて読み取れず。",
           "source_photos": [
             "https://fastly.4sqi.net/img/general/500x300/41463109_EBAbU6immgM3yveg5y3S2HX4d1YVOXRbhmdqM20BGbo.jpg"
+          ]
+        }
+      ]
+    },
+    {
+      "fsq_id": "4c823575dc018cfa3cbccc6c",
+      "name": "戸隠神告げ温泉",
+      "address": "戸隠3182, 長野市, 長野県, 381-4101",
+      "checkin_date": "2026-09-06",
+      "springs": [
+        {
+          "confidence": "high",
+          "spring_name": "戸隠神告げ温泉源泉",
+          "spring_quality": "単純温泉",
+          "spring_quality_class": "低張性弱アルカリ性低温泉",
+          "source_temp_c": 28.2,
+          "ph": 7.8,
+          "ph_lab": 7.97,
+          "yield_l_min": 229.0,
+          "evaporation_residue_mg_kg": 265.0,
+          "dissolved_solids_mg_kg": 371.0,
+          "total_ingredients_mg_kg": 373.0,
+          "cations": [
+            {
+              "name": "ナトリウムイオン",
+              "symbol": "Na+",
+              "mg_kg": 56.8
+            },
+            {
+              "name": "カリウムイオン",
+              "symbol": "K+",
+              "mg_kg": 4.6
+            },
+            {
+              "name": "アンモニウムイオン",
+              "symbol": "NH4+",
+              "mg_kg": 0.1
+            },
+            {
+              "name": "マグネシウムイオン",
+              "symbol": "Mg2+",
+              "mg_kg": 3.0
+            },
+            {
+              "name": "カルシウムイオン",
+              "symbol": "Ca2+",
+              "mg_kg": 7.7
+            },
+            {
+              "name": "鉄(II)イオン",
+              "symbol": "Fe2+",
+              "mg_kg": 0.2
+            }
+          ],
+          "cations_total_mg_kg": 72.4,
+          "anions": [
+            {
+              "name": "ふっ素イオン",
+              "symbol": "F-",
+              "mg_kg": 0.2
+            },
+            {
+              "name": "塩素イオン",
+              "symbol": "Cl-",
+              "mg_kg": 8.3
+            },
+            {
+              "name": "臭素イオン",
+              "symbol": "Br-",
+              "mg_kg": 0.1
+            },
+            {
+              "name": "硝酸イオン",
+              "symbol": "NO3-",
+              "mg_kg": 0.2
+            },
+            {
+              "name": "硫酸イオン",
+              "symbol": "SO42-",
+              "mg_kg": 0.6
+            },
+            {
+              "name": "りん酸水素イオン",
+              "symbol": "HPO42-",
+              "mg_kg": 0.4
+            },
+            {
+              "name": "炭酸水素イオン",
+              "symbol": "HCO3-",
+              "mg_kg": 192.2
+            }
+          ],
+          "anions_total_mg_kg": 202.0,
+          "undissociated": [
+            {
+              "name": "メタけい酸",
+              "symbol": "H2SiO3",
+              "mg_kg": 95.3
+            },
+            {
+              "name": "メタほう酸",
+              "symbol": "HBO2",
+              "mg_kg": 1.5
+            }
+          ],
+          "undissociated_total_mg_kg": 96.8,
+          "dissolved_gas": [
+            {
+              "name": "遊離二酸化炭素",
+              "symbol": "CO2",
+              "mg_kg": 1.8
+            }
+          ],
+          "dissolved_gas_total_mg_kg": 1.8,
+          "analyzed_on": "2026-06-30",
+          "analyzer": "株式会社 科学技術開発センター",
+          "source_photos": [
+            "https://fastly.4sqi.net/img/general/500x300/41463109_oj-VcJgs6tTqGKOIinNdXwO9aU4XJG9f_zGxHjRemZM.jpg"
           ]
         }
       ]
@@ -648,127 +983,6 @@
       ]
     },
     {
-      "fsq_id": "4e3e04b5483b04e17a9ef103",
-      "name": "真田温泉 ふれあいさなだ館",
-      "address": "真田町長7369-1, 上田市, 長野県, 386-2201",
-      "checkin_date": "2026-08-27",
-      "springs": [
-        {
-          "confidence": "high",
-          "spring_name": "真田温泉",
-          "spring_quality": "アルカリ性単純温泉",
-          "spring_quality_class": "低張性アルカリ性温泉",
-          "source_temp_c": 37.5,
-          "ph": 8.8,
-          "ph_lab": 8.86,
-          "evaporation_residue_mg_kg": 780.0,
-          "dissolved_solids_mg_kg": 804.7,
-          "total_ingredients_mg_kg": 804.7,
-          "cations": [
-            {
-              "name": "リチウムイオン",
-              "symbol": "Li+",
-              "mg_kg": 0.4
-            },
-            {
-              "name": "ナトリウムイオン",
-              "symbol": "Na+",
-              "mg_kg": 237.4
-            },
-            {
-              "name": "カリウムイオン",
-              "symbol": "K+",
-              "mg_kg": 1.0
-            },
-            {
-              "name": "マグネシウムイオン",
-              "symbol": "Mg2+",
-              "mg_kg": 0.09
-            },
-            {
-              "name": "カルシウムイオン",
-              "symbol": "Ca2+",
-              "mg_kg": 32.5
-            },
-            {
-              "name": "ストロンチウムイオン",
-              "symbol": "Sr2+",
-              "mg_kg": 0.9
-            },
-            {
-              "name": "アルミニウムイオン",
-              "symbol": "Al3+",
-              "mg_kg": 0.01
-            }
-          ],
-          "cations_total_mg_kg": 272.3,
-          "anions": [
-            {
-              "name": "ふっ化物イオン",
-              "symbol": "F-",
-              "mg_kg": 2.9
-            },
-            {
-              "name": "塩化物イオン",
-              "symbol": "Cl-",
-              "mg_kg": 295.8
-            },
-            {
-              "name": "臭化物イオン",
-              "symbol": "Br-",
-              "mg_kg": 1.2
-            },
-            {
-              "name": "よう化物イオン",
-              "symbol": "I-",
-              "mg_kg": 0.5
-            },
-            {
-              "name": "硫化水素イオン",
-              "symbol": "HS-",
-              "mg_kg": 0.4
-            },
-            {
-              "name": "硫酸イオン",
-              "symbol": "SO42-",
-              "mg_kg": 130.4
-            },
-            {
-              "name": "炭酸水素イオン",
-              "symbol": "HCO3-",
-              "mg_kg": 14.8
-            },
-            {
-              "name": "炭酸イオン",
-              "symbol": "CO32-",
-              "mg_kg": 16.8
-            }
-          ],
-          "anions_total_mg_kg": 462.8,
-          "undissociated": [
-            {
-              "name": "メタけい酸",
-              "symbol": "H2SiO3",
-              "mg_kg": 28.1
-            },
-            {
-              "name": "メタほう酸",
-              "symbol": "HBO2",
-              "mg_kg": 41.5
-            }
-          ],
-          "undissociated_total_mg_kg": 69.6,
-          "analyzed_on": "2019-08-08",
-          "analyzer": "一般社団法人 上田薬剤師会",
-          "analyzer_registration": "長野県第7号",
-          "notes": "ネット公開情報から作成（現地掲示は未確認）。出典: 一般財団法人上田市地域振興事業団 https://www.ueda-rpc.or.jp/facility/fureaisanadakan.html",
-          "source_photos": [
-            "https://fastly.4sqi.net/img/general/500x300/41463109_FyuRufsKuiKrpKC6C37VsqJzV_PI5PfHHQztak8kQaE.jpg"
-          ]
-        }
-      ]
-    },
-    {
       "fsq_id": "6a5201f2ab33386ede670728",
       "name": "灯湯すずらん",
       "address": "3419-84 北山, 茅野市, 長野県, 391-0301",
@@ -1037,102 +1251,6 @@
           "spring_quality_class": "アルカリ性低張性高温泉",
           "source_temp_c": 50.7,
           "notes": "ネット公開情報から作成（現地掲示は未確認）。出典: 上田市公式サイト「室賀温泉ささらの湯の温泉の御案内」 http://www.city.ueda.nagano.jp/nosei/tanoshimu/onsen/sasara/goannai/index.html"
-        }
-      ]
-    },
-    {
-      "fsq_id": "6908a2a5852b2f2861a0f47c",
-      "name": "Uu Ueda",
-      "address": "上田市, 長野県, 386-0002",
-      "checkin_date": "2026-08-11",
-      "springs": [
-        {
-          "confidence": "high",
-          "spring_quality": "低張性中性冷鉱泉",
-          "source_temp_c": 15.7,
-          "ph": 6.9,
-          "ph_lab": 7.04,
-          "evaporation_residue_mg_kg": 408.0,
-          "dissolved_solids_mg_kg": 469.3,
-          "total_ingredients_mg_kg": 495.1,
-          "cations": [
-            {
-              "name": "ナトリウムイオン",
-              "symbol": "Na+",
-              "mg_kg": 17.2
-            },
-            {
-              "name": "カリウムイオン",
-              "symbol": "K+",
-              "mg_kg": 0.4
-            },
-            {
-              "name": "マグネシウムイオン",
-              "symbol": "Mg2+",
-              "mg_kg": 31.8
-            },
-            {
-              "name": "カルシウムイオン",
-              "symbol": "Ca2+",
-              "mg_kg": 43.7
-            }
-          ],
-          "cations_total_mg_kg": 93.1,
-          "anions": [
-            {
-              "name": "フッ化物イオン",
-              "symbol": "F-",
-              "mg_kg": 0.1
-            },
-            {
-              "name": "塩素イオン",
-              "symbol": "Cl-",
-              "mg_kg": 39.6
-            },
-            {
-              "name": "硝酸イオン",
-              "symbol": "NO3-",
-              "mg_kg": 7.6
-            },
-            {
-              "name": "硫酸イオン",
-              "symbol": "SO42-",
-              "mg_kg": 62.5
-            },
-            {
-              "name": "リン酸一水素イオン",
-              "symbol": "HPO42-",
-              "mg_kg": 0.5
-            },
-            {
-              "name": "炭酸水素イオン",
-              "symbol": "HCO3-",
-              "mg_kg": 192.6
-            }
-          ],
-          "anions_total_mg_kg": 302.9,
-          "undissociated": [
-            {
-              "name": "メタケイ酸",
-              "symbol": "H2SiO3",
-              "mg_kg": 73.3
-            }
-          ],
-          "undissociated_total_mg_kg": 73.3,
-          "dissolved_gas": [
-            {
-              "name": "遊離二酸化炭素",
-              "symbol": "CO2",
-              "mg_kg": 25.8
-            }
-          ],
-          "dissolved_gas_total_mg_kg": 25.8,
-          "analyzed_on": "2025-01-24",
-          "analyzer": "株式会社信濃公害研究所",
-          "analyzer_registration": "長野県第10号",
-          "source_photos": [
-            "https://fastly.4sqi.net/img/general/500x300/41463109_tplpljOqvChHTqVVmQr46qFHEv3Gz-EkMm2Wt2PSs-s.jpg"
-          ]
         }
       ]
     },
@@ -4433,6 +4551,7 @@
     "https://fastly.4sqi.net/img/general/500x300/41463109_7lqM2fOXDB8zpjsHzAFz6bQQVwKmrJBAdLAJIdrhQ6o.jpg",
     "https://fastly.4sqi.net/img/general/500x300/41463109_nClbEfjF2Oyg96DEAFD45pwBmtITiBJWvGih5B0qYZw.jpg",
     "https://fastly.4sqi.net/img/general/500x300/41463109_uO26q6Rhs82XBaXRp1z_wCs925oNM_AP3IZXUdQSGa8.jpg",
-    "https://fastly.4sqi.net/img/general/500x300/41463109_5QLShyA-MM5neI9v7V7XIOP88k2mFUHjakD0k_Efnc4.jpg"
+    "https://fastly.4sqi.net/img/general/500x300/41463109_5QLShyA-MM5neI9v7V7XIOP88k2mFUHjakD0k_Efnc4.jpg",
+    "https://fastly.4sqi.net/img/general/500x300/41463109_7d0fIh5ujkqWFqWqQ6A7B_rRX-5RrL6F1NERysO28VE.jpg"
   ]
 }
