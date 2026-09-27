@@ -1,5 +1,47 @@
 [
   {
+    "name": "ファミリーレストラン 八億",
+    "user_comment": "",
+    "date": "2026-09-27",
+    "lat": 36.344511882774086,
+    "lng": 138.38198121757404,
+    "address": "滋野甲1197-3, 小諸市, 長野県, 384-0809",
+    "foursquare_url": "https://foursquare.com/v/4cb42f63ef1b37040bc75600",
+    "photos": [
+      "https://fastly.4sqi.net/img/general/500x300/41463109_vxngBtbnQRZMYpHOj9lpcByrfEqm2ojHAmKSF7nuRIo.jpg",
+      "https://fastly.4sqi.net/img/general/500x300/41463109_2XA8I-5tDZwrkuh3C8sU5HcX5CIYbBbHG1RsfRI8GLg.jpg",
+      "https://fastly.4sqi.net/img/general/500x300/41463109_r0qFUcojiuxNUTshpts4tx9OlVPLbapTtylJ07aBMxI.jpg",
+      "https://fastly.4sqi.net/img/general/500x300/41463109_MmcZRVU5u9HcXDMFtdiIzyuWFnBsonYFrMaEbx-2Q9o.jpg"
+    ],
+    "categories": [
+      "レストラン"
+    ],
+    "data_source": "foursquare_checkin",
+    "fsq_id": "4cb42f63ef1b37040bc75600",
+    "checkin_count": 2,
+    "first_checkin_at": "2025-10-07T05:15:10+00:00",
+    "last_checkin_at": "2026-09-27T05:49:14+00:00",
+    "composition_hint": ""
+  },
+  {
+    "name": "水の塔山",
+    "user_comment": "",
+    "date": "2026-09-27",
+    "lat": 36.420151,
+    "lng": 138.456976,
+    "address": "",
+    "foursquare_url": "https://foursquare.com/v/50134251e4b07f20b2dc9264",
+    "photos": [],
+    "categories": [
+      "山岳"
+    ],
+    "data_source": "foursquare_checkin",
+    "fsq_id": "50134251e4b07f20b2dc9264",
+    "checkin_count": 1,
+    "first_checkin_at": "2026-09-27T04:21:17+00:00",
+    "last_checkin_at": "2026-09-27T04:21:17+00:00"
+  },
+  {
     "name": "武石温泉 うつくしの湯",
     "user_comment": "",
     "date": "2026-09-26",
@@ -17,7 +59,8 @@
     "fsq_id": "4dbb9958f7b1ab37dd49cde9",
     "checkin_count": 1,
     "first_checkin_at": "2026-09-26T08:35:50+00:00",
-    "last_checkin_at": "2026-09-26T08:35:50+00:00"
+    "last_checkin_at": "2026-09-26T08:35:50+00:00",
+    "composition_hint": ""
   },
   {
     "name": "レストハウス湯の丸",
@@ -5044,29 +5087,6 @@
     "checkin_count": 1,
     "first_checkin_at": "2025-10-11T03:39:16+00:00",
     "last_checkin_at": "2025-10-11T03:39:16+00:00",
-    "composition_hint": ""
-  },
-  {
-    "name": "ファミリーレストラン 八億",
-    "user_comment": "",
-    "date": "2025-10-07",
-    "lat": 36.344511882774086,
-    "lng": 138.38198121757404,
-    "address": "滋野甲1197-3, 小諸市, 長野県, 384-0809",
-    "foursquare_url": "https://foursquare.com/v/4cb42f63ef1b37040bc75600",
-    "photos": [
-      "https://fastly.4sqi.net/img/general/500x300/41463109_2XA8I-5tDZwrkuh3C8sU5HcX5CIYbBbHG1RsfRI8GLg.jpg",
-      "https://fastly.4sqi.net/img/general/500x300/41463109_r0qFUcojiuxNUTshpts4tx9OlVPLbapTtylJ07aBMxI.jpg",
-      "https://fastly.4sqi.net/img/general/500x300/41463109_MmcZRVU5u9HcXDMFtdiIzyuWFnBsonYFrMaEbx-2Q9o.jpg"
-    ],
-    "categories": [
-      "レストラン"
-    ],
-    "data_source": "foursquare_checkin",
-    "fsq_id": "4cb42f63ef1b37040bc75600",
-    "checkin_count": 1,
-    "first_checkin_at": "2025-10-07T05:15:10+00:00",
-    "last_checkin_at": "2025-10-07T05:15:10+00:00",
     "composition_hint": ""
   },
   {
@@ -24466,8 +24486,8 @@
     "name": "飯田橋駅",
     "user_comment": "人生どうでも",
     "date": "2020-02-15",
-    "lat": 35.70082159659326,
-    "lng": 139.7439346509222,
+    "lat": 35.7005976218213,
+    "lng": 139.74395960050572,
     "address": "飯田橋4/神楽坂1/後楽1, 東京, 東京都, 102-0072",
     "foursquare_url": "https://foursquare.com/v/4b18bed2f964a5207dd523e3",
     "photos": [],
