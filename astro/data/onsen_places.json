@@ -1,5 +1,28 @@
 [
   {
+    "name": "うるおい館",
+    "user_comment": "長野じゃめずらしい茶褐色、広め、サウナ二つ。",
+    "date": "2026-09-28",
+    "lat": 36.65408955848814,
+    "lng": 138.17430020890305,
+    "address": "妻科98, 長野市, 長野県, 380-0872",
+    "foursquare_url": "https://foursquare.com/v/4c02897710baef3b05016bbd",
+    "photos": [
+      "https://fastly.4sqi.net/img/general/500x300/41463109_HyBACCRCiKwXhr5VDkzPBVKBvJ6SAQmoaYG9hXoKpN8.jpg",
+      "https://fastly.4sqi.net/img/general/500x300/41463109_JfJI085sTyE2verQFenxf8HFM99UMFqdesTkijznjrc.jpg",
+      "https://fastly.4sqi.net/img/general/500x300/41463109_4U-Esj-1a7iJpYCUUe9i39-XvveXNH1ZelW37ou89hg.jpg"
+    ],
+    "categories": [
+      "ホテル"
+    ],
+    "data_source": "foursquare_checkin",
+    "fsq_id": "4c02897710baef3b05016bbd",
+    "checkin_count": 2,
+    "first_checkin_at": "2026-09-01T09:49:00+00:00",
+    "last_checkin_at": "2026-09-28T07:34:09+00:00",
+    "composition_hint": "裾花峡温泉 / 保玉湯乃華温泉"
+  },
+  {
     "name": "武石温泉 うつくしの湯",
     "user_comment": "",
     "date": "2026-09-26",
@@ -167,28 +190,6 @@
     "first_checkin_at": "2026-09-06T06:03:51+00:00",
     "last_checkin_at": "2026-09-06T06:03:51+00:00",
     "composition_hint": ""
-  },
-  {
-    "name": "うるおい館",
-    "user_comment": "長野じゃめずらしい茶褐色、広め、サウナ二つ。",
-    "date": "2026-09-01",
-    "lat": 36.65408955848814,
-    "lng": 138.17430020890305,
-    "address": "妻科98, 長野市, 長野県, 380-0872",
-    "foursquare_url": "https://foursquare.com/v/4c02897710baef3b05016bbd",
-    "photos": [
-      "https://fastly.4sqi.net/img/general/500x300/41463109_JfJI085sTyE2verQFenxf8HFM99UMFqdesTkijznjrc.jpg",
-      "https://fastly.4sqi.net/img/general/500x300/41463109_4U-Esj-1a7iJpYCUUe9i39-XvveXNH1ZelW37ou89hg.jpg"
-    ],
-    "categories": [
-      "ホテル"
-    ],
-    "data_source": "foursquare_checkin",
-    "fsq_id": "4c02897710baef3b05016bbd",
-    "checkin_count": 1,
-    "first_checkin_at": "2026-09-01T09:49:00+00:00",
-    "last_checkin_at": "2026-09-01T09:49:00+00:00",
-    "composition_hint": "裾花峡温泉 / 保玉湯乃華温泉"
   },
   {
     "name": "八峰の湯",

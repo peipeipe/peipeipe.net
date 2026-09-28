@@ -1,5 +1,28 @@
 [
   {
+    "name": "うるおい館",
+    "user_comment": "長野じゃめずらしい茶褐色、広め、サウナ二つ。",
+    "date": "2026-09-28",
+    "lat": 36.65408955848814,
+    "lng": 138.17430020890305,
+    "address": "妻科98, 長野市, 長野県, 380-0872",
+    "foursquare_url": "https://foursquare.com/v/4c02897710baef3b05016bbd",
+    "photos": [
+      "https://fastly.4sqi.net/img/general/500x300/41463109_HyBACCRCiKwXhr5VDkzPBVKBvJ6SAQmoaYG9hXoKpN8.jpg",
+      "https://fastly.4sqi.net/img/general/500x300/41463109_JfJI085sTyE2verQFenxf8HFM99UMFqdesTkijznjrc.jpg",
+      "https://fastly.4sqi.net/img/general/500x300/41463109_4U-Esj-1a7iJpYCUUe9i39-XvveXNH1ZelW37ou89hg.jpg"
+    ],
+    "categories": [
+      "ホテル"
+    ],
+    "data_source": "foursquare_checkin",
+    "fsq_id": "4c02897710baef3b05016bbd",
+    "checkin_count": 2,
+    "first_checkin_at": "2026-09-01T09:49:00+00:00",
+    "last_checkin_at": "2026-09-28T07:34:09+00:00",
+    "composition_hint": ""
+  },
+  {
     "name": "ファミリーレストラン 八億",
     "user_comment": "",
     "date": "2026-09-27",
@@ -536,28 +559,6 @@
     "checkin_count": 1,
     "first_checkin_at": "2026-09-01T11:04:35+00:00",
     "last_checkin_at": "2026-09-01T11:04:35+00:00",
-    "composition_hint": ""
-  },
-  {
-    "name": "うるおい館",
-    "user_comment": "長野じゃめずらしい茶褐色、広め、サウナ二つ。",
-    "date": "2026-09-01",
-    "lat": 36.65408955848814,
-    "lng": 138.17430020890305,
-    "address": "妻科98, 長野市, 長野県, 380-0872",
-    "foursquare_url": "https://foursquare.com/v/4c02897710baef3b05016bbd",
-    "photos": [
-      "https://fastly.4sqi.net/img/general/500x300/41463109_JfJI085sTyE2verQFenxf8HFM99UMFqdesTkijznjrc.jpg",
-      "https://fastly.4sqi.net/img/general/500x300/41463109_4U-Esj-1a7iJpYCUUe9i39-XvveXNH1ZelW37ou89hg.jpg"
-    ],
-    "categories": [
-      "ホテル"
-    ],
-    "data_source": "foursquare_checkin",
-    "fsq_id": "4c02897710baef3b05016bbd",
-    "checkin_count": 1,
-    "first_checkin_at": "2026-09-01T09:49:00+00:00",
-    "last_checkin_at": "2026-09-01T09:49:00+00:00",
     "composition_hint": ""
   },
   {
@@ -18220,8 +18221,8 @@
     "name": "大宮駅",
     "user_comment": "初上陸（マジ）",
     "date": "2022-09-21",
-    "lat": 35.906307736381,
-    "lng": 139.62397401094168,
+    "lat": 35.906981344864796,
+    "lng": 139.62386943527693,
     "address": "大宮区錦町, さいたま市, 埼玉県, 330-0853",
     "foursquare_url": "https://foursquare.com/v/4b3dd6ddf964a520089725e3",
     "photos": [],
@@ -28502,8 +28503,8 @@
     "name": "ベルサール新宿セントラルパーク",
     "user_comment": "なんかある",
     "date": "2019-04-24",
-    "lat": 35.69263337326545,
-    "lng": 139.68918601961178,
+    "lat": 35.692779,
+    "lng": 139.68875,
     "address": "西新宿6-13-1 (住友不動産新宿セントラルパークビル 1F), 新宿区, 東京都, 160-0023",
     "foursquare_url": "https://foursquare.com/v/4b8db0d2f964a520ce0833e3",
     "photos": [],
@@ -29982,8 +29983,8 @@
     "name": "お台場",
     "user_comment": "",
     "date": "2018-11-22",
-    "lat": 35.62705101552193,
-    "lng": 139.7760684254599,
+    "lat": 35.62761930883399,
+    "lng": 139.7751597760707,
     "address": "港区, 東京都",
     "foursquare_url": "https://foursquare.com/v/4f9df5d1e4b033dc2c12dd47",
     "photos": [],
