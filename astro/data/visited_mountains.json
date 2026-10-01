@@ -1118,6 +1118,34 @@
     "last_visit": "2026-07-24"
   },
   {
+    "name": "独鈷山",
+    "lat": 36.320013,
+    "lng": 138.187366,
+    "elevation": 1266,
+    "tags": [
+      "信州百名山"
+    ],
+    "visit_count": 2,
+    "activities": [
+      {
+        "id": "i192194185",
+        "name": "Morning トレイルラン",
+        "date": "2026-09-30",
+        "sport_type": "TrailRun",
+        "distance_km": 18.1
+      },
+      {
+        "id": 18540799985,
+        "name": "上田里山ぐるり前半省略　後半電池切れ",
+        "date": "2026-05-17",
+        "sport_type": "TrailRun",
+        "distance_km": 43.5
+      }
+    ],
+    "first_visit": "2026-05-17",
+    "last_visit": "2026-09-30"
+  },
+  {
     "name": "子檀嶺岳",
     "lat": 36.392306,
     "lng": 138.116407,
@@ -1170,27 +1198,6 @@
     "lng": 138.129526,
     "elevation": 1250,
     "tags": [],
-    "visit_count": 1,
-    "activities": [
-      {
-        "id": 18540799985,
-        "name": "上田里山ぐるり前半省略　後半電池切れ",
-        "date": "2026-05-17",
-        "sport_type": "TrailRun",
-        "distance_km": 43.5
-      }
-    ],
-    "first_visit": "2026-05-17",
-    "last_visit": "2026-05-17"
-  },
-  {
-    "name": "独鈷山",
-    "lat": 36.320013,
-    "lng": 138.187366,
-    "elevation": 1266,
-    "tags": [
-      "信州百名山"
-    ],
     "visit_count": 1,
     "activities": [
       {
