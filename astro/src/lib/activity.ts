@@ -3,7 +3,8 @@ import stravaActivities from "../../data/strava_activities.json";
 export type ActivityKind = "run" | "ride" | "walk" | "swim" | "other";
 
 export type RawActivity = {
-  id: number;
+  id: number | string;
+  url?: string;
   name: string;
   sport_type?: string;
   distance?: number;
@@ -14,7 +15,8 @@ export type RawActivity = {
 };
 
 export type Activity = {
-  id: number;
+  id: number | string;
+  url: string;
   name: string;
   sport_type: string;
   type_class: ActivityKind;
@@ -28,6 +30,7 @@ export type Activity = {
 export function getActivities(): Activity[] {
   return (stravaActivities as RawActivity[]).map((activity) => ({
     id: activity.id,
+    url: activity.url || `https://www.strava.com/activities/${activity.id}`,
     name: activity.name,
     sport_type: activity.sport_type || "",
     type_class: activityType(activity),

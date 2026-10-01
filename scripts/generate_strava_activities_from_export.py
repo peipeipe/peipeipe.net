@@ -411,6 +411,14 @@ def main():
 
     activities.sort(key=lambda item: item.get("start_date", ""), reverse=True)
 
+    # Keep Intervals records when using a historical Strava export for backfill.
+    intervals = [item for item in existing_by_id.values() if item.get("source") == "intervals"]
+    if intervals:
+        from fetch_intervals_activities import merge_activity
+        for item in intervals:
+            merge_activity(activities, item)
+        activities.sort(key=lambda item: item.get("start_date", ""), reverse=True)
+
     os.makedirs(os.path.dirname(args.output), exist_ok=True)
     with open(args.output, "w", encoding="utf-8") as f:
         json.dump(activities, f, ensure_ascii=False, indent=2)

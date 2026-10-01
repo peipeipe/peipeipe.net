@@ -17,6 +17,10 @@ permissions:
   contents: write
   actions: write
 
+concurrency:
+  group: update-activities
+  cancel-in-progress: false
+
 jobs:
   update-strava-activities-from-export:
     runs-on: ubuntu-latest

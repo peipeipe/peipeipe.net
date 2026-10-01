@@ -191,7 +191,7 @@ const activityLabel = (type) => ({
                             {activity && (
                               <>
                                 <p class="reader-record-name">
-                                  <a href={`https://www.strava.com/activities/${activity.id}`}>{activity.name}</a>
+                                  <a href={activity.url}>{activity.name}</a>
                                 </p>
                                 <p class="reader-record-meta">
                                   {formatDistance(activity.distance)} · {formatDuration(activity.moving_time)}

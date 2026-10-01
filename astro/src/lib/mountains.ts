@@ -1,7 +1,7 @@
 import visitedMountains from "../../data/visited_mountains.json";
 
 export type MountainActivity = {
-  id: number;
+  id: number | string;
   name: string;
   date: string;
   sport_type: string;

@@ -1,4 +1,4 @@
-name: Update Strava Activities
+name: Update Activities From Intervals
 
 on:
   schedule:
@@ -8,6 +8,10 @@ on:
 permissions:
   contents: write
   actions: write
+
+concurrency:
+  group: update-activities
+  cancel-in-progress: false
 
 jobs:
   update-strava-activities:
@@ -29,12 +33,10 @@ jobs:
           python -m pip install --upgrade pip
           pip install -r requirements.txt
 
-      - name: Fetch Strava activities
+      - name: Fetch Intervals activities
         env:
-          STRAVA_CLIENT_ID: ${{ secrets.STRAVA_CLIENT_ID }}
-          STRAVA_CLIENT_SECRET: ${{ secrets.STRAVA_CLIENT_SECRET }}
-          STRAVA_REFRESH_TOKEN: ${{ secrets.STRAVA_REFRESH_TOKEN }}
-        run: python scripts/fetch_strava_activities.py
+          INTERVALS_API_KEY: ${{ secrets.INTERVALS_API_KEY }}
+        run: python scripts/fetch_intervals_activities.py
 
       - name: Generate visited mountains
         run: python scripts/generate_visited_mountains.py
@@ -49,7 +51,7 @@ jobs:
             echo "No new activities"
             echo "changed=false" >> "$GITHUB_OUTPUT"
           else
-            git commit -m "Update Strava activities"
+            git commit -m "Update activities from Intervals"
             git push
             echo "changed=true" >> "$GITHUB_OUTPUT"
           fi
