@@ -1,5 +1,26 @@
 [
   {
+    "moving_time": 13690,
+    "elapsed_time": 18968,
+    "total_elevation_gain": 393.0,
+    "average_speed": 6.611,
+    "max_speed": 13.225,
+    "id": "i192494220",
+    "intervals_id": "i192494220",
+    "source": "intervals",
+    "url": "https://intervals.icu/activities/i192494220",
+    "name": "Morning ライド",
+    "sport_type": "Ride",
+    "distance": 91205.74,
+    "start_date": "2026-10-02T00:44:45Z",
+    "start_date_local": "2026-10-02T09:44:45",
+    "start_latlng": [
+      36.391727,
+      138.24335
+    ],
+    "summary_polyline": "iwb}E}swjYVQN\\aC~GW@y@kC_@EwDvGoAiF_CcC_@JiE~G{KnZaIfQAj@rArBuHlEiItKsBjEeA`Ds@pFe@p^k@fHo@vBkD|DwA|CKvE^r@r@UaLt[aCb\\b@tAlBf@zIuBvFH^g@rAoIgFi@yB|IwBdPwDrHsAlBoABuKpMuCrHoElG[lCkTxUqMhEaJnBgEdJy[nXFnCWp@]?m@yAgBb@ei@bc@yX~NhCnB{JqCaD[gRx@[xAgCF{PqFkQeC_S?mLl@sLzA{CdBqErFaBt@vAdCwC`DqAvCeGzR}BfEgNb^uLzRkPfQsHhMuJp^cBjCTfFh@`Bt@QPUqBlAkI^qIlB}RdIqNjIk\\jKmCkAsDp@kCnAqAtCsAnAsVvQ_LrO}\\xjAyA`A{ItNgHxIIfCkGrCmS`S_T~NOv@x@fIQ`Aa]xKkElCoTfHiRz@y]gAYVHbD_A]s@qDmI_BmD{AcDsB_G{FqJ{Ec]gVeBMy@zAYEf@_C{@kB_`@oYcHqImIyMiFuEmDaBoMyCqIqDoBZs@`E}AgAwAqJuHoU_B_IkBoWk@sPLyEgBo@o@}KuCeNr@kNd@wBrAyZtAn@iGmHa[qSwJ}JyIiOyEgRoAcQ\\sYfB_NlIwYn@mHImFu@uE{ByG{BsDiCqCmEkCqUcH}L}F}JuG{KeJ}D?_Ai@yCG}UtIqDj@}GH_Gu@kHkC_FyCqIuIoHeOcEuRaAkQt@wZOsLcAgIyBqGepAk|AaIkMsQo`@oJeE_Mac@ma@tUmFjEoD_GiF{DyG}B}Dc@oh@iPg@bAVfE_BjI}ASsCfEiEgE{BIYbF`@dAa@iAHkErAg@tA\\bEvDxBaE~ADpAmH[cELwAuLqDl}@nXlA[bHxBhEpExB~Dni@m\\FpAxLvb@`JvD`Pr]fIfNljAjuAjGpJ`BzFr@pHDrMm@`Xp@dOrAtIhC~JdHtNpMrL`MtE`Mz@L|@q@t@j@aBcAm@nImA~PcHfCYzJt@pNnLdI`FlPlHjPrEvDxBdDdDlCpEbB|E|@nFLzFw@|HyI`\\oAnKa@tY~@pNjB|JdC|HjIlN~JhKvZnSpGzHTlB{AbEu@t@mCz`@zClNp@~KdB`@MfFj@xPjBrWbBzHzGhSnBpL|Ax@v@iErBQ`KhEvK`ChFjChElErH|LnHzIr_@dYx@fB_@bCrA{AtBZf\\xUdKpF|K~IpNzDt@vD|@PIgDT[xc@hAlNkApSkH~CsBvLeDfO}FZ}@{@mINq@jCcClOuJlRiRnHoDHeC~GqInJmOxAqApHmVtEoRnEmLvEoQbL{OrWmRhCiEnEgBjDExElExGhDxDWlA}@nHsKtASpKaHmAiF~TcJvGwArKu@u@uCIkEfBoC`Js]lEiIjSeUnLgRvDcIjHsSdDqG`@iCpFoOjAeCfCgCuAgCvBgAtCcEjEeCjIcAnMy@tOE~PtAbWjH`CQPoA`@OzQo@~NlDcCqA?g@rXwN`i@_c@`Cc@d@rA`@?PaE~@}A`YkUrEqJzIgB~PeG`Xq`@|C}HvB{A|@AtJsM|DyJjEmYb@ENy@a@aFwAyFkBgDcDmDxDcKxBuD{@T[m@dA}H~DaF|@qCj@gH\\{\\vAsJtCuGrKcNbFeC~BxA^KnEeKhE{FdMa`@l@Wh@pBdCxAhDsGvBgGa@Q"
+  },
+  {
     "moving_time": 1046,
     "elapsed_time": 1569,
     "total_elevation_gain": 19.905579,
