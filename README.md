@@ -29,4 +29,5 @@ Strava export ZIP からアクティビティデータを再生成する場合�
 
 GitHub Actions でも手動実行用の export 版 workflow を用意してあるが、既定の更新経路は API 版のまま。
 ZIP を HTTPS で取得できる場所に置き、`Update Strava Activities From Export` を手動実行して `export_zip_url` に URL を渡す。
+ブクログのデータや Strava の export ZIP をアップロードして URL を取得するには、[x0.at](https://x0.at/) を使うと便利。
 位置情報を含むため、公開 URL に置く場合は短時間だけ使える URL にする。
