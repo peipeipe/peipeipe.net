@@ -1,5 +1,28 @@
 [
   {
+    "name": "ラーメン山岡家",
+    "user_comment": "",
+    "date": "2026-10-02",
+    "lat": 36.6420906988927,
+    "lng": 138.2373579189344,
+    "address": "南長池292 (長野南長池店), 長野市, 長野県, 381-0024",
+    "foursquare_url": "https://foursquare.com/v/4c15bfd2127f952192152525",
+    "photos": [
+      "https://fastly.4sqi.net/img/general/500x300/41463109_Pcpfk7LGNo1WJohMPCSAQvkL_vfqZtXuuXbPoM0Y66o.jpg",
+      "https://fastly.4sqi.net/img/general/500x300/41463109_pvVJmnpyyspkoT7yKf1AhlXIphykuCw2GJw43GreuC0.jpg",
+      "https://fastly.4sqi.net/img/general/500x300/41463109_04r04_QY0qtjYV8gGNcauFa6gdtc66_pOY9oPx7beLw.jpg"
+    ],
+    "categories": [
+      "ラーメン屋"
+    ],
+    "data_source": "foursquare_checkin",
+    "fsq_id": "4c15bfd2127f952192152525",
+    "checkin_count": 3,
+    "first_checkin_at": "2025-09-16T11:14:15+00:00",
+    "last_checkin_at": "2026-10-02T03:04:30+00:00",
+    "composition_hint": ""
+  },
+  {
     "name": "うるおい館",
     "user_comment": "長野じゃめずらしい茶褐色、広め、サウナ二つ。",
     "date": "2026-09-28",
@@ -811,28 +834,6 @@
     "checkin_count": 1,
     "first_checkin_at": "2026-08-15T05:00:35+00:00",
     "last_checkin_at": "2026-08-15T05:00:35+00:00",
-    "composition_hint": ""
-  },
-  {
-    "name": "ラーメン山岡家",
-    "user_comment": "",
-    "date": "2026-08-15",
-    "lat": 36.6420906988927,
-    "lng": 138.2373579189344,
-    "address": "南長池292 (長野南長池店), 長野市, 長野県, 381-0024",
-    "foursquare_url": "https://foursquare.com/v/4c15bfd2127f952192152525",
-    "photos": [
-      "https://fastly.4sqi.net/img/general/500x300/41463109_pvVJmnpyyspkoT7yKf1AhlXIphykuCw2GJw43GreuC0.jpg",
-      "https://fastly.4sqi.net/img/general/500x300/41463109_04r04_QY0qtjYV8gGNcauFa6gdtc66_pOY9oPx7beLw.jpg"
-    ],
-    "categories": [
-      "ラーメン屋"
-    ],
-    "data_source": "foursquare_checkin",
-    "fsq_id": "4c15bfd2127f952192152525",
-    "checkin_count": 2,
-    "first_checkin_at": "2025-09-16T11:14:15+00:00",
-    "last_checkin_at": "2026-08-15T04:18:32+00:00",
     "composition_hint": ""
   },
   {
@@ -19606,8 +19607,8 @@
     "name": "JR 品川駅",
     "user_comment": "たまには逆方向でイングレスしながら帰る",
     "date": "2022-05-05",
-    "lat": 35.62852310970098,
-    "lng": 139.7386505656545,
+    "lat": 35.6285591521803,
+    "lng": 139.73887509227708,
     "address": "高輪3-26-27, 港区, 東京都, 108-0074",
     "foursquare_url": "https://foursquare.com/v/4ec0d5979911a2ec5c6cdda6",
     "photos": [],
