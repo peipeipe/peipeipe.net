@@ -7,11 +7,6 @@ on:
         description: "HTTPS URL to the Booklog CSV export"
         required: true
         type: string
-      booklog_csv_name:
-        description: "Local filename to use for the downloaded CSV"
-        required: false
-        default: "booklog.csv"
-        type: string
 
 permissions:
   contents: write
@@ -33,12 +28,14 @@ jobs:
           python-version: "3.14"
 
       - name: Download Booklog CSV
+        env:
+          BOOKLOG_CSV_URL: ${{ inputs.booklog_csv_url }}
         run: |
-          curl -fsSL "${{ inputs.booklog_csv_url }}" -o "$RUNNER_TEMP/${{ inputs.booklog_csv_name }}"
+          curl -fsSL "$BOOKLOG_CSV_URL" -o "$RUNNER_TEMP/booklog.csv"
 
       - name: Generate books data
         run: |
-          python scripts/generate_books.py "$RUNNER_TEMP/${{ inputs.booklog_csv_name }}"
+          python scripts/generate_books.py "$RUNNER_TEMP/booklog.csv"
 
       - name: Commit and push changes
         id: commit-changes
