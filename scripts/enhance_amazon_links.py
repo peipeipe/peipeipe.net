@@ -25,6 +25,7 @@ import re
 import sys
 import requests
 import html
+from urllib.parse import urlparse
 from pathlib import Path
 from typing import Dict, Optional, List, Tuple
 
@@ -42,7 +43,7 @@ REQUEST_HEADERS = {
 
 # A line holding nothing but an Amazon URL — the way the book posts are written.
 BARE_AMAZON_URL_LINE_PATTERN = re.compile(
-    r'^[ \t]*<?(https?://(?:www\.)?(?:amazon\.co\.jp|amzn\.to|amzn\.asia|a\.co)/[^\s<>]+?)>?[ \t]*$'
+    r'^[ \t]*<?(https?://(?:www\.)?(?:amazon\.co\.jp|amzn\.to|amzn\.asia|a\.co|link\.amazon)/[^\s<>]+?)>?[ \t]*$'
 )
 
 # Regex patterns to extract ASIN from full Amazon URLs
@@ -137,7 +138,7 @@ def resolve_product_title(url: str, asin: str) -> Optional[str]:
 
 def is_short_url(url: str) -> bool:
     """True for Amazon's URL shorteners, which hide the ASIN behind a redirect."""
-    return any(host in url for host in ('amzn.to', 'amzn.asia', 'a.co/'))
+    return urlparse(url).hostname in {'amzn.to', 'amzn.asia', 'a.co', 'link.amazon'}
 
 
 def extract_asin(url: str) -> Optional[str]:
@@ -201,7 +202,7 @@ def find_simple_amazon_links(content: str) -> List[Tuple[str, str, str]]:
     """
     links = []
     pattern = re.compile(
-        r'(?<!!)\[([^\]]+)\]\((https?://(?:www\.)?(?:amazon\.co\.jp|amzn\.to)[^\s\)]*)\)'
+        r'(?<!!)\[([^\]]+)\]\((https?://(?:www\.)?(?:amazon\.co\.jp|amzn\.to|amzn\.asia|a\.co|link\.amazon)/[^\s\)]*)\)'
     )
     for match in pattern.finditer(content):
         link_text = match.group(1).strip()

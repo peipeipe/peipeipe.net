@@ -7,6 +7,8 @@ This script validates ASIN extraction and link detection logic.
 import re
 import sys
 from pathlib import Path
+from unittest.mock import patch
+from types import SimpleNamespace
 
 # Add scripts directory to path
 sys.path.insert(0, str(Path(__file__).parent))
@@ -18,6 +20,7 @@ from enhance_amazon_links import (
     find_bare_amazon_url_lines,
     find_simple_amazon_links,
     load_book_titles,
+    build_affiliate_url,
     remove_duplicate_generic_amazon_cards,
     remove_legacy_image_links_before_cards,
 )
@@ -135,6 +138,8 @@ https://amzn.to/4qaqMGv
 
 <https://amzn.asia/d/abcdef>
 
+https://link.amazon/B0dKGRTNE
+
 Markdown link (not bare):
 [Product](https://amzn.to/3VFbQSJ)
 
@@ -152,6 +157,7 @@ https://example.com/dp/B084MCR9KG
         'https://amzn.to/4qaqMGv',
         'https://www.amazon.co.jp/dp/B084MCR9KG',
         'https://amzn.asia/d/abcdef',
+        'https://link.amazon/B0dKGRTNE',
     ]
 
     if [url for _, url in found] != expected:
@@ -206,6 +212,25 @@ https://www.amazon.co.jp/dp/{asin}
 
     print(f"✓ PASS: Bare URL became a card — {title[:40]}")
     print()
+    return True
+
+
+def test_link_amazon_enhancement():
+    """Resolve an opaque link.amazon token, then generate a card."""
+    url = 'https://link.amazon/B0dKGRTNE'
+    response = SimpleNamespace(url='https://www.amazon.co.jp/dp/4103534400')
+    with patch('enhance_amazon_links.fetch_amazon_page', return_value=response), \
+         patch('enhance_amazon_links.resolve_product_title', return_value='夏帆'):
+        assert extract_asin(url) == '4103534400'
+        assert len(find_simple_amazon_links(f'[夏帆]({url})')) == 1
+        enhanced, count = enhance_bare_amazon_urls(f'{url}\n\n> 引用', set())
+    assert count == 1
+    assert '/P/4103534400.' in enhanced
+    assert '>夏帆</a>' in enhanced
+    assert f'href="{url}"' in enhanced
+    assert '> 引用' in enhanced
+    assert build_affiliate_url(url, '4103534400') == url
+    print('✓ PASS: link.amazon resolved and enhanced')
     return True
 
 
@@ -388,6 +413,7 @@ def main():
     results.append(("Link Detection", test_link_detection()))
     results.append(("Bare URL Detection", test_bare_url_detection()))
     results.append(("Bare URL Enhancement", test_bare_url_enhancement()))
+    results.append(("link.amazon Enhancement", test_link_amazon_enhancement()))
     results.append(("Product Page Title Extraction", test_page_title_extraction()))
     results.append(("Legacy Image Cleanup", test_legacy_image_link_cleanup()))
     results.append(("Duplicate Generic Card Cleanup", test_duplicate_generic_card_cleanup()))
