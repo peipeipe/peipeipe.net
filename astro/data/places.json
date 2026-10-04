@@ -1,5 +1,29 @@
 [
   {
+    "name": "カラコロの足湯",
+    "user_comment": "",
+    "date": "2026-10-04",
+    "lat": 36.480824,
+    "lng": 138.143562,
+    "address": "上山田温泉2-9-1, 千曲市, 長野県, 389-0821",
+    "foursquare_url": "https://foursquare.com/v/4d1c0d85763fb1f75ad38766",
+    "photos": [
+      "https://fastly.4sqi.net/img/general/500x300/41463109_d6KdY9DfTQeaWABJXMT3uoRo7zAkeEpj5PuL01j5xlw.jpg",
+      "https://fastly.4sqi.net/img/general/500x300/41463109_N1_cgkhejji0zKNFukihGANkEnhx3l4rFvtt8oCKR8I.jpg",
+      "https://fastly.4sqi.net/img/general/500x300/41463109_GqQ3BTz40vYEK_4T1d48fWg5PR-EiLeaIHCxSkruCMA.jpg",
+      "https://fastly.4sqi.net/img/general/500x300/41463109_n7QwLjTUeqgaK6DJnyXE2xuZI_Bpcl2R4Jj2q7l3sV0.jpg"
+    ],
+    "categories": [
+      "温泉"
+    ],
+    "data_source": "foursquare_checkin",
+    "fsq_id": "4d1c0d85763fb1f75ad38766",
+    "checkin_count": 4,
+    "first_checkin_at": "2024-10-06T04:42:36+00:00",
+    "last_checkin_at": "2026-10-04T02:58:25+00:00",
+    "composition_hint": ""
+  },
+  {
     "name": "ラーメン山岡家",
     "user_comment": "",
     "date": "2026-10-02",
@@ -1951,29 +1975,6 @@
     "checkin_count": 2,
     "first_checkin_at": "2026-01-16T13:09:30+00:00",
     "last_checkin_at": "2026-06-13T10:52:51+00:00",
-    "composition_hint": ""
-  },
-  {
-    "name": "カラコロの足湯",
-    "user_comment": "",
-    "date": "2026-06-13",
-    "lat": 36.480824,
-    "lng": 138.143562,
-    "address": "上山田温泉2-9-1, 千曲市, 長野県, 389-0821",
-    "foursquare_url": "https://foursquare.com/v/4d1c0d85763fb1f75ad38766",
-    "photos": [
-      "https://fastly.4sqi.net/img/general/500x300/41463109_N1_cgkhejji0zKNFukihGANkEnhx3l4rFvtt8oCKR8I.jpg",
-      "https://fastly.4sqi.net/img/general/500x300/41463109_GqQ3BTz40vYEK_4T1d48fWg5PR-EiLeaIHCxSkruCMA.jpg",
-      "https://fastly.4sqi.net/img/general/500x300/41463109_n7QwLjTUeqgaK6DJnyXE2xuZI_Bpcl2R4Jj2q7l3sV0.jpg"
-    ],
-    "categories": [
-      "温泉"
-    ],
-    "data_source": "foursquare_checkin",
-    "fsq_id": "4d1c0d85763fb1f75ad38766",
-    "checkin_count": 3,
-    "first_checkin_at": "2024-10-06T04:42:36+00:00",
-    "last_checkin_at": "2026-06-13T01:58:39+00:00",
     "composition_hint": ""
   },
   {
@@ -7991,7 +7992,7 @@
     "date": "2025-02-07",
     "lat": 35.664255,
     "lng": 139.757332,
-    "address": "港区, 東京都, 105-0004",
+    "address": "新橋4-19-10, 港区, 東京都, 105-0004",
     "foursquare_url": "https://foursquare.com/v/64f3131bef14b118729bf1ea",
     "photos": [
       "https://fastly.4sqi.net/img/general/500x300/41463109_e-quiLs-ApfBLWb_N9KbfbOF-pIZ0VxCnA38ZHtPiM4.jpg"
@@ -12952,8 +12953,8 @@
     "name": "東海道新幹線 東京駅",
     "user_comment": "",
     "date": "2024-01-26",
-    "lat": 35.68077713200091,
-    "lng": 139.76784615383215,
+    "lat": 35.68117744838896,
+    "lng": 139.76787111346894,
     "address": "丸の内1-9-1, 千代田区, 東京都, 100-0005",
     "foursquare_url": "https://foursquare.com/v/4b792714f964a52018ed2ee3",
     "photos": [
@@ -16389,8 +16390,8 @@
     "name": "関西国際空港 (KIX)",
     "user_comment": "",
     "date": "2023-02-27",
-    "lat": 34.435343287383844,
-    "lng": 135.24359560093436,
+    "lat": 34.43575904760424,
+    "lng": 135.24406709337444,
     "address": "泉州空港北1, 泉佐野市, 大阪府, 549-0001",
     "foursquare_url": "https://foursquare.com/v/4b2696c0f964a520fa7d24e3",
     "photos": [
@@ -24215,8 +24216,8 @@
     "name": "川崎駅",
     "user_comment": "No urgent need",
     "date": "2020-03-14",
-    "lat": 35.5313087720272,
-    "lng": 139.69714771727493,
+    "lat": 35.53143267966989,
+    "lng": 139.69683858759484,
     "address": "川崎区駅前本町26-1, 川崎市, 神奈川県, 210-0007",
     "foursquare_url": "https://foursquare.com/v/4b274cf5f964a520bf8524e3",
     "photos": [],
@@ -39952,8 +39953,8 @@
     "name": "三省堂書店",
     "user_comment": "老朽化激しい",
     "date": "2014-07-06",
-    "lat": 35.695723441434424,
-    "lng": 139.76084337169425,
+    "lat": 35.695639,
+    "lng": 139.760564,
     "address": "神田神保町1-1, 千代田区, 東京都, 101-0051",
     "foursquare_url": "https://foursquare.com/v/4b553983f964a5202adf27e3",
     "photos": [],

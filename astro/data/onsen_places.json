@@ -1,5 +1,29 @@
 [
   {
+    "name": "カラコロの足湯",
+    "user_comment": "",
+    "date": "2026-10-04",
+    "lat": 36.480824,
+    "lng": 138.143562,
+    "address": "上山田温泉2-9-1, 千曲市, 長野県, 389-0821",
+    "foursquare_url": "https://foursquare.com/v/4d1c0d85763fb1f75ad38766",
+    "photos": [
+      "https://fastly.4sqi.net/img/general/500x300/41463109_d6KdY9DfTQeaWABJXMT3uoRo7zAkeEpj5PuL01j5xlw.jpg",
+      "https://fastly.4sqi.net/img/general/500x300/41463109_N1_cgkhejji0zKNFukihGANkEnhx3l4rFvtt8oCKR8I.jpg",
+      "https://fastly.4sqi.net/img/general/500x300/41463109_GqQ3BTz40vYEK_4T1d48fWg5PR-EiLeaIHCxSkruCMA.jpg",
+      "https://fastly.4sqi.net/img/general/500x300/41463109_n7QwLjTUeqgaK6DJnyXE2xuZI_Bpcl2R4Jj2q7l3sV0.jpg"
+    ],
+    "categories": [
+      "温泉"
+    ],
+    "data_source": "foursquare_checkin",
+    "fsq_id": "4d1c0d85763fb1f75ad38766",
+    "checkin_count": 4,
+    "first_checkin_at": "2024-10-06T04:42:36+00:00",
+    "last_checkin_at": "2026-10-04T02:58:25+00:00",
+    "composition_hint": ""
+  },
+  {
     "name": "うるおい館",
     "user_comment": "長野じゃめずらしい茶褐色、広め、サウナ二つ。",
     "date": "2026-09-28",
@@ -620,29 +644,6 @@
     "checkin_count": 6,
     "first_checkin_at": "2024-08-16T11:05:27+00:00",
     "last_checkin_at": "2026-06-14T10:20:38+00:00",
-    "composition_hint": ""
-  },
-  {
-    "name": "カラコロの足湯",
-    "user_comment": "",
-    "date": "2026-06-13",
-    "lat": 36.480824,
-    "lng": 138.143562,
-    "address": "上山田温泉2-9-1, 千曲市, 長野県, 389-0821",
-    "foursquare_url": "https://foursquare.com/v/4d1c0d85763fb1f75ad38766",
-    "photos": [
-      "https://fastly.4sqi.net/img/general/500x300/41463109_N1_cgkhejji0zKNFukihGANkEnhx3l4rFvtt8oCKR8I.jpg",
-      "https://fastly.4sqi.net/img/general/500x300/41463109_GqQ3BTz40vYEK_4T1d48fWg5PR-EiLeaIHCxSkruCMA.jpg",
-      "https://fastly.4sqi.net/img/general/500x300/41463109_n7QwLjTUeqgaK6DJnyXE2xuZI_Bpcl2R4Jj2q7l3sV0.jpg"
-    ],
-    "categories": [
-      "温泉"
-    ],
-    "data_source": "foursquare_checkin",
-    "fsq_id": "4d1c0d85763fb1f75ad38766",
-    "checkin_count": 3,
-    "first_checkin_at": "2024-10-06T04:42:36+00:00",
-    "last_checkin_at": "2026-06-13T01:58:39+00:00",
     "composition_hint": ""
   },
   {
