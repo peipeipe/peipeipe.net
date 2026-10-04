@@ -696,13 +696,20 @@
     "last_visit": "2026-02-08"
   },
   {
-    "name": "一重山",
-    "lat": 36.532905,
-    "lng": 138.130856,
-    "elevation": 457,
+    "name": "有明山",
+    "lat": 36.52617,
+    "lng": 138.138078,
+    "elevation": 652,
     "tags": [],
-    "visit_count": 8,
+    "visit_count": 9,
     "activities": [
+      {
+        "id": "i193255639",
+        "name": "Lunch トレイルラン",
+        "date": "2026-10-04",
+        "sport_type": "TrailRun",
+        "distance_km": 3.4
+      },
       {
         "id": 19824127885,
         "name": "Evening Trail Run",
@@ -761,13 +768,13 @@
       }
     ],
     "first_visit": "2026-03-19",
-    "last_visit": "2026-08-20"
+    "last_visit": "2026-10-04"
   },
   {
-    "name": "有明山",
-    "lat": 36.52617,
-    "lng": 138.138078,
-    "elevation": 652,
+    "name": "一重山",
+    "lat": 36.532905,
+    "lng": 138.130856,
+    "elevation": 457,
     "tags": [],
     "visit_count": 8,
     "activities": [
