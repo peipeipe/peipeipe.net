@@ -1,13 +1,152 @@
 {
-  "generated_on": "2026-09-28",
+  "generated_on": "2026-10-04",
   "stats": {
     "places": 72,
-    "springs": 73,
-    "composition_photos": 27,
+    "springs": 74,
+    "composition_photos": 28,
     "not_composition_photos": 102,
     "unreadable_photos": 0
   },
   "places": [
+    {
+      "fsq_id": "4d1c0d85763fb1f75ad38766",
+      "name": "カラコロの足湯",
+      "address": "上山田温泉2-9-1, 千曲市, 長野県, 389-0821",
+      "checkin_date": "2026-10-04",
+      "springs": [
+        {
+          "confidence": "low",
+          "spring_quality": "アルカリ性単純硫黄温泉",
+          "source_temp_c": 44.0,
+          "notes": "ネット公開情報から作成（現地掲示は未確認）。戸倉上山田温泉の源泉かけ流しの足湯。出典: るるぶ&more.・ニフティ温泉などの温泉紹介サイト"
+        },
+        {
+          "confidence": "high",
+          "spring_name": "混合(26号,27号,30号,32号,35号,40号,41号,43号,46号源泉の混合泉(別紙参照))",
+          "spring_quality": "アルカリ性単純硫黄温泉",
+          "spring_quality_class": "低張性アルカリ性高温泉",
+          "source_temp_c": 44.0,
+          "ph": 8.7,
+          "ph_lab": 8.61,
+          "evaporation_residue_mg_kg": 535.0,
+          "dissolved_solids_mg_kg": 535.8,
+          "total_ingredients_mg_kg": 536.1,
+          "cations": [
+            {
+              "name": "リチウムイオン",
+              "symbol": "Li+",
+              "mg_kg": 0.1
+            },
+            {
+              "name": "ナトリウムイオン",
+              "symbol": "Na+",
+              "mg_kg": 148.1
+            },
+            {
+              "name": "カリウムイオン",
+              "symbol": "K+",
+              "mg_kg": 2.7
+            },
+            {
+              "name": "マグネシウムイオン",
+              "symbol": "Mg2+",
+              "mg_kg": 0.4
+            },
+            {
+              "name": "カルシウムイオン",
+              "symbol": "Ca2+",
+              "mg_kg": 27.7
+            },
+            {
+              "name": "ストロンチウムイオン",
+              "symbol": "Sr2+",
+              "mg_kg": 0.3
+            },
+            {
+              "name": "アルミニウムイオン",
+              "symbol": "Al3+",
+              "mg_kg": 0.01
+            },
+            {
+              "name": "亜鉛イオン",
+              "symbol": "Zn2+",
+              "mg_kg": 0.02
+            }
+          ],
+          "cations_total_mg_kg": 179.3,
+          "anions": [
+            {
+              "name": "フッ化物イオン",
+              "symbol": "F-",
+              "mg_kg": 1.0
+            },
+            {
+              "name": "塩化物イオン",
+              "symbol": "Cl-",
+              "mg_kg": 197.8
+            },
+            {
+              "name": "臭化物イオン",
+              "symbol": "Br-",
+              "mg_kg": 0.7
+            },
+            {
+              "name": "ヨウ化物イオン",
+              "symbol": "I-",
+              "mg_kg": 0.1
+            },
+            {
+              "name": "硫化水素イオン",
+              "symbol": "HS-",
+              "mg_kg": 12.5
+            },
+            {
+              "name": "硫酸イオン",
+              "symbol": "SO42-",
+              "mg_kg": 54.7
+            },
+            {
+              "name": "炭酸水素イオン",
+              "symbol": "HCO3-",
+              "mg_kg": 33.0
+            },
+            {
+              "name": "炭酸イオン",
+              "symbol": "CO32-",
+              "mg_kg": 5.7
+            }
+          ],
+          "anions_total_mg_kg": 305.5,
+          "undissociated": [
+            {
+              "name": "メタケイ酸",
+              "symbol": "H2SiO3",
+              "mg_kg": 45.3
+            },
+            {
+              "name": "メタホウ酸",
+              "symbol": "HBO2",
+              "mg_kg": 5.7
+            }
+          ],
+          "undissociated_total_mg_kg": 51.0,
+          "dissolved_gas": [
+            {
+              "name": "遊離硫化水素",
+              "symbol": "H2S",
+              "mg_kg": 0.3
+            }
+          ],
+          "dissolved_gas_total_mg_kg": 0.3,
+          "analyzed_on": "2020-08-12",
+          "analyzer": "一般社団法人 上田薬剤師会",
+          "analyzer_registration": "長野県第7号",
+          "source_photos": [
+            "https://fastly.4sqi.net/img/general/500x300/41463109_d6KdY9DfTQeaWABJXMT3uoRo7zAkeEpj5PuL01j5xlw.jpg"
+          ]
+        }
+      ]
+    },
     {
       "fsq_id": "4c02897710baef3b05016bbd",
       "name": "裾花峡温泉 うるおい館 (うるおい館)",
@@ -2943,20 +3082,6 @@
           "source_photos": [
             "https://fastly.4sqi.net/img/general/500x300/41463109__7fZeQ5AxG93l0ZdcbpNIPHjUtja6246iJXN9qXTowM.jpg"
           ]
-        }
-      ]
-    },
-    {
-      "fsq_id": "4d1c0d85763fb1f75ad38766",
-      "name": "カラコロの足湯",
-      "address": "上山田温泉2-9-1, 千曲市, 長野県, 389-0821",
-      "checkin_date": "2026-06-13",
-      "springs": [
-        {
-          "confidence": "low",
-          "spring_quality": "アルカリ性単純硫黄温泉",
-          "source_temp_c": 44.0,
-          "notes": "ネット公開情報から作成（現地掲示は未確認）。戸倉上山田温泉の源泉かけ流しの足湯。出典: るるぶ&more.・ニフティ温泉などの温泉紹介サイト"
         }
       ]
     },
