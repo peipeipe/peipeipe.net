@@ -220,25 +220,6 @@
     "last_visit": "2026-09-02"
   },
   {
-    "name": "丸山",
-    "lat": 36.470466,
-    "lng": 138.146076,
-    "elevation": 416,
-    "tags": [],
-    "visit_count": 1,
-    "activities": [
-      {
-        "id": 12586083054,
-        "name": "Morning Run",
-        "date": "2024-10-06",
-        "sport_type": "Run",
-        "distance_km": 16.4
-      }
-    ],
-    "first_visit": "2024-10-06",
-    "last_visit": "2024-10-06"
-  },
-  {
     "name": "虚空蔵山",
     "lat": 36.430097,
     "lng": 138.221517,
