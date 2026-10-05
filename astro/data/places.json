@@ -10156,8 +10156,8 @@
     "name": "別所温泉駅",
     "user_comment": "",
     "date": "2024-07-21",
-    "lat": 36.352991,
-    "lng": 138.161774,
+    "lat": 36.352953,
+    "lng": 138.161786,
     "address": "別所温泉1853-3 (上田電鉄別所線), 上田市, 長野県, 386-1431",
     "foursquare_url": "https://foursquare.com/v/4b83a987f964a520070c31e3",
     "photos": [
@@ -10195,18 +10195,18 @@
     "composition_hint": ""
   },
   {
-    "name": "そば前　ちくまがわ",
+    "name": "そば前 ちくまがわ",
     "user_comment": "",
     "date": "2024-07-20",
-    "lat": 36.397347,
-    "lng": 138.245356,
-    "address": "上田市, 長野県, 386-0025",
+    "lat": 36.39676,
+    "lng": 138.249425,
+    "address": "天神1-1887-17 (JR 上田駅), 上田市, 長野県, 386-0025",
     "foursquare_url": "https://foursquare.com/v/6636d64e3f804f7afb98d49b",
     "photos": [
       "https://fastly.4sqi.net/img/general/500x300/41463109_MPxKSiJ1PpM1e5t92tjSRVZy-ds-UNCEp1t6nfgG6cw.jpg"
     ],
     "categories": [
-      "麺類店"
+      "蕎麦屋"
     ],
     "data_source": "foursquare_checkin",
     "fsq_id": "6636d64e3f804f7afb98d49b",
@@ -27963,8 +27963,8 @@
     "name": "柏駅",
     "user_comment": "",
     "date": "2019-05-26",
-    "lat": 35.86215683915895,
-    "lng": 139.97065818340857,
+    "lat": 35.861618633069405,
+    "lng": 139.97043779227116,
     "address": "柏1/末広町1, 柏市, 千葉県",
     "foursquare_url": "https://foursquare.com/v/4b544f41f964a52022b727e3",
     "photos": [],
@@ -29507,8 +29507,8 @@
     "name": "名古屋駅",
     "user_comment": "",
     "date": "2019-01-21",
-    "lat": 35.17034011822653,
-    "lng": 136.88149410352165,
+    "lat": 35.170665375905116,
+    "lng": 136.88198182518684,
     "address": "中村区名駅1, 名古屋市, 愛知県, 450-0002",
     "foursquare_url": "https://foursquare.com/v/4b56811cf964a520381328e3",
     "photos": [
