@@ -1,5 +1,25 @@
 [
   {
+    "name": "権堂温泉 テルメDOME",
+    "user_comment": "サウナ2つあり温泉も二つ、謎な作りだったけど久しぶりに整った",
+    "date": "2026-10-06",
+    "lat": 36.651714,
+    "lng": 138.189555,
+    "address": "権堂町1437-5, 長野市, 長野県, 380-0833",
+    "foursquare_url": "https://foursquare.com/v/629c9bc00550244beb1bdf50",
+    "photos": [
+      "https://fastly.4sqi.net/img/general/500x300/41463109_EByIHPoL6ufXhXV8emps7tKXayCQhk2wCjBPL33oahQ.jpg"
+    ],
+    "categories": [
+      "温泉"
+    ],
+    "data_source": "foursquare_checkin",
+    "fsq_id": "629c9bc00550244beb1bdf50",
+    "checkin_count": 1,
+    "first_checkin_at": "2026-10-06T08:31:07+00:00",
+    "last_checkin_at": "2026-10-06T08:31:07+00:00"
+  },
+  {
     "name": "カラコロの足湯",
     "user_comment": "",
     "date": "2026-10-04",
@@ -25039,7 +25059,7 @@
     "date": "2019-11-29",
     "lat": 22.19029682848214,
     "lng": 113.54789969803515,
-    "address": "友誼大馬路 (Av. da Amizade), マカオ, Municipality of Macau, 中国",
+    "address": "友誼大馬路 (Av. da Amizade), マカオ",
     "foursquare_url": "https://foursquare.com/v/4befaaaec601a59301eac2d1",
     "photos": [],
     "categories": [
@@ -36433,8 +36453,8 @@
     "name": "北千住駅",
     "user_comment": "常磐線ホームの懐かしさ。今でもたまに間違えて行く。",
     "date": "2016-03-14",
-    "lat": 35.74948078123542,
-    "lng": 139.80502766394713,
+    "lat": 35.749386795876624,
+    "lng": 139.80521747610365,
     "address": "千住旭町/千住2, 足立区, 東京都",
     "foursquare_url": "https://foursquare.com/v/4b396b34f964a5204f5c25e3",
     "photos": [],
