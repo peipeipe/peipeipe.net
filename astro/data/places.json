@@ -17,7 +17,8 @@
     "fsq_id": "629c9bc00550244beb1bdf50",
     "checkin_count": 1,
     "first_checkin_at": "2026-10-06T08:31:07+00:00",
-    "last_checkin_at": "2026-10-06T08:31:07+00:00"
+    "last_checkin_at": "2026-10-06T08:31:07+00:00",
+    "composition_hint": ""
   },
   {
     "name": "カラコロの足湯",
@@ -25970,8 +25971,8 @@
     "name": "JR 渋谷駅",
     "user_comment": "",
     "date": "2019-09-19",
-    "lat": 35.65848563844514,
-    "lng": 139.70161033377352,
+    "lat": 35.65843430568997,
+    "lng": 139.70183970639877,
     "address": "道玄坂1-1-1, 渋谷区, 東京都, 150-0043",
     "foursquare_url": "https://foursquare.com/v/4b6c0307f964a5208c1f2ce3",
     "photos": [],
