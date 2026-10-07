@@ -1,13 +1,137 @@
 {
-  "generated_on": "2026-10-04",
+  "generated_on": "2026-10-06",
   "stats": {
-    "places": 72,
-    "springs": 74,
-    "composition_photos": 28,
+    "places": 73,
+    "springs": 75,
+    "composition_photos": 29,
     "not_composition_photos": 102,
     "unreadable_photos": 0
   },
   "places": [
+    {
+      "fsq_id": "629c9bc00550244beb1bdf50",
+      "name": "権堂温泉 テルメDOME",
+      "address": "権堂町1437-5, 長野市, 長野県, 380-0833",
+      "checkin_date": "2026-10-06",
+      "springs": [
+        {
+          "confidence": "high",
+          "spring_name": "山京権堂温泉",
+          "spring_quality": "単純温泉",
+          "spring_quality_class": "低張性弱アルカリ性温泉",
+          "source_temp_c": 36.4,
+          "ph": 7.8,
+          "ph_lab": 8.03,
+          "yield_l_min": 400,
+          "evaporation_residue_mg_kg": 524,
+          "dissolved_solids_mg_kg": 643,
+          "total_ingredients_mg_kg": 646,
+          "cations": [
+            {
+              "name": "ナトリウムイオン",
+              "symbol": "Na+",
+              "mg_kg": 149.2
+            },
+            {
+              "name": "カリウムイオン",
+              "symbol": "K+",
+              "mg_kg": 5.8
+            },
+            {
+              "name": "アンモニウムイオン",
+              "symbol": "NH4+",
+              "mg_kg": 0.5
+            },
+            {
+              "name": "マグネシウムイオン",
+              "symbol": "Mg2+",
+              "mg_kg": 3.3
+            },
+            {
+              "name": "カルシウムイオン",
+              "symbol": "Ca2+",
+              "mg_kg": 17.4
+            },
+            {
+              "name": "ストロンチウムイオン",
+              "symbol": "Sr2+",
+              "mg_kg": 0.1
+            },
+            {
+              "name": "鉄(II)イオン",
+              "symbol": "Fe2+",
+              "mg_kg": 0.3
+            }
+          ],
+          "cations_total_mg_kg": 176.6,
+          "anions": [
+            {
+              "name": "ふっ化物イオン",
+              "symbol": "F-",
+              "mg_kg": 0.1
+            },
+            {
+              "name": "塩化物イオン",
+              "symbol": "Cl-",
+              "mg_kg": 69.1
+            },
+            {
+              "name": "臭化物イオン",
+              "symbol": "Br-",
+              "mg_kg": 0.3
+            },
+            {
+              "name": "よう化物イオン",
+              "symbol": "I-",
+              "mg_kg": 0.2
+            },
+            {
+              "name": "硫酸イオン",
+              "symbol": "SO42-",
+              "mg_kg": 108.1
+            },
+            {
+              "name": "りん酸水素イオン",
+              "symbol": "HPO42-",
+              "mg_kg": 0.5
+            },
+            {
+              "name": "炭酸水素イオン",
+              "symbol": "HCO3-",
+              "mg_kg": 229.9
+            }
+          ],
+          "anions_total_mg_kg": 408.1,
+          "undissociated": [
+            {
+              "name": "メタけい酸",
+              "symbol": "H2SiO3",
+              "mg_kg": 55.2
+            },
+            {
+              "name": "メタほう酸",
+              "symbol": "HBO2",
+              "mg_kg": 2.8
+            }
+          ],
+          "undissociated_total_mg_kg": 58,
+          "dissolved_gas": [
+            {
+              "name": "遊離二酸化炭素",
+              "symbol": "CO2",
+              "mg_kg": 3.5
+            }
+          ],
+          "dissolved_gas_total_mg_kg": 3.5,
+          "analyzed_on": "2019-01-29",
+          "analyzer": "一般社団法人 長野市薬剤師会 検査センター",
+          "analyzer_registration": "長野県第8号",
+          "source_photos": [
+            "https://fastly.4sqi.net/img/general/500x300/41463109_EByIHPoL6ufXhXV8emps7tKXayCQhk2wCjBPL33oahQ.jpg"
+          ]
+        }
+      ]
+    },
     {
       "fsq_id": "4d1c0d85763fb1f75ad38766",
       "name": "カラコロの足湯",
