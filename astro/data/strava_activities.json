@@ -1,5 +1,26 @@
 [
   {
+    "moving_time": 3473,
+    "elapsed_time": 3950,
+    "total_elevation_gain": 61.48282,
+    "average_speed": 3.023,
+    "max_speed": 3.333,
+    "id": "i194529351",
+    "intervals_id": "i194529351",
+    "source": "intervals",
+    "url": "https://intervals.icu/activities/i194529351",
+    "name": "Lunch ラン",
+    "sport_type": "Run",
+    "distance": 10553.64,
+    "start_date": "2026-10-07T04:29:16Z",
+    "start_date_local": "2026-10-07T13:29:16",
+    "start_latlng": [
+      36.391747,
+      138.2428
+    ],
+    "summary_polyline": "mwb}EopwjY}AfEaByCgEzGUcBa@PoBwDaAy@k@P{CfFkLv[sHbPAp@pAlBgHfEsHbKmAjCI~@pFvc@?w@i@c@eKdCIpDYVy@pJoAdCoClC_AfCMbFXf@z@UuHzPgVuPPaFm@aKxCRfBiFvIac@nAoOrFeC`EsD~Ywb@jF_KfD_JoEyBc@s@|@iKdKoKzFpD~Kq[`EgJhQkYhWbPDbA}JnFsGbI~BvDaDrGgGzP"
+  },
+  {
     "moving_time": 3990,
     "elapsed_time": 4388,
     "total_elevation_gain": 320.99756,
