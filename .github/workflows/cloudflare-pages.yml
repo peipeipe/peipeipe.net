@@ -6,6 +6,9 @@ on:
     branches:
       - master
     paths:
+      - "diary-inbox/**"
+      - "scripts/process-diary-inbox.mjs"
+      - ".github/workflows/cloudflare-pages.yml"
       - "astro/**"
       - "astro/content/**"
       - "astro/data/**"
@@ -28,7 +31,29 @@ env:
   CLOUDFLARE_PAGES_PROJECT: peipeipe-net-astro
 
 jobs:
+  accept-diary:
+    if: github.ref == 'refs/heads/master' && github.event_name != 'pull_request'
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    outputs:
+      sha: ${{ steps.publish.outputs.sha }}
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          ref: master
+      - uses: actions/setup-node@v7
+        with:
+          node-version-file: astro/.node-version
+      - name: Publish accepted diary submissions
+        id: publish
+        run: |
+          node scripts/process-diary-inbox.mjs --publish
+          echo "sha=$(git rev-parse HEAD)" >> "$GITHUB_OUTPUT"
+
   deploy:
+    needs: accept-diary
+    if: always() && !cancelled() && (needs.accept-diary.result == 'success' || needs.accept-diary.result == 'skipped')
     runs-on: ubuntu-latest
     defaults:
       run:
@@ -37,6 +62,8 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v7
+        with:
+          ref: ${{ needs.accept-diary.outputs.sha || github.sha }}
 
       - name: Setup Node
         uses: actions/setup-node@v7
@@ -130,5 +157,5 @@ jobs:
           npx wrangler pages deploy dist \
             --project-name "${CLOUDFLARE_PAGES_PROJECT}" \
             --branch "${GITHUB_HEAD_REF:-${GITHUB_REF_NAME}}" \
-            --commit-hash "${GITHUB_SHA}" \
+            --commit-hash "$(git rev-parse HEAD)" \
             --commit-message "Astro ${GITHUB_REF_NAME} ${GITHUB_SHA}"

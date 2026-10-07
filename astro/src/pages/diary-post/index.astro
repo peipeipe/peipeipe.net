@@ -706,6 +706,12 @@
       border-radius: 12px;
     }
 
+    .outbox-card { padding: 16px; overflow-wrap: anywhere; }
+    .outbox-card p { margin-top: 8px; font-size: 14px; color: var(--text-sub); }
+    .outbox-card a { color: var(--accent-2); }
+    #outbox-status { margin-top: 12px; }
+    #outbox-status .btn { margin-top: 8px; white-space: normal; }
+
     /* Spinner */
     @keyframes spin {
       to { transform: rotate(360deg); }
@@ -992,6 +998,13 @@
     <input type="file" id="file-image" accept="image/*" multiple hidden aria-hidden="true">
   </div>
 
+  <div class="glass section-gap outbox-card" aria-live="polite">
+    <strong>投稿の送信状況</strong>
+    <p>受付済みになったら画面を閉じても大丈夫です。未送信の投稿は、この画面に戻ると再送します。</p>
+    <p><a href="https://github.com/peipeipe/peipeipe.net/actions/workflows/cloudflare-pages.yml" target="_blank" rel="noopener noreferrer">公開処理の状況を確認</a></p>
+    <div id="outbox-status">送信状況を確認中…</div>
+  </div>
+
   <!-- ── Submit ── -->
   <div class="glass submit-bar">
     <span class="submit-info" id="submit-info"></span>
@@ -1009,9 +1022,15 @@
 <div class="toast-container" id="toast-container" aria-live="polite" aria-atomic="false"></div>
 
 <script>
-  import { diarySections, replaceDiarySection } from "../../lib/diary-edit.mjs";
+  import { diarySections } from "../../lib/diary-edit.mjs";
   import { writeWebpBlob } from "../../lib/upload-webp";
-  import { DRAFT_DIRECTORY, draftPath, serializeDraft, parseDraft, assertDraftUnchanged } from "../../lib/diary-drafts.mjs";
+  import { DRAFT_DIRECTORY, draftPath, serializeDraft, parseDraft } from "../../lib/diary-drafts.mjs";
+  import { INBOX, RECEIPTS, validateSubmission } from "../../lib/diary-submission.mjs";
+  import { localRecord, listJobs, enqueueJob } from "../../lib/diary-outbox.mjs";
+  let outboxBusy = false;
+  let restoring = true;
+  let transferringToOutbox = false;
+
   /* ════════════════════════════════════════════
      State
   ════════════════════════════════════════════ */
@@ -1490,9 +1509,9 @@
   ════════════════════════════════════════════ */
   function validateForm() {
     const hasContent = Boolean(textarea.value.trim() || state.imageUploads.length > 0);
-    const ok = state.token && hasContent && !state.processing && !state.imageProcessing;
+    const ok = state.token && hasContent && !state.processing && !state.imageProcessing && !restoring;
     btnSubmit.disabled = !ok;
-    const busy = state.processing || state.imageProcessing;
+    const busy = state.processing || state.imageProcessing || restoring;
     $('btn-load-entries').disabled = busy || !state.token;
     $('btn-end-edit').disabled = busy || !state.editing;
     $('btn-edit-entry').disabled = busy || !state.token || !$('edit-entry').value;
@@ -1506,7 +1525,7 @@
     draftList.disabled = busy;
     // Keep the submitted snapshot stable while saving or publishing.
     [textarea, inputDate, inputTime, btnNow, btnYesterday, btnPickImage, inputToken, btnClear,
-      $('btn-save-settings'), ...toolbarBtns].forEach(el => { el.disabled = state.processing; });
+      $('btn-save-settings'), ...toolbarBtns].forEach(el => { el.disabled = state.processing || restoring; });
     if (state.editing) [inputDate, inputTime, btnNow, btnYesterday].forEach(el => { el.disabled = true; });
     $('edit-status').textContent = state.editing ? `${inputDate.value} ${inputTime.value} の投稿を編集中` : '';
     if (!state.processing) submitLabel.textContent = state.editing ? '変更を保存する' : '🚀 投稿する';
@@ -1561,7 +1580,9 @@
   function utf8ToBase64(str) {
     const bytes = new TextEncoder().encode(str);
     let binary = '';
-    bytes.forEach(b => binary += String.fromCharCode(b));
+    for (let offset = 0; offset < bytes.length; offset += 32768) {
+      binary += String.fromCharCode(...bytes.subarray(offset, offset + 32768));
+    }
     return btoa(binary);
   }
 
@@ -1591,57 +1612,6 @@
     return res.json();
   }
 
-  async function createBlob(content, encoding = 'base64') {
-    const data = await ghJson('/git/blobs', {
-      method: 'POST',
-      body: JSON.stringify({ content, encoding }),
-    });
-    return data.sha;
-  }
-
-  async function commitFilesOnce(files, message, expectedParentSha) {
-    const branch = 'master';
-    const ref = await ghJson(`/git/ref/heads/${branch}`);
-    const parentSha = expectedParentSha || ref.object.sha;
-    if (ref.object.sha !== parentSha) throw new Error('別の更新がありました。内容は保持されています。もう一度投稿してください。');
-    const parent = await ghJson(`/git/commits/${parentSha}`);
-
-    const tree = [];
-    for (const file of files) {
-      tree.push({
-        path: file.path,
-        mode: '100644',
-        type: 'blob',
-        sha: file.delete ? null : await createBlob(file.content, file.encoding),
-      });
-    }
-
-    const newTree = await ghJson('/git/trees', {
-      method: 'POST',
-      body: JSON.stringify({
-        base_tree: parent.tree.sha,
-        tree,
-      }),
-    });
-
-    const commit = await ghJson('/git/commits', {
-      method: 'POST',
-      body: JSON.stringify({
-        message,
-        tree: newTree.sha,
-        parents: [parentSha],
-      }),
-    });
-
-    return ghJson(`/git/refs/heads/${branch}`, {
-      method: 'PATCH',
-      body: JSON.stringify({
-        sha: commit.sha,
-        force: false,
-      }),
-    });
-  }
-
   let localReady = false;
   let localSaved = false;
   let emptyEditorSnapshot = draftSnapshot();
@@ -1649,7 +1619,13 @@
   let loadedEntries = null;
 
   function saveLocalEditor() {
-    if (!localReady) return;
+    if (!localReady || restoring || transferringToOutbox) return;
+    const snapshot = editorSnapshot();
+    void localRecord('editor', snapshot).then(() => {
+      $('local-save-status').textContent = '本文・添付写真を端末に保存済み';
+    }).catch(() => {
+      $('local-save-status').textContent = '写真の端末保存に失敗しました。画面を閉じずに再度お試しください。';
+    });
     try {
       if (draftSnapshot() === emptyEditorSnapshot && !state.editing && !state.draft) {
         localStorage.removeItem(LOCAL_EDITOR_KEY);
@@ -1830,143 +1806,143 @@
     event.returnValue = '';
   });
 
-  function diaryImagePath(date, time, ext, index, total) {
-    const timeStamp = time.replace(':', '');
-    const suffix = total > 1 ? `-${String(index + 1).padStart(2, '0')}` : '';
-    const filename = `${date}-${timeStamp}${suffix}.${ext}`;
-    return {
-      repoPath: `astro/public/images/diary/${filename}`,
-      publicUrl: `/images/diary/${filename}`,
-    };
+  function editorSnapshot() {
+    return { date: inputDate.value, time: inputTime.value, text: textarea.value,
+      editing: state.editing, draft: state.draft, savedText: state.savedText,
+      images: state.imageUploads };
   }
 
-  function buildDiarySection(time, text, imageUrls) {
-    // 新しいセクションを組み立て
-    let newSection = `\n## ${time}\n`;
-    if (text)      newSection += `${text}\n`;
-    imageUrls.forEach((imageUrl, index) => {
-      const altText = imageUrls.length > 1 ? `投稿画像${index + 1}` : '投稿画像';
-      newSection += `![${altText}](${imageUrl})\n`;
+  function restoreEditor(saved) {
+    textarea.value = saved.text;
+    inputDate.value = saved.date;
+    inputTime.value = saved.time;
+    state.editing = saved.editing || null;
+    state.draft = saved.draft || null;
+    state.savedText = saved.savedText || '';
+    state.imageUploads = saved.images || [];
+    charCount.textContent = textarea.value.length.toLocaleString();
+    renderImageUploads();
+  }
+
+  async function sendJob(job) {
+    const path = `${INBOX}/${job.payload.id}.json`;
+    const response = await fetch(`${API}/repos/${REPO_OWNER}/${REPO_NAME}/contents/${path}`, {
+      method: 'PUT', headers: ghHeaders(), signal: AbortSignal.timeout(30000),
+      body: JSON.stringify({ message: `Accept diary: ${job.payload.date} ${job.payload.time}`,
+        content: utf8ToBase64(JSON.stringify(job.payload)), branch: 'master' }),
     });
-
-    return newSection;
+    if (!response.ok) {
+      // A previous PUT may have succeeded even if the phone lost its response.
+      // Never overwrite a queue file or generate another ID during retries.
+      if (response.status === 409 || response.status === 422) {
+        const receipt = await getFileInfo(`${RECEIPTS}/${job.payload.id}.json`);
+        const queued = receipt || await fetch(`${API}/repos/${REPO_OWNER}/${REPO_NAME}/contents/${path}?ref=master`, {
+          headers: { ...ghHeaders(), Accept: 'application/vnd.github.object+json' }, cache: 'no-store',
+        }).then(r => { if (r.status === 404) return false; if (!r.ok) throw new Error(`受付確認に失敗しました (${r.status})`); return true; });
+        if (!queued) throw new Error('保存先が更新されました。再送してください。');
+      } else throw new Error(`受付に失敗しました (${response.status})。通信とGitHub Tokenを確認してください。`);
+    }
+    job.status = 'accepted';
+    job.error = '';
+    await localRecord(`job:${job.payload.id}`, job);
   }
 
-  /** 日記ファイルのMarkdownを生成・更新 */
-  function buildDiaryContent(existingContent, date, time, text, imageUrls) {
-    const WEEKDAYS = ['日','月','火','水','木','金','土'];
-    function formatTitle(d) {
-      const [y,m,day] = d.split('-').map(Number);
-      const wd = WEEKDAYS[new Date(y,m-1,day).getDay()];
-      return `${y}年${String(m).padStart(2,'0')}月${String(day).padStart(2,'0')}日(${wd})`;
-    }
-
-    const newSection = buildDiarySection(time, text, imageUrls);
-
-    if (existingContent) {
-      // 既存ファイルに追記
-      return existingContent.trimEnd() + '\n' + newSection;
-    } else {
-      // 新規ファイル
-      const title = formatTitle(date);
-      const frontMatter = `---\ndate: ${date} 00:00:00 +0900\nlayout: diary\ntitle: ${title}\n---\n`;
-      return frontMatter + newSection;
-    }
-  }
-
-  /* ════════════════════════════════════════════
-     Submit（Git Data API単一コミット方式）
-  ════════════════════════════════════════════ */
-  btnSubmit.addEventListener('click', doSubmit);
-
-  async function doSubmit() {
-    if (state.processing || btnSubmit.disabled) return;
-
-    const content = textarea.value.trim();
-    const date    = inputDate.value;
-    const time    = inputTime.value;
-
-    if (!content && state.imageUploads.length === 0) { showToast('error', '本文が空です', 'テキストまたは画像を入力してください'); return; }
-    if (!date || !time) { showToast('error', '日時エラー', '日付と時刻を入力してください'); return; }
-    if (!state.token) {
-      showToast('error', '設定エラー', 'GitHub Tokenを設定してください');
-      toggleSettings();
-      return;
-    }
-
-    setLoading(true, '📤 アップロード中...');
-
+  async function refreshOutbox(retry = false) {
+    if (outboxBusy || restoring) return;
+    outboxBusy = true;
     try {
-      const imageUrls = [];
-      const files = [];
-      const head = await ghJson('/git/ref/heads/master');
-      const parentSha = head.object.sha;
-      if (state.draft) {
-        assertDraftUnchanged(state.draft, await getFileInfo(state.draft.path, parentSha));
-        // Publishing and consuming the draft must succeed as one commit.
-        files.push({ path: state.draft.path, delete: true });
-      }
-
-      // ── Step 1: 画像パスを決定 ──
-      state.imageUploads.forEach((upload, index) => {
-        const imagePath = diaryImagePath(date, time, upload.ext, index, state.imageUploads.length);
-        if (state.editing) {
-          const suffix = `-${crypto.randomUUID()}.${upload.ext}`;
-          imagePath.repoPath = imagePath.repoPath.replace(/\.[^.]+$/, suffix);
-          imagePath.publicUrl = imagePath.publicUrl.replace(/\.[^.]+$/, suffix);
+      const jobs = await listJobs();
+      for (const job of jobs) {
+        if (!state.token || !navigator.onLine) continue;
+        try {
+          if (job.status === 'pending' && retry) await sendJob(job);
+          if (job.status === 'accepted') {
+            const receipt = await getFileInfo(`${RECEIPTS}/${job.payload.id}.json`);
+            job.error = '';
+            if (receipt) {
+              const result = JSON.parse(receipt.content);
+              if (result.status === 'saved') {
+                // Keep a small history, free locally stored photos after server success.
+                job.status = 'saved';
+                job.payload.images = [];
+                job.editor = null;
+              } else if (result.status === 'failed') {
+                job.status = 'failed';
+                job.error = result.message;
+              }
+              await localRecord(`job:${job.payload.id}`, job);
+            }
+          }
+        } catch (error) {
+          job.error = error.message;
+          await localRecord(`job:${job.payload.id}`, job);
         }
-        imageUrls.push(imagePath.publicUrl);
-
-        files.push({
-          path: imagePath.repoPath,
-          content: upload.b64,
-          encoding: 'base64',
-        });
-      });
-
-      // ── Step 2: 日記ファイルを読み込み ──
-      setLoading(true, '📖 日記ファイルを確認中...');
-      const diaryPath = `astro/content/diary/${date}.md`;
-      const existing  = await getFileInfo(diaryPath, parentSha);
-
-      // ── Step 3: Markdownを生成して書き込み ──
-      setLoading(true, '✍️ 日記を保存中...');
-      const appendedContent = buildDiaryContent(
-        existing?.content ?? null,
-        date, time, content, imageUrls
-      );
-      const newContent = state.editing
-        ? replaceDiarySection(existing, state.editing, buildDiarySection(time, content, imageUrls))
-        : appendedContent;
-      const commitMsg = `${state.editing ? 'Edit diary' : '📝 日記'}: ${date} ${time}`;
-      files.push({
-        path: diaryPath,
-        content: utf8ToBase64(newContent),
-        encoding: 'base64',
-      });
-
-      await commitFilesOnce(files, commitMsg, parentSha);
-
-      showToast('success', '投稿完了 🎉',
-        `${date} ${time} の日記を保存しました。Cloudflare Pagesのビルド後に反映されます。`,
-        7000
-      );
-      resetAfterSubmit();
-      try { await refreshDrafts(); } catch { /* Publishing already succeeded. */ }
-
-    } catch (err) {
-      console.error(err);
-      if (err.message.includes('401') || err.message.includes('Bad credentials')) {
-        showToast('error', '認証エラー', 'GitHub Tokenを確認してください（Contents: Read and write 権限が必要です）');
-        toggleSettings();
-      } else if (err.message.includes('404')) {
-        showToast('error', 'リポジトリにアクセスできません', `${REPO_OWNER}/${REPO_NAME} へのToken権限を確認してください`);
-        toggleSettings();
-      } else {
-        showToast('error', '投稿失敗', err.message);
       }
+      const container = $('outbox-status');
+      container.replaceChildren();
+      if (!jobs.length) container.textContent = '未送信の投稿はありません';
+      const labels = { pending: '未送信（本文・写真は端末に保存済み）', accepted: '受付済み・投稿処理待ち', saved: '保存完了・サイトへの反映はビルド完了後', failed: '投稿を保存できませんでした' };
+      const visible = jobs.filter(job => job.status !== 'saved').concat(jobs.filter(job => job.status === 'saved').slice(-5));
+      for (const job of visible) {
+        const row = document.createElement('p');
+        row.textContent = `${job.payload.date} ${job.payload.time}：${labels[job.status]}${job.error ? ` — ${job.error}` : ''} `;
+        if (job.status === 'pending') {
+          const button = document.createElement('button');
+          button.type = 'button'; button.className = 'btn btn-secondary'; button.textContent = '再送する';
+          button.onclick = () => { void refreshOutbox(true); };
+          row.append(button);
+        }
+        if (job.status === 'failed') {
+          const button = document.createElement('button');
+          button.type = 'button'; button.className = 'btn btn-secondary'; button.textContent = '本文・写真を編集欄に戻す';
+          button.onclick = async () => {
+            if (state.processing || state.imageProcessing || !canReplaceEditor()) return;
+            try {
+              restoreEditor(job.editor);
+              validateForm();
+              await localRecord('editor', editorSnapshot());
+              await localRecord(`job:${job.payload.id}`, null);
+              void refreshOutbox();
+            } catch (error) { showToast('error', '復元内容の保存に失敗しました', error.message); }
+          };
+          row.append(button);
+        }
+        container.append(row);
+      }
+    } catch (error) { $('outbox-status').textContent = `送信状況を確認できません：${error.message}`; }
+    finally { outboxBusy = false; }
+  }
+
+  btnSubmit.addEventListener('click', doSubmit);
+  async function doSubmit() {
+    if (state.processing || btnSubmit.disabled || restoring) return;
+    setLoading(true, '本文・写真を端末に保存中…');
+    let job;
+    let persisted = false;
+    try {
+      const editor = editorSnapshot();
+      const payload = validateSubmission({ version: 1, id: crypto.randomUUID(),
+        date: editor.date, time: editor.time, text: editor.text.trim(),
+        images: editor.images.map(({ b64, ext }) => ({ b64, ext })),
+        editing: editor.editing, draft: editor.draft });
+      job = { payload, editor, status: 'pending', error: '' };
+      transferringToOutbox = true;
+      await enqueueJob(job, { date: editor.date, time: editor.time, text: '', images: [], editing: null, draft: null, savedText: '' });
+      persisted = true;
+      // The outbox now owns this snapshot. Clear the editor before network I/O,
+      // so a lost response cannot lead to another submission with a new ID.
+      resetAfterSubmit();
+      transferringToOutbox = false;
+      await localRecord('editor', editorSnapshot());
+      setLoading(true, '送信中…');
+      await sendJob(job);
+      showToast('success', '受付済み', '画面を閉じても投稿処理は続きます。公開はビルド完了後です。', 7000);
+    } catch (error) {
+      showToast('error', persisted ? '未送信の投稿を端末に保持しています' : '投稿を受け付けられませんでした', error.message, 9000);
     } finally {
+      transferringToOutbox = false;
       setLoading(false);
+      void refreshOutbox();
     }
   }
 
@@ -2065,10 +2041,28 @@
   } catch {
     showToast('error', '端末の保存内容を復元できませんでした');
   }
-  localReady = true;
   $('edit-date').value = inputDate.value;
   loadSettings();
   validateForm();
+  void (async () => {
+    try {
+      const saved = await localRecord('editor');
+      if (saved) restoreEditor(saved);
+    } catch (error) { showToast('error', '写真・送信待ちデータを復元できません', error.message); }
+    finally {
+      restoring = false;
+      localReady = true;
+      validateForm();
+      void refreshOutbox(true);
+    }
+  })();
+  window.addEventListener('online', () => { void refreshOutbox(true); });
+  document.addEventListener('visibilitychange', () => {
+    if (document.visibilityState === 'visible') void refreshOutbox(true);
+  });
+  setInterval(() => {
+    if (document.visibilityState === 'visible') void refreshOutbox();
+  }, 20000);
 
   // Auto-open settings if no token
   if (!state.token) {
