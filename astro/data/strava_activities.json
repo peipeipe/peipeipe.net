@@ -1,5 +1,26 @@
 [
   {
+    "moving_time": 8396,
+    "elapsed_time": 10512,
+    "total_elevation_gain": 689.0,
+    "average_speed": 6.397,
+    "max_speed": 13.492,
+    "id": "i194906357",
+    "intervals_id": "i194906357",
+    "source": "intervals",
+    "url": "https://intervals.icu/activities/i194906357",
+    "name": "Morning ライド",
+    "sport_type": "Ride",
+    "distance": 54028.98,
+    "start_date": "2026-10-08T01:00:02Z",
+    "start_date_local": "2026-10-08T10:00:02",
+    "start_latlng": [
+      36.259415,
+      137.98596
+    ],
+    "summary_polyline": "i|h|EgkeiYyAcCaKzAyAsBpAxBu@lBsLhAyHLkHnr@{QxKiCVoh@wBuPfFwAzAoAzGmA`ByEfBeVvCeBn@eA`BkHhTqHxE}G`HuHjBgKrHmE|A{Ds@}DZuDo@aG^_I`HkErFoBbEyAf@wC?gAoAu@aDl@mGKuAyEgFiEiTaAkKjAiIsA{KiAqAyJuFoEqD}@}AqLc_@e@mGqGgc@w@cBwE{EyDuHsAiP_C{M{GaTyAy@sCKe[`H_O[kIjByHt@eJjFaHpC_EZ}Gq@_EgHtIsDhEfAt@iFq@mFRwAtF_GdDNf@}BvB[nAuDtAcACo@gAsAL}Ce@wAv@eCs@lCs@`@rAmBj@wEa@bEo@hBmGhD_GzJoB|A}C|F_At@eEjAwD`DuTnCiHtCuK\\iBs@cAgDP{MeE}Gm@iCkBo_@g@_D}Qk`@iBiGsHsQwLod@CiIuC}IBaKs@gHLaD|CkOG_DaHyLgKcJ}A_CsEyOeEmHwAwNyAsBkFmDoLgFsGiBqEiEaHeCqKuIg@?y@bA}AEOaDmCwDa@P?j@rBpE?v@kFpCoC@Mv@tD~BhCRlAzAI|@uB_BqABwAy@oBbAqA_AkG~@c@s@PuCsE}ADk@bBk@Jo@sGgLh@{BoAiGX[dEMFuCwEgDmBQy@gEjCiDbBb@l@lAz@I~@l@n@gBp@[Fg@iAoB~@}ByBe@m@q@`Du@}AeCEw@t@uA`CBQoD|@{FpAkAhCMz@oEW[yDNcAgGe@WkA~@RrB_CrB]vAqFTNrAtAfAsAlB_@`BuADy@hA_BBeBoBFmBm@cC_DaGY_B{@q@MaDTsAzFkIOoGjFgDTi@KmBfA{A|BsA[gEb@iBiBcCbAuDf@eHEuDcAiC~C{E_@WsHTgFnE_EJb@fCzA^l@g@ZyArDoDnBOh@p@uBzCv@~C{@rEmA`B{Bb@e@z@YzEzAjDaCRiApBa@c@ReDsB_C_@iEcGgFsB?gAu@o@\\rBxKk@xBaBOaAmDmDiDi@VaAnCSGK{FnAyHIkAeAGcDrCg@IGcBnAwFS}CmFsH_Fx@w@g@_@iAVoBx@q@zENt@[f@_ATkCCsBk@eCaHmJqAcJdCcVCuEkAqA{Fu@wEj@w@u@SuAf@cBjAa@lNpC|BMj@yA^_GnC_KvC_EzBcGdM}DjQwDzFcJ|KsGjOmLzFcGfAqC~AgOpHkObEkOLeDgB_GIkB|Kc[gF_h@iGyc@Wy@_CDBUx@`@|@_AwKkx@_@uA_@KVFDc@{B{QkPavBew@ygC`B[lW|@pBz@jBtCrAZrMVhLU|@|@j@vCrAT`BiA|GcOfEyDvCqAmLig@{@mMiF_b@uLoj@yKwAoGBmMgH{AyBsByGmBqCw\\mY{CyLoAcCqBkA_DCqGk~@rGqMvBmGc@K"
+  },
+  {
     "moving_time": 3473,
     "elapsed_time": 3950,
     "total_elevation_gain": 61.48282,
