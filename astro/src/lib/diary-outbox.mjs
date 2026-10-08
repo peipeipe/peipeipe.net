@@ -1,5 +1,6 @@
-// Transactions resolve only after durable IndexedDB completion, before network I/O.
+// Transactions resolve only after IndexedDB completion, before network I/O.
 let database;
+
 function open() {
   if (!database) database = new Promise((resolve, reject) => {
     const request = indexedDB.open('diary-outbox-v1', 1);
@@ -9,37 +10,37 @@ function open() {
   });
   return database;
 }
-export async function localRecord(key, value) {
-  const db = await open();
-  const writing = arguments.length > 1;
-  return new Promise((resolve, reject) => {
-    const transaction = db.transaction('records', writing ? 'readwrite' : 'readonly');
-    const store = transaction.objectStore('records');
-    const request = writing ? (value === null ? store.delete(key) : store.put(value, key)) : store.get(key);
-    transaction.oncomplete = () => resolve(request.result);
-    transaction.onabort = () => reject(transaction.error || new Error('端末に保存できませんでした'));
-    transaction.onerror = () => reject(transaction.error);
-  });
-}
-export async function listJobs() {
+
+async function transaction(mode, action) {
   const db = await open();
   return new Promise((resolve, reject) => {
-    const transaction = db.transaction('records', 'readonly');
-    const request = transaction.objectStore('records').getAll(IDBKeyRange.bound('job:', 'job:\uffff'));
-    transaction.oncomplete = () => resolve(request.result);
-    transaction.onabort = () => reject(transaction.error);
+    const tx = db.transaction('records', mode);
+    let request;
+    tx.oncomplete = () => resolve(request?.result);
+    tx.onabort = () => reject(tx.error || new Error('端末の保存データを処理できませんでした'));
+    tx.onerror = () => reject(tx.error);
+    try {
+      request = action(tx.objectStore('records'));
+    } catch (error) {
+      // Do not commit the first write if a subsequent operation throws.
+      tx.abort();
+      reject(error);
+    }
   });
 }
 
-export async function enqueueJob(job, emptyEditor) {
-  const db = await open();
-  return new Promise((resolve, reject) => {
-    const transaction = db.transaction('records', 'readwrite');
-    const store = transaction.objectStore('records');
+export function localRecord(key, value) {
+  if (arguments.length === 1) return transaction('readonly', store => store.get(key));
+  return transaction('readwrite', store => value === null ? store.delete(key) : store.put(value, key));
+}
+
+export function listJobs() {
+  return transaction('readonly', store => store.getAll(IDBKeyRange.bound('job:', 'job:\uffff')));
+}
+
+export function enqueueJob(job, emptyEditor) {
+  return transaction('readwrite', store => {
     store.put(job, `job:${job.payload.id}`);
     store.put(emptyEditor, 'editor');
-    transaction.oncomplete = () => resolve();
-    transaction.onabort = () => reject(transaction.error || new Error('投稿を端末に保存できませんでした'));
-    transaction.onerror = () => reject(transaction.error);
   });
 }

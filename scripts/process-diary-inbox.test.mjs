@@ -111,3 +111,13 @@ test('publisher retries a racing push without losing neighboring content or dupl
   await publishInbox(checkout);
   assert.equal(git(f.root, '--git-dir=' + remote, 'show', 'master:astro/content/diary/2026-10-07.md'), result);
 });
+
+test('read failure leaves the accepted payload available for retry', async t => {
+  const f = await fixture(t);
+  const job = await f.enqueue(f.job());
+  // A directory in place of a diary file produces an actual filesystem error.
+  await mkdir(join(f.root, 'astro/content/diary/2026-10-07.md'), { recursive: true });
+  await assert.rejects(processInbox(f.root), { code: 'EISDIR' });
+  assert.equal(JSON.parse(await f.read(`diary-inbox/${job.id}.json`)).id, job.id);
+  await assert.rejects(f.read(`diary-receipts/${job.id}.json`), { code: 'ENOENT' });
+});

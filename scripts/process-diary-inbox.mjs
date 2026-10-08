@@ -47,6 +47,8 @@ export async function processInbox(root) {
       const content = job.editing ? replaceDiarySection(existing, job.editing, built.section) : built.content;
       prepared = { diaryPath, content, images };
     } catch (error) {
+      // Filesystem failures are retryable; do not consume the accepted payload.
+      if (error.code) throw error;
       // Preserve rejected payloads locally in the browser; a receipt prevents retries from duplicating them.
       await write(receiptPath, JSON.stringify({ id: name.slice(0, -5), status: 'failed', message: error.message }) + '\n');
       await unlink(inboxPath);
@@ -74,7 +76,9 @@ export async function publishInbox(root) {
     git('reset', '--hard', 'origin/master');
     // Remove only generated untracked inbox outputs from an interrupted attempt.
     git('clean', '-fd', '--', 'diary-receipts', 'astro/public/images/diary', 'astro/content/diary');
-    if (!await processInbox(root)) return;
+    const count = await processInbox(root);
+    console.log(`Processed ${count} diary submission(s)`);
+    if (!count) return;
     git('add', '-A', '--', INBOX, RECEIPTS, 'astro/content/diary', 'astro/public/images/diary');
     // The directory can be absent when no draft has ever been saved.
     if (await readdir(resolve(root, 'diary-drafts')).then(() => true).catch(() => false)) git('add', '-A', '--', 'diary-drafts');

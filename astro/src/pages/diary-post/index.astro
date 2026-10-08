@@ -1847,6 +1847,24 @@
     await localRecord(`job:${job.payload.id}`, job);
   }
 
+  async function updateJobReceipt(job) {
+    const receipt = await getFileInfo(`${RECEIPTS}/${job.payload.id}.json`);
+    job.error = '';
+    if (receipt) {
+      const result = JSON.parse(receipt.content);
+      if (result.status === 'saved') {
+        job.status = 'saved';
+        // Release photo data only after the server confirms the content commit.
+        job.payload.images = [];
+        job.editor = null;
+      } else if (result.status === 'failed') {
+        job.status = 'failed';
+        job.error = result.message;
+      }
+    }
+    await localRecord(`job:${job.payload.id}`, job);
+  }
+
   async function refreshOutbox(retry = false) {
     if (outboxBusy || restoring) return;
     outboxBusy = true;
@@ -1856,61 +1874,49 @@
         if (!state.token || !navigator.onLine) continue;
         try {
           if (job.status === 'pending' && retry) await sendJob(job);
-          if (job.status === 'accepted') {
-            const receipt = await getFileInfo(`${RECEIPTS}/${job.payload.id}.json`);
-            job.error = '';
-            if (receipt) {
-              const result = JSON.parse(receipt.content);
-              if (result.status === 'saved') {
-                // Keep a small history, free locally stored photos after server success.
-                job.status = 'saved';
-                job.payload.images = [];
-                job.editor = null;
-              } else if (result.status === 'failed') {
-                job.status = 'failed';
-                job.error = result.message;
-              }
-              await localRecord(`job:${job.payload.id}`, job);
-            }
-          }
+          if (job.status === 'accepted') await updateJobReceipt(job);
         } catch (error) {
           job.error = error.message;
           await localRecord(`job:${job.payload.id}`, job);
         }
       }
-      const container = $('outbox-status');
-      container.replaceChildren();
-      if (!jobs.length) container.textContent = '未送信の投稿はありません';
-      const labels = { pending: '未送信（本文・写真は端末に保存済み）', accepted: '受付済み・投稿処理待ち', saved: '保存完了・サイトへの反映はビルド完了後', failed: '投稿を保存できませんでした' };
-      const visible = jobs.filter(job => job.status !== 'saved').concat(jobs.filter(job => job.status === 'saved').slice(-5));
-      for (const job of visible) {
-        const row = document.createElement('p');
-        row.textContent = `${job.payload.date} ${job.payload.time}：${labels[job.status]}${job.error ? ` — ${job.error}` : ''} `;
-        if (job.status === 'pending') {
-          const button = document.createElement('button');
-          button.type = 'button'; button.className = 'btn btn-secondary'; button.textContent = '再送する';
-          button.onclick = () => { void refreshOutbox(true); };
-          row.append(button);
-        }
-        if (job.status === 'failed') {
-          const button = document.createElement('button');
-          button.type = 'button'; button.className = 'btn btn-secondary'; button.textContent = '本文・写真を編集欄に戻す';
-          button.onclick = async () => {
-            if (state.processing || state.imageProcessing || !canReplaceEditor()) return;
-            try {
-              restoreEditor(job.editor);
-              validateForm();
-              await localRecord('editor', editorSnapshot());
-              await localRecord(`job:${job.payload.id}`, null);
-              void refreshOutbox();
-            } catch (error) { showToast('error', '復元内容の保存に失敗しました', error.message); }
-          };
-          row.append(button);
-        }
-        container.append(row);
-      }
+      renderOutbox(jobs);
     } catch (error) { $('outbox-status').textContent = `送信状況を確認できません：${error.message}`; }
     finally { outboxBusy = false; }
+  }
+
+  function renderOutbox(jobs) {
+    const container = $('outbox-status');
+    container.replaceChildren();
+    if (!jobs.length) container.textContent = '未送信の投稿はありません';
+    const labels = { pending: '未送信（本文・写真は端末に保存済み）', accepted: '受付済み・投稿処理待ち', saved: '保存完了・サイトへの反映はビルド完了後', failed: '投稿を保存できませんでした' };
+    const visible = jobs.filter(job => job.status !== 'saved').concat(jobs.filter(job => job.status === 'saved').slice(-5));
+    for (const job of visible) {
+      const row = document.createElement('p');
+      row.textContent = `${job.payload.date} ${job.payload.time}：${labels[job.status]}${job.error ? ` — ${job.error}` : ''} `;
+      if (job.status === 'pending') {
+        const button = document.createElement('button');
+        button.type = 'button'; button.className = 'btn btn-secondary'; button.textContent = '再送する';
+        button.onclick = () => { void refreshOutbox(true); };
+        row.append(button);
+      }
+      if (job.status === 'failed') {
+        const button = document.createElement('button');
+        button.type = 'button'; button.className = 'btn btn-secondary'; button.textContent = '本文・写真を編集欄に戻す';
+        button.onclick = async () => {
+          if (state.processing || state.imageProcessing || !canReplaceEditor()) return;
+          try {
+            restoreEditor(job.editor);
+            validateForm();
+            await localRecord('editor', editorSnapshot());
+            await localRecord(`job:${job.payload.id}`, null);
+            void refreshOutbox();
+          } catch (error) { showToast('error', '復元内容の保存に失敗しました', error.message); }
+        };
+        row.append(button);
+      }
+      container.append(row);
+    }
   }
 
   btnSubmit.addEventListener('click', doSubmit);
