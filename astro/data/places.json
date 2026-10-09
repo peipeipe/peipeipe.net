@@ -1,5 +1,27 @@
 [
   {
+    "name": "TOHOシネマズ上田",
+    "user_comment": "オデュッセイア",
+    "date": "2026-10-09",
+    "lat": 36.3997749741023,
+    "lng": 138.24319347858935,
+    "address": "天神3-5-1 (アリオ上田 1F), 上田市, 長野県, 386-0025",
+    "foursquare_url": "https://foursquare.com/v/4dafc4e790a08731273ad519",
+    "photos": [
+      "https://fastly.4sqi.net/img/general/500x300/41463109_4aSEK2PpMkY1Xx0GXvQwygIJsEDszoVs9uLdmokX5J4.jpg",
+      "https://fastly.4sqi.net/img/general/500x300/41463109_0IXWStrQunEkgdeStZ86pGjhfWDNLSSGQq05zortMl4.jpg"
+    ],
+    "categories": [
+      "映画館"
+    ],
+    "data_source": "foursquare_checkin",
+    "fsq_id": "4dafc4e790a08731273ad519",
+    "checkin_count": 6,
+    "first_checkin_at": "2024-07-20T04:25:02+00:00",
+    "last_checkin_at": "2026-10-09T08:52:09+00:00",
+    "composition_hint": ""
+  },
+  {
     "name": "味処 こまゆみ",
     "user_comment": "",
     "date": "2026-10-08",
@@ -3054,28 +3076,6 @@
     "checkin_count": 2,
     "first_checkin_at": "2025-05-10T07:49:13+00:00",
     "last_checkin_at": "2026-04-04T06:39:37+00:00",
-    "composition_hint": ""
-  },
-  {
-    "name": "TOHOシネマズ上田",
-    "user_comment": "国宝",
-    "date": "2026-04-04",
-    "lat": 36.3997749741023,
-    "lng": 138.24319347858935,
-    "address": "天神3-5-1 (アリオ上田 1F), 上田市, 長野県, 386-0025",
-    "foursquare_url": "https://foursquare.com/v/4dafc4e790a08731273ad519",
-    "photos": [
-      "https://fastly.4sqi.net/img/general/500x300/41463109_4aSEK2PpMkY1Xx0GXvQwygIJsEDszoVs9uLdmokX5J4.jpg",
-      "https://fastly.4sqi.net/img/general/500x300/41463109_0IXWStrQunEkgdeStZ86pGjhfWDNLSSGQq05zortMl4.jpg"
-    ],
-    "categories": [
-      "映画館"
-    ],
-    "data_source": "foursquare_checkin",
-    "fsq_id": "4dafc4e790a08731273ad519",
-    "checkin_count": 5,
-    "first_checkin_at": "2024-07-20T04:25:02+00:00",
-    "last_checkin_at": "2026-04-04T05:18:33+00:00",
     "composition_hint": ""
   },
   {
@@ -15777,8 +15777,8 @@
     "name": "恵比寿駅",
     "user_comment": "",
     "date": "2023-04-22",
-    "lat": 35.64660399333276,
-    "lng": 139.71016254500535,
+    "lat": 35.64689052632149,
+    "lng": 139.70999298478662,
     "address": "恵比寿南1-5-5, 渋谷区, 東京都, 150-0022",
     "foursquare_url": "https://foursquare.com/v/4b42a9c9f964a5206dd825e3",
     "photos": [],
@@ -44507,8 +44507,8 @@
     "name": "京都駅",
     "user_comment": "京都なう。これから清水寺行く",
     "date": "2013-01-03",
-    "lat": 34.98524186340947,
-    "lng": 135.75895443802207,
+    "lat": 34.98551523376142,
+    "lng": 135.75894055396452,
     "address": "下京区東塩小路町/東塩小路高倉町/東塩小路釜殿町, 京都市, 京都府, 600-8214",
     "foursquare_url": "https://foursquare.com/v/4b570e89f964a520b22428e3",
     "photos": [
