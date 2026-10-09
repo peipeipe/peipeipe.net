@@ -1,5 +1,26 @@
 [
   {
+    "moving_time": 3362,
+    "elapsed_time": 3704,
+    "total_elevation_gain": 59.778473,
+    "average_speed": 3.067,
+    "max_speed": 3.497,
+    "id": "i195287412",
+    "intervals_id": "i195287412",
+    "source": "intervals",
+    "url": "https://intervals.icu/activities/i195287412",
+    "name": "Morning ラン",
+    "sport_type": "Run",
+    "distance": 10352.56,
+    "start_date": "2026-10-09T00:59:50Z",
+    "start_date_local": "2026-10-09T09:59:50",
+    "start_latlng": [
+      36.391758,
+      138.24286
+    ],
+    "summary_polyline": "owb}E{pwjY{AnEgBuCgEzGWyA_@?mCqEkAE{CfFcLd[{HxPAh@pArBgHdE{I`LiBrDiAdDw@jGa@z\\u@lJeAhCsCrCgAbCQ|FTb@z@QuBjD}DlKkVsPRiEi@{K~CPrA_ExIcc@vAuPzEuBtD}CxY_b@xFiKbEuKuE_Cq@eAr@eBZgGzC}BxBqDhCuB|C`DbA\\xOub@nSo]pIfGzLxGDhAoJbF_HnIxB|DaCpEwH~S"
+  },
+  {
     "moving_time": 8396,
     "elapsed_time": 10512,
     "total_elevation_gain": 689.0,
