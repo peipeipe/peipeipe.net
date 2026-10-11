@@ -1,5 +1,23 @@
 [
   {
+    "name": "謙信公武道館",
+    "user_comment": "",
+    "date": "2026-10-10",
+    "lat": 37.13087,
+    "lng": 138.27257,
+    "address": "上越市, 新潟県, 943-0176",
+    "foursquare_url": "https://foursquare.com/v/6039823b2127f6616d7bd9d4",
+    "photos": [],
+    "categories": [
+      "スポーツとレクリエーション"
+    ],
+    "data_source": "foursquare_checkin",
+    "fsq_id": "6039823b2127f6616d7bd9d4",
+    "checkin_count": 1,
+    "first_checkin_at": "2026-10-10T20:39:28+00:00",
+    "last_checkin_at": "2026-10-10T20:39:28+00:00"
+  },
+  {
     "name": "七福食堂",
     "user_comment": "",
     "date": "2026-10-10",
@@ -15,7 +33,8 @@
     "fsq_id": "4bfbac0cf214a593b76daf0e",
     "checkin_count": 1,
     "first_checkin_at": "2026-10-10T09:44:50+00:00",
-    "last_checkin_at": "2026-10-10T09:44:50+00:00"
+    "last_checkin_at": "2026-10-10T09:44:50+00:00",
+    "composition_hint": ""
   },
   {
     "name": "TOHOシネマズ上田",
@@ -16937,8 +16956,8 @@
     "name": "阪急 大阪梅田駅 (HK01)",
     "user_comment": "",
     "date": "2023-02-25",
-    "lat": 34.704804783856574,
-    "lng": 135.49842409965345,
+    "lat": 34.70499022526699,
+    "lng": 135.49844711273388,
     "address": "北区芝田1-1-2, 大阪市, 大阪府, 530-0012",
     "foursquare_url": "https://foursquare.com/v/4b5a7b8ef964a520b2c728e3",
     "photos": [
@@ -25990,8 +26009,8 @@
     "name": "JR 渋谷駅",
     "user_comment": "",
     "date": "2019-09-19",
-    "lat": 35.658437281424575,
-    "lng": 139.70154052489013,
+    "lat": 35.65874359364319,
+    "lng": 139.70127624914932,
     "address": "道玄坂1-1-1, 渋谷区, 東京都, 150-0043",
     "foursquare_url": "https://foursquare.com/v/4b6c0307f964a5208c1f2ce3",
     "photos": [],
@@ -34077,8 +34096,8 @@
     "name": "市川駅",
     "user_comment": "",
     "date": "2017-03-17",
-    "lat": 35.72892946881723,
-    "lng": 139.90783439461302,
+    "lat": 35.728766087430735,
+    "lng": 139.90811960373463,
     "address": "市川1-1-1, 市川市, 千葉県, 272-0034",
     "foursquare_url": "https://foursquare.com/v/4b54e6a4f964a52036d227e3",
     "photos": [],
@@ -34556,8 +34575,8 @@
     "name": "京王 新宿駅 (KO01)",
     "user_comment": "",
     "date": "2017-02-09",
-    "lat": 35.69025307519657,
-    "lng": 139.6991820303056,
+    "lat": 35.69065353738811,
+    "lng": 139.69901748768058,
     "address": "西新宿1-1-4, 新宿区, 東京都, 160-0023",
     "foursquare_url": "https://foursquare.com/v/4b5bab10f964a520e00e29e3",
     "photos": [],
@@ -37239,8 +37258,8 @@
     "name": "本厚木駅 (OH34)",
     "user_comment": "小田急線。奈良線感isある。",
     "date": "2015-12-20",
-    "lat": 35.439543237020295,
-    "lng": 139.36427125827802,
+    "lat": 35.43965492971842,
+    "lng": 139.3644695674543,
     "address": "泉町1-1, 厚木市, 神奈川県, 243-0013",
     "foursquare_url": "https://foursquare.com/v/4b269869f964a520107e24e3",
     "photos": [],
