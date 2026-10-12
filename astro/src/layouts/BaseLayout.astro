@@ -1,5 +1,6 @@
 ---
 import "../styles/global.css";
+import SiteIcons from "../components/SiteIcons.astro";
 
 interface Props {
   title?: string;
@@ -66,6 +67,7 @@ const structuredData = [websiteJsonLd, ...(Array.isArray(jsonLd) ? jsonLd : json
 <!doctype html>
 <html lang="ja">
   <head>
+    <SiteIcons />
     <script is:inline>
       (() => {
         const storageKey = "peipeipe-theme";
