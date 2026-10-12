@@ -1,13 +1,148 @@
 {
-  "generated_on": "2026-10-06",
+  "generated_on": "2026-10-12",
   "stats": {
-    "places": 73,
-    "springs": 75,
-    "composition_photos": 29,
-    "not_composition_photos": 102,
+    "places": 74,
+    "springs": 76,
+    "composition_photos": 30,
+    "not_composition_photos": 103,
     "unreadable_photos": 0
   },
   "places": [
+    {
+      "fsq_id": "4c723b4f13228cfaae842a65",
+      "name": "門前の湯",
+      "address": "下門前162-1, 上越市, 新潟県, 942-0063",
+      "checkin_date": "2026-10-12",
+      "springs": [
+        {
+          "confidence": "medium",
+          "spring_name": "くびき野温泉 2号井",
+          "spring_quality": "ナトリウムー塩化物・炭酸水素塩温泉",
+          "spring_quality_class": "低張性弱アルカリ性低温泉",
+          "source_temp_c": 28.4,
+          "use_temp_c": 41.0,
+          "ph": 8.3,
+          "yield_l_min": 40.0,
+          "evaporation_residue_mg_kg": 2269.0,
+          "dissolved_solids_mg_kg": 2777.0,
+          "total_ingredients_mg_kg": 2782.0,
+          "cations": [
+            {
+              "name": "ナトリウムイオン",
+              "symbol": "Na+",
+              "mg_kg": 969.0
+            },
+            {
+              "name": "カリウムイオン",
+              "symbol": "K+",
+              "mg_kg": 2.4
+            },
+            {
+              "name": "アンモニウムイオン",
+              "symbol": "NH4+",
+              "mg_kg": 4.8
+            },
+            {
+              "name": "マグネシウムイオン",
+              "symbol": "Mg2+",
+              "mg_kg": 4.6
+            },
+            {
+              "name": "カルシウムイオン",
+              "symbol": "Ca2+",
+              "mg_kg": 15.7
+            },
+            {
+              "name": "ストロンチウムイオン",
+              "symbol": "Sr2+",
+              "mg_kg": 0.4
+            },
+            {
+              "name": "バリウムイオン",
+              "symbol": "Ba2+",
+              "mg_kg": 0.2
+            }
+          ],
+          "cations_total_mg_kg": 997.1,
+          "anions": [
+            {
+              "name": "フッ化物イオン",
+              "symbol": "F-",
+              "mg_kg": 0.4
+            },
+            {
+              "name": "塩化物イオン",
+              "symbol": "Cl-",
+              "mg_kg": 1084.0
+            },
+            {
+              "name": "臭化物イオン",
+              "symbol": "Br-",
+              "mg_kg": 5.1
+            },
+            {
+              "name": "ヨウ化物イオン",
+              "symbol": "I-",
+              "mg_kg": 2.7
+            },
+            {
+              "name": "リン酸水素イオン",
+              "symbol": "HPO42-",
+              "mg_kg": 0.7
+            },
+            {
+              "name": "炭酸水素イオン",
+              "symbol": "HCO3-",
+              "mg_kg": 636.4
+            },
+            {
+              "name": "炭酸イオン",
+              "symbol": "CO32-",
+              "mg_kg": 9.6
+            }
+          ],
+          "anions_total_mg_kg": 1739.0,
+          "undissociated": [
+            {
+              "name": "メタケイ酸",
+              "symbol": "H2SiO3",
+              "mg_kg": 24.4
+            },
+            {
+              "name": "メタホウ酸",
+              "symbol": "HBO2",
+              "mg_kg": 16.7
+            }
+          ],
+          "undissociated_total_mg_kg": 41.1,
+          "dissolved_gas": [
+            {
+              "name": "遊離二酸化炭素",
+              "symbol": "CO2",
+              "mg_kg": 5.4
+            }
+          ],
+          "dissolved_gas_total_mg_kg": 5.4,
+          "treatment": {
+            "kasui": {
+              "applied": false,
+              "reason": "加水をしておりません。"
+            },
+            "nyuyokuzai": {
+              "applied": false,
+              "reason": "入浴剤は使用していません。"
+            }
+          },
+          "analyzed_on": "2023-02-20",
+          "analyzer": "一般財団法人 上越環境科学センター",
+          "analyzer_registration": "新潟県(登)環第6号",
+          "notes": "写真右側の適応症・禁忌症および温泉利用に関する情報の一部が見切れのため記載を省略しています。",
+          "source_photos": [
+            "https://fastly.4sqi.net/img/general/500x300/41463109_NXlMS9p5RX6u6jczyzGY5KfcLAUE8FlraTE46LOgYpA.jpg"
+          ]
+        }
+      ]
+    },
     {
       "fsq_id": "629c9bc00550244beb1bdf50",
       "name": "権堂温泉 テルメDOME",
@@ -4924,6 +5059,7 @@
     "https://fastly.4sqi.net/img/general/500x300/41463109_uO26q6Rhs82XBaXRp1z_wCs925oNM_AP3IZXUdQSGa8.jpg",
     "https://fastly.4sqi.net/img/general/500x300/41463109_5QLShyA-MM5neI9v7V7XIOP88k2mFUHjakD0k_Efnc4.jpg",
     "https://fastly.4sqi.net/img/general/500x300/41463109_7d0fIh5ujkqWFqWqQ6A7B_rRX-5RrL6F1NERysO28VE.jpg",
-    "https://fastly.4sqi.net/img/general/500x300/41463109_HyBACCRCiKwXhr5VDkzPBVKBvJ6SAQmoaYG9hXoKpN8.jpg"
+    "https://fastly.4sqi.net/img/general/500x300/41463109_HyBACCRCiKwXhr5VDkzPBVKBvJ6SAQmoaYG9hXoKpN8.jpg",
+    "https://fastly.4sqi.net/img/general/500x300/41463109_BlRqThL_M_M1WqKcOkgxst4Rrkr1pVUUrTErgyIus24.jpg"
   ]
 }
