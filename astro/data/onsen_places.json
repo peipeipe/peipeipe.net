@@ -1,5 +1,26 @@
 [
   {
+    "name": "門前の湯",
+    "user_comment": "えちごくびきのの後",
+    "date": "2026-10-12",
+    "lat": 37.158940972698765,
+    "lng": 138.25457509287898,
+    "address": "下門前162-1, 上越市, 新潟県, 942-0063",
+    "foursquare_url": "https://foursquare.com/v/4c723b4f13228cfaae842a65",
+    "photos": [
+      "https://fastly.4sqi.net/img/general/500x300/41463109_BlRqThL_M_M1WqKcOkgxst4Rrkr1pVUUrTErgyIus24.jpg",
+      "https://fastly.4sqi.net/img/general/500x300/41463109_NXlMS9p5RX6u6jczyzGY5KfcLAUE8FlraTE46LOgYpA.jpg"
+    ],
+    "categories": [
+      "温泉"
+    ],
+    "data_source": "foursquare_checkin",
+    "fsq_id": "4c723b4f13228cfaae842a65",
+    "checkin_count": 1,
+    "first_checkin_at": "2026-10-12T02:34:13+00:00",
+    "last_checkin_at": "2026-10-12T02:34:13+00:00"
+  },
+  {
     "name": "権堂温泉 テルメDOME",
     "user_comment": "サウナ2つあり温泉も二つ、謎な作りだったけど久しぶりに整った",
     "date": "2026-10-06",

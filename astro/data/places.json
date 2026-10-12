@@ -1,5 +1,85 @@
 [
   {
+    "name": "家系ラーメン 上越家",
+    "user_comment": "",
+    "date": "2026-10-12",
+    "lat": 37.16551776624541,
+    "lng": 138.25800378390866,
+    "address": "下源入173-1 (R8), 上越市, 新潟県, 942-0051",
+    "foursquare_url": "https://foursquare.com/v/4c2edfb93896e21e9217e390",
+    "photos": [
+      "https://fastly.4sqi.net/img/general/500x300/41463109_yPHAFzulSeCCcljdewVgAXyUueEGkk4kLmdCtqDBjKw.jpg",
+      "https://fastly.4sqi.net/img/general/500x300/41463109_rt7f3apxU4bFPItxm5cM5mlWj6hdFNZqTSrERrY_cx4.jpg"
+    ],
+    "categories": [
+      "ラーメン屋"
+    ],
+    "data_source": "foursquare_checkin",
+    "fsq_id": "4c2edfb93896e21e9217e390",
+    "checkin_count": 1,
+    "first_checkin_at": "2026-10-12T03:46:38+00:00",
+    "last_checkin_at": "2026-10-12T03:46:38+00:00"
+  },
+  {
+    "name": "門前の湯",
+    "user_comment": "えちごくびきのの後",
+    "date": "2026-10-12",
+    "lat": 37.158940972698765,
+    "lng": 138.25457509287898,
+    "address": "下門前162-1, 上越市, 新潟県, 942-0063",
+    "foursquare_url": "https://foursquare.com/v/4c723b4f13228cfaae842a65",
+    "photos": [
+      "https://fastly.4sqi.net/img/general/500x300/41463109_BlRqThL_M_M1WqKcOkgxst4Rrkr1pVUUrTErgyIus24.jpg",
+      "https://fastly.4sqi.net/img/general/500x300/41463109_NXlMS9p5RX6u6jczyzGY5KfcLAUE8FlraTE46LOgYpA.jpg"
+    ],
+    "categories": [
+      "温泉"
+    ],
+    "data_source": "foursquare_checkin",
+    "fsq_id": "4c723b4f13228cfaae842a65",
+    "checkin_count": 1,
+    "first_checkin_at": "2026-10-12T02:34:13+00:00",
+    "last_checkin_at": "2026-10-12T02:34:13+00:00"
+  },
+  {
+    "name": "上越パブリックシティ（旧ベストイン上越北）",
+    "user_comment": "",
+    "date": "2026-10-11",
+    "lat": 37.18520147351476,
+    "lng": 138.2714479633835,
+    "address": "頸城区西福島649, 上越市, 新潟県, 942-0147",
+    "foursquare_url": "https://foursquare.com/v/4e0ac6ceae60e40e302f98ab",
+    "photos": [
+      "https://fastly.4sqi.net/img/general/500x300/41463109_3Ocrl_ZFMwa2ktlSdPNrAbUP4kQZN2XLcPgiU0BsoHU.jpg"
+    ],
+    "categories": [
+      "ホテル"
+    ],
+    "data_source": "foursquare_checkin",
+    "fsq_id": "4e0ac6ceae60e40e302f98ab",
+    "checkin_count": 1,
+    "first_checkin_at": "2026-10-11T23:57:37+00:00",
+    "last_checkin_at": "2026-10-11T23:57:37+00:00"
+  },
+  {
+    "name": "セブンイレブン 上越黒井店",
+    "user_comment": "",
+    "date": "2026-10-11",
+    "lat": 37.191712,
+    "lng": 138.272997,
+    "address": "黒井2633-17, 上越市, 新潟県, 942-0013",
+    "foursquare_url": "https://foursquare.com/v/620cda015c848e1079c10c65",
+    "photos": [],
+    "categories": [
+      "コンビニ"
+    ],
+    "data_source": "foursquare_checkin",
+    "fsq_id": "620cda015c848e1079c10c65",
+    "checkin_count": 1,
+    "first_checkin_at": "2026-10-11T10:34:12+00:00",
+    "last_checkin_at": "2026-10-11T10:34:12+00:00"
+  },
+  {
     "name": "謙信公武道館",
     "user_comment": "",
     "date": "2026-10-10",
@@ -15,7 +95,26 @@
     "fsq_id": "6039823b2127f6616d7bd9d4",
     "checkin_count": 1,
     "first_checkin_at": "2026-10-10T20:39:28+00:00",
-    "last_checkin_at": "2026-10-10T20:39:28+00:00"
+    "last_checkin_at": "2026-10-10T20:39:28+00:00",
+    "composition_hint": ""
+  },
+  {
+    "name": "ホテルルートイン上越",
+    "user_comment": "",
+    "date": "2026-10-10",
+    "lat": 37.15991436140357,
+    "lng": 138.25147066720274,
+    "address": "塩屋新田157-1, 上越市, 新潟県, 942-0064",
+    "foursquare_url": "https://foursquare.com/v/4d443af7e198721ee867b98b",
+    "photos": [],
+    "categories": [
+      "ホテル"
+    ],
+    "data_source": "foursquare_checkin",
+    "fsq_id": "4d443af7e198721ee867b98b",
+    "checkin_count": 1,
+    "first_checkin_at": "2026-10-10T10:25:36+00:00",
+    "last_checkin_at": "2026-10-10T10:25:36+00:00"
   },
   {
     "name": "七福食堂",
@@ -35,6 +134,46 @@
     "first_checkin_at": "2026-10-10T09:44:50+00:00",
     "last_checkin_at": "2026-10-10T09:44:50+00:00",
     "composition_hint": ""
+  },
+  {
+    "name": "なおえつ海水浴場",
+    "user_comment": "",
+    "date": "2026-10-10",
+    "lat": 37.168492547614576,
+    "lng": 138.21141023690834,
+    "address": "虫生岩戸, 上越市, 新潟県, 942-0087",
+    "foursquare_url": "https://foursquare.com/v/4dba4ac24df0cac21aec7a33",
+    "photos": [
+      "https://fastly.4sqi.net/img/general/500x300/41463109_jIwZe4ho86R0RfYAUHTMw5I03_RcMU12tTq466L29XU.jpg"
+    ],
+    "categories": [
+      "海岸"
+    ],
+    "data_source": "foursquare_checkin",
+    "fsq_id": "4dba4ac24df0cac21aec7a33",
+    "checkin_count": 1,
+    "first_checkin_at": "2026-10-10T05:41:42+00:00",
+    "last_checkin_at": "2026-10-10T05:41:42+00:00"
+  },
+  {
+    "name": "妙高SA (下り)",
+    "user_comment": "",
+    "date": "2026-10-10",
+    "lat": 36.92880107675364,
+    "lng": 138.21114561138597,
+    "address": "関山5078 (上信越自動車道), 妙高市, 新潟県, 949-2235",
+    "foursquare_url": "https://foursquare.com/v/4b931a06f964a520263534e3",
+    "photos": [
+      "https://fastly.4sqi.net/img/general/500x300/41463109_lrzZm3dNb5zGjl1zUiOZrYLdgrb170DI6TjmqRdl2gQ.jpg"
+    ],
+    "categories": [
+      "サービスエリア"
+    ],
+    "data_source": "foursquare_checkin",
+    "fsq_id": "4b931a06f964a520263534e3",
+    "checkin_count": 1,
+    "first_checkin_at": "2026-10-10T04:34:10+00:00",
+    "last_checkin_at": "2026-10-10T04:34:10+00:00"
   },
   {
     "name": "TOHOシネマズ上田",
@@ -39594,8 +39733,8 @@
     "name": "田端駅",
     "user_comment": "遅刻っぽ",
     "date": "2014-09-16",
-    "lat": 35.73763636943941,
-    "lng": 139.76171638467412,
+    "lat": 35.73785217048078,
+    "lng": 139.7613869524576,
     "address": "東田端1-17-1, 北区, 東京都, 114-0013",
     "foursquare_url": "https://foursquare.com/v/4b4f2be8f964a52025fc26e3",
     "photos": [],
