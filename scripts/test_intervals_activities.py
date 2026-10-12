@@ -8,6 +8,45 @@ from fetch_intervals_activities import gps_points, main, merge_activity, normali
 
 
 class IntervalsTests(unittest.TestCase):
+  def run_sync(self, archive, response, *arguments):
+    with tempfile.TemporaryDirectory() as directory:
+      output = Path(directory) / "archive.json"
+      original = json.dumps(archive)
+      output.write_text(original)
+      with patch("sys.argv", ["sync", "--output", str(output), *arguments]), \
+           patch.dict("os.environ", {"INTERVALS_API_KEY": "test-key"}), \
+           patch("fetch_intervals_activities.urlopen") as request:
+        request.return_value.__enter__.return_value.read.return_value = json.dumps(response)
+        try:
+          main()
+        except Exception:
+          self.assertEqual(output.read_text(), original)
+          raise
+      return json.loads(output.read_text())
+
+  def test_deleted_activities_respect_source_and_sync_range(self):
+    archive = [
+      {"id": "deleted", "intervals_id": "deleted", "source": "intervals", "start_date_local": "2020-01-02T12:00:00"},
+      {"id": "old", "intervals_id": "old", "source": "intervals", "start_date_local": "2019-12-31T12:00:00"},
+      {"id": "future", "intervals_id": "future", "source": "intervals", "start_date_local": "9999-01-01T12:00:00"},
+      {"id": "strava", "start_date_local": "2020-01-02T12:00:00"},
+      {"id": "unknown-date", "intervals_id": "unknown-date", "source": "intervals"},
+    ]
+    result = self.run_sync(archive, [], "--oldest", "2020-01-02")
+    self.assertEqual({item["id"] for item in result}, {"old", "future", "strava", "unknown-date"})
+
+  def test_existing_remote_records_are_preserved_even_if_skipped(self):
+    remote = [{"id": "no-gps"}, {"id": "strava", "source": "STRAVA"}, {"id": "note", "_note": "unavailable"}]
+    archive = [{"id": item["id"], "intervals_id": item["id"], "source": "intervals",
+                "start_date_local": "2020-01-01T12:00:00"} for item in remote]
+    self.assertEqual(self.run_sync(archive, remote), archive)
+
+  def test_invalid_metadata_does_not_delete_archive(self):
+    archive = [{"id": "i1", "intervals_id": "i1", "source": "intervals", "start_date_local": "2020-01-01T12:00:00"}]
+    for response in ({}, [{}], [None]):
+      with self.subTest(response=response), self.assertRaises(ValueError):
+        self.run_sync(archive, response)
+
   def test_gps_stream_formats_and_nulls(self):
     expected = [(35, 139), (35.1, 139.1)]
     self.assertEqual(gps_points([{"type": "latlng", "data": [[35, 139], [None, None], [35.1, 139.1]]}]), expected)
@@ -51,7 +90,7 @@ class IntervalsTests(unittest.TestCase):
                 "start_date": "2026-09-30T10:32:19Z", "stream_types": ["latlng"]}
     with tempfile.TemporaryDirectory() as directory:
       output = Path(directory) / "archive.json"
-      original = '[{"id": 123}]'
+      original = '[{"id": "deleted", "intervals_id": "deleted", "source": "intervals", "start_date_local": "2020-01-01T12:00:00"}]'
       output.write_text(original)
       with patch("sys.argv", ["sync", "--output", str(output)]), \
            patch.dict("os.environ", {"INTERVALS_API_KEY": "test-key"}), \

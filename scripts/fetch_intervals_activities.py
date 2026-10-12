@@ -6,7 +6,7 @@ import getpass
 import json
 import math
 import os
-from datetime import datetime, timedelta, timezone
+from datetime import date, datetime, timedelta, timezone
 from pathlib import Path
 from urllib.parse import quote, urlencode
 from urllib.request import Request, urlopen
@@ -97,7 +97,7 @@ def merge_activity(archive, activity):
 
 def main():
   parser = argparse.ArgumentParser(description=__doc__)
-  parser.add_argument("--oldest", default="1970-01-01", help="First local date to sync")
+  parser.add_argument("--oldest", type=date.fromisoformat, default="1970-01-01", help="First local date to sync")
   parser.add_argument("--output", type=Path, default=OUTPUT)
   args = parser.parse_args()
   key = os.environ.get("INTERVALS_API_KEY")
@@ -119,10 +119,16 @@ def main():
   # Read the full metadata history so delayed uploads are not missed. Fetch GPS
   # only for new activities and the last 30 days (where edits are most likely).
   today = datetime.now(ZoneInfo("Asia/Tokyo")).date()
-  query = urlencode({"oldest": args.oldest, "newest": str(today + timedelta(days=1))})
+  newest = today + timedelta(days=1)
+  query = urlencode({"oldest": args.oldest, "newest": str(newest)})
   activities = fetch(f"athlete/0/activities?{query}")
   if not isinstance(activities, list):
     raise ValueError("Unexpected activity response")
+  # Use the complete list, including records skipped for GPS/source reasons.
+  # Malformed metadata must not be mistaken for deleted activities.
+  if any(not isinstance(item, dict) or not item.get("id") for item in activities):
+    raise ValueError("Activity response is missing an ID")
+  remote_ids = {str(item["id"]) for item in activities}
   known = {item.get("intervals_id") for item in archive}
   processed = 0
   for item in activities:
@@ -138,12 +144,26 @@ def main():
       continue
     merge_activity(archive, normalize(item, points))
     processed += 1
+  def deleted(item):
+    if item.get("source") != "intervals" or not item.get("intervals_id"):
+      return False
+    if str(item["intervals_id"]) in remote_ids:
+      return False
+    try:
+      local_date = date.fromisoformat(item.get("start_date_local", "")[:10])
+    except (ValueError, TypeError):
+      return False
+    return args.oldest <= local_date <= newest
+
+  before = len(archive)
+  archive = [item for item in archive if not deleted(item)]
+  removed = before - len(archive)
   archive.sort(key=lambda item: item.get("start_date", ""), reverse=True)
   # All requests and conversions must succeed before replacing the archive.
   temporary = args.output.with_suffix(".json.tmp")
   temporary.write_text(json.dumps(archive, ensure_ascii=False, indent=2) + "\n")
   temporary.replace(args.output)
-  print(f"Synced {processed} GPS activities; archive contains {len(archive)} activities")
+  print(f"Synced {processed} GPS activities; removed {removed}; archive contains {len(archive)} activities")
 
 
 if __name__ == "__main__":
