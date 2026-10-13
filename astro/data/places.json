@@ -1,5 +1,25 @@
 [
   {
+    "name": "麺道 千鶏",
+    "user_comment": "",
+    "date": "2026-10-13",
+    "lat": 36.389094,
+    "lng": 138.213185,
+    "address": "神畑254-1, 上田市, 長野県, 386-1103",
+    "foursquare_url": "https://foursquare.com/v/6129b8d0a1cbe32f81b29b3a",
+    "photos": [
+      "https://fastly.4sqi.net/img/general/500x300/41463109_GezuS0xB-T1d3uYhi1OloWO9mrzp04krvk5u3qH2aoE.jpg"
+    ],
+    "categories": [
+      "ラーメン屋"
+    ],
+    "data_source": "foursquare_checkin",
+    "fsq_id": "6129b8d0a1cbe32f81b29b3a",
+    "checkin_count": 1,
+    "first_checkin_at": "2026-10-13T02:47:29+00:00",
+    "last_checkin_at": "2026-10-13T02:47:29+00:00"
+  },
+  {
     "name": "家系ラーメン 上越家",
     "user_comment": "",
     "date": "2026-10-12",
@@ -18,7 +38,8 @@
     "fsq_id": "4c2edfb93896e21e9217e390",
     "checkin_count": 1,
     "first_checkin_at": "2026-10-12T03:46:38+00:00",
-    "last_checkin_at": "2026-10-12T03:46:38+00:00"
+    "last_checkin_at": "2026-10-12T03:46:38+00:00",
+    "composition_hint": ""
   },
   {
     "name": "門前の湯",
@@ -39,7 +60,8 @@
     "fsq_id": "4c723b4f13228cfaae842a65",
     "checkin_count": 1,
     "first_checkin_at": "2026-10-12T02:34:13+00:00",
-    "last_checkin_at": "2026-10-12T02:34:13+00:00"
+    "last_checkin_at": "2026-10-12T02:34:13+00:00",
+    "composition_hint": ""
   },
   {
     "name": "上越パブリックシティ（旧ベストイン上越北）",
@@ -59,7 +81,8 @@
     "fsq_id": "4e0ac6ceae60e40e302f98ab",
     "checkin_count": 1,
     "first_checkin_at": "2026-10-11T23:57:37+00:00",
-    "last_checkin_at": "2026-10-11T23:57:37+00:00"
+    "last_checkin_at": "2026-10-11T23:57:37+00:00",
+    "composition_hint": ""
   },
   {
     "name": "セブンイレブン 上越黒井店",
@@ -77,7 +100,8 @@
     "fsq_id": "620cda015c848e1079c10c65",
     "checkin_count": 1,
     "first_checkin_at": "2026-10-11T10:34:12+00:00",
-    "last_checkin_at": "2026-10-11T10:34:12+00:00"
+    "last_checkin_at": "2026-10-11T10:34:12+00:00",
+    "composition_hint": ""
   },
   {
     "name": "謙信公武道館",
@@ -114,7 +138,8 @@
     "fsq_id": "4d443af7e198721ee867b98b",
     "checkin_count": 1,
     "first_checkin_at": "2026-10-10T10:25:36+00:00",
-    "last_checkin_at": "2026-10-10T10:25:36+00:00"
+    "last_checkin_at": "2026-10-10T10:25:36+00:00",
+    "composition_hint": ""
   },
   {
     "name": "七福食堂",
@@ -153,7 +178,8 @@
     "fsq_id": "4dba4ac24df0cac21aec7a33",
     "checkin_count": 1,
     "first_checkin_at": "2026-10-10T05:41:42+00:00",
-    "last_checkin_at": "2026-10-10T05:41:42+00:00"
+    "last_checkin_at": "2026-10-10T05:41:42+00:00",
+    "composition_hint": ""
   },
   {
     "name": "妙高SA (下り)",
@@ -173,7 +199,8 @@
     "fsq_id": "4b931a06f964a520263534e3",
     "checkin_count": 1,
     "first_checkin_at": "2026-10-10T04:34:10+00:00",
-    "last_checkin_at": "2026-10-10T04:34:10+00:00"
+    "last_checkin_at": "2026-10-10T04:34:10+00:00",
+    "composition_hint": ""
   },
   {
     "name": "TOHOシネマズ上田",
@@ -42323,8 +42350,8 @@
     "name": "東京ビッグサイト駅 (U11)",
     "user_comment": "",
     "date": "2013-07-13",
-    "lat": 35.630239,
-    "lng": 139.791379,
+    "lat": 35.630202,
+    "lng": 139.791364,
     "address": "有明3-6-15 (ゆりかもめ), 江東区, 東京都, 135-0063",
     "foursquare_url": "https://foursquare.com/v/4b4ea120f964a520f8f226e3",
     "photos": [],
@@ -42874,8 +42901,8 @@
     "name": "御茶ノ水駅",
     "user_comment": "",
     "date": "2013-05-02",
-    "lat": 35.699491504296425,
-    "lng": 139.76527037571051,
+    "lat": 35.6997227736667,
+    "lng": 139.76500581567947,
     "address": "神田駿河台2-6-1, 千代田区, 東京都",
     "foursquare_url": "https://foursquare.com/v/4b38b418f964a520914f25e3",
     "photos": [],
@@ -44683,8 +44710,8 @@
     "name": "京都駅",
     "user_comment": "京都なう。これから清水寺行く",
     "date": "2013-01-03",
-    "lat": 34.98551523376142,
-    "lng": 135.75894055396452,
+    "lat": 34.984974424441475,
+    "lng": 135.75878320159487,
     "address": "下京区東塩小路町/東塩小路高倉町/東塩小路釜殿町, 京都市, 京都府, 600-8214",
     "foursquare_url": "https://foursquare.com/v/4b570e89f964a520b22428e3",
     "photos": [
