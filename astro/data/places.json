@@ -1,5 +1,45 @@
 [
   {
+    "name": "足立区生物園",
+    "user_comment": "",
+    "date": "2026-10-15",
+    "lat": 35.792397,
+    "lng": 139.807252,
+    "address": "保木間2-17-1 (元渕江公園), 足立区, 東京都, 121-0064",
+    "foursquare_url": "https://foursquare.com/v/4b5d8bf7f964a520036129e3",
+    "photos": [
+      "https://fastly.4sqi.net/img/general/500x300/41463109_l-1L3NSxErZ_nlVLqozNmkwCaTq4MEqobsLX4O-FWOE.jpg"
+    ],
+    "categories": [
+      "動物園"
+    ],
+    "data_source": "foursquare_checkin",
+    "fsq_id": "4b5d8bf7f964a520036129e3",
+    "checkin_count": 1,
+    "first_checkin_at": "2026-10-15T04:35:11+00:00",
+    "last_checkin_at": "2026-10-15T04:35:11+00:00"
+  },
+  {
+    "name": "レストラン花もよう",
+    "user_comment": "",
+    "date": "2026-10-15",
+    "lat": 35.78925,
+    "lng": 139.814741,
+    "address": "東保木間1丁目24-23, 足立区, 東京都, 121-0063",
+    "foursquare_url": "https://foursquare.com/v/5b3eda4c835c9a002c30b344",
+    "photos": [
+      "https://fastly.4sqi.net/img/general/500x300/41463109_Mwq0nFTqg1ecTFbuYqc0N1OAPoTMXAudjf248MvY6Zo.jpg"
+    ],
+    "categories": [
+      "ステーキハウス"
+    ],
+    "data_source": "foursquare_checkin",
+    "fsq_id": "5b3eda4c835c9a002c30b344",
+    "checkin_count": 1,
+    "first_checkin_at": "2026-10-15T03:22:57+00:00",
+    "last_checkin_at": "2026-10-15T03:22:57+00:00"
+  },
+  {
     "name": "麺道 千鶏",
     "user_comment": "",
     "date": "2026-10-13",
@@ -44483,8 +44523,8 @@
     "name": "小田原駅",
     "user_comment": "",
     "date": "2013-01-03",
-    "lat": 35.25633045748796,
-    "lng": 139.15557163678568,
+    "lat": 35.25609177651906,
+    "lng": 139.15567043305236,
     "address": "栄町1/城山1, 小田原市, 神奈川県",
     "foursquare_url": "https://foursquare.com/v/4b5edbfaf964a520439b29e3",
     "photos": [],
