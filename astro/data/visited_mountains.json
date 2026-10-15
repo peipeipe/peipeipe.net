@@ -246,6 +246,237 @@
     "last_visit": "2026-09-02"
   },
   {
+    "name": "御小屋山",
+    "lat": 35.973923,
+    "lng": 138.331819,
+    "elevation": 2136,
+    "tags": [],
+    "visit_count": 1,
+    "activities": [
+      {
+        "id": -1751131019,
+        "name": "Night Trail Run",
+        "date": "2025-06-29",
+        "sport_type": "TrailRun",
+        "distance_km": 22.0
+      }
+    ],
+    "first_visit": "2025-06-29",
+    "last_visit": "2025-06-29"
+  },
+  {
+    "name": "阿弥陀岳",
+    "lat": 35.972453,
+    "lng": 138.358797,
+    "elevation": 2805,
+    "tags": [],
+    "visit_count": 1,
+    "activities": [
+      {
+        "id": -1751131019,
+        "name": "Night Trail Run",
+        "date": "2025-06-29",
+        "sport_type": "TrailRun",
+        "distance_km": 22.0
+      }
+    ],
+    "first_visit": "2025-06-29",
+    "last_visit": "2025-06-29"
+  },
+  {
+    "name": "赤岳",
+    "lat": 35.970797,
+    "lng": 138.370067,
+    "elevation": 2899,
+    "tags": [
+      "百名山",
+      "信州百名山"
+    ],
+    "visit_count": 1,
+    "activities": [
+      {
+        "id": -1751131019,
+        "name": "Night Trail Run",
+        "date": "2025-06-29",
+        "sport_type": "TrailRun",
+        "distance_km": 22.0
+      }
+    ],
+    "first_visit": "2025-06-29",
+    "last_visit": "2025-06-29"
+  },
+  {
+    "name": "地蔵ノ頭",
+    "lat": 35.976638,
+    "lng": 138.372058,
+    "elevation": 2718,
+    "tags": [],
+    "visit_count": 1,
+    "activities": [
+      {
+        "id": -1751131019,
+        "name": "Night Trail Run",
+        "date": "2025-06-29",
+        "sport_type": "TrailRun",
+        "distance_km": 22.0
+      }
+    ],
+    "first_visit": "2025-06-29",
+    "last_visit": "2025-06-29"
+  },
+  {
+    "name": "二十三夜峰",
+    "lat": 35.978138,
+    "lng": 138.372145,
+    "elevation": 2698,
+    "tags": [],
+    "visit_count": 1,
+    "activities": [
+      {
+        "id": -1751131019,
+        "name": "Night Trail Run",
+        "date": "2025-06-29",
+        "sport_type": "TrailRun",
+        "distance_km": 22.0
+      }
+    ],
+    "first_visit": "2025-06-29",
+    "last_visit": "2025-06-29"
+  },
+  {
+    "name": "日ノ岳",
+    "lat": 35.980496,
+    "lng": 138.372868,
+    "elevation": 2800,
+    "tags": [],
+    "visit_count": 1,
+    "activities": [
+      {
+        "id": -1751131019,
+        "name": "Night Trail Run",
+        "date": "2025-06-29",
+        "sport_type": "TrailRun",
+        "distance_km": 22.0
+      }
+    ],
+    "first_visit": "2025-06-29",
+    "last_visit": "2025-06-29"
+  },
+  {
+    "name": "鉾岳",
+    "lat": 35.981118,
+    "lng": 138.373523,
+    "elevation": 2790,
+    "tags": [],
+    "visit_count": 1,
+    "activities": [
+      {
+        "id": -1751131019,
+        "name": "Night Trail Run",
+        "date": "2025-06-29",
+        "sport_type": "TrailRun",
+        "distance_km": 22.0
+      }
+    ],
+    "first_visit": "2025-06-29",
+    "last_visit": "2025-06-29"
+  },
+  {
+    "name": "三叉峰",
+    "lat": 35.9831,
+    "lng": 138.374274,
+    "elevation": 2825,
+    "tags": [],
+    "visit_count": 1,
+    "activities": [
+      {
+        "id": -1751131019,
+        "name": "Night Trail Run",
+        "date": "2025-06-29",
+        "sport_type": "TrailRun",
+        "distance_km": 22.0
+      }
+    ],
+    "first_visit": "2025-06-29",
+    "last_visit": "2025-06-29"
+  },
+  {
+    "name": "横岳",
+    "lat": 35.985965,
+    "lng": 138.372841,
+    "elevation": 2830,
+    "tags": [],
+    "visit_count": 1,
+    "activities": [
+      {
+        "id": -1751131019,
+        "name": "Night Trail Run",
+        "date": "2025-06-29",
+        "sport_type": "TrailRun",
+        "distance_km": 22.0
+      }
+    ],
+    "first_visit": "2025-06-29",
+    "last_visit": "2025-06-29"
+  },
+  {
+    "name": "台座の頭",
+    "lat": 35.989483,
+    "lng": 138.373981,
+    "elevation": 2794,
+    "tags": [],
+    "visit_count": 1,
+    "activities": [
+      {
+        "id": -1751131019,
+        "name": "Night Trail Run",
+        "date": "2025-06-29",
+        "sport_type": "TrailRun",
+        "distance_km": 22.0
+      }
+    ],
+    "first_visit": "2025-06-29",
+    "last_visit": "2025-06-29"
+  },
+  {
+    "name": "硫黄岳",
+    "lat": 35.998776,
+    "lng": 138.369968,
+    "elevation": 2760,
+    "tags": [],
+    "visit_count": 1,
+    "activities": [
+      {
+        "id": -1751131019,
+        "name": "Night Trail Run",
+        "date": "2025-06-29",
+        "sport_type": "TrailRun",
+        "distance_km": 22.0
+      }
+    ],
+    "first_visit": "2025-06-29",
+    "last_visit": "2025-06-29"
+  },
+  {
+    "name": "赤岩ノ頭",
+    "lat": 35.995409,
+    "lng": 138.363886,
+    "elevation": 2656,
+    "tags": [],
+    "visit_count": 1,
+    "activities": [
+      {
+        "id": -1751131019,
+        "name": "Night Trail Run",
+        "date": "2025-06-29",
+        "sport_type": "TrailRun",
+        "distance_km": 22.0
+      }
+    ],
+    "first_visit": "2025-06-29",
+    "last_visit": "2025-06-29"
+  },
+  {
     "name": "霧ヶ峰",
     "lat": 36.102894,
     "lng": 138.19667,

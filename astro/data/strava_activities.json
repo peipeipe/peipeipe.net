@@ -10680,6 +10680,28 @@
     "summary_polyline": "yic}EmqwjYQMWVm@dASf@uBlDOv@S\\cA|BeBfEyF~OuBxE}@jBi@tA}@`BGP?XLV`@\\^^BPIHc@RkCxAaBlAcAjAsBvCST]PILs@~@_ArAgAhBu@~Ac@pAQp@S|@Mz@QxAOpBK~EBvEGx@KlJOhEYtCW`BOb@[n@m@`AsAhA]\\[f@o@bBYjCCZDn@Nj@VJh@_@DDAJa@nAiA|BcAnC_AnEUj@g@hA]vAo@vAW|@g@bDS~BM`BGfBS~BUxDGtAA|@J\\\\\\^V^HxC[b@MjAg@j@MlBSv@CbBNv@?W|AOl@KNOHqAXyBh@sAVgB?wBZy@Fa@P_@`@Ul@ATB@JGPW@B@HMp@Nb@PBM[OOCMFUBWECKRKJICAIL[PWj@i@l@QpBUd@Ex@@b@A\\GBEdAOBDfA]z@]t@O`@SDGFUTeBCCo@?oBKo@HS?yANqBp@g@J]F}BTe@Oe@a@OUKUEg@B]JqADiAh@wGZmFJ{ALeAHk@Pq@Xy@PYRe@z@eCHe@Ni@L}@Jc@AEGMMPYt@[fAGJQG_BgAeBgAcGeEgG{EOUXqCBi@Ko@?mACo@_@}DAs@NIJ?dBl@^KTa@`AqC|C{Nn@iDp@uCbAaFl@iDXyCLiBNwC?yADIlAe@^UxAo@`Ai@|@m@fAaAZ]`AsArCwEbJoLbB_CnCgE~GcMbCkGl@aBDSEGiBy@gB_AGGUo@HYBi@DWd@m@\\uABo@b@}A^{@h@y@r@sAv@mAvAgBZY\\QV@nApAhAz@\\^PLJBn@uAlEaLRi@|@_DtAeEhAqCpAkCx@mBnDeGrCgExBkDl@kAv@gBXInAfAp@`@pBrA^Xp@`@~@n@t@^hAv@~CnBd@Vn@PTTF`@Gf@QNaBf@}BdA_A^aAt@c@^{AnBy@jAYXi@l@_@b@{AnA[^"
   },
   {
+    "id": -1751131019,
+    "source": "manual",
+    "url": "/activity/",
+    "name": "八ヶ岳ファストハイク",
+    "sport_type": "TrailRun",
+    "distance": 22017.07,
+    "moving_time": 16169,
+    "elapsed_time": 37209,
+    "total_elevation_gain": 2099.0,
+    "start_date": "2025-06-28T17:16:59Z",
+    "start_date_local": "2025-06-29T02:16:59",
+    "start_latlng": [
+      35.981941,
+      138.301187
+    ],
+    "summary_polyline": "cvrzEm}bkY[q@h@oLc@uBdADbC_AaEuHHsE`AqElBkCfAQ\\aBdBqBOo@XwAlDiMzCsF[oCZaEUmDp@qF]_@jBqKKo@t@gAGcA`AkJfCcGOWZ{@c@CIoFr@_DOgB~@gAn@mCPeDg@mDtA_CSCf@CvAnAvDqB`BoCOsFzAcK?iHmCwMh@yPQ_Ab@kCcAmHr@iEaCsXXiFdAeDf@oESgAhAyWlB{D[S?yAtDkD][PqBxA}BPgBUFA}Ix@kHf@i@d@mDScATKIgDTqCVKQeAb@u@[e@XQEaAlCkBVgEMcBmBTkBw@ToAYTDt@qE?{AYoCeCgEe@aDeBA]}JCmG_A_AX_@k@uDw@m@yAcBOq@d@k@wBcK}CGp@cBdAgBN@b@yIpCkBq@{EBuDgCkAAsBz@sA`DyEFcGnCwFEg@_@[uBRPGtAgFdAsA~@_BnCyCd@iFxCyCzLtArB]iAUI`E~H`Ad@QZVn@lAb@^`ArFjAMmAPI[{@|@IdDvAp@hAt@aBZnArBlC\\{@d@lA|@m@HfAPWTp@TMHlAtAVnDdEMZ`@`@]Xf@\\f@_@vB\\Pn@pA}@WkBb@}BXa@n@ZZUz@b@fBtDxBbA|@fD{@h@Ex@bAdB[`AXdIsBzEyCfBBh@aBjDaA~H_@p@JjFj@hBYfBf@tFbArBbAxEM|B_C`EZLZtC~A|EzAR~@w@jC?nCzAl@`HtAfCZvCvAxCCfAW@JrDL^`@QZlEnC`FjEbCv@nBBtBo@~BJzHzG|EY\\e@KyAsAkEiBk@`@ZlAfEdDZdEx@dDMhFV\\r@]Tz@{BlDErB_ApBP|ByApGgA|Ao@pFb@`Au@`@XbBi@x@yBIqAzCh@jVa@nDQxUmA|Lb@hK_@jB~B{B`AbDeAbDr@Hc@dAJdAs@|AThFhA`CzEvDz@fCd@V",
+    "manual_import": {
+      "file": "Night_Trail_Run.gpx",
+      "metrics": "Distance: GPS haversine sum; elevation gain: sum of positive elevation changes; moving time: intervals <=60s with GPS speed >=0.5m/s."
+    }
+  },
+  {
     "id": 14931393002,
     "name": "Evening Run",
     "sport_type": "Run",
