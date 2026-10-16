@@ -1,5 +1,25 @@
 [
   {
+    "name": "資さんうどん",
+    "user_comment": "",
+    "date": "2026-10-16",
+    "lat": 35.782949,
+    "lng": 139.760073,
+    "address": "鹿浜4-22-14, 足立区, 東京都, 123-0864",
+    "foursquare_url": "https://foursquare.com/v/67eb5da01617eb321b6f6ee3",
+    "photos": [
+      "https://fastly.4sqi.net/img/general/500x300/41463109_b0tzS-2F2nqEcxPXV5AKaudjo7DXKPI8Pt6lPLLjjew.jpg"
+    ],
+    "categories": [
+      "うどん屋"
+    ],
+    "data_source": "foursquare_checkin",
+    "fsq_id": "67eb5da01617eb321b6f6ee3",
+    "checkin_count": 1,
+    "first_checkin_at": "2026-10-16T03:06:55+00:00",
+    "last_checkin_at": "2026-10-16T03:06:55+00:00"
+  },
+  {
     "name": "足立区生物園",
     "user_comment": "",
     "date": "2026-10-15",
@@ -17,7 +37,8 @@
     "fsq_id": "4b5d8bf7f964a520036129e3",
     "checkin_count": 1,
     "first_checkin_at": "2026-10-15T04:35:11+00:00",
-    "last_checkin_at": "2026-10-15T04:35:11+00:00"
+    "last_checkin_at": "2026-10-15T04:35:11+00:00",
+    "composition_hint": ""
   },
   {
     "name": "レストラン花もよう",
@@ -37,7 +58,8 @@
     "fsq_id": "5b3eda4c835c9a002c30b344",
     "checkin_count": 1,
     "first_checkin_at": "2026-10-15T03:22:57+00:00",
-    "last_checkin_at": "2026-10-15T03:22:57+00:00"
+    "last_checkin_at": "2026-10-15T03:22:57+00:00",
+    "composition_hint": ""
   },
   {
     "name": "麺道 千鶏",
@@ -5961,8 +5983,8 @@
     "name": "JR 東京駅",
     "user_comment": "",
     "date": "2025-08-17",
-    "lat": 35.681334331806276,
-    "lng": 139.7669975324218,
+    "lat": 35.68137684009799,
+    "lng": 139.76668304639026,
     "address": "丸の内1-9-1, 千代田区, 東京都, 100-6505",
     "foursquare_url": "https://foursquare.com/v/4be4f932d4f7c9b61df92420",
     "photos": [],
@@ -6970,8 +6992,8 @@
     "name": "JR 横浜駅",
     "user_comment": "",
     "date": "2025-06-14",
-    "lat": 35.46578167601866,
-    "lng": 139.62203690138512,
+    "lat": 35.46554581274223,
+    "lng": 139.62201698285173,
     "address": "西区高島2-16-1, 横浜市, 神奈川県, 220-0011",
     "foursquare_url": "https://foursquare.com/v/4d95a92a744f3704c825a557",
     "photos": [],
@@ -44504,8 +44526,8 @@
     "name": "JR 大船駅",
     "user_comment": "",
     "date": "2013-01-03",
-    "lat": 35.35446737031861,
-    "lng": 139.53153701343157,
+    "lat": 35.35427233404887,
+    "lng": 139.53141271438557,
     "address": "大船1-1-1, 鎌倉市, 神奈川県, 247-0056",
     "foursquare_url": "https://foursquare.com/v/4bbca8814e069c74dfb09de3",
     "photos": [],
