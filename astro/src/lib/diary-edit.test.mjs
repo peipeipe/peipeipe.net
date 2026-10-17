@@ -19,3 +19,9 @@ test('stale or deleted entries cannot overwrite the latest content', () => {
   assert.throws(() => replaceDiarySection({ sha: 'new', content }, editing, 'replacement'), /変更/);
   assert.throws(() => replaceDiarySection(null, editing, 'replacement'), /変更/);
 });
+
+test('invalid hours are not treated as editable diary sections', () => {
+  const sections = diarySections('## 23:59\nvalid\n## 24:00\nnot an entry\n## 29:00\nstill text\n');
+  assert.equal(sections.length, 1);
+  assert.match(sections[0].text, /24:00/);
+});

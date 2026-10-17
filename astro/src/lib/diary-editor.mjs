@@ -5,10 +5,12 @@ export function hasEditorWork(saved) {
 }
 
 export function readEditorRecord(saved) {
-  if (!saved || typeof saved.text !== 'string'
+  if (!saved || typeof saved.text !== 'string' || saved.text.length > 200000
     || typeof saved.date !== 'string' || !/^(?:\d{4}-\d{2}-\d{2})?$/.test(saved.date)
     || typeof saved.time !== 'string' || !/^(?:(?:[01]\d|2[0-3]):[0-5]\d)?$/.test(saved.time)
-    || (saved.images !== undefined && !Array.isArray(saved.images))) return null;
+    || (saved.date && (!Number.isFinite(Date.parse(`${saved.date}T00:00:00Z`))
+      || new Date(`${saved.date}T00:00:00Z`).toISOString().slice(0, 10) !== saved.date))
+    || (saved.images !== undefined && (!Array.isArray(saved.images) || saved.images.length > 30))) return null;
   return { date: saved.date, time: saved.time, text: saved.text,
     editing: saved.editing || null, draft: saved.draft || null,
     savedText: typeof saved.savedText === 'string' ? saved.savedText : '',
@@ -22,6 +24,7 @@ export function selectEditorRecord(primary, fallback) {
 }
 
 export function editorTextBackup(snapshot) {
-  const { images, ...text } = snapshot;
-  return { version: 1, ...text };
+  // Explicit fields keep credentials and future binary properties out of localStorage.
+  const { date, time, text, editing, draft, savedText } = snapshot;
+  return { version: 1, date, time, text, editing, draft, savedText };
 }

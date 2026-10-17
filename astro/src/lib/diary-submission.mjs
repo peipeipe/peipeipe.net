@@ -11,6 +11,13 @@ export function validateSubmission(job) {
       new Date(`${job.date}T00:00:00Z`).toISOString().slice(0, 10) !== job.date ||
       !Array.isArray(job.images) || job.images.length > 30 ||
       (!job.text.trim() && !job.images.length)) throw new Error('投稿データの形式が正しくありません');
+  // Bound total base64 input before regex scans and JSON/UTF-8 allocations.
+  let imageBytes = 0;
+  for (const image of job.images) {
+    if (!image || typeof image.b64 !== 'string') throw new Error('画像データの形式が正しくありません');
+    imageBytes += image.b64.length;
+    if (imageBytes > MAX_SUBMISSION_BYTES) throw new Error('写真を含む投稿は20MB以内にしてください');
+  }
   for (const image of job.images) {
     if (!['webp', 'jpg', 'jpeg', 'png'].includes(image.ext) || typeof image.b64 !== 'string' ||
         !/^[A-Za-z0-9+/]*={0,2}$/.test(image.b64) || image.b64.length % 4 !== 0 || !image.b64) {

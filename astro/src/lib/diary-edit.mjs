@@ -4,7 +4,7 @@ export function diarySections(content) {
   let offset = 0;
   let fence = null;
   let frontmatter = content.startsWith('---\n') || content.startsWith('---\r\n');
-  for (const line of content.match(/[^\n]*\n|[^\n]+$/g) || []) {
+  for (const [line] of content.matchAll(/[^\n]*\n|[^\n]+$/g)) {
     const plain = line.replace(/\r?\n$/, '');
     if (frontmatter) {
       if (offset > 0 && plain === '---') frontmatter = false;
@@ -15,7 +15,7 @@ export function diarySections(content) {
       } else if (marker) {
         fence = marker[1];
       } else {
-        const heading = plain.match(/^## ([0-2]\d:[0-5]\d)\s*$/);
+        const heading = plain.match(/^## ((?:[01]\d|2[0-3]):[0-5]\d)\s*$/);
         if (heading) sections.push({ time: heading[1], start: offset, bodyStart: offset + line.length });
       }
     }

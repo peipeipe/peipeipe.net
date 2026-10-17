@@ -13,7 +13,6 @@ import SiteIcons from "@/components/SiteIcons.astro";
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
-  <script src="https://cdn.jsdelivr.net/npm/marked@9.1.6/marked.min.js"></script>
   <!-- is:global so styles also reach elements built at runtime via document.createElement
        (image previews, toasts, spinner, delete buttons); Astro's scoped styles never match
        those nodes because they lack the compiler-injected data-astro-cid marker. This page is
@@ -1026,6 +1025,7 @@ import SiteIcons from "@/components/SiteIcons.astro";
 <div class="toast-container" id="toast-container" aria-live="polite" aria-atomic="false"></div>
 
 <script>
+  import { marked } from "marked";
   import { diarySections } from "../../lib/diary-edit.mjs";
   import { writeWebpBlob } from "../../lib/upload-webp";
   import { DRAFT_DIRECTORY, draftPath, serializeDraft, parseDraft } from "../../lib/diary-drafts.mjs";
@@ -1290,6 +1290,10 @@ import SiteIcons from "@/components/SiteIcons.astro";
       showToast('error', 'エラー', '画像ファイルを選択してください');
       return;
     }
+    if (imageFiles.length + state.imageUploads.length > 30 || imageFiles.some(file => file.size > 20 * 1024 * 1024)) {
+      showToast('error', '画像エラー', '写真は30枚まで、元画像は1枚20MB以内にしてください');
+      return;
+    }
     progressFill.className = 'progress-fill uploading';
     imageSummary.textContent = '画像を処理中...';
     imageAttached.classList.remove('hidden');
@@ -1321,39 +1325,41 @@ import SiteIcons from "@/components/SiteIcons.astro";
     return new Promise((resolve, reject) => {
       const img = new Image();
       const url = URL.createObjectURL(file);
-      img.onload = () => {
+      img.onload = async () => {
         URL.revokeObjectURL(url);
-        let { width, height } = img;
-        const ratio = Math.min(IMAGE_MAX_DIMENSION / width, IMAGE_MAX_DIMENSION / height, 1);
         const canvas = document.createElement('canvas');
-        canvas.width  = Math.round(width  * ratio);
-        canvas.height = Math.round(height * ratio);
-        canvas.getContext('2d').drawImage(img, 0, 0, canvas.width, canvas.height);
-        writeWebpBlob(canvas)
-          .then(({ blob, mime }) => {
+        try {
+          const { width, height } = img;
+          if (!width || !height || width * height > 40_000_000) {
+            throw new Error('画像は4000万画素以内にしてください');
+          }
+          const ratio = Math.min(IMAGE_MAX_DIMENSION / width, IMAGE_MAX_DIMENSION / height, 1);
+          canvas.width = Math.max(1, Math.round(width * ratio));
+          canvas.height = Math.max(1, Math.round(height * ratio));
+          const context = canvas.getContext('2d');
+          if (!context) throw new Error('画像を処理できませんでした');
+          context.drawImage(img, 0, 0, canvas.width, canvas.height);
+          const { blob, mime } = await writeWebpBlob(canvas);
+          const dataUrl = await new Promise<string>((resolve, reject) => {
             const reader = new FileReader();
-            reader.onload = () => {
-              const dataUrl = String(reader.result || '');
-              if (!dataUrl.startsWith(`data:${mime}`)) {
-                reject(new Error('画像変換に失敗しました'));
-                return;
-              }
-              const ext = IMAGE_EXT_BY_MIME[mime];
-              resolve({
-                id: crypto.randomUUID?.() || `${Date.now()}-${Math.random()}`,
-                b64: dataUrl.split(',')[1],
-                dataUrl,
-                mime,
-                ext,
-                originalName: file.name,
-                originalBytes: file.size,
-                outputBytes: blob.size,
-              });
-            };
+            reader.onload = () => resolve(String(reader.result || ''));
             reader.onerror = () => reject(new Error('画像データの読み取りに失敗しました'));
             reader.readAsDataURL(blob);
-          })
-          .catch(() => reject(new Error('画像変換に対応していません')));
+          });
+          if (!dataUrl.startsWith(`data:${mime};base64,`)) throw new Error('画像変換に失敗しました');
+          const b64 = dataUrl.slice(dataUrl.indexOf(',') + 1);
+          const total = state.imageUploads.reduce((sum, image) => sum + image.b64.length, b64.length);
+          if (total > 19 * 1024 * 1024) throw new Error('写真の合計サイズが大きすぎます。枚数を減らしてください');
+          resolve({
+            id: crypto.randomUUID(), b64, mime, ext: IMAGE_EXT_BY_MIME[mime],
+            originalName: file.name, originalBytes: file.size, outputBytes: blob.size,
+          });
+        } catch (error) {
+          reject(error);
+        } finally {
+          canvas.width = canvas.height = 0;
+          img.src = '';
+        }
       };
       img.onerror = () => { URL.revokeObjectURL(url); reject(new Error('画像デコード失敗')); };
       img.src = url;
@@ -1367,7 +1373,7 @@ import SiteIcons from "@/components/SiteIcons.astro";
       item.className = 'attached-image';
 
       const img = document.createElement('img');
-      img.src = upload.dataUrl;
+      img.src = `data:image/${upload.ext};base64,${upload.b64}`;
       img.alt = upload.originalName || '添付画像プレビュー';
 
       const overlay = document.createElement('div');
@@ -1534,7 +1540,7 @@ import SiteIcons from "@/components/SiteIcons.astro";
     if (state.editing) [inputDate, inputTime, btnNow, btnYesterday].forEach(el => { el.disabled = true; });
     $('edit-status').textContent = state.editing ? `${inputDate.value} ${inputTime.value} の投稿を編集中` : '';
     if (!state.processing) submitLabel.textContent = state.editing ? '変更を保存する' : '🚀 投稿する';
-    saveLocalEditor();
+    scheduleLocalSave();
     if (state.processing) imageList.querySelectorAll('button').forEach(el => { el.disabled = true; });
     if (state.draft) {
       draftStatus.textContent = draftSnapshot() === state.savedText
@@ -1594,7 +1600,8 @@ import SiteIcons from "@/components/SiteIcons.astro";
   /** base64をUTF-8文字列に変換（TextDecoder使用） */
   function base64ToUtf8(b64) {
     const binary = atob(b64.replace(/\n/g, ''));
-    const bytes = new Uint8Array([...binary].map(c => c.charCodeAt(0)));
+    const bytes = new Uint8Array(binary.length);
+    for (let i = 0; i < binary.length; i++) bytes[i] = binary.charCodeAt(i);
     return new TextDecoder().decode(bytes);
   }
 
@@ -1630,7 +1637,15 @@ import SiteIcons from "@/components/SiteIcons.astro";
     if (status.textContent !== message) status.textContent = message;
   }
 
+  let localSaveTimer;
+  function scheduleLocalSave() {
+    localSaved = false;
+    clearTimeout(localSaveTimer);
+    localSaveTimer = setTimeout(saveLocalEditor, 300);
+  }
+
   function saveLocalEditor() {
+    clearTimeout(localSaveTimer);
     if (!localReady || restoring || transferringToOutbox) return;
     const snapshot = editorSnapshot();
     void localRecord('editor', snapshot).then(() => {
@@ -1831,7 +1846,7 @@ import SiteIcons from "@/components/SiteIcons.astro";
     state.editing = saved.editing || null;
     state.draft = saved.draft || null;
     state.savedText = saved.savedText || '';
-    state.imageUploads = saved.images || [];
+    state.imageUploads = (saved.images || []).map(({ dataUrl, ...image }) => image);
     charCount.textContent = textarea.value.length.toLocaleString();
     renderImageUploads();
   }

@@ -27,3 +27,17 @@ test('legacy text backup is used when primary storage is absent or invalid', () 
   }
   assert.equal(selectEditorRecord({}, { text: 123 }), null);
 });
+
+
+test('invalid calendar dates and excessive editor records are not restored', () => {
+  for (const changes of [{ date: '2026-02-30' }, { text: 'x'.repeat(200001) },
+    { images: Array(31).fill({}) }]) {
+    assert.equal(selectEditorRecord({ ...empty, text: 'work', ...changes }, null), null);
+  }
+});
+
+test('text backups exclude unknown properties and credentials', () => {
+  const backup = editorTextBackup({ ...empty, token: 'secret', binary: new Uint8Array(8) });
+  assert.equal('token' in backup, false);
+  assert.equal('binary' in backup, false);
+});
