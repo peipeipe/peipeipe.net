@@ -823,6 +823,8 @@ import SiteIcons from "@/components/SiteIcons.astro";
       border: 1px solid rgba(239,68,68,0.25);
     }
 
+    #local-save-status:empty { display: none; }
+
     /* ── Progress ── */
     .progress-bar {
       height: 3px;
@@ -1619,14 +1621,24 @@ import SiteIcons from "@/components/SiteIcons.astro";
   let localSaved = false;
   const LOCAL_EDITOR_KEY = 'diary-editor-v1';
   let loadedEntries = null;
+  let textSaveError = '';
+  let imageSaveError = '';
+
+  function renderLocalSaveError() {
+    const message = [textSaveError, imageSaveError].filter(Boolean).join(' ');
+    const status = $('local-save-status');
+    if (status.textContent !== message) status.textContent = message;
+  }
 
   function saveLocalEditor() {
     if (!localReady || restoring || transferringToOutbox) return;
     const snapshot = editorSnapshot();
     void localRecord('editor', snapshot).then(() => {
-      $('local-save-status').textContent = '保存済み';
+      imageSaveError = '';
+      renderLocalSaveError();
     }).catch(() => {
-      $('local-save-status').textContent = '写真の端末保存に失敗しました。画面を閉じずに再度お試しください。';
+      imageSaveError = '写真の端末保存に失敗しました。画面を閉じずに再度お試しください。';
+      renderLocalSaveError();
     });
     try {
       if (!hasEditorWork(snapshot)) {
@@ -1635,11 +1647,12 @@ import SiteIcons from "@/components/SiteIcons.astro";
         localStorage.setItem(LOCAL_EDITOR_KEY, JSON.stringify(editorTextBackup(snapshot)));
       }
       localSaved = true;
-      $('local-save-status').textContent = '本文を保存済み';
+      textSaveError = '';
     } catch {
       localSaved = false;
-      $('local-save-status').textContent = '端末への自動保存に失敗しました。画面を閉じる前に本文をコピーしてください。';
+      textSaveError = '端末への自動保存に失敗しました。画面を閉じる前に本文をコピーしてください。';
     }
+    renderLocalSaveError();
   }
 
   $('btn-load-entries').addEventListener('click', () => draftOperation(async () => {
