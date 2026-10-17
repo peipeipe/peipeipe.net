@@ -929,7 +929,7 @@ import SiteIcons from "@/components/SiteIcons.astro";
     </div>
     <p id="edit-status" role="status"></p>
   </details>
-  <p id="local-save-status" role="status">本文・日時を自動保存（添付写真を除く）</p>
+  <p id="local-save-status" role="status"></p>
 
   <!-- ── Date / Time ── -->
   <div class="glass datetime-bar section-gap">
@@ -968,13 +968,13 @@ import SiteIcons from "@/components/SiteIcons.astro";
         <button class="toolbar-btn" data-action="ul"        title="リスト">• </button>
         <button class="toolbar-btn" data-action="hr"        title="区切り線">─</button>
       </div>
-      <textarea id="content" placeholder="今日の出来事を書く...&#10;&#10;Markdownが使えます。"></textarea>
+      <textarea id="content" placeholder="今日の出来事を書く..."></textarea>
       <div class="char-count"><span id="char-count">0</span> 文字</div>
     </div>
 
     <!-- Preview -->
     <div class="tab-panel glass preview-card" id="panel-preview" role="tabpanel">
-      <div id="preview-content"><p class="preview-empty">← 書くタブにテキストを入力するとここにプレビューが表示されます</p></div>
+      <div id="preview-content"><p class="preview-empty">プレビューはここに表示されます</p></div>
     </div>
   </div>
 
@@ -983,7 +983,6 @@ import SiteIcons from "@/components/SiteIcons.astro";
     <div class="drop-zone" id="drop-zone" role="button" tabindex="0" aria-label="画像をドラッグ&ドロップ">
       <span class="drop-icon">🖼</span>
       <div class="drop-title">画像を添付</div>
-      <div class="drop-sub">ドラッグ&ドロップ、またはクリックして選択</div>
       <div class="upload-btns">
         <button class="btn btn-secondary" id="btn-pick-image" type="button">🖼 画像を選ぶ</button>
       </div>
@@ -1004,8 +1003,7 @@ import SiteIcons from "@/components/SiteIcons.astro";
 
   <div class="glass section-gap outbox-card" aria-live="polite">
     <strong>投稿の送信状況</strong>
-    <p>受付済みになったら画面を閉じても大丈夫です。未送信の投稿は、この画面に戻ると再送します。</p>
-    <p><a href="https://github.com/peipeipe/peipeipe.net/actions/workflows/cloudflare-pages.yml" target="_blank" rel="noopener noreferrer">公開処理の状況を確認</a></p>
+    <p><a href="https://github.com/peipeipe/peipeipe.net/actions/workflows/cloudflare-pages.yml" target="_blank" rel="noopener noreferrer">公開状況</a></p>
     <div id="outbox-status">送信状況を確認中…</div>
   </div>
 
@@ -1031,6 +1029,7 @@ import SiteIcons from "@/components/SiteIcons.astro";
   import { DRAFT_DIRECTORY, draftPath, serializeDraft, parseDraft } from "../../lib/diary-drafts.mjs";
   import { INBOX, RECEIPTS, validateSubmission } from "../../lib/diary-submission.mjs";
   import { localRecord, listJobs, enqueueJob } from "../../lib/diary-outbox.mjs";
+  import { hasEditorWork, selectEditorRecord, editorTextBackup } from "../../lib/diary-editor.mjs";
   let outboxBusy = false;
   let restoring = true;
   let transferringToOutbox = false;
@@ -1202,7 +1201,7 @@ import SiteIcons from "@/components/SiteIcons.astro";
   function renderPreview() {
     const md = textarea.value.trim();
     if (!md) {
-      previewContent.innerHTML = '<p class="preview-empty">← 書くタブにテキストを入力するとここにプレビューが表示されます</p>';
+      previewContent.innerHTML = '<p class="preview-empty">プレビューはここに表示されます</p>';
       return;
     }
     previewContent.innerHTML = marked.parse(md, { breaks: true });
@@ -1537,16 +1536,16 @@ import SiteIcons from "@/components/SiteIcons.astro";
     if (state.processing) imageList.querySelectorAll('button').forEach(el => { el.disabled = true; });
     if (state.draft) {
       draftStatus.textContent = draftSnapshot() === state.savedText
-        ? '下書きを開いています（本文と日時は保存済み）'
-        : '下書きを編集中（本文または日時に未保存の変更があります）';
+        ? '下書き保存済み'
+        : '下書きに未保存の変更あり';
     }
 
     if (!state.token) {
-      submitInfo.textContent = '⚙ 右上の設定からGitHub Tokenを入力してください';
+      submitInfo.textContent = '⚙ トークンを設定してください';
     } else if (state.imageProcessing) {
       submitInfo.textContent = '画像を処理中です';
     } else if (!hasContent) {
-      submitInfo.textContent = '📝 本文または画像を追加してください';
+      submitInfo.textContent = '';
     } else {
       submitInfo.textContent = '';
     }
@@ -1618,7 +1617,6 @@ import SiteIcons from "@/components/SiteIcons.astro";
 
   let localReady = false;
   let localSaved = false;
-  let emptyEditorSnapshot = draftSnapshot();
   const LOCAL_EDITOR_KEY = 'diary-editor-v1';
   let loadedEntries = null;
 
@@ -1626,21 +1624,18 @@ import SiteIcons from "@/components/SiteIcons.astro";
     if (!localReady || restoring || transferringToOutbox) return;
     const snapshot = editorSnapshot();
     void localRecord('editor', snapshot).then(() => {
-      $('local-save-status').textContent = '本文・添付写真を端末に保存済み';
+      $('local-save-status').textContent = '保存済み';
     }).catch(() => {
       $('local-save-status').textContent = '写真の端末保存に失敗しました。画面を閉じずに再度お試しください。';
     });
     try {
-      if (draftSnapshot() === emptyEditorSnapshot && !state.editing && !state.draft) {
+      if (!hasEditorWork(snapshot)) {
         localStorage.removeItem(LOCAL_EDITOR_KEY);
       } else {
-        localStorage.setItem(LOCAL_EDITOR_KEY, JSON.stringify({
-          version: 1, date: inputDate.value, time: inputTime.value, text: textarea.value,
-          editing: state.editing, draft: state.draft, savedText: state.savedText,
-        }));
+        localStorage.setItem(LOCAL_EDITOR_KEY, JSON.stringify(editorTextBackup(snapshot)));
       }
       localSaved = true;
-      $('local-save-status').textContent = '端末に保存済み（添付写真を除く）';
+      $('local-save-status').textContent = '本文を保存済み';
     } catch {
       localSaved = false;
       $('local-save-status').textContent = '端末への自動保存に失敗しました。画面を閉じる前に本文をコピーしてください。';
@@ -1893,7 +1888,7 @@ import SiteIcons from "@/components/SiteIcons.astro";
     const container = $('outbox-status');
     container.replaceChildren();
     if (!jobs.length) container.textContent = '未送信の投稿はありません';
-    const labels = { pending: '未送信（本文・写真は端末に保存済み）', accepted: '受付済み・投稿処理待ち', saved: '保存完了・サイトへの反映はビルド完了後', failed: '投稿を保存できませんでした' };
+    const labels = { pending: '未送信', accepted: '反映待ち', saved: '保存完了', failed: '保存失敗' };
     const visible = jobs.filter(job => job.status !== 'saved').concat(jobs.filter(job => job.status === 'saved').slice(-5));
     for (const job of visible) {
       const row = document.createElement('p');
@@ -1946,7 +1941,7 @@ import SiteIcons from "@/components/SiteIcons.astro";
       await localRecord('editor', editorSnapshot());
       setLoading(true, '送信中…');
       await sendJob(job);
-      showToast('success', '受付済み', '画面を閉じても投稿処理は続きます。公開はビルド完了後です。', 7000);
+      showToast('success', '受付済み', '', 2500);
     } catch (error) {
       showToast('error', persisted ? '未送信の投稿を端末に保持しています' : '投稿を受け付けられませんでした', error.message, 9000);
     } finally {
@@ -1984,7 +1979,6 @@ import SiteIcons from "@/components/SiteIcons.astro";
     charCount.textContent = '0';
     resetImages();
     setNow();
-    emptyEditorSnapshot = draftSnapshot();
     saveLocalEditor();
   }
 
@@ -2034,41 +2028,49 @@ import SiteIcons from "@/components/SiteIcons.astro";
   /* ════════════════════════════════════════════
      Init
   ════════════════════════════════════════════ */
-  try {
-    const saved = JSON.parse(localStorage.getItem(LOCAL_EDITOR_KEY) || 'null');
-    if (saved?.version === 1 && typeof saved.text === 'string' &&
-        typeof saved.date === 'string' && typeof saved.time === 'string' &&
-        /^(?:\d{4}-\d{2}-\d{2})?$/.test(saved.date) && /^(?:\d{2}:\d{2})?$/.test(saved.time)) {
-      textarea.value = saved.text;
-      inputDate.value = saved.date;
-      inputTime.value = saved.time;
-      state.editing = saved.editing || null;
-      state.draft = saved.draft || null;
-      state.savedText = saved.savedText || '';
-      charCount.textContent = textarea.value.length.toLocaleString();
-      showToast('info', '前回の入力を復元しました');
-    }
-  } catch {
-    showToast('error', '端末の保存内容を復元できませんでした');
-  }
-  $('edit-date').value = inputDate.value;
   loadSettings();
   validateForm();
   void (async () => {
+    let fallback = null;
+    let primary = null;
     try {
-      const saved = await localRecord('editor');
-      if (saved) restoreEditor(saved);
-    } catch (error) { showToast('error', '写真・送信待ちデータを復元できません', error.message); }
-    finally {
-      restoring = false;
-      localReady = true;
-      validateForm();
-      void refreshOutbox(true);
+      fallback = JSON.parse(localStorage.getItem(LOCAL_EDITOR_KEY) || 'null');
+    } catch {
+      showToast('error', '端末の保存内容を復元できませんでした');
     }
+    try {
+      primary = await localRecord('editor');
+    } catch (error) {
+      showToast('error', '写真・送信待ちデータを復元できません', error.message);
+    }
+    const saved = selectEditorRecord(primary, fallback);
+    if (saved) {
+      restoreEditor(saved);
+      showToast('info', '前回の入力を復元しました');
+    } else {
+      setNow();
+    }
+    $('edit-date').value = inputDate.value;
+    restoring = false;
+    localReady = true;
+    validateForm();
+    void refreshOutbox(true);
   })();
+  // Returning to an idle tab (including the back/forward cache) starts at now.
+  // Never change the date of work in progress or an explicitly opened edit.
+  function resumeEditor() {
+    if (!restoring && !hasEditorWork(editorSnapshot())) {
+      setNow();
+      $('edit-date').value = inputDate.value;
+    }
+  }
+  window.addEventListener('pageshow', resumeEditor);
   window.addEventListener('online', () => { void refreshOutbox(true); });
   document.addEventListener('visibilitychange', () => {
-    if (document.visibilityState === 'visible') void refreshOutbox(true);
+    if (document.visibilityState === 'visible') {
+      resumeEditor();
+      void refreshOutbox(true);
+    }
   });
   setInterval(() => {
     if (document.visibilityState === 'visible') void refreshOutbox();
