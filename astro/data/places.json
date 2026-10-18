@@ -1,5 +1,86 @@
 [
   {
+    "name": "マサラキッチン",
+    "user_comment": "",
+    "date": "2026-10-18",
+    "lat": 36.391735952428085,
+    "lng": 138.25914138914496,
+    "address": "踏入2-1-15 (池野ビル1F), 上田市, 長野県, 386-0017",
+    "foursquare_url": "https://foursquare.com/v/4d871ba97e8ef04d659d40be",
+    "photos": [
+      "https://fastly.4sqi.net/img/general/500x300/41463109_JgMfKeYWe4SGxjFJZxAmGZ2Bc1E5gULtXPsdUeuhEkE.jpg",
+      "https://fastly.4sqi.net/img/general/500x300/41463109_cJh4Ob8lGG7XIJHeeRToQTX24-BT6LFgPJ6WhH3YO1w.jpg"
+    ],
+    "categories": [
+      "インド料理店"
+    ],
+    "data_source": "foursquare_checkin",
+    "fsq_id": "4d871ba97e8ef04d659d40be",
+    "checkin_count": 3,
+    "first_checkin_at": "2026-05-10T04:12:55+00:00",
+    "last_checkin_at": "2026-10-18T09:08:46+00:00",
+    "composition_hint": ""
+  },
+  {
+    "name": "東北・上越・北陸新幹線 上野駅",
+    "user_comment": "",
+    "date": "2026-10-18",
+    "lat": 35.71363,
+    "lng": 139.77748,
+    "address": "上野7-1-1 (JR上野駅), 台東区, 東京都, 110-0005",
+    "foursquare_url": "https://foursquare.com/v/53d8700b498ebf762f761962",
+    "photos": [
+      "https://fastly.4sqi.net/img/general/500x300/41463109_c1ckEG6yEsMOGQgvzAW1Wb7FiVQtxjJO0nXopdp5IrU.jpg",
+      "https://fastly.4sqi.net/img/general/500x300/41463109_EFM1u9Jqzoea0zL93uJo-Ggvude92MFpxBSn70NnuUc.jpg"
+    ],
+    "categories": [
+      "鉄道駅"
+    ],
+    "data_source": "foursquare_checkin",
+    "fsq_id": "53d8700b498ebf762f761962",
+    "checkin_count": 4,
+    "first_checkin_at": "2023-03-17T21:56:49+00:00",
+    "last_checkin_at": "2026-10-18T07:26:43+00:00",
+    "composition_hint": ""
+  },
+  {
+    "name": "エニタイムフィットネス 栗原店",
+    "user_comment": "マシンちょっと増えた",
+    "date": "2026-10-18",
+    "lat": 35.784685,
+    "lng": 139.783946,
+    "address": "栗原4-7-11, 足立区, 東京都, 123-0842",
+    "foursquare_url": "https://foursquare.com/v/64c635d4ec67e91c4e8fa317",
+    "photos": [],
+    "categories": [
+      "ジム"
+    ],
+    "data_source": "foursquare_checkin",
+    "fsq_id": "64c635d4ec67e91c4e8fa317",
+    "checkin_count": 72,
+    "first_checkin_at": "2023-11-23T07:25:45+00:00",
+    "last_checkin_at": "2026-10-18T02:04:32+00:00",
+    "composition_hint": ""
+  },
+  {
+    "name": "サンドラッグ",
+    "user_comment": "",
+    "date": "2026-10-17",
+    "lat": 35.782407,
+    "lng": 139.777991,
+    "address": "西新井6-42-10, 足立区, 東京都, 123-0841",
+    "foursquare_url": "https://foursquare.com/v/5db1724728f17a0008668c4f",
+    "photos": [],
+    "categories": [
+      "ドラッグストア"
+    ],
+    "data_source": "foursquare_checkin",
+    "fsq_id": "5db1724728f17a0008668c4f",
+    "checkin_count": 1,
+    "first_checkin_at": "2026-10-17T04:16:00+00:00",
+    "last_checkin_at": "2026-10-17T04:16:00+00:00"
+  },
+  {
     "name": "資さんうどん",
     "user_comment": "",
     "date": "2026-10-16",
@@ -1130,28 +1211,6 @@
     "checkin_count": 3,
     "first_checkin_at": "2025-08-16T01:07:48+00:00",
     "last_checkin_at": "2026-08-22T00:37:24+00:00",
-    "composition_hint": ""
-  },
-  {
-    "name": "マサラキッチン",
-    "user_comment": "",
-    "date": "2026-08-21",
-    "lat": 36.391735952428085,
-    "lng": 138.25914138914496,
-    "address": "踏入2-1-15 (池野ビル1F), 上田市, 長野県, 386-0017",
-    "foursquare_url": "https://foursquare.com/v/4d871ba97e8ef04d659d40be",
-    "photos": [
-      "https://fastly.4sqi.net/img/general/500x300/41463109_JgMfKeYWe4SGxjFJZxAmGZ2Bc1E5gULtXPsdUeuhEkE.jpg",
-      "https://fastly.4sqi.net/img/general/500x300/41463109_cJh4Ob8lGG7XIJHeeRToQTX24-BT6LFgPJ6WhH3YO1w.jpg"
-    ],
-    "categories": [
-      "インド料理店"
-    ],
-    "data_source": "foursquare_checkin",
-    "fsq_id": "4d871ba97e8ef04d659d40be",
-    "checkin_count": 2,
-    "first_checkin_at": "2026-05-10T04:12:55+00:00",
-    "last_checkin_at": "2026-08-21T09:42:54+00:00",
     "composition_hint": ""
   },
   {
@@ -2698,25 +2757,6 @@
     "checkin_count": 1,
     "first_checkin_at": "2026-05-24T07:27:38+00:00",
     "last_checkin_at": "2026-05-24T07:27:38+00:00",
-    "composition_hint": ""
-  },
-  {
-    "name": "エニタイムフィットネス 栗原店",
-    "user_comment": "マシンちょっと増えた",
-    "date": "2026-05-24",
-    "lat": 35.784685,
-    "lng": 139.783946,
-    "address": "栗原4-7-11, 足立区, 東京都, 123-0842",
-    "foursquare_url": "https://foursquare.com/v/64c635d4ec67e91c4e8fa317",
-    "photos": [],
-    "categories": [
-      "ジム"
-    ],
-    "data_source": "foursquare_checkin",
-    "fsq_id": "64c635d4ec67e91c4e8fa317",
-    "checkin_count": 71,
-    "first_checkin_at": "2023-11-23T07:25:45+00:00",
-    "last_checkin_at": "2026-05-24T00:38:15+00:00",
     "composition_hint": ""
   },
   {
@@ -9493,28 +9533,6 @@
     "checkin_count": 1,
     "first_checkin_at": "2024-10-20T04:06:09+00:00",
     "last_checkin_at": "2024-10-20T04:06:09+00:00",
-    "composition_hint": ""
-  },
-  {
-    "name": "東北・上越・北陸新幹線 上野駅",
-    "user_comment": "",
-    "date": "2024-10-19",
-    "lat": 35.71363,
-    "lng": 139.77748,
-    "address": "上野7-1-1 (JR上野駅), 台東区, 東京都, 110-0005",
-    "foursquare_url": "https://foursquare.com/v/53d8700b498ebf762f761962",
-    "photos": [
-      "https://fastly.4sqi.net/img/general/500x300/41463109_c1ckEG6yEsMOGQgvzAW1Wb7FiVQtxjJO0nXopdp5IrU.jpg",
-      "https://fastly.4sqi.net/img/general/500x300/41463109_EFM1u9Jqzoea0zL93uJo-Ggvude92MFpxBSn70NnuUc.jpg"
-    ],
-    "categories": [
-      "鉄道駅"
-    ],
-    "data_source": "foursquare_checkin",
-    "fsq_id": "53d8700b498ebf762f761962",
-    "checkin_count": 3,
-    "first_checkin_at": "2023-03-17T21:56:49+00:00",
-    "last_checkin_at": "2024-10-19T09:37:41+00:00",
     "composition_hint": ""
   },
   {
@@ -18512,8 +18530,8 @@
     "name": "大宮駅",
     "user_comment": "初上陸（マジ）",
     "date": "2022-09-21",
-    "lat": 35.906981344864796,
-    "lng": 139.62386943527693,
+    "lat": 35.906352810103606,
+    "lng": 139.624013849339,
     "address": "大宮区錦町, さいたま市, 埼玉県, 330-0853",
     "foursquare_url": "https://foursquare.com/v/4b3dd6ddf964a520089725e3",
     "photos": [],
@@ -23122,8 +23140,8 @@
     "name": "横浜駅",
     "user_comment": "横浜",
     "date": "2021-07-15",
-    "lat": 35.46587188039597,
-    "lng": 139.62251992788202,
+    "lat": 35.46560023817434,
+    "lng": 139.6222111888395,
     "address": "西区高島2/南幸1 (根岸線/京浜東北線/横浜線/東海道線/横須賀線), 横浜市, 神奈川県, 220-0011",
     "foursquare_url": "https://foursquare.com/v/4b07c29cf964a520d8ff22e3",
     "photos": [],
