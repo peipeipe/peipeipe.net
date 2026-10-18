@@ -23,9 +23,9 @@ retains the rejected submission and offers restoration to the editor. For edit
 conflicts, re-fetch the entry and apply the preserved text to the latest version.
 
 The browser checks receipts on return, on connection recovery, and every 20
-seconds while visible. **保存完了** means the content commit exists, not that
-Pages deployment has finished. The UI links to the workflow for deployment
-status. An interrupted/failed workflow leaves accepted jobs in GitHub; rerun
+seconds while visible. It shows a notice only when a submission needs a retry
+or restoration to the editor. An interrupted/failed workflow leaves accepted
+jobs in GitHub; rerun
 `Deploy Astro to Cloudflare Pages` with workflow_dispatch, or use the next site
 push, to process them. Never manually delete a receipt when retrying a job.
 

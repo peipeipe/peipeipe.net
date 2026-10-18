@@ -137,7 +137,8 @@ with sync_playwright() as p:
     expect(pc.locator('.toast-msg').last).to_contain_text('競合')
     assert base64.b64decode(files[draft_path]['content']).decode().find('スマホで加筆') >= 0
     pc.locator('#btn-submit').click()
-    expect(pc.locator('#outbox-status')).to_contain_text('受付済み')
+    expect(pc.locator('.toast-title').last).to_have_text('受付済み')
+    expect(pc.locator('#outbox-alert')).to_be_hidden()
     process_queue(pc)
     expect(pc.locator('#outbox-status')).to_contain_text('別の端末で更新')
     pc.get_by_role('button', name='本文・写真を編集欄に戻す').click()
@@ -178,7 +179,7 @@ with sync_playwright() as p:
     queued_id = next(k for k in files if k.startswith('diary-inbox/'))
     lose_response = False
     mobile.get_by_role('button', name='再送する', exact=True).click()
-    expect(mobile.locator('#outbox-status')).to_contain_text('受付済み')
+    expect(mobile.locator('#outbox-alert')).to_be_hidden()
     assert [k for k in files if k.startswith('diary-inbox/')] == [queued_id]
     # Close the actual tab: the server can finish without any browser execution.
     mobile_context = mobile.context
@@ -188,7 +189,7 @@ with sync_playwright() as p:
     mobile.on('dialog', lambda d: d.accept())
     mobile.goto(os.environ.get('DIARY_TEST_URL', 'http://127.0.0.1:4321/diary-post/'))
     mobile.add_style_tag(content='astro-dev-toolbar { display: none !important; }')
-    expect(mobile.locator('#outbox-status')).to_contain_text('保存完了')
+    expect(mobile.locator('#outbox-alert')).to_be_hidden()
     mobile.screenshot(path='/tmp/diary-accepted-mobile.png', full_page=True)
     expect(mobile.locator('#content')).to_have_value('')
     assert draft_path not in files
@@ -196,7 +197,7 @@ with sync_playwright() as p:
     assert '## 09:30' in diary and 'スマホで加筆📷' in diary and '/images/diary/2026-09-17-0930-' in diary
     assert len([k for k in files if k.startswith('astro/public/images/diary/')]) == 1
     pc.locator('#btn-submit').click()
-    expect(pc.locator('#outbox-status')).to_contain_text('受付済み')
+    expect(pc.locator('.toast-title').last).to_have_text('受付済み')
     process_queue(pc)
     expect(pc.locator('#outbox-status')).to_contain_text('投稿・削除')
     assert base64.b64decode(files['astro/content/diary/2026-09-17.md']['content']).decode() == diary
@@ -236,9 +237,10 @@ with sync_playwright() as p:
     expect(mobile.locator('#submit-label')).to_have_text('変更を保存する')
     mobile.locator('#btn-submit').click()
     expect(mobile.locator('#content')).to_have_value('')
-    expect(mobile.locator('#outbox-status')).to_contain_text('受付済み')
+    expect(mobile.locator('.toast-title').last).to_have_text('受付済み')
+    expect(mobile.locator('#outbox-alert')).to_be_hidden()
     process_queue(mobile)
-    expect(mobile.locator('#outbox-status')).not_to_contain_text('受付済み')
+    expect(mobile.locator('#outbox-alert')).to_be_hidden()
     updated = base64.b64decode(files[diary_path]['content']).decode()
     assert updated.count('## 09:30') == 1 and '投稿を修正📷' in updated
     assert '## 23:55\n隣の項目はそのまま' in updated and '/images/diary/' in updated
@@ -252,7 +254,7 @@ with sync_playwright() as p:
     mobile.locator('#content').fill('競合時も残す本文')
     files[diary_path]['content'] = base64.b64encode((updated + '\n変更').encode()).decode()
     mobile.locator('#btn-submit').click()
-    expect(mobile.locator('#outbox-status')).to_contain_text('受付済み')
+    expect(mobile.locator('.toast-title').last).to_have_text('受付済み')
     process_queue(mobile)
     expect(mobile.locator('#outbox-status')).to_contain_text('別の端末')
     mobile.get_by_role('button', name='本文・写真を編集欄に戻す').click()

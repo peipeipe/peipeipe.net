@@ -710,10 +710,8 @@ import SiteIcons from "@/components/SiteIcons.astro";
     }
 
     .outbox-card { padding: 16px; overflow-wrap: anywhere; }
-    .outbox-card p { margin-top: 8px; font-size: 14px; color: var(--text-sub); }
-    .outbox-card a { color: var(--accent-2); }
-    #outbox-status { margin-top: 12px; }
-    #outbox-status .btn { margin-top: 8px; white-space: normal; }
+    .outbox-card p { margin: 8px 0 0; font-size: 14px; color: var(--text-sub); }
+    .outbox-card .btn { margin-top: 8px; white-space: normal; }
 
     /* Spinner */
     @keyframes spin {
@@ -1002,10 +1000,8 @@ import SiteIcons from "@/components/SiteIcons.astro";
     <input type="file" id="file-image" accept="image/*" multiple hidden aria-hidden="true">
   </div>
 
-  <div class="glass section-gap outbox-card" aria-live="polite">
-    <strong>投稿の送信状況</strong>
-    <p><a href="https://github.com/peipeipe/peipeipe.net/actions/workflows/cloudflare-pages.yml" target="_blank" rel="noopener noreferrer">公開状況</a></p>
-    <div id="outbox-status">送信状況を確認中…</div>
+  <div class="glass section-gap outbox-card hidden" id="outbox-alert" role="alert">
+    <div id="outbox-status"></div>
   </div>
 
   <!-- ── Submit ── -->
@@ -1033,6 +1029,7 @@ import SiteIcons from "@/components/SiteIcons.astro";
   import { localRecord, listJobs, enqueueJob } from "../../lib/diary-outbox.mjs";
   import { hasEditorWork, selectEditorRecord, editorTextBackup } from "../../lib/diary-editor.mjs";
   let outboxBusy = false;
+  let outboxErrorShown = false;
   let restoring = true;
   let transferringToOutbox = false;
 
@@ -1908,19 +1905,22 @@ import SiteIcons from "@/components/SiteIcons.astro";
         }
       }
       renderOutbox(jobs);
-    } catch (error) { $('outbox-status').textContent = `送信状況を確認できません：${error.message}`; }
+      outboxErrorShown = false;
+    } catch (error) {
+      if (!outboxErrorShown) showToast('error', '保存済みの投稿を確認できません', error.message);
+      outboxErrorShown = true;
+    }
     finally { outboxBusy = false; }
   }
 
   function renderOutbox(jobs) {
     const container = $('outbox-status');
     container.replaceChildren();
-    if (!jobs.length) container.textContent = '未送信の投稿はありません';
-    const labels = { pending: '未送信', accepted: '反映待ち', saved: '保存完了', failed: '保存失敗' };
-    const visible = jobs.filter(job => job.status !== 'saved').concat(jobs.filter(job => job.status === 'saved').slice(-5));
+    const visible = jobs.filter(job => job.status === 'pending' || job.status === 'failed');
+    $('outbox-alert').classList.toggle('hidden', visible.length === 0);
     for (const job of visible) {
       const row = document.createElement('p');
-      row.textContent = `${job.payload.date} ${job.payload.time}：${labels[job.status]}${job.error ? ` — ${job.error}` : ''} `;
+      row.textContent = `${job.payload.date} ${job.payload.time}：${job.status === 'pending' ? '未送信' : '保存失敗'}${job.error ? ` — ${job.error}` : ''} `;
       if (job.status === 'pending') {
         const button = document.createElement('button');
         button.type = 'button'; button.className = 'btn btn-secondary'; button.textContent = '再送する';
