@@ -1,0 +1,31 @@
+---
+import { formatScreenMinutes } from "@/lib/screentime.mjs";
+const { record } = Astro.props;
+const maximum = Math.max(1, ...record.apps.map((app) => app.minutes));
+---
+<section class="screen-day" aria-label="スマホの使用時間">
+  <p><a href={`/screentime/#day-${record.date}`}>スクリーンタイム</a> · <strong>{formatScreenMinutes(record.totalMinutes)}</strong> <small>アプリ合計 · {record.device}</small></p>
+  <details>
+    <summary>アプリ別の使用時間</summary>
+    <ul>
+      {record.apps.map((app) => (
+        <li>
+          <span>{app.app}</span><span>{formatScreenMinutes(app.minutes)}</span>
+          <span class="track" aria-hidden="true"><span style={`width:${app.minutes / maximum * 100}%`}></span></span>
+        </li>
+      ))}
+    </ul>
+    {record.apps.length === 0 && <p>この日のアプリ使用時間は0分です。</p>}
+  </details>
+</section>
+<style>
+  .screen-day { margin: 1rem 0; padding: 1rem; border: 1px solid var(--color-border); border-radius: 8px; background: var(--color-surface-soft); }
+  p { margin: 0 0 .5rem; }
+  small { color: var(--color-muted); }
+  summary { cursor: pointer; }
+  ul { list-style: none; padding: 0; margin: .8rem 0 0; }
+  li { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: .25rem 1rem; margin-bottom: .65rem; font-size: .9rem; }
+  li > span:first-child { overflow-wrap: anywhere; }
+  .track { grid-column: 1 / -1; height: 5px; background: var(--color-border-soft); border-radius: 3px; }
+  .track > span { display: block; height: 100%; background: var(--color-link); border-radius: 3px; }
+</style>

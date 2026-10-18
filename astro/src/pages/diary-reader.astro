@@ -1,10 +1,14 @@
 ---
 import { buildDayTimeline } from "@/lib/reader-timeline.mjs";
+import ScreenTimeDay from "@/components/ScreenTimeDay.astro";
+import { getScreenTime } from "@/lib/screentime.mjs";
 import BaseLayout from "@/layouts/BaseLayout.astro";
 import { formatDistance, formatDuration, getActivities } from "@/lib/activity";
 import { getPlaces } from "@/lib/checkins";
 import { datePartsInTokyo, formatEntryDate, getDiaryEntries } from "@/lib/content";
 
+const screenTime = getScreenTime();
+const screenTimeByDate = new Map(screenTime.map((record) => [record.date, record]));
 const activities = getActivities();
 const checkins = getPlaces();
 const activitiesByDate = groupByDate(activities, (activity) => dateIdInTokyo(activity.start_date));
@@ -12,7 +16,7 @@ const checkinsByDate = groupByDate(checkins, (place) => dateIdInTokyo(place.last
 
 const diaryEntries = await getDiaryEntries();
 const diaryByDate = new Map(diaryEntries.map((entry) => [formatEntryDate(entry.date), entry]));
-const dateIds = [...new Set([...diaryByDate.keys(), ...activitiesByDate.keys(), ...checkinsByDate.keys()])]
+const dateIds = [...new Set([...diaryByDate.keys(), ...activitiesByDate.keys(), ...checkinsByDate.keys(), ...screenTimeByDate.keys()])]
   .sort((a, b) => b.localeCompare(a));
 
 const entries = dateIds.map((dateId) => {
@@ -31,6 +35,7 @@ const entries = dateIds.map((dateId) => {
     ),
     hasDiary: Boolean(diary),
     photo: diaryPhoto(diary?.html || "") || (checkinsByDate.get(dateId) || []).flatMap(place => place.photos)[0],
+    screenTime: screenTimeByDate.get(dateId),
   };
 });
 
@@ -152,6 +157,7 @@ const activityLabel = (type) => ({
         <a href="/diary/"><strong>{diaryEntries.length}</strong><span>日記</span></a>
         <a href="/activity/"><strong>{activities.length}</strong><span>アクティビティ</span></a>
         <a href="/places/"><strong>{checkins.length}</strong><span>チェックイン</span></a>
+        <a href="/screentime/"><strong>{screenTime.length}</strong><span>スクリーンタイム</span></a>
       </div>
       <div class="reader-view-switch" role="group" aria-label="表示方法" hidden>
         <button type="button" data-reader-view="timeline" aria-pressed="true">タイムライン</button>
@@ -208,6 +214,7 @@ const activityLabel = (type) => ({
                     </h4>
                     {!entry.hasDiary && <span class="reader-entry-label">行動記録</span>}
                   </header>
+                  {entry.screenTime && <ScreenTimeDay record={entry.screenTime} />}
                   <div class="reader-day-layout">
                     {entry.records.map((record) => {
                       if (record.kind === "diary") {

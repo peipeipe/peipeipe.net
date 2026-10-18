@@ -1,0 +1,28 @@
+name: Validate screen time receiver
+
+on:
+  push:
+    paths: ["workers/screentime-ingest/**", "astro/src/lib/screentime-schema.mjs", ".github/workflows/screentime-ingest.yml"]
+  pull_request:
+    paths: ["workers/screentime-ingest/**", "astro/src/lib/screentime-schema.mjs", ".github/workflows/screentime-ingest.yml"]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: workers/screentime-ingest
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-node@v7
+        with:
+          node-version-file: astro/.node-version
+          cache: npm
+          cache-dependency-path: workers/screentime-ingest/package-lock.json
+      - run: npm ci
+      - run: npm test
+      - run: npm run check

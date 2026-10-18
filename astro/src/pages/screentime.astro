@@ -1,0 +1,71 @@
+---
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import ScreenTimeDay from "@/components/ScreenTimeDay.astro";
+import { getScreenTime, screenTimeWindow, formatScreenMinutes } from "@/lib/screentime.mjs";
+const records = getScreenTime();
+const days = screenTimeWindow(records);
+const maximum = Math.max(60, ...days.flatMap((day) => [day.record?.totalMinutes || 0, day.average || 0]));
+const latest = records.at(-1);
+const chartHeight = 180;
+const points = days.map((day, index) => day.average === null ? null : `${index * 24 + 12},${chartHeight - day.average / maximum * chartHeight}`);
+const segments = [];
+let segment = [];
+for (const point of points) {
+  if (point !== null) segment.push(point);
+  else if (segment.length) { segments.push(segment); segment = []; }
+}
+if (segment.length) segments.push(segment);
+---
+<BaseLayout title="スクリーンタイム" description="スマホの使用時間を日別・アプリ別に振り返る記録">
+  <h1>スクリーンタイム</h1>
+  <p>スマホを見る時間を減らすための記録。<a href="/diary-reader/">日記と一緒に振り返る →</a></p>
+  {!latest ? <p class="empty">まだ記録がありません。最初のデータを送信するとグラフが表示されます。</p> : (
+    <>
+      <p>最新の記録：<time datetime={latest.date}>{latest.date}</time> · <strong>{formatScreenMinutes(latest.totalMinutes)}</strong>（アプリ合計）</p>
+      <section aria-labelledby="chart-title">
+        <h2 id="chart-title">直近30日</h2>
+        <p class="note">最新の記録日までの30日間。棒はアプリ合計、線は7日平均です。未取得日は空欄にし、平均は7日分そろった日だけ表示します。</p>
+        <p class="note">縦軸：0〜{Math.ceil(maximum)}分</p>
+        <div class="chart-scroll">
+          <svg viewBox="0 0 720 215" preserveAspectRatio="none" role="img" aria-labelledby="graph-title graph-description">
+            <title id="graph-title">日別のスマホ使用時間と7日平均</title>
+            <desc id="graph-description">日付ごとの正確な値は下の表で確認できます。</desc>
+            <line x1="0" y1={chartHeight} x2="720" y2={chartHeight} class="baseline" />
+            {days.map((day, index) => (
+              <g>
+                {day.record && <rect x={index * 24 + 4} y={chartHeight - day.record.totalMinutes / maximum * chartHeight} width="16" height={day.record.totalMinutes / maximum * chartHeight} class="bar"><title>{day.date}: {formatScreenMinutes(day.record.totalMinutes)}</title></rect>}
+                {(index % 7 === 0 || index === 29) && <text x={index * 24 + 12} y="204" text-anchor={index === 0 ? "start" : index === 29 ? "end" : "middle"}>{day.date.slice(5)}</text>}
+              </g>
+            ))}
+            {segments.map((values) => <polyline points={values.join(" ")} class="average" />)}
+            {points.map((point) => point && <circle cx={point.split(",")[0]} cy={point.split(",")[1]} r="3" class="average-dot" />)}
+          </svg>
+        </div>
+        <details>
+          <summary>日別の数値を見る</summary>
+          <table>
+            <thead><tr><th scope="col">日付</th><th scope="col">アプリ合計</th><th scope="col">7日平均</th></tr></thead>
+            <tbody>{[...days].reverse().map((day) => <tr><th scope="row">{day.date}</th><td>{day.record ? formatScreenMinutes(day.record.totalMinutes) : "未取得"}</td><td>{day.average === null ? "—" : formatScreenMinutes(day.average)}</td></tr>)}</tbody>
+          </table>
+        </details>
+      </section>
+      <h2>日ごとの記録</h2>
+      <p class="note">対象はiPhoneのアプリです。Webサイトの時間は重ねて加算しません。設定画面の総スクリーンタイムとは集計範囲が異なる場合があります。</p>
+      {[...records].reverse().map((record) => <section id={`day-${record.date}`}><h3><a href={`/diary-reader/#entry-${record.date}`}>{record.date}</a></h3><ScreenTimeDay record={record} /></section>)}
+    </>
+  )}
+</BaseLayout>
+<style>
+  .empty { padding: 2rem 1rem; background: var(--color-surface-soft); border: 1px solid var(--color-border); }
+  .note { color: var(--color-muted); font-size: .9rem; }
+  .chart-scroll { overflow-x: auto; margin: 1rem 0; }
+  svg { display: block; width: 100%; height: 220px; overflow: visible; }
+  .bar { fill: var(--color-link); opacity: .7; }
+  .baseline { stroke: var(--color-border); }
+  .average { fill: none; stroke: var(--color-heading); stroke-width: 2; }
+  .average-dot { fill: var(--color-heading); }
+  text { fill: var(--color-muted); font-size: 16px; }
+  summary { cursor: pointer; }
+  table { width: 100%; margin-top: 1rem; border-collapse: collapse; }
+  th, td { padding: .5rem; text-align: left; border-bottom: 1px solid var(--color-border); }
+</style>

@@ -75,6 +75,9 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
+      - name: Validate screen time ingestion and calendar aggregation
+        run: node --test src/lib/screentime.test.mjs ../workers/screentime-ingest/test.mjs
+
       - name: Build Astro
         env:
           PUBLIC_READER_ANALYTICS_ENABLED: ${{ vars.PUBLIC_READER_ANALYTICS_ENABLED }}
