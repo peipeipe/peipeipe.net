@@ -30,6 +30,7 @@ const entries = dateIds.map((dateId) => {
       checkinsByDate.get(dateId) || [],
     ),
     hasDiary: Boolean(diary),
+    photo: diaryPhoto(diary?.html || "") || (checkinsByDate.get(dateId) || []).flatMap(place => place.photos)[0],
   };
 });
 
@@ -62,6 +63,24 @@ for (const month of months) {
   } else {
     years.push({ year: month.year, months: [month] });
   }
+}
+
+function diaryPhoto(html) {
+  const content = html.replace(/<a\b(?=[^>]*\bclass="[^"]*\blink-card\b[^"]*")[\s\S]*?<\/a>/g, "");
+  return [...content.matchAll(/<img\s[^>]*src="([^"]+)"/g)].at(-1)?.[1];
+}
+
+function calendarWeeks(month) {
+  const [year, monthNumber] = month.key.split("-").map(Number);
+  const offset = new Date(Date.UTC(year, monthNumber - 1, 1)).getUTCDay();
+  const days = new Date(Date.UTC(year, monthNumber, 0)).getUTCDate();
+  const byDate = new Map(month.entries.map(entry => [entry.dateId, entry]));
+  return Array.from({ length: Math.ceil((offset + days) / 7) }, (_, week) =>
+    Array.from({ length: 7 }, (_, weekday) => {
+      const day = week * 7 + weekday - offset + 1;
+      const dateId = `${month.key}-${String(day).padStart(2, "0")}`;
+      return day < 1 || day > days ? null : { day, dateId, entry: byDate.get(dateId) };
+    }));
 }
 
 function addLazyLoading(html) {
@@ -134,6 +153,10 @@ const activityLabel = (type) => ({
         <a href="/activity/"><strong>{activities.length}</strong><span>アクティビティ</span></a>
         <a href="/places/"><strong>{checkins.length}</strong><span>チェックイン</span></a>
       </div>
+      <div class="reader-view-switch" role="group" aria-label="表示方法" hidden>
+        <button type="button" data-reader-view="timeline" aria-pressed="true">タイムライン</button>
+        <button type="button" data-reader-view="calendar" aria-pressed="false">カレンダー</button>
+      </div>
       <button class="reader-log-toggle" type="button" data-log-toggle aria-pressed="true">
         <span class="reader-log-toggle-mark" aria-hidden="true"></span>
         <span data-log-toggle-label>日記のない日も表示</span>
@@ -163,6 +186,20 @@ const activityLabel = (type) => ({
           {year.months.map((month) => (
             <section class="reader-month" aria-labelledby={`month-${month.key}`} data-reader-month={month.key}>
               <h3 id={`month-${month.key}`}>{month.label}</h3>
+              <table class="reader-calendar" data-calendar hidden aria-label={`${month.label}の記録カレンダー`}>
+                <thead><tr>{["日", "月", "火", "水", "木", "金", "土"].map(day => <th scope="col">{day}</th>)}</tr></thead>
+                <tbody>{calendarWeeks(month).map(week => <tr>{week.map(cell => (
+                  <td>{cell && <>
+                    {cell.entry && <a href={`#entry-${cell.dateId}`} data-calendar-entry data-activity-only={!cell.entry.hasDiary ? "true" : undefined} class:list={["reader-calendar-day", { "with-photo": cell.entry.photo }]} aria-label={`${cell.dateId}の記録を読む`}>
+                      {cell.entry.photo && <img src={cell.entry.photo} alt="" loading="lazy" />}
+                      <time datetime={cell.dateId}>{cell.day}</time>
+                      <span class="calendar-mark" aria-hidden="true">{cell.entry.hasDiary ? "●" : "○"}</span>
+                    </a>}
+                    <div class="reader-calendar-day calendar-empty" data-calendar-empty={cell.entry && !cell.entry.hasDiary ? "true" : undefined} hidden={Boolean(cell.entry)}><time datetime={cell.dateId}>{cell.day}</time></div>
+                  </>}</td>
+                ))}</tr>)}</tbody>
+              </table>
+              <div data-timeline>
               {month.entries.map((entry) => (
                 <article class:list={["diary-entry", "diary-reader-entry", { "reader-entry-without-diary": !entry.hasDiary }]} id={`entry-${entry.dateId}`}>
                   <header class="diary-header reader-entry-header">
@@ -218,6 +255,7 @@ const activityLabel = (type) => ({
                   </div>
                 </article>
               ))}
+              </div>
             </section>
           ))}
         </section>
@@ -237,7 +275,44 @@ const activityLabel = (type) => ({
         showActivityLog = localStorage.getItem(storageKey) !== "false";
       } catch {}
 
+      let view = "timeline";
+      try { if (localStorage.getItem("diary-reader-view") === "calendar") view = "calendar"; } catch {}
+      const viewSwitch = document.querySelector(".reader-view-switch");
+      viewSwitch.hidden = false;
+      const updateView = () => {
+        document.querySelectorAll("[data-reader-view]").forEach(button => button.setAttribute("aria-pressed", String(button.dataset.readerView === view)));
+        document.querySelectorAll("[data-calendar]").forEach(panel => { panel.hidden = view !== "calendar"; });
+        document.querySelectorAll("[data-timeline]").forEach(panel => { panel.hidden = view === "calendar"; });
+      };
+      viewSwitch.addEventListener("click", event => {
+        const button = event.target.closest("[data-reader-view]");
+        if (!button) return;
+        view = button.dataset.readerView;
+        if (view === "calendar" && location.hash.startsWith("#entry-")) history.replaceState(null, "", location.pathname + location.search);
+        try { localStorage.setItem("diary-reader-view", view); } catch {}
+        updateView();
+      });
+      const openEntry = () => {
+        if (!location.hash.startsWith("#entry-")) return;
+        const entry = document.getElementById(location.hash.slice(1));
+        if (!entry) return;
+        view = "timeline";
+        if (entry.classList.contains("reader-entry-without-diary")) showActivityLog = true;
+        update();
+        updateView();
+        entry.setAttribute("tabindex", "-1");
+        entry.focus({ preventScroll: true });
+        entry.scrollIntoView({ block: "start" });
+      };
+      document.querySelectorAll("[data-calendar-entry]").forEach(link => link.addEventListener("click", () => {
+        view = "timeline";
+        updateView();
+      }));
+      window.addEventListener("hashchange", openEntry);
+
       const update = () => {
+        document.querySelectorAll("[data-activity-only]").forEach(link => { link.hidden = !showActivityLog; });
+        document.querySelectorAll("[data-calendar-empty]").forEach(cell => { cell.hidden = showActivityLog; });
         document.querySelectorAll(".reader-entry-without-diary").forEach((entry) => {
           entry.hidden = !showActivityLog;
         });
@@ -273,6 +348,8 @@ const activityLabel = (type) => ({
       });
 
       update();
+      updateView();
+      openEntry();
     })();
   </script>
 
@@ -334,6 +411,27 @@ const activityLabel = (type) => ({
   </script>
 
   <style>
+    [hidden] { display: none !important; }
+    .reader-view-switch { display: flex; gap: 6px; }
+    .reader-view-switch button { padding: 7px 12px; font: inherit; font-size: 13px; color: var(--color-muted); background: var(--color-surface); border: 1px solid var(--color-border); border-radius: 6px; cursor: pointer; }
+    .reader-view-switch button[aria-pressed="true"] { color: var(--color-link); border-color: var(--color-link); background: var(--color-surface-muted); }
+    .reader-calendar { width: 100%; table-layout: fixed; border-collapse: separate; border-spacing: 4px; }
+    .reader-calendar th { padding: 4px 0; border: 0; background: transparent; text-align: center; font-size: 12px; color: var(--color-muted); }
+    .reader-calendar td { padding: 0; border: 0; }
+    .reader-calendar-day { position: relative; display: block; aspect-ratio: 1; min-height: 44px; overflow: hidden; border-radius: 6px; background: var(--color-surface-muted); }
+    a.reader-calendar-day { box-shadow: inset 0 0 0 1px var(--color-border); }
+    .reader-calendar-day img { width: 100%; height: 100%; object-fit: cover; display: block; }
+    .reader-calendar-day time { position: absolute; top: 4px; left: 4px; font-size: 13px; padding: 0 4px; }
+    .with-photo time { background: rgba(0, 0, 0, .65); color: #fff; border-radius: 3px; }
+    .calendar-empty { background: var(--color-surface-soft); color: var(--color-subtle); }
+    .calendar-mark { position: absolute; right: 5px; bottom: 3px; font-size: 10px; }
+    .with-photo .calendar-mark { color: #fff; text-shadow: 0 1px 3px #000; }
+    .reader-view-switch button:focus-visible, a.reader-calendar-day:focus-visible { outline: 3px solid var(--color-link); outline-offset: 2px; }
+    @media (max-width: 480px) {
+      .reader-calendar { border-spacing: 2px; }
+      .reader-calendar-day time { top: 2px; left: 2px; font-size: 12px; padding: 0 3px; }
+    }
+
     .reader-header {
       width: 100%;
       max-width: 1158px;
