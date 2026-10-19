@@ -1,0 +1,134 @@
+{
+  "date": "2026-10-18",
+  "device": "iPhone",
+  "apps": [
+    {
+      "app": "ショートカット",
+      "minutes": 93.9139326334
+    },
+    {
+      "app": "Chrome",
+      "minutes": 76.5740886986256
+    },
+    {
+      "app": "Reddit",
+      "minutes": 11.1615512371063
+    },
+    {
+      "app": "Instagram",
+      "minutes": 9.88850135207176
+    },
+    {
+      "app": "LINE",
+      "minutes": 9.67448273499807
+    },
+    {
+      "app": "LocalSend",
+      "minutes": 9.38130428393682
+    },
+    {
+      "app": "ChatGPT",
+      "minutes": 7.79016566673915
+    },
+    {
+      "app": "TeamHub",
+      "minutes": 6.68092588583628
+    },
+    {
+      "app": "写真",
+      "minutes": 4.44913215041161
+    },
+    {
+      "app": "Strava",
+      "minutes": 4.39416859944662
+    },
+    {
+      "app": "Gmail",
+      "minutes": 3.73083999752998
+    },
+    {
+      "app": "Shortcuts",
+      "minutes": 2.87160792748133
+    },
+    {
+      "app": "Spotify",
+      "minutes": 2.21157281796138
+    },
+    {
+      "app": "乗換案内",
+      "minutes": 1.80837775270144
+    },
+    {
+      "app": "Google Maps",
+      "minutes": 1.42926908334096
+    },
+    {
+      "app": "YouTube",
+      "minutes": 1.33807309865952
+    },
+    {
+      "app": "設定",
+      "minutes": 1.20043818553289
+    },
+    {
+      "app": "楽天銀行",
+      "minutes": 1.01574646830559
+    },
+    {
+      "app": "Google Keep",
+      "minutes": 0.956859016418457
+    },
+    {
+      "app": "Slack",
+      "minutes": 0.956021416187286
+    },
+    {
+      "app": "カメラ",
+      "minutes": 0.750715951124827
+    },
+    {
+      "app": "スクリーンショット",
+      "minutes": 0.705232801040014
+    },
+    {
+      "app": "Connect",
+      "minutes": 0.649573548634847
+    },
+    {
+      "app": "PayPay",
+      "minutes": 0.522240533431371
+    },
+    {
+      "app": "ruum",
+      "minutes": 0.494581967592239
+    },
+    {
+      "app": "Pep Up",
+      "minutes": 0.493416998783747
+    },
+    {
+      "app": "Swarm",
+      "minutes": 0.308054916063944
+    },
+    {
+      "app": "天気",
+      "minutes": 0.26709755063057
+    },
+    {
+      "app": "Googleカレンダー",
+      "minutes": 0.232217135032018
+    },
+    {
+      "app": "ユーザ認証",
+      "minutes": 0.14700336654981
+    },
+    {
+      "app": "COROS",
+      "minutes": 0.146743750572205
+    },
+    {
+      "app": "Discord",
+      "minutes": 0.0790970663229624
+    }
+  ]
+}
