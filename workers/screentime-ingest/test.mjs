@@ -99,6 +99,8 @@ test("authenticated check endpoint reports field without writing", async () => {
   assert.deepEqual(await valid.json(), { ok: true, date: record.date, apps: 1, saved: false });
   const invalid = await handleRequest(request(JSON.stringify(JSON.stringify(record)), {}, checkUrl), env, never);
   assert.deepEqual(await invalid.json(), { ok: false, error: "invalid_record", field: "record" });
+  const query = await handleRequest(request(record, {}, `${checkUrl}?old=1`), env, never);
+  assert.deepEqual(await query.json(), { ok: false, error: "invalid_request", field: "url_query" });
   const unauthenticated = await handleRequest(request(record, { "X-Screen-Time-Key": "bad" }, checkUrl), env, never);
   assert.equal(unauthenticated.status, 401);
 });
