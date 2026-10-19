@@ -63,6 +63,10 @@ Actionsの「Deploy Astro to Cloudflare Pages」が成功してから、対象�
 
 HTTPエラーや通信断では「URLの内容を取得」で止まり、後続通知まで進まない場合がある。その場合は成功扱いにしない。
 
+## 400の内容を確認する
+
+ショートカットで400とだけ表示される場合、URLを一時的に `https://www.peipeipe.net/api/screentime/check` に変えて手動実行する。認証と本文の検証だけを行い、GitHubへは保存しない。`ok: false` の `field` が不正な項目を示す。`ok: true` と `saved: false` なら送信形式は正しい。確認後はURLを `/api/screentime` に戻す。
+
 ## エラー
 
 | HTTP | error | 対処 |

@@ -94,7 +94,8 @@ async function save(record, env, fetcher) {
 export async function handleRequest(request, env, fetcher = fetch) {
   try {
     const url = new URL(request.url);
-    if (url.pathname !== "/api/screentime") throw new HttpError(404, "not_found");
+    const checking = url.pathname === "/api/screentime/check";
+    if (!checking && url.pathname !== "/api/screentime") throw new HttpError(404, "not_found");
     if (url.search) throw new HttpError(400, "query_not_allowed");
     if (request.method !== "POST") return new Response(null, { status: 405, headers: { Allow: "POST", "Cache-Control": "no-store" } });
     if (!env.INGEST_KEY || env.INGEST_KEY.length < 32 || !env.GITHUB_TOKEN) throw new HttpError(503, "not_configured");
@@ -107,18 +108,19 @@ export async function handleRequest(request, env, fetcher = fetch) {
     try {
       input = JSON.parse(raw);
     } catch {
-      return reply(400, { ok: false, error: "invalid_record", field: "json" });
+      return reply(checking ? 200 : 400, { ok: false, error: "invalid_record", field: "json" });
     }
     let validated;
     try {
       validated = validateScreenTime(input);
     } catch (error) {
       if (error instanceof ScreenTimeValidationError) {
-        return reply(400, { ok: false, error: "invalid_record", field: error.field });
+        return reply(checking ? 200 : 400, { ok: false, error: "invalid_record", field: error.field });
       }
       throw error;
     }
-    if (validated.device !== "iPhone") return reply(400, { ok: false, error: "invalid_record", field: "device" });
+    if (validated.device !== "iPhone") return reply(checking ? 200 : 400, { ok: false, error: "invalid_record", field: "device" });
+    if (checking) return reply(200, { ok: true, date: validated.date, apps: validated.apps.length, saved: false });
     // Do not persist arbitrary client fields, destinations, or derived totals.
     const record = { date: validated.date, device: validated.device, apps: validated.apps };
     const saved = await save(record, env, fetcher);

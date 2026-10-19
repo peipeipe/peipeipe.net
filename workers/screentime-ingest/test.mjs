@@ -91,3 +91,14 @@ test("upstream failure responses never expose upstream secrets or claim success"
   assert.equal(response.status, 502);
   assert.equal((await response.text()).includes(env.GITHUB_TOKEN), false);
 });
+
+test("authenticated check endpoint reports field without writing", async () => {
+  const checkUrl = "https://example.com/api/screentime/check";
+  const never = () => { assert.fail("check must not write"); };
+  const valid = await handleRequest(request(record, {}, checkUrl), env, never);
+  assert.deepEqual(await valid.json(), { ok: true, date: record.date, apps: 1, saved: false });
+  const invalid = await handleRequest(request(JSON.stringify(JSON.stringify(record)), {}, checkUrl), env, never);
+  assert.deepEqual(await invalid.json(), { ok: false, error: "invalid_record", field: "record" });
+  const unauthenticated = await handleRequest(request(record, { "X-Screen-Time-Key": "bad" }, checkUrl), env, never);
+  assert.equal(unauthenticated.status, 401);
+});
