@@ -1,5 +1,26 @@
 [
   {
+    "moving_time": 4617,
+    "elapsed_time": 4902,
+    "total_elevation_gain": 79.84439,
+    "average_speed": 3.025,
+    "max_speed": 4.484,
+    "id": "i198924902",
+    "intervals_id": "i198924902",
+    "source": "intervals",
+    "url": "https://intervals.icu/activities/i198924902",
+    "name": "Afternoon ラン",
+    "sport_type": "Run",
+    "distance": 14011.55,
+    "start_date": "2026-10-19T07:28:02Z",
+    "start_date_local": "2026-10-19T16:28:02",
+    "start_latlng": [
+      36.39156,
+      138.24335
+    ],
+    "summary_polyline": "gvb}E}swjYmCjH_BqCaErGqA_GcCcBs@l@iDxFiLr[oHtO@jApA|AyCjAsDzCcIjKcDvHcAtIa@r[e@rH{@tCkDzDqA~CK`F\\d@x@QoD~H{@lEmD`JqCn]\\dArAv@nKaCjFX_AjCgR|Cq@|Al@QQp@f@bBk@iBNw@i@T~@{ArJu@nFaBx@wCwGSuIrBuB{@Ks@|BqZhEyO[Bs@bCY?wU{PZ_Eo@wKzCLvA_EjJge@jAsNjEiBxFaFfVi]nHwMhDsIZ{AwEsBwAwAdB}Dr@kE`Bg@bDkFvAgAlFjElQge@pRe\\lW`PDbA}JtFqGbIzBxDmOn`@"
+  },
+  {
     "moving_time": 1432,
     "elapsed_time": 1624,
     "total_elevation_gain": 21.151413,
