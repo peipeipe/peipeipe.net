@@ -364,6 +364,10 @@ import SiteIcons from "@/components/SiteIcons.astro";
       .preview :global(h2) { font-size: 22px; margin: 28px 0 12px; }
       .preview :global(p) { margin: 0 0 1em; }
       .preview :global(img) { max-width: 100%; height: auto; }
+      .preview.pixelated-images :global(p > img) {
+        width: 100%;
+        image-rendering: pixelated;
+      }
       .preview :global(blockquote) {
         margin: 1em 0;
         border-left: 4px solid #ddd;
@@ -471,6 +475,13 @@ import SiteIcons from "@/components/SiteIcons.astro";
               <input id="image" type="text" placeholder="https://..." />
             </div>
             <div class="field">
+              <label for="image-rendering">本文の画像表示</label>
+              <select id="image-rendering">
+                <option value="">通常</option>
+                <option value="pixelated">ドットを保って本文幅に拡大（ゲーム画面向け）</option>
+              </select>
+            </div>
+            <div class="field">
               <label for="permalink">Permalink</label>
               <input id="permalink" class="mono" type="text" value="/:year-:month-:day-:title/" />
             </div>
@@ -572,6 +583,7 @@ import SiteIcons from "@/components/SiteIcons.astro";
         slug: $('slug'),
         categories: $('categories'),
         image: $('image'),
+        imageRendering: $('image-rendering'),
         permalink: $('permalink'),
         target: $('target'),
         outputPath: $('output-path'),
@@ -708,11 +720,13 @@ import SiteIcons from "@/components/SiteIcons.astro";
         ];
         if (categories) lines.push(`categories: ${categories}`);
         if (image) lines.push(`image: ${image}`);
+        if (els.imageRendering.value === 'pixelated') lines.push('image_rendering: pixelated');
         lines.push('---');
         return `${lines.join('\n')}\n${els.body.value.trimStart()}`;
       }
 
       function renderPreview() {
+        els.preview.classList.toggle('pixelated-images', els.imageRendering.value === 'pixelated');
         const title = els.title.value.trim();
         const body = els.body.value.trim();
         const html = body ? marked.parse(body, { gfm: true, breaks: false }) : '<p style="color:#777;">本文を入力するとプレビューが表示されます。</p>';
@@ -976,6 +990,7 @@ import SiteIcons from "@/components/SiteIcons.astro";
           els.slug.value = filenameDate?.[2] || slugify(els.title.value);
           els.categories.value = parsed.data.categories || '';
           els.image.value = parsed.data.image || '';
+          els.imageRendering.value = parsed.data.image_rendering === 'pixelated' ? 'pixelated' : '';
           els.permalink.value = parsed.data.permalink || '/:year-:month-:day-:title/';
           els.body.value = parsed.body;
           updateEditorStats();
@@ -1213,6 +1228,10 @@ import SiteIcons from "@/components/SiteIcons.astro";
         }
       });
       els.body.addEventListener('input', updateEditorStats);
+      els.imageRendering.addEventListener('change', () => {
+        renderPreview();
+        els.raw.value = buildMarkdown();
+      });
       els.body.addEventListener('scroll', () => {
         els.gutter.scrollTop = els.body.scrollTop;
       });
