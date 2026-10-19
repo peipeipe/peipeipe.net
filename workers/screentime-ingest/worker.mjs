@@ -123,7 +123,15 @@ export async function handleRequest(request, env, fetcher = fetch) {
       throw error;
     }
     if (validated.device !== "iPhone") return reply(checking ? 200 : 400, { ok: false, error: "invalid_record", field: "device" });
-    if (checking) return reply(200, { ok: true, date: validated.date, apps: validated.apps.length, saved: false });
+    if (checking) {
+      // Read a fixed public file to verify outbound GitHub access without a write.
+      try {
+        const probe = await github(env, fetcher, `${repository}/contents/astro/data/screentime/README.md?ref=${branch}`);
+        return reply(200, { ok: true, date: validated.date, apps: validated.apps.length, saved: false, github: probe.status });
+      } catch (error) {
+        return reply(200, { ok: true, date: validated.date, apps: validated.apps.length, saved: false, github: "exception", kind: error.name });
+      }
+    }
     // Do not persist arbitrary client fields, destinations, or derived totals.
     const record = { date: validated.date, device: validated.device, apps: validated.apps };
     const saved = await save(record, env, fetcher);

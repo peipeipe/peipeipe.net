@@ -95,8 +95,8 @@ test("upstream failure responses never expose upstream secrets or claim success"
 test("authenticated check endpoint reports field without writing", async () => {
   const checkUrl = "https://example.com/api/screentime/check";
   const never = () => { assert.fail("check must not write"); };
-  const valid = await handleRequest(request(record, {}, checkUrl), env, never);
-  assert.deepEqual(await valid.json(), { ok: true, date: record.date, apps: 1, saved: false });
+  const valid = await handleRequest(request(record, {}, checkUrl), env, async () => Response.json({ type: "file" }));
+  assert.deepEqual(await valid.json(), { ok: true, date: record.date, apps: 1, saved: false, github: 200 });
   const invalid = await handleRequest(request(JSON.stringify(JSON.stringify(record)), {}, checkUrl), env, never);
   assert.deepEqual(await invalid.json(), { ok: false, error: "invalid_record", field: "record" });
   const query = await handleRequest(request(record, {}, `${checkUrl}?old=1`), env, never);
