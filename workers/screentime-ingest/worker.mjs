@@ -51,7 +51,7 @@ async function github(env, fetcher, url, body) {
       ...(body ? { "Content-Type": "application/json" } : {}),
     },
     ...(body ? { body: JSON.stringify(body) } : {}),
-    redirect: "error",
+    redirect: "manual",
     signal: AbortSignal.timeout(10000),
   });
   if (!response.ok) {

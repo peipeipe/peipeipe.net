@@ -14,6 +14,7 @@ function sequence(steps) {
     assert.ok(count < steps.length, "unexpected GitHub request");
     assert.ok(url.startsWith("https://api.github.com/repos/peipeipe/peipeipe.net/contents/astro/data/screentime/2026-10-17.json"));
     assert.equal(init.headers.Authorization, `Bearer ${env.GITHUB_TOKEN}`);
+    assert.equal(init.redirect, "manual");
     const step = steps[count++];
     step.check?.(url, init);
     return Response.json(step.data || {}, { status: step.status });
