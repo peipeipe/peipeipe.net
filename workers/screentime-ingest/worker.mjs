@@ -1,6 +1,6 @@
 import { timingSafeEqual } from "node:crypto";
 import { Buffer } from "node:buffer";
-import { validateScreenTime } from "../../astro/src/lib/screentime-schema.mjs";
+import { ScreenTimeValidationError, validateScreenTime } from "../../astro/src/lib/screentime-schema.mjs";
 
 const repository = "https://api.github.com/repos/peipeipe/peipeipe.net";
 const branch = "master";
@@ -103,16 +103,24 @@ export async function handleRequest(request, env, fetcher = fetch) {
     if (supplied.length !== expected.length || !timingSafeEqual(supplied, expected)) throw new HttpError(401, "unauthorized");
     if (request.headers.get("content-type")?.split(";")[0].trim().toLowerCase() !== "application/json") throw new HttpError(415, "json_required");
     const raw = await readBounded(request, maxBytes);
-    let record;
+    let input;
     try {
-      const input = JSON.parse(raw);
-      const validated = validateScreenTime(input);
-      if (validated.device !== "iPhone") throw new Error();
-      // Do not persist arbitrary client fields, destinations, or derived totals.
-      record = { date: validated.date, device: validated.device, apps: validated.apps };
+      input = JSON.parse(raw);
     } catch {
-      throw new HttpError(400, "invalid_record");
+      return reply(400, { ok: false, error: "invalid_record", field: "json" });
     }
+    let validated;
+    try {
+      validated = validateScreenTime(input);
+    } catch (error) {
+      if (error instanceof ScreenTimeValidationError) {
+        return reply(400, { ok: false, error: "invalid_record", field: error.field });
+      }
+      throw error;
+    }
+    if (validated.device !== "iPhone") return reply(400, { ok: false, error: "invalid_record", field: "device" });
+    // Do not persist arbitrary client fields, destinations, or derived totals.
+    const record = { date: validated.date, device: validated.device, apps: validated.apps };
     const saved = await save(record, env, fetcher);
     return reply(200, { ok: true, date: record.date, ...saved, site: "not_verified" });
   } catch (error) {

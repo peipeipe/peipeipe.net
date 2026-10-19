@@ -86,6 +86,7 @@ test("upstream failure responses never expose upstream secrets or claim success"
     assert.equal(response.status, 502);
     assert.deepEqual(await response.json(), { ok: false, error: "github_read_failed" });
   }
+  assert.deepEqual(await (await handleRequest(request(JSON.stringify(JSON.stringify(record))), env, () => { assert.fail("no fetch"); })).json(), { ok: false, error: "invalid_record", field: "record" });
   const response = await handleRequest(request(), env, () => { throw new Error(env.GITHUB_TOKEN); });
   assert.equal(response.status, 502);
   assert.equal((await response.text()).includes(env.GITHUB_TOKEN), false);
