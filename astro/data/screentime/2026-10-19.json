@@ -1,0 +1,106 @@
+{
+  "date": "2026-10-19",
+  "device": "iPhone",
+  "apps": [
+    {
+      "app": "Chrome",
+      "minutes": 47.2576160152753
+    },
+    {
+      "app": "YouTube",
+      "minutes": 21.0108092168967
+    },
+    {
+      "app": "Instagram",
+      "minutes": 19.6815636833509
+    },
+    {
+      "app": "ショートカット",
+      "minutes": 18.9887079318364
+    },
+    {
+      "app": "LocalSend",
+      "minutes": 7.29713976383209
+    },
+    {
+      "app": "TeamHub",
+      "minutes": 4.14865941206614
+    },
+    {
+      "app": "Shortcuts",
+      "minutes": 3.41628161668778
+    },
+    {
+      "app": "Gmail",
+      "minutes": 2.99373482863108
+    },
+    {
+      "app": "Strava",
+      "minutes": 2.96293606559436
+    },
+    {
+      "app": "天気",
+      "minutes": 2.69892990191778
+    },
+    {
+      "app": "LINE",
+      "minutes": 2.29656659960747
+    },
+    {
+      "app": "Reddit",
+      "minutes": 1.18459383249283
+    },
+    {
+      "app": "タイミー",
+      "minutes": 0.931611800193787
+    },
+    {
+      "app": "スクリーンショット",
+      "minutes": 0.68685021797816
+    },
+    {
+      "app": "COROS",
+      "minutes": 0.412148650487264
+    },
+    {
+      "app": "TATTA",
+      "minutes": 0.22476521730423
+    },
+    {
+      "app": "Slack",
+      "minutes": 0.207148766517639
+    },
+    {
+      "app": "Googleカレンダー",
+      "minutes": 0.117626651128133
+    },
+    {
+      "app": "ユーザ認証",
+      "minutes": 0.115840782721837
+    },
+    {
+      "app": "写真",
+      "minutes": 0.113208399216334
+    },
+    {
+      "app": "時計",
+      "minutes": 0.100990716616313
+    },
+    {
+      "app": "Google Maps",
+      "minutes": 0.0944439510504405
+    },
+    {
+      "app": "Brave",
+      "minutes": 0.0734963814417521
+    },
+    {
+      "app": "Connect",
+      "minutes": 0.0453947683175405
+    },
+    {
+      "app": "Spotify",
+      "minutes": 0.026189782222112
+    }
+  ]
+}
