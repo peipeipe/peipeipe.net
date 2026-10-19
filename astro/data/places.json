@@ -78,7 +78,8 @@
     "fsq_id": "5db1724728f17a0008668c4f",
     "checkin_count": 1,
     "first_checkin_at": "2026-10-17T04:16:00+00:00",
-    "last_checkin_at": "2026-10-17T04:16:00+00:00"
+    "last_checkin_at": "2026-10-17T04:16:00+00:00",
+    "composition_hint": ""
   },
   {
     "name": "資さんうどん",
@@ -26257,8 +26258,8 @@
     "name": "JR 渋谷駅",
     "user_comment": "",
     "date": "2019-09-19",
-    "lat": 35.65874359364319,
-    "lng": 139.70127624914932,
+    "lat": 35.658677306144526,
+    "lng": 139.701560470277,
     "address": "道玄坂1-1-1, 渋谷区, 東京都, 150-0043",
     "foursquare_url": "https://foursquare.com/v/4b6c0307f964a5208c1f2ce3",
     "photos": [],
