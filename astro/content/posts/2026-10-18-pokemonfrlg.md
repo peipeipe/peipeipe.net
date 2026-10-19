@@ -4,6 +4,7 @@ title:  "ポケットモンスター リーフグリーンをプレイした"
 date:   2026-10-18 23:30:00 +0900
 permalink:   /:year-:month-:day-:title/
 categories: ゲーム
+image_rendering: pixelated
 image: https://www.peipeipe.net/images/posts/2026-10-18-pokemonfrlg/17.webp
 ---
 RG DSでポケットモンスターリーフグリーンをプレイ。

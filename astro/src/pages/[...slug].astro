@@ -55,7 +55,7 @@ const postJsonLd = {
 >
   <article class="post">
     <h1>{post.title}</h1>
-    <div set:html={post.html} />
+    <div class:list={{ "pixelated-images": post.data.image_rendering === "pixelated" }} set:html={post.html} />
     <div class="date">
       Written on {post.date.toLocaleDateString("en-US", { year: "numeric", month: "long", day: "numeric" })}
     </div>

@@ -89,6 +89,11 @@ img {
   height: auto;
 }
 
+.pixelated-images p > img {
+  width: 100%;
+  image-rendering: pixelated;
+}
+
 img + em {
   display: block;
   text-align: center;
