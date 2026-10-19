@@ -96,15 +96,15 @@ export async function handleRequest(request, env, fetcher = fetch) {
     const url = new URL(request.url);
     const checking = url.pathname === "/api/screentime/check";
     if (!checking && url.pathname !== "/api/screentime") throw new HttpError(404, "not_found");
-    if (url.search) {
-      if (checking) return reply(200, { ok: false, error: "invalid_request", field: "url_query" });
-      throw new HttpError(400, "query_not_allowed");
-    }
     if (request.method !== "POST") return new Response(null, { status: 405, headers: { Allow: "POST", "Cache-Control": "no-store" } });
     if (!env.INGEST_KEY || env.INGEST_KEY.length < 32 || !env.GITHUB_TOKEN) throw new HttpError(503, "not_configured");
     const supplied = Buffer.from(request.headers.get("X-Screen-Time-Key") || "");
     const expected = Buffer.from(env.INGEST_KEY);
     if (supplied.length !== expected.length || !timingSafeEqual(supplied, expected)) throw new HttpError(401, "unauthorized");
+    if (url.search) {
+      if (checking) return reply(200, { ok: false, error: "invalid_request", field: "url_query" });
+      throw new HttpError(400, "query_not_allowed");
+    }
     if (request.headers.get("content-type")?.split(";")[0].trim().toLowerCase() !== "application/json") throw new HttpError(415, "json_required");
     const raw = await readBounded(request, maxBytes);
     let input;
