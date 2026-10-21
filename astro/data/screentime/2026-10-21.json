@@ -1,0 +1,82 @@
+{
+  "date": "2026-10-21",
+  "device": "iPhone",
+  "apps": [
+    {
+      "app": "Chrome",
+      "minutes": 41.1820325334867
+    },
+    {
+      "app": "YouTube",
+      "minutes": 40.6651193300883
+    },
+    {
+      "app": "Instagram",
+      "minutes": 6.61716880202293
+    },
+    {
+      "app": "写真",
+      "minutes": 6.31561111609141
+    },
+    {
+      "app": "LINE",
+      "minutes": 4.30235604842504
+    },
+    {
+      "app": "Brave",
+      "minutes": 3.3272915661335
+    },
+    {
+      "app": "Gmail",
+      "minutes": 2.23105932076772
+    },
+    {
+      "app": "ChatGPT",
+      "minutes": 1.34554796616236
+    },
+    {
+      "app": "TeamHub",
+      "minutes": 1.30530829826991
+    },
+    {
+      "app": "天気",
+      "minutes": 1.30221154888471
+    },
+    {
+      "app": "COROS",
+      "minutes": 0.601412663857142
+    },
+    {
+      "app": "ユーザ認証",
+      "minutes": 0.573360300064087
+    },
+    {
+      "app": "カメラ",
+      "minutes": 0.404035033782323
+    },
+    {
+      "app": "時計",
+      "minutes": 0.325586366653442
+    },
+    {
+      "app": "Discord",
+      "minutes": 0.18959184885025
+    },
+    {
+      "app": "AuthenticationServicesUI",
+      "minutes": 0.0874693830808004
+    },
+    {
+      "app": "コードスキャナー",
+      "minutes": 0.0761510670185089
+    },
+    {
+      "app": "Delta",
+      "minutes": 0.0234951655069987
+    },
+    {
+      "app": "セサミ",
+      "minutes": 0.0214962005615234
+    }
+  ]
+}
