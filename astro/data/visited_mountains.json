@@ -908,13 +908,95 @@
     "last_visit": "2026-02-08"
   },
   {
+    "name": "一重山",
+    "lat": 36.532905,
+    "lng": 138.130856,
+    "elevation": 457,
+    "tags": [],
+    "visit_count": 9,
+    "activities": [
+      {
+        "id": "i200336377",
+        "name": "Evening トレイルラン",
+        "date": "2026-10-22",
+        "sport_type": "TrailRun",
+        "distance_km": 10.1
+      },
+      {
+        "id": 19824127885,
+        "name": "Evening Trail Run",
+        "date": "2026-08-20",
+        "sport_type": "TrailRun",
+        "distance_km": 10.5
+      },
+      {
+        "id": 19625991693,
+        "name": "夕方のトレイルランニング",
+        "date": "2026-08-06",
+        "sport_type": "TrailRun",
+        "distance_km": 10.2
+      },
+      {
+        "id": 19061732335,
+        "name": "Evening Trail Run",
+        "date": "2026-06-25",
+        "sport_type": "TrailRun",
+        "distance_km": 10.6
+      },
+      {
+        "id": 18970382828,
+        "name": "Evening Trail Run",
+        "date": "2026-06-18",
+        "sport_type": "TrailRun",
+        "distance_km": 10.4
+      },
+      {
+        "id": 18687701446,
+        "name": "夕方のトレイルランニング",
+        "date": "2026-05-28",
+        "sport_type": "TrailRun",
+        "distance_km": 10.3
+      },
+      {
+        "id": 18411099671,
+        "name": "Evening Trail Run",
+        "date": "2026-05-07",
+        "sport_type": "TrailRun",
+        "distance_km": 10.3
+      },
+      {
+        "id": 18039628939,
+        "name": "Evening Trail Run",
+        "date": "2026-04-09",
+        "sport_type": "TrailRun",
+        "distance_km": 10.2
+      },
+      {
+        "id": 17778351222,
+        "name": "初夜山練",
+        "date": "2026-03-19",
+        "sport_type": "TrailRun",
+        "distance_km": 10.8
+      }
+    ],
+    "first_visit": "2026-03-19",
+    "last_visit": "2026-10-22"
+  },
+  {
     "name": "有明山",
     "lat": 36.52617,
     "lng": 138.138078,
     "elevation": 652,
     "tags": [],
-    "visit_count": 9,
+    "visit_count": 10,
     "activities": [
+      {
+        "id": "i200336377",
+        "name": "Evening トレイルラン",
+        "date": "2026-10-22",
+        "sport_type": "TrailRun",
+        "distance_km": 10.1
+      },
       {
         "id": "i193255639",
         "name": "Lunch トレイルラン",
@@ -980,75 +1062,7 @@
       }
     ],
     "first_visit": "2026-03-19",
-    "last_visit": "2026-10-04"
-  },
-  {
-    "name": "一重山",
-    "lat": 36.532905,
-    "lng": 138.130856,
-    "elevation": 457,
-    "tags": [],
-    "visit_count": 8,
-    "activities": [
-      {
-        "id": 19824127885,
-        "name": "Evening Trail Run",
-        "date": "2026-08-20",
-        "sport_type": "TrailRun",
-        "distance_km": 10.5
-      },
-      {
-        "id": 19625991693,
-        "name": "夕方のトレイルランニング",
-        "date": "2026-08-06",
-        "sport_type": "TrailRun",
-        "distance_km": 10.2
-      },
-      {
-        "id": 19061732335,
-        "name": "Evening Trail Run",
-        "date": "2026-06-25",
-        "sport_type": "TrailRun",
-        "distance_km": 10.6
-      },
-      {
-        "id": 18970382828,
-        "name": "Evening Trail Run",
-        "date": "2026-06-18",
-        "sport_type": "TrailRun",
-        "distance_km": 10.4
-      },
-      {
-        "id": 18687701446,
-        "name": "夕方のトレイルランニング",
-        "date": "2026-05-28",
-        "sport_type": "TrailRun",
-        "distance_km": 10.3
-      },
-      {
-        "id": 18411099671,
-        "name": "Evening Trail Run",
-        "date": "2026-05-07",
-        "sport_type": "TrailRun",
-        "distance_km": 10.3
-      },
-      {
-        "id": 18039628939,
-        "name": "Evening Trail Run",
-        "date": "2026-04-09",
-        "sport_type": "TrailRun",
-        "distance_km": 10.2
-      },
-      {
-        "id": 17778351222,
-        "name": "初夜山練",
-        "date": "2026-03-19",
-        "sport_type": "TrailRun",
-        "distance_km": 10.8
-      }
-    ],
-    "first_visit": "2026-03-19",
-    "last_visit": "2026-08-20"
+    "last_visit": "2026-10-22"
   },
   {
     "name": "髻山",
