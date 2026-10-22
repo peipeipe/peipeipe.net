@@ -1,5 +1,47 @@
 [
   {
+    "name": "万葉超音波温泉",
+    "user_comment": "めちゃくちゃ良い",
+    "date": "2026-10-22",
+    "lat": 36.48055728598682,
+    "lng": 138.15005470314597,
+    "address": "磯部1125, 千曲市, 長野県, 389-0806",
+    "foursquare_url": "https://foursquare.com/v/4b679f6ef964a52045582be3",
+    "photos": [
+      "https://fastly.4sqi.net/img/general/500x300/41463109_LhgRG6qk5LUijfJbejOmPv9uh5kbcw7i5nszJmwQots.jpg",
+      "https://fastly.4sqi.net/img/general/500x300/41463109_R1AxOOVqfOdD4JSYDjpeYDRLdBcBwSZ9YZ5GZmgFqks.jpg",
+      "https://fastly.4sqi.net/img/general/500x300/41463109_ppqd7Rk5sq5LLZr9l4Qyqx7bZvYoBjLNcA3gjzylhEc.jpg",
+      "https://fastly.4sqi.net/img/general/500x300/41463109_mc4pqveJa7iDe7-MELyxqz67X3zE67HPUAFkY3bW4FU.jpg"
+    ],
+    "categories": [
+      "温泉"
+    ],
+    "data_source": "foursquare_checkin",
+    "fsq_id": "4b679f6ef964a52045582be3",
+    "checkin_count": 7,
+    "first_checkin_at": "2026-03-19T13:10:05+00:00",
+    "last_checkin_at": "2026-10-22T12:33:02+00:00",
+    "composition_hint": ""
+  },
+  {
+    "name": "Starbucks",
+    "user_comment": "",
+    "date": "2026-10-22",
+    "lat": 36.40716311198173,
+    "lng": 138.25795895849848,
+    "address": "中央北1-6-34, 上田市, 長野県, 386-0011",
+    "foursquare_url": "https://foursquare.com/v/5d664ea0d3702c00087f2ed7",
+    "photos": [],
+    "categories": [
+      "コーヒーショップ"
+    ],
+    "data_source": "foursquare_checkin",
+    "fsq_id": "5d664ea0d3702c00087f2ed7",
+    "checkin_count": 1,
+    "first_checkin_at": "2026-10-22T01:43:03+00:00",
+    "last_checkin_at": "2026-10-22T01:43:03+00:00"
+  },
+  {
     "name": "マサラキッチン",
     "user_comment": "",
     "date": "2026-10-18",
@@ -1386,30 +1428,6 @@
     "checkin_count": 4,
     "first_checkin_at": "2026-04-09T13:05:11+00:00",
     "last_checkin_at": "2026-08-06T13:26:24+00:00",
-    "composition_hint": ""
-  },
-  {
-    "name": "万葉超音波温泉",
-    "user_comment": "めちゃくちゃ良い",
-    "date": "2026-08-06",
-    "lat": 36.48055728598682,
-    "lng": 138.15005470314597,
-    "address": "磯部1125, 千曲市, 長野県, 389-0806",
-    "foursquare_url": "https://foursquare.com/v/4b679f6ef964a52045582be3",
-    "photos": [
-      "https://fastly.4sqi.net/img/general/500x300/41463109_LhgRG6qk5LUijfJbejOmPv9uh5kbcw7i5nszJmwQots.jpg",
-      "https://fastly.4sqi.net/img/general/500x300/41463109_R1AxOOVqfOdD4JSYDjpeYDRLdBcBwSZ9YZ5GZmgFqks.jpg",
-      "https://fastly.4sqi.net/img/general/500x300/41463109_ppqd7Rk5sq5LLZr9l4Qyqx7bZvYoBjLNcA3gjzylhEc.jpg",
-      "https://fastly.4sqi.net/img/general/500x300/41463109_mc4pqveJa7iDe7-MELyxqz67X3zE67HPUAFkY3bW4FU.jpg"
-    ],
-    "categories": [
-      "温泉"
-    ],
-    "data_source": "foursquare_checkin",
-    "fsq_id": "4b679f6ef964a52045582be3",
-    "checkin_count": 6,
-    "first_checkin_at": "2026-03-19T13:10:05+00:00",
-    "last_checkin_at": "2026-08-06T12:56:39+00:00",
     "composition_hint": ""
   },
   {
@@ -16902,8 +16920,8 @@
     "name": "なんばパークス",
     "user_comment": "",
     "date": "2023-02-27",
-    "lat": 34.661474866394094,
-    "lng": 135.50188079055064,
+    "lat": 34.661760072022254,
+    "lng": 135.50195443786177,
     "address": "浪速区難波中2-10-70, 大阪市, 大阪府, 556-0011",
     "foursquare_url": "https://foursquare.com/v/4bdbe86ec79cc928a4c984e9",
     "photos": [],
@@ -17532,8 +17550,8 @@
     "name": "四ツ谷駅",
     "user_comment": "",
     "date": "2023-02-06",
-    "lat": 35.68532185195952,
-    "lng": 139.73020898166672,
+    "lat": 35.68571904241143,
+    "lng": 139.73032871204168,
     "address": "四谷1, 新宿区, 東京都, 160-0004",
     "foursquare_url": "https://foursquare.com/v/4b4ef864f964a520d5f726e3",
     "photos": [],
@@ -26258,8 +26276,8 @@
     "name": "JR 渋谷駅",
     "user_comment": "",
     "date": "2019-09-19",
-    "lat": 35.658677306144526,
-    "lng": 139.701560470277,
+    "lat": 35.658473126650726,
+    "lng": 139.7014108800396,
     "address": "道玄坂1-1-1, 渋谷区, 東京都, 150-0043",
     "foursquare_url": "https://foursquare.com/v/4b6c0307f964a5208c1f2ce3",
     "photos": [],
@@ -33097,8 +33115,8 @@
     "name": "大阪駅",
     "user_comment": "",
     "date": "2017-10-15",
-    "lat": 34.702346561727346,
-    "lng": 135.49600318651727,
+    "lat": 34.702023067305426,
+    "lng": 135.4955153369857,
     "address": "北区梅田3-1-1, 大阪市, 大阪府, 530-0001",
     "foursquare_url": "https://foursquare.com/v/4b3ae51bf964a520956f25e3",
     "photos": [
