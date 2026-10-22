@@ -1,0 +1,142 @@
+{
+  "date": "2026-10-22",
+  "device": "iPhone",
+  "apps": [
+    {
+      "app": "Chrome",
+      "minutes": 63.8267831742764
+    },
+    {
+      "app": "Google Maps",
+      "minutes": 46.8121172010899
+    },
+    {
+      "app": "Instagram",
+      "minutes": 16.5172104815642
+    },
+    {
+      "app": "Slack",
+      "minutes": 12.8495887180169
+    },
+    {
+      "app": "ChatGPT",
+      "minutes": 8.06065621972084
+    },
+    {
+      "app": "LINE",
+      "minutes": 6.38962017099063
+    },
+    {
+      "app": "Strava",
+      "minutes": 5.00787843465805
+    },
+    {
+      "app": "ウォレット",
+      "minutes": 2.8709075152874
+    },
+    {
+      "app": "YAMAP",
+      "minutes": 2.27647275129954
+    },
+    {
+      "app": "TeamHub",
+      "minutes": 1.80499603947004
+    },
+    {
+      "app": "COROS",
+      "minutes": 1.60029286543528
+    },
+    {
+      "app": "Starbucks",
+      "minutes": 1.46051821708679
+    },
+    {
+      "app": "Gmail",
+      "minutes": 1.41649881998698
+    },
+    {
+      "app": "Tapo",
+      "minutes": 0.916279500722885
+    },
+    {
+      "app": "天気",
+      "minutes": 0.910884233315786
+    },
+    {
+      "app": "GitHub",
+      "minutes": 0.772352015972138
+    },
+    {
+      "app": "InCallService",
+      "minutes": 0.701932932933172
+    },
+    {
+      "app": "radiko",
+      "minutes": 0.689454712470372
+    },
+    {
+      "app": "Swarm",
+      "minutes": 0.530218968788783
+    },
+    {
+      "app": "楽天ペイ",
+      "minutes": 0.495827283461889
+    },
+    {
+      "app": "写真",
+      "minutes": 0.444182332356771
+    },
+    {
+      "app": "Googleカレンダー",
+      "minutes": 0.398037618398666
+    },
+    {
+      "app": "YouTube Music",
+      "minutes": 0.361926382780075
+    },
+    {
+      "app": "YouTube",
+      "minutes": 0.20904300014178
+    },
+    {
+      "app": "楽天カード",
+      "minutes": 0.203604698181152
+    },
+    {
+      "app": "ユーザ認証",
+      "minutes": 0.201830667257309
+    },
+    {
+      "app": "セサミ",
+      "minutes": 0.200102017323176
+    },
+    {
+      "app": "Discord",
+      "minutes": 0.152208799123764
+    },
+    {
+      "app": "電話",
+      "minutes": 0.141897350549698
+    },
+    {
+      "app": "時計",
+      "minutes": 0.122713599602381
+    },
+    {
+      "app": "カメラ",
+      "minutes": 0.115332684914271
+    },
+    {
+      "app": "LocalSend",
+      "minutes": 0.0993763665358226
+    },
+    {
+      "app": "BusinessActionSheet",
+      "minutes": 0.0563698172569275
+    },
+    {
+      "app": "ショートカット",
+      "minutes": 0.0387404004732768
+    }
+  ]
+}
