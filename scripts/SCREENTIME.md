@@ -7,6 +7,8 @@
 → `astro/data/screentime/YYYY-MM-DD.json` → 既存のCloudflare Pages workflow
 → `/screentime/` と `/diary-reader/`。
 
+地図・ナビアプリは元のJSONに保存したまま、サイト読み込み時にアプリ一覧・合計・7日平均から除外する。過去の記録にも適用される。対象名は `astro/src/lib/screentime.mjs` の `excludedApps` で管理する（前後の空白・英字の大小は無視、完全一致）。
+
 アプリ名・使用時間は公開GitHub履歴とブログに掲載される。
 GitHubトークンはWorkerのSecretだけに置き、iPhoneには投稿専用キーを設定する。
 キーはURL、本文、コミット、チャット、共有ショートカットに含めない。

@@ -5,6 +5,11 @@ import { pathToFileURL } from "node:url";
 
 const dataDirectory = pathToFileURL(`${resolve("data/screentime")}/`);
 const dayMs = 86400000;
+// Match app names exactly so unrelated apps containing "map" remain counted.
+const excludedApps = new Set([
+  "maps", "apple maps", "google maps", "google マップ", "googleマップ",
+  "マップ", "yahoo!マップ", "yahoo! map", "yahoo!カーナビ", "waze",
+]);
 
 import { validateScreenTime } from "./screentime-schema.mjs";
 export { validateScreenTime } from "./screentime-schema.mjs";
@@ -14,7 +19,8 @@ export function getScreenTime(directory = dataDirectory) {
     try {
       const record = validateScreenTime(JSON.parse(readFileSync(new URL(name, directory), "utf8")));
       if (name !== `${record.date}.json`) throw new Error("ファイル名とdateが一致していません");
-      return record;
+      const apps = record.apps.filter(({ app }) => !excludedApps.has(app.toLowerCase()));
+      return { ...record, apps, totalMinutes: apps.reduce((sum, app) => sum + app.minutes, 0) };
     } catch (error) {
       throw new Error(`スクリーンタイム ${name}: ${error.message}`);
     }

@@ -50,7 +50,7 @@ if (segment.length) segments.push(segment);
         </details>
       </section>
       <h2>日ごとの記録</h2>
-      <p class="note">対象はiPhoneのアプリです。Webサイトの時間は重ねて加算しません。設定画面の総スクリーンタイムとは集計範囲が異なる場合があります。</p>
+      <p class="note">対象はiPhoneのアプリです。Google MapsやAppleのマップなどの地図・ナビアプリは集計から除外しています。Webサイトの時間は重ねて加算しません。設定画面の総スクリーンタイムとは集計範囲が異なる場合があります。</p>
       {[...records].reverse().map((record) => <section id={`day-${record.date}`}><h3><a href={`/diary-reader/#entry-${record.date}`}>{record.date}</a></h3><ScreenTimeDay record={record} /></section>)}
     </>
   )}

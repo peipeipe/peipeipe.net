@@ -48,3 +48,26 @@ test("daily files replace rather than append and filenames must match the date",
     assert.throws(() => getScreenTime(url), /ファイル名/);
   } finally { rmSync(directory, { recursive: true, force: true }); }
 });
+
+test("map apps are excluded from historical totals, app lists and seven-day averages", () => {
+  const directory = mkdtempSync(`${tmpdir()}/screentime-maps-`);
+  const url = pathToFileURL(`${directory}/`);
+  try {
+    const mapNames = ["Google Maps", "マップ", "Maps", "Apple Maps", "Google マップ", "Googleマップ", "Yahoo!マップ", "Yahoo! MAP", "Yahoo!カーナビ", "Waze"];
+    for (let day = 11; day <= 17; day++) {
+      const record = payload(`2026-10-${day}`, 30.5);
+      record.apps.push(...mapNames.map((app) => ({ app, minutes: 10 })));
+      record.apps.push({ app: " MapMyRun ", minutes: 9.5 });
+      writeFileSync(new URL(`${record.date}.json`, url), JSON.stringify(record));
+      assert.equal(validateScreenTime(record).totalMinutes, 140);
+    }
+    const records = getScreenTime(url);
+    assert.deepEqual(records[0].apps, [{ app: "Chrome", minutes: 30.5 }, { app: "MapMyRun", minutes: 9.5 }]);
+    assert.equal(records[0].totalMinutes, 40);
+    assert.equal(screenTimeWindow(records).at(-1).average, 40);
+    writeFileSync(new URL("2026-10-17.json", url), JSON.stringify({ ...payload(), apps: [{ app: "  GOOGLE MAPS  ", minutes: 20 }] }));
+    const mapsOnly = getScreenTime(url).at(-1);
+    assert.deepEqual(mapsOnly.apps, []);
+    assert.equal(mapsOnly.totalMinutes, 0);
+  } finally { rmSync(directory, { recursive: true, force: true }); }
+});
