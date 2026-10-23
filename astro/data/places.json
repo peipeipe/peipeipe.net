@@ -1,5 +1,27 @@
 [
   {
+    "name": "真田温泉 ふれあいさなだ館",
+    "user_comment": "w/ 父",
+    "date": "2026-10-23",
+    "lat": 36.44294471932977,
+    "lng": 138.30737163392524,
+    "address": "真田町長7369-1, 上田市, 長野県, 386-2201",
+    "foursquare_url": "https://foursquare.com/v/4e3e04b5483b04e17a9ef103",
+    "photos": [
+      "https://fastly.4sqi.net/img/general/500x300/41463109_FyuRufsKuiKrpKC6C37VsqJzV_PI5PfHHQztak8kQaE.jpg",
+      "https://fastly.4sqi.net/img/general/500x300/41463109_a_xR3WFEz-xwtyZiZZu8i7tMXmC_5OqLk-uEeJ5ozDg.jpg"
+    ],
+    "categories": [
+      "温泉"
+    ],
+    "data_source": "foursquare_checkin",
+    "fsq_id": "4e3e04b5483b04e17a9ef103",
+    "checkin_count": 6,
+    "first_checkin_at": "2024-09-15T03:35:44+00:00",
+    "last_checkin_at": "2026-10-23T11:34:09+00:00",
+    "composition_hint": ""
+  },
+  {
     "name": "万葉超音波温泉",
     "user_comment": "めちゃくちゃ良い",
     "date": "2026-10-22",
@@ -39,7 +61,8 @@
     "fsq_id": "5d664ea0d3702c00087f2ed7",
     "checkin_count": 1,
     "first_checkin_at": "2026-10-22T01:43:03+00:00",
-    "last_checkin_at": "2026-10-22T01:43:03+00:00"
+    "last_checkin_at": "2026-10-22T01:43:03+00:00",
+    "composition_hint": ""
   },
   {
     "name": "マサラキッチン",
@@ -627,28 +650,6 @@
     "checkin_count": 3,
     "first_checkin_at": "2023-10-21T08:51:27+00:00",
     "last_checkin_at": "2026-09-22T03:54:35+00:00",
-    "composition_hint": ""
-  },
-  {
-    "name": "真田温泉 ふれあいさなだ館",
-    "user_comment": "w/ 父",
-    "date": "2026-09-21",
-    "lat": 36.44294471932977,
-    "lng": 138.30737163392524,
-    "address": "真田町長7369-1, 上田市, 長野県, 386-2201",
-    "foursquare_url": "https://foursquare.com/v/4e3e04b5483b04e17a9ef103",
-    "photos": [
-      "https://fastly.4sqi.net/img/general/500x300/41463109_FyuRufsKuiKrpKC6C37VsqJzV_PI5PfHHQztak8kQaE.jpg",
-      "https://fastly.4sqi.net/img/general/500x300/41463109_a_xR3WFEz-xwtyZiZZu8i7tMXmC_5OqLk-uEeJ5ozDg.jpg"
-    ],
-    "categories": [
-      "温泉"
-    ],
-    "data_source": "foursquare_checkin",
-    "fsq_id": "4e3e04b5483b04e17a9ef103",
-    "checkin_count": 5,
-    "first_checkin_at": "2024-09-15T03:35:44+00:00",
-    "last_checkin_at": "2026-09-21T10:00:41+00:00",
     "composition_hint": ""
   },
   {
@@ -19934,8 +19935,8 @@
     "name": "JR 品川駅",
     "user_comment": "たまには逆方向でイングレスしながら帰る",
     "date": "2022-05-05",
-    "lat": 35.6285591521803,
-    "lng": 139.73887509227708,
+    "lat": 35.628435721518265,
+    "lng": 139.7386156393674,
     "address": "高輪3-26-27, 港区, 東京都, 108-0074",
     "foursquare_url": "https://foursquare.com/v/4ec0d5979911a2ec5c6cdda6",
     "photos": [],
@@ -29833,8 +29834,8 @@
     "name": "名古屋駅",
     "user_comment": "",
     "date": "2019-01-21",
-    "lat": 35.17042193047506,
-    "lng": 136.8822138497671,
+    "lat": 35.17028313728412,
+    "lng": 136.88184924019066,
     "address": "中村区名駅1, 名古屋市, 愛知県, 450-0002",
     "foursquare_url": "https://foursquare.com/v/4b56811cf964a520381328e3",
     "photos": [
@@ -37120,8 +37121,8 @@
     "name": "足立区",
     "user_comment": "帰ってきた",
     "date": "2016-02-13",
-    "lat": 35.775341889013305,
-    "lng": 139.80244527974298,
+    "lat": 35.76143380579975,
+    "lng": 139.80538730854622,
     "address": "東京都",
     "foursquare_url": "https://foursquare.com/v/4b581759f964a520a94a28e3",
     "photos": [],
