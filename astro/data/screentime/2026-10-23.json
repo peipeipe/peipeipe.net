@@ -1,0 +1,114 @@
+{
+  "date": "2026-10-23",
+  "device": "iPhone",
+  "apps": [
+    {
+      "app": "Chrome",
+      "minutes": 158.997610704104
+    },
+    {
+      "app": "Muse",
+      "minutes": 43.623726417621
+    },
+    {
+      "app": "YouTube",
+      "minutes": 42.1740586300691
+    },
+    {
+      "app": "ChatGPT",
+      "minutes": 29.4892866988977
+    },
+    {
+      "app": "Google Maps",
+      "minutes": 26.511105132103
+    },
+    {
+      "app": "Reddit",
+      "minutes": 13.8129364510377
+    },
+    {
+      "app": "LINE",
+      "minutes": 12.9722671528657
+    },
+    {
+      "app": "Instagram",
+      "minutes": 10.2695597668489
+    },
+    {
+      "app": "Brave",
+      "minutes": 9.75759794910749
+    },
+    {
+      "app": "Slack",
+      "minutes": 5.46607810060183
+    },
+    {
+      "app": "Strava",
+      "minutes": 4.64934341907501
+    },
+    {
+      "app": "Gmail",
+      "minutes": 3.2071921189626
+    },
+    {
+      "app": "松屋フーズ",
+      "minutes": 2.77668654918671
+    },
+    {
+      "app": "COROS",
+      "minutes": 1.93699180086454
+    },
+    {
+      "app": "TeamHub",
+      "minutes": 1.43430500030518
+    },
+    {
+      "app": "セサミ",
+      "minutes": 1.40609345038732
+    },
+    {
+      "app": "天気",
+      "minutes": 1.01681871612867
+    },
+    {
+      "app": "Googleカレンダー",
+      "minutes": 0.736507332324982
+    },
+    {
+      "app": "時計",
+      "minutes": 0.62046149969101
+    },
+    {
+      "app": "Spotify",
+      "minutes": 0.479732616742452
+    },
+    {
+      "app": "ユーザ認証",
+      "minutes": 0.342921451727549
+    },
+    {
+      "app": "ウォレット",
+      "minutes": 0.251398601134618
+    },
+    {
+      "app": "radiko",
+      "minutes": 0.197451283534368
+    },
+    {
+      "app": "ショートカット",
+      "minutes": 0.195954100290934
+    },
+    {
+      "app": "GitHub",
+      "minutes": 0.170143932104111
+    },
+    {
+      "app": "Swarm",
+      "minutes": 0.169277832905452
+    },
+    {
+      "app": "Discord",
+      "minutes": 0.0778299828370412
+    }
+  ]
+}
