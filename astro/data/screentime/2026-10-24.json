@@ -1,0 +1,130 @@
+{
+  "date": "2026-10-24",
+  "device": "iPhone",
+  "apps": [
+    {
+      "app": "Chrome",
+      "minutes": 59.6274424095948
+    },
+    {
+      "app": "Instagram",
+      "minutes": 26.9266461948554
+    },
+    {
+      "app": "Muse",
+      "minutes": 18.8899074355761
+    },
+    {
+      "app": "Reddit",
+      "minutes": 13.6399182637533
+    },
+    {
+      "app": "天気",
+      "minutes": 11.8913783828417
+    },
+    {
+      "app": "メルカリ",
+      "minutes": 11.3095360656579
+    },
+    {
+      "app": "セサミ",
+      "minutes": 9.56797941724459
+    },
+    {
+      "app": "Strava",
+      "minutes": 8.73936674793561
+    },
+    {
+      "app": "YouTube",
+      "minutes": 6.6117549876372
+    },
+    {
+      "app": "LINE",
+      "minutes": 5.96334619720777
+    },
+    {
+      "app": "電話帳ナビ",
+      "minutes": 3.18368311723073
+    },
+    {
+      "app": "Gmail",
+      "minutes": 2.87243068416913
+    },
+    {
+      "app": "COROS",
+      "minutes": 2.64641958475113
+    },
+    {
+      "app": "YouTube Music",
+      "minutes": 1.74685943325361
+    },
+    {
+      "app": "TeamHub",
+      "minutes": 1.37768196662267
+    },
+    {
+      "app": "ChatGPT",
+      "minutes": 0.77036336461703
+    },
+    {
+      "app": "Googleカレンダー",
+      "minutes": 0.744086635112762
+    },
+    {
+      "app": "com.amazon.Amazon",
+      "minutes": 0.541638265053431
+    },
+    {
+      "app": "ユーザ認証",
+      "minutes": 0.478475884596507
+    },
+    {
+      "app": "Slack",
+      "minutes": 0.466050535440445
+    },
+    {
+      "app": "Google Maps",
+      "minutes": 0.352939053376516
+    },
+    {
+      "app": "写真",
+      "minutes": 0.274956333637238
+    },
+    {
+      "app": "設定",
+      "minutes": 0.266049283742905
+    },
+    {
+      "app": "Pep Up",
+      "minutes": 0.249300267299016
+    },
+    {
+      "app": "Runkeeper",
+      "minutes": 0.227763599157333
+    },
+    {
+      "app": "PayPay",
+      "minutes": 0.158796832958857
+    },
+    {
+      "app": "雨かしら？",
+      "minutes": 0.101068033774694
+    },
+    {
+      "app": "Delta",
+      "minutes": 0.0947934667269389
+    },
+    {
+      "app": "メッセージ",
+      "minutes": 0.0560527006785075
+    },
+    {
+      "app": "乗換案内",
+      "minutes": 0.05329430103302
+    },
+    {
+      "app": "Discord",
+      "minutes": 0.0327962497870127
+    }
+  ]
+}
