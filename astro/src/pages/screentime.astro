@@ -7,6 +7,9 @@ const days = screenTimeWindow(records);
 const maximum = Math.max(60, ...days.flatMap((day) => [day.record?.totalMinutes || 0, day.average || 0]));
 const latest = records.at(-1);
 const chartHeight = 180;
+const lastDayIndex = days.length - 1;
+// Keep weekly labels at least four days away from the right-aligned final label.
+const showDateLabel = (index) => index === lastDayIndex || (index % 7 === 0 && lastDayIndex - index >= 4);
 const points = days.map((day, index) => day.average === null ? null : `${index * 24 + 12},${chartHeight - day.average / maximum * chartHeight}`);
 const segments = [];
 let segment = [];
@@ -34,7 +37,7 @@ if (segment.length) segments.push(segment);
             {days.map((day, index) => (
               <g>
                 {day.record && <rect x={index * 24 + 4} y={chartHeight - day.record.totalMinutes / maximum * chartHeight} width="16" height={day.record.totalMinutes / maximum * chartHeight} class="bar"><title>{day.date}: {formatScreenMinutes(day.record.totalMinutes)}</title></rect>}
-                {(index % 7 === 0 || index === 29) && <text x={index * 24 + 12} y="204" text-anchor={index === 0 ? "start" : index === 29 ? "end" : "middle"}>{day.date.slice(5)}</text>}
+                {showDateLabel(index) && <text x={index * 24 + 12} y="204" text-anchor={index === 0 ? "start" : index === lastDayIndex ? "end" : "middle"}>{day.date.slice(5)}</text>}
               </g>
             ))}
             {segments.map((values) => <polyline points={values.join(" ")} class="average" />)}
