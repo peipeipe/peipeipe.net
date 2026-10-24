@@ -1,5 +1,6 @@
 import fs from "node:fs/promises";
 import path from "node:path";
+import { completeSearchIndex } from "./complete-search-index.mjs";
 
 const publicDir = path.resolve("public");
 const distDir = path.resolve("dist");
@@ -7,6 +8,7 @@ const distDir = path.resolve("dist");
 await copyIfExists(path.join(publicDir, ".well-known", "nostr.json"), path.join(distDir, "nostr.json"));
 await copyMapLibreAssets();
 await writeRedirects();
+await completeSearchIndex(distDir);
 
 console.log("Finalized public assets in dist/");
 

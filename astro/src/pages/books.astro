@@ -136,6 +136,7 @@ function ratingLabel(book) {
       if (!dataTag || !input || !yearSelect || !ratingSelect || !quotesOnly || !list || !status || !moreButton) return;
 
       const { books } = JSON.parse(dataTag.textContent || "{}");
+      let selectedBook = new URLSearchParams(window.location.search).get("book");
       const defaultLimit = 80;
       const filteredLimit = 120;
       const pageSize = 80;
@@ -224,6 +225,7 @@ function ratingLabel(book) {
         const wantsQuotes = quotesOnly.checked;
         const isFiltered = terms.length || year || minimumRating || wantsQuotes;
         const filtered = books.filter((book) => {
+          if (selectedBook && book.id !== selectedBook) return false;
           if (year && !book.readDate?.startsWith(`${year}-`)) return false;
           if (minimumRating && (!book.rating || book.rating < minimumRating)) return false;
           if (wantsQuotes && !book.quotes?.length) return false;
@@ -244,6 +246,7 @@ function ratingLabel(book) {
       }
 
       function resetAndRender() {
+        selectedBook = null;
         displayLimit = termsAreActive() ? filteredLimit : defaultLimit;
         render();
       }
@@ -261,6 +264,7 @@ function ratingLabel(book) {
         render();
       });
       render();
+      if (selectedBook) document.getElementById(selectedBook)?.scrollIntoView();
     })();
   </script>
 

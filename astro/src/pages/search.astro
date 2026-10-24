@@ -12,7 +12,7 @@ const serializedSearchIndex = JSON.stringify(searchIndex).replace(/</g, "\\u003c
     <header class="search-header">
       <h1>Search</h1>
       <p class="search-summary">
-        Posts {searchIndex.stats.posts} / Diary {searchIndex.stats.diary} / Onsen {searchIndex.stats.onsen}
+        Books {searchIndex.stats.books} / Posts {searchIndex.stats.posts} / Diary {searchIndex.stats.diary} / Onsen {searchIndex.stats.onsen}
       </p>
     </header>
 
@@ -25,10 +25,12 @@ const serializedSearchIndex = JSON.stringify(searchIndex).replace(/</g, "\\u003c
           type="search"
           autocomplete="off"
           spellcheck="false"
-          placeholder="Search"
+          placeholder="本・引用・記事・日記・温泉などを検索"
         />
         <div class="search-kinds" role="group" aria-label="検索対象">
           <button type="button" class="search-kind is-active" data-kind="all" aria-pressed="true">All</button>
+          <button type="button" class="search-kind" data-kind="book" aria-pressed="false">Books</button>
+          <button type="button" class="search-kind" data-kind="page" aria-pressed="false">Pages</button>
           <button type="button" class="search-kind" data-kind="post" aria-pressed="false">Posts</button>
           <button type="button" class="search-kind" data-kind="diary" aria-pressed="false">Diary</button>
           <button type="button" class="search-kind" data-kind="onsen" aria-pressed="false">Onsen</button>
@@ -39,6 +41,7 @@ const serializedSearchIndex = JSON.stringify(searchIndex).replace(/</g, "\\u003c
     <div class="search-meta" aria-live="polite">
       <p id="search-status">最近の更新</p>
       <p class="search-counts">
+        <span>Books {searchIndex.stats.books}</span>
         <span>Posts {searchIndex.stats.posts}</span>
         <span>Diary {searchIndex.stats.diary}</span>
         <span>Onsen {searchIndex.stats.onsen}</span>
@@ -51,7 +54,7 @@ const serializedSearchIndex = JSON.stringify(searchIndex).replace(/</g, "\\u003c
           <a class="search-result-link" href={item.url}>
             <div class="search-result-body">
               <div class="search-result-meta">
-                <span class="search-badge">{item.kind === "post" ? "Post" : item.kind === "onsen" ? "Onsen" : "Diary"}</span>
+                <span class="search-badge">{({ post: "Post", onsen: "Onsen", diary: "Diary", book: "Book", page: "Page" })[item.kind]}</span>
                 <time datetime={item.date}>{item.date}</time>
               </div>
               <h2>{item.title}</h2>
@@ -61,6 +64,7 @@ const serializedSearchIndex = JSON.stringify(searchIndex).replace(/</g, "\\u003c
         </li>
       ))}
     </ol>
+    <button type="button" class="search-kind" id="search-more" hidden>もっと見る</button>
   </article>
 
   <script type="application/json" id="search-data" set:html={serializedSearchIndex}></script>
@@ -70,6 +74,8 @@ const serializedSearchIndex = JSON.stringify(searchIndex).replace(/</g, "\\u003c
       const form = document.getElementById("search-form");
       const input = document.getElementById("search-query");
       const results = document.getElementById("search-results");
+      const moreButton = document.getElementById("search-more");
+      let displayLimit = 60;
       const status = document.getElementById("search-status");
       const kindButtons = Array.from(document.querySelectorAll("[data-kind]"));
 
@@ -150,7 +156,7 @@ const serializedSearchIndex = JSON.stringify(searchIndex).replace(/</g, "\\u003c
             <a class="search-result-link" href="${escapeHtml(item.url)}">
               <div class="search-result-body">
                 <div class="search-result-meta">
-                  <span class="search-badge">${item.kind === "post" ? "Post" : item.kind === "onsen" ? "Onsen" : "Diary"}</span>
+                  <span class="search-badge">${({ post: "Post", onsen: "Onsen", diary: "Diary", book: "Book", page: "Page" })[item.kind]}</span>
                   <time datetime="${escapeHtml(item.date)}">${escapeHtml(item.date)}</time>
                 </div>
                 <h2>${escapeHtml(item.title)}</h2>
@@ -203,8 +209,9 @@ const serializedSearchIndex = JSON.stringify(searchIndex).replace(/</g, "\\u003c
             snippet: makeSnippet(entry.item, terms),
           }));
 
-        const displayItems = terms.length ? filtered.slice(0, 60) : filtered.slice(0, 12);
+        const displayItems = terms.length ? filtered.slice(0, displayLimit) : filtered.slice(0, displayLimit === 60 ? 12 : displayLimit);
 
+        moreButton.hidden = displayItems.length >= filtered.length;
         status.textContent = terms.length
           ? `${filtered.length}件見つかりました`
           : "最近の更新";
@@ -216,13 +223,20 @@ const serializedSearchIndex = JSON.stringify(searchIndex).replace(/</g, "\\u003c
         updateUrl();
       }
 
+      moreButton.addEventListener("click", () => {
+        displayLimit += 60;
+        render();
+      });
+
       input.addEventListener("input", (event) => {
+        displayLimit = 60;
         state.query = event.currentTarget.value;
         render();
       });
 
       for (const button of kindButtons) {
         button.addEventListener("click", () => {
+          displayLimit = 60;
           setKind(button.dataset.kind || "all");
           render();
         });
@@ -233,7 +247,10 @@ const serializedSearchIndex = JSON.stringify(searchIndex).replace(/</g, "\\u003c
         render();
       });
 
-      window.addEventListener("popstate", applyUrlState);
+      window.addEventListener("popstate", () => {
+        applyUrlState();
+        render();
+      });
 
       applyUrlState();
       render();
