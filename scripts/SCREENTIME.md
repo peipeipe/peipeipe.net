@@ -1,5 +1,14 @@
 # iPhoneのスクリーンタイムを送信する
 
+## 毎朝のDiscord通知
+
+`.github/workflows/notify-screentime.yml` が毎朝8時（日本時間、UTC 23時）に前日分を通知する。
+既存のリポジトリSecret `DISCORD_WEBHOOK_URL` を使用し、合計と上位10アプリを送る。
+サイトと同じ集計処理で地図・ナビを除外する。前日分がない場合は未登録と通知する。
+GitHub Actionsの混雑により実行が遅れる場合がある。デフォルトブランチへの反映後に定期実行が有効になる。
+Actionsの `Notify daily screen time` から手動実行も可能（実際にDiscordへ送信される）。
+送信せずに確認する場合はリポジトリ直下で `node scripts/notify_screentime.mjs --dry-run` を実行する。
+
 ## 構成と公開範囲
 
 ショートカット → `POST https://www.peipeipe.net/api/screentime`
