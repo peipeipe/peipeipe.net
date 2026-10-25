@@ -1,5 +1,27 @@
 [
   {
+    "name": "TOHOシネマズ上田",
+    "user_comment": "我々は宇宙人",
+    "date": "2026-10-25",
+    "lat": 36.3997749741023,
+    "lng": 138.24319347858935,
+    "address": "天神3-5-1 (アリオ上田 1F), 上田市, 長野県, 386-0025",
+    "foursquare_url": "https://foursquare.com/v/4dafc4e790a08731273ad519",
+    "photos": [
+      "https://fastly.4sqi.net/img/general/500x300/41463109_4aSEK2PpMkY1Xx0GXvQwygIJsEDszoVs9uLdmokX5J4.jpg",
+      "https://fastly.4sqi.net/img/general/500x300/41463109_0IXWStrQunEkgdeStZ86pGjhfWDNLSSGQq05zortMl4.jpg"
+    ],
+    "categories": [
+      "映画館"
+    ],
+    "data_source": "foursquare_checkin",
+    "fsq_id": "4dafc4e790a08731273ad519",
+    "checkin_count": 7,
+    "first_checkin_at": "2024-07-20T04:25:02+00:00",
+    "last_checkin_at": "2026-10-25T00:11:41+00:00",
+    "composition_hint": ""
+  },
+  {
     "name": "真田温泉 ふれあいさなだ館",
     "user_comment": "w/ 父",
     "date": "2026-10-23",
@@ -411,28 +433,6 @@
     "checkin_count": 1,
     "first_checkin_at": "2026-10-10T04:34:10+00:00",
     "last_checkin_at": "2026-10-10T04:34:10+00:00",
-    "composition_hint": ""
-  },
-  {
-    "name": "TOHOシネマズ上田",
-    "user_comment": "オデュッセイア",
-    "date": "2026-10-09",
-    "lat": 36.3997749741023,
-    "lng": 138.24319347858935,
-    "address": "天神3-5-1 (アリオ上田 1F), 上田市, 長野県, 386-0025",
-    "foursquare_url": "https://foursquare.com/v/4dafc4e790a08731273ad519",
-    "photos": [
-      "https://fastly.4sqi.net/img/general/500x300/41463109_4aSEK2PpMkY1Xx0GXvQwygIJsEDszoVs9uLdmokX5J4.jpg",
-      "https://fastly.4sqi.net/img/general/500x300/41463109_0IXWStrQunEkgdeStZ86pGjhfWDNLSSGQq05zortMl4.jpg"
-    ],
-    "categories": [
-      "映画館"
-    ],
-    "data_source": "foursquare_checkin",
-    "fsq_id": "4dafc4e790a08731273ad519",
-    "checkin_count": 6,
-    "first_checkin_at": "2024-07-20T04:25:02+00:00",
-    "last_checkin_at": "2026-10-09T08:52:09+00:00",
     "composition_hint": ""
   },
   {
@@ -6044,8 +6044,8 @@
     "name": "JR 東京駅",
     "user_comment": "",
     "date": "2025-08-17",
-    "lat": 35.68137684009799,
-    "lng": 139.76668304639026,
+    "lat": 35.681325951715515,
+    "lng": 139.76700751613262,
     "address": "丸の内1-9-1, 千代田区, 東京都, 100-6505",
     "foursquare_url": "https://foursquare.com/v/4be4f932d4f7c9b61df92420",
     "photos": [],
@@ -15734,8 +15734,8 @@
     "name": "新宿",
     "user_comment": "",
     "date": "2023-05-10",
-    "lat": 35.690762538457136,
-    "lng": 139.7005432641213,
+    "lat": 35.69122559026879,
+    "lng": 139.7009321938216,
     "address": "新宿区, 東京都",
     "foursquare_url": "https://foursquare.com/v/4d145edc25cda143b89960d6",
     "photos": [],
@@ -41236,8 +41236,8 @@
     "name": "松戸駅",
     "user_comment": "とくべつ快速に乗っちゃったパティシエ",
     "date": "2014-01-08",
-    "lat": 35.78456903130313,
-    "lng": 139.90087971541976,
+    "lat": 35.784779033266915,
+    "lng": 139.90084969697278,
     "address": "松戸1181, 松戸市, 千葉県, 271-0092",
     "foursquare_url": "https://foursquare.com/v/4b502762f964a5209b1d27e3",
     "photos": [],
