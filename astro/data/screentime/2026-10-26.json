@@ -1,0 +1,122 @@
+{
+  "date": "2026-10-26",
+  "device": "iPhone",
+  "apps": [
+    {
+      "app": "Chrome",
+      "minutes": 89.7463705341021
+    },
+    {
+      "app": "Brave",
+      "minutes": 46.6066003501415
+    },
+    {
+      "app": "Instagram",
+      "minutes": 46.1274420440197
+    },
+    {
+      "app": "ChatGPT",
+      "minutes": 21.0103544195493
+    },
+    {
+      "app": "YouTube",
+      "minutes": 18.4902846157551
+    },
+    {
+      "app": "LINE",
+      "minutes": 12.6875958879789
+    },
+    {
+      "app": "Muse",
+      "minutes": 11.9177744030952
+    },
+    {
+      "app": "Authy",
+      "minutes": 5.9418517669042
+    },
+    {
+      "app": "Gmail",
+      "minutes": 5.56361306508382
+    },
+    {
+      "app": "Strava",
+      "minutes": 4.92538675069809
+    },
+    {
+      "app": "Reddit",
+      "minutes": 4.59621738592784
+    },
+    {
+      "app": "GitHub",
+      "minutes": 3.50036644935608
+    },
+    {
+      "app": "天気",
+      "minutes": 2.77725366751353
+    },
+    {
+      "app": "YouTube Music",
+      "minutes": 2.08827910025914
+    },
+    {
+      "app": "Slack",
+      "minutes": 1.81681083639463
+    },
+    {
+      "app": "Tailscale",
+      "minutes": 0.990777583916982
+    },
+    {
+      "app": "VLC",
+      "minutes": 0.792463201284408
+    },
+    {
+      "app": "TeamHub",
+      "minutes": 0.713047299782435
+    },
+    {
+      "app": "Spotify",
+      "minutes": 0.585872632265091
+    },
+    {
+      "app": "Nintendo Switch App",
+      "minutes": 0.578894199927648
+    },
+    {
+      "app": "Discord",
+      "minutes": 0.554933367172877
+    },
+    {
+      "app": "ユーザ認証",
+      "minutes": 0.265572766462962
+    },
+    {
+      "app": "写真",
+      "minutes": 0.189483896891276
+    },
+    {
+      "app": "楽天銀行",
+      "minutes": 0.178851282596588
+    },
+    {
+      "app": "App Store",
+      "minutes": 0.178765632708867
+    },
+    {
+      "app": "COROS",
+      "minutes": 0.141817500193914
+    },
+    {
+      "app": "Googleカレンダー",
+      "minutes": 0.100664949417114
+    },
+    {
+      "app": "Amazon Photos",
+      "minutes": 0.0294047832489014
+    },
+    {
+      "app": "Tapo",
+      "minutes": 0.0240280012289683
+    }
+  ]
+}
