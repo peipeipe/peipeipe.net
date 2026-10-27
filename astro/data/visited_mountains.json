@@ -66,8 +66,15 @@
     "tags": [
       "信州百名山"
     ],
-    "visit_count": 21,
+    "visit_count": 22,
     "activities": [
+      {
+        "id": "i202155377",
+        "name": "Lunch トレイルラン",
+        "date": "2026-10-27",
+        "sport_type": "TrailRun",
+        "distance_km": 15.0
+      },
       {
         "id": 20000420653,
         "name": "ランチタイム トレイルランニング",
@@ -217,7 +224,7 @@
       }
     ],
     "first_visit": "2024-09-29",
-    "last_visit": "2026-09-02"
+    "last_visit": "2026-10-27"
   },
   {
     "name": "虚空蔵山",
