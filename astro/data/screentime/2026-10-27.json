@@ -1,0 +1,122 @@
+{
+  "date": "2026-10-27",
+  "device": "iPhone",
+  "apps": [
+    {
+      "app": "Chrome",
+      "minutes": 80.7855333209038
+    },
+    {
+      "app": "YouTube",
+      "minutes": 17.9563427825769
+    },
+    {
+      "app": "Instagram",
+      "minutes": 15.78642766277
+    },
+    {
+      "app": "メルカリ",
+      "minutes": 14.701021784544
+    },
+    {
+      "app": "LocalSend",
+      "minutes": 11.4060051679611
+    },
+    {
+      "app": "Muse",
+      "minutes": 10.2448717832565
+    },
+    {
+      "app": "ChatGPT",
+      "minutes": 6.72543404897054
+    },
+    {
+      "app": "LINE",
+      "minutes": 3.85608063538869
+    },
+    {
+      "app": "Gmail",
+      "minutes": 2.67314818898837
+    },
+    {
+      "app": "Reddit",
+      "minutes": 2.58110763430595
+    },
+    {
+      "app": "Pep Up",
+      "minutes": 2.19340641697248
+    },
+    {
+      "app": "TeamHub",
+      "minutes": 1.98061156868935
+    },
+    {
+      "app": "Strava",
+      "minutes": 1.92530556718508
+    },
+    {
+      "app": "Google Maps",
+      "minutes": 1.87736633022626
+    },
+    {
+      "app": "Brave",
+      "minutes": 1.82739718357722
+    },
+    {
+      "app": "Tapo",
+      "minutes": 1.7725117166837
+    },
+    {
+      "app": "セサミ",
+      "minutes": 0.799170517921448
+    },
+    {
+      "app": "Slack",
+      "minutes": 0.643609748284022
+    },
+    {
+      "app": "Spotify",
+      "minutes": 0.621306316057841
+    },
+    {
+      "app": "iAEON",
+      "minutes": 0.604199465115865
+    },
+    {
+      "app": "COROS",
+      "minutes": 0.394302914539973
+    },
+    {
+      "app": "ユーザ認証",
+      "minutes": 0.3367622534434
+    },
+    {
+      "app": "天気",
+      "minutes": 0.198205399513245
+    },
+    {
+      "app": "Googleカレンダー",
+      "minutes": 0.0969137330849965
+    },
+    {
+      "app": "設定",
+      "minutes": 0.0843977848688761
+    },
+    {
+      "app": "カレンダー",
+      "minutes": 0.0590379337469737
+    },
+    {
+      "app": "YouTube Music",
+      "minutes": 0.0529491166273753
+    },
+    {
+      "app": "写真",
+      "minutes": 0.0404677172501882
+    },
+    {
+      "app": "Discord",
+      "minutes": 0.0253715654214223
+    }
+  ]
+}
