@@ -1,0 +1,134 @@
+{
+  "date": "2026-10-28",
+  "device": "iPhone",
+  "apps": [
+    {
+      "app": "Google Maps",
+      "minutes": 162.432485888402
+    },
+    {
+      "app": "メルカリ",
+      "minutes": 69.2141063670317
+    },
+    {
+      "app": "Chrome",
+      "minutes": 43.1120524525642
+    },
+    {
+      "app": "Instagram",
+      "minutes": 36.0402190625668
+    },
+    {
+      "app": "YouTube",
+      "minutes": 28.1712580780188
+    },
+    {
+      "app": "Muse",
+      "minutes": 18.7204716523488
+    },
+    {
+      "app": "ChatGPT",
+      "minutes": 14.9231323639552
+    },
+    {
+      "app": "Gmail",
+      "minutes": 7.2293247282505
+    },
+    {
+      "app": "Strava",
+      "minutes": 2.16343496839206
+    },
+    {
+      "app": "Brave",
+      "minutes": 1.96533638238907
+    },
+    {
+      "app": "LINE",
+      "minutes": 1.71694655021032
+    },
+    {
+      "app": "ユーザ認証",
+      "minutes": 1.59798481464386
+    },
+    {
+      "app": "COROS",
+      "minutes": 1.40673920114835
+    },
+    {
+      "app": "TeamHub",
+      "minutes": 1.34365510145823
+    },
+    {
+      "app": "楽天銀行",
+      "minutes": 1.24742981592814
+    },
+    {
+      "app": "Reddit",
+      "minutes": 1.13538445035617
+    },
+    {
+      "app": "geographica",
+      "minutes": 0.692653566598892
+    },
+    {
+      "app": "バーガーキング",
+      "minutes": 0.566029999653498
+    },
+    {
+      "app": "YouTube Music",
+      "minutes": 0.531083313624064
+    },
+    {
+      "app": "AR山ナビ",
+      "minutes": 0.334596667687098
+    },
+    {
+      "app": "Pep Up",
+      "minutes": 0.297935849428177
+    },
+    {
+      "app": "カメラ",
+      "minutes": 0.17898958325386
+    },
+    {
+      "app": "Spotify",
+      "minutes": 0.158240699768066
+    },
+    {
+      "app": "ウォレット",
+      "minutes": 0.134881865978241
+    },
+    {
+      "app": "時計",
+      "minutes": 0.108845249811808
+    },
+    {
+      "app": "Delta",
+      "minutes": 0.0912403504053752
+    },
+    {
+      "app": "AuthenticationServicesUI",
+      "minutes": 0.0871562004089356
+    },
+    {
+      "app": "写真",
+      "minutes": 0.0790983994801839
+    },
+    {
+      "app": "Swarm",
+      "minutes": 0.0736411809921265
+    },
+    {
+      "app": "App Store",
+      "minutes": 0.0564647674560547
+    },
+    {
+      "app": "LimitedAccessPromptView",
+      "minutes": 0.0467826664447784
+    },
+    {
+      "app": "すき家",
+      "minutes": 0.0313607672850291
+    }
+  ]
+}
