@@ -1690,8 +1690,15 @@
       "百名山",
       "信州百名山"
     ],
-    "visit_count": 1,
+    "visit_count": 2,
     "activities": [
+      {
+        "id": "i203007844",
+        "name": "Morning トレイルラン",
+        "date": "2026-10-29",
+        "sport_type": "TrailRun",
+        "distance_km": 7.5
+      },
       {
         "id": 19856755569,
         "name": "7合目駐車場から蓼科山",
@@ -1701,7 +1708,7 @@
       }
     ],
     "first_visit": "2026-08-23",
-    "last_visit": "2026-08-23"
+    "last_visit": "2026-10-29"
   },
   {
     "name": "丸山",
