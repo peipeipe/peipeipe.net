@@ -1,0 +1,102 @@
+{
+  "date": "2026-10-29",
+  "device": "iPhone",
+  "apps": [
+    {
+      "app": "Chrome",
+      "minutes": 43.3331468681494
+    },
+    {
+      "app": "Muse",
+      "minutes": 15.8749574343363
+    },
+    {
+      "app": "YouTube",
+      "minutes": 13.9725975513458
+    },
+    {
+      "app": "Instagram",
+      "minutes": 10.5640560130278
+    },
+    {
+      "app": "Google Maps",
+      "minutes": 8.38337073723475
+    },
+    {
+      "app": "geographica",
+      "minutes": 4.25359371503194
+    },
+    {
+      "app": "Gmail",
+      "minutes": 2.9554274002711
+    },
+    {
+      "app": "Reddit",
+      "minutes": 2.87904161612193
+    },
+    {
+      "app": "YouTube Music",
+      "minutes": 2.65346705118815
+    },
+    {
+      "app": "天気",
+      "minutes": 1.58164513508479
+    },
+    {
+      "app": "PayPay",
+      "minutes": 1.4652942319711
+    },
+    {
+      "app": "LINE",
+      "minutes": 1.348223199447
+    },
+    {
+      "app": "Swarm",
+      "minutes": 0.778731334209442
+    },
+    {
+      "app": "ユーザ認証",
+      "minutes": 0.570580265919368
+    },
+    {
+      "app": "AR山ナビ",
+      "minutes": 0.341536951065064
+    },
+    {
+      "app": "Discord",
+      "minutes": 0.240772350629171
+    },
+    {
+      "app": "MyCam",
+      "minutes": 0.232799899578094
+    },
+    {
+      "app": "メルカリ",
+      "minutes": 0.1867593506972
+    },
+    {
+      "app": "COROS",
+      "minutes": 0.131200132767359
+    },
+    {
+      "app": "TeamHub",
+      "minutes": 0.126326648394267
+    },
+    {
+      "app": "カメラ",
+      "minutes": 0.0992482682069143
+    },
+    {
+      "app": "時計",
+      "minutes": 0.0727147499720256
+    },
+    {
+      "app": "Googleカレンダー",
+      "minutes": 0.0297296325365702
+    },
+    {
+      "app": "雨かしら？",
+      "minutes": 0.0201251824696859
+    }
+  ]
+}
