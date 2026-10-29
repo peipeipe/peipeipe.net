@@ -1,5 +1,25 @@
 [
   {
+    "name": "蓼科グランドホテル 滝の湯",
+    "user_comment": "温泉、サウナ",
+    "date": "2026-10-29",
+    "lat": 36.059211507390664,
+    "lng": 138.2648427698459,
+    "address": "北山4028, 茅野市, 長野県, 391-0393",
+    "foursquare_url": "https://foursquare.com/v/4bde4f716198c9b60fb313ff",
+    "photos": [
+      "https://fastly.4sqi.net/img/general/500x300/41463109_fOqjLWaJFMkhiCRFQ5MjZHiD6t-vSaV6VQGUKKgpEzs.jpg"
+    ],
+    "categories": [
+      "ホテル"
+    ],
+    "data_source": "foursquare_checkin",
+    "fsq_id": "4bde4f716198c9b60fb313ff",
+    "checkin_count": 1,
+    "first_checkin_at": "2026-10-29T08:33:33+00:00",
+    "last_checkin_at": "2026-10-29T08:33:33+00:00"
+  },
+  {
     "name": "TOHOシネマズ上田",
     "user_comment": "我々は宇宙人",
     "date": "2026-10-25",
@@ -19935,8 +19955,8 @@
     "name": "JR 品川駅",
     "user_comment": "たまには逆方向でイングレスしながら帰る",
     "date": "2022-05-05",
-    "lat": 35.628435721518265,
-    "lng": 139.7386156393674,
+    "lat": 35.628585777293665,
+    "lng": 139.73912955681052,
     "address": "高輪3-26-27, 港区, 東京都, 108-0074",
     "foursquare_url": "https://foursquare.com/v/4ec0d5979911a2ec5c6cdda6",
     "photos": [],
@@ -42091,8 +42111,8 @@
     "name": "高田馬場駅",
     "user_comment": "",
     "date": "2013-08-16",
-    "lat": 35.71277831048112,
-    "lng": 139.7035400833713,
+    "lat": 35.71270581323516,
+    "lng": 139.70388415386418,
     "address": "高田馬場1-35-2, 新宿区, 東京都, 169-0075",
     "foursquare_url": "https://foursquare.com/v/4b1b6114f964a5201efb23e3",
     "photos": [],
@@ -44565,8 +44585,8 @@
     "name": "JR 大船駅",
     "user_comment": "",
     "date": "2013-01-03",
-    "lat": 35.35427233404887,
-    "lng": 139.53141271438557,
+    "lat": 35.35444605281422,
+    "lng": 139.5313033314433,
     "address": "大船1-1-1, 鎌倉市, 神奈川県, 247-0056",
     "foursquare_url": "https://foursquare.com/v/4bbca8814e069c74dfb09de3",
     "photos": [],

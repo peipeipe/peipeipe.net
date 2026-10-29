@@ -1,5 +1,25 @@
 [
   {
+    "name": "蓼科グランドホテル 滝の湯",
+    "user_comment": "温泉、サウナ",
+    "date": "2026-10-29",
+    "lat": 36.059211507390664,
+    "lng": 138.2648427698459,
+    "address": "北山4028, 茅野市, 長野県, 391-0393",
+    "foursquare_url": "https://foursquare.com/v/4bde4f716198c9b60fb313ff",
+    "photos": [
+      "https://fastly.4sqi.net/img/general/500x300/41463109_fOqjLWaJFMkhiCRFQ5MjZHiD6t-vSaV6VQGUKKgpEzs.jpg"
+    ],
+    "categories": [
+      "ホテル"
+    ],
+    "data_source": "foursquare_checkin",
+    "fsq_id": "4bde4f716198c9b60fb313ff",
+    "checkin_count": 1,
+    "first_checkin_at": "2026-10-29T08:33:33+00:00",
+    "last_checkin_at": "2026-10-29T08:33:33+00:00"
+  },
+  {
     "name": "真田温泉 ふれあいさなだ館",
     "user_comment": "w/ 父",
     "date": "2026-10-23",
