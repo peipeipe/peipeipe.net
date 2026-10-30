@@ -1,5 +1,65 @@
 [
   {
+    "name": "別所温泉 あいそめの湯",
+    "user_comment": "",
+    "date": "2026-10-30",
+    "lat": 36.353516129807986,
+    "lng": 138.16289191889751,
+    "address": "別所温泉58, 上田市, 長野県, 386-1431",
+    "foursquare_url": "https://foursquare.com/v/4b83b4caf964a520a30d31e3",
+    "photos": [
+      "https://fastly.4sqi.net/img/general/500x300/41463109_EBAbU6immgM3yveg5y3S2HX4d1YVOXRbhmdqM20BGbo.jpg",
+      "https://fastly.4sqi.net/img/general/500x300/41463109_LCF2sfbuZtxmJUt2zyPDq5uKjMS7S9ahm5ktDEoG-Yg.jpg"
+    ],
+    "categories": [
+      "温泉"
+    ],
+    "data_source": "foursquare_checkin",
+    "fsq_id": "4b83b4caf964a520a30d31e3",
+    "checkin_count": 15,
+    "first_checkin_at": "2024-07-21T08:39:38+00:00",
+    "last_checkin_at": "2026-10-30T11:09:29+00:00",
+    "composition_hint": ""
+  },
+  {
+    "name": "ベーカリーレストラン エピ",
+    "user_comment": "",
+    "date": "2026-10-30",
+    "lat": 36.03527313801165,
+    "lng": 138.26072338901605,
+    "address": "北山5522-373, 茅野市, 長野県",
+    "foursquare_url": "https://foursquare.com/v/6ae422b84e080e44728bf9a3",
+    "photos": [
+      "https://fastly.4sqi.net/img/general/500x300/41463109_UIrCa2N89_-gjJtJlH_hwmGgH9f-9QeqH37zrGgmrek.jpg"
+    ],
+    "categories": [
+      "レストラン"
+    ],
+    "data_source": "foursquare_checkin",
+    "fsq_id": "6ae422b84e080e44728bf9a3",
+    "checkin_count": 1,
+    "first_checkin_at": "2026-10-30T04:53:12+00:00",
+    "last_checkin_at": "2026-10-30T04:53:12+00:00"
+  },
+  {
+    "name": "御射鹿池",
+    "user_comment": "",
+    "date": "2026-10-30",
+    "lat": 36.033344,
+    "lng": 138.29199,
+    "address": "豊平, 茅野市, 長野県, 391-0213",
+    "foursquare_url": "https://foursquare.com/v/4dc1042222713750ba732715",
+    "photos": [],
+    "categories": [
+      "湖沼"
+    ],
+    "data_source": "foursquare_checkin",
+    "fsq_id": "4dc1042222713750ba732715",
+    "checkin_count": 1,
+    "first_checkin_at": "2026-10-30T03:12:53+00:00",
+    "last_checkin_at": "2026-10-30T03:12:53+00:00"
+  },
+  {
     "name": "蓼科グランドホテル 滝の湯",
     "user_comment": "温泉、サウナ",
     "date": "2026-10-29",
@@ -17,7 +77,8 @@
     "fsq_id": "4bde4f716198c9b60fb313ff",
     "checkin_count": 1,
     "first_checkin_at": "2026-10-29T08:33:33+00:00",
-    "last_checkin_at": "2026-10-29T08:33:33+00:00"
+    "last_checkin_at": "2026-10-29T08:33:33+00:00",
+    "composition_hint": ""
   },
   {
     "name": "TOHOシネマズ上田",
@@ -959,28 +1020,6 @@
     "checkin_count": 1,
     "first_checkin_at": "2026-09-11T02:43:07+00:00",
     "last_checkin_at": "2026-09-11T02:43:07+00:00",
-    "composition_hint": ""
-  },
-  {
-    "name": "別所温泉 あいそめの湯",
-    "user_comment": "",
-    "date": "2026-09-10",
-    "lat": 36.353516129807986,
-    "lng": 138.16289191889751,
-    "address": "別所温泉58, 上田市, 長野県, 386-1431",
-    "foursquare_url": "https://foursquare.com/v/4b83b4caf964a520a30d31e3",
-    "photos": [
-      "https://fastly.4sqi.net/img/general/500x300/41463109_EBAbU6immgM3yveg5y3S2HX4d1YVOXRbhmdqM20BGbo.jpg",
-      "https://fastly.4sqi.net/img/general/500x300/41463109_LCF2sfbuZtxmJUt2zyPDq5uKjMS7S9ahm5ktDEoG-Yg.jpg"
-    ],
-    "categories": [
-      "温泉"
-    ],
-    "data_source": "foursquare_checkin",
-    "fsq_id": "4b83b4caf964a520a30d31e3",
-    "checkin_count": 14,
-    "first_checkin_at": "2024-07-21T08:39:38+00:00",
-    "last_checkin_at": "2026-09-10T09:29:27+00:00",
     "composition_hint": ""
   },
   {
@@ -13574,8 +13613,8 @@
     "name": "錦糸町駅",
     "user_comment": "",
     "date": "2023-12-16",
-    "lat": 35.69685647365926,
-    "lng": 139.8143191796812,
+    "lat": 35.69678001280209,
+    "lng": 139.81384457788218,
     "address": "江東橋3, 墨田区, 東京都, 130-0022",
     "foursquare_url": "https://foursquare.com/v/4b1a3c14f964a5204de823e3",
     "photos": [],
