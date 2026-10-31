@@ -39,7 +39,8 @@
     "fsq_id": "6ae422b84e080e44728bf9a3",
     "checkin_count": 1,
     "first_checkin_at": "2026-10-30T04:53:12+00:00",
-    "last_checkin_at": "2026-10-30T04:53:12+00:00"
+    "last_checkin_at": "2026-10-30T04:53:12+00:00",
+    "composition_hint": ""
   },
   {
     "name": "御射鹿池",
@@ -57,7 +58,8 @@
     "fsq_id": "4dc1042222713750ba732715",
     "checkin_count": 1,
     "first_checkin_at": "2026-10-30T03:12:53+00:00",
-    "last_checkin_at": "2026-10-30T03:12:53+00:00"
+    "last_checkin_at": "2026-10-30T03:12:53+00:00",
+    "composition_hint": ""
   },
   {
     "name": "蓼科グランドホテル 滝の湯",
@@ -13339,8 +13341,8 @@
     "name": "東海道新幹線 東京駅",
     "user_comment": "",
     "date": "2024-01-26",
-    "lat": 35.681197191791824,
-    "lng": 139.76774631538987,
+    "lat": 35.68083508161237,
+    "lng": 139.7677912426681,
     "address": "丸の内1-9-1, 千代田区, 東京都, 100-0005",
     "foursquare_url": "https://foursquare.com/v/4b792714f964a52018ed2ee3",
     "photos": [
@@ -24876,8 +24878,8 @@
     "name": "飯田橋駅",
     "user_comment": "人生どうでも",
     "date": "2020-02-15",
-    "lat": 35.70104125394091,
-    "lng": 139.74387477196458,
+    "lat": 35.70049263031552,
+    "lng": 139.74382986278601,
     "address": "飯田橋4/神楽坂1/後楽1, 東京, 東京都, 102-0072",
     "foursquare_url": "https://foursquare.com/v/4b18bed2f964a5207dd523e3",
     "photos": [],
@@ -25612,7 +25614,7 @@
     "date": "2019-11-29",
     "lat": 22.197419,
     "lng": 113.540847,
-    "address": "Travessa de São Paulo, マカオ",
+    "address": "Travessa de São Paulo, Santo Antonio, Municipality of Macau, 中国",
     "foursquare_url": "https://foursquare.com/v/4b8a3246f964a520b56332e3",
     "photos": [
       "https://fastly.4sqi.net/img/general/500x300/41463109_Lfeb_k5wsPCaOGKqKp3oCLBpvQTf_NRRgLBaj5sT7p8.jpg"
@@ -43062,8 +43064,8 @@
     "name": "御茶ノ水駅",
     "user_comment": "",
     "date": "2013-05-02",
-    "lat": 35.69938609127087,
-    "lng": 139.76569966430637,
+    "lat": 35.69963576545652,
+    "lng": 139.76506072426824,
     "address": "神田駿河台2-6-1, 千代田区, 東京都",
     "foursquare_url": "https://foursquare.com/v/4b38b418f964a520914f25e3",
     "photos": [],
