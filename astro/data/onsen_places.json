@@ -1,5 +1,25 @@
 [
   {
+    "name": "おかや温泉美肌の湯 ロマネット",
+    "user_comment": "",
+    "date": "2026-11-01",
+    "lat": 36.0617766,
+    "lng": 138.0672913,
+    "address": "長地権現町4丁目1-24, 岡谷市, 長野県, 394-0081",
+    "foursquare_url": "https://foursquare.com/v/6ae6ce0a8f72766f2c1237b7",
+    "photos": [
+      "https://fastly.4sqi.net/img/general/500x300/41463109_rdDXDkeYd7eH7gSr5AqkwPOXc6tAG_9Bp8sjR-FHeBs.jpg",
+      "https://fastly.4sqi.net/img/general/500x300/41463109_deoDL-vTvEwaBiERbtIReTt7DWnK4mnUiRj1vLdiH-A.jpg",
+      "https://fastly.4sqi.net/img/general/500x300/41463109_t9t7zQ_3OHDu_0y0wxnRd9F0cAIsFEHap7VXqh7AFFs.jpg"
+    ],
+    "categories": [],
+    "data_source": "foursquare_checkin",
+    "fsq_id": "6ae6ce0a8f72766f2c1237b7",
+    "checkin_count": 1,
+    "first_checkin_at": "2026-11-01T05:28:42+00:00",
+    "last_checkin_at": "2026-11-01T05:28:42+00:00"
+  },
+  {
     "name": "別所温泉 あいそめの湯",
     "user_comment": "",
     "date": "2026-10-30",
