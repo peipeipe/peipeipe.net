@@ -1,0 +1,142 @@
+{
+  "date": "2026-11-01",
+  "device": "iPhone",
+  "apps": [
+    {
+      "app": "Chrome",
+      "minutes": 56.5920243501663
+    },
+    {
+      "app": "Instagram",
+      "minutes": 43.8883201599121
+    },
+    {
+      "app": "ChatGPT",
+      "minutes": 37.4225907623768
+    },
+    {
+      "app": "Strava",
+      "minutes": 20.9993894000848
+    },
+    {
+      "app": "Google Maps",
+      "minutes": 16.5974633812904
+    },
+    {
+      "app": "COROS",
+      "minutes": 9.14654791355133
+    },
+    {
+      "app": "LINE",
+      "minutes": 8.93147106965383
+    },
+    {
+      "app": "メルカリ",
+      "minutes": 3.88074426651001
+    },
+    {
+      "app": "Muse",
+      "minutes": 3.435697833697
+    },
+    {
+      "app": "TeamHub",
+      "minutes": 3.39969375133514
+    },
+    {
+      "app": "YouTube",
+      "minutes": 3.06126599907875
+    },
+    {
+      "app": "カメラ",
+      "minutes": 2.81806663274765
+    },
+    {
+      "app": "radiko",
+      "minutes": 1.96052343050639
+    },
+    {
+      "app": "Reddit",
+      "minutes": 1.61022638479869
+    },
+    {
+      "app": "写真",
+      "minutes": 1.5102591474851
+    },
+    {
+      "app": "Gmail",
+      "minutes": 1.44103578329086
+    },
+    {
+      "app": "設定",
+      "minutes": 1.41436560352643
+    },
+    {
+      "app": "楽天ペイ",
+      "minutes": 1.35825526714325
+    },
+    {
+      "app": "Swarm",
+      "minutes": 0.990276585022608
+    },
+    {
+      "app": "Authy",
+      "minutes": 0.634811800718308
+    },
+    {
+      "app": "Googleカレンダー",
+      "minutes": 0.552758266528448
+    },
+    {
+      "app": "ウォレット",
+      "minutes": 0.368893015384674
+    },
+    {
+      "app": "ユーザ認証",
+      "minutes": 0.261557718118032
+    },
+    {
+      "app": "Connect",
+      "minutes": 0.185357483228048
+    },
+    {
+      "app": "Slack",
+      "minutes": 0.169299131631851
+    },
+    {
+      "app": "App Store",
+      "minutes": 0.143022684256236
+    },
+    {
+      "app": "YouTube Music",
+      "minutes": 0.13846589922905
+    },
+    {
+      "app": "タイミー",
+      "minutes": 0.132272015015284
+    },
+    {
+      "app": "セサミ",
+      "minutes": 0.123346851269404
+    },
+    {
+      "app": "時計",
+      "minutes": 0.117593332131704
+    },
+    {
+      "app": "AuthenticationServicesUI",
+      "minutes": 0.105841765801112
+    },
+    {
+      "app": "Discord",
+      "minutes": 0.0952978670597076
+    },
+    {
+      "app": "天気",
+      "minutes": 0.0578206499417623
+    },
+    {
+      "app": "InCallService",
+      "minutes": 0.0278764486312866
+    }
+  ]
+}
