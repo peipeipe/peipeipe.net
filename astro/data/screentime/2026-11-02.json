@@ -1,0 +1,178 @@
+{
+  "date": "2026-11-02",
+  "device": "iPhone",
+  "apps": [
+    {
+      "app": "Google Maps",
+      "minutes": 146.506564066807
+    },
+    {
+      "app": "Chrome",
+      "minutes": 65.2795086959998
+    },
+    {
+      "app": "Instagram",
+      "minutes": 48.1430944025516
+    },
+    {
+      "app": "ChatGPT",
+      "minutes": 33.6568111300468
+    },
+    {
+      "app": "Muse",
+      "minutes": 23.1448771695296
+    },
+    {
+      "app": "YouTube",
+      "minutes": 19.1662129839261
+    },
+    {
+      "app": "Reddit",
+      "minutes": 14.1369838277499
+    },
+    {
+      "app": "メルカリ",
+      "minutes": 11.0713772018751
+    },
+    {
+      "app": "AliExpress",
+      "minutes": 10.6869696656863
+    },
+    {
+      "app": "LINE",
+      "minutes": 8.43022284706434
+    },
+    {
+      "app": "Strava",
+      "minutes": 7.69834526777268
+    },
+    {
+      "app": "Gmail",
+      "minutes": 6.94659818808238
+    },
+    {
+      "app": "TeamHub",
+      "minutes": 4.94314439892769
+    },
+    {
+      "app": "JRE BANK",
+      "minutes": 4.48579691648483
+    },
+    {
+      "app": "COROS",
+      "minutes": 4.04662968913714
+    },
+    {
+      "app": "Slack",
+      "minutes": 3.74011669953664
+    },
+    {
+      "app": "YouTube Music",
+      "minutes": 3.6373075624307
+    },
+    {
+      "app": "App Store",
+      "minutes": 3.40851773818334
+    },
+    {
+      "app": "OsmAnd Maps",
+      "minutes": 2.67948049902916
+    },
+    {
+      "app": "応援navi",
+      "minutes": 2.5982325176398
+    },
+    {
+      "app": "写真",
+      "minutes": 1.36163248419762
+    },
+    {
+      "app": "TATTA",
+      "minutes": 1.30599171717962
+    },
+    {
+      "app": "天気",
+      "minutes": 0.933186334371567
+    },
+    {
+      "app": "LocalSend",
+      "minutes": 0.663217550516128
+    },
+    {
+      "app": "GitHub",
+      "minutes": 0.637217917044958
+    },
+    {
+      "app": "ユーザ認証",
+      "minutes": 0.611578283707301
+    },
+    {
+      "app": "Discord",
+      "minutes": 0.492437535524368
+    },
+    {
+      "app": "Tapo",
+      "minutes": 0.45404314994812
+    },
+    {
+      "app": "カメラ",
+      "minutes": 0.42781211733818
+    },
+    {
+      "app": "Spotify",
+      "minutes": 0.405551183223724
+    },
+    {
+      "app": "設定",
+      "minutes": 0.385048733154933
+    },
+    {
+      "app": "Swarm",
+      "minutes": 0.282243766387304
+    },
+    {
+      "app": "電話",
+      "minutes": 0.281294063727061
+    },
+    {
+      "app": "時計",
+      "minutes": 0.28052503267924
+    },
+    {
+      "app": "メモ",
+      "minutes": 0.248327934741974
+    },
+    {
+      "app": "Connect",
+      "minutes": 0.213593083620071
+    },
+    {
+      "app": "翻訳",
+      "minutes": 0.195223633448283
+    },
+    {
+      "app": "AuthenticationServicesUI",
+      "minutes": 0.118181051810582
+    },
+    {
+      "app": "ウォレット",
+      "minutes": 0.112546217441559
+    },
+    {
+      "app": "Brave",
+      "minutes": 0.0850828488667806
+    },
+    {
+      "app": "Authy",
+      "minutes": 0.0616059998671214
+    },
+    {
+      "app": "Link Office",
+      "minutes": 0.046468718846639
+    },
+    {
+      "app": "セサミ",
+      "minutes": 0.0184394657611847
+    }
+  ]
+}
