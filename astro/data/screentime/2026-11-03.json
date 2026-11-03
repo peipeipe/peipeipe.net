@@ -1,0 +1,122 @@
+{
+  "date": "2026-11-03",
+  "device": "iPhone",
+  "apps": [
+    {
+      "app": "Google Maps",
+      "minutes": 167.108081769943
+    },
+    {
+      "app": "Instagram",
+      "minutes": 77.8409525811672
+    },
+    {
+      "app": "Chrome",
+      "minutes": 52.2274694621563
+    },
+    {
+      "app": "応援navi",
+      "minutes": 49.0025034447511
+    },
+    {
+      "app": "LINE",
+      "minutes": 37.6188956121604
+    },
+    {
+      "app": "Muse",
+      "minutes": 12.8819860597452
+    },
+    {
+      "app": "Gmail",
+      "minutes": 7.73130178054174
+    },
+    {
+      "app": "Strava",
+      "minutes": 7.05683319767316
+    },
+    {
+      "app": "写真",
+      "minutes": 6.99040994842847
+    },
+    {
+      "app": "COROS",
+      "minutes": 4.0185907959938
+    },
+    {
+      "app": "カメラ",
+      "minutes": 3.22589598496755
+    },
+    {
+      "app": "TeamHub",
+      "minutes": 2.6290748000145
+    },
+    {
+      "app": "ChatGPT",
+      "minutes": 2.59871224959691
+    },
+    {
+      "app": "Reddit",
+      "minutes": 2.56363214850426
+    },
+    {
+      "app": "Web",
+      "minutes": 1.7519577006499
+    },
+    {
+      "app": "YouTube Music",
+      "minutes": 1.48224841753642
+    },
+    {
+      "app": "天気",
+      "minutes": 0.743663332859675
+    },
+    {
+      "app": "メルカリ",
+      "minutes": 0.571288816134135
+    },
+    {
+      "app": "TATTA",
+      "minutes": 0.42935794989268
+    },
+    {
+      "app": "Coke ON",
+      "minutes": 0.42764148513476
+    },
+    {
+      "app": "YouTube",
+      "minutes": 0.408338965972265
+    },
+    {
+      "app": "ウォレット",
+      "minutes": 0.283899283409119
+    },
+    {
+      "app": "AR山ナビ",
+      "minutes": 0.263694683710734
+    },
+    {
+      "app": "OsmAnd Maps",
+      "minutes": 0.201799748341242
+    },
+    {
+      "app": "Swarm",
+      "minutes": 0.197556865215302
+    },
+    {
+      "app": "ユーザ認証",
+      "minutes": 0.175682632128398
+    },
+    {
+      "app": "Slack",
+      "minutes": 0.170596315463384
+    },
+    {
+      "app": "AuthenticationServicesUI",
+      "minutes": 0.0722087343533834
+    },
+    {
+      "app": "Spotify",
+      "minutes": 0.056128982702891
+    }
+  ]
+}
