@@ -1,5 +1,26 @@
 [
   {
+    "moving_time": 12892,
+    "elapsed_time": 24381,
+    "total_elevation_gain": 621.0,
+    "average_speed": 6.344,
+    "max_speed": 11.578,
+    "id": "i205071245",
+    "intervals_id": "i205071245",
+    "source": "intervals",
+    "url": "https://intervals.icu/activities/i205071245",
+    "name": "Morning ライド",
+    "sport_type": "Ride",
+    "distance": 83076.1,
+    "start_date": "2026-11-02T23:04:26Z",
+    "start_date_local": "2026-11-03T08:04:26",
+    "start_latlng": [
+      36.352287,
+      138.71744
+    ],
+    "summary_polyline": "y`{|E_gtmYnDdHZ?~k@io@dQaOzEgDnFh@bBi@dAoA|@iCEeAcDAc@y@x@{It@kAfH_CrCwFb@{OdBsUbGy`@x@yQz@eEnGqLzFiFpGeJ|Sc_@fAwGKyOnEySxBkCvJkGzGwJf@gDMcHf@yNOsCaBsHhC{f@t@k@vAgI`IkWxE{K|Oeo@nMua@fCcOTuKhJyb@~AsJE}AzG{UjEeKYmAAlAQOUqE|Awe@y@ma@o@_EaGyLaGyWaJwXgGg_@iKug@_Eoa@oDeMuLu\\eLkb@gQm}@yKua@mFwPeM}UhM{IaB{IaZso@qBuPqAyA]qBiAiA{Lg_@cM{Wa@{DKoXyBc]HsHgF}FmCkIaAkAmf@yRgO_Nq@gAIiA|AiGi@f@oAlF_@DOk@cBq@sGcG_EkJ_E}BCsGq@wBwXmZqAiFmCwDuS_t@iL{s@cKqXcHoOiG{UiByBcM}HkC{DuFqZgPw`@kB_LgJ}{@w]LoZtD]AYqBGt@Ty\\i@}_@{CoJIuAkOqb@oAaJqAgq@Pmt@qAoWqDeVu@mJuAye@~@}J}ApHcAEVDFg@~@vA@jB}DvTwEtJmHbIyF|CiE|@yQQyFm@qIz@uXfL_MlK`KkJpZ}MfKw@xE|@hR?bDw@dGoD`JuKvEiMdCkNG_GbDeQe@pI~E?tBhEz^{AlAt@p@xHxCxeAZtEjArFlDnHb`@xg@nLnQdRtc@zEtJxIvMUTo@m@cABFoAyCqEgBxByBf@eAg@cBoCge@rDgAj@_K|@fRhcAbGpf@`Jx|@bAlF~Oz_@|Ff[lCbExLnH~BtChGbVxHzPfJzVfLrs@tSps@jCvDbBfGrWbYbA~BNrHpErCfDhItJ~Hb@QtAeFn@UPx@oBvFp@pBnO`N~f@dStEpLfGtGhDrA[dFLrLuCr@x@dOTzXv@nChKfTtM`a@fEtBC|C|ArOjZhp@xA~HOl@yLnIvLhUnFrPdLfb@jQp~@pKj`@pRxk@r@xDv@jNrAlLnKjh@|Fh^jJdY|F|WnGxMd@fEp@~]_Bbg@XlFVc@Iq@YlEaD`IyFpTqBxM_Jta@a@nMaCdNaNxb@aO~l@qFzMeJ~[gB|KmBf_@hBnMe@~LH~I]zCeHnKaN`K}EbTHtOoAtHcSx]wHzKgGxFoFbK}@nE_AhRgGfb@aCld@}ChGoFdCuBpD]xFxCEp@v@cBbFmDzAoEq@qCxAaSfQql@jo@}AwAoBaEqBWsBkE"
+  },
+  {
     "moving_time": 8077,
     "elapsed_time": 8082,
     "total_elevation_gain": 177.70581,
