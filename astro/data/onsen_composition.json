@@ -1,13 +1,135 @@
 {
-  "generated_on": "2026-11-01",
+  "generated_on": "2026-11-04",
   "stats": {
-    "places": 76,
-    "springs": 78,
-    "composition_photos": 33,
-    "not_composition_photos": 104,
+    "places": 77,
+    "springs": 79,
+    "composition_photos": 35,
+    "not_composition_photos": 105,
     "unreadable_photos": 0
   },
   "places": [
+    {
+      "fsq_id": "4c146986a5eb76b0d6cfc1b7",
+      "name": "峠の湯",
+      "address": "松井田町坂本1222 (碓氷峠の森公園交流館), 安中市, 群馬県, 379-0307",
+      "checkin_date": "2026-11-03",
+      "springs": [
+        {
+          "confidence": "high",
+          "spring_name": "東軽井沢温泉 ゆたかの湯",
+          "spring_quality": "単純温泉",
+          "source_temp_c": 33.3,
+          "use_temp_c": 41.0,
+          "ph": 8.34,
+          "evaporation_residue_mg_kg": 280.0,
+          "total_ingredients_mg_kg": 370.0,
+          "cations": [
+            {
+              "name": "ナトリウムイオン",
+              "symbol": "Na+",
+              "mg_kg": 86.9
+            },
+            {
+              "name": "カリウムイオン",
+              "symbol": "K+",
+              "mg_kg": 2.0
+            },
+            {
+              "name": "マグネシウムイオン",
+              "symbol": "Mg2+",
+              "mg_kg": 2.0
+            },
+            {
+              "name": "カルシウムイオン",
+              "symbol": "Ca2+",
+              "mg_kg": 8.7
+            }
+          ],
+          "cations_total_mg_kg": 99.6,
+          "anions": [
+            {
+              "name": "塩化物イオン",
+              "symbol": "Cl-",
+              "mg_kg": 48.5
+            },
+            {
+              "name": "硫酸イオン",
+              "symbol": "SO42-",
+              "mg_kg": 17.0
+            },
+            {
+              "name": "炭酸水素イオン",
+              "symbol": "HCO3-",
+              "mg_kg": 149.7
+            },
+            {
+              "name": "炭酸イオン",
+              "symbol": "CO32-",
+              "mg_kg": 6.0
+            }
+          ],
+          "anions_total_mg_kg": 221.2,
+          "undissociated": [
+            {
+              "name": "メタけい酸",
+              "symbol": "H2SiO3",
+              "mg_kg": 40.1
+            },
+            {
+              "name": "メタほう酸",
+              "symbol": "HBO2",
+              "mg_kg": 3.0
+            }
+          ],
+          "undissociated_total_mg_kg": 43.1,
+          "dissolved_gas": [
+            {
+              "name": "遊離二酸化炭素",
+              "symbol": "CO2",
+              "mg_kg": 1.1
+            },
+            {
+              "name": "遊離硫化水素",
+              "symbol": "H2S",
+              "mg_kg": 0.0
+            }
+          ],
+          "dissolved_gas_total_mg_kg": 1.1,
+          "treatment": {
+            "kasui": {
+              "applied": true,
+              "reason": "湧質量不足のため加水をしています"
+            },
+            "kaon": {
+              "applied": true,
+              "reason": "入浴に適さない温度のため加温をしています"
+            },
+            "junkan": {
+              "applied": true,
+              "reason": "湧質量不足および衛生管理のため循環をしています"
+            },
+            "nyuyokuzai": {
+              "applied": false,
+              "reason": "入浴剤は不使用です"
+            },
+            "shodoku": {
+              "applied": true,
+              "reason": "衛生管理のため次亜塩素酸ナトリウムにて消毒をしています"
+            }
+          },
+          "indications": [
+            "自律神経不安定症",
+            "不眠症",
+            "うつ状態"
+          ],
+          "analyzer": "(一財) 群馬県薬剤師会 (環境衛生試験センター)",
+          "source_photos": [
+            "https://fastly.4sqi.net/img/general/500x300/41463109_IQuzjgDNdCZLpetKd89jAaPrJFidvjLUjBOC9uQmym0.jpg",
+            "https://fastly.4sqi.net/img/general/500x300/41463109_4QFtPyQw12OplpFiK9PffvK5Uuw0NNMZPBhhXrOBQJU.jpg"
+          ]
+        }
+      ]
+    },
     {
       "fsq_id": "6ae6ce0a8f72766f2c1237b7",
       "name": "おかや温泉美肌の湯 ロマネット",
@@ -5317,6 +5439,7 @@
     "https://fastly.4sqi.net/img/general/500x300/41463109_7d0fIh5ujkqWFqWqQ6A7B_rRX-5RrL6F1NERysO28VE.jpg",
     "https://fastly.4sqi.net/img/general/500x300/41463109_HyBACCRCiKwXhr5VDkzPBVKBvJ6SAQmoaYG9hXoKpN8.jpg",
     "https://fastly.4sqi.net/img/general/500x300/41463109_BlRqThL_M_M1WqKcOkgxst4Rrkr1pVUUrTErgyIus24.jpg",
-    "https://fastly.4sqi.net/img/general/500x300/41463109_rdDXDkeYd7eH7gSr5AqkwPOXc6tAG_9Bp8sjR-FHeBs.jpg"
+    "https://fastly.4sqi.net/img/general/500x300/41463109_rdDXDkeYd7eH7gSr5AqkwPOXc6tAG_9Bp8sjR-FHeBs.jpg",
+    "https://fastly.4sqi.net/img/general/500x300/41463109_938F1VgLCBNhj61jWG4LLN0umxgE5_L--lv1qVdOLfQ.jpg"
   ]
 }
