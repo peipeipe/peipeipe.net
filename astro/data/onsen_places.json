@@ -1,5 +1,27 @@
 [
   {
+    "name": "峠の湯",
+    "user_comment": "",
+    "date": "2026-11-03",
+    "lat": 36.354168243948855,
+    "lng": 138.71824830862536,
+    "address": "松井田町坂本1222 (碓氷峠の森公園交流館), 安中市, 群馬県, 379-0307",
+    "foursquare_url": "https://foursquare.com/v/4c146986a5eb76b0d6cfc1b7",
+    "photos": [
+      "https://fastly.4sqi.net/img/general/500x300/41463109_IQuzjgDNdCZLpetKd89jAaPrJFidvjLUjBOC9uQmym0.jpg",
+      "https://fastly.4sqi.net/img/general/500x300/41463109_4QFtPyQw12OplpFiK9PffvK5Uuw0NNMZPBhhXrOBQJU.jpg",
+      "https://fastly.4sqi.net/img/general/500x300/41463109_938F1VgLCBNhj61jWG4LLN0umxgE5_L--lv1qVdOLfQ.jpg"
+    ],
+    "categories": [
+      "温泉"
+    ],
+    "data_source": "foursquare_checkin",
+    "fsq_id": "4c146986a5eb76b0d6cfc1b7",
+    "checkin_count": 1,
+    "first_checkin_at": "2026-11-03T05:54:56+00:00",
+    "last_checkin_at": "2026-11-03T05:54:56+00:00"
+  },
+  {
     "name": "おかや温泉美肌の湯 ロマネット",
     "user_comment": "",
     "date": "2026-11-01",
