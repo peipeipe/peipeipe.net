@@ -1,5 +1,31 @@
 [
   {
+    "name": "湯の華銭湯瑞祥 上山田本館",
+    "user_comment": "",
+    "date": "2026-11-08",
+    "lat": 36.479363253835835,
+    "lng": 138.1431312269178,
+    "address": "上山田温泉2-18-8, 千曲市, 長野県, 389-0821",
+    "foursquare_url": "https://foursquare.com/v/4b679ef2f964a52022582be3",
+    "photos": [
+      "https://fastly.4sqi.net/img/general/500x300/41463109_u12g_X4jc1aAO_W6KsLqSYQcH1IFFomVTvIo-f-n5Ok.jpg",
+      "https://fastly.4sqi.net/img/general/500x300/41463109_Z66Jurza0kklim6UFqNNg9ivNr1AC28yJSLKo_ImpAQ.jpg",
+      "https://fastly.4sqi.net/img/general/500x300/41463109_inlV9hyHla_I70oHrhuVpcReNi46NWO-paAqF5f4UAQ.jpg",
+      "https://fastly.4sqi.net/img/general/500x300/41463109_aEUREboGPUnlZF5UoL0gpMQO6BnbO1CXghki9zJ-4us.jpg",
+      "https://fastly.4sqi.net/img/general/500x300/41463109_b21NuRsZXOvK1QAPamnrMvPBk0dlmCHI5KTC3J93Cio.jpg",
+      "https://fastly.4sqi.net/img/general/500x300/41463109_I6Eflb9c8I--lB_j0NmYAqvjUAjcLatW-dY3j0QxElY.jpg"
+    ],
+    "categories": [
+      "温泉"
+    ],
+    "data_source": "foursquare_checkin",
+    "fsq_id": "4b679ef2f964a52022582be3",
+    "checkin_count": 3,
+    "first_checkin_at": "2024-10-06T03:39:40+00:00",
+    "last_checkin_at": "2026-11-08T04:47:08+00:00",
+    "composition_hint": ""
+  },
+  {
     "name": "峠の湯",
     "user_comment": "",
     "date": "2026-11-03",
@@ -9250,27 +9276,6 @@
     "checkin_count": 1,
     "first_checkin_at": "2024-11-27T23:20:00+00:00",
     "last_checkin_at": "2024-11-27T23:20:00+00:00",
-    "composition_hint": ""
-  },
-  {
-    "name": "湯の華銭湯瑞祥 上山田本館",
-    "user_comment": "",
-    "date": "2024-11-24",
-    "lat": 36.479363253835835,
-    "lng": 138.1431312269178,
-    "address": "上山田温泉2-18-8, 千曲市, 長野県, 389-0821",
-    "foursquare_url": "https://foursquare.com/v/4b679ef2f964a52022582be3",
-    "photos": [
-      "https://fastly.4sqi.net/img/general/500x300/41463109_I6Eflb9c8I--lB_j0NmYAqvjUAjcLatW-dY3j0QxElY.jpg"
-    ],
-    "categories": [
-      "温泉"
-    ],
-    "data_source": "foursquare_checkin",
-    "fsq_id": "4b679ef2f964a52022582be3",
-    "checkin_count": 2,
-    "first_checkin_at": "2024-10-06T03:39:40+00:00",
-    "last_checkin_at": "2024-11-24T03:14:36+00:00",
     "composition_hint": ""
   },
   {
@@ -24690,8 +24695,8 @@
     "name": "川崎駅",
     "user_comment": "No urgent need",
     "date": "2020-03-14",
-    "lat": 35.53146257212518,
-    "lng": 139.6968186438,
+    "lat": 35.53133113715844,
+    "lng": 139.69716766118074,
     "address": "川崎区駅前本町26-1, 川崎市, 神奈川県, 210-0007",
     "foursquare_url": "https://foursquare.com/v/4b274cf5f964a520bf8524e3",
     "photos": [],
@@ -26424,8 +26429,8 @@
     "name": "JR 渋谷駅",
     "user_comment": "",
     "date": "2019-09-19",
-    "lat": 35.658547345488145,
-    "lng": 139.70181477454858,
+    "lat": 35.6583830951403,
+    "lng": 139.70169510181404,
     "address": "道玄坂1-1-1, 渋谷区, 東京都, 150-0043",
     "foursquare_url": "https://foursquare.com/v/4b6c0307f964a5208c1f2ce3",
     "photos": [],
