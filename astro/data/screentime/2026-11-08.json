@@ -1,0 +1,110 @@
+{
+  "date": "2026-11-08",
+  "device": "iPhone",
+  "apps": [
+    {
+      "app": "Google Maps",
+      "minutes": 60.1107555369536
+    },
+    {
+      "app": "Chrome",
+      "minutes": 57.2346758306026
+    },
+    {
+      "app": "Instagram",
+      "minutes": 25.3124856988589
+    },
+    {
+      "app": "LINE",
+      "minutes": 17.1541587650776
+    },
+    {
+      "app": "ChatGPT",
+      "minutes": 15.239457098643
+    },
+    {
+      "app": "Gmail",
+      "minutes": 13.8362141132355
+    },
+    {
+      "app": "Muse",
+      "minutes": 11.6008333126704
+    },
+    {
+      "app": "YouTube",
+      "minutes": 10.5292493363221
+    },
+    {
+      "app": "メルカリ",
+      "minutes": 7.28382139801979
+    },
+    {
+      "app": "TeamHub",
+      "minutes": 6.65696011980375
+    },
+    {
+      "app": "写真",
+      "minutes": 6.46419576803843
+    },
+    {
+      "app": "Reddit",
+      "minutes": 3.69163009723028
+    },
+    {
+      "app": "応援navi",
+      "minutes": 3.45395096341769
+    },
+    {
+      "app": "Strava",
+      "minutes": 3.4137521525224
+    },
+    {
+      "app": "YouTube Music",
+      "minutes": 2.41702766617139
+    },
+    {
+      "app": "COROS",
+      "minutes": 1.97928356726964
+    },
+    {
+      "app": "天気",
+      "minutes": 1.74651769797007
+    },
+    {
+      "app": "カメラ",
+      "minutes": 1.73338306546211
+    },
+    {
+      "app": "Google フォト",
+      "minutes": 0.877927084763845
+    },
+    {
+      "app": "Swarm",
+      "minutes": 0.359332531690598
+    },
+    {
+      "app": "PayPay",
+      "minutes": 0.34686138232549
+    },
+    {
+      "app": "探す",
+      "minutes": 0.308546115954717
+    },
+    {
+      "app": "radiko",
+      "minutes": 0.301775799194972
+    },
+    {
+      "app": "ユーザ認証",
+      "minutes": 0.276980483531952
+    },
+    {
+      "app": "乗換案内",
+      "minutes": 0.145432966947556
+    },
+    {
+      "app": "Delta",
+      "minutes": 0.0582713186740875
+    }
+  ]
+}
