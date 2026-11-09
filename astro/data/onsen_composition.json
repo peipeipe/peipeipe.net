@@ -1,13 +1,348 @@
 {
-  "generated_on": "2026-11-04",
+  "generated_on": "2026-11-08",
   "stats": {
     "places": 77,
-    "springs": 79,
-    "composition_photos": 35,
-    "not_composition_photos": 105,
+    "springs": 81,
+    "composition_photos": 39,
+    "not_composition_photos": 106,
     "unreadable_photos": 0
   },
   "places": [
+    {
+      "fsq_id": "4b679ef2f964a52022582be3",
+      "name": "湯の華銭湯瑞祥 上山田本館",
+      "address": "上山田温泉2-18-8, 千曲市, 長野県, 389-0821",
+      "checkin_date": "2026-11-08",
+      "springs": [
+        {
+          "confidence": "medium",
+          "spring_name": "千曲温泉1号〜4号源泉および中央源泉の混合泉（内風呂）",
+          "spring_quality": "アルカリ性単純硫黄温泉",
+          "spring_quality_class": "低張性アルカリ性高温泉",
+          "source_temp_c": 45.5,
+          "ph": 8.5,
+          "treatment": {
+            "kasui": {
+              "applied": false
+            },
+            "kaon": {
+              "applied": true,
+              "reason": "入浴に適した温度にするため熱交換器で加温"
+            },
+            "junkan": {
+              "applied": false
+            },
+            "shodoku": {
+              "applied": false
+            }
+          },
+          "indications": [
+            "アトピー性皮膚炎",
+            "尋常性乾癬",
+            "慢性湿疹",
+            "表皮化膿症",
+            "自律神経不安定症",
+            "不眠症",
+            "うつ状態"
+          ],
+          "contraindications": [
+            "皮膚または粘膜の過敏な人",
+            "高齢者の皮膚乾燥症"
+          ],
+          "notes": "ネット公開情報から作成（現地掲示は未確認）。内風呂のデータ。pHは8.5〜8.68と幅で公表されており下限を入れた。露天風呂は城山1号〜3号源泉の混合泉で単純硫黄温泉（弱アルカリ性低張性高温泉）、pH8.3〜8.35、源泉44.8℃。壺湯・寝湯・ささら湯のみ内風呂と露天の源泉を混合して循環濾過・薬剤使用。飲泉は中止。出典: 湯の華銭湯 瑞祥 上山田本館公式サイト https://zuisho.com/spa.html"
+        },
+        {
+          "confidence": "high",
+          "spring_name": "城山1号源泉、城山2号源泉、城山3号源泉の混合泉",
+          "spring_quality": "単純硫黄温泉",
+          "spring_quality_class": "低張性弱アルカリ性高温泉",
+          "source_temp_c": 44.8,
+          "ph": 8.3,
+          "ph_lab": 8.22,
+          "evaporation_residue_mg_kg": 654.0,
+          "dissolved_solids_mg_kg": 671.4,
+          "total_ingredients_mg_kg": 674.6,
+          "cations": [
+            {
+              "name": "リチウムイオン",
+              "symbol": "Li+",
+              "mg_kg": 0.1
+            },
+            {
+              "name": "ナトリウムイオン",
+              "symbol": "Na+",
+              "mg_kg": 159.3
+            },
+            {
+              "name": "カリウムイオン",
+              "symbol": "K+",
+              "mg_kg": 5.2
+            },
+            {
+              "name": "マグネシウムイオン",
+              "symbol": "Mg2+",
+              "mg_kg": 2.9
+            },
+            {
+              "name": "カルシウムイオン",
+              "symbol": "Ca2+",
+              "mg_kg": 43.8
+            },
+            {
+              "name": "ストロンチウムイオン",
+              "symbol": "Sr2+",
+              "mg_kg": 0.5
+            },
+            {
+              "name": "マンガンイオン",
+              "symbol": "Mn2+",
+              "mg_kg": 0.02
+            }
+          ],
+          "cations_total_mg_kg": 211.8,
+          "anions": [
+            {
+              "name": "ふっ化物イオン",
+              "symbol": "F-",
+              "mg_kg": 0.7
+            },
+            {
+              "name": "塩化物イオン",
+              "symbol": "Cl-",
+              "mg_kg": 201.5
+            },
+            {
+              "name": "臭化物イオン",
+              "symbol": "Br-",
+              "mg_kg": 0.6
+            },
+            {
+              "name": "よう化物イオン",
+              "symbol": "I-",
+              "mg_kg": 0.1
+            },
+            {
+              "name": "硫化水素イオン",
+              "symbol": "HS-",
+              "mg_kg": 10.3
+            },
+            {
+              "name": "チオ硫酸イオン",
+              "symbol": "S2O3 2-",
+              "mg_kg": 0.1
+            },
+            {
+              "name": "硫酸イオン",
+              "symbol": "SO4 2-",
+              "mg_kg": 110.0
+            },
+            {
+              "name": "炭酸水素イオン",
+              "symbol": "HCO3-",
+              "mg_kg": 72.4
+            },
+            {
+              "name": "炭酸イオン",
+              "symbol": "CO3 2-",
+              "mg_kg": 2.3
+            }
+          ],
+          "anions_total_mg_kg": 398.0,
+          "undissociated": [
+            {
+              "name": "メタけい酸",
+              "symbol": "H2SiO3",
+              "mg_kg": 58.0
+            },
+            {
+              "name": "メタほう酸",
+              "symbol": "HBO2",
+              "mg_kg": 3.6
+            }
+          ],
+          "undissociated_total_mg_kg": 61.6,
+          "dissolved_gas": [
+            {
+              "name": "遊離二酸化炭素",
+              "symbol": "CO2",
+              "mg_kg": 2.6
+            },
+            {
+              "name": "遊離硫化水素",
+              "symbol": "H2S",
+              "mg_kg": 0.6
+            }
+          ],
+          "dissolved_gas_total_mg_kg": 3.2,
+          "treatment": {
+            "kasui": {
+              "applied": false
+            },
+            "kaon": {
+              "applied": true,
+              "reason": "入浴に適した温度を保つ為"
+            },
+            "junkan": {
+              "applied": true,
+              "reason": "温泉の有効利用の為 (サウナ湯・壺湯・寝湯のみ)"
+            },
+            "shodoku": {
+              "applied": true,
+              "reason": "衛生管理の為塩素系薬剤使用 (サウナ湯・壺湯・寝湯のみ)"
+            }
+          },
+          "indications": [
+            "自律神経不安定症",
+            "不眠症",
+            "うつ状態",
+            "アトピー性皮膚炎",
+            "尋常性乾癬",
+            "慢性湿疹",
+            "表皮化膿症"
+          ],
+          "contraindications": [
+            "皮膚又は粘膜の過敏な人",
+            "高齢者の皮膚乾燥症"
+          ],
+          "analyzed_on": "2019-07-03",
+          "analyzer": "一般社団法人 上田薬剤師会 検査センター",
+          "analyzer_registration": "長野県第7号",
+          "source_photos": [
+            "https://fastly.4sqi.net/img/general/500x300/41463109_u12g_X4jc1aAO_W6KsLqSYQcH1IFFomVTvIo-f-n5Ok.jpg",
+            "https://fastly.4sqi.net/img/general/500x300/41463109_Z66Jurza0kklim6UFqNNg9ivNr1AC28yJSLKo_ImpAQ.jpg"
+          ]
+        },
+        {
+          "confidence": "high",
+          "spring_name": "千曲温泉1号、2号、3号、4号源泉及び中央源泉の混合泉",
+          "spring_quality": "アルカリ性単純硫黄温泉",
+          "spring_quality_class": "低張性アルカリ性温泉",
+          "source_temp_c": 40.5,
+          "ph": 8.7,
+          "ph_lab": 8.74,
+          "evaporation_residue_mg_kg": 346.0,
+          "dissolved_solids_mg_kg": 361.4,
+          "total_ingredients_mg_kg": 361.5,
+          "cations": [
+            {
+              "name": "リチウムイオン",
+              "symbol": "Li+",
+              "mg_kg": 0.07
+            },
+            {
+              "name": "ナトリウムイオン",
+              "symbol": "Na+",
+              "mg_kg": 87.3
+            },
+            {
+              "name": "カリウムイオン",
+              "symbol": "K+",
+              "mg_kg": 1.5
+            },
+            {
+              "name": "マグネシウムイオン",
+              "symbol": "Mg2+",
+              "mg_kg": 0.8
+            },
+            {
+              "name": "カルシウムイオン",
+              "symbol": "Ca2+",
+              "mg_kg": 21.7
+            },
+            {
+              "name": "ストロンチウムイオン",
+              "symbol": "Sr2+",
+              "mg_kg": 0.2
+            },
+            {
+              "name": "マンガンイオン",
+              "symbol": "Mn2+",
+              "mg_kg": 0.04
+            }
+          ],
+          "cations_total_mg_kg": 111.6,
+          "anions": [
+            {
+              "name": "ふっ化物イオン",
+              "symbol": "F-",
+              "mg_kg": 0.7
+            },
+            {
+              "name": "塩化物イオン",
+              "symbol": "Cl-",
+              "mg_kg": 86.7
+            },
+            {
+              "name": "臭化物イオン",
+              "symbol": "Br-",
+              "mg_kg": 0.3
+            },
+            {
+              "name": "硫化水素イオン",
+              "symbol": "HS-",
+              "mg_kg": 3.8
+            },
+            {
+              "name": "硫酸イオン",
+              "symbol": "SO4 2-",
+              "mg_kg": 70.8
+            },
+            {
+              "name": "炭酸水素イオン",
+              "symbol": "HCO3-",
+              "mg_kg": 35.8
+            },
+            {
+              "name": "炭酸イオン",
+              "symbol": "CO3 2-",
+              "mg_kg": 8.0
+            }
+          ],
+          "anions_total_mg_kg": 206.1,
+          "undissociated": [
+            {
+              "name": "メタけい酸",
+              "symbol": "H2SiO3",
+              "mg_kg": 40.0
+            },
+            {
+              "name": "メタほう酸",
+              "symbol": "HBO2",
+              "mg_kg": 3.7
+            }
+          ],
+          "undissociated_total_mg_kg": 43.7,
+          "dissolved_gas": [
+            {
+              "name": "遊離硫化水素",
+              "symbol": "H2S",
+              "mg_kg": 0.09
+            }
+          ],
+          "dissolved_gas_total_mg_kg": 0.09,
+          "indications": [
+            "自律神経不安定症",
+            "不眠症",
+            "うつ状態",
+            "アトピー性皮膚炎",
+            "尋常性乾癬",
+            "慢性湿疹",
+            "表皮化膿症"
+          ],
+          "contraindications": [
+            "皮膚または粘膜の過敏な人",
+            "高齢者の皮膚乾燥症"
+          ],
+          "analyzed_on": "2025-05-16",
+          "analyzer": "一般社団法人 上田薬剤師会 検査センター",
+          "analyzer_registration": "長野県第7号",
+          "source_photos": [
+            "https://fastly.4sqi.net/img/general/500x300/41463109_inlV9hyHla_I70oHrhuVpcReNi46NWO-paAqF5f4UAQ.jpg",
+            "https://fastly.4sqi.net/img/general/500x300/41463109_aEUREboGPUnlZF5UoL0gpMQO6BnbO1CXghki9zJ-4us.jpg"
+          ]
+        }
+      ]
+    },
     {
       "fsq_id": "4c146986a5eb76b0d6cfc1b7",
       "name": "峠の湯",
@@ -4944,51 +5279,6 @@
       ]
     },
     {
-      "fsq_id": "4b679ef2f964a52022582be3",
-      "name": "湯の華銭湯瑞祥 上山田本館",
-      "address": "上山田温泉2-18-8, 千曲市, 長野県, 389-0821",
-      "checkin_date": "2024-11-24",
-      "springs": [
-        {
-          "confidence": "medium",
-          "spring_name": "千曲温泉1号〜4号源泉および中央源泉の混合泉（内風呂）",
-          "spring_quality": "アルカリ性単純硫黄温泉",
-          "spring_quality_class": "低張性アルカリ性高温泉",
-          "source_temp_c": 45.5,
-          "ph": 8.5,
-          "treatment": {
-            "kasui": {
-              "applied": false
-            },
-            "kaon": {
-              "applied": true,
-              "reason": "入浴に適した温度にするため熱交換器で加温"
-            },
-            "junkan": {
-              "applied": false
-            },
-            "shodoku": {
-              "applied": false
-            }
-          },
-          "indications": [
-            "アトピー性皮膚炎",
-            "尋常性乾癬",
-            "慢性湿疹",
-            "表皮化膿症",
-            "自律神経不安定症",
-            "不眠症",
-            "うつ状態"
-          ],
-          "contraindications": [
-            "皮膚または粘膜の過敏な人",
-            "高齢者の皮膚乾燥症"
-          ],
-          "notes": "ネット公開情報から作成（現地掲示は未確認）。内風呂のデータ。pHは8.5〜8.68と幅で公表されており下限を入れた。露天風呂は城山1号〜3号源泉の混合泉で単純硫黄温泉（弱アルカリ性低張性高温泉）、pH8.3〜8.35、源泉44.8℃。壺湯・寝湯・ささら湯のみ内風呂と露天の源泉を混合して循環濾過・薬剤使用。飲泉は中止。出典: 湯の華銭湯 瑞祥 上山田本館公式サイト https://zuisho.com/spa.html"
-        }
-      ]
-    },
-    {
       "fsq_id": "4b83ac02f964a5206b0c31e3",
       "name": "大師湯",
       "address": "別所温泉1652-1, 上田市, 長野県, 386-1431",
@@ -5440,6 +5730,7 @@
     "https://fastly.4sqi.net/img/general/500x300/41463109_HyBACCRCiKwXhr5VDkzPBVKBvJ6SAQmoaYG9hXoKpN8.jpg",
     "https://fastly.4sqi.net/img/general/500x300/41463109_BlRqThL_M_M1WqKcOkgxst4Rrkr1pVUUrTErgyIus24.jpg",
     "https://fastly.4sqi.net/img/general/500x300/41463109_rdDXDkeYd7eH7gSr5AqkwPOXc6tAG_9Bp8sjR-FHeBs.jpg",
-    "https://fastly.4sqi.net/img/general/500x300/41463109_938F1VgLCBNhj61jWG4LLN0umxgE5_L--lv1qVdOLfQ.jpg"
+    "https://fastly.4sqi.net/img/general/500x300/41463109_938F1VgLCBNhj61jWG4LLN0umxgE5_L--lv1qVdOLfQ.jpg",
+    "https://fastly.4sqi.net/img/general/500x300/41463109_b21NuRsZXOvK1QAPamnrMvPBk0dlmCHI5KTC3J93Cio.jpg"
   ]
 }
