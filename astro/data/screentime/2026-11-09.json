@@ -1,0 +1,178 @@
+{
+  "date": "2026-11-09",
+  "device": "iPhone",
+  "apps": [
+    {
+      "app": "Chrome",
+      "minutes": 123.729660773277
+    },
+    {
+      "app": "Instagram",
+      "minutes": 89.0498175501824
+    },
+    {
+      "app": "メルカリ",
+      "minutes": 17.0971237242222
+    },
+    {
+      "app": "Muse",
+      "minutes": 9.87327726682027
+    },
+    {
+      "app": "YouTube",
+      "minutes": 8.7430919667085
+    },
+    {
+      "app": "LINE",
+      "minutes": 7.1374760846297
+    },
+    {
+      "app": "TeamHub",
+      "minutes": 6.07863960067431
+    },
+    {
+      "app": "Strava",
+      "minutes": 5.67812006672223
+    },
+    {
+      "app": "Gmail",
+      "minutes": 4.09450132250786
+    },
+    {
+      "app": "Slack",
+      "minutes": 2.62491591572762
+    },
+    {
+      "app": "SwitchBot",
+      "minutes": 2.6162229180336
+    },
+    {
+      "app": "Reddit",
+      "minutes": 2.56267078320185
+    },
+    {
+      "app": "ChatGPT",
+      "minutes": 2.50267491539319
+    },
+    {
+      "app": "com.amazon.Amazon",
+      "minutes": 2.09984521667162
+    },
+    {
+      "app": "セサミ",
+      "minutes": 2.07811590035756
+    },
+    {
+      "app": "Pep Up",
+      "minutes": 2.05661523342132
+    },
+    {
+      "app": "COROS",
+      "minutes": 1.80109926859538
+    },
+    {
+      "app": "TATTA",
+      "minutes": 1.55935170054436
+    },
+    {
+      "app": "Google フォト",
+      "minutes": 1.32511945168177
+    },
+    {
+      "app": "Tapo",
+      "minutes": 1.2666254679362
+    },
+    {
+      "app": "天気",
+      "minutes": 1.15637150208155
+    },
+    {
+      "app": "Cheer Drive",
+      "minutes": 1.13404038349787
+    },
+    {
+      "app": "ぴあ",
+      "minutes": 0.880468400319417
+    },
+    {
+      "app": "Meross",
+      "minutes": 0.860390599568685
+    },
+    {
+      "app": "GitHub",
+      "minutes": 0.840247684717178
+    },
+    {
+      "app": "写真",
+      "minutes": 0.702415515979131
+    },
+    {
+      "app": "ユーザ認証",
+      "minutes": 0.552087199687958
+    },
+    {
+      "app": "ノジマ",
+      "minutes": 0.424689116080602
+    },
+    {
+      "app": "ポッドキャスト",
+      "minutes": 0.367636332909266
+    },
+    {
+      "app": "設定",
+      "minutes": 0.317526282866796
+    },
+    {
+      "app": "App Store",
+      "minutes": 0.274112216631572
+    },
+    {
+      "app": "AliExpress",
+      "minutes": 0.261032831668854
+    },
+    {
+      "app": "eufy Life",
+      "minutes": 0.229859932263692
+    },
+    {
+      "app": "Spotify",
+      "minutes": 0.203379116455714
+    },
+    {
+      "app": "Googleカレンダー",
+      "minutes": 0.17600386540095
+    },
+    {
+      "app": "SoftwareUpdateUIService",
+      "minutes": 0.157736682891846
+    },
+    {
+      "app": "Discord",
+      "minutes": 0.128664197524389
+    },
+    {
+      "app": "スクリーンショット",
+      "minutes": 0.0983760495980581
+    },
+    {
+      "app": "メッセージ",
+      "minutes": 0.097455483675003
+    },
+    {
+      "app": "AuthenticationServicesUI",
+      "minutes": 0.08355380098025
+    },
+    {
+      "app": "Notion",
+      "minutes": 0.0744661847750346
+    },
+    {
+      "app": "乗換案内",
+      "minutes": 0.0711527824401856
+    },
+    {
+      "app": "Google Maps",
+      "minutes": 0.0425108810265859
+    }
+  ]
+}
