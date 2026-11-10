@@ -1,0 +1,118 @@
+{
+  "date": "2026-11-10",
+  "device": "iPhone",
+  "apps": [
+    {
+      "app": "Chrome",
+      "minutes": 44.1623878578345
+    },
+    {
+      "app": "Instagram",
+      "minutes": 19.5396440664927
+    },
+    {
+      "app": "メルカリ",
+      "minutes": 17.7130066772302
+    },
+    {
+      "app": "LINE",
+      "minutes": 10.3682626485825
+    },
+    {
+      "app": "Muse",
+      "minutes": 9.39119384884834
+    },
+    {
+      "app": "ChatGPT",
+      "minutes": 7.66873456438382
+    },
+    {
+      "app": "Strava",
+      "minutes": 7.55424636801084
+    },
+    {
+      "app": "TeamHub",
+      "minutes": 6.75290506680806
+    },
+    {
+      "app": "Gmail",
+      "minutes": 3.43279631932576
+    },
+    {
+      "app": "Reddit",
+      "minutes": 2.88491140007973
+    },
+    {
+      "app": "Google Maps",
+      "minutes": 2.13373120029767
+    },
+    {
+      "app": "Suica",
+      "minutes": 1.70528876781464
+    },
+    {
+      "app": "設定",
+      "minutes": 1.27687071760496
+    },
+    {
+      "app": "Google フォト",
+      "minutes": 1.11646249890327
+    },
+    {
+      "app": "Slack",
+      "minutes": 1.0013759513696
+    },
+    {
+      "app": "Authy",
+      "minutes": 0.940915415684382
+    },
+    {
+      "app": "天気",
+      "minutes": 0.693336516618729
+    },
+    {
+      "app": "Googleカレンダー",
+      "minutes": 0.598362598816554
+    },
+    {
+      "app": "楽天ペイ",
+      "minutes": 0.581617865959803
+    },
+    {
+      "app": "写真",
+      "minutes": 0.541631217797597
+    },
+    {
+      "app": "Pep Up",
+      "minutes": 0.53431329925855
+    },
+    {
+      "app": "楽天カード",
+      "minutes": 0.473663767178853
+    },
+    {
+      "app": "COROS",
+      "minutes": 0.251455034812292
+    },
+    {
+      "app": "Connect",
+      "minutes": 0.237538399298986
+    },
+    {
+      "app": "タイミー",
+      "minutes": 0.208448314666748
+    },
+    {
+      "app": "Discord",
+      "minutes": 0.138526115814845
+    },
+    {
+      "app": "YouTube Music",
+      "minutes": 0.119363216559092
+    },
+    {
+      "app": "ユーザ認証",
+      "minutes": 0.0968074520428976
+    }
+  ]
+}
