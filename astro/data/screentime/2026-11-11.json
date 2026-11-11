@@ -1,0 +1,90 @@
+{
+  "date": "2026-11-11",
+  "device": "iPhone",
+  "apps": [
+    {
+      "app": "Chrome",
+      "minutes": 65.3531383534272
+    },
+    {
+      "app": "ChatGPT",
+      "minutes": 26.0415562669436
+    },
+    {
+      "app": "Instagram",
+      "minutes": 15.7195723692576
+    },
+    {
+      "app": "Muse",
+      "minutes": 11.0899167279402
+    },
+    {
+      "app": "Notion",
+      "minutes": 7.16185970107714
+    },
+    {
+      "app": "Google Maps",
+      "minutes": 5.01633178194364
+    },
+    {
+      "app": "天気",
+      "minutes": 3.90001175006231
+    },
+    {
+      "app": "TeamHub",
+      "minutes": 2.96041214863459
+    },
+    {
+      "app": "写真",
+      "minutes": 2.88024383385976
+    },
+    {
+      "app": "Gmail",
+      "minutes": 2.24288268287976
+    },
+    {
+      "app": "Reddit",
+      "minutes": 1.9592981159687
+    },
+    {
+      "app": "iAEON",
+      "minutes": 1.94087169965108
+    },
+    {
+      "app": "LINE",
+      "minutes": 1.56942914923032
+    },
+    {
+      "app": "Strava",
+      "minutes": 1.10643798311551
+    },
+    {
+      "app": "時計",
+      "minutes": 0.588778998454412
+    },
+    {
+      "app": "メルカリ",
+      "minutes": 0.524113068977992
+    },
+    {
+      "app": "Google フォト",
+      "minutes": 0.519157133499781
+    },
+    {
+      "app": "カメラ",
+      "minutes": 0.448112348715464
+    },
+    {
+      "app": "ユーザ認証",
+      "minutes": 0.140995581944784
+    },
+    {
+      "app": "セサミ",
+      "minutes": 0.0480422834555308
+    },
+    {
+      "app": "YouTube Music",
+      "minutes": 0.0241870999336243
+    }
+  ]
+}
