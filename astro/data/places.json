@@ -758,7 +758,7 @@
       "https://fastly.4sqi.net/img/general/500x300/41463109_MmcZRVU5u9HcXDMFtdiIzyuWFnBsonYFrMaEbx-2Q9o.jpg"
     ],
     "categories": [
-      "レストラン"
+      "焼肉 / バーベキュー料理店"
     ],
     "data_source": "foursquare_checkin",
     "fsq_id": "4cb42f63ef1b37040bc75600",
@@ -2447,7 +2447,7 @@
       "https://fastly.4sqi.net/img/general/500x300/41463109_HbcQh3mJb1jZxmC7fbQeOaTSmFP-MCP8hFVn4FZFbD4.jpg"
     ],
     "categories": [
-      "スポーツとレクリエーション"
+      "遊泳用プール"
     ],
     "data_source": "foursquare_checkin",
     "fsq_id": "6110b465acfc581c608bda78",
@@ -2820,7 +2820,7 @@
       "https://fastly.4sqi.net/img/general/500x300/41463109_f6nYGfhB0zLpsW1fIBMgUMylNvc1Aoh8DAo7M_OuQ8Q.jpg"
     ],
     "categories": [
-      "博物館"
+      "歴史博物館"
     ],
     "data_source": "foursquare_checkin",
     "fsq_id": "4c0afdf5009a0f47d579eabf",
@@ -5323,7 +5323,7 @@
       "https://fastly.4sqi.net/img/general/500x300/41463109_i1yJyZxC3008FRzVtmiVp7DlFeJg_kBsWAJDtrP4sCY.jpg"
     ],
     "categories": [
-      "ジムとスタジオ"
+      "ジム"
     ],
     "data_source": "foursquare_checkin",
     "fsq_id": "52fc89d5498e39f0d1b7bee0",
@@ -8095,7 +8095,7 @@
     "foursquare_url": "https://foursquare.com/v/5d373a565c9d4c000888f4b4",
     "photos": [],
     "categories": [
-      "ジムとスタジオ"
+      "ジム"
     ],
     "data_source": "foursquare_checkin",
     "fsq_id": "5d373a565c9d4c000888f4b4",
@@ -9368,7 +9368,7 @@
       "https://fastly.4sqi.net/img/general/500x300/41463109_VJINjmxzvA1g__FDr9q0LZq4jsqokcNYoq4eGe34Qhw.jpg"
     ],
     "categories": [
-      "公園"
+      "遊び場"
     ],
     "data_source": "foursquare_checkin",
     "fsq_id": "4f37726fe4b00af17a054845",
@@ -10327,7 +10327,7 @@
       "https://fastly.4sqi.net/img/general/500x300/41463109_D2WamzXx_AT6JkkynjvpxyrJoG17WzPiXLFGD6uyl5A.jpg"
     ],
     "categories": [
-      "ジムとスタジオ"
+      "ジム"
     ],
     "data_source": "foursquare_checkin",
     "fsq_id": "5adee80282a75046ef2b3421",
@@ -11351,7 +11351,7 @@
     "foursquare_url": "https://foursquare.com/v/5222e81211d219b366cd46d3",
     "photos": [],
     "categories": [
-      "ジムとスタジオ"
+      "ジム"
     ],
     "data_source": "foursquare_checkin",
     "fsq_id": "5222e81211d219b366cd46d3",
@@ -11716,7 +11716,7 @@
     "foursquare_url": "https://foursquare.com/v/5265edf711d2324d219f1cb0",
     "photos": [],
     "categories": [
-      "ジムとスタジオ"
+      "ジム"
     ],
     "data_source": "foursquare_checkin",
     "fsq_id": "5265edf711d2324d219f1cb0",
@@ -12345,7 +12345,7 @@
     "foursquare_url": "https://foursquare.com/v/524fc9a7498ed7e3ab8eea8f",
     "photos": [],
     "categories": [
-      "ジムとスタジオ"
+      "ジム"
     ],
     "data_source": "foursquare_checkin",
     "fsq_id": "524fc9a7498ed7e3ab8eea8f",
@@ -14879,7 +14879,7 @@
       "https://fastly.4sqi.net/img/general/500x300/41463109_HjWaEv651xd2novMQy1lmWf-rOVzdA23kjCiaybqBlQ.jpg"
     ],
     "categories": [
-      "公園"
+      "遊び場"
     ],
     "data_source": "foursquare_checkin",
     "fsq_id": "4bc90939937ca593f51ba592",
@@ -28387,7 +28387,7 @@
     "foursquare_url": "https://foursquare.com/v/5b7cb0bb872f7d002c0082e0",
     "photos": [],
     "categories": [
-      "オフィス"
+      "技術系ベンチャー企業"
     ],
     "data_source": "foursquare_checkin",
     "fsq_id": "5b7cb0bb872f7d002c0082e0",
@@ -29986,8 +29986,8 @@
     "name": "名古屋駅",
     "user_comment": "",
     "date": "2019-01-21",
-    "lat": 35.17068702098722,
-    "lng": 136.88211441053085,
+    "lat": 35.17046101485094,
+    "lng": 136.8820717937752,
     "address": "中村区名駅1, 名古屋市, 愛知県, 450-0002",
     "foursquare_url": "https://foursquare.com/v/4b56811cf964a520381328e3",
     "photos": [
@@ -37969,7 +37969,7 @@
     "foursquare_url": "https://foursquare.com/v/4ba5ca1ef964a5205f2239e3",
     "photos": [],
     "categories": [
-      "芸術とエンターテイメント"
+      "ゲームセンター"
     ],
     "data_source": "foursquare_checkin",
     "fsq_id": "4ba5ca1ef964a5205f2239e3",
@@ -39982,7 +39982,7 @@
     "foursquare_url": "https://foursquare.com/v/4d339ee92c76a143a2387dc7",
     "photos": [],
     "categories": [
-      "教育"
+      "専門学校、短大、大学"
     ],
     "data_source": "foursquare_checkin",
     "fsq_id": "4d339ee92c76a143a2387dc7",
@@ -40001,7 +40001,7 @@
     "foursquare_url": "https://foursquare.com/v/4c97574738dd8cfa86a3e262",
     "photos": [],
     "categories": [
-      "教育"
+      "専門学校"
     ],
     "data_source": "foursquare_checkin",
     "fsq_id": "4c97574738dd8cfa86a3e262",
