@@ -920,8 +920,15 @@
     "lng": 138.130856,
     "elevation": 457,
     "tags": [],
-    "visit_count": 9,
+    "visit_count": 10,
     "activities": [
+      {
+        "id": "i209078486",
+        "name": "Evening トレイルラン",
+        "date": "2026-11-12",
+        "sport_type": "TrailRun",
+        "distance_km": 7.6
+      },
       {
         "id": "i200336377",
         "name": "Evening トレイルラン",
@@ -987,7 +994,7 @@
       }
     ],
     "first_visit": "2026-03-19",
-    "last_visit": "2026-10-22"
+    "last_visit": "2026-11-12"
   },
   {
     "name": "有明山",
@@ -995,8 +1002,15 @@
     "lng": 138.138078,
     "elevation": 652,
     "tags": [],
-    "visit_count": 10,
+    "visit_count": 11,
     "activities": [
+      {
+        "id": "i209078486",
+        "name": "Evening トレイルラン",
+        "date": "2026-11-12",
+        "sport_type": "TrailRun",
+        "distance_km": 7.6
+      },
       {
         "id": "i200336377",
         "name": "Evening トレイルラン",
@@ -1069,7 +1083,7 @@
       }
     ],
     "first_visit": "2026-03-19",
-    "last_visit": "2026-10-22"
+    "last_visit": "2026-11-12"
   },
   {
     "name": "髻山",
