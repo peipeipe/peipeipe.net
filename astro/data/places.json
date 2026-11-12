@@ -1,5 +1,29 @@
 [
   {
+    "name": "万葉超音波温泉",
+    "user_comment": "めちゃくちゃ良い",
+    "date": "2026-11-12",
+    "lat": 36.48055728598682,
+    "lng": 138.15005470314597,
+    "address": "磯部1125, 千曲市, 長野県, 389-0806",
+    "foursquare_url": "https://foursquare.com/v/4b679f6ef964a52045582be3",
+    "photos": [
+      "https://fastly.4sqi.net/img/general/500x300/41463109_LhgRG6qk5LUijfJbejOmPv9uh5kbcw7i5nszJmwQots.jpg",
+      "https://fastly.4sqi.net/img/general/500x300/41463109_R1AxOOVqfOdD4JSYDjpeYDRLdBcBwSZ9YZ5GZmgFqks.jpg",
+      "https://fastly.4sqi.net/img/general/500x300/41463109_ppqd7Rk5sq5LLZr9l4Qyqx7bZvYoBjLNcA3gjzylhEc.jpg",
+      "https://fastly.4sqi.net/img/general/500x300/41463109_mc4pqveJa7iDe7-MELyxqz67X3zE67HPUAFkY3bW4FU.jpg"
+    ],
+    "categories": [
+      "温泉"
+    ],
+    "data_source": "foursquare_checkin",
+    "fsq_id": "4b679f6ef964a52045582be3",
+    "checkin_count": 8,
+    "first_checkin_at": "2026-03-19T13:10:05+00:00",
+    "last_checkin_at": "2026-11-12T11:59:35+00:00",
+    "composition_hint": ""
+  },
+  {
     "name": "湯の華銭湯瑞祥 上山田本館",
     "user_comment": "",
     "date": "2026-11-08",
@@ -236,30 +260,6 @@
     "checkin_count": 6,
     "first_checkin_at": "2024-09-15T03:35:44+00:00",
     "last_checkin_at": "2026-10-23T11:34:09+00:00",
-    "composition_hint": ""
-  },
-  {
-    "name": "万葉超音波温泉",
-    "user_comment": "めちゃくちゃ良い",
-    "date": "2026-10-22",
-    "lat": 36.48055728598682,
-    "lng": 138.15005470314597,
-    "address": "磯部1125, 千曲市, 長野県, 389-0806",
-    "foursquare_url": "https://foursquare.com/v/4b679f6ef964a52045582be3",
-    "photos": [
-      "https://fastly.4sqi.net/img/general/500x300/41463109_LhgRG6qk5LUijfJbejOmPv9uh5kbcw7i5nszJmwQots.jpg",
-      "https://fastly.4sqi.net/img/general/500x300/41463109_R1AxOOVqfOdD4JSYDjpeYDRLdBcBwSZ9YZ5GZmgFqks.jpg",
-      "https://fastly.4sqi.net/img/general/500x300/41463109_ppqd7Rk5sq5LLZr9l4Qyqx7bZvYoBjLNcA3gjzylhEc.jpg",
-      "https://fastly.4sqi.net/img/general/500x300/41463109_mc4pqveJa7iDe7-MELyxqz67X3zE67HPUAFkY3bW4FU.jpg"
-    ],
-    "categories": [
-      "温泉"
-    ],
-    "data_source": "foursquare_checkin",
-    "fsq_id": "4b679f6ef964a52045582be3",
-    "checkin_count": 7,
-    "first_checkin_at": "2026-03-19T13:10:05+00:00",
-    "last_checkin_at": "2026-10-22T12:33:02+00:00",
     "composition_hint": ""
   },
   {
@@ -13706,8 +13706,8 @@
     "name": "錦糸町駅",
     "user_comment": "",
     "date": "2023-12-16",
-    "lat": 35.69678001280209,
-    "lng": 139.81384457788218,
+    "lat": 35.6967837432235,
+    "lng": 139.81413433432033,
     "address": "江東橋3, 墨田区, 東京都, 130-0022",
     "foursquare_url": "https://foursquare.com/v/4b1a3c14f964a5204de823e3",
     "photos": [],
@@ -15886,8 +15886,8 @@
     "name": "新宿",
     "user_comment": "",
     "date": "2023-05-10",
-    "lat": 35.69244378499687,
-    "lng": 139.70077761889095,
+    "lat": 35.69187373541764,
+    "lng": 139.70041860770715,
     "address": "新宿区, 東京都",
     "foursquare_url": "https://foursquare.com/v/4d145edc25cda143b89960d6",
     "photos": [],
@@ -25869,7 +25869,7 @@
     "composition_hint": ""
   },
   {
-    "name": "DJI (大疆创新深圳欢乐海岸旗舰店 DJI Flagship Store Shenzhen)",
+    "name": "DJI (DJI (大疆创新深圳欢乐海岸旗舰店 DJI Flagship Store Shenzhen))",
     "user_comment": "",
     "date": "2019-11-27",
     "lat": 22.52503143162908,
@@ -33268,8 +33268,8 @@
     "name": "大阪駅",
     "user_comment": "",
     "date": "2017-10-15",
-    "lat": 34.702200455418,
-    "lng": 135.49586971774613,
+    "lat": 34.70239730749511,
+    "lng": 135.49561198601907,
     "address": "北区梅田3-1-1, 大阪市, 大阪府, 530-0001",
     "foursquare_url": "https://foursquare.com/v/4b3ae51bf964a520956f25e3",
     "photos": [
