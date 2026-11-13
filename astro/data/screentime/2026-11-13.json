@@ -1,0 +1,134 @@
+{
+  "date": "2026-11-13",
+  "device": "iPhone",
+  "apps": [
+    {
+      "app": "Chrome",
+      "minutes": 161.900890562932
+    },
+    {
+      "app": "Instagram",
+      "minutes": 62.7662112037341
+    },
+    {
+      "app": "ChatGPT",
+      "minutes": 35.9409477134546
+    },
+    {
+      "app": "Brave",
+      "minutes": 24.6990157028039
+    },
+    {
+      "app": "Muse",
+      "minutes": 15.9997167666753
+    },
+    {
+      "app": "LINE",
+      "minutes": 10.6019270618757
+    },
+    {
+      "app": "Reddit",
+      "minutes": 7.59550828337669
+    },
+    {
+      "app": "Google Maps",
+      "minutes": 7.09146114587784
+    },
+    {
+      "app": "メルカリ",
+      "minutes": 6.4610762655735
+    },
+    {
+      "app": "Gmail",
+      "minutes": 5.08894635240237
+    },
+    {
+      "app": "YouTube",
+      "minutes": 4.45550741751989
+    },
+    {
+      "app": "Googleカレンダー",
+      "minutes": 3.23647531668345
+    },
+    {
+      "app": "Tapo",
+      "minutes": 2.37092516819636
+    },
+    {
+      "app": "Strava",
+      "minutes": 2.26444291869799
+    },
+    {
+      "app": "Slack",
+      "minutes": 2.21260392069817
+    },
+    {
+      "app": "楽天ペイ",
+      "minutes": 2.18206923206647
+    },
+    {
+      "app": "TeamHub",
+      "minutes": 2.14725131789843
+    },
+    {
+      "app": "設定",
+      "minutes": 2.07545726497968
+    },
+    {
+      "app": "KFC",
+      "minutes": 1.97847418387731
+    },
+    {
+      "app": "HoshinoGraphica",
+      "minutes": 1.8053196867307
+    },
+    {
+      "app": "写真",
+      "minutes": 1.48000276883443
+    },
+    {
+      "app": "楽天カード",
+      "minutes": 1.18325051665306
+    },
+    {
+      "app": "Runkeeper",
+      "minutes": 0.823348784446716
+    },
+    {
+      "app": "Suica",
+      "minutes": 0.596268584330877
+    },
+    {
+      "app": "ユーザ認証",
+      "minutes": 0.429184399048487
+    },
+    {
+      "app": "天気",
+      "minutes": 0.370955018202464
+    },
+    {
+      "app": "SwitchBot",
+      "minutes": 0.198705633481344
+    },
+    {
+      "app": "AliExpress",
+      "minutes": 0.121181917190552
+    },
+    {
+      "app": "Connect",
+      "minutes": 0.0777199824651082
+    },
+    {
+      "app": "時計",
+      "minutes": 0.0652567168076833
+    },
+    {
+      "app": "乗換案内",
+      "minutes": 0.0567064503828684
+    },
+    {
+      "app": "Delta",
+      "minutes": 0.0412485162417094
+    }
+  ]
+}
