@@ -1,0 +1,126 @@
+{
+  "date": "2026-11-14",
+  "device": "iPhone",
+  "apps": [
+    {
+      "app": "Chrome",
+      "minutes": 131.48740221262
+    },
+    {
+      "app": "Instagram",
+      "minutes": 24.9657608707746
+    },
+    {
+      "app": "YouTube",
+      "minutes": 12.3998253524303
+    },
+    {
+      "app": "LINE",
+      "minutes": 10.5766407132149
+    },
+    {
+      "app": "ChatGPT",
+      "minutes": 7.06425097982089
+    },
+    {
+      "app": "Brave",
+      "minutes": 4.58168598413467
+    },
+    {
+      "app": "Muse",
+      "minutes": 3.9664370516936
+    },
+    {
+      "app": "Google Maps",
+      "minutes": 3.8627698024114
+    },
+    {
+      "app": "Slack",
+      "minutes": 3.77894241611163
+    },
+    {
+      "app": "タイミー",
+      "minutes": 2.74419076840083
+    },
+    {
+      "app": "Swarm",
+      "minutes": 2.38723476529121
+    },
+    {
+      "app": "写真",
+      "minutes": 1.34684116442998
+    },
+    {
+      "app": "Strava",
+      "minutes": 1.30581680138906
+    },
+    {
+      "app": "TeamHub",
+      "minutes": 1.24011438290278
+    },
+    {
+      "app": "Gmail",
+      "minutes": 0.997149701913198
+    },
+    {
+      "app": "Reddit",
+      "minutes": 0.915458218256632
+    },
+    {
+      "app": "PayPay",
+      "minutes": 0.88671954870224
+    },
+    {
+      "app": "天気",
+      "minutes": 0.852239082256953
+    },
+    {
+      "app": "Googleカレンダー",
+      "minutes": 0.849622166156769
+    },
+    {
+      "app": "iAEON",
+      "minutes": 0.57820033232371
+    },
+    {
+      "app": "電話",
+      "minutes": 0.41653746565183
+    },
+    {
+      "app": "メルカリ",
+      "minutes": 0.415603617827098
+    },
+    {
+      "app": "InCallService",
+      "minutes": 0.317152283589045
+    },
+    {
+      "app": "Runkeeper",
+      "minutes": 0.313946449756622
+    },
+    {
+      "app": "COROS",
+      "minutes": 0.308547649780909
+    },
+    {
+      "app": "ユーザ認証",
+      "minutes": 0.287497548262278
+    },
+    {
+      "app": "AliExpress",
+      "minutes": 0.240782900651296
+    },
+    {
+      "app": "GitHub",
+      "minutes": 0.227613900105158
+    },
+    {
+      "app": "時計",
+      "minutes": 0.21879160006841
+    },
+    {
+      "app": "ウォレット",
+      "minutes": 0.0260828336079915
+    }
+  ]
+}
